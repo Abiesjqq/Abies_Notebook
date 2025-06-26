@@ -1,3 +1,168 @@
-site_name: 还我漂漂拳的Notebook
+site_name: Abies's Notebook
 theme:
   name: material
+
+  font: 
+    text: Roboto
+
+  icon:
+    logo: material/forest-outline
+
+  language: zh
+
+  features:
+    - navigation.tabs # 顶部分类标签
+    - navigation.top # 返回顶部按钮
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: 关闭自动模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default # 日间模式
+      primary: teal # 主色
+      accent: indigo # 强调色
+      toggle:
+        icon: material/weather-night
+        name: 切换至夜间模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate # 夜间模式
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
+  features: 
+    - announce.dismiss # 可关闭公告栏
+    - navigation.instant # 页面无刷新切换
+    - navigation.prune
+    # - header.autohide  # 自动隐藏头部
+    - navigation.instant.progress # 页面切换进度条
+    # - navigation.prune # 只渲染可见导航项
+    - navigation.tracking # 滚动时URL锚点自动更新
+    - navigation.tabs # 一级导航显示为顶部Tab
+    # - navigation.tabs.sticky  # Tab栏吸顶
+    - navigation.sections # 侧边栏分组
+    - navigation.top # 返回顶部按钮
+    # - navigation.footer # 页脚显示在侧边栏
+    - search.suggest # 搜索建议
+    - search.highlight # 搜索高亮
+    - search.share # 搜索结果分享
+    - toc.follow # 目录跟随滚动
+    - toc.integrate # 目录集成到侧边栏
+    - navigation.expand # 默认展开所有目录
+    - navigation.indexes # 支持节索引页
+    - content.tabs.link # 支持标签页链接
+    - content.tooltips # 支持鼠标悬浮提示
+    - content.code.copy # 代码块一键复制
+    - content.code.select # 代码块一键全选
+    # - content.action.edit # 编辑按钮
+    # - content.action.view # 查看源码按钮
+    - content.code.annotate # 代码注释
+
+
+nav: 
+  - 首页: 
+    - Notebook介绍: 首页\Notebook介绍.md
+  - Git: 
+    - Git笔记: Git\git.md
+
+
+extra:
+  generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
+  # social:
+  #   - icon: fontawesome/brands/weixin
+  #     link: https://s1.imagehub.cc/images/2024/02/02/bb9ee71b03ee7a3b87caad5cc4bcebff.jpeg
+  #     name: Wechat
+  #   - icon: fontawesome/brands/telegram
+  #     link: https://t.me/wecowin
+  #     name: telegram
+  #   - icon: fontawesome/brands/x-twitter #联系方式图标 : https://fontawesome.com/ 去这里找图标
+  #     link: https://twitter.com/wcowin_
+  #   - icon: fontawesome/brands/github
+  #     link: https://github.com/Wcowin
+
+  #   - icon: fontawesome/regular/envelope #联系方式图标
+  #     link: mailto:<wangkewen821@gmail.com> #邮件联系方式
+  #   - icon: fontawesome/brands/bilibili
+  #     link: https://space.bilibili.com/1407028951/lists/4566631?type=series
+  # analytics:
+  #   provider: google #谷歌分析
+  #   property:  ##如果你 clone 了my模板，请将这个修改为你的
+
+  #   # 网页底部反馈
+  #   feedback:
+  #     title: 此页面有帮助吗？
+  #     ratings:
+  #       - icon: material/thumb-up-outline #图标可自定义
+  #         name: This page was helpful
+  #         data: 1
+  #         note: >-
+  #           谢谢你的反馈！
+  #       - icon: material/thumb-down-outline
+  #         name: This page could be improved
+  #         data: 0
+  #         note: >-
+  #           Thanks for your feedback! Help us improve this page by
+  #           using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+  # cookies设置（可选）
+  # consent:
+  #   title: Cookie consent
+  #   description: >-
+  #     我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
+  #     如果你同意,你可以帮助我们让我们的网站更好
+
+
+extra_javascript:
+  # - javascripts/extra.js 
+  - javascripts/extra2.js
+  # - javascripts/bannerSlider.js
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
+
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/mathjax.js
+  # - https://polyfill.io/v3/polyfill.min.js?features=es6
+
+  # - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML
+  # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
+  # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js
+  # - javascripts/backbound1.js
+  # - https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js
+  # - https://res.zvo.cn/translate/translate.js  # Translate
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js
+  # - javascripts/font-loader.js
+  # - javascripts/toc-sync.js
+
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/extra2.css
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css
+  # - stylesheets/link.css  #友链
+  # - stylesheets/poem.css
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/poem.css
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css  #友链
+  # - stylesheets/card2.css
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/card2.css
+  - stylesheets/customize.css  #按钮圆角化
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/customize.css  #按钮圆角化
+  # - stylesheets/flink.css
+  # - stylesheets/bannerSlider.css
+  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css # extra.css的CDN
+  # - stylesheets/extra1.css
+  # - stylesheets/video.css
+  # - https://unpkg.com/@waline/client@v2/dist/waline.css
+  # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #评论
+  # - ckplayer/css/ckplayer.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css  #字体
+  # - https://static.zeoseven.com/zsft/292/main/result.css #字体
+  # - stylesheets/ziti.css  #字体
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css
+  # - https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css
+  # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
+  # - stylesheets/timeline.css
+  # - stylesheets/LiquidGlass.css
