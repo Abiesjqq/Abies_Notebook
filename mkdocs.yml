@@ -60,13 +60,13 @@ theme:
 
 nav: 
   - 介绍: 
-    - Notebook介绍: 介绍\Notebook介绍.md
+    - Notebook介绍: 介绍/Notebook介绍.md
   - 自学记录: 
-    - Git: 自学记录\Git\git.md
-    - MkDocs: 自学记录\MkDocs\mkdocs.md
+    - Git: 自学记录/Git/git.md
+    - MkDocs: 自学记录/MkDocs/mkdocs.md
   - 课程笔记: 
-    - 数据结构基础(未整理): 课程笔记\数据结构基础\fdsNote.md
-    - C语言程序设计(未整理): 课程笔记\C语言程序设计\CNote.md
+    - 数据结构基础(未整理): 课程笔记/数据结构基础/fdsNote.md
+    - C语言程序设计(未整理): 课程笔记/C语言程序设计/CNote.md
   - Noflower 的笔记:
     - Computer Vision （进行中）: NoflowersNotes/ComputerVision/ComputerVision.md
 
