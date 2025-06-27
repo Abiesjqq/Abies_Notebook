@@ -153,6 +153,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
 
   - javascripts/mathjax.js
+  - javascripts/cursor.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/mathjax.js
@@ -172,6 +173,7 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/extra2.css
+  - stylesheets/cursor.css
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css
   # - stylesheets/link.css  #友链
   # - stylesheets/poem.css
