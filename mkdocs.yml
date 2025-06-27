@@ -50,7 +50,7 @@ theme:
     - search.highlight # 搜索高亮
     - search.share # 搜索结果分享
     - toc.follow # 目录跟随滚动
-    - toc.integrate # 目录集成到侧边栏
+    # - toc.integrate # 目录集成到侧边栏
     - navigation.expand # 默认展开所有目录
     - navigation.indexes # 支持节索引页
     - content.tabs.link # 支持标签页链接
@@ -117,8 +117,30 @@ extra:
   #     如果你同意,你可以帮助我们让我们的网站更好
 
 markdown_extensions:
-  - attr_list         # 支持 {.class} 写法
-  - md_in_html        # 支持 HTML 中嵌入 Markdown
+  - abbr
+  - attr_list
+  - admonition
+  - def_list
+  - footnotes
+  # - callouts
+  - md_in_html
+  - markdown.extensions.abbr # 支持Markdown文件上方自定义标题标签等
+  - pymdownx.magiclink
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg  # 用 SVG 图标显示 emoji
 
 
 extra_javascript:
@@ -127,7 +149,7 @@ extra_javascript:
   # - javascripts/bannerSlider.js
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
 
-  # - javascripts/mathjax.js
+  - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/mathjax.js
