@@ -136,6 +136,10 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.smartsymbols
   - pymdownx.tilde
+  - pymdownx.highlight:
+      linenums: true
+#      linenums_style: pymdownx.inline
+  - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
