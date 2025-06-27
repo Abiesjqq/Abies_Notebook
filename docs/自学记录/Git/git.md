@@ -1,26 +1,26 @@
 ## 简化版本：上传 MyProject 项目
 
 1. 在本地创建项目并初始化 Git 仓库
-   ```bash
-   mkdir MyProject          # 创建项目文件夹
-   cd MyProject             # 进入目录
-   git init                 # 初始化 Git 仓库
-   ```
+```bash
+mkdir MyProject          # 创建项目文件夹
+cd MyProject             # 进入目录
+git init                 # 初始化 Git 仓库
+```
 2. 创建文件并提交
-   ```bash
-   git add .                # 添加所有文件到暂存区
-   git commit -m "<comment>"
-   ```
+```bash
+git add .                # 添加所有文件到暂存区
+git commit -m "<comment>"
+```
 3. 在 GitHub 上新建一个空仓库
 4. 将本地仓库连接到 GitHub 仓库
-   ```bash
-   git remote add origin <URL>
-   ```
+```bash
+git remote add origin <URL>
+```
 5. 推送本地内容到 GitHub
-   ```bash
-   git branch -M main             # 确保分支叫 main（GitHub 默认主分支）
-   git push -u origin main        # 推送到 GitHub 并绑定远程主分支
-   ```
+```bash
+git branch -M main             # 确保分支叫 main（GitHub 默认主分支）
+git push -u origin main        # 推送到 GitHub 并绑定远程主分支
+```
 
 ## 提交
 
@@ -38,9 +38,12 @@
 - `git checkout A; git merge main` 将 main 合并到 A
 - `git rebase <BranchName>` 将当前 checkout 的分支的提交搬运到 BranchName
 
-> 将 A 合并到 main:
-> git checkout A
-> git rebase main
+> 将 A 合并到 main:  
+>
+> ```  
+> git checkout A  
+> git rebase main  
+> ```  
 
 ## 移动
 

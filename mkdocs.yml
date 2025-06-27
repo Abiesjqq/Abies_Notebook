@@ -63,10 +63,13 @@ theme:
 
 
 nav: 
-  - 首页: 
-    - Notebook介绍: 首页\Notebook介绍.md
-  - Git: 
-    - Git笔记: Git\git.md
+  - 介绍: 
+    - Notebook介绍: 介绍\Notebook介绍.md
+  - 自学记录: 
+    - Git: 自学记录\Git\git.md
+  - 课程笔记: 
+    - 数据结构基础(未整理): 课程笔记\数据结构基础\fdsNote.md
+    - C语言程序设计(未整理): 课程笔记\C语言程序设计\CNote.md
 
 
 extra:
@@ -113,14 +116,18 @@ extra:
   #     我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
   #     如果你同意,你可以帮助我们让我们的网站更好
 
+markdown_extensions:
+  - attr_list         # 支持 {.class} 写法
+  - md_in_html        # 支持 HTML 中嵌入 Markdown
+
 
 extra_javascript:
   # - javascripts/extra.js 
-  - javascripts/extra2.js
+  # - javascripts/extra2.js
   # - javascripts/bannerSlider.js
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
 
-  - javascripts/mathjax.js
+  # - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/mathjax.js
