@@ -15,21 +15,17 @@ theme:
     - navigation.top # 返回顶部按钮
 
   palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/link
-        name: 关闭自动模式
     - media: "(prefers-color-scheme: light)"
       scheme: default # 日间模式
-      primary: teal # 主色
-      accent: indigo # 强调色
+      primary: teal 
+      accent: teal # 强调色
       toggle:
         icon: material/weather-night
         name: 切换至夜间模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate # 夜间模式
       primary: black
-      accent: indigo
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
@@ -67,6 +63,7 @@ nav:
     - Notebook介绍: 介绍\Notebook介绍.md
   - 自学记录: 
     - Git: 自学记录\Git\git.md
+    - MkDocs: 自学记录\MkDocs\mkdocs.md
   - 课程笔记: 
     - 数据结构基础(未整理): 课程笔记\数据结构基础\fdsNote.md
     - C语言程序设计(未整理): 课程笔记\C语言程序设计\CNote.md

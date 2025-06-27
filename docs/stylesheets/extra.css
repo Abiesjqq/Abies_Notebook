@@ -1,7 +1,7 @@
 :root>* {
-    --md-primary-fg-color: #518FC1;
-    --md-primary-fg-color--light: #518FC1;
-    --md-primary-fg-color--dark: #518FC1;
+    --md-primary-fg-color: #117C6F;
+    --md-primary-fg-color--light: #117C6F;
+    --md-primary-fg-color--dark: #117C6F;
     /* --md-primary-bg-color: #000000; */
     
   
@@ -179,7 +179,7 @@
   
   
   /* 滚动条 */
-  /* .git-revision-date-localized-plugin { color: #608DBD; }
+  .git-revision-date-localized-plugin { color: #608DBD; }
   
   ::-webkit-scrollbar {
     width: 8px;
@@ -192,8 +192,8 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #49b1f5;
-    background-image: -webkit-linear-gradient(
+    background-color: #2C6975;
+    /* background-image: -webkit-linear-gradient(
       45deg,
       rgba(255, 255, 255, 0.4) 25%,
       transparent 25%,
@@ -202,7 +202,7 @@
       rgba(255, 255, 255, 0.4) 75%,
       transparent 75%,
       transparent
-    );
+    ); */
     border-radius: 10px;
     
   }
@@ -218,7 +218,7 @@
   ::-webkit-scrollbar:hover {
     width: 7px;
     height: 7px;
-  } */
+  }
   
   
   
@@ -526,7 +526,7 @@
       'menu main main main right right'
       'menu footer footer footer footer footer';
     grid-gap: 10px;
-    background-color: #2196F3;
+    background-color: #2b1991;
     padding: 10px;
   }
   
