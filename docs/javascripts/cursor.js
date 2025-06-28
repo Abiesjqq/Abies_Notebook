@@ -66,11 +66,23 @@ class Cursor {
     init() {
         // document.onmouseover  = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.add("hover");
         // document.onmouseout   = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.remove("hover");
+        let fadeTimer;
+
         document.onmousemove = e => {
             if (this.pos.curr == null)
-                this.move(e.clientX, e.clientY); // no offset
-            this.pos.curr = {x: e.clientX, y: e.clientY}; // no offset
+                this.move(e.clientX, e.clientY);
+            this.pos.curr = {x: e.clientX, y: e.clientY};
             this.cursor.classList.remove("hidden");
+            this.cursor.classList.remove("fade");
+
+            clearTimeout(fadeTimer);
+            fadeTimer = setTimeout(() => {
+                // 如果处于 hover 状态（即带有 .hover 类），不变淡
+                if (this.cursor.classList.contains('hover')) {
+                    return;
+                }
+                this.cursor.classList.add("fade");
+            }, 500);
         };
         document.onmouseenter = e => this.cursor.classList.remove("hidden");
         document.onmouseleave = e => this.cursor.classList.add("hidden");

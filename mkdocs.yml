@@ -1,8 +1,13 @@
 site_name: Abies's Notebook
+repo_url: https://github.com/Abiesjqq/Abies_Notebook
+repo_name: Abiesjqq/Abies_Notebook
+copyright: 1 + 1 = 2
+use_directory_urls: true
+
 theme:
   name: material
-
-  font: 
+  custom_dir: docs/scripts
+  font:
     text: Roboto
 
   icon:
@@ -10,14 +15,10 @@ theme:
 
   language: zh
 
-  features:
-    - navigation.tabs # 顶部分类标签
-    - navigation.top # 返回顶部按钮
-
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default # 日间模式
-      primary: teal 
+      primary: teal
       accent: teal # 强调色
       toggle:
         icon: material/weather-night
@@ -29,7 +30,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
-  features: 
+  features:
     - announce.dismiss # 可关闭公告栏
     - navigation.instant # 页面无刷新切换
     - navigation.prune
@@ -56,24 +57,34 @@ theme:
     # - content.action.edit # 编辑按钮
     # - content.action.view # 查看源码按钮
     - content.code.annotate # 代码注释
+    - git-revision-date
+    - git-revision-date-localized
 
+hooks:
+  - docs/scripts/hooks/reading_time.py
 
-nav: 
-  - 介绍: 
-    - Notebook介绍: 介绍/Notebook介绍.md
-  - 自学记录: 
-    - Git: 自学记录/Git/git.md
-    - MkDocs: 自学记录/MkDocs/mkdocs.md
-  - 课程笔记: 
-    - 数据结构基础(未整理): 课程笔记/数据结构基础/fdsNote.md
-    - C语言程序设计(未整理): 课程笔记/C语言程序设计/CNote.md
+nav:
+  - 介绍:
+      - Notebook介绍: 介绍/Notebook介绍.md
+  - 自学记录:
+      - Git: 自学记录/Git/git.md
+      - MkDocs: 自学记录/MkDocs/mkdocs.md
+  - 课程笔记:
+      - 数据结构基础(未整理): 课程笔记/数据结构基础/fdsNote.md
+      - C语言程序设计(未整理): 课程笔记/C语言程序设计/CNote.md
   - Noflower 的笔记:
-    - Computer Vision （进行中）: NoflowersNotes/ComputerVision/ComputerVision.md
-
+      - Computer Vision （进行中）: NoflowersNotes/ComputerVision/ComputerVision.md
 
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
-  # social:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Abiesjqq
+      name: Abie on Github
+    - icon: fontawesome/brands/github
+      link: https://github.com/Noflowerzzk
+      name: Noflower on Github
+
   #   - icon: fontawesome/brands/weixin
   #     link: https://s1.imagehub.cc/images/2024/02/02/bb9ee71b03ee7a3b87caad5cc4bcebff.jpeg
   #     name: Wechat
@@ -138,7 +149,7 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.highlight:
       linenums: true
-#      linenums_style: pymdownx.inline
+  #      linenums_style: pymdownx.inline
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
@@ -173,7 +184,9 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/extra2.css
-  - stylesheets/cursor.css
+  - stylesheets/cursor.css  # 鼠标指针
+  - stylesheets/info.css  # 阅读信息等 info 对象
+  - stylesheets/create_and_update.css # 创建时间和更新时间样式
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css
   # - stylesheets/link.css  #友链
   # - stylesheets/poem.css
@@ -195,8 +208,22 @@ extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css  #字体
   # - https://static.zeoseven.com/zsft/292/main/result.css #字体
   # - stylesheets/ziti.css  #字体
-  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css
+#  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css
   # - https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css
+  - stylesheets/font.css  # 把远程 css 换成本地版本
   # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
   # - stylesheets/timeline.css
   # - stylesheets/LiquidGlass.css
+
+plugins:
+  - search
+  - git-committers:
+      enabled: true
+      #    enabled: !ENV [ git-committers, false ]
+      repository: Abiesjqq/Abies_Notebook
+      branch: main
+  - git-revision-date-localized:
+      enabled: true
+      #    enabled: !ENV [ git-revision-date-localized, false ]
+      type: iso_date
+      enable_creation_date: true

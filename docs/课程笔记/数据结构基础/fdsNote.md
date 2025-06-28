@@ -9,15 +9,11 @@ $o(f(n))$:真上界(最坏情况下上界)
 
 **nlogn 推导:**  
 （这一段显示放弃修改了。。）  
-$$
-\left\{
-\begin{aligned}
+$$\begin{aligned}
 T(n) &= 2T\left(\frac{n}{2}\right) + Cn \\[1.5ex]
-T\left(\frac{n}{2}\right) &= 2T\left(\frac{n}{4}\right) + Cn \\[1.5ex]
+T(\frac{n}{2}) &= 2T(\frac{n}{4}) + Cn \\[1.5ex]
 &\ \, \vdots \\
-\end{aligned}
-\right.
-$$
+\end{aligned}$$
 
 ## :smiley:Class Two
 
