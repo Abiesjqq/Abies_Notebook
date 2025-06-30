@@ -160,6 +160,8 @@ markdown_extensions:
       generic: true
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg  # 用 SVG 图标显示 emoji
+  - pymdownx.tabbed:
+      alternate_style: true
 
 
 extra_javascript:

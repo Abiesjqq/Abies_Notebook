@@ -64,3 +64,26 @@ plt.contourf(X, Y, f(X, Y), 8, alpha=.75, cmap=plt.cm.RdBu)
 > [官方色带](https://matplotlib.org/stable/users/explain/colors/colormaps.html#sequential)  
 > [seaborn 色带](https://seaborn.pydata.org/tutorial/color_palettes.html#perceptually-uniform-palettes)
 
+test here
+
+=== "Python"
+
+    ```python
+    print("Hello from Python")
+    ```
+
+=== "JavaScript"
+
+    ```js
+    console.log("Hello from JavaScript");
+    ```
+
+=== "C++"
+
+    ```cpp
+    std::cout << "Hello from C++" << std::endl;
+    ```
+
+??? note "123"
+    123123
+
