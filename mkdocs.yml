@@ -66,9 +66,10 @@ hooks:
 nav:
   - 介绍:
       - Notebook介绍: 介绍/Notebook介绍.md
-  - 自学记录:
+  - 碎碎念:
       - Git: 自学记录/Git/git.md
       - MkDocs: 自学记录/MkDocs/mkdocs.md
+      - Numpy & Pandas: 自学记录/Numpy & Pandas/Numpy & Pandas.md
   - 课程笔记:
       - 数据结构基础(未整理): 课程笔记/数据结构基础/fdsNote.md
       - C语言程序设计(未整理): 课程笔记/C语言程序设计/CNote.md
