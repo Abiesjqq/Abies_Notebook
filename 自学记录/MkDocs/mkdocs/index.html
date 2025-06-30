@@ -436,6 +436,8 @@
       
         
       
+        
+      
     
     
     
@@ -646,6 +648,29 @@
   
   <span class="md-ellipsis">
     Numpy & Pandas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Matplotlib/Matplotlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Matplotlib
     
   </span>
   
@@ -890,23 +915,23 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>183</strong> 个字&nbsp;&nbsp;<strong>1</strong> 分钟</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>183</strong> 个字&nbsp;&nbsp;<strong>2</strong> 分钟</p>
 </div>
 <h2 id="grid-card">grid card 的使用</h2>
 <h3 id="_1">示例</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span>
-  <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid cards&quot;</span>
-  <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: grid; grid-template-columns: 1fr;&quot;</span>
-  <span class="na">markdown</span>
-<span class="p">&gt;</span>
-  <span class="cm">&lt;!-- 这里写 markdown 内容 --&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">div</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>  <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid cards&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>  <span class="na">style</span><span class="o">=</span><span class="s">&quot;display: grid; grid-template-columns: 1fr;&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>  <span class="na">markdown</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>  <span class="cm">&lt;!-- 这里写 markdown 内容 --&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>调整列宽需要修改：<code>style="display: grid; grid-template-columns: 1fr;"</code><br />
 其中<code>grid-template-columns: 1fr</code>定义网格的列数和宽度。<code>1fr</code>表示 1 个分数单位，相当于占满整个空间。</p>
@@ -917,29 +942,29 @@
 <li><code>grid-template-columns: 100px 2fr 1fr;</code> — 3 列，分别是 100px 宽，2 份宽，1 份宽</li>
 </ul>
 <h4 id="_2">分两列示例</h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;div class=&quot;grid cards&quot; markdown&gt;
-
-![示例](../../images/flower-dark.jpg){.img1}
-
-- __两列测试__
-
-    ---
-
-    - 1
-    - 2
-
-&lt;/div&gt;
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&lt;div class=&quot;grid cards&quot; markdown&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>![示例](../../images/flower-dark.jpg){.img1}
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>- __两列测试__
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    ---
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    - 1
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>    - 2
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>&lt;/div&gt;
 </code></pre></div></td></tr></table></div>
 <p>效果  </p>
 <div class="grid cards">
@@ -957,49 +982,49 @@
 </div>
 <p>浏览器自动调整为两列</p>
 <h4 id="_3">分三列示例</h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;div class=&quot;grid cards&quot; style=&quot;display: grid; grid-template-columns: 1fr 1fr 1fr;&quot; markdown&gt;
-- __三列测试1__
-
-    ---
-
-    - 1
-    - 2
-
-- __三列测试2__
-
-    ---
-
-    - 1
-    - 2
-
-- __三列测试3__
-
-    ---
-
-    - 1
-    - 2
-&lt;/div&gt;
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>&lt;div class=&quot;grid cards&quot; style=&quot;display: grid; grid-template-columns: 1fr 1fr 1fr;&quot; markdown&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>- __三列测试1__
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    ---
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    - 1
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    - 2
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>- __三列测试2__
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    ---
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    - 1
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>    - 2
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>- __三列测试3__
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>    ---
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    - 1
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>    - 2
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>&lt;/div&gt;
 </code></pre></div></td></tr></table></div>
 <p>效果</p>
 <div class="grid cards" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
@@ -1032,7 +1057,7 @@
 </div>
 <h2 id="_4">圆角图片显示</h2>
 <h3 id="_5">示例</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>![示例](images/flower-dark.jpg){.img1}
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>![示例](images/flower-dark.jpg){.img1}
 </code></pre></div></td></tr></table></div>
 <p><code>img1</code>类定义了圆角图片，<code>attr_list</code>扩展的引入使我们可以用<code>.{img1}</code>给图片（或其他元素）添加这个类。<br />
 其中<code>images/flower-dark.jpg</code>表示当前目录下的images文件夹中的flower-dark.jpg。<br />

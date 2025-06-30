@@ -22,6 +22,6 @@ button.md-top {
 /*}*/
 
 ::selection {
-    background: #c8e6c9 !important;
-    color: #004e04 !important;
+    background: rgba(17, 124, 111, .2) !important;
+    color: #1f9e8e !important;
 }
