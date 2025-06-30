@@ -70,6 +70,7 @@ nav:
       - Git: 自学记录/Git/git.md
       - MkDocs: 自学记录/MkDocs/mkdocs.md
       - Numpy & Pandas: 自学记录/Numpy & Pandas/Numpy & Pandas.md
+      - Matplotlib: 自学记录/Matplotlib/Matplotlib.md
   - 课程笔记:
       - 数据结构基础(未整理): 课程笔记/数据结构基础/fdsNote.md
       - C语言程序设计(未整理): 课程笔记/C语言程序设计/CNote.md
@@ -151,6 +152,8 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.highlight:
       linenums: true
+      auto_title: true
+      anchor_linenums: true
   #      linenums_style: pymdownx.inline
   - pymdownx.superfences
   - pymdownx.arithmatex:
