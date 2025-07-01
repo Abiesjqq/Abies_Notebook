@@ -575,6 +575,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -894,6 +903,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -914,40 +932,48 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>803</strong> 个字&nbsp;&nbsp;<strong>3</strong> 分钟</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>873</strong> 个字&nbsp;&nbsp;<strong>3</strong> 分钟</p>
 </div>
 <h2 id="myproject">简化版本：上传 MyProject 项目</h2>
 <ol>
-<li>在本地创建项目并初始化 Git 仓库
+<li>在本地创建项目并初始化 Git 仓库</li>
+</ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>mkdir<span class="w"> </span>MyProject<span class="w">          </span><span class="c1"># 创建项目文件夹</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>MyProject<span class="w">             </span><span class="c1"># 进入目录</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>git<span class="w"> </span>init<span class="w">                 </span><span class="c1"># 初始化 Git 仓库</span>
-</code></pre></div></td></tr></table></div></li>
-<li>创建文件并提交
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>创建文件并提交</li>
+</ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>add<span class="w"> </span>.<span class="w">                </span><span class="c1"># 添加所有文件到暂存区</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;&lt;comment&gt;&quot;</span>
-</code></pre></div></td></tr></table></div></li>
+</code></pre></div></td></tr></table></div>
+<ol>
 <li>在 GitHub 上新建一个空仓库</li>
-<li>将本地仓库连接到 GitHub 仓库
+<li>将本地仓库连接到 GitHub 仓库</li>
+</ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;URL&gt;
-</code></pre></div></td></tr></table></div></li>
-<li>推送本地内容到 GitHub
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>推送本地内容到 GitHub</li>
+</ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main<span class="w">             </span><span class="c1"># 确保分支叫 main（GitHub 默认主分支）</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main<span class="w">        </span><span class="c1"># 推送到 GitHub 并绑定远程主分支</span>
-</code></pre></div></td></tr></table></div></li>
-</ol>
+</code></pre></div></td></tr></table></div>
 <details class="info">
 <summary>注意</summary>
-<p>如果本地和远程同时对某个文件更改，可能因为error: Your local changes to the following files would be overwritten by merge导致无法拉取。<br />
-可以按以下方法执行：<br />
-1. <code>git stash</code> 保存本地改动<br />
-2. <code>git pull origin main</code> 拉取远程代码<br />
-3. <code>git stash pop</code> 恢复本地修改，可能需要手动选择保留哪部分修改  </p>
 </details>
+<p>如果本地和远程同时对某个文件更改，可能因为 error: Your local changes to the following files would be overwritten by merge 导致无法拉取。<br />
+ 可以按以下方法执行：</p>
+<ol>
+<li><code>git stash</code> 保存本地改动</li>
+<li><code>git pull origin main</code> 拉取远程代码</li>
+<li><code>git stash pop</code> 恢复本地修改，可能需要手动选择保留哪部分修改</li>
+</ol>
 <h2 id="_1">提交</h2>
 <ul>
 <li><code>git commit</code> 创建提交</li>
@@ -968,10 +994,10 @@
 <li><code>git rebase &lt;BranchName&gt;</code> 将当前 checkout 的分支的提交搬运到 BranchName</li>
 </ul>
 <blockquote>
-<p>将 A 合并到 main:  </p>
+<p>将 A 合并到 main:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git checkout A  
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>git rebase main  
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git checkout A
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>git rebase main
 </code></pre></div></td></tr></table></div>
 </blockquote>
 <h2 id="_3">移动</h2>
@@ -1026,6 +1052,18 @@
 <li><code>git pull --rebase</code> 等价于<code>git fetch</code>和<code>git rebase o/main</code></li>
 <li><code>git pull</code> 等价于<code>git fetch</code>和<code>git merge o/main</code></li>
 </ul>
+<h2 id="ssh">SSH</h2>
+<p>以下操作均在终端执行。</p>
+<ol>
+<li><code>cd ~/.ssh</code> 如果报错执行第 2 步，如果不报错执行第 3 步。</li>
+<li><code>ssh-keygen -t rsa -b 4096 -C "&lt;邮箱&gt;"</code> 创建 SSH 密钥</li>
+<li><code>cd ~/.ssh</code>再<code>cat id_rsa.pub</code> 复制公钥内容</li>
+<li>GitHub -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key -&gt; 粘贴</li>
+<li><code>ssh -T git@github.com</code> 检验是否设置成功（第 1 次需输入 yes）</li>
+<li><code>git remote -v</code> 检查远程仓库 URL</li>
+<li><code>git remote set-url origin git@github.com:&lt;http的URL&gt;</code> 修改为 SSH 地址</li>
+<li>正常执行 git 操作</li>
+</ol>
 
 
 
