@@ -154,7 +154,7 @@ int MaxSum() {
   - **一般使用** rear 不指实际的位置,而是指下一个要放的位置.空:`front\==rear`,满:`front\==rear+1`.
   - 或者 front 指向第一个元素的前一个位置(哑头),空:front\==rear,满:front\==rear+1.
 
-## :fire:Class Three
+## :fire:Class Four
 
 ### 博弈树
 
@@ -217,7 +217,7 @@ int MaxSum() {
 - 线索二叉树的存储结构：lchild ltag data rtag rchild
 - ltag=0,表示指示节点的左儿子;ltag=1,表示指示节点的前驱.rtag=0,表示指示节点的右孩子;ltag=1,表示指示节点的后继.
 
-## :sunglasses:Class Four
+## :sunglasses:Class Five
 
 ### 前序,中序,后序和栈
 
@@ -1359,7 +1359,7 @@ void heapSort(int* arr, int n) {
 }
 ```
 
-## :smile:Class Five
+## :smile:Class Six
 
 ### 优先队列(堆)
 
@@ -1439,7 +1439,7 @@ if (a的集合==b的集合) {
 
 用数组表示:下标代表元素,值代表根
 
-## :cloud_with_lightning_and_rain:Class Six
+## :cloud_with_lightning_and_rain:Class Seven
 
 ### 考试题型
 
@@ -1545,7 +1545,7 @@ if (a的集合==b的集合) {
    - 一种判断社群是否紧密的方法:里面的边和外面直接相连的边的比值
    - 可以根据点的入度,出度的权重判断点的性质
 
-## :crystal_ball:Class Seven
+## :crystal_ball:Class Eight
 
 ### 拓扑排序
 
@@ -1711,7 +1711,7 @@ void dijkstra(图 g) {
 }
 ```
 
-## :milky_way:Class Eight
+## :milky_way:Class Nine
 
 ### 所有点对的最短路径(All-Pairs Shortest Paths)
 
@@ -1753,7 +1753,7 @@ EC(Early Complete time)：max{所有入点的 EC + 入边的时间} （表示每
 LC(Last Complete time)：min{所有出点的 LC - 出边的时间} （表示每个任务能偷懒多长时间，最晚什么时候出发）
 如果节点的 EC == LC，该点是关键点。关键点组成关键路径。
 
-## :compass:Class Nine
+## :compass:Class Ten
 
 ### Network Flow Problems 网络流问题
 
@@ -1825,7 +1825,7 @@ void dfsConn(图 g) {
 }
 ```
 
-## :wind_chime:Class Ten
+## :wind_chime:Class Eleven
 
 ### 深度优先遍历
 
@@ -1901,6 +1901,8 @@ u is an articulation point iff:
 **哈密尔顿回路问题（旅行商问题）**
 将所有点都走一遍
 
+## :banjo:Class Twelve
+
 ### 排序
 
 **简单排序：**
@@ -1930,8 +1932,6 @@ T(n)=2T(n/2)+Cn => T(n)=O(nlogn)
 循环的次数等于位数。
 
 **排序的稳定性**：相等的元素排序前后顺序是不是相同。
-
-## :banjo:Class Eleven
 
 插入排序对输入顺序敏感.如果输入数据基本排好,则排序时间短.
 
@@ -2135,7 +2135,7 @@ $T(n)=2T(n/3)+Cn$: 更简单
 双边扫描:左指针左侧都小,右指针右侧都大
 一边扫描:指针左侧是分好的堆
 
-## Class Twelve
+## Class Thirteen
 
 **循环不变式**
 
@@ -2225,7 +2225,7 @@ void Qsort(int a[], int let, int right) {
 
 作用：建立可信机制
 
-## Class Thriteen
+## Class Fourteen
 
 ### 比特币
 
@@ -2339,7 +2339,7 @@ Loading Density（也称为 Load Factor，装载因子）表示哈希表中已�
 
 - 当装载密度超过阈值（如 0.75），哈希表会扩容（通常加倍大小），并重新哈希所有元素。
 
-## Class Fourteen
+## Class Fifteen
 
 ### 哈希动态查找问题
 

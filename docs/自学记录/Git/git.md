@@ -22,6 +22,13 @@ git branch -M main             # 确保分支叫 main（GitHub 默认主分支�
 git push -u origin main        # 推送到 GitHub 并绑定远程主分支
 ```
 
+??? info "注意"
+    如果本地和远程同时对某个文件更改，可能因为error: Your local changes to the following files would be overwritten by merge导致无法拉取。  
+    可以按以下方法执行：  
+    1. `git stash` 保存本地改动  
+    2. `git pull origin main` 拉取远程代码  
+    3. `git stash pop` 恢复本地修改，可能需要手动选择保留哪部分修改  
+
 ## 提交
 
 - `git commit` 创建提交
