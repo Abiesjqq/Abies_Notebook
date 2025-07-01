@@ -29,14 +29,13 @@ theme:
   features:
     - announce.dismiss # 可关闭公告栏
     - navigation.instant # 页面无刷新切换
-    - navigation.prune
     # - header.autohide  # 自动隐藏头部
     - navigation.instant.progress # 页面切换进度条
-    # - navigation.prune # 只渲染可见导航项
+    - navigation.prune # 只渲染可见导航项
     - navigation.tracking # 滚动时URL锚点自动更新
     - navigation.tabs # 一级导航显示为顶部Tab
-    # - navigation.tabs.sticky  # Tab栏吸顶
-    - navigation.sections # 侧边栏分组
+    - navigation.tabs.sticky  # Tab栏吸顶
+    # - navigation.sections # 侧边栏分组
     - navigation.top # 返回顶部按钮
     # - navigation.footer # 页脚显示在侧边栏
     - search.suggest # 搜索建议
@@ -44,7 +43,7 @@ theme:
     - search.share # 搜索结果分享
     - toc.follow # 目录跟随滚动
     # - toc.integrate # 目录集成到侧边栏
-    # - navigation.expand # 默认展开所有目录
+    - navigation.expand # 默认展开所有目录
     - navigation.indexes # 支持节索引页
     - content.tabs.link # 支持标签页链接
     - content.tooltips # 支持鼠标悬浮提示
@@ -71,7 +70,7 @@ nav:
       - JavaScript: 自学记录/JavaScript/js_learning.md
   - 课程笔记:
       - 数据结构基础(未整理):
-          # - 0. 数据结构复习: 课程笔记/数据结构基础/数据结构复习（2016年下）(1).doc
+          - 0. 数据结构复习: 课程笔记/数据结构基础/0. 期末复习.md
           - 1. 时间复杂度: 课程笔记/数据结构基础/1. 时间复杂度.md
           - 2. 最大连续和子数组: 课程笔记/数据结构基础/2. 最大连续和子数组.md
           - 3. 堆栈和队列: 课程笔记/数据结构基础/3. 堆栈和队列.md
