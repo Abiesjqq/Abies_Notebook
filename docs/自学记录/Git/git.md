@@ -1,33 +1,41 @@
 ## 简化版本：上传 MyProject 项目
 
 1. 在本地创建项目并初始化 Git 仓库
+
 ```bash
 mkdir MyProject          # 创建项目文件夹
 cd MyProject             # 进入目录
 git init                 # 初始化 Git 仓库
 ```
+
 2. 创建文件并提交
+
 ```bash
 git add .                # 添加所有文件到暂存区
 git commit -m "<comment>"
 ```
+
 3. 在 GitHub 上新建一个空仓库
 4. 将本地仓库连接到 GitHub 仓库
+
 ```bash
 git remote add origin <URL>
 ```
+
 5. 推送本地内容到 GitHub
+
 ```bash
 git branch -M main             # 确保分支叫 main（GitHub 默认主分支）
 git push -u origin main        # 推送到 GitHub 并绑定远程主分支
 ```
 
 ??? info "注意"
-    如果本地和远程同时对某个文件更改，可能因为error: Your local changes to the following files would be overwritten by merge导致无法拉取。  
-    可以按以下方法执行：  
-    1. `git stash` 保存本地改动  
-    2. `git pull origin main` 拉取远程代码  
-    3. `git stash pop` 恢复本地修改，可能需要手动选择保留哪部分修改  
+如果本地和远程同时对某个文件更改，可能因为 error: Your local changes to the following files would be overwritten by merge 导致无法拉取。  
+ 可以按以下方法执行：
+
+1.  `git stash` 保存本地改动
+2.  `git pull origin main` 拉取远程代码
+3.  `git stash pop` 恢复本地修改，可能需要手动选择保留哪部分修改
 
 ## 提交
 
@@ -45,12 +53,12 @@ git push -u origin main        # 推送到 GitHub 并绑定远程主分支
 - `git checkout A; git merge main` 将 main 合并到 A
 - `git rebase <BranchName>` 将当前 checkout 的分支的提交搬运到 BranchName
 
-> 将 A 合并到 main:  
+> 将 A 合并到 main:
 >
-> ```  
-> git checkout A  
-> git rebase main  
-> ```  
+> ```
+> git checkout A
+> git rebase main
+> ```
 
 ## 移动
 
@@ -96,3 +104,16 @@ HEAD 总是指向当前分支上最近一次提交记录。分离的 HEAD 就是
 - `git fetch; git merge o/main; git push` 用 `git fetch` 更新了本地仓库中的远程分支，然后合并了新变更到我们的本地分支（为了包含远程仓库的变更），最后我们用 `git push` 把工作推送到远程仓库
 - `git pull --rebase` 等价于`git fetch`和`git rebase o/main`
 - `git pull` 等价于`git fetch`和`git merge o/main`
+
+## SSH
+
+以下操作均在终端执行。
+
+1. `cd ~/.ssh` 如果报错执行第 2 步，如果不报错执行第 3 步。
+2. `ssh-keygen -t rsa -b 4096 -C "<邮箱>"` 创建 SSH 密钥
+3. `cd ~/.ssh`再`cat id_rsa.pub` 复制公钥内容
+4. GitHub -> Settings -> SSH and GPG keys -> New SSH key -> 粘贴
+5. `ssh -T git@github.com` 检验是否设置成功（第 1 次需输入 yes）
+6. `git remote -v` 检查远程仓库 URL
+7. `git remote set-url origin git@github.com:<http的URL>` 修改为 SSH 地址
+8. 正常执行 git 操作
