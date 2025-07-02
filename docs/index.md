@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Welcome to Abies's Notebook ~
 
 <div class="grid cards" markdown>

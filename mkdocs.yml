@@ -60,7 +60,8 @@ hooks:
   - docs/scripts/hooks/reading_time.py
 
 nav:
-  - 介绍:
+  - Home:
+      - Homepage: index.md
       - Notebook介绍: 介绍/Notebook介绍.md
   - 碎碎念:
       - Git: 自学记录/Git/git.md
@@ -93,6 +94,8 @@ nav:
   - Noflower 的笔记:
       - Computer Vision （进行中）: NoflowersNotes/ComputerVision/ComputerVision.md
       - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
+  - Abies 的平行笔记:
+      - GAMES101(进行中: AbiesNotes/图形学入门/games101.md
 
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
@@ -217,6 +220,7 @@ extra_css:
   # - stylesheets/card2.css
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/card2.css
   - stylesheets/customize.css #按钮圆角化
+  - stylesheets/homepage.css  # 首页居中
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/customize.css  #按钮圆角化
   # - stylesheets/flink.css
   # - stylesheets/bannerSlider.css
