@@ -48,7 +48,7 @@ class 选择器用来给一组 HTML 元素统一设置样式的。和 id 不同�
 其中`rel`表示这个链接的是一个“样式表”文件（stylesheet），`type`表示这个文件是 CSS 类型（可以省略，不强制），`herf`指定要加载的 CSS 文件路径，比如 mystyle.css 是同目录下的文件。  
 样式表文件的示例：
 
-```
+```css
 hr {color:sienna;}
 p {margin-left:20px;}
 body {background-image:url;}
@@ -56,7 +56,7 @@ body {background-image:url;}
 
 ### 内部样式表
 
-当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 <style> 标签在文档头部定义内部样式表。  
+当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 `<style>` 标签在文档头部定义内部样式表。  
 示例：
 
 ```html

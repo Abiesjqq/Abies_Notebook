@@ -34,15 +34,15 @@ theme:
     - navigation.prune # 只渲染可见导航项
     - navigation.tracking # 滚动时URL锚点自动更新
     - navigation.tabs # 一级导航显示为顶部Tab
-    - navigation.tabs.sticky  # Tab栏吸顶
+    - navigation.tabs.sticky # Tab栏吸顶
     # - navigation.sections # 侧边栏分组
     - navigation.top # 返回顶部按钮
-    # - navigation.footer # 页脚显示在侧边栏
+    - navigation.footer # 页脚显示在侧边栏
     - search.suggest # 搜索建议
     - search.highlight # 搜索高亮
     - search.share # 搜索结果分享
     - toc.follow # 目录跟随滚动
-    # - toc.integrate # 目录集成到侧边栏
+    - toc.integrate # 目录集成到侧边栏
     - navigation.expand # 默认展开所有目录
     - navigation.indexes # 支持节索引页
     - content.tabs.link # 支持标签页链接
@@ -98,7 +98,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Abiesjqq
-      name: Abie on Github
+      name: Abies on Github
     - icon: fontawesome/brands/github
       link: https://github.com/Noflowerzzk
       name: Noflower on Github
@@ -176,7 +176,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator:
         !!python/name:pymdownx.emoji.to_svg # 用 SVG 图标显示 emoji
-
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_javascript:
   # - javascripts/extra.js
