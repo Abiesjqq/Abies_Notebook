@@ -30,8 +30,9 @@ git push -u origin main        # 推送到 GitHub 并绑定远程主分支
 ```
 
 ??? info "注意"
-如果本地和远程同时对某个文件更改，可能因为 error: Your local changes to the following files would be overwritten by merge 导致无法拉取。  
- 可以按以下方法执行：
+    如果本地和远程同时对某个文件更改，可能因为 error: Your local changes to the following files would be overwritten by merge 导致无法拉取。  
+ 
+可以按以下方法执行：
 
 1.  `git stash` 保存本地改动
 2.  `git pull origin main` 拉取远程代码
