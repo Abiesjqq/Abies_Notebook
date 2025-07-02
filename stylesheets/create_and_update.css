@@ -10,3 +10,17 @@
 /*.md-icon {*/
 /*    color: darkgrey !important;*/
 /*}*/
+
+.md-typeset a.md-author img {
+    filter: none !important;
+    opacity: 1 !important;
+    border-radius: 100%;
+    transition: transform 150ms ease, filter 125ms ease !important;
+    transform: scale(1);
+}
+
+.md-typeset a.md-author:hover img {
+    transform: scale(1.08);
+    filter: none !important;
+    opacity: 1 !important;
+}
