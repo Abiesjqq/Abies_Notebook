@@ -1,5 +1,6 @@
 site_name: Abies's Notebook
-site_url: https://abiesjqq.github.io/Abies_Notebook/
+repo_url: https://github.com/Abiesjqq/Abies_Notebook
+repo_name: Abies_Notebook
 theme:
   name: material
   custom_dir: docs/scripts
@@ -235,15 +236,15 @@ extra_css:
   # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
   # - stylesheets/timeline.css
   # - stylesheets/LiquidGlass.css
-# plugins:
-#   - search
-#   - git-committers:
-#       enabled: true
-#       #    enabled: !ENV [ git-committers, false ]
-#       repository: Abiesjqq/Abies_Notebook
-#       branch: main
-#   - git-revision-date-localized:
-#       enabled: true
-#       #    enabled: !ENV [ git-revision-date-localized, false ]
-#       type: iso_date
-#       enable_creation_date: true
+plugins:
+  - search
+  - git-committers:
+      enabled: true
+      #    enabled: !ENV [ git-committers, false ]
+      repository: Abiesjqq/Abies_Notebook
+      branch: main
+  - git-revision-date-localized:
+      enabled: true
+      #    enabled: !ENV [ git-revision-date-localized, false ]
+      type: iso_date
+      enable_creation_date: true
