@@ -11,13 +11,15 @@
 /*    color: darkgrey !important;*/
 /*}*/
 
-/* 始终使用彩色头像（包括非 hover 状态） */
-.md-contributors__item .md-contributor__avatar {
+/* 默认彩色头像，正常大小 */
+.md-author img {
     filter: none !important;
-    transition: none !important; /* 避免 hover 动画 */
+    transform: scale(1);
+    transition: transform 0.2s ease, filter 0.2s ease !important;
 }
 
-/* 防止 hover 时恢复彩色造成“闪一下”的动画 */
-.md-contributors__item:hover .md-contributor__avatar {
+/* 悬停时彩色并轻微放大 */
+.md-author:hover img {
     filter: none !important;
+    transform: scale(1.08);
 }
