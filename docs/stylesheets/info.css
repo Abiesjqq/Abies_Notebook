@@ -1,18 +1,20 @@
-/* 自定义阅读信息 admonition 颜色 */
 .admonition.info.reading-info {
-    border: none !important; /* 绿色边框 */
-    background-color: transparent !important; /* 浅绿色背景 */
-    color: darkgrey !important; /* 深绿色文字 */
+    border: none !important; 
+    background-color: transparent !important;
+    color: darkgrey !important;
     box-shadow: none !important;
     /*padding: 0 !important;*/
 }
 
-/* 修改 info 图标颜色 */
 .admonition.info.reading-info > .admonition-title::before {
     color: #4caf50 !important;
 }
 
 .admonition.info.reading-info > .admonition-title {
     display: none !important;
+}
+
+.md-contributor__avatar {
+    filter: none !important;
 }
 

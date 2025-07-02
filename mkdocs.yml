@@ -220,7 +220,7 @@ extra_css:
   # - stylesheets/card2.css
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/card2.css
   - stylesheets/customize.css #按钮圆角化
-  - stylesheets/homepage.css  # 首页居中
+  # - stylesheets/homepage.css  # 首页居中
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/customize.css  #按钮圆角化
   # - stylesheets/flink.css
   # - stylesheets/bannerSlider.css
@@ -240,6 +240,8 @@ extra_css:
   # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
   # - stylesheets/timeline.css
   # - stylesheets/LiquidGlass.css
+
+  
 plugins:
   - search
   - git-committers:
