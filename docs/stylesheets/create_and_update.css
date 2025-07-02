@@ -11,15 +11,15 @@
 /*    color: darkgrey !important;*/
 /*}*/
 
-/* 默认彩色头像，正常大小 */
-.md-author img {
-    filter: none !important;
+.md-typeset a.md-author img {
+    border-radius: 100%;
+    filter: none !important; /* ✅ 彩色 + 不透明 */
     transform: scale(1);
-    transition: transform 0.2s ease, filter 0.2s ease !important;
+    transition: transform 150ms ease, filter 125ms ease !important;
 }
 
-/* 悬停时彩色并轻微放大 */
-.md-author:hover img {
+/* 悬停时放大 + 保持彩色 */
+.md-typeset a.md-author:hover img {
     filter: none !important;
     transform: scale(1.08);
 }
