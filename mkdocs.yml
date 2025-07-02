@@ -30,7 +30,7 @@ theme:
   features:
     - announce.dismiss # 可关闭公告栏
     - navigation.instant # 页面无刷新切换
-    # - header.autohide  # 自动隐藏头部
+    - header.autohide  # 自动隐藏头部
     - navigation.instant.progress # 页面切换进度条
     - navigation.prune # 只渲染可见导航项
     - navigation.tracking # 滚动时URL锚点自动更新
@@ -240,6 +240,8 @@ extra_css:
   # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
   # - stylesheets/timeline.css
   # - stylesheets/LiquidGlass.css
+  - https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined
+  
 
   
 plugins:

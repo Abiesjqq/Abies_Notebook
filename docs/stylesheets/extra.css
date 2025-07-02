@@ -117,66 +117,7 @@
   .heart {
     animation: heart 1000ms infinite;
   }
-  
-  :root {
-    --md-admonition-icon--pied-piper: url("data:image/svg+xml,%3Csvg width='30.000000' height='30.000000' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdesc%3E Created with Pixso. %3C/desc%3E%3Cdefs%3E%3CclipPath id='clip103_2030'%3E%3Crect id='icon' width='30.000000' height='30.000000' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23clip103_2030)'%3E%3Cpath id='icon' d='M25.8 5.40002L25.8 24.6L4.20001 24.6L4.20001 5.40002L25.8 5.40002ZM9.60001 10.8L13.8 15L9.60001 19.2M15.6 19.2L21.6 19.2' stroke='%23101112' stroke-width='1.200000'/%3E%3C/g%3E%3C/svg%3E%0A");
-  }
-  
-  .md-typeset .admonition.pied-piper,
-  .md-typeset details.pied-piper {
-    border-color: rgb(43, 155, 70);
-    font-size: large;
-  
-  }
-  
-  .md-typeset .pied-piper>.admonition-title,
-  .md-typeset .pied-piper>summary {
-    background-color: rgba(43, 155, 70, 0.1);
-  }
-  
-  .md-typeset .pied-piper>.admonition-title::before,
-  .md-typeset .pied-piper>summary::before {
-    background-color: rgb(43, 155, 70);
-    -webkit-mask-image: var(--md-admonition-icon--pied-piper);
-    mask-image: var(--md-admonition-icon--pied-piper);
-  }
-  
-  
-  :root {
-  
-    --md-admonition-icon--pied-piper1: url("data:image/svg+xml,%3Csvg width='30.000000' height='30.000000' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdesc%3E Created with Pixso. %3C/desc%3E%3Cdefs%3E%3CclipPath id='clip103_2030'%3E%3Crect id='icon' width='30.000000' height='30.000000' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23clip103_2030)'%3E%3Cpath id='icon' d='M25.8 5.40002L25.8 24.6L4.20001 24.6L4.20001 5.40002L25.8 5.40002ZM9.60001 10.8L13.8 15L9.60001 19.2M15.6 19.2L21.6 19.2' stroke='%23101112' stroke-width='1.200000'/%3E%3C/g%3E%3C/svg%3E%0A");
-  }
-  
-  .md-typeset .admonition.pied-piper1,
-  .md-typeset details.pied-piper1 {
-    /* border-color: rgba(68,138,255,.1); */
-    font-size: large;
-    width: 100%;
-    /* border-radius:25px; */
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-  }
-  
-  .md-typeset .pied-piper1>.admonition-title,
-  .md-typeset .pied-piper1>summary {
-    background-color: linear-gradient(to right, rgba(238, 243, 254));
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    height: 45px;
-    width: auto;
-  
-  
-  }
-  
-  .md-typeset .pied-piper1>.admonition-title::before,
-  .md-typeset .pied-piper1>summary::before {
-    background-color: rgb(31, 31, 33);
-    -webkit-mask-image: var(--md-admonition-icon--pied-piper1);
-    mask-image: var(--md-admonition-icon--pied-piper1);
-  }
-  
+
   
   /* 滚动条 */
   .git-revision-date-localized-plugin { color: #608DBD; }
