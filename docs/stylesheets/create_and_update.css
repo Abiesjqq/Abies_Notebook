@@ -10,16 +10,3 @@
 /*.md-icon {*/
 /*    color: darkgrey !important;*/
 /*}*/
-
-.md-typeset a.md-author img {
-    border-radius: 100%;
-    filter: none !important; /* ✅ 彩色 + 不透明 */
-    transform: scale(1);
-    transition: transform 150ms ease, filter 125ms ease !important;
-}
-
-/* 悬停时放大 + 保持彩色 */
-.md-typeset a.md-author:hover img {
-    filter: none !important;
-    transform: scale(1.08);
-}
