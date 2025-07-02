@@ -1,0 +1,33 @@
+/* .md-sidebar--secondary:empty {
+  display: none !important;
+}
+
+.md-nav--secondary:empty {
+  display: none !important;
+}
+
+[data-md-page="index"] .md-sidebar--primary {
+  display: none !important;
+}
+
+.home-page .md-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; 
+}
+
+[data-md-page="index"] .md-main__inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+} */
+
+[data-md-page="index"] .md-grid {
+  grid-template-columns: 1fr !important;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+[data-md-page="index"] .md-sidebar--primary {
+  display: none !important;
+}
