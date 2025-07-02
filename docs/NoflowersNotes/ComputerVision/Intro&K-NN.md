@@ -1,8 +1,4 @@
-## Stanford - Spring 2025
-
-### Image Classification
-
-#### Ways to compare images
+## Ways to compare images
 
 - L1 distances: $d_1(I_1, I_2) = \sum_p \vert I_1^p - I_2^p \vert$
 - L2 distances: $d_2(I_1, I_2) = \sqrt{\sum_p ( I_1^p - I_2^p )^2}$
@@ -43,7 +39,7 @@ class NearestNeighbor(object):
 
 It's bad: we want classifiers that are fast at prediction and slow for training
 
-#### K-Neatest Neighbours
+## K-Neatest Neighbours
 The idea is very simple: instead of finding the single closest image in the training set, we will find the top k closest images, and have them vote on the label of the test image.
 Higher values of k have a smoothing effect that makes the classifier more resistant to outliers
 
@@ -53,7 +49,8 @@ Ideas on the hyperparameters
 - ❌ Choose hyperparameters working best on the data. K = 1 always works best on the training data.
 - ❌ Choose hyperparameters working best on the test data. No idea how it will perform on new data.
 
-> Whenever you’re designing Machine Learning algorithms, you should think of the test set as a very precious resource that should ideally never be touched until one time at the very end.
+!!! normal-comment "Note"
+    Whenever you’re designing Machine Learning algorithms, you should think of the test set as a very precious resource that should ideally never be touched until one time at the very end.
 
 - Split data into **train**, **validation**, **test** sets, train and test on train and validation sets and showcase the performance on the test set. (Test at the last time.)
 
@@ -84,66 +81,10 @@ for k in [1, 3, 5, 10, 20, 50, 100]:
 
 - **Cross-Validation** (use less on CV). Split data into folds, try each fold as validation and average the results.
 
-> For example, in 5-fold cross-validation, we would split the training data into 5 equal folds, use 4 of them for training, and 1 for validation. We would then iterate over which fold is the validation fold, evaluate the performance, and finally average the performance across the different folds.
+!!! normal-comment "Example"
+    For example, in 5-fold cross-validation, we would split the training data into 5 equal folds, use 4 of them for training, and 1 for validation. We would then iterate over which fold is the validation fold, evaluate the performance, and finally average the performance across the different folds.
 
-!!! tip
+!!! remarks "Tip"
     In practice, people prefer to avoid cross-validation in favor of having a single validation split, since cross-validation can be computationally expensive.
 
 K-Nearest Neighbor on images never used: very slow at test time, and distance matrix on pixels are not informative. And our classifier should densely cover the space, which is harder when the dimension goes high. (Curse of dimensionality)
-
-#### Parametric Approach
-
-$$
-input: x \rightarrow f(x, W[, b]) \rightarrow \text{10 numbers giving class scores}
-$$
-
-e.g.
-
-$$
-f(x, W, b) = W \text{vec}(x) + b
-$$
-
-- Hard cases: Cases with no linear boundaries.
-
-#### Loss function
-
-Given a dataset of examples $\{(x_i, y_i)\}_{i = 1}^n$, loss over the dataset is a sum of loss over examples:
-
-$$
-L = \frac{1}{N}\sum_{i}L_i(f(x_i, W), y_i)
-$$
-
-##### Multiclass SVM Loss
-
-$y_i$ are integers, $s_i$ is the $j$-th class prediction of data $x_i$, $L_i = \sum_{j \neq y_i}\max \{0, s_j - s_{y_i} + 1\}$  (s -> score).
-$1$ here is a threshold, but it can be chosen randomly.
-
-![image.png](resources/img.png)
-
-
-```python
-def L_i_vectorized(x, y, W):
-    scores = W.dot(x)
-    margins = np.maximum(0, scores - scores[y] + 1)
-    margins[y] = 0
-    loss_i = np.sum(margins)
-    return loss_i
-```
-
-##### The regularization
-
-Model should be simple, so it works on test data. (防止过拟合)
-
-$$
-L(W) = \frac{1}{N}\sum_{i = 1}^{N}L_i(f(x_i, W), y_i) + \lambda R(W)
-$$
-
-$\lambda$: regularization strength.
-$R(W)$ allows the model to choose a simple model (It can be understood as reducing the degree of the fitted curve)
-
-- L2 regularization: $R(W) = \Vert W \Vert_F$
-- L1 regularization: $R(W) = \Vert W \Vert_1$
-- Elastic net: $R(W) = \beta \Vert W \Vert_F + \Vert W \Vert_1$
-- Max norm regularization
-- Dropout
-- Fancier

@@ -92,7 +92,9 @@ nav:
           - 15.5 一些代码: 课程笔记/数据结构基础/15.5 一些代码.md
       - C语言程序设计(未整理): 课程笔记/C语言程序设计/CNote.md
   - Noflower 的笔记:
-      - Computer Vision （进行中）: NoflowersNotes/ComputerVision/ComputerVision.md
+      - Computer Vision （进行中）:
+          - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
+          - Loss Functions: NoflowersNotes/ComputerVision/Loss Functions.md
       - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
   - Abies 的平行笔记:
       - GAMES101(进行中: AbiesNotes/图形学入门/games101.md
@@ -188,7 +190,7 @@ extra_javascript:
   # - javascripts/extra2.js
   # - javascripts/bannerSlider.js
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js # extra的cdn
-
+  - javascripts/animate-details.js
   - javascripts/mathjax.js
   - javascripts/cursor.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
