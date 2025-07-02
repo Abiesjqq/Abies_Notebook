@@ -10,3 +10,14 @@
 /*.md-icon {*/
 /*    color: darkgrey !important;*/
 /*}*/
+
+/* 始终使用彩色头像（包括非 hover 状态） */
+.md-contributors__item .md-contributor__avatar {
+    filter: none !important;
+    transition: none !important; /* 避免 hover 动画 */
+}
+
+/* 防止 hover 时恢复彩色造成“闪一下”的动画 */
+.md-contributors__item:hover .md-contributor__avatar {
+    filter: none !important;
+}
