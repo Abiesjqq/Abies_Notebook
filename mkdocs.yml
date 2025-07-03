@@ -66,8 +66,12 @@ nav:
   - 碎碎念:
       - Git: 自学记录/Git/git.md
       - MkDocs: 自学记录/MkDocs/mkdocs.md
-      - Numpy & Pandas: 自学记录/Numpy & Pandas/Numpy & Pandas.md
-      - Matplotlib: 自学记录/Matplotlib/Matplotlib.md
+      - Python:
+          - Numpy & Pandas: 自学记录/Python/Numpy & Pandas/Numpy & Pandas.md
+          - Matplotlib: 自学记录/Python/Matplotlib/Matplotlib.md
+          - Scikit-learn:
+              - 入门: 自学记录/Python/Scikit-learn/入门/入门.md
+              - 监督学习与无监督学习: 自学记录/Python/Scikit-learn/监督学习与无监督学习/监督学习与无监督学习.md
       - CSS: 自学记录/CSS/css_learning.md
       - JavaScript: 自学记录/JavaScript/js_learning.md
   - 课程笔记:
@@ -243,9 +247,9 @@ extra_css:
   # - stylesheets/timeline.css
   # - stylesheets/LiquidGlass.css
   - https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined
-  
 
-  
+
+
 plugins:
   - search
   - git-committers:

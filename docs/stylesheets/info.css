@@ -36,7 +36,7 @@
 }
 
 /* 备注 */
-
+/*remarks*/
 .md-typeset .admonition.remarks,
 .md-typeset details.remarks {
     border: none;
@@ -62,7 +62,7 @@
 
 
 /* 警告提示框 */
-
+/*warning-box*/
 .md-typeset .admonition.warning-box,
 .md-typeset details.warning-box {
     border: none;
@@ -87,6 +87,7 @@
 }
 
 /* 普通提醒 */
+/*normal-comment*/
 .md-typeset .admonition.normal-comment,
 .md-typeset details.normal-comment {
     border: none;
