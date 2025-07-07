@@ -71,7 +71,12 @@ nav:
           - Matplotlib: 自学记录/Python/Matplotlib/Matplotlib.md
           - Scikit-learn:
               - 入门: 自学记录/Python/Scikit-learn/入门/入门.md
+              - 数据预处理: 自学记录/Python/Scikit-learn/数据预处理/数据预处理.md
               - 监督学习与无监督学习: 自学记录/Python/Scikit-learn/监督学习与无监督学习/监督学习与无监督学习.md
+              - 支持向量机(SVM): 自学记录/Python/Scikit-learn/支持向量机/支持向量机.md
+              - 随机森林: 自学记录/Python/Scikit-learn/随机森林/随机森林.md
+              - 主成分分析: 自学记录/Python/Scikit-learn/主成分分析/主成分分析.md
+              - K-Means 聚类: 自学记录/Python/Scikit-learn/K-Means聚类/K-Means聚类.md
       - CSS: 自学记录/CSS/css_learning.md
       - JavaScript: 自学记录/JavaScript/js_learning.md
   - 课程笔记:
