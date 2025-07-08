@@ -102,6 +102,7 @@
   
     border-radius: 0.4rem;
     overflow: hidden;
+    /* overflow: auto; */
     position: relative;
   
     /* 居中 */
@@ -255,6 +256,4 @@ img.img1 {
   margin-right: 30px;    
   margin-bottom: 10px;   */
 }
-
-
 

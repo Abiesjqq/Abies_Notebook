@@ -1,18 +1,192 @@
-/* 自定义阅读信息 admonition 颜色 */
 .admonition.info.reading-info {
-    border: none !important; /* 绿色边框 */
-    background-color: transparent !important; /* 浅绿色背景 */
-    color: darkgrey !important; /* 深绿色文字 */
+    border: none !important;
+    background-color: transparent !important;
+    color: darkgrey !important;
     box-shadow: none !important;
-    /*padding: 0 !important;*/
+    /* padding: 0 !important; */
 }
 
-/* 修改 info 图标颜色 */
 .admonition.info.reading-info > .admonition-title::before {
     color: #4caf50 !important;
 }
 
 .admonition.info.reading-info > .admonition-title {
     display: none !important;
+}
+
+.admonition.info {
+    border: none !important;
+    border-radius: 0.5rem !important;
+    background-color: transparent !important;
+    color: rgb(105, 100, 100) !important;
+    overflow: hidden;
+}
+
+.admonition.info > .admonition-title::before {
+    border-top-left-radius: 0.5rem !important;
+    border-top-right-radius: 0.5rem !important;
+}
+
+
+:root {
+    --md-admonition-icon--normal-comment: url("data:image/svg+xml,%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M7%2021V18M14%2021V17.6599C14%2016.6974%2014.6855%2015.8715%2015.6314%2015.6941L21.1085%2014.6672C21.6254%2014.5702%2022%2014.1189%2022%2013.5929C22%2012.9893%2021.5107%2012.5%2020.9071%2012.5H9.5C6.18629%2012.5%203.5%2015.1863%203.5%2018.5V21M21%208L19%206M21%208L19%2010.2592M21%208H16.5M14%206.5C14%208.70914%2012.2091%2010.5%2010%2010.5C7.79086%2010.5%206%208.70914%206%206.5C6%204.29086%207.79086%202.5%2010%202.5C12.2091%202.5%2014%204.29086%2014%206.5Z%22%20stroke%3D%22%23000000%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.4%22/%3E%3C/svg%3E");
+    --md-admonition-icon--warning-box: url("data:image/svg+xml,%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M4%2021V18.5C4%2015.4624%206.46243%2013%209.5%2013H15M8%2021V18M16.5%2017V15M16.5%2019.2V19M16%206.5C16%208.70914%2014.2091%2010.5%2012%2010.5C9.79086%2010.5%208%208.70914%208%206.5C8%204.29086%209.79086%202.5%2012%202.5C14.2091%202.5%2016%204.29086%2016%206.5ZM12.309%2021H20.691C21.0627%2021%2021.3044%2020.6088%2021.1382%2020.2764L16.9472%2011.8944C16.763%2011.5259%2016.237%2011.5259%2016.0528%2011.8944L11.8618%2020.2764C11.6956%2020.6088%2011.9373%2021%2012.309%2021Z%22%20stroke%3D%22%23000000%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.4%22/%3E%3C/svg%3E");
+    --md-admonition-icon--remarks: url("data:image/svg+xml,%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M4%2021V18.5C4%2015.4624%206.46243%2013%209.5%2013H12.8513C15.307%2013%2017.4651%2011.3721%2018.1397%209.01097L18.7454%206.89097C18.8961%206.3636%2019.3781%206%2019.9266%206C20.7258%206%2021.3122%206.75106%2021.1184%207.5264L19.3638%2014.5448C19.15%2015.4%2018.3816%2016%2017.5%2016M8%2021V18M16%206.5C16%208.70914%2014.2091%2010.5%2012%2010.5C9.79086%2010.5%208%208.70914%208%206.5C8%204.29086%209.79086%202.5%2012%202.5C14.2091%202.5%2016%204.29086%2016%206.5Z%22%20stroke%3D%22%23000000%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%221.4%22/%3E%3C/svg%3E");
+    --md-admonition-icon--pied-piper1: url("data:image/svg+xml,%3Csvg width='30.000000' height='30.000000' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdesc%3E Created with Pixso. %3C/desc%3E%3Cdefs%3E%3CclipPath id='clip103_2030'%3E%3Crect id='icon' width='30.000000' height='30.000000' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23clip103_2030)'%3E%3Cpath id='icon' d='M25.8 5.40002L25.8 24.6L4.20001 24.6L4.20001 5.40002L25.8 5.40002ZM9.60001 10.8L13.8 15L9.60001 19.2M15.6 19.2L21.6 19.2' stroke='%23101112' stroke-width='1.200000'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+/* 备注 */
+/*remarks*/
+.md-typeset .admonition.remarks,
+.md-typeset details.remarks {
+    border: none;
+    border-radius: 0.5rem;
+    font-size: small;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.06);
+}
+
+.md-typeset .remarks > .admonition-title,
+.md-typeset .remarks > summary {
+    background-color: rgba(88, 247, 225, 0.18);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.md-typeset .remarks > .admonition-title::before,
+.md-typeset .remarks > summary::before {
+    background-color: rgb(108, 187, 162);
+    -webkit-mask-image: var(--md-admonition-icon--remarks);
+    mask-image: var(--md-admonition-icon--remarks);
+}
+
+
+/* 警告提示框 */
+/*warning-box*/
+.md-typeset .admonition.warning-box,
+.md-typeset details.warning-box {
+    border: none;
+    border-radius: 0.5rem;
+    font-size: small;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.06);
+}
+
+.md-typeset .warning-box > .admonition-title,
+.md-typeset .warning-box > summary {
+    background-color: rgba(254, 93, 93, 0.18);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.md-typeset .warning-box > .admonition-title::before,
+.md-typeset .warning-box > summary::before {
+    background-color: rgba(144, 0, 33, 0.5);
+    -webkit-mask-image: var(--md-admonition-icon--warning-box);
+    mask-image: var(--md-admonition-icon--warning-box);
+}
+
+/* 普通提醒 */
+/*normal-comment*/
+.md-typeset .admonition.normal-comment,
+.md-typeset details.normal-comment {
+    border: none;
+    border-radius: 0.5rem;
+    font-size: small;
+    overflow: hidden;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.06);
+}
+
+.md-typeset .normal-comment > .admonition-title,
+.md-typeset .normal-comment > summary {
+    background-color: rgba(252, 219, 89, 0.18);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.md-typeset .normal-comment > .admonition-title::before,
+.md-typeset .normal-comment > summary::before {
+    background-color: rgba(143, 75, 40, 0.5);
+    -webkit-mask-image: var(--md-admonition-icon--normal-comment);
+    mask-image: var(--md-admonition-icon--normal-comment);
+}
+
+.md-typeset .admonition.pied-piper1,
+.md-typeset details.pied-piper1 {
+    /* border-color: rgba(68,138,255,.1); */
+    font-size: large;
+    width: 100%;
+    /* border-radius:25px; */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.md-typeset .pied-piper1 > .admonition-title,
+.md-typeset .pied-piper1 > summary {
+    background: linear-gradient(to right, rgba(238, 243, 254));
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 45px;
+    width: auto;
+}
+
+.md-typeset .pied-piper1 > .admonition-title::before,
+.md-typeset .pied-piper1 > summary::before {
+    background-color: rgb(31, 31, 33);
+    -webkit-mask-image: var(--md-admonition-icon--pied-piper1);
+    mask-image: var(--md-admonition-icon--pied-piper1);
+}
+
+.md-typeset .admonition.pied-piper1,
+.md-typeset details.pied-piper1 {
+    /* border-color: rgba(68,138,255,.1); */
+    font-size: large;
+    width: 100%;
+    /* border-radius:25px; */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.md-typeset .pied-piper1 > .admonition-title,
+.md-typeset .pied-piper1 > summary {
+    background: linear-gradient(to right, rgba(238, 243, 254));
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 45px;
+    width: auto;
+}
+
+.md-typeset .pied-piper1 > .admonition-title::before,
+.md-typeset .pied-piper1 > summary::before {
+    background-color: rgb(31, 31, 33);
+    -webkit-mask-image: var(--md-admonition-icon--pied-piper1);
+    mask-image: var(--md-admonition-icon--pied-piper1);
+}
+
+/* 动画关键帧：内容滑入 */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-0.5em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 内容展开时的动画应用 */
+.md-typeset details[open] > *:not(summary) {
+    animation: fadeSlideIn 0.4s ease-out;
+}
+
+/* summary 本身的过渡效果（比如背景颜色等） */
+.md-typeset details > summary {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
 }
 

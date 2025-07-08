@@ -275,8 +275,8 @@ plugins:
       post_date_format: full
       archive_toc: true
       categories_toc: true
-      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
-      pagination: true
-      pagination_keep_content: true
-      draft_if_future_date: true
+#      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+#      pagination: true
+#      pagination_keep_content: true
+#      draft_if_future_date: true
       pagination_per_page: 5
