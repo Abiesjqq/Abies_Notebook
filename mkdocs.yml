@@ -30,7 +30,7 @@ theme:
   features:
     - announce.dismiss # 可关闭公告栏
     - navigation.instant # 页面无刷新切换
-    - header.autohide  # 自动隐藏头部
+    - header.autohide # 自动隐藏头部
     - navigation.instant.progress # 页面切换进度条
     - navigation.prune # 只渲染可见导航项
     - navigation.tracking # 滚动时URL锚点自动更新
@@ -193,6 +193,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator:
         !!python/name:pymdownx.emoji.to_svg # 用 SVG 图标显示 emoji
+
   - pymdownx.tabbed:
       alternate_style: true
 
@@ -208,7 +209,7 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/busuanzi.pure.mini.js
-#  - https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/dist/busuanzi.pure.mini.js
+  #  - https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/dist/busuanzi.pure.mini.js
   # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/mathjax.js
   # - https://polyfill.io/v3/polyfill.min.js?features=es6
 
@@ -258,28 +259,26 @@ extra_css:
   # - stylesheets/LiquidGlass.css
   - https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined
 
-
-
-# plugins:
-#   - search
-#   - git-committers:
-#       enabled: true
-#       #    enabled: !ENV [ git-committers, false ]
-#       repository: Abiesjqq/Abies_Notebook
-#       branch: main
-#   - git-revision-date-localized:
-#       enabled: true
-#       #    enabled: !ENV [ git-revision-date-localized, false ]
-#       type: iso_date
-#       enable_creation_date: true
-#   - blog:
-#       blog_dir: notices
-#       blog_toc: true
-#       post_date_format: full
-#       archive_toc: true
-#       categories_toc: true
-# #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
-# #      pagination: true
-# #      pagination_keep_content: true
-# #      draft_if_future_date: true
-#       pagination_per_page: 5
+plugins:
+  - search
+  - git-committers:
+      enabled: true
+      #    enabled: !ENV [ git-committers, false ]
+      repository: Abiesjqq/Abies_Notebook
+      branch: main
+  - git-revision-date-localized:
+      enabled: true
+      #    enabled: !ENV [ git-revision-date-localized, false ]
+      type: iso_date
+      enable_creation_date: true
+  - blog:
+      blog_dir: notices
+      blog_toc: true
+      post_date_format: full
+      archive_toc: true
+      categories_toc: true
+      #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+      #      pagination: true
+      #      pagination_keep_content: true
+      #      draft_if_future_date: true
+      pagination_per_page: 5
