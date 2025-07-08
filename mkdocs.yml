@@ -63,7 +63,8 @@ nav:
   - Home:
       - Homepage: index.md
       - Notebook介绍: 介绍/Notebook介绍.md
-      - 通知公告: notices/
+      - 通知公告:
+          - 通知公告: notices/index.md
   - 碎碎念:
       - Git: 自学记录/Git/git.md
       - MkDocs: 自学记录/MkDocs/mkdocs.md
