@@ -19,3 +19,7 @@ hide:
     - [原生版C程笔记](课程笔记/C语言程序设计/CNote.md)
 
 </div>
+
+<span id="busuanzi_container_site_pv" style="font-size: 0.9em;">
+  总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
