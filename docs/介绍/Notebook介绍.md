@@ -20,11 +20,55 @@
     2
     3
 
+!!! examples "examples"
+
+    1
+    2
+    3
+
+
 !!! info readinginfo "readinginfo测试"
 
     1
     2
     3
+
+
+标签页：
+
+
+=== "Python"
+
+    ```python
+    print("Hello, Python!")
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    console.log("Hello, JavaScript!");
+    ```
+
+=== "C++"
+
+    ```cpp
+    std::cout << "Hello, C++!" << std::endl;
+    ```
+
+
+提示框中的标签页：
+
+!!! examples "Hello World"
+
+    === "题目"
+
+        1
+    
+    === "解析"
+
+        2  
+        3  
+        4  
 
 
 ![示例](../images/ac06.png){.img1 style="width: 25%;"}
