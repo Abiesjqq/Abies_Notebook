@@ -6,6 +6,8 @@ authors:
   - Noflower
 categories:
   - \#规范
+links:
+  - 自学记录/Python/Matplotlib/Matplotlib.md
 ---
 
 为了数模比赛以及小组作业报告/论文格式统一美观，使用 Matplotlib 绘图建议使用以下规范：
