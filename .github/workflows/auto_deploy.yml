@@ -11,21 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: write  # 允许写入 gh-pages 分支
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # 确保拿到完整历史以便插件获取 git info
 
-      - uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
-
-      - uses: actions/cache@v4
-        with:
-          key: ${{ github.ref }}
-          path: .cache
 
       - name: Install dependencies
         run: |
@@ -33,15 +30,17 @@ jobs:
           pip install mkdocs-git-revision-date-localized-plugin
           pip install mkdocs-git-authors-plugin
           pip install mkdocs-git-committers-plugin-2
-          pip install mkdocs-blog-plugin     
+          pip install mkdocs-blog-plugin
 
-
-      - name: Configure Git
+      - name: Configure Git user
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Deploy with MkDocs
+      - name: Build MkDocs site (clean)
+        run: mkdocs build --clean
+
+      - name: Deploy site to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mkdocs gh-deploy --force
