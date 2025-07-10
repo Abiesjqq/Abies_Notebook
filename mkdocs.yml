@@ -112,6 +112,7 @@ nav:
           - Lecture 01 Overview of Computer Graphics: AbiesNotes/图形学入门/Lecture 01 Overview of Computer Graphics.md
           - Lecture 02 Review of Linear Algebra: AbiesNotes/图形学入门/Lecture 02 Review of Linear Algebra.md
           - Lecture 03 Transformation: AbiesNotes/图形学入门/Lecture 03 Transformation.md
+          - Lecture 04 Transformations Cont.: AbiesNotes/图形学入门/Lecture 04 Transformations Cont.md
 
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
