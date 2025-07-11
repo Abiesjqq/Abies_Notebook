@@ -114,7 +114,11 @@ nav:
           - Gradient Descent: NoflowersNotes/ComputerVision/Gradient_Descent/Gradient_Descent.md
       - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
   - Abies 的平行笔记:
-      - GAMES101(进行中): AbiesNotes/图形学入门/games101.md
+      - GAMES101(进行中):
+          - Lecture 01 Overview of Computer Graphics: AbiesNotes/图形学入门/Lecture 01 Overview of Computer Graphics.md
+          - Lecture 02 Review of Linear Algebra: AbiesNotes/图形学入门/Lecture 02 Review of Linear Algebra.md
+          - Lecture 03 Transformation: AbiesNotes/图形学入门/Lecture 03 Transformation.md
+          - Lecture 04 Transformations Cont.: AbiesNotes/图形学入门/Lecture 04 Transformations Cont.md
 
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
