@@ -79,6 +79,11 @@ nav:
               - 随机森林: 自学记录/Python/Scikit-learn/随机森林/随机森林.md
               - 主成分分析: 自学记录/Python/Scikit-learn/主成分分析/主成分分析.md
               - K-Means 聚类: 自学记录/Python/Scikit-learn/K-Means聚类/K-Means聚类.md
+          - Pytorch:
+              - Tensors 入门: 自学记录/Python/PyTorch/Tensors入门/Tensors入门.md
+              - 线性回归和逻辑回归: 自学记录/Python/PyTorch/线性回归和逻辑回归/线性回归和逻辑回归.md
+              - MLP与CNN: 自学记录/Python/PyTorch/MLP与CNN/MLP与CNN.md
+              - RNN与DQN: 自学记录/Python/PyTorch/RNN与DQN/RNN与DQN.md
       - CSS: 自学记录/CSS/css_learning.md
       - JavaScript: 自学记录/JavaScript/js_learning.md
   - 课程笔记:
@@ -106,6 +111,7 @@ nav:
       - Computer Vision （进行中）:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
           - Loss Functions: NoflowersNotes/ComputerVision/Loss Functions.md
+          - Gradient Descent: NoflowersNotes/ComputerVision/Gradient_Descent/Gradient_Descent.md
       - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
   - Abies 的平行笔记:
       - GAMES101(进行中): AbiesNotes/图形学入门/games101.md
