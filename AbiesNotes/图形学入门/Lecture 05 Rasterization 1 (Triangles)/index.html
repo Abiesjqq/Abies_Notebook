@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Lecture%2002%20Review%20of%20Linear%20Algebra/">
+        <link rel="prev" href="../Lecture%2004%20Transformations%20Cont/">
       
       
-        <link rel="next" href="../Lecture%2004%20Transformations%20Cont/">
+        <link rel="next" href="../Lecture%2006%20Rasterization%202%20%28Antiliasing%29/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Lecture 03 Transformation - Abies's Notebook</title>
+        <title>Lecture 05 Rasterization 1 (Triangles) - Abies's Notebook</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#viewing-transformation" class="md-skip">
+        <a href="#some-basic-concepts" class="md-skip">
           跳转至
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 03 Transformation
+              Lecture 05 Rasterization 1 (Triangles)
             
           </span>
         </div>
@@ -818,30 +818,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Lecture 03 Transformation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Lecture%2003%20Transformation/" class="md-nav__link">
         
   
   
@@ -852,75 +832,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Viewing transformation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#homogeneous-coordinates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Homogeneous Coordinates
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Homogeneous Coordinates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2d-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D version
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3d-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      3D version
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#composing-transforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Composing Transforms
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -953,10 +864,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Lecture%2005%20Rasterization%201%20%28Triangles%29/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lecture 05 Rasterization 1 (Triangles)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -967,6 +898,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#some-basic-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some basic concepts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1029,173 +987,26 @@
   
 
 
-  <h1>Lecture 03 Transformation</h1>
+  <h1>Lecture 05 Rasterization 1 (Triangles)</h1>
 
 <div class="admonition remarks">
 <p class="admonition-title">Menu of this lecture</p>
 <ul>
-<li><a href="#viewing-transformation">2D transformations: rotation, scale, shear</a></li>
-<li><a href="#homogeneous-coordinates">Homogeneous coordinates</a></li>
-<li><a href="#composing-transforms">Composing transformation</a></li>
+<li>Some basic concepts</li>
+<li>Rasterization process</li>
+<li>Different raster displays</li>
 </ul>
 </div>
-<h3 id="viewing-transformation">Viewing transformation</h3>
-<p>Viewing transformation: 3D -&gt; 2D projection</p>
-<p><strong>Scale</strong></p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
-s_x &amp; 0 \\
-0 &amp; s_y
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-\]</div>
-<p>Multiplying a matrix on the left corresponds to performing a row operation.</p>
-<p><strong>Reflection</strong></p>
-<p>E.g. reflection about the y-axis:</p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
--1 &amp; 0 \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-\]</div>
-<p><strong>Sheer</strong></p>
-<p>Illustration of sheer tranformation:<br />
-<img alt="Sheer tranformation" src="../../../images/sheer%20illustration.png" style="width:500px" /></p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
-x+ay \\
-y
-\end{pmatrix}
-=\begin{pmatrix}
-1 &amp; a \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-\]</div>
-<p><strong>Rotation</strong></p>
-<p>By default, the rotation is around the origin.<br />
-<span class="arithmatex">\(R_{45}\)</span> refers to rotatiing 45 degrees counterclockwose about the origin. </p>
-<div class="arithmatex">\[
-R_{\theta}=\begin{pmatrix}
-\cos\theta &amp; -\sin\theta \\
-\sin\theta &amp; \cos\theta
-\end{pmatrix}
-\]</div>
-<h3 id="homogeneous-coordinates">Homogeneous Coordinates</h3>
-<p>Translation is not linear transform, so it cannot be represented in matrix form. 
-But we don't want it to be a special case, so homogeneous coordinates are used to represent all transformations. </p>
-<p>Add a third coordinate (w-coordinate), to represent the translation characters of points or vectors.  </p>
-<p><strong>Affine transformations:</strong><br />
-affine map = linear map + translation map  </p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\ y'
-\end{pmatrix}
-=\begin{pmatrix}
-a &amp; b \\
-c &amp; d
-\end{pmatrix}
-\begin{pmatrix}
-x \\ y
-\end{pmatrix}
-+\begin{pmatrix}
-t_x \\ t_y
-\end{pmatrix}
-\]</div>
-<h4 id="2d-version">2D version</h4>
-<ul>
-<li>2D point: <span class="arithmatex">\(\begin{pmatrix}x , y , 1 \end{pmatrix}^T\)</span></li>
-<li>2D vector:<span class="arithmatex">\(\begin{pmatrix}x , y , 0 \end{pmatrix}^T\)</span></li>
-</ul>
-<p>When <span class="arithmatex">\(w\neq 0\)</span>, 2D point <span class="arithmatex">\(\begin{pmatrix}x , y , w \end{pmatrix}^T\)</span> means <span class="arithmatex">\(\begin{pmatrix}x/w , y/w , 1 \end{pmatrix}^T\)</span></p>
-<p>(The w-coordinate of vectors are 0, which means vectors are translation invariant. By comparison, w-coordinate of points are 1)</p>
-<p><strong>Use homogeneous Coordinates to represent affine translations:</strong></p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\ y' \\ w'
-\end{pmatrix}
-=\begin{pmatrix}
-1 &amp; 0 &amp; t_x \\
-0 &amp; 1 &amp; t_y \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\ y \\ 1
-\end{pmatrix}
-=\begin{pmatrix}
-x+t_x \\ y+t_y \\ 1
-\end{pmatrix}
-\]</div>
-<p><strong>Properties:</strong> <br />
-1. The last row must be 0 0 1.<br />
-2. The top-left 2×2 matrix represents a linear transformation.<br />
-3. The rightmost column represents translation.
-4. Relations between points and vectors:
-   - vector + vector = vector
-   - point  - point  = vector
-   - point  + vector = point
-   - point  + point  = point</p>
-<p><strong>Scale:</strong></p>
-<div class="arithmatex">\[
-S(s_x, s_y)=\begin{pmatrix}
-s_x &amp; 0 &amp; 0 \\
-0 &amp; s_y &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><strong>Rotation:</strong></p>
-<div class="arithmatex">\[
-R(\alpha)=\begin{pmatrix}
-\cos\alpha &amp; -\sin\alpha &amp; 0 \\
-\sin\alpha &amp; \cos\alpha &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><strong>Translation:</strong></p>
-<div class="arithmatex">\[
-T(t_x, t_y)=\begin{pmatrix}
-1 &amp; 0 &amp; t_x \\
-0 &amp; 1 &amp; t_y \\ 
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><strong>Inverse transformations:</strong> <span class="arithmatex">\(M^{-1}\)</span></p>
-<p>Esp. matrix <span class="arithmatex">\(R_{\theta}\)</span> for rotation is orthogonal, so <span class="arithmatex">\(R_{-\theta}=R^{-1}=R^T\)</span>.</p>
-<h4 id="3d-version">3D version</h4>
-<ul>
-<li>3D point: <span class="arithmatex">\(\begin{pmatrix}x , y , z, 1 \end{pmatrix}^T\)</span></li>
-<li>3D vector:<span class="arithmatex">\(\begin{pmatrix}x , y , z, 0 \end{pmatrix}^T\)</span></li>
-</ul>
-<p>Use 4×4 matrix for affine transformations. </p>
-<h3 id="composing-transforms">Composing Transforms</h3>
-<p>All matrices are left-multiplied to the original coordinates, and are composed in the order of transformations from right to left.</p>
-<div class="admonition examples">
-<p class="admonition-title">Examples</p>
-<p>Transformations: A1 -&gt; A2 -&gt; ... -&gt; An<br />
-Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\end{pmatrix}\)</span></p>
-</div>
+<h2 id="some-basic-concepts">Some basic concepts</h2>
+<ol>
+<li>Aspect radio: width / height</li>
+<li>Field of view</li>
+<li>Screen: an array of pixels</li>
+<li>Resolution: size of the array</li>
+<li>Rasterize: drawing onto the screen</li>
+<li>Pixel: (for now, ) a little square with uniform color</li>
+</ol>
+<p>不想打字了，待补充</p>
 
 
 
@@ -1218,7 +1029,7 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月9日 06:25:52 UTC">2025-07-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月17日 09:01:11 UTC">2025-07-17</span>
   </span>
 
     
@@ -1228,7 +1039,7 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月9日 06:25:52 UTC">2025-07-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月17日 09:01:11 UTC">2025-07-17</span>
   </span>
 
     
@@ -1288,7 +1099,7 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../Lecture%2002%20Review%20of%20Linear%20Algebra/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 02 Review of Linear Algebra">
+          <a href="../Lecture%2004%20Transformations%20Cont/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 04 Transformations Cont.">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1298,20 +1109,20 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
                 上一页
               </span>
               <div class="md-ellipsis">
-                Lecture 02 Review of Linear Algebra
+                Lecture 04 Transformations Cont.
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Lecture%2004%20Transformations%20Cont/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 04 Transformations Cont.">
+          <a href="../Lecture%2006%20Rasterization%202%20%28Antiliasing%29/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 06 Rasterization 2 (Antiliasing)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Lecture 04 Transformations Cont.
+                Lecture 06 Rasterization 2 (Antiliasing)
               </div>
             </div>
             <div class="md-footer__button md-icon">
