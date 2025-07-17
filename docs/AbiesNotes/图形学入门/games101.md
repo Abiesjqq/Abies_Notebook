@@ -558,3 +558,6 @@ $$
     Solve the equations above:
     $$C=n+f, D=-nf$$
 
+# Lecture 05 Rasterization 1 (Triangles)
+
+# Lecture 06 Rasterization 2 (Antiliasing and Z-Buffering)
