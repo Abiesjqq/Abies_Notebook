@@ -31,6 +31,7 @@ jobs:
           pip install mkdocs-git-authors-plugin
           pip install mkdocs-git-committers-plugin-2
           pip install mkdocs-blog-plugin
+          pip install mkdocs-jupyter
 
       - name: Configure Git user
         run: |

@@ -112,6 +112,7 @@ nav:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
           - Loss Functions: NoflowersNotes/ComputerVision/Loss Functions.md
           - Gradient Descent: NoflowersNotes/ComputerVision/Gradient_Descent/Gradient_Descent.md
+          - CNN: NoflowersNotes/ComputerVision/CNN/CNN.md
       - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
   - Abies 的平行笔记:
       - GAMES101(进行中):
@@ -294,3 +295,4 @@ plugins:
       #      pagination_keep_content: true
       #      draft_if_future_date: true
       pagination_per_page: 5
+#  - mkdocs-jupyter # 对 jupyter notebook 的支持
