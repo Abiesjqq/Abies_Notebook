@@ -9,23 +9,21 @@
       
       
       
-        <link rel="prev" href="../Lecture%2005%20Rasterization%201%20%28Triangles%29/">
       
       
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Lecture 06 Rasterization 2 (Antiliasing) - Abies's Notebook</title>
+        <title>ModelEnsembles - Abies's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,23 +42,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra2.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/cursor.css">
+      <link rel="stylesheet" href="../../../../stylesheets/cursor.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/info.css">
+      <link rel="stylesheet" href="../../../../stylesheets/info.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/create_and_update.css">
+      <link rel="stylesheet" href="../../../../stylesheets/create_and_update.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../../stylesheets/customize.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/font.css">
+      <link rel="stylesheet" href="../../../../stylesheets/font.css">
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,11 +83,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#concepts" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +95,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -122,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 06 Rasterization 2 (Antiliasing)
+              ModelEnsembles
             
           </span>
         </div>
@@ -236,7 +229,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../../.." class="md-tabs__link">
           
   
   
@@ -258,7 +251,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/Git/git/" class="md-tabs__link">
+        <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/Git/git/" class="md-tabs__link">
           
   
   
@@ -287,7 +280,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/0.%20%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="md-tabs__link">
+        <a href="../../../../%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/0.%20%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="md-tabs__link">
           
   
   
@@ -319,7 +312,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../NoflowersNotes/ComputerVision/Intro%26K-NN/" class="md-tabs__link">
+        <a href="../../Intro%26K-NN/" class="md-tabs__link">
           
   
   
@@ -340,8 +333,6 @@
   
   
   
-    
-  
   
     
     
@@ -349,13 +340,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../AbiesNotes/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-tabs__link">
           
   
   
@@ -402,7 +391,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -460,7 +449,7 @@
   
   
   
-    <a href="../../.." class="md-nav__link">
+    <a href="../../../.." class="md-nav__link">
       
   
   
@@ -518,7 +507,7 @@
   
   
   
-    <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/Git/git/" class="md-nav__link">
+    <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/Git/git/" class="md-nav__link">
       
   
   
@@ -574,7 +563,7 @@
   
   
   
-    <a href="../../../%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/0.%20%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+    <a href="../../../../%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/0.%20%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
       
   
   
@@ -632,7 +621,7 @@
   
   
   
-    <a href="../../../NoflowersNotes/ComputerVision/Intro%26K-NN/" class="md-nav__link">
+    <a href="../../Intro%26K-NN/" class="md-nav__link">
       
   
   
@@ -659,36 +648,37 @@
       
   
   
+  
+  
     
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
   
   
     
-    
+  
+  
+  
+    <a href="../../../../AbiesNotes/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-nav__link">
       
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
   
   
   <span class="md-ellipsis">
@@ -697,306 +687,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Abies 的平行笔记
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
       
-        
+        <span class="md-nav__icon md-icon"></span>
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    GAMES101(进行中)
-    
-  </span>
+    </a>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            GAMES101(进行中)
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 01 Overview of Computer Graphics
-    
-  </span>
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2002%20Review%20of%20Linear%20Algebra/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 02 Review of Linear Algebra
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2003%20Transformation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 03 Transformation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2004%20Transformations%20Cont/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 04 Transformations Cont.
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2005%20Rasterization%201%20%28Triangles%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 05 Rasterization 1 (Triangles)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Lecture 06 Rasterization 2 (Antiliasing)
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 06 Rasterization 2 (Antiliasing)
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#frequency-domain" class="md-nav__link">
-    <span class="md-ellipsis">
-      Frequency Domain
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Filtering
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Convolution
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sampling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sampling
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1021,90 +719,9 @@
   
 
 
-  <h1>Lecture 06 Rasterization 2 (Antiliasing)</h1>
+  <h1>ModelEnsembles</h1>
 
-<div class="admonition info reading-info">
-<p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>698</strong> 个字&nbsp;&nbsp;<strong>4</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
-</div>
-<div class="admonition remarks">
-<p class="admonition-title">Menu of this lecture</p>
-<ul>
-<li><a href="#concepts">Concepts</a></li>
-<li><a href="#frequency-domain">Frequency Domain</a></li>
-<li><a href="#filtering">Filtering</a></li>
-<li><a href="#convolution">Convolution</a></li>
-<li><a href="#sampling">Sampling</a></li>
-</ul>
-</div>
-<h2 id="concepts">Concepts</h2>
-<p>Photograph: sample space<br />
-Video: sample time</p>
-<p>Artifact: errors/mistakes/inaccuracies in CG<br />
-e.g. jaggies, Moire patterns, Wagon wheel effect...<br />
-Reason: signals are changing too fast, but sampled too slowly.</p>
-<p>Antialiasing idea: blurring (pre-filtering) before sampleing<br />
-反走样的思想：在采样之前做模糊（滤波）  </p>
-<details class="normal-comment">
-<summary>Antialiasing and Blurred Aliasing</summary>
-<ul>
-<li>Anitialiasing: filter then sample</li>
-<li>Blurred Aliasing: sample then filter</li>
-</ul>
-</details>
-<h2 id="frequency-domain">Frequency Domain</h2>
-<p><strong>Frequencies</strong>: <span class="arithmatex">\(\cos 2\pi fx\)</span>, <span class="arithmatex">\(f=\frac{1}{T}\)</span><br />
-Fourier transform decomposes a signal into frequencies.</p>
-<p><img alt="Fourier Illustration" src="../../../images/Fourier%20Illustration.png" style="width:600px" /></p>
-<p>Why frequency leads to aliasing?<br />
-Higher frequencies need faster sampling.<br />
-Otherwise, the reconstruction will be inaccurate. It will appear to be a lower-frequency signal.<br />
-Two frequencies that are indistinguishable at a given sampling are called "aliases".</p>
-<h2 id="filtering">Filtering</h2>
-<p><strong>Filtering(滤波)</strong>: Getting rid of certain frequency contents.</p>
-<p><img alt="Image to frequency" src="../../../images/Image%20to%20frequency.png" style="width:600px" /></p>
-<p><strong>傅里叶变换</strong>将图像从时域变为频域，即将每个点的信息转化为不同频率的信息。<br />
-右边图像（频谱）的中心定义为低频频率，周围定义为高频频率，从中心到周围频率递增。用图片的亮度表示不同频率上信息的量。<br />
-自然下图片信息基本几种在低频区域。<br />
-水平和竖直有高亮度的十字线：傅里叶变换时认为图片周期性重复，到达一个边界后重复相对边界的内容。交界处图片剧烈变化，产生极高的高频信号。</p>
-<p><img alt="high-pass filter" src="../../../images/high-pass%20filter.png" style="width:600px" /></p>
-<p><strong>高通滤波（High-pass filter）</strong>：去除低频频率，保留高频频率，对应保留图像的边界。
-为什么保留边界？边界处图像变化剧烈，高频信号信息大。</p>
-<p><img alt="low-pass filter" src="../../../images/low-pass%20filter.png" style="width:600px" /></p>
-<p><strong>低通滤波（low-pass filter）</strong>：保留低频频率，去除高频频率，对应图像变模糊。</p>
-<h2 id="convolution">Convolution</h2>
-<p>Filtering=Convolution=Averaging</p>
-<p><strong>卷积</strong>：在移动窗口时将窗口的数和覆盖的信号值点乘，在任意位置和周围的数做加权平均。<br />
-定理：时域上两个信号的卷积，对应于频域上两个信号的乘积。频域上两个信号的卷积，对应于时域上两个信号的乘积。  </p>
-<p>卷积的方法：</p>
-<ol>
-<li>直接在时域上点乘</li>
-<li>变换到频域上，在频域上乘积，再逆变换会时域</li>
-</ol>
-<p><strong>卷积核</strong>：所有系数和为1。<br />
-频谱的乘积相当于留下卷积核频谱中有信息的部分。<br />
-卷积核越大，频谱上图像越小。</p>
-<h2 id="sampling">Sampling</h2>
-<p>Sampling=repeating frequency contents</p>
-<p><strong>冲激函数</strong>：模拟单位脉冲，只在一系列周期性的点上有值，其余点为零。冲激函数转化到频域后仍为冲激函数。<br />
-原信号和冲激函数相乘（或频域上两个信号的卷积），得到采样后信号。  </p>
-<p><strong>采样</strong>是重复原始信号的频谱。<br />
-采样间隔影响原始信号复制的间隔。<br />
-采样率不足，采样间隔大，原始信号频谱复制的间隔小，复制搬移时频谱部分混合，发生走样。</p>
-<p>减小走样错误：<br />
-1. 提高采样频率<br />
-2. 反走样：先去除高频信号，再采样</p>
-<p>去除高频信号后，每个周期两侧的频率强度为零，在稀疏采样搬移间隔小的情况下不产生重叠部分。</p>
-<p>Antialiasing by averaging values in pixel area:<br />
-1. Convolve f(x,y) by a 1-pixel box-blur<br />
-2. Then sample at every pixel's center</p>
-<p>f(x,y)=inside(triangle,x,y) is equal to the area of the pixel covered by the triangles. </p>
-<p>计算像素被覆盖的面积？<br />
-<strong>Multisample Antialiasing(MSAA)</strong>：用更多采样点进行反走样模糊的近似  <br />
-将像素划分为更小的像素  <br />
-MAAA解决“模糊”的操作，没有改变屏幕的像素值，没有提高分辨率。  </p>
-<p>其他抗锯齿的方法：FXAA，TAA<br />
-超分辨率：防止图片放大后出现锯齿，DLSS</p>
+
 
 
 
@@ -1127,7 +744,7 @@ MAAA解决“模糊”的操作，没有改变屏幕的像素值，没有提高�
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月17日 09:01:11 UTC">2025-07-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月24日 02:36:03 UTC">2025-07-24</span>
   </span>
 
     
@@ -1137,7 +754,7 @@ MAAA解决“模糊”的操作，没有改变屏幕的像素值，没有提高�
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月17日 09:01:11 UTC">2025-07-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月24日 02:36:03 UTC">2025-07-24</span>
   </span>
 
     
@@ -1169,28 +786,6 @@ MAAA解决“模糊”的操作，没有改变屏幕的像素值，没有提高�
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
-        
-          
-          <a href="../Lecture%2005%20Rasterization%201%20%28Triangles%29/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 05 Rasterization 1 (Triangles)">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                Lecture 05 Rasterization 1 (Triangles)
-              </div>
-            </div>
-          </a>
-        
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1234,24 +829,24 @@ MAAA解决“模糊”的操作，没有改变屏幕的像素值，没有提高�
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "toc.integrate", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "toc.integrate", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="../../../javascripts/animate-details.js"></script>
+        <script src="../../../../javascripts/animate-details.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../javascripts/cursor.js"></script>
+        <script src="../../../../javascripts/cursor.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/busuanzi.pure.mini.js"></script>
+        <script src="../../../../javascripts/busuanzi.pure.mini.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
       

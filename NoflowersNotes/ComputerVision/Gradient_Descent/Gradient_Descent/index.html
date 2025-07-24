@@ -672,6 +672,8 @@
       
         
       
+        
+      
     
     
     
@@ -817,6 +819,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#first-order-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Order Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First Order Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#stochastic-gradient-descent-sgd" class="md-nav__link">
     <span class="md-ellipsis">
       Stochastic Gradient Descent (SGD)
@@ -858,6 +870,44 @@
       AdamW (Adam Variant with Weight Decay)
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-order-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second Order Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Second Order Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bgfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      BGFS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-bgfs-limited-memory-bgfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      L-BGFS (Limited memory BGFS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -929,7 +979,30 @@
   
   
   <span class="md-ellipsis">
-    CNN
+    CNN & Training Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RNN/RNN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RNN
     
   </span>
   
@@ -1057,7 +1130,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>95</strong> 个字&nbsp;&nbsp;<strong>5</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>125</strong> 个字&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="optimizers">Optimizers</h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -1069,7 +1142,8 @@
 <blockquote>
 <p><code>step_size</code> is a hyper-parameter called learning rate.</p>
 </blockquote>
-<h3 id="stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</h3>
+<h3 id="first-order-optimization">First Order Optimization</h3>
+<h4 id="stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</h4>
 <p>Full sum will be expensive when N is large, so we approximate the sum using a minibatch of examples.</p>
 <div class="arithmatex">\[
 L(W) = \frac{1}{N}\sum_{i = 1}^{N}L_i(x_i, y_i, W) + \lambda R(W)
@@ -1093,7 +1167,7 @@ L(W) = \frac{1}{N}\sum_{i = 1}^{N}L_i(x_i, y_i, W) + \lambda R(W)
 <li>Our gradients come from minibatches so they can be noisy.</li>
 </ol>
 </div>
-<h3 id="sgd-with-momentum-sgdm">SGD with Momentum (SGDM)</h3>
+<h4 id="sgd-with-momentum-sgdm">SGD with Momentum (SGDM)</h4>
 <p>While SGD is <span class="arithmatex">\(x_{t + 1} = s_t - \alpha \nabla f(x_t)\)</span>, SGD + momentum will be</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -1112,7 +1186,7 @@ x_{t + 1} = x_t - \alpha v_{t + 1}
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="n">vx</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">vx</span> <span class="o">+</span> <span class="n">dx</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="n">x</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">vx</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="rmsprop">RMSProp</h3>
+<h4 id="rmsprop">RMSProp</h4>
 <p>Adds element-wise scaling of the gradient based on the historical sum of squares in each dimension (with decay). 前面每一次的梯度都在不断累积，但是影响又会衰减</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -1136,7 +1210,7 @@ v_{t+1} = \alpha v_t + (1 - \alpha)(\nabla f(x_t))^2
 <p class="admonition-title">Why adding <code>1e-7</code>?</p>
 <p>It's a numerical stability trick called <strong>epsilon smoothing</strong>， which can prevent division by 0 or near-zero values.</p>
 </div>
-<h3 id="adam">Adam</h3>
+<h4 id="adam">Adam</h4>
 <p><strong>Adam</strong> builds upon <strong>RMSProp</strong> by incorporating the first-moment term <span class="arithmatex">\(m_t\)</span> and bias correction, which improves convergence speed and stability.</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -1183,7 +1257,7 @@ x_{t+1} = x_t - \eta \cdot \dfrac{\hat{m}_{t+1}}{\sqrt{\hat{v}_{t+1}} + \epsilon
 <a id="__codelineno-4-16" name="__codelineno-4-16"></a>    <span class="c1"># Update</span>
 <a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="n">x</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">first_unbias</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">second_unbias</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-7</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="adamw-adam-variant-with-weight-decay">AdamW (Adam Variant with Weight Decay)</h3>
+<h4 id="adamw-adam-variant-with-weight-decay">AdamW (Adam Variant with Weight Decay)</h4>
 <p>AdamW is an improvement over Adam that decouples <strong>weight decay</strong> from the gradient update, commonly used in training deep neural networks such as Transformers and BERT.</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -1240,6 +1314,30 @@ x_{t+1} = x_t - \eta \cdot \left( \dfrac{\hat{m}_{t+1}}{\sqrt{\hat{v}_{t+1}} + \
 </code></pre></div></td></tr></table></div>
 <p>Comparison plots of the optimizers are shown below</p>
 <p><img alt="img.png" src="../img.png" /></p>
+<h3 id="second-order-optimization">Second Order Optimization</h3>
+<div class="arithmatex">\[
+\begin{cases}
+\displaystyle J(\theta) \approx J(\theta_0) + (\theta - \theta_0)^\top \nabla_\theta J(\theta_0) + \frac{1}{2} (\theta - \theta_0)^\top H (\theta - \theta_0) &amp;\quad \text{second-order Taylor expansion} \\
+\displaystyle \theta^* = \theta_0 - H^{-1} \nabla_\theta J(\theta_0) &amp;\quad \text{Newton method}
+\end{cases}
+\]</div>
+<p>But the Hessian matrix is way too big!</p>
+<h4 id="bgfs">BGFS</h4>
+<div class="arithmatex">\[
+\begin{cases}
+g_t = \nabla f(x_t) &amp; \text{(当前梯度)} \\
+H_0 = I &amp; \text{(初始 Hessian 逆矩阵)} \\
+x_{t+1} = x_t - \eta H_t g_t &amp; \text{(参数更新)} \\
+s_t = x_{t+1} - x_t &amp; \text{(参数差)} \\
+g_{t+1} = \nabla f(x_{t+1}) &amp; \text{(下一步梯度)} \\
+y_t = g_{t+1} - g_t &amp; \text{(梯度差)} \\
+\rho_t = \dfrac{1}{y_t^\top s_t} &amp; \text{(缩放因子)} \\
+H_{t+1} = \left(I - \rho_t s_t y_t^\top\right) H_t \left(I - \rho_t y_t s_t^\top\right) + \rho_t s_t s_t^\top &amp; \text{(BFGS 更新)}
+\end{cases}
+\]</div>
+<p><span class="arithmatex">\(H_t\)</span> is an approximate estimate of the inverse Hessian matrix.</p>
+<h4 id="l-bgfs-limited-memory-bgfs">L-BGFS (Limited memory BGFS)</h4>
+<p>Does not store the full inverse Hessian,</p>
 <h3 id="how-to-controll-the-learning-rate">How to controll the learning rate?</h3>
 <p>One approach is to let learning rate decay over time.</p>
 <p>Way 1: Reduce learning rate at a few fixed points. E.g. for ResNets, multiply LR by 0.1 after epochs 30, 60, and 90</p>
@@ -1287,7 +1385,7 @@ x_{t+1} = x_t - \eta \cdot \left( \dfrac{\hat{m}_{t+1}}{\sqrt{\hat{v}_{t+1}} + \
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月11日 07:54:22 UTC">2025-07-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月24日 02:36:03 UTC">2025-07-24</span>
   </span>
 
     
@@ -1302,29 +1400,6 @@ x_{t+1} = x_t - \eta \cdot \left( \dfrac{\hat{m}_{t+1}}{\sqrt{\hat{v}_{t+1}} + \
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1374,13 +1449,13 @@ x_{t+1} = x_t - \eta \cdot \left( \dfrac{\hat{m}_{t+1}}{\sqrt{\hat{v}_{t+1}} + \
         
         
           
-          <a href="../../CNN/CNN/" class="md-footer__link md-footer__link--next" aria-label="下一页: CNN">
+          <a href="../../CNN/CNN/" class="md-footer__link md-footer__link--next" aria-label="下一页: CNN &amp; Training Basics">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                CNN
+                CNN & Training Basics
               </div>
             </div>
             <div class="md-footer__button md-icon">
