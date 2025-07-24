@@ -8,7 +8,9 @@ while True:
 
 > `step_size` is a hyper-parameter called learning rate.
 
-### Stochastic Gradient Descent (SGD)
+### First Order Optimization
+
+#### Stochastic Gradient Descent (SGD)
 
 Full sum will be expensive when N is large, so we approximate the sum using a minibatch of examples.
 
@@ -32,7 +34,7 @@ while True:
     2.  If the loss function has a **local minima** or **saddle point**, the gradient descent will get stuck.
     3. Our gradients come from minibatches so they can be noisy.
 
-### SGD with Momentum (SGDM)
+#### SGD with Momentum (SGDM)
 
 While SGD is $x_{t + 1} = s_t - \alpha \nabla f(x_t)$, SGD + momentum will be
 
@@ -53,7 +55,7 @@ while True:
     x -= learning_rate * vx
 ```
 
-### RMSProp
+#### RMSProp
 
 Adds element-wise scaling of the gradient based on the historical sum of squares in each dimension (with decay). 前面每一次的梯度都在不断累积，但是影响又会衰减
 
@@ -78,7 +80,7 @@ while True:
 !!! remarks "Why adding `1e-7`?"
     It's a numerical stability trick called **epsilon smoothing**， which can prevent division by 0 or near-zero values.
 
-### Adam
+#### Adam
 
 **Adam** builds upon **RMSProp** by incorporating the first-moment term $m_t$ and bias correction, which improves convergence speed and stability.
 
@@ -114,7 +116,7 @@ for t in range(1, num_iterations):
     x -= learning_rate * first_unbias / (np.sqrt(second_unbias) + 1e-7)
 ```
 
-### AdamW (Adam Variant with Weight Decay)
+#### AdamW (Adam Variant with Weight Decay)
 
 AdamW is an improvement over Adam that decouples **weight decay** from the gradient update, commonly used in training deep neural networks such as Transformers and BERT.
 
@@ -157,6 +159,38 @@ for t in range(1, num_iterations):
 Comparison plots of the optimizers are shown below
 
 ![img.png](img.png)
+
+### Second Order Optimization
+
+$$
+\begin{cases}
+\displaystyle J(\theta) \approx J(\theta_0) + (\theta - \theta_0)^\top \nabla_\theta J(\theta_0) + \frac{1}{2} (\theta - \theta_0)^\top H (\theta - \theta_0) &\quad \text{second-order Taylor expansion} \\
+\displaystyle \theta^* = \theta_0 - H^{-1} \nabla_\theta J(\theta_0) &\quad \text{Newton method}
+\end{cases}
+$$
+
+But the Hessian matrix is way too big!
+
+#### BGFS
+
+$$
+\begin{cases}
+g_t = \nabla f(x_t) & \text{(当前梯度)} \\
+H_0 = I & \text{(初始 Hessian 逆矩阵)} \\
+x_{t+1} = x_t - \eta H_t g_t & \text{(参数更新)} \\
+s_t = x_{t+1} - x_t & \text{(参数差)} \\
+g_{t+1} = \nabla f(x_{t+1}) & \text{(下一步梯度)} \\
+y_t = g_{t+1} - g_t & \text{(梯度差)} \\
+\rho_t = \dfrac{1}{y_t^\top s_t} & \text{(缩放因子)} \\
+H_{t+1} = \left(I - \rho_t s_t y_t^\top\right) H_t \left(I - \rho_t y_t s_t^\top\right) + \rho_t s_t s_t^\top & \text{(BFGS 更新)}
+\end{cases}
+$$
+
+$H_t$ is an approximate estimate of the inverse Hessian matrix.
+
+#### L-BGFS (Limited memory BGFS)
+
+Does not store the full inverse Hessian,
 
 ### How to controll the learning rate?
 

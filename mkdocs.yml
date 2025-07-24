@@ -112,7 +112,9 @@ nav:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
           - Loss Functions: NoflowersNotes/ComputerVision/Loss Functions.md
           - Gradient Descent: NoflowersNotes/ComputerVision/Gradient_Descent/Gradient_Descent.md
-          - CNN: NoflowersNotes/ComputerVision/CNN/CNN.md
+          - CNN & Training Basics: NoflowersNotes/ComputerVision/CNN/CNN.md
+          - RNN: NoflowersNotes/ComputerVision/RNN/RNN.md
+#          - Model Ensembles: NoflowersNotes/ComputerVision/ModelEnsembles/ModelEnsembles.md
       - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
   - Abies 的平行笔记:
       - GAMES101(进行中):
