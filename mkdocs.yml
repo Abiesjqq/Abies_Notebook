@@ -125,6 +125,11 @@ nav:
           - Lecture 04 Transformations Cont.: AbiesNotes/图形学入门/Lecture 04 Transformations Cont.md
           - Lecture 05 Rasterization 1 (Triangles): AbiesNotes/图形学入门/Lecture 05 Rasterization 1 (Triangles).md
           - Lecture 06 Rasterization 2 (Antiliasing): AbiesNotes/图形学入门/Lecture 06 Rasterization 2 (Antiliasing).md
+      - 渲染器tinyrenderer:
+          # - Getting started!: AbiesNotes/渲染器tinyrenderer/getting started.md
+          - Line: AbiesNotes/渲染器tinyrenderer/line.md
+          - Triangle: AbiesNotes/渲染器tinyrenderer/triangle.md
+
 
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
