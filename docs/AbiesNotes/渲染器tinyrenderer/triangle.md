@@ -494,3 +494,28 @@ int main(int argc, char** argv) {
 
 
 因为没有用z-buffer，嘴巴内表面渲染后覆盖了外表面的结果（？）
+
+## 深度缓冲
+
+按图像的大小构造z-buffer数组，初始化为负无穷，遍历三角形时对其中每个像素的值取最大（规定z值越大表示离摄像机越近）。
+
+z-buffer用于记录每个像素的深度，保证绘制前面的图形、遮挡后面的图形。
+
+代码：
+
+```cpp
+// 计算zbuffer
+double z = 0.;
+for (int k = 0; k < 3; k++) {
+    z += pts[k].z * bc[k]; // 用重心坐标得到深度的插值
+}
+if (z > zbuffer[static_cast<int>(x + y * width)]) {
+    zbuffer[static_cast<int>(x + y * width)] = z;
+    image.set(x, y, color); // 当距离更近时绘制
+}
+```
+
+结果：
+
+head_zbuffer
+![head_zbuffer](../resources/head_zbuffer.png){style="width:500px"}
