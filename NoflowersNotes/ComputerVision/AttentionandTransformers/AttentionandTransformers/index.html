@@ -922,6 +922,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self Attention
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Self Attention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1054,6 +1087,87 @@
 <p>Problem: Input sequence bottlenecks through fixed sized c, which will lead to gradient vanishment.</p>
 <h2 id="attention">Attention</h2>
 <p>Look back at the whole input sequence on each step of the output.</p>
+<p><img alt="img_1.png" src="../img_1.png" /></p>
+<p>At time <span class="arithmatex">\(t\)</span>, our compute sequence is:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\displaystyle e_{t,i} = \mathrm{score}(h_i, s_{t - 1}), i = 1, 2, \cdots\)</span></p>
+<p>where </p>
+<div class="arithmatex">\[
+\mathrm{score}(h, s) = \begin{cases}
+h^Ts &amp;\quad \text{Dot} \\
+h^T W s &amp;\quad \text{General} \\
+v^T \tanh (W [h; s]) &amp;\quad \text{Concat}
+\end{cases}
+\]</div>
+<blockquote>
+<p>To prevent large score causing the vanishment of softmax, we can change "Dot" to <span class="arithmatex">\(\displaystyle \frac{h^Ts}{\sqrt{D}}\)</span> where <span class="arithmatex">\(D\)</span> is the dimension of the input data.</p>
+</blockquote>
+</li>
+<li>
+<p><span class="arithmatex">\(\displaystyle \mathbf{a_{t}} = \mathrm{Softmax}(\mathrm{e_t})\)</span></p>
+</li>
+<li><span class="arithmatex">\(\displaystyle c_t = \sum_{i = 1}^{N}a_{t, i}h_i\)</span></li>
+<li><span class="arithmatex">\(\displaystyle s_t = g_U(y_{t - 1}, s_{t - 1}, c_t) \quad \text{(Decoder)}\)</span></li>
+</ol>
+<p>the visualization of weights:</p>
+<p><img alt="img_2.png" src="../img_2.png" /></p>
+<h2 id="self-attention">Self Attention</h2>
+<h3 id="inputs">Inputs</h3>
+<ul>
+<li>
+<p>Input vectors: <span class="arithmatex">\(\mathbf{X} \in \mathbb{R}^{N \times D_{\text{in}}}\)</span><br />
+  Each input produces one output, which is a mix of information from <strong>all</strong> inputs.</p>
+</li>
+<li>
+<p>Key matrix: <span class="arithmatex">\(\mathbf{W}^{K} \in \mathbb{R}^{D_{\text{in}} \times D_{\text{out}}}\)</span>  </p>
+</li>
+<li>Value matrix: <span class="arithmatex">\(\mathbf{W}^{V} \in \mathbb{R}^{D_{\text{in}} \times D_{\text{out}}}\)</span>  </li>
+<li>Query matrix: <span class="arithmatex">\(\mathbf{W}^{Q} \in \mathbb{R}^{D_{\text{in}} \times D_{\text{out}}}\)</span></li>
+</ul>
+<blockquote>
+<p>Shapes get a little simpler: almost always <span class="arithmatex">\(D_{Q} = D_{K} = D_{V} = D_{\text{out}}\)</span>.</p>
+</blockquote>
+<h3 id="computation">Computation</h3>
+<p>Given <span class="arithmatex">\(N\)</span> input vectors, each of dimension <span class="arithmatex">\(D_{\text{in}}\)</span>:</p>
+<ol>
+<li><strong>Queries</strong>  </li>
+</ol>
+<div class="arithmatex">\[
+\mathbf{Q} = \mathbf{X}\,\mathbf{W}^{Q} \in \mathbb{R}^{N \times D_{\text{out}}} 
+\]</div>
+<ol>
+<li><strong>Keys</strong>  </li>
+</ol>
+<div class="arithmatex">\[ 
+\mathbf{K} = \mathbf{X}\,\mathbf{W}^{K} \in \mathbb{R}^{N \times D_{\text{out}}} 
+\]</div>
+<ol>
+<li><strong>Values</strong>  </li>
+</ol>
+<div class="arithmatex">\[ 
+\mathbf{V} = \mathbf{X}\,\mathbf{W}^{V} \in \mathbb{R}^{N \times D_{\text{out}}} 
+\]</div>
+<ol>
+<li><strong>Similarities</strong></li>
+</ol>
+<div class="arithmatex">\[ 
+\mathbf{E} = \frac{\mathbf{Q}\,\mathbf{K}^{\!\top}}{\sqrt{D_{\text{out}}}} \in \mathbb{R}^{N \times N},\qquad  
+E_{ij} = \frac{\mathbf{Q}_{i}\!\cdot\!\mathbf{K}_{j}}{\sqrt{D_{\text{out}}}} 
+\]</div>
+<ol>
+<li><strong>Attention weights</strong>  </li>
+</ol>
+<div class="arithmatex">\[ 
+\mathbf{A} = \text{Softmax}(\mathbf{E},\; \text{dim}=1) \in \mathbb{R}^{N \times N} 
+\]</div>
+<ol>
+<li><strong>Output vectors</strong>  </li>
+</ol>
+<div class="arithmatex">\[ 
+\mathbf{Y} = \mathbf{A}\,\mathbf{V} \in \mathbb{R}^{N \times D_{\text{out}}},\qquad  
+\mathbf{Y}_{i} = \sum_{j} A_{ij}\,\mathbf{V}_{j} 
+\]</div>
 
 
 
@@ -1076,7 +1190,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月26日 06:02:02 UTC">2025-07-26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月26日 14:18:40 UTC">2025-07-26</span>
   </span>
 
     
