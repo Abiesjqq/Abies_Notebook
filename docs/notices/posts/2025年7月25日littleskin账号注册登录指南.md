@@ -1,5 +1,5 @@
 ---
-title: 通知公告使用指南
+title: LittleSkin 账号注册使用
 date: 2025-07-25T13:50:00
 hide_reading_time: true
 authors:
