@@ -87,7 +87,7 @@ nav:
       - CSS: 自学记录/CSS/css_learning.md
       - JavaScript: 自学记录/JavaScript/js_learning.md
   - 课程笔记:
-      - 数据结构基础(未整理):
+      - 数据结构基础:
           - 0. 数据结构复习: 课程笔记/数据结构基础/0. 期末复习.md
           - 1. 时间复杂度: 课程笔记/数据结构基础/1. 时间复杂度.md
           - 2. 最大连续和子数组: 课程笔记/数据结构基础/2. 最大连续和子数组.md
@@ -106,7 +106,7 @@ nav:
           - 14. 比特币和哈希: 课程笔记/数据结构基础/14. 比特币和哈希.md
           - 15. 哈希动态查找: 课程笔记/数据结构基础/15. 哈希动态查找.md
           - 15.5 一些代码: 课程笔记/数据结构基础/15.5 一些代码.md
-      - C语言程序设计(未整理): 课程笔记/C语言程序设计/CNote.md
+      - C语言程序设计: 课程笔记/C语言程序设计/CNote.md
   - Noflower 的笔记:
       - Computer Vision （进行中）:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
@@ -125,11 +125,12 @@ nav:
           - Lecture 04 Transformations Cont.: AbiesNotes/图形学入门/Lecture 04 Transformations Cont.md
           - Lecture 05 Rasterization 1 (Triangles): AbiesNotes/图形学入门/Lecture 05 Rasterization 1 (Triangles).md
           - Lecture 06 Rasterization 2 (Antiliasing): AbiesNotes/图形学入门/Lecture 06 Rasterization 2 (Antiliasing).md
-      - 渲染器tinyrenderer:
+      - 渲染器tinyrenderer(进行中):
           # - Getting started!: AbiesNotes/渲染器tinyrenderer/getting started.md
           - Line: AbiesNotes/渲染器tinyrenderer/line.md
           - Triangle: AbiesNotes/渲染器tinyrenderer/triangle.md
           - Texture: AbiesNotes/渲染器tinyrenderer/texture.md
+          - Projection: AbiesNotes/渲染器tinyrenderer/projection.md
 
 
 extra:
