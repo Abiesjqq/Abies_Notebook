@@ -114,7 +114,7 @@ nav:
           - Gradient Descent: NoflowersNotes/ComputerVision/Gradient_Descent/Gradient_Descent.md
           - CNN & Training Basics: NoflowersNotes/ComputerVision/CNN/CNN.md
           - RNN: NoflowersNotes/ComputerVision/RNN/RNN.md
-          - Detection and Segementation: NoflowersNotes/ComputerVision/DetectionandSegementation/DetectionandSegementation.md
+          - Detection, Segmentation, Visualization, and Understanding: NoflowersNotes/ComputerVision/DetectionandSegementation/DetectionandSegementation.md
           - Attention and Transformers: NoflowersNotes/ComputerVision/AttentionandTransformers/AttentionandTransformers.md
       - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
   - Abies 的笔记:

@@ -191,9 +191,48 @@ A Transformer is just a stack of **identical** Transformer blocks!
 - GPT-3: [Brown et al, 2020]  
 96 blocks, D=12288, H=96, N=2048, 175B params
 
-### Transformers for Language Modeling (LLM)
+### Applications
+
+#### Transformers for Language Modeling (LLM)
 
 1. Learn an embedding matrix $[V \times D]$ at the start of the model to convert words into vectors.
 2.  Use masked attention inside each transformer block so each token can only see the ones before it
 3.  At the end, learn a projection matrix shape $[D \times V]$ to project each D-dim vector to a V-dim vector of scores for each element of the vocabulary.
 4.  Train to predict next token using softmax + cross-entropy loss
+
+#### Vision Transformers
+
+Just break the image into patches, flatten and apply a linear transform, and put into the transformer.
+
+![img_5.png](img_5.png)
+
+### Tweaking Transformers
+
+#### Pre-Norm Transformer
+
+Move layer normalization before the Self-Attention and MLP, inside the residual connections. Training is more stable.
+
+#### RMSNorm
+
+Replace Layer Normalization with Root-Mean-Square Normalization.
+
+$$
+\begin{cases}
+\displaystyle y_i = \frac{x_i}{\mathrm{RMS}(x)}\gamma_i &\quad \gamma \text{ is the weight (Shape D)} \\
+\displaystyle \mathrm{RMS}(x) = \sqrt{\varepsilon + \frac{1}{N}\sum_{i = 1}^N x_i^2}
+\end{cases}
+$$
+
+#### SwiGLU MLP
+
+$$
+\begin{cases}
+\displaystyle Y = \left(\mathrm{Swish}(XW_1)\odot XW_2\right)W_3 \\
+\displaystyle \mathrm{Swish}(x) = \frac{x}{1 + \mathrm{e}^{-x}}
+\end{cases}
+$$
+
+#### Mixture of Experts (MoE)
+
+Learn E separate sets of MLP weights in each block; each MLP is an **expert**.
+It turns one giant model into many small “experts” but activates only a handful of them for each input token.
