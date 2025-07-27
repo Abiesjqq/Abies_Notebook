@@ -955,6 +955,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#masked-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Masked Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiheaded-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiheaded Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformer-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Transformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformers-for-language-modeling-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformers for Language Modeling (LLM)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1081,6 +1150,10 @@
 
   <h1>Attention and Transformers</h1>
 
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>99</strong> 个字&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+</div>
 <h2 id="seq2seq-rnns">Seq2Seq RNNs</h2>
 <p>As the figure shows.</p>
 <p><img alt="img.png" src="../img.png" /></p>
@@ -1131,43 +1204,145 @@ v^T \tanh (W [h; s]) &amp;\quad \text{Concat}
 <h3 id="computation">Computation</h3>
 <p>Given <span class="arithmatex">\(N\)</span> input vectors, each of dimension <span class="arithmatex">\(D_{\text{in}}\)</span>:</p>
 <ol>
-<li><strong>Queries</strong>  </li>
-</ol>
+<li>
+<p><strong>Queries</strong> (提问者)</p>
 <div class="arithmatex">\[
 \mathbf{Q} = \mathbf{X}\,\mathbf{W}^{Q} \in \mathbb{R}^{N \times D_{\text{out}}} 
 \]</div>
-<ol>
-<li><strong>Keys</strong>  </li>
-</ol>
+</li>
+<li>
+<p><strong>Keys</strong> (被提问者)</p>
 <div class="arithmatex">\[ 
 \mathbf{K} = \mathbf{X}\,\mathbf{W}^{K} \in \mathbb{R}^{N \times D_{\text{out}}} 
 \]</div>
-<ol>
-<li><strong>Values</strong>  </li>
-</ol>
+</li>
+<li>
+<p><strong>Values</strong> (信息提供者)</p>
 <div class="arithmatex">\[ 
 \mathbf{V} = \mathbf{X}\,\mathbf{W}^{V} \in \mathbb{R}^{N \times D_{\text{out}}} 
 \]</div>
-<ol>
-<li><strong>Similarities</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>Similarities</strong></p>
 <div class="arithmatex">\[ 
 \mathbf{E} = \frac{\mathbf{Q}\,\mathbf{K}^{\!\top}}{\sqrt{D_{\text{out}}}} \in \mathbb{R}^{N \times N},\qquad  
 E_{ij} = \frac{\mathbf{Q}_{i}\!\cdot\!\mathbf{K}_{j}}{\sqrt{D_{\text{out}}}} 
 \]</div>
-<ol>
-<li><strong>Attention weights</strong>  </li>
-</ol>
+</li>
+<li>
+<p><strong>Attention weights</strong>  </p>
 <div class="arithmatex">\[ 
 \mathbf{A} = \text{Softmax}(\mathbf{E},\; \text{dim}=1) \in \mathbb{R}^{N \times N} 
 \]</div>
-<ol>
-<li><strong>Output vectors</strong>  </li>
-</ol>
+</li>
+<li>
+<p><strong>Output vectors</strong>  </p>
 <div class="arithmatex">\[ 
 \mathbf{Y} = \mathbf{A}\,\mathbf{V} \in \mathbb{R}^{N \times D_{\text{out}}},\qquad  
 \mathbf{Y}_{i} = \sum_{j} A_{ij}\,\mathbf{V}_{j} 
 \]</div>
+</li>
+</ol>
+<p>A Single-head Attention:</p>
+<p><img alt="img_3.png" src="../img_3.png" style="width:50%; float:center;" /></p>
+<div class="admonition examples">
+<p class="admonition-title">举个例子 （翻译场景）</p>
+<ul>
+<li>输入句子：<blockquote>
+<p><strong>The cat sat on the mat</strong></p>
+</blockquote>
+</li>
+<li>在 Self-Attention 中，<strong>“cat”这个词</strong>会：<ul>
+<li>用 <strong>Query</strong> 问自己：“我需要关注哪些词？”</li>
+<li>用 <strong>Key</strong> 让其他词（包括自己）回答：“我和 cat 有多相关？”</li>
+<li>用 <strong>Value</strong> 提取信息：“从每个词中拿多少信息？”</li>
+</ul>
+</li>
+<li>最终，“cat”这个词的输出向量会融合“cat”、“sat”、“mat”等信息，变得更“全局”。</li>
+</ul>
+</div>
+<p>However, if we permute the input sequence, similarities, attention weights and outputs will be the same but permuted, which means that Self-Attention is <strong>permutation equivalent</strong>. So problem is that, Self-Attention does not know the order of sequence.</p>
+<p><strong>Solution</strong>: Add positional encoding to each input.</p>
+<h2 id="masked-self-attention">Masked Self-Attention</h2>
+<p>When used at language models where you want to predict the next word, the self attention shouldn't look ahead,<br />
+To prevent vectors from peeking ahead, zero out the upper-triangle of the similarity matrix (set it to  -inf ) before softmax.</p>
+<h2 id="multiheaded-self-attention">Multiheaded Self-Attention</h2>
+<p>(Used everywhere in practice)</p>
+<p>Compute <span class="arithmatex">\(H\)</span> independent self-attention layers, each with their own weights. Stack up the <span class="arithmatex">\(H\)</span> independent layers and fuse them into the final output with <span class="arithmatex">\(W_O\)</span></p>
+<div class="arithmatex">\[
+\begin{cases}
+\displaystyle \mathbf{Q} = \mathbf{X} \mathbf{W}_Q &amp;\quad (\text{Queries: } [H \times N \times D_H]) \\
+\displaystyle \mathbf{K} = \mathbf{X} \mathbf{W}_K &amp;\quad (\text{Keys: } [H \times N \times D_H]) \\
+\displaystyle \mathbf{V} = \mathbf{X} \mathbf{W}_V &amp;\quad (\text{Values: } [H \times N \times D_H]) \\
+\displaystyle \mathbf{E} = \frac{\mathbf{Q} \mathbf{K}^\top}{\sqrt{D_Q}} &amp;\quad (\text{Similarities: } [H \times N \times N]) \\
+\displaystyle \mathbf{A} = \mathrm{softmax}(\mathbf{E}, \mathrm{dim}=2) &amp;\quad (\text{Attention weights: } [H \times N \times N]) \\
+\displaystyle \mathbf{Y} = \mathbf{A} \mathbf{V} &amp;\quad (\text{Head outputs: } [H \times N \times D_H] \Rightarrow [N \times H D_H]) \\
+\displaystyle \boxed{\mathbf{O} = \mathbf{Y} \mathbf{W}_O} &amp;\quad (\text{Outputs: } [N \times D])
+\end{cases}
+\]</div>
+<div class="admonition remarks">
+<p class="admonition-title">Compute Optimizations for Self-Attention</p>
+<ol>
+<li><strong>QKV Projection</strong>: <span class="arithmatex">\(\displaystyle [\mathbf{Q, K, V}] = \mathbf{X}\mathbf{W}_{qkv}\)</span>
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">qkv</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">W_qkv</span>        <span class="c1"># [N × 3H·D_H]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">qkv</span> <span class="o">=</span> <span class="n">qkv</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">D_H</span><span class="p">)</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># [3, H, N, D_H]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">Q</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">qkv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">qkv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">qkv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>                     <span class="c1"># Each [H × N × D_H]</span>
+</code></pre></div></td></tr></table></div></li>
+<li><strong>QK Similarity</strong>: Use
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Q, K: [H, N, D_H]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># K.transpose(-1, -2): [H, D_H, N]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">E</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">K</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">D_H</span><span class="p">)</span>  <span class="c1"># =&gt; [H, N, N]</span>
+</code></pre></div></td></tr></table></div>
+   to compute <span class="arithmatex">\(\displaystyle \mathbf{E} = \frac{\mathbf{Q} \mathbf{K}^\top}{\sqrt{D_Q}}\)</span></li>
+<li><strong>V-Weighting</strong>: After compute <span class="arithmatex">\(\displaystyle \mathbf{Y} = \mathbf{A}\mathbf{V}\)</span>, we reshape <span class="arithmatex">\(\mathrm{Y}\)</span> into <span class="arithmatex">\([N \times H \cdot D_H]\)</span> for output projection, preventing the storage of head outputs.
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">Y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>            <span class="c1"># [H × N × D_H]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">H</span> <span class="o">*</span> <span class="n">D_H</span><span class="p">)</span>  <span class="c1"># =&gt; [N × H·D_H]</span>
+</code></pre></div></td></tr></table></div>
+   And at output, we let <span class="arithmatex">\(\mathrm{W}_O\)</span> be <span class="arithmatex">\([H\cdot D_H \times D]\)</span>
+This has the <span class="arithmatex">\(O(N^2)\)</span> space complexity.</li>
+</ol>
+<p><strong>Flash Attention</strong>: </p>
+<div class="arithmatex">\[
+\mathrm{FlashAttn}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \mathrm{StreamSoftmax}(\mathbf{Q}\mathbf{K}^T)\mathbf{V}
+\]</div>
+<p>where stream softmax will compute the value without store the whold matrix. With this, the space complexity will be <span class="arithmatex">\(O(N)\)</span>.</p>
+</div>
+<h2 id="cross-attention">Cross-Attention</h2>
+<p>Almost the same as Self-Attention, but the Query is from outer.</p>
+<h2 id="transformer">Transformer</h2>
+<h3 id="transformer-block">Transformer Block</h3>
+<p><img alt="img_4.png" src="../img_4.png" style="width:50%; float:center;" /></p>
+<div class="admonition remarks">
+<p class="admonition-title">Residual connection (残差连接)</p>
+<p><span class="arithmatex">\(\mathrm{Output} = \mathrm{Layer}(X) + X\)</span>, which allows information to be preserved without having to pass through every layer.</p>
+</div>
+<p><strong>Self-Attention</strong> is the only interaction between vectors<br />
+<strong>LayerNorm and MLP</strong> work on each vector independently</p>
+<p>It is  Highly scalable and parallelizable, most of the compute is just 6 matmuls:
+- 4 from Self-Attention
+- 2 from MLP</p>
+<h3 id="the-transformer">The Transformer</h3>
+<p>A Transformer is just a stack of <strong>identical</strong> Transformer blocks!</p>
+<ul>
+<li>Original: [Vaswani et al, 2017]<br />
+12 blocks, D=1024, H=16, N=512, 213M params  </li>
+<li>GPT-2: [Radford et al, 2019]<br />
+48 blocks, D=1600, H=25, N=1024, 1.5B params  </li>
+<li>GPT-3: [Brown et al, 2020]<br />
+96 blocks, D=12288, H=96, N=2048, 175B params</li>
+</ul>
+<h3 id="transformers-for-language-modeling-llm">Transformers for Language Modeling (LLM)</h3>
+<ol>
+<li>Learn an embedding matrix <span class="arithmatex">\([V \times D]\)</span> at the start of the model to convert words into vectors.</li>
+<li>Use masked attention inside each transformer block so each token can only see the ones before it</li>
+<li>At the end, learn a projection matrix shape <span class="arithmatex">\([D \times V]\)</span> to project each D-dim vector to a V-dim vector of scores for each element of the vocabulary.</li>
+<li>Train to predict next token using softmax + cross-entropy loss</li>
+</ol>
 
 
 
@@ -1190,7 +1365,7 @@ E_{ij} = \frac{\mathbf{Q}_{i}\!\cdot\!\mathbf{K}_{j}}{\sqrt{D_{\text{out}}}}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月26日 14:18:40 UTC">2025-07-26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月27日 09:21:34 UTC">2025-07-27</span>
   </span>
 
     
@@ -1205,29 +1380,6 @@ E_{ij} = \frac{\mathbf{Q}_{i}\!\cdot\!\mathbf{K}_{j}}{\sqrt{D_{\text{out}}}}
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
