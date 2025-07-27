@@ -3,7 +3,7 @@
 .obj 文件中，三角形面用`f a1/b1/c1 a2/b2/c2 a3/b3/c3`表示，一共有`model->nfaces()`个面。  
 
 a1,a2,a3 表示顶点对应的索引，顶点信息存储在 v 开头的行中。由`model->vert(i,j)`得到第 i 个面第 j 个顶点的世界坐标。
-  
+
 b1,b2,b3 表示相应顶点的纹理的索引，纹理信息存储在 vt 开头的行中。由`model->uv(i,j)`得到`vec2`类型的值，是第 i 个面第 j 个顶点纹理信息，即这个顶点在纹理图案中的坐标。
 
 TGAImage 类型的`diffusemap`是纹理贴图图案，通过`diffusemap.get(x,y)`获取贴图上坐标(x,y)处的像素颜色，返回值为 TGAColor 类型。
@@ -48,9 +48,9 @@ void triangle5(vec3* pts,
     // 确定包围盒大小
     vec2 bboxmin = {
         image.width() - 1.,
-        image.height() - 1.};  // 记录左上角，初始化为最大值（右下角）
-    vec2 bboxmax = {0., 0.};   // 记录右下角，初始化为最小值（左上角）
-    vec2 clamp = {image.width() - 1., image.height() - 1.};  // 限制大小
+        image.height() - 1.}; 
+    vec2 bboxmax = {0., 0.}; 
+    vec2 clamp = {image.width() - 1., image.height() - 1.};
     for (int i = 0; i < 3; i++) {
         bboxmin.x = max(0., min(bboxmin.x, pts[i].x));
         bboxmin.y = max(0., min(bboxmin.y, pts[i].y));
@@ -144,4 +144,4 @@ int main(int argc, char** argv) {
 
 结果：
 
-![head_tex](../resources/head_tex.png){style="width:500px}
+![head_tex](../resources/head_tex.png){style="width:500px"}

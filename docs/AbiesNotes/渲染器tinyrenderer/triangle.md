@@ -519,3 +519,7 @@ if (z > zbuffer[static_cast<int>(x + y * width)]) {
 结果：
 
 ![head_zbuffer](../resources/head_zbuffer.png){style="width:500px"}
+
+Zbuffer结果：
+
+![head_zbuf](../resources/head_zbuffer.png){style="width:500px"}
