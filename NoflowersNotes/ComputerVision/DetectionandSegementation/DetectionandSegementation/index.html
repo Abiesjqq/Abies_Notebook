@@ -20,7 +20,7 @@
     
     
       
-        <title>Detection and Segementation - Abies's Notebook</title>
+        <title>Detection, Segmentation, Visualization, and Understanding - Abies's Notebook</title>
       
     
     
@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#semantic-segmentation" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -119,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Detection and Segementation
+              Detection, Segmentation, Visualization, and Understanding
             
           </span>
         </div>
@@ -838,17 +843,110 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Detection, Segmentation, Visualization, and Understanding
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Detection and Segementation
+    Detection, Segmentation, Visualization, and Understanding
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Segmentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Segmentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fully-convolutional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fully Convolutional
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fully Convolutional">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upsampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upsampling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upsampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unpooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unpooling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transposed-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transposed Convolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -993,9 +1091,29 @@
   
 
 
-  <h1>Detection and Segementation</h1>
+  <h1>Detection, Segmentation, Visualization, and Understanding</h1>
 
-
+<h2 id="semantic-segmentation">Semantic Segmentation</h2>
+<p>Detect which region a pixel belongs to.</p>
+<p>At training time, each pixel is labeled with a semantic category. And at test time,classify each pixel of a new image.</p>
+<h3 id="fully-convolutional">Fully Convolutional</h3>
+<p>Design network as a bunch of convolutional layers, with downsampling and upsampling inside the network.</p>
+<p><img alt="img.png" src="../img.png" /></p>
+<h4 id="upsampling">Upsampling</h4>
+<h5 id="unpooling">Unpooling</h5>
+<p>Sampling &rarr; Pooling</p>
+<p>e.g. Max Unpooling: Set others to zero, and put it back to the original position.</p>
+<p><img alt="img_1.png" src="../img_1.png" /></p>
+<h5 id="transposed-convolution">Transposed Convolution</h5>
+<p>The inverse of convolution.</p>
+<div class="arithmatex">\[
+Y[m, n] = \sum_{i=0}^{H-1} \sum_{j=0}^{W-1} X[i, j] \cdot K[m - i \cdot s, n - j \cdot s]
+\]</div>
+<blockquote>
+<p><span class="arithmatex">\(X\)</span>: input figure<br />
+<span class="arithmatex">\(K\)</span>: conv kernel<br />
+<span class="arithmatex">\(Y\)</span>: larger output  </p>
+</blockquote>
 
 
 
@@ -1018,7 +1136,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月26日 06:02:02 UTC">2025-07-26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月27日 13:20:12 UTC">2025-07-27</span>
   </span>
 
     
@@ -1033,29 +1151,6 @@
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
