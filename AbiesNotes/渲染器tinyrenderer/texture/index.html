@@ -361,7 +361,7 @@
   
     
   
-  Abies 的平行笔记
+  Abies 的笔记
 
         </a>
       </li>
@@ -694,7 +694,7 @@
   
   
   <span class="md-ellipsis">
-    Abies 的平行笔记
+    Abies 的笔记
     
   </span>
   
@@ -705,7 +705,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Abies 的平行笔记
+            Abies 的笔记
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -924,33 +924,18 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      纹理
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="纹理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
       原理
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       实现
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1001,13 +986,12 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>278</strong> 个字&nbsp;&nbsp;<strong>3</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>276</strong> 个字&nbsp;&nbsp;<strong>3</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
-<h2 id="_1">纹理</h2>
-<h3 id="_2">原理</h3>
-<p>.obj 文件中，三角形面用<code>f a1/b1/c1 a2/b2/c2 a3/b3/c3</code>表示，一共有<code>model-&gt;nfaces()</code>个面。<br />
-a1,a2,a3 表示顶点对应的索引，顶点信息存储在 v 开头的行中。由<code>model-&gt;vert(i,j)</code>得到第 i 个面第 j 个顶点的世界坐标。<br />
-b1,b2,b3 表示相应顶点的纹理的索引，纹理信息存储在 vt 开头的行中。由<code>model-&gt;uv(i,j)</code>得到<code>vec2</code>类型的值，是第 i 个面第 j 个顶点纹理信息，即这个顶点在纹理图案中的坐标。</p>
+<h2 id="_1">原理</h2>
+<p>.obj 文件中，三角形面用<code>f a1/b1/c1 a2/b2/c2 a3/b3/c3</code>表示，一共有<code>model-&gt;nfaces()</code>个面。  </p>
+<p>a1,a2,a3 表示顶点对应的索引，顶点信息存储在 v 开头的行中。由<code>model-&gt;vert(i,j)</code>得到第 i 个面第 j 个顶点的世界坐标。</p>
+<p>b1,b2,b3 表示相应顶点的纹理的索引，纹理信息存储在 vt 开头的行中。由<code>model-&gt;uv(i,j)</code>得到<code>vec2</code>类型的值，是第 i 个面第 j 个顶点纹理信息，即这个顶点在纹理图案中的坐标。</p>
 <p>TGAImage 类型的<code>diffusemap</code>是纹理贴图图案，通过<code>diffusemap.get(x,y)</code>获取贴图上坐标(x,y)处的像素颜色，返回值为 TGAColor 类型。</p>
 <p><code>Model</code>类中的<code>diffuse</code>用于获取<code>diffusemap</code>，即<code>model-&gt;diffuse().get(x,y)</code>获得贴图上坐标(x,y)处的像素颜色。</p>
 <p><strong>应用纹理：</strong></p>
@@ -1017,7 +1001,7 @@ b1,b2,b3 表示相应顶点的纹理的索引，纹理信息存储在 vt 开头�
 <li>由(tex_x,tex_y)得到对应的纹理颜色，具体方式为<code>TGAColor color = model-&gt;diffuse().get(tex_x, tex_y);</code></li>
 <li>将颜色和光影结合，即 rgb 中每个值乘上光照强度<code>intensity</code>，具体为<code>unsigned char r = color[2] * intensity;</code></li>
 </ol>
-<h3 id="_3">实现</h3>
+<h2 id="_2">实现</h2>
 <p>代码：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">  2</a></span>
@@ -1279,7 +1263,7 @@ b1,b2,b3 表示相应顶点的纹理的索引，纹理信息存储在 vt 开头�
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月27日 03:19:56 UTC">2025-07-27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月27日 03:24:03 UTC">2025-07-27</span>
   </span>
 
     
