@@ -2,11 +2,11 @@
 
 ### 尝试
 
-~~因为ssloy说Usually, after this introduction I leave my students for about an hour（~~
+~~因为 ssloy 说 Usually, after this introduction I leave my students for about an hour（~~
 
-用`unordered_map<int,vector<int>>`记录每个x对应的边界上的y，最后用竖直线填充三角形。
+用`unordered_map<int,vector<int>>`记录每个 x 对应的边界上的 y，最后用竖直线填充三角形。
 
-由于统一用x作为key，不能根据斜率翻转。但是普通Bresenhan方法每次y只能上升或下降一格，斜率大的线会变成45度直线+竖直直线。这里用了`int step = error / dx;`来进行大斜率的移动。
+由于统一用 x 作为 key，不能根据斜率翻转。但是普通 Bresenhan 方法每次 y 只能上升或下降一格，斜率大的线会变成 45 度直线+竖直直线。这里用了`int step = error / dx;`来进行大斜率的移动。
 
 ```cpp
 #include <bits/stdc++.h>
@@ -80,7 +80,9 @@ int main() {
 
 （下面是官方的改进流程）
 
-### 1. 画边框
+### 改进过程
+
+#### 1. 画边框
 
 ```cpp
 void triangle2(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
@@ -90,9 +92,9 @@ void triangle2(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
 }
 ```
 
-### 2. 区分边界
+#### 2. 区分边界
 
-将v0, v1, v2按y的升序排列，由v0, v1和v1, v2画的边为一组，中间有转折；由v0, v2画的边为一组，无转折。
+将 v0, v1, v2 按 y 的升序排列，由 v0, v1 和 v1, v2 画的边为一组，中间有转折；由 v0, v2 画的边为一组，无转折。
 
 ```cpp
 void triangle2(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
@@ -102,16 +104,16 @@ void triangle2(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
         swap(v0, v2);
     if (v1.y > v2.y)
         swap(v1, v2);
-        
+
     line(v0.x, v0.y, v1.x, v1.y, image, color);
     line(v1.x, v1.y, v2.x, v2.y, image, color);
     line(v2.x, v2.y, v0.x, v0.y, image, color);
 }
 ```
 
-### 3. 区分上下部分
+#### 3. 区分上下部分
 
-交换后v1为转折点，根据v1分割成上下两部分，分别计算左右边界的x值。
+交换后 v1 为转折点，根据 v1 分割成上下两部分，分别计算左右边界的 x 值。
 
 ```cpp
 void triangle2(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
@@ -146,7 +148,7 @@ void triangle2(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
 }
 ```
 
-### 4. 水平线填充
+#### 4. 水平线填充
 
 ```cpp
 // 下半个三角形
@@ -179,7 +181,7 @@ for (int y = v1.y; y <= v2.y; y++) {
 }
 ```
 
-### 5. 合并代码
+#### 5. 合并代码
 
 ```cpp
 void triangle3(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
@@ -219,15 +221,15 @@ void triangle3(vec3 v0, vec3 v1, vec3 v2, TGAImage& image, TGAColor color) {
 
 ## 重心坐标
 
-已知三角形ABC和点P，P的重心坐标为三个顶点的加权值： 
+已知三角形 ABC 和点 P，P 的重心坐标为三个顶点的加权值：
 
 $$ P=u\cdot A+v\cdot B+w\cdot C$$
 
 其中$u+v+w=1$.
 
-若$u,v,w$都在[0, 1]范围内，则P在三角形内；若至少一个权值在范围外，则至少一个值小于零，P在三角形外。
+若$u,v,w$都在[0, 1]范围内，则 P 在三角形内；若至少一个权值在范围外，则至少一个值小于零，P 在三角形外。
 
-令三个顶点的坐标分别为$x_i, y_i, z_i$，P点坐标为$x_p, y_p, z_p$，则：
+令三个顶点的坐标分别为$x_i, y_i, z_i$，P 点坐标为$x_p, y_p, z_p$，则：
 
 $$
 \begin{cases}
@@ -281,11 +283,11 @@ y_0 - y_2 & y_1 - y_2 \\
 }
 $$
 
-定义U：
+定义 U：
 
 $$
 \begin{aligned}
-U &= 
+U &=
 \begin{pmatrix}
 x_0 - x_2 & x_1 - x_2 & x_2 - x_p
 \end{pmatrix}
@@ -492,14 +494,13 @@ int main(int argc, char** argv) {
 
 ![tri_head_light](../resources/tri_head_light.png){style="width:500px"}
 
-
-因为没有用z-buffer，嘴巴内表面渲染后覆盖了外表面的结果（？）
+因为没有用 z-buffer，嘴巴内表面渲染后覆盖了外表面的结果（？）
 
 ## 深度缓冲
 
-按图像的大小构造z-buffer数组，初始化为负无穷，遍历三角形时对其中每个像素的值取最大（规定z值越大表示离摄像机越近）。
+按图像的大小构造 z-buffer 数组，初始化为负无穷，遍历三角形时对其中每个像素的值取最大（规定 z 值越大表示离摄像机越近）。
 
-z-buffer用于记录每个像素的深度，保证绘制前面的图形、遮挡后面的图形。
+z-buffer 用于记录每个像素的深度，保证绘制前面的图形、遮挡后面的图形。
 
 代码：
 
@@ -517,5 +518,4 @@ if (z > zbuffer[static_cast<int>(x + y * width)]) {
 
 结果：
 
-head_zbuffer
 ![head_zbuffer](../resources/head_zbuffer.png){style="width:500px"}

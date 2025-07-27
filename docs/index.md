@@ -9,11 +9,12 @@ hide:
 
 ![示例](images/flower-dark.jpg){.img1}
 
--   __广告位招租__
+-   __Bulletin board__
 
     ---
 
-
+    广告位招租
+    
 </div>
 
 <span id="busuanzi_container_site_pv" style="font-size: 0.9em;">

@@ -129,6 +129,7 @@ nav:
           # - Getting started!: AbiesNotes/渲染器tinyrenderer/getting started.md
           - Line: AbiesNotes/渲染器tinyrenderer/line.md
           - Triangle: AbiesNotes/渲染器tinyrenderer/triangle.md
+          - Texture: AbiesNotes/渲染器tinyrenderer/texture.md
 
 
 extra:
