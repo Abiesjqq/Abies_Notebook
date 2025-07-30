@@ -28,13 +28,310 @@
 
 (Emitted)
 
+A max pooling realization here.
+
+=== "Forward"
+
+    ```python
+    def max_pool_forward_fast(x, pool_param):
+        """
+        Vectorized (non-naive) version of the forward pass for a max-pooling layer.
+    
+        Inputs:
+        - x: Input data, shape (N, C, H, W)
+        - pool_param: dict with keys:
+            - 'pool_height': int
+            - 'pool_width': int
+            - 'stride': int
+    
+        Returns:
+        - out: Output data, shape (N, C, H', W')
+        - cache: (x, pool_param)
+        """
+        N, C, H, W = x.shape
+        ph, pw, stride = pool_param['pool_height'], pool_param['pool_width'], pool_param['stride']
+        
+        H_out = 1 + (H - ph) // stride
+        W_out = 1 + (W - pw) // stride
+    
+        # Create output tensor
+        out = np.zeros((N, C, H_out, W_out))
+    
+        # im2col: unfold pooling windows
+        x_reshaped = x.reshape(N * C, 1, H, W)
+    
+        # Create a matrix to hold all pooling windows
+        col = np.zeros((N * C, ph * pw, H_out * W_out))
+    
+        out_idx = 0
+        for i in range(0, H - ph + 1, stride):
+            for j in range(0, W - pw + 1, stride):
+                patch = x_reshaped[:, :, i:i+ph, j:j+pw]  # shape: (N*C, 1, ph, pw)
+                col[:, :, out_idx] = patch.reshape(N * C, -1)
+                out_idx += 1
+    
+        # Max over pooling regions
+        max_pool = np.max(col, axis=1)  # shape: (N*C, H_out*W_out)
+        out = max_pool.reshape(N, C, H_out, W_out)
+    
+        cache = (x, pool_param)
+        return out, cache
+    ```
+
+=== "Backward"
+
+    $$
+    \text{dx}_{n, c, h, w} =
+    \begin{cases}
+    \text{dout}_{n,c,i,j}, & \text{if } (h,w) = \underset{(h',w') \in \text{pool region}}{\arg\max} \, x_{n,c,h',w'} \\
+    0, & \text{otherwise}
+    \end{cases}
+    $$
+    
+    ```python
+    def max_pool_backward_fast(dout, cache):
+        """
+        Vectorized backward pass for a max-pooling layer.
+    
+        Inputs:
+        - dout: Upstream derivatives, shape (N, C, H', W')
+        - cache: Tuple of (x, pool_param) from forward pass
+    
+        Returns:
+        - dx: Gradient with respect to x, shape same as x
+        """
+        x, pool_param = cache
+        N, C, H, W = x.shape
+        ph, pw, stride = pool_param['pool_height'], pool_param['pool_width'], pool_param['stride']
+        H_out, W_out = dout.shape[2], dout.shape[3]
+    
+        dx = np.zeros_like(x)
+    
+        for n in range(N):
+            for c in range(C):
+                for i in range(H_out):
+                    for j in range(W_out):
+                        h_start = i * stride
+                        h_end = h_start + ph
+                        w_start = j * stride
+                        w_end = w_start + pw
+    
+                        # 当前窗口
+                        window = x[n, c, h_start:h_end, w_start:w_end]
+                        max_val = np.max(window)
+                        
+                        # 梯度传播只传给最大值所在位置
+                        mask = (window == max_val)
+                        dx[n, c, h_start:h_end, w_start:w_end] += mask * dout[n, c, i, j]
+    
+        return dx
+    ```
+
 ### Normalization Layers
 
 #### Batch Normalization
 
-$$
-\hat{x_i} = \frac{x - \mu}{\sqrt{\mathrm{Var}(x_i) + \varepsilon}}
-$$
+=== "Forward"
+
+    $$
+    \mu = \frac{1}{m} \sum_{i=1}^{m} x_i
+    \quad
+    \sigma^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu)^2
+    \quad
+    \hat{x}_i = \frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}}
+    \quad
+    y_i = \gamma \hat{x}_i + \beta
+    $$
+    
+    ```python
+    def batchnorm_forward(x, gamma, beta, bn_param):
+        """
+        Forward pass for batch normalization.
+    
+        During training the sample mean and (uncorrected) sample variance are
+        computed from minibatch statistics and used to normalize the incoming data.
+        During training we also keep an exponentially decaying running mean of the
+        mean and variance of each feature, and these averages are used to normalize
+        data at test-time.
+    
+        At each timestep we update the running averages for mean and variance using
+        an exponential decay based on the momentum parameter:
+    
+        running_mean = momentum * running_mean + (1 - momentum) * sample_mean
+        running_var = momentum * running_var + (1 - momentum) * sample_var
+    
+        Note that the batch normalization paper suggests a different test-time
+        behavior: they compute sample mean and variance for each feature using a
+        large number of training images rather than using a running average. For
+        this implementation we have chosen to use running averages instead since
+        they do not require an additional estimation step; the torch7
+        implementation of batch normalization also uses running averages.
+    
+        Input:
+        - x: Data of shape (N, D)
+        - gamma: Scale parameter of shape (D,)
+        - beta: Shift paremeter of shape (D,)
+        - bn_param: Dictionary with the following keys:
+          - mode: 'train' or 'test'; required
+          - eps: Constant for numeric stability
+          - momentum: Constant for running mean / variance.
+          - running_mean: Array of shape (D,) giving running mean of features
+          - running_var Array of shape (D,) giving running variance of features
+    
+        Returns a tuple of:
+        - out: of shape (N, D)
+        - cache: A tuple of values needed in the backward pass
+        """
+        mode = bn_param["mode"]
+        eps = bn_param.get("eps", 1e-5)
+        momentum = bn_param.get("momentum", 0.9)
+    
+        N, D = x.shape
+        running_mean = bn_param.get("running_mean", np.zeros(D, dtype=x.dtype))
+        running_var = bn_param.get("running_var", np.zeros(D, dtype=x.dtype))
+
+        if mode == "train":
+            # Step 1: 计算均值
+            sample_mean = np.mean(x, axis=0)
+    
+            # Step 2: 计算方差
+            sample_var = np.var(x, axis=0)
+    
+            # Step 3: 标准化
+            x_hat = (x - sample_mean) / np.sqrt(sample_var + eps)
+    
+            # Step 4: 缩放 + 平移
+            out = gamma * x_hat + beta
+    
+            # 缓存中间值供反向传播使用
+            cache = (x, x_hat, sample_mean, sample_var, gamma, beta, eps)
+    
+            # 更新运行中的统计量
+            running_mean = momentum * running_mean + (1 - momentum) * sample_mean
+            running_var = momentum * running_var + (1 - momentum) * sample_var
+        elif mode == "test":
+            x_hat = (x - running_mean) / np.sqrt(running_var + eps)
+            out = gamma * x_hat + beta
+            cache = None
+        else:
+            raise ValueError('Invalid forward batchnorm mode "%s"' % mode)
+    
+        # Store the updated running means back into bn_param
+        bn_param["running_mean"] = running_mean
+        bn_param["running_var"] = running_var
+    
+        return out, cache
+    ```
+
+    !!! remarks
+        The computation of $\mu$ and $\sigma$ won't happen in testing. Instead, they will be predicted with train data.
+
+
+=== "Backward"
+    
+    $$
+    \mu = \frac{1}{m} \sum_{i=1}^{m} x_i
+    \quad
+    \sigma^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu)^2
+    \quad
+    \hat{x}_i = \frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}}
+    \quad
+    y_i = \gamma \hat{x}_i + \beta
+    $$
+    
+    $$
+    \frac{\partial L}{\partial \gamma} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i} \cdot \hat{x}_i
+    \quad
+    \frac{\partial L}{\partial \beta} = \sum_{i=1}^{m} \frac{\partial L}{\partial y_i}
+    $$
+    
+[//]: # (    $$)
+
+[//]: # (    \frac{\partial L}{\partial x_i} = \frac{1}{m} \cdot \gamma \cdot \left&#40; \sigma^2 + \epsilon \right&#41;^{-\frac{1}{2}} \cdot )
+
+[//]: # (    \left&#40; m \cdot \frac{\partial L}{\partial y_i} - \sum_j \frac{\partial L}{\partial y_j} - \hat{x}_i \cdot \sum_j \left&#40; \frac{\partial L}{\partial y_j} \cdot \hat{x}_j \right&#41; \right&#41;)
+
+[//]: # (    $$)
+    
+    ```python
+    def batchnorm_backward(dout, cache):
+        """
+        Backward pass for batch normalization.
+    
+        For this implementation, you should write out a computation graph for
+        batch normalization on paper and propagate gradients backward through
+        intermediate nodes.
+    
+        Inputs:
+        - dout: Upstream derivatives, of shape (N, D)
+        - cache: Variable of intermediates from batchnorm_forward.
+    
+        Returns a tuple of:
+        - dx: Gradient with respect to inputs x, of shape (N, D)
+        - dgamma: Gradient with respect to scale parameter gamma, of shape (D,)
+        - dbeta: Gradient with respect to shift parameter beta, of shape (D,)
+        """
+    
+        x, x_hat, mean, var, gamma, beta, eps = cache
+        N, D = x.shape
+    
+        # Gradients of beta and gamma
+        dbeta = np.sum(dout, axis=0)                         # (D,)
+        dgamma = np.sum(dout * x_hat, axis=0)                # (D,)
+    
+        # Gradient of x_hat
+        dxhat = dout * gamma                                 # (N, D)
+    
+        # Intermediate partials
+        dvar = np.sum(dxhat * (x - mean) * -0.5 * (var + eps) ** (-1.5), axis=0)  # (D,)
+        dmean = np.sum(dxhat * -1 / np.sqrt(var + eps), axis=0) + \
+                dvar * np.mean(-2 * (x - mean), axis=0)                          # (D,)
+    
+        # Final dx
+        dx = dxhat / np.sqrt(var + eps) + dvar * 2 * (x - mean) / N + dmean / N  # (N, D)
+    
+        return dx, dgamma, dbeta
+    ```
+
+=== "A Optimization for backward"
+
+    $$
+    \frac{\partial L}{\partial x_i} = \frac{\gamma}{\sqrt{\sigma^2 + \epsilon}} \cdot \left( 
+    \frac{\partial L}{\partial y_i} 
+    - \frac{1}{N} \sum_{j=1}^{N} \frac{\partial L}{\partial y_j}
+    - \frac{\hat{x}_i}{N} \sum_{j=1}^{N} \left( \frac{\partial L}{\partial y_j} \cdot \hat{x}_j \right)
+    \right)
+    $$
+    
+    ```python
+    def batchnorm_backward_alt(dout, cache):
+        """
+        Alternative backward pass for batch normalization.
+    
+        For this implementation you should work out the derivatives for the batch
+        normalizaton backward pass on paper and simplify as much as possible. You
+        should be able to derive a simple expression for the backward pass.
+        See the jupyter notebook for more hints.
+    
+        Note: This implementation should expect to receive the same cache variable
+        as batchnorm_backward, but might not use all of the values in the cache.
+    
+        Inputs / outputs: Same as batchnorm_backward
+        """
+    
+        x, x_hat, mean, var, gamma, beta, eps = cache
+        N, D = dout.shape
+    
+        # Gradients w.r.t. gamma and beta (same as before)
+        dbeta = np.sum(dout, axis=0)                          # (D,)
+        dgamma = np.sum(dout * x_hat, axis=0)                 # (D,)
+    
+        # Simplified dx expression
+        dx = (1. / N) * gamma / np.sqrt(var + eps) * \
+            (N * dout - np.sum(dout, axis=0) - x_hat * np.sum(dout * x_hat, axis=0))
+    
+        return dx, dgamma, dbeta
+    ```
 
 #### Layer Norm
 
@@ -52,10 +349,101 @@ $$
 \displaystyle \text{LN}(x_i) = \gamma_i \cdot \frac{x_i - \mu}{\sigma} + \beta_i
 \end{cases}
 $$
+
 where $\gamma_i$ and $\beta_i$ can be learnt through training.
 
-!!! remarks
-    The computation of $\mu$ and $\sigma$ won't happen in testing. Instead, they will be predicted with train data.
+=== "Forward"
+
+    ```python
+    def layernorm_forward(x, gamma, beta, ln_param):
+        """
+        Forward pass for layer normalization.
+    
+        During both training and test-time, the incoming data is normalized per data-point,
+        before being scaled by gamma and beta parameters identical to that of batch normalization.
+    
+        Note that in contrast to batch normalization, the behavior during train and test-time for
+        layer normalization are identical, and we do not need to keep track of running averages
+        of any sort.
+    
+        Input:
+        - x: Data of shape (N, D)
+        - gamma: Scale parameter of shape (D,)
+        - beta: Shift paremeter of shape (D,)
+        - ln_param: Dictionary with the following keys:
+            - eps: Constant for numeric stability
+    
+        Returns a tuple of:
+        - out: of shape (N, D)
+        - cache: A tuple of values needed in the backward pass
+        """
+    
+        eps = ln_param.get("eps", 1e-5)
+    
+        # Step 1: Compute mean and variance per data point (along axis=1)
+        mean = np.mean(x, axis=1, keepdims=True)  # shape (N, 1)
+        var = np.var(x, axis=1, keepdims=True)    # shape (N, 1)
+    
+        # Step 2: Normalize
+        x_hat = (x - mean) / np.sqrt(var + eps)   # shape (N, D)
+    
+        # Step 3: Scale and shift
+        out = gamma * x_hat + beta                # shape (N, D)
+        cache = (x, x_hat, mean, var, gamma, beta, eps)
+    
+        return out, cache
+    ```
+
+=== "Backward"
+
+    $$
+    \frac{\partial L}{\partial x_i} =
+    \frac{1}{D} \cdot \frac{1}{\sqrt{\sigma_i^2 + \epsilon}} \cdot \left(
+    D \cdot \frac{\partial L}{\partial \hat{x}_i} -
+    \sum_{j=1}^{D} \frac{\partial L}{\partial \hat{x}_{ij}} -
+    \hat{x}_i \cdot \sum_{j=1}^{D} \left( \frac{\partial L}{\partial \hat{x}_{ij}} \cdot \hat{x}_{ij} \right)
+    \right)
+    $$
+    
+    ```python
+    def layernorm_backward(dout, cache):
+        """
+        Backward pass for layer normalization.
+    
+        For this implementation, you can heavily rely on the work you've done already
+        for batch normalization.
+    
+        Inputs:
+        - dout: Upstream derivatives, of shape (N, D)
+        - cache: Variable of intermediates from layernorm_forward.
+    
+        Returns a tuple of:
+        - dx: Gradient with respect to inputs x, of shape (N, D)
+        - dgamma: Gradient with respect to scale parameter gamma, of shape (D,)
+        - dbeta: Gradient with respect to shift parameter beta, of shape (D,)
+        """
+    
+        x, x_hat, mean, var, gamma, beta, eps = cache
+        N, D = x.shape
+    
+        # dbeta 和 dgamma 很简单：按列求和
+        dbeta = np.sum(dout, axis=0)            # shape (D,)
+        dgamma = np.sum(dout * x_hat, axis=0)   # shape (D,)
+    
+        # dx_hat
+        dxhat = dout * gamma                    # shape (N, D)
+    
+        # 参考 BatchNorm 的链式法则公式，适配按行归一化
+        std = np.sqrt(var + eps)                # shape (N, 1)
+    
+        # 向量形式的 dx
+        dx = (1. / D) * (1 / std) * (
+            D * dxhat - np.sum(dxhat, axis=1, keepdims=True)
+            - x_hat * np.sum(dxhat * x_hat, axis=1, keepdims=True)
+        )
+    
+        return dx, dgamma, dbeta
+    ```
 
 _Other normalizations_
 
@@ -77,6 +465,93 @@ At test time, all neurons are active always.
 
 !!! normal-comment "A rule to be obeyed"
     The output at test time must be the same as the expected output at training time
+
+=== "Forward"
+
+    $$
+    \text{mask}_i \sim \text{Bernoulli}(p)
+    \quad\Rightarrow\quad
+    \text{mask}_i = \frac{\mathbf{1}_{[u_i < p]}}{p}
+    $$
+    
+    $$
+    \text{out}_i = x_i \cdot \text{mask}_i
+    $$
+    
+    ```python
+    def dropout_forward(x, dropout_param):
+        """
+        Performs the forward pass for (inverted) dropout.
+    
+        Inputs:
+        - x: Input data, of any shape
+        - dropout_param: A dictionary with the following keys:
+          - p: Dropout parameter. We keep each neuron output with probability p.
+          - mode: 'test' or 'train'. If the mode is train, then perform dropout;
+            if the mode is test, then just return the input.
+          - seed: Seed for the random number generator. Passing seed makes this
+            function deterministic, which is needed for gradient checking but not
+            in real networks.
+    
+        Outputs:
+        - out: Array of the same shape as x.
+        - cache: tuple (dropout_param, mask). In training mode, mask is the dropout
+          mask that was used to multiply the input; in test mode, mask is None.
+    
+        NOTE: Please implement **inverted** dropout, not the vanilla version of dropout.
+        See http://cs231n.github.io/neural-networks-2/#reg for more details.
+    
+        NOTE 2: Keep in mind that p is the probability of **keep** a neuron
+        output; this might be contrary to some sources, where it is referred to
+        as the probability of dropping a neuron output.
+        """
+        p, mode = dropout_param["p"], dropout_param["mode"]
+        if "seed" in dropout_param:
+            np.random.seed(dropout_param["seed"])
+    
+        mask = None
+        out = None
+    
+        if mode == "train":
+            # 生成 dropout mask，1的概率为p，0的概率为1-p
+            mask = (np.random.rand(*x.shape) < p) / p  # 注意是除以 p
+            out = x * mask                             # 应用 mask
+        elif mode == "test":
+            out = x
+    
+        cache = (dropout_param, mask)
+        out = out.astype(x.dtype, copy=False)
+    
+        return out, cache
+    ```
+
+=== "Backward"
+
+    $$
+    \frac{\partial L}{\partial x_i} = \frac{\partial L}{\partial \text{out}_i} \cdot \text{mask}_i
+    $$
+    
+    ```python
+    def dropout_backward(dout, cache):
+        """
+        Perform the backward pass for (inverted) dropout.
+    
+        Inputs:
+        - dout: Upstream derivatives, of any shape
+        - cache: (dropout_param, mask) from dropout_forward.
+        """
+        dropout_param, mask = cache
+        mode = dropout_param["mode"]
+    
+        dx = None
+        if mode == "train":
+            dx = dout * mask
+        elif mode == "test":
+            dx = dout
+        return dx
+    
+    ```
+
 
 #### Fractional Max Pooling
 
