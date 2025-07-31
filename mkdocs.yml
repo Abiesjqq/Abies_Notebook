@@ -66,8 +66,6 @@ nav:
       - 通知公告:
           - 通知公告: notices/index.md
   - 碎碎念:
-      - Git: 自学记录/Git/git.md
-      - MkDocs: 自学记录/MkDocs/mkdocs.md
       - Python:
           - Numpy & Pandas: 自学记录/Python/Numpy & Pandas/Numpy & Pandas.md
           - Matplotlib: 自学记录/Python/Matplotlib/Matplotlib.md
@@ -84,6 +82,8 @@ nav:
               - 线性回归和逻辑回归: 自学记录/Python/PyTorch/线性回归和逻辑回归/线性回归和逻辑回归.md
               - MLP与CNN: 自学记录/Python/PyTorch/MLP与CNN/MLP与CNN.md
               - RNN与DQN: 自学记录/Python/PyTorch/RNN与DQN/RNN与DQN.md
+      - Git: 自学记录/Git/git.md
+      - MkDocs: 自学记录/MkDocs/mkdocs.md
       - CSS: 自学记录/CSS/css_learning.md
       - JavaScript: 自学记录/JavaScript/js_learning.md
   - 课程笔记:
@@ -131,8 +131,8 @@ nav:
           - Triangle: AbiesNotes/渲染器tinyrenderer/triangle.md
           - Texture: AbiesNotes/渲染器tinyrenderer/texture.md
           - Projection: AbiesNotes/渲染器tinyrenderer/projection.md
-
-
+          - Gourand Shading: AbiesNotes/渲染器tinyrenderer/shading.md
+          
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
@@ -216,6 +216,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator:
         !!python/name:pymdownx.emoji.to_svg # 用 SVG 图标显示 emoji
+
 
   - pymdownx.tabbed:
       alternate_style: true
