@@ -147,6 +147,9 @@ for (int x = bboxmin.x; x <= bboxmax.x; x++) {
 }
 ```
 
-结果：
+结果
+
+
+（逻辑上只有顶点法向量计算不同，渲染结果和上一次差不多）
 
 ![head_Gouraud](../resources/head_Gouraud.png){style="width:500px"}

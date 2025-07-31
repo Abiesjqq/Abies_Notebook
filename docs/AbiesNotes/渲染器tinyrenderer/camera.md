@@ -96,9 +96,7 @@ mat<4, 4> MVP = Projection * MV;
 mat<4, 4> Viewport = viewport_mat(0, 0, width, height, 255);
 ```
 
-结果：
-
-（逻辑上只有顶点法向量计算不同，渲染结果和上一次差不多）
+结果： 
 
 ![head_camera](../resources/head_camera.png){style="width:500px"}
 
