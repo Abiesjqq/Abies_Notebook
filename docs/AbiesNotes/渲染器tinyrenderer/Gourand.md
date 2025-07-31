@@ -10,11 +10,11 @@ Gourand shading 先计算顶点的法向量，再计算顶点的光照强度，�
 
 1. 大小为`model->nverts()`的`vector<vec3>`用于存储顶点法向量
 
-2. 遍历每个三角形，计算单位化的法向量和面积。再遍历每个顶点，获取顶点编号，加在vector相应位置。
+2. 遍历每个三角形，计算单位化的法向量和面积。再遍历每个顶点，获取顶点编号，加在 vector 相应位置。
 
-3. 对vector中每个顶点法向量单位化
+3. 对 vector 中每个顶点法向量单位化
 
-!!! normal-comment "如何获得顶点的索引？" 
+!!! normal-comment "如何获得顶点的索引？"
 
     .obj文件中，所有顶点依次存储在`facet_vrt`中，但`facet_vrt`是私有属性，故在`Model`中定义方法：
 
@@ -24,7 +24,15 @@ Gourand shading 先计算顶点的法向量，再计算顶点的光照强度，�
     }
     ```
 
-    可用`int idx=model->index(i,j);`得到第i个面第j个顶点的索
+    可用`int idx=model->index(i,j);`得到第i个面第j个顶点的索引
+
+!!! normal-comment "如何从.obj 文件直接获得顶点法向量？"
+
+    如果.obj文件中有vn的行，则这些行存储每个顶点的法向量。
+
+    根据 model.h，可以用`model->normal(i,j)`直接获取第i个面第j个顶点的法向量。
+
+    但这里自己求法向量是~~因为我没看到~~为了展示计算过程。
 
 ## 实现
 
