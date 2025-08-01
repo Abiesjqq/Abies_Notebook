@@ -116,7 +116,9 @@ nav:
           - RNN: NoflowersNotes/ComputerVision/RNN/RNN.md
           - Detection, Segmentation, Visualization, and Understanding: NoflowersNotes/ComputerVision/DetectionandSegementation/DetectionandSegementation.md
           - Attention and Transformers: NoflowersNotes/ComputerVision/AttentionandTransformers/AttentionandTransformers.md
-      - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
+      - 数模笔记:
+          - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
+          - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
   - Abies 的笔记:
       - GAMES101(进行中):
           - Lecture 01 Overview of Computer Graphics: AbiesNotes/图形学入门/Lecture 01 Overview of Computer Graphics.md
