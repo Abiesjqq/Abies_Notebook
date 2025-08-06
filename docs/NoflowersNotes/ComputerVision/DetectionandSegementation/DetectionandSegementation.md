@@ -93,3 +93,5 @@ For each box output:
 Simultaneously detects objects in an image while delineating precise pixel-level masks for each distinct object instance.
 
 ### Masked R-CNN
+
+![img_4.png](img_4.png)

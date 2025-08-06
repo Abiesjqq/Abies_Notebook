@@ -116,6 +116,7 @@ nav:
           - RNN: NoflowersNotes/ComputerVision/RNN/RNN.md
           - Detection, Segmentation, Visualization, and Understanding: NoflowersNotes/ComputerVision/DetectionandSegementation/DetectionandSegementation.md
           - Attention and Transformers: NoflowersNotes/ComputerVision/AttentionandTransformers/AttentionandTransformers.md
+          - Video Understanding: NoflowersNotes/ComputerVision/VideoUnderstanding/VideoUnderstanding.md
       - 数模笔记:
           - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
           - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
