@@ -19,7 +19,7 @@ Train normal 2D CNN to classify video frames independently. (Average predicted p
 
 Reshape $T \times 3 \times H \times W$ to $3T \times H \times W$, and sent it to a 2D CNN.
 
-!!! waring-box "Problem"
+!!! warning-box "Problem"
     One layer of temporal processing may not be enough!
 
 ### 3D CNN
