@@ -137,6 +137,10 @@ nav:
           - Gourand Shading: AbiesNotes/渲染器tinyrenderer/Gourand.md
           - Camera: AbiesNotes/渲染器tinyrenderer/camera.md
           - Shader: AbiesNotes/渲染器tinyrenderer/shader.md
+  - 论文阅读:
+      - Diffusion:
+          - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
+          - Denoising Diffusion Implicit Models: 论文阅读/Diffusion/Denoising Diffusion Implicit Models/Denoising Diffusion Implicit Models.md
         
           
 extra:
