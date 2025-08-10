@@ -86,6 +86,8 @@ nav:
       - MkDocs: 自学记录/MkDocs/mkdocs.md
       - CSS: 自学记录/CSS/css_learning.md
       - JavaScript: 自学记录/JavaScript/js_learning.md
+      - 数学:
+          - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
   - 课程笔记:
       - 数据结构基础:
           - 0. 数据结构复习: 课程笔记/数据结构基础/0. 期末复习.md
