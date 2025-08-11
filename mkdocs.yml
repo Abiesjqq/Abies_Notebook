@@ -130,6 +130,9 @@ nav:
           - Lecture 04 Transformations Cont.: AbiesNotes/图形学入门/Lecture 04 Transformations Cont.md
           - Lecture 05 Rasterization 1 (Triangles): AbiesNotes/图形学入门/Lecture 05 Rasterization 1 (Triangles).md
           - Lecture 06 Rasterization 2 (Antiliasing): AbiesNotes/图形学入门/Lecture 06 Rasterization 2 (Antiliasing).md
+          - Lecture 07 Shading 1 (Illumination, Shading and Graphics Pipelines): AbiesNotes/图形学入门/Lecture 07 Shading 1.md
+          - Lecture 08 Shading 2 (Shading, Pipeline and Texture Mapping): AbiesNotes/图形学入门/Lecture 08 Shading 2.md
+          - Lecture 09 Shading 3 (Texture Mapping cont.): AbiesNotes/图形学入门/Lecture 09 Shading 3.md
       - 渲染器tinyrenderer(进行中):
           - Getting started: AbiesNotes/渲染器tinyrenderer/getting started.md
           - Line: AbiesNotes/渲染器tinyrenderer/line.md
