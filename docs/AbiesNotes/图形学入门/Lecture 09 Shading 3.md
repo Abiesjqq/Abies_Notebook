@@ -88,7 +88,6 @@ mipmap: Allowing (fast, approx., square) range queries
 
 ![Anisotropic](../resources/Anisotropic.png){style="width:400px"}
 
-
 **为什么？**  
 原图中一个像素映射到纹理上不一定是正方形，即原图中水平、竖直方向移动 1 个像素，纹理图中移动距离可能不同。
 

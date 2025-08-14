@@ -24,7 +24,6 @@ e.g.满足条件：
   <img src="../resources/Bezier.png" alt="Bezier" width="400">
 </p>
 
-
 #### de Casteljiau Algorithm
 
 Consider three points (quadratic Bezier):
@@ -97,9 +96,6 @@ B-Spline（基样条）: 对贝塞尔曲线的增强，增加了局部性，改�
 
 ### Mesh Operations
 
-- Mesh subdivision  
-- Mesh simplification  
-- Mesh regularization  
-
-
-
+- Mesh subdivision
+- Mesh simplification
+- Mesh regularization
