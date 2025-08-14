@@ -22,6 +22,7 @@ $$\alpha=\frac{A_A}{A_A+A_B+A_C}$$
 或：基于点坐标的公式。推导可参考渲染器 Tinyrenderer 内容。
 
 ![Barycentric Coordinates](../resources/Barycentric%20Coordinates.png){style="width:500px"}
+
 Linearly interpolate values at vertices:
 
 $$V=\alpha V_A+\beta V_B+\gamma V_C$$
@@ -42,7 +43,7 @@ for each rasterized screen sample (x,y):
 （A pixel on a texture: texel）
 
 1. 非整数的坐标 round 成整数
-2. 双线性插值：找相邻的四个像素，和左下角的水平树脂方向距离为 s 和 t，线性插值（先水平得到两个中间点，再对竖直中间点插值）
+2. 双线性插值：找相邻的四个像素，和左下角的水平竖直方向距离为 s 和 t，线性插值（先水平得到两个中间点，再对竖直中间点插值）
 3. Bicubic：取周围 16 个
 
 **纹理图片太大？**  
@@ -85,7 +86,8 @@ mipmap: Allowing (fast, approx., square) range queries
 每次变换仅长或宽减小一半，保留生成的所有图（不一定是正方形）。  
 额外开销是原图的 3 倍。
 
-![alt text](../resources/Anisotropic%20Filtering.png){style="width:400px"}
+![Anisotropic](../resources/Anisotropic.png){style="width:400px"}
+
 
 **为什么？**  
 原图中一个像素映射到纹理上不一定是正方形，即原图中水平、竖直方向移动 1 个像素，纹理图中移动距离可能不同。

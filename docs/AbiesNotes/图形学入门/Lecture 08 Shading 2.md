@@ -1,9 +1,7 @@
-着色要考虑高光、漫反射、环境光照，上节课讲漫反射
-
 ## Specular Term
 
 什么时候能看到高光？
-
+ 
 1. 物体光滑，反射集中在镜面反射
 2. 视角与镜面反射方向接近
 
@@ -12,6 +10,7 @@
 为什么用半程向量而不是直接计算？
 
 半程向量只需要 v 和 l，计算简单
+
 $$\mathbb{h}=bisector(\mathbb{v},\ mathbb{l})=\frac{\mathbb{v}+\mathbb{l}}{|| \mathbb{v}+\mathbb{l} ||}$$
 
 高光的 Bliinn-Phone 公式：
@@ -20,7 +19,7 @@ $$L_s=k_s(I/r^2)max(0, \mathbb{n}\cdot\mathbb{h})^P$$
 
 cosine power plots: increasing p narrows the reflection lobe
 
-![cos power](../resources/cos%20power.png.png){style="width:500px"}
+![cos power](../resources/cos%20power.png){style="width:500px"}
 
 Influence of k and p:
 
