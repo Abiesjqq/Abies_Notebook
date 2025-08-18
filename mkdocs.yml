@@ -148,8 +148,10 @@ nav:
       - Diffusion:
           - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
           - Denoising Diffusion Implicit Models: 论文阅读/Diffusion/Denoising Diffusion Implicit Models/Denoising Diffusion Implicit Models.md
-        
-          
+          - Score-Based Generative Modeling through Stochastic Differential Equations: 论文阅读/Diffusion/Score-Based Generative Modeling through Stochastic Differential Equations/Score-Based Generative Modeling through Stochastic Differential Equations.md
+          - Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution.md
+          - Unleashing the Power of One-Step Diffusion based Image Super-Resolution via a Large-Scale Diffusion Discriminator: 论文阅读/Diffusion/Unleashing the Power of One-Step Diffusion based Image Super-Resolution/Unleashing the Power of One-Step Diffusion based Image Super-Resolution.md
+          - DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution.md
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
