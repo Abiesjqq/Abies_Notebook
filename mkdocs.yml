@@ -135,6 +135,8 @@ nav:
           - Lecture 09 Shading 3 (Texture Mapping cont.): AbiesNotes/图形学入门/Lecture 09 Shading 3.md
           - Lecture 10 Geomertry 1 (Introduction): AbiesNotes/图形学入门/Lecture 10 Geometry 1.md
           - Lecture 11 Geomertry 2 (Curves and Surfaces): AbiesNotes/图形学入门/Lecture 11 Geometry 2.md
+          - Lecture 12 Geometry 3: AbiesNotes/图形学入门/Lecture 12 Geometry 3.md
+          - Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing): AbiesNotes/图形学入门/Lecture 13 Ray Tracing 1.md
       - 渲染器tinyrenderer(进行中):
           - Getting started: AbiesNotes/渲染器tinyrenderer/getting started.md
           - Line: AbiesNotes/渲染器tinyrenderer/line.md
