@@ -12,7 +12,7 @@
         <link rel="prev" href="../Lecture%2010%20Geometry%201/">
       
       
-        <link rel="next" href="../../%E6%B8%B2%E6%9F%93%E5%99%A8tinyrenderer/getting%20started/">
+        <link rel="next" href="../Lecture%2012%20Geometry%203/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -794,6 +794,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1229,6 +1233,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%2012%20Geometry%203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lecture 12 Geometry 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%2013%20Ray%20Tracing%201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1406,22 +1456,13 @@ Wavefront Object File (.obj) Format: v 表示点的坐标，vn 表示法线，vt
 <li>从 P0 开始，且切线方向为 P0P1</li>
 <li>从 P3 结束，且切线方向为 P2P3</li>
 </ol>
-<p align="center">
-  <img src="../resources/Bezier.png" alt="Bezier" width="400">
-</p>
-
+<p><img alt="Bezier" src="../../resources/Bezier.png" style="width:400px" /></p>
 <h4 id="de-casteljiau-algorithm">de Casteljiau Algorithm</h4>
 <p>Consider three points (quadratic Bezier):</p>
 <p>将起点到终点视为 0~1，对其中任一个比例为 t 的点，按下图方法确定：</p>
-<p align="center">
-  <img src="../resources/Bezier%203.png" alt="Bezier 3" width="600">
-</p>
-
+<p><img alt="Bezier 3" src="../../resources/Bezier%203.png" style="width:600px" /></p>
 <p>四点：</p>
-<p align="center">
-  <img src="../resources/Bezier%204.png" alt="Bezier 4" width="400">
-</p>
-
+<p><img alt="Bezier 4" src="../../resources/Bezier%204.png" style="width:400px" /></p>
 <p><strong>Bernstein form of a Bezier curve of order n:</strong></p>
 <div class="arithmatex">\[b^n(t)=\sum_{j=0}^nb_jB_j^n(t)\]</div>
 <p>Bernstein polynomials:</p>
@@ -1462,9 +1503,9 @@ Wavefront Object File (.obj) Format: v 表示点的坐标，vn 表示法线，vt
 </ol>
 <h3 id="mesh-operations">Mesh Operations</h3>
 <ul>
-<li>Mesh subdivision</li>
-<li>Mesh simplification</li>
-<li>Mesh regularization</li>
+<li>Mesh subdivision  </li>
+<li>Mesh simplification  </li>
+<li>Mesh regularization  </li>
 </ul>
 
 
@@ -1488,7 +1529,7 @@ Wavefront Object File (.obj) Format: v 表示点的坐标，vn 表示法线，vt
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月14日 02:43:21 UTC">2025-08-14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月19日 06:21:16 UTC">2025-08-19</span>
   </span>
 
     
@@ -1503,29 +1544,6 @@ Wavefront Object File (.obj) Format: v 表示点的坐标，vn 表示法线，vt
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1575,13 +1593,13 @@ Wavefront Object File (.obj) Format: v 表示点的坐标，vn 表示法线，vt
         
         
           
-          <a href="../../%E6%B8%B2%E6%9F%93%E5%99%A8tinyrenderer/getting%20started/" class="md-footer__link md-footer__link--next" aria-label="下一页: Getting started">
+          <a href="../Lecture%2012%20Geometry%203/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 12 Geometry 3">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Getting started
+                Lecture 12 Geometry 3
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Lecture%2003%20Transformation/">
+        <link rel="prev" href="../Lecture%2011%20Geometry%202/">
       
       
-        <link rel="next" href="../Lecture%2005%20Rasterization%201%20%28Triangles%29/">
+        <link rel="next" href="../Lecture%2013%20Ray%20Tracing%201/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Lecture 04 Transformations Cont. - Abies's Notebook</title>
+        <title>Lecture 12 Geometry 3 - Abies's Notebook</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3d-transformations" class="md-skip">
+        <a href="#mesh-operation" class="md-skip">
           跳转至
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 04 Transformations Cont.
+              Lecture 12 Geometry 3
             
           </span>
         </div>
@@ -907,30 +907,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Lecture 04 Transformations Cont.
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Lecture%2004%20Transformations%20Cont/" class="md-nav__link">
         
   
   
@@ -941,138 +921,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#3d-transformations" class="md-nav__link">
-    <span class="md-ellipsis">
-      3D Transformations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3D Transformations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3d-rotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      3D Rotations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3D Rotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#compose-from-r_x-r_y-r_z" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compose from \(R_x, R_y, R_z\)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rodrigues-rotation-formation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rodrigues' Rotation Formation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-transformations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Viewing transformations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Viewing transformations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#define-camera" class="md-nav__link">
-    <span class="md-ellipsis">
-      Define camera
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transform-the-camera-mv-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transform the camera (MV transformation)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#projection-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Projection transformation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Projection transformation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#orthographic-projection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Orthographic projection
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#perspective-projection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Perspective projection
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1243,10 +1091,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Lecture%2012%20Geometry%203/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lecture 12 Geometry 3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1257,6 +1125,90 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh Operation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh Operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh-subdivision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh Subdivision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh Subdivision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loop-subdivision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loop Subdivision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catmull-clark-subdivision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Catmull-Clark Subdivision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesh-simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh Simplification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shadow-mapping-dot-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shadow Mapping (dot light)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1440,193 +1392,85 @@
   
 
 
-  <h1>Lecture 04 Transformations Cont.</h1>
+  <h1>Lecture 12 Geometry 3</h1>
 
-<div class="admonition remarks">
-<p class="admonition-title">Menu of this lecture</p>
-<ul>
-<li><a href="#3d-transformations">3D transformations</a></li>
-<li><a href="#viewing-transformations">Viewing transformations</a></li>
-</ul>
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>761</strong> 个字&nbsp;&nbsp;<strong>3</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
-<h2 id="3d-transformations">3D Transformations</h2>
-<p><strong>Scale:</strong></p>
-<div class="arithmatex">\[
-S(s_x, s_y, s_z)=
-\begin{pmatrix}
-s_x &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; s_y &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; s_z &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><strong>Translation:</strong></p>
-<div class="arithmatex">\[
-T(t_x, t_y, t_z)=
-\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; t_x \\
-0 &amp; 1 &amp; 0 &amp; t_y \\
-0 &amp; 0 &amp; 1 &amp; t_z \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<h3 id="3d-rotations">3D Rotations</h3>
-<h4 id="compose-from-r_x-r_y-r_z">Compose from <span class="arithmatex">\(R_x, R_y, R_z\)</span></h4>
-<div class="arithmatex">\[
-R_x(\theta)=\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; \cos\theta &amp; -\sin\theta &amp; 0 \\
-0 &amp; \sin\theta &amp; \cos\theta &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<div class="arithmatex">\[
-R_y(\theta)=\begin{pmatrix}
-\cos\theta &amp; 0 &amp; \sin\theta &amp; 0 \\
-0 &amp; 1 &amp; 0 &amp; 0 \\
--\sin\theta &amp; 0 &amp; \cos\theta &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p>The rotation part of <span class="arithmatex">\(R_y(\theta)\)</span> is different from common rotation matrix, because <span class="arithmatex">\(\vec{y}=\vec{z}\times\vec{x}\)</span>, which is not the common sequence xyzxyz.</p>
-<div class="arithmatex">\[
-R_z(\theta)=\begin{pmatrix}
-\cos\theta &amp; -\sin\theta &amp; 0 &amp; 0 \\
-\sin\theta &amp; \cos\theta &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p>When rotating around x-, y-, and z- axis with angle <span class="arithmatex">\(\alpha, \beta, \gamma\)</span> respectively (<span class="arithmatex">\(\alpha, \beta, \gamma\)</span> are called Euler angles), </p>
-<div class="arithmatex">\[
-R_{xyz}(\alpha, \beta, \gamma)=R_x(\alpha)R_y(\beta)R_z(\gamma)
-\]</div>
-<h4 id="rodrigues-rotation-formation">Rodrigues' Rotation Formation</h4>
-<p>Rotation by angle <span class="arithmatex">\(\alpha\)</span> around axis n,</p>
-<div class="arithmatex">\[
-R(n, \alpha)=\cos(\alpha)I+(1-\cos(\alpha))n n^T+\sin(\alpha)\begin{pmatrix}
-0 &amp; -n_z &amp; n_y \\
-n_z &amp; 0 &amp; -n_x \\
--n_y &amp; n_x &amp; 0
-\end{pmatrix}
-\]</div>
-<p>If the axis of rotation does not pass through the origin, first translate the entire system so that the axis passes through the origin, perform the rotation, and then translate the entire system back to its original position.</p>
-<p>Quaternions can be used for interpolation between rotation angles.</p>
-<h2 id="viewing-transformations">Viewing transformations</h2>
-<p><em>MVP Transformations:</em></p>
-<ol>
-<li>Model transformations (arrange objects and places)</li>
-<li>View transformations (arrange angles)</li>
-<li>Projection transformations</li>
-</ol>
-<h3 id="define-camera">Define camera</h3>
+<h2 id="mesh-operation">Mesh Operation</h2>
 <ul>
-<li>position: <span class="arithmatex">\(\hat{e}\)</span> (points from the origin to the camera)</li>
-<li>look-at / gaze direction: <span class="arithmatex">\(\hat{g}\)</span> (points from the camera to the object)</li>
-<li>up direction: <span class="arithmatex">\(\hat{t}\)</span></li>
+<li>Mesh Subdivision：类似增大分辨率，展示更多细节。</li>
+<li>Mesh Simplification：删去某些边或三角形，但维持连接关系。</li>
+<li>Mesh Regularization：将三角形正则化，使每个面更接近正三角形，但不能丢失细节。</li>
 </ul>
-<p>Usually we transform the camera to the origin, up at Y, look at -Z.<br />
-And transform the objects along with the camera.</p>
-<h3 id="transform-the-camera-mv-transformation">Transform the camera (MV transformation)</h3>
-<p><em>Steps:</em></p>
+<h3 id="mesh-subdivision">Mesh Subdivision</h3>
+<p>三角形细分：先增加三角形数量，再稍微改变各个三角形位置，使其整体形成不同的形状。</p>
+<h4 id="loop-subdivision">Loop Subdivision</h4>
+<ul>
+<li>Split each triangle into four: 连接三条边的中点，将原三角形分成四个</li>
+<li>Assign new vertex positions according to weights: new and old vertices updated differently</li>
+</ul>
+<p><strong>怎么 update？</strong></p>
 <ol>
-<li>Translate e to origin (<span class="arithmatex">\(T_{view}\)</span>)</li>
-<li>Rotate g to -Z, t to Y, (g, x, t) to x (<span class="arithmatex">\(R_{view}\)</span>)</li>
+<li>新点：<br />
+   当前点所在的边被两个三角形共用。这条边的两个顶点记为 A、B，两三角形的剩余两个顶点记为 C、D，则当前点变换后的坐标为 &#8540;*(A+B)+&#8539;*(C+D)<br />
+   （A 和 B 离新点更近，影响大，权重大）</li>
 </ol>
-<p><span class="arithmatex">\(T_{view}\)</span>:</p>
-<div class="arithmatex">\[
-T_{view}=
-\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; -x_e \\
-0 &amp; 1 &amp; 0 &amp; -y_e \\
-0 &amp; 0 &amp; 1 &amp; -z_e \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><span class="arithmatex">\(R_{view}\)</span>: Consider its inverse rotation (X to (g, x, t), Y to t, Z to -g).</p>
-<div class="admonition normal-comment">
-<p class="admonition-title">comment</p>
-<p>Both the direction and order of rotation must be reversed.</p>
-</div>
-<div class="arithmatex">\[
-R_{view}^{-1}=\begin{pmatrix}
-x_{\hat{g}\times\hat{t}} &amp; x_t &amp; x_{-g} &amp; 0 \\
-y_{\hat{g}\times\hat{t}} &amp; y_t &amp; y_{-g} &amp; 0 \\
-z_{\hat{g}\times\hat{t}} &amp; z_t &amp; z_{-g} &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p>Since <span class="arithmatex">\(R_{view}\)</span> is orthoganal, </p>
-<div class="arithmatex">\[R_{view}=(R_{view}^{-1})^T\]</div>
-<h3 id="projection-transformation">Projection transformation</h3>
-<p><em>Two 3D -&gt; 2D types:</em></p>
+<p><img alt="LoopSubdivision" src="../../resources/LoopSubdivision.png" style="width:400px" /></p>
 <ol>
-<li>orthographic projection  </li>
-<li>perspective projection</li>
+<li>原有的点：<br />
+   和当前点相邻的原有的点的个数是当前点的度 n。<br />
+   u 是常数，n=3 时 u=3/16，否则 u=3/(8n)。<br />
+   当前点变换后的坐标为：(1-n*u)*当前点原先的坐标+u*所有相邻点坐标之和。</li>
 </ol>
-<h4 id="orthographic-projection">Orthographic projection</h4>
-<p>Consider a cuboid <span class="arithmatex">\([l,r]\times[b,t]\times[f,n]\)</span>, map it to the canonical cube <span class="arithmatex">\([-1,1]^3\)</span>, and drop Z coordinate to project.</p>
-<details class="normal-comment">
-<summary>Why we just need to drop Z coordinate?</summary>
-<p>In the <a href="#define-camera">"Define camera"</a> part, we define the camera located at the origin, up at Y, look at -Z.</p>
-</details>
-<div class="arithmatex">\[
-M_{ortho} =
-\begin{pmatrix}
-\frac{2}{r - l} &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; \frac{2}{t - b} &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; \frac{2}{n - f} &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; -\frac{r + l}{2} \\
-0 &amp; 1 &amp; 0 &amp; -\frac{t + b}{2} \\
-0 &amp; 0 &amp; 1 &amp; -\frac{n + f}{2} \\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<h4 id="perspective-projection">Perspective projection</h4>
-<p>Illustration:</p>
-<p><img alt="perspective illustration" src="../../../images/perspective%20illustration.png" style="width:300px" /></p>
-<p><em>Steps:</em>
-1. Squish the frustum into a cuboid, all points on the near plane remain unchanged, all points on the far plane undergo in-plane contraction, with the center point of the far plane remaining fixed.<br />
-2. Do orthographic projection.</p>
-<div class="arithmatex">\[
-M_{persp\to ortho}=\begin{pmatrix}
-n &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; n &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; n+f &amp; -nf\\
-0 &amp; 0 &amp; 1 &amp; 0
-\end{pmatrix}
-\]</div>
-<details class="normal-comment">
-<summary>Derivation</summary>
-<p>Squish illustration:<br />
-<img alt="squish illustration" src="../../../images/squish%20illustration.png" style="width:300px" />  </p>
-<div class="arithmatex">\[
-M_{persp\to ortho}\begin{pmatrix}x\\y\\z\\1\end{pmatrix}
-=\begin{pmatrix}nx/z\\ny/z\\?\\1\end{pmatrix}
-=\begin{pmatrix}nx\\ny\\?\\z\end{pmatrix}
-\]</div>
-<p>thus,</p>
-<div class="arithmatex">\[
-M_{persp\to ortho}=\begin{pmatrix}
-n&amp;0&amp;0&amp;0\\
-0&amp;n&amp;0&amp;0\\
-A&amp;B&amp;C&amp;D\\
-0&amp;0&amp;1&amp;0
-\end{pmatrix}
-\]</div>
-<p>According to the properties of squishing, consider a point on the near plane and the middle point on the far plane to solve the third row.</p>
+<h4 id="catmull-clark-subdivision">Catmull-Clark Subdivision</h4>
+<p>Loop Subdivision 只能用于三角形面的细分，而 Catmull-Clark Subdivision 可用于任意形状面的细分。</p>
+<p><strong>定义：</strong></p>
+<ul>
+<li>四边形面（quad face）和非四边形面（non-quad face）</li>
+<li>度（degree）：一个顶点连接的边数</li>
+<li>奇异点（extraordinaty vertex）：度不等于四的顶点</li>
+</ul>
+<p><strong>步骤：</strong></p>
 <ol>
-<li><span class="arithmatex">\((x,y,n,1)\to(x,y,n,1)=(nx,ny,n^2,n)\)</span><br />
-<span class="arithmatex">\(n^2\)</span> is unrelated to x and y, thus <span class="arithmatex">\(A=B=0, Cn+D=n^2\)</span>  </li>
-<li><span class="arithmatex">\((0,0,f,1)\to(0,0,f,1)=(0,0,f^2,f)\)</span><br />
-<span class="arithmatex">\(Cf+D=f^2\)</span></li>
+<li>取每条边的中点和每个面的中点</li>
+<li>连接所有中点</li>
+<li>调整顶点的位置</li>
 </ol>
-<p>Solve the equations above:</p>
-<div class="arithmatex">\[C=n+f, D=-nf\]</div>
-</details>
+<p>细分后原有的奇异点仍然是奇异点，原来非四边形面的中点成为新的奇异点。<br />
+非四边形面细分为多个四边形面。<br />
+————有非四边形面，则细分后增加相应数量的奇异点；一次细分后不存在非四边形面，奇异点数不增加。</p>
+<p><strong>怎么更新？（略）</strong></p>
+<ol>
+<li>新的面中心的点：用面的顶点直接平均</li>
+<li>新的边中心的点：用边的顶点和相邻的面的中心点，直接平均</li>
+<li>原先的点：用相邻的边中心点和面中心点加权平均</li>
+</ol>
+<h3 id="mesh-simplification">Mesh Simplification</h3>
+<p>e.g. <strong>Edge Collapse：</strong><br />
+将某些边的两个顶点重合成一个。</p>
+<p><strong>怎么确定哪些边坍缩？</strong></p>
+<p><strong>Quadric Error Metrics:</strong><br />
+二次误差（Quadric Error）：一个点到相关的几个面的距离平方和<br />
+边坍缩时，将新的顶点放在某个最佳位置，使其二次误差最小</p>
+<p>先计算所有点的最小二次误差，从小到大依次按二次误差的大小坍缩。<br />
+每次坍缩后，周围点的二次误差会被影响，要更新周围点。</p>
+<p>数据结构：优先队列/堆</p>
+<h2 id="shadow-mapping-dot-light">Shadow Mapping (dot light)</h2>
+<p>硬阴影：阴影边缘锐利，所有像素要么在阴影要么不在阴影<br />
+软阴影：阴影平滑过渡</p>
+<p>越靠近物体底部，阴影越硬（本影）；越远离物体底部，阴影越软（半影）</p>
+<p>Key idea: the point NOT in shadow must be seen both by the light and by the camera.</p>
+<p>步骤：</p>
+<ol>
+<li>从光源看向场景，记录能看到的点的深度  </li>
+<li>从相机看向场景，查看看到的点在上一步中记录的深度，比较记录的深度和实际到光源的深度。如果两次深度一样，则该点能被看到</li>
+</ol>
+<p><img alt="shadow" src="../../resources/shadow.png" style="width:400px" /></p>
+<p>问题：<br />
+浮点数精度问题，相等有偏差<br />
+shadow map的分辨率和整个图像的分辨率应对应，开销大</p>
 
 
 
@@ -1649,7 +1493,7 @@ A&amp;B&amp;C&amp;D\\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月10日 11:45:55 UTC">2025-07-10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月19日 06:21:16 UTC">2025-08-19</span>
   </span>
 
     
@@ -1659,34 +1503,11 @@ A&amp;B&amp;C&amp;D\\
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月10日 11:45:55 UTC">2025-07-10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月19日 06:21:16 UTC">2025-08-19</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1719,7 +1540,7 @@ A&amp;B&amp;C&amp;D\\
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../Lecture%2003%20Transformation/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 03 Transformation">
+          <a href="../Lecture%2011%20Geometry%202/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 11 Geomertry 2 (Curves and Surfaces)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1729,20 +1550,20 @@ A&amp;B&amp;C&amp;D\\
                 上一页
               </span>
               <div class="md-ellipsis">
-                Lecture 03 Transformation
+                Lecture 11 Geomertry 2 (Curves and Surfaces)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Lecture%2005%20Rasterization%201%20%28Triangles%29/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 05 Rasterization 1 (Triangles)">
+          <a href="../Lecture%2013%20Ray%20Tracing%201/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Lecture 05 Rasterization 1 (Triangles)
+                Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing)
               </div>
             </div>
             <div class="md-footer__button md-icon">
