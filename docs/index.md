@@ -15,7 +15,7 @@ hide:
 
     广告位招租
 
-    - Abies 更新了 tinyrenderer 的笔记~
+    - 或许会有更新或公告放在这里
     
 </div>
 

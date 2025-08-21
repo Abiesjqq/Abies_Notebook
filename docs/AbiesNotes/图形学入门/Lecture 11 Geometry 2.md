@@ -20,7 +20,7 @@ e.g.满足条件：
 1. 从 P0 开始，且切线方向为 P0P1
 2. 从 P3 结束，且切线方向为 P2P3
 
-![Bezier](../resources/Bezier.png){style="width:400px"}
+![Bezier](../resources/Bezier.png){style="width:250px"}
 
 #### de Casteljiau Algorithm
 
@@ -32,7 +32,7 @@ Consider three points (quadratic Bezier):
 
 四点：
 
-![Bezier 4](../resources/Bezier%204.png){style="width:400px"}
+![Bezier 4](../resources/Bezier%204.png){style="width:250px"}
 
 **Bernstein form of a Bezier curve of order n:**
 

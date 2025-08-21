@@ -73,10 +73,10 @@ plane is defined by normal vector (N) and a  point (P') on plane.
 
 $$\mathbf{p}:(\mathbf{p}-\mathbf{p}')\cdot N=0$$
 
-**Solve for intersection:**
+Solve for intersection:
 
 $$
-(\mathbf{p}-\mathbf{p}')\cdot N=(\mathbf{o}+t\mathbf{d}-\mathbf{p}')\cdot N=0 \\[0.5em]
+(\mathbf{p}-\mathbf{p}')\cdot N=(\mathbf{o}+t\mathbf{d}-\mathbf{p}')\cdot N=0 \\[0.5em]\\
 t=\frac{(-\mathbf{p}'-\mathbf{o})\cdot N}{\mathbf{d}\cdot N}
 $$
 
@@ -126,9 +126,9 @@ Key ideas:
 - The ray enters the box only when it enters all pairs of s;abs.  
 - The ray exits the box as long as it exits any pair of slabs.
 
-For the 3D box, $t_{enter}=max{t_{min}}, t_{exit}=min{t_{max}}$
+For the 3D box, $t_{enter}=max\{t_{min}\}, t_{exit}=min\{t_{max}\}$
 
-If $t_{exit}<0$, the box is "behind" the ray, no intersectiono.
+If $t_{exit}<0$, the box is "behind" the ray, no intersections.
 
 Else if $t_{exit}\ge 0$ and $t_{enter}<0$, the ray's origin is inside the box, have intersections.
 
