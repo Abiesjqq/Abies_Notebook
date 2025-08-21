@@ -12,7 +12,7 @@
         <link rel="prev" href="../Lecture%2012%20Geometry%203/">
       
       
-        <link rel="next" href="../../%E6%B8%B2%E6%9F%93%E5%99%A8tinyrenderer/getting%20started/">
+        <link rel="next" href="../Lecture%2014%20Ray%20Tracing%202/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -798,6 +798,8 @@
       
         
       
+        
+      
     
     
     
@@ -1228,6 +1230,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture%2014%20Ray%20Tracing%202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lectire 14 Ray Tracing 2(Acceleration)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1437,9 +1462,9 @@ Ignore multiple intersections, each ray can have 0 or 1 intersections.</p>
 <p>Plane equation: </p>
 <p>plane is defined by normal vector (N) and a  point (P') on plane.</p>
 <div class="arithmatex">\[\mathbf{p}:(\mathbf{p}-\mathbf{p}')\cdot N=0\]</div>
-<p><strong>Solve for intersection:</strong></p>
+<p>Solve for intersection:</p>
 <div class="arithmatex">\[
-(\mathbf{p}-\mathbf{p}')\cdot N=(\mathbf{o}+t\mathbf{d}-\mathbf{p}')\cdot N=0 \\[0.5em]
+(\mathbf{p}-\mathbf{p}')\cdot N=(\mathbf{o}+t\mathbf{d}-\mathbf{p}')\cdot N=0 \\[0.5em]\\
 t=\frac{(-\mathbf{p}'-\mathbf{o})\cdot N}{\mathbf{d}\cdot N}
 \]</div>
 <p>Then test if <span class="arithmatex">\(\mathbf{o}+t\mathbf{d}\)</span> is inside triangle.</p>
@@ -1478,8 +1503,8 @@ esp. we often use an Axis-Aligned Bounding Box (AABB), any side of the BB is alo
 <li>The ray enters the box only when it enters all pairs of s;abs.  </li>
 <li>The ray exits the box as long as it exits any pair of slabs.</li>
 </ul>
-<p>For the 3D box, <span class="arithmatex">\(t_{enter}=max{t_{min}}, t_{exit}=min{t_{max}}\)</span></p>
-<p>If <span class="arithmatex">\(t_{exit}&lt;0\)</span>, the box is "behind" the ray, no intersectiono.</p>
+<p>For the 3D box, <span class="arithmatex">\(t_{enter}=max\{t_{min}\}, t_{exit}=min\{t_{max}\}\)</span></p>
+<p>If <span class="arithmatex">\(t_{exit}&lt;0\)</span>, the box is "behind" the ray, no intersections.</p>
 <p>Else if <span class="arithmatex">\(t_{exit}\ge 0\)</span> and <span class="arithmatex">\(t_{enter}&lt;0\)</span>, the ray's origin is inside the box, have intersections.</p>
 <p>If <span class="arithmatex">\(t_{enter}&lt;t_{exit}\)</span>, the ray stays a while in the box, so they must intersect.</p>
 <p>In Summary, ray and AABB intersect iff <span class="arithmatex">\(t_{enter}&lt;t_{exit}\)</span> and <span class="arithmatex">\(t_{exit} \ge 0\)</span>.</p>
@@ -1505,7 +1530,7 @@ esp. we often use an Axis-Aligned Bounding Box (AABB), any side of the BB is alo
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月19日 06:21:16 UTC">2025-08-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月21日 04:50:10 UTC">2025-08-21</span>
   </span>
 
     
@@ -1569,13 +1594,13 @@ esp. we often use an Axis-Aligned Bounding Box (AABB), any side of the BB is alo
         
         
           
-          <a href="../../%E6%B8%B2%E6%9F%93%E5%99%A8tinyrenderer/getting%20started/" class="md-footer__link md-footer__link--next" aria-label="下一页: Getting started">
+          <a href="../Lecture%2014%20Ray%20Tracing%202/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lectire 14 Ray Tracing 2(Acceleration)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Getting started
+                Lectire 14 Ray Tracing 2(Acceleration)
               </div>
             </div>
             <div class="md-footer__button md-icon">

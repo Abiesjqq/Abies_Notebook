@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Lecture%2002%20Review%20of%20Linear%20Algebra/">
+        <link rel="prev" href="../Lecture%2013%20Ray%20Tracing%201/">
       
       
-        <link rel="next" href="../Lecture%2004%20Transformations%20Cont/">
+        <link rel="next" href="../../%E6%B8%B2%E6%9F%93%E5%99%A8tinyrenderer/getting%20started/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Lecture 03 Transformation - Abies's Notebook</title>
+        <title>Lectire 14 Ray Tracing 2(Acceleration) - Abies's Notebook</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#viewing-transformation" class="md-skip">
+        <a href="#uniform-spatial-partitions-grids" class="md-skip">
           跳转至
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 03 Transformation
+              Lectire 14 Ray Tracing 2(Acceleration)
             
           </span>
         </div>
@@ -886,30 +886,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Lecture 03 Transformation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Lecture%2003%20Transformation/" class="md-nav__link">
         
   
   
@@ -920,75 +900,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Viewing transformation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#homogeneous-coordinates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Homogeneous Coordinates
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Homogeneous Coordinates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2d-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D version
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3d-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      3D version
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#composing-transforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Composing Transforms
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1228,10 +1139,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Lecture%2014%20Ray%20Tracing%202/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lectire 14 Ray Tracing 2(Acceleration)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1242,6 +1173,99 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uniform-spatial-partitions-grids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uniform Spatial Partitions (Grids)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial Partition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spatial Partition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kd-tree-pre-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      KD-Tree Pre-Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-partition-bounding-volume-hierarchy-bvh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Partition &amp; Bounding Volume Hierarchy (BVH)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-radiometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Radiometry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Radiometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#radiant-energy-and-flux-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radiant Energy and Flux (Power)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radiant-intensity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radiant Intensity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1402,173 +1426,152 @@
   
 
 
-  <h1>Lecture 03 Transformation</h1>
+  <h1>Lectire 14 Ray Tracing 2(Acceleration)</h1>
 
-<div class="admonition remarks">
-<p class="admonition-title">Menu of this lecture</p>
-<ul>
-<li><a href="#viewing-transformation">2D transformations: rotation, scale, shear</a></li>
-<li><a href="#homogeneous-coordinates">Homogeneous coordinates</a></li>
-<li><a href="#composing-transforms">Composing transformation</a></li>
-</ul>
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>416</strong> 个字&nbsp;&nbsp;<strong>5</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
-<h3 id="viewing-transformation">Viewing transformation</h3>
-<p>Viewing transformation: 3D -&gt; 2D projection</p>
-<p><strong>Scale</strong></p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
-s_x &amp; 0 \\
-0 &amp; s_y
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-\]</div>
-<p>Multiplying a matrix on the left corresponds to performing a row operation.</p>
-<p><strong>Reflection</strong></p>
-<p>E.g. reflection about the y-axis:</p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
--1 &amp; 0 \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-\]</div>
-<p><strong>Sheer</strong></p>
-<p>Illustration of sheer tranformation:<br />
-<img alt="Sheer tranformation" src="../../../images/sheer%20illustration.png" style="width:500px" /></p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
-x+ay \\
-y
-\end{pmatrix}
-=\begin{pmatrix}
-1 &amp; a \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-\]</div>
-<p><strong>Rotation</strong></p>
-<p>By default, the rotation is around the origin.<br />
-<span class="arithmatex">\(R_{45}\)</span> refers to rotatiing 45 degrees counterclockwose about the origin. </p>
-<div class="arithmatex">\[
-R_{\theta}=\begin{pmatrix}
-\cos\theta &amp; -\sin\theta \\
-\sin\theta &amp; \cos\theta
-\end{pmatrix}
-\]</div>
-<h3 id="homogeneous-coordinates">Homogeneous Coordinates</h3>
-<p>Translation is not linear transform, so it cannot be represented in matrix form. 
-But we don't want it to be a special case, so homogeneous coordinates are used to represent all transformations. </p>
-<p>Add a third coordinate (w-coordinate), to represent the translation characters of points or vectors.  </p>
-<p><strong>Affine transformations:</strong><br />
-affine map = linear map + translation map  </p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\ y'
-\end{pmatrix}
-=\begin{pmatrix}
-a &amp; b \\
-c &amp; d
-\end{pmatrix}
-\begin{pmatrix}
-x \\ y
-\end{pmatrix}
-+\begin{pmatrix}
-t_x \\ t_y
-\end{pmatrix}
-\]</div>
-<h4 id="2d-version">2D version</h4>
+<h2 id="uniform-spatial-partitions-grids">Uniform Spatial Partitions (Grids)</h2>
+<p><strong>Preprocesss: Build Acceleration Grid</strong></p>
+<ol>
+<li>Find bounding box</li>
+<li>Create grid</li>
+<li>Store each object in overlapping cells (将和物体表面有相交的各自标记)</li>
+<li>Step through grid in ray traversal order</li>
+</ol>
+<p>认为光线和盒子求交计算快、光线和物体求交计算慢</p>
+<p>根据光线的方向大致判断和哪些盒子相交。<br />
+当光线和盒子相交但盒子里没有物体（没被标记）时，跳过；<br />
+当光线和盒子相交但盒子里有物体时，计算是否和物体相交。</p>
+<p>若只需要找最近交点，找到交点后停止。</p>
+<p><strong>怎么确定划分的格子数？</strong></p>
+<p>格子太少，加速效果差；格子太多，光线和盒子的计算增加。</p>
+<p>格子数=C*场景中物体数，其中 3D 时 C 约为 27。</p>
+<p><strong>加速效果？</strong></p>
+<p>场景中物体分布均匀、物体多时，加速效果好；<br />
+场景中物体分布不均匀、部分区域空旷时，加速效果差；</p>
+<h2 id="spatial-partition">Spatial Partition</h2>
+<h3 id="kd-tree-pre-processing">KD-Tree Pre-Processing</h3>
+<p><strong>Spatial partition examples:</strong></p>
 <ul>
-<li>2D point: <span class="arithmatex">\(\begin{pmatrix}x , y , 1 \end{pmatrix}^T\)</span></li>
-<li>2D vector:<span class="arithmatex">\(\begin{pmatrix}x , y , 0 \end{pmatrix}^T\)</span></li>
+<li>Oct-Tree（八叉树）<br />
+  将整个场景用包围盒包围，分成 8 块（3D），对每一个分成的区域再分成 8 块，直到其中一块中物体数量足够少</li>
+<li>KD-Tree<br />
+  每次分割时仅分成两块，分割方向 xyz 交替</li>
+<li>BSP-Tree
+  每次分割时仅分成两块，方向任意</li>
 </ul>
-<p>When <span class="arithmatex">\(w\neq 0\)</span>, 2D point <span class="arithmatex">\(\begin{pmatrix}x , y , w \end{pmatrix}^T\)</span> means <span class="arithmatex">\(\begin{pmatrix}x/w , y/w , 1 \end{pmatrix}^T\)</span></p>
-<p>(The w-coordinate of vectors are 0, which means vectors are translation invariant. By comparison, w-coordinate of points are 1)</p>
-<p><strong>Use homogeneous Coordinates to represent affine translations:</strong></p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\ y' \\ w'
-\end{pmatrix}
-=\begin{pmatrix}
-1 &amp; 0 &amp; t_x \\
-0 &amp; 1 &amp; t_y \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\ y \\ 1
-\end{pmatrix}
-=\begin{pmatrix}
-x+t_x \\ y+t_y \\ 1
-\end{pmatrix}
-\]</div>
-<p><strong>Properties:</strong> <br />
-1. The last row must be 0 0 1.<br />
-2. The top-left 2×2 matrix represents a linear transformation.<br />
-3. The rightmost column represents translation.
-4. Relations between points and vectors:
-   - vector + vector = vector
-   - point  - point  = vector
-   - point  + vector = point
-   - point  + point  = point</p>
-<p><strong>Scale:</strong></p>
-<div class="arithmatex">\[
-S(s_x, s_y)=\begin{pmatrix}
-s_x &amp; 0 &amp; 0 \\
-0 &amp; s_y &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><strong>Rotation:</strong></p>
-<div class="arithmatex">\[
-R(\alpha)=\begin{pmatrix}
-\cos\alpha &amp; -\sin\alpha &amp; 0 \\
-\sin\alpha &amp; \cos\alpha &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><strong>Translation:</strong></p>
-<div class="arithmatex">\[
-T(t_x, t_y)=\begin{pmatrix}
-1 &amp; 0 &amp; t_x \\
-0 &amp; 1 &amp; t_y \\ 
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\]</div>
-<p><strong>Inverse transformations:</strong> <span class="arithmatex">\(M^{-1}\)</span></p>
-<p>Esp. matrix <span class="arithmatex">\(R_{\theta}\)</span> for rotation is orthogonal, so <span class="arithmatex">\(R_{-\theta}=R^{-1}=R^T\)</span>.</p>
-<h4 id="3d-version">3D version</h4>
+<p><img alt="spatial partition" src="../../resources/spatial%20partition.png" style="width:500px" /></p>
+<p><strong>KD-Tree storage:</strong></p>
+<p>Internal nodes store:</p>
 <ul>
-<li>3D point: <span class="arithmatex">\(\begin{pmatrix}x , y , z, 1 \end{pmatrix}^T\)</span></li>
-<li>3D vector:<span class="arithmatex">\(\begin{pmatrix}x , y , z, 0 \end{pmatrix}^T\)</span></li>
+<li>split axis: x-, y- or z-</li>
+<li>split position: coordinate of split plane along axis</li>
+<li>children: pointers to child nodes</li>
 </ul>
-<p>Use 4×4 matrix for affine transformations. </p>
-<h3 id="composing-transforms">Composing Transforms</h3>
-<p>All matrices are left-multiplied to the original coordinates, and are composed in the order of transformations from right to left.</p>
-<div class="admonition examples">
-<p class="admonition-title">Examples</p>
-<p>Transformations: A1 -&gt; A2 -&gt; ... -&gt; An<br />
-Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\end{pmatrix}\)</span></p>
-</div>
+<p>Leaf nodes store:</p>
+<ul>
+<li>list of objects</li>
+</ul>
+<p><strong>Traversing a KD-Tree:</strong></p>
+<p>从整个场景开始，如果有交点，则看和子节点对应的盒子是否有交点，直到检查完所有有交点的叶节点。</p>
+<p><img alt="KDtree" src="../../resources/KDtree.png" style="width:400px" /></p>
+<p><strong>问题：</strong></p>
+<ol>
+<li>需要知道包围盒和哪些三角形相交</li>
+<li>一个物体可出现在多个包围盒中</li>
+</ol>
+<h3 id="object-partition-bounding-volume-hierarchy-bvh">Object Partition &amp; Bounding Volume Hierarchy (BVH)</h3>
+<p>每次划分将三角形分成两组，分别重新求包围盒</p>
+<p>BVH 中一个物体只出现在一个包围盒中，不同的包围盒可能相交</p>
+<p>KD-Tree 划分空间，BVH 划分物体。实际 BVH 应用更广泛。</p>
+<p><img alt="BVH" src="../../resources/BVH.png" style="width:400px" /></p>
+<p><strong>How to subdivide a node?</strong></p>
+<p>Choose a dimension to split</p>
+<ul>
+<li>1: Always choose the longest axis in node</li>
+<li>2: Split node at locaton of median object (balances tree)</li>
+</ul>
+<p><strong>Termination criteria?</strong></p>
+<p>Stop when node contains few elements (e.g. 5)</p>
+<p><strong>BVH traversal</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Intersect</span><span class="p">(</span><span class="n">Ray</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">BVH</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ray</span><span class="w"> </span><span class="n">misses</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">bbox</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">leaf</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">test</span><span class="w"> </span><span class="n">intersection</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">objs</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">closet</span><span class="w"> </span><span class="n">intersection</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="n">hit1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intersect</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">child1</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span><span class="n">hit2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intersect</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">child2</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">closer</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">hit1</span><span class="p">,</span><span class="w"> </span><span class="n">hit2</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="basic-radiometry">Basic Radiometry</h2>
+<p>Measurement system and units for illumination.</p>
+<p>Accurate measure the spatial properties of light<br />
+New terms: radiant flux, intersity, irradiance, radiance</p>
+<p>Perform lighting calculation in a physically correct manner</p>
+<h3 id="radiant-energy-and-flux-power">Radiant Energy and Flux (Power)</h3>
+<p><strong>Radiant energy</strong> is the energy of electromagnetic radiation. It is measured in units of joules, and denoted by the symbol:</p>
+<div class="arithmatex">\[Q\,[J=Joule]\]</div>
+<p><strong>Radiant flux (power)</strong> is the energy emitted, reflected, transmitted or received, per unit time.</p>
+<div class="arithmatex">\[\Phi\equiv\frac{\mathrm{d}Q}{\mathrm{d}t}\,[W=Watt]\,[ln=lumen]\]</div>
+<p>Flux: photons flowing through a sensor in unit time</p>
+<h3 id="radiant-intensity">Radiant Intensity</h3>
+<p><strong>Radiant (luminous) intensity</strong> is the power per unit solid angle emitted by a point light source.</p>
+<p><img alt="Radiant Intensity" src="../../resources/Radiant%20Intensity.png" style="width:200px" /></p>
+<div class="arithmatex">\[I(\omega)\equiv\frac{\mathrm{d}\Phi}{\mathrm{d}\omega}\]</div>
+<div class="arithmatex">\[\left[\frac{W}{sr}\right]\,\left[\frac{lm}{sr}=cd=candela\right]\]</div>
+<p><strong>Angles and solid angles</strong></p>
+<p><strong>Angle:</strong> ratio of subtended arc length on circle to radius</p>
+<ul>
+<li><span class="arithmatex">\(\theta=frac{l}{r}\)</span></li>
+<li>Circle has <span class="arithmatex">\(2\pi\)</span> radians</li>
+</ul>
+<p><strong>Solid angle:</strong> ratio of subtended area on sphere to radius squared</p>
+<ul>
+<li><span class="arithmatex">\(\Omega=\frac{A}{r^2}\)</span></li>
+<li>Sphere has <span class="arithmatex">\(4\pi\)</span> steradians</li>
+</ul>
+<p><strong>Differential solid angles:</strong></p>
+<p><img alt="solid angle" src="../../resources/solid%20angle.png" style="width:250px" /></p>
+<div class="arithmatex">\[
+\begin{align*}
+\mathrm{d}A&amp;=(r\mathrm{d}\theta)(r\sin\theta\mathrm{d}\phi)\\
+&amp;=r^2\sin\theta\mathrm{d}\theta\mathrm{d}\phi
+\end{align*}
+\]</div>
+<div class="arithmatex">\[\mathrm{d}\omega=\frac{\mathrm{d}A}{r^2}=\sin\theta\mathrm{d}\theta\mathrm{d}\phi\]</div>
+<p>Sphere:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\Omega&amp;=\int_{S^2}\mathrm{d}\omega \\
+&amp;=\int_0^{2\pi}\int_0^{\pi}\sin\theta\mathrm{d}\theta\mathrm{d}\phi \\
+&amp;=4\pi
+\end{align*}
+\]</div>
+<p><strong>Isotropic point source:</strong></p>
+<div class="arithmatex">\[
+\begin{align*}
+\Phi&amp;=\int_{S^2}I\mathrm{d}\omega \\
+&amp;=4\pi I
+\end{align*}
+\]</div>
+<div class="arithmatex">\[I=\frac{\Phi}{4\pi}\]</div>
 
 
 
@@ -1591,7 +1594,7 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月9日 06:25:52 UTC">2025-07-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月21日 04:50:10 UTC">2025-08-21</span>
   </span>
 
     
@@ -1601,34 +1604,11 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月9日 06:25:52 UTC">2025-07-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月21日 04:50:10 UTC">2025-08-21</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1661,7 +1641,7 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../Lecture%2002%20Review%20of%20Linear%20Algebra/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 02 Review of Linear Algebra">
+          <a href="../Lecture%2013%20Ray%20Tracing%201/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1671,20 +1651,20 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
                 上一页
               </span>
               <div class="md-ellipsis">
-                Lecture 02 Review of Linear Algebra
+                Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Lecture%2004%20Transformations%20Cont/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 04 Transformations Cont.">
+          <a href="../../%E6%B8%B2%E6%9F%93%E5%99%A8tinyrenderer/getting%20started/" class="md-footer__link md-footer__link--next" aria-label="下一页: Getting started">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Lecture 04 Transformations Cont.
+                Getting started
               </div>
             </div>
             <div class="md-footer__button md-icon">

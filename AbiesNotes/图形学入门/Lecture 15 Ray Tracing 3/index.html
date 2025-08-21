@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../Lecture%2002%20Review%20of%20Linear%20Algebra/">
-      
-      
-        <link rel="next" href="../Lecture%2004%20Transformations%20Cont/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Lecture 03 Transformation - Abies's Notebook</title>
+        <title>Lecture 15 Ray Tracing 3 - Abies's Notebook</title>
       
     
     
@@ -88,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#viewing-transformation" class="md-skip">
+        <a href="#irradiance-and-radiance" class="md-skip">
           跳转至
         </a>
       
@@ -124,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 03 Transformation
+              Lecture 15 Ray Tracing 3
             
           </span>
         </div>
@@ -352,8 +348,6 @@
   
   
   
-    
-  
   
     
     
@@ -361,12 +355,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-tabs__link">
           
   
@@ -711,570 +703,10 @@
       
   
   
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Abies 的笔记
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Abies 的笔记
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
   
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    GAMES101(进行中)
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            GAMES101(进行中)
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 01 Overview of Computer Graphics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2002%20Review%20of%20Linear%20Algebra/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 02 Review of Linear Algebra
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Lecture 03 Transformation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 03 Transformation
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Viewing transformation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#homogeneous-coordinates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Homogeneous Coordinates
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Homogeneous Coordinates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2d-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D version
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3d-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      3D version
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#composing-transforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Composing Transforms
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2004%20Transformations%20Cont/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 04 Transformations Cont.
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2005%20Rasterization%201%20%28Triangles%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 05 Rasterization 1 (Triangles)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2006%20Rasterization%202%20%28Antiliasing%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 06 Rasterization 2 (Antiliasing)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2007%20Shading%201/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 07 Shading 1 (Illumination, Shading and Graphics Pipelines)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2008%20Shading%202/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 08 Shading 2 (Shading, Pipeline and Texture Mapping)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2009%20Shading%203/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 09 Shading 3 (Texture Mapping cont.)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2010%20Geometry%201/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 10 Geomertry 1 (Introduction)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2011%20Geometry%202/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 11 Geomertry 2 (Curves and Surfaces)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2012%20Geometry%203/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 12 Geometry 3
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2013%20Ray%20Tracing%201/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture%2014%20Ray%20Tracing%202/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lectire 14 Ray Tracing 2(Acceleration)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1298,12 +730,16 @@
   
   
   
-    <a href="../../%E6%B8%B2%E6%9F%93%E5%99%A8tinyrenderer/getting%20started/" class="md-nav__link">
+    
+  
+  
+  
+    <a href="../Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    渲染器tinyrenderer(进行中)
+    Abies 的笔记
     
   </span>
   
@@ -1314,14 +750,8 @@
     </a>
   
 
-      
-    </li>
   
 
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1402,173 +832,97 @@
   
 
 
-  <h1>Lecture 03 Transformation</h1>
+  <h1>Lecture 15 Ray Tracing 3</h1>
 
-<div class="admonition remarks">
-<p class="admonition-title">Menu of this lecture</p>
+<h2 id="irradiance-and-radiance">Irradiance and Radiance</h2>
+<p><strong>Irradiance</strong> is the power per (perpendicular / projected) unit area incident on a surfacee  point.</p>
+<p><img alt="Irradiance" src="../../resources/Irradiance.png" style="width:200px" /></p>
+<div class="arithmatex">\[
+E(\mathbf{x})\equiv\frac{\mathrm{d}\Phi(\mathbf{x})}{\mathrm{d}A}
+\]</div>
+<div class="arithmatex">\[
+\left[\frac{\text{W}}{\text{m}^2}\right]\,\left[\frac{\text{lm}}{\text{m}^2}=\text{lux}\right]
+\]</div>
+<p>In Blinn-Phong model, "intensity falloff" should be corrected as "irradiance falloff".</p>
+<p>Radiance is the fundamental field quantity that describes the distribution of light in an environment.</p>
 <ul>
-<li><a href="#viewing-transformation">2D transformations: rotation, scale, shear</a></li>
-<li><a href="#homogeneous-coordinates">Homogeneous coordinates</a></li>
-<li><a href="#composing-transforms">Composing transformation</a></li>
+<li>Radiance is the quantity associated with a ray  </li>
+<li>Rendering is all about computing radiance</li>
 </ul>
-</div>
-<h3 id="viewing-transformation">Viewing transformation</h3>
-<p>Viewing transformation: 3D -&gt; 2D projection</p>
-<p><strong>Scale</strong></p>
+<p><strong>Radiance</strong> is the power per unit solid angle, per projected unit area.</p>
+<p><img alt="Radiance" src="../../resources/Radiance.png" style="width:200px" /></p>
 <div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
-s_x &amp; 0 \\
-0 &amp; s_y
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
+L(\mathrm{p},\omega)\equiv\frac{\mathrm{d}\Phi(\mathrm{p},\omega)}{\mathrm{d}\mathrm{d}A\cos\theta}
 \]</div>
-<p>Multiplying a matrix on the left corresponds to performing a row operation.</p>
-<p><strong>Reflection</strong></p>
-<p>E.g. reflection about the y-axis:</p>
 <div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
--1 &amp; 0 \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
+\left[\frac{\mathrm{W}}{\mathrm{sr}\,\mathrm{m}^2}\right]\,\left[\frac{\mathrm{cd}}{\mathrm{m}^2}=\frac{\mathrm{lm}}{\mathrm{sr}\,\mathrm{m}^2}=\mathrm{nit}\right]
 \]</div>
-<p><strong>Sheer</strong></p>
-<p>Illustration of sheer tranformation:<br />
-<img alt="Sheer tranformation" src="../../../images/sheer%20illustration.png" style="width:500px" /></p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\
-y'
-\end{pmatrix}
-=\begin{pmatrix}
-x+ay \\
-y
-\end{pmatrix}
-=\begin{pmatrix}
-1 &amp; a \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-\]</div>
-<p><strong>Rotation</strong></p>
-<p>By default, the rotation is around the origin.<br />
-<span class="arithmatex">\(R_{45}\)</span> refers to rotatiing 45 degrees counterclockwose about the origin. </p>
-<div class="arithmatex">\[
-R_{\theta}=\begin{pmatrix}
-\cos\theta &amp; -\sin\theta \\
-\sin\theta &amp; \cos\theta
-\end{pmatrix}
-\]</div>
-<h3 id="homogeneous-coordinates">Homogeneous Coordinates</h3>
-<p>Translation is not linear transform, so it cannot be represented in matrix form. 
-But we don't want it to be a special case, so homogeneous coordinates are used to represent all transformations. </p>
-<p>Add a third coordinate (w-coordinate), to represent the translation characters of points or vectors.  </p>
-<p><strong>Affine transformations:</strong><br />
-affine map = linear map + translation map  </p>
-<div class="arithmatex">\[
-\begin{pmatrix}
-x' \\ y'
-\end{pmatrix}
-=\begin{pmatrix}
-a &amp; b \\
-c &amp; d
-\end{pmatrix}
-\begin{pmatrix}
-x \\ y
-\end{pmatrix}
-+\begin{pmatrix}
-t_x \\ t_y
-\end{pmatrix}
-\]</div>
-<h4 id="2d-version">2D version</h4>
 <ul>
-<li>2D point: <span class="arithmatex">\(\begin{pmatrix}x , y , 1 \end{pmatrix}^T\)</span></li>
-<li>2D vector:<span class="arithmatex">\(\begin{pmatrix}x , y , 0 \end{pmatrix}^T\)</span></li>
+<li>Radiance is irradiance per solid angle  </li>
+<li>Radiance is intensity per projected area</li>
 </ul>
-<p>When <span class="arithmatex">\(w\neq 0\)</span>, 2D point <span class="arithmatex">\(\begin{pmatrix}x , y , w \end{pmatrix}^T\)</span> means <span class="arithmatex">\(\begin{pmatrix}x/w , y/w , 1 \end{pmatrix}^T\)</span></p>
-<p>(The w-coordinate of vectors are 0, which means vectors are translation invariant. By comparison, w-coordinate of points are 1)</p>
-<p><strong>Use homogeneous Coordinates to represent affine translations:</strong></p>
+<p><strong>Irradiance vs. radiance</strong></p>
+<p>Irradiance is total power received by area dA, from all angle.</p>
 <div class="arithmatex">\[
-\begin{pmatrix}
-x' \\ y' \\ w'
-\end{pmatrix}
-=\begin{pmatrix}
-1 &amp; 0 &amp; t_x \\
-0 &amp; 1 &amp; t_y \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-x \\ y \\ 1
-\end{pmatrix}
-=\begin{pmatrix}
-x+t_x \\ y+t_y \\ 1
-\end{pmatrix}
+\begin{align*}
+dE(\mathrm{p},\omega)&amp;=L_i(\mathrm{p},\omega)\cos\theta\mathrm{d}\omega \\
+E(\mathrm{p})&amp;=\int_{H^2}L_i(\mathrm{p},\omega)\cos\theta\mathrm{d}\omega
+\end{align*}
 \]</div>
-<p><strong>Properties:</strong> <br />
-1. The last row must be 0 0 1.<br />
-2. The top-left 2×2 matrix represents a linear transformation.<br />
-3. The rightmost column represents translation.
-4. Relations between points and vectors:
-   - vector + vector = vector
-   - point  - point  = vector
-   - point  + vector = point
-   - point  + point  = point</p>
-<p><strong>Scale:</strong></p>
+<h2 id="bidirectional-reflectance-distribution-function-brdf">Bidirectional Reflectance Distribution Function (BRDF)</h2>
+<p>Radiance from direction <span class="arithmatex">\(\omega_i\)</span> turns into the power E that dA receives.<br />
+Then power E will become the radiance to any other direction <span class="arithmatex">\(\omega\)</span>. </p>
+<p><strong>BRDF</strong> represents how much light is reflected into each outgoing direction <span class="arithmatex">\(\omega_r\)</span> from each incoming direction.</p>
+<p><img alt="BRDF" src="../../resources/BRDF.png" style="width:300px" /></p>
 <div class="arithmatex">\[
-S(s_x, s_y)=\begin{pmatrix}
-s_x &amp; 0 &amp; 0 \\
-0 &amp; s_y &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
+f_r(\omega_i\to\omega_r)=\frac{\mathrm{d}L_r(\omega_r)}{\mathrm{d}E_i(\omega_i)}=\frac{\mathrm{d}L_r(\omega_r)}{L_i(\omega_i)\cos\theta_i\mathrm{d}\omega_i}
+\quad\left[\frac{1}{\text{sr}}\right]
 \]</div>
-<p><strong>Rotation:</strong></p>
+<p><strong>The reflection equation:</strong></p>
 <div class="arithmatex">\[
-R(\alpha)=\begin{pmatrix}
-\cos\alpha &amp; -\sin\alpha &amp; 0 \\
-\sin\alpha &amp; \cos\alpha &amp; 0 \\
-0 &amp; 0 &amp; 1
-\end{pmatrix}
+L_r(\mathrm{p},\omega_r)=\int_{H^2}f_r(\mathrm{p},\omega_i\to\omega_r)L_i(\mathrm{p},\omega_i)\cos\theta_i\mathrm{d}\omega_i
 \]</div>
-<p><strong>Translation:</strong></p>
+<p><strong>The rendering equation:</strong></p>
+<p>Add an emission term to make it general.</p>
 <div class="arithmatex">\[
-T(t_x, t_y)=\begin{pmatrix}
-1 &amp; 0 &amp; t_x \\
-0 &amp; 1 &amp; t_y \\ 
-0 &amp; 0 &amp; 1
-\end{pmatrix}
+L_o(\mathrm{p},\omega_o)=L_e(\mathrm{p},\omega_o)+\int_{\Omega^+}L_i(\mathrm{p},\omega_i)f_r(\mathrm{p},\omega_i,\omega_o)(n\cdot\omega_i)\mathrm{d}\omega_i
 \]</div>
-<p><strong>Inverse transformations:</strong> <span class="arithmatex">\(M^{-1}\)</span></p>
-<p>Esp. matrix <span class="arithmatex">\(R_{\theta}\)</span> for rotation is orthogonal, so <span class="arithmatex">\(R_{-\theta}=R^{-1}=R^T\)</span>.</p>
-<h4 id="3d-version">3D version</h4>
+<p>(reflected light = emission + incident lignt * BRDF * incident angle)</p>
+<p>One point light: no need of integral<br />
+Multiple point lights: sum over all light sources<br />
+Area light: replace sum with integal<br />
+Unknown reflection: regard reflection as light source</p>
+<p><img alt="rendering equation" src="../../resources/rendering%20equation.png" style="width:400px" /></p>
+<p>Simplify: L=E+KL</p>
+<p>Approximate set of all paths of light in scene:</p>
+<div class="arithmatex">\[
+\begin{align*}
+L&amp;=E+KL \\
+L&amp;=(I-K)^{-1}E \\
+&amp;=(I+K+K^2+K^3+\cdots)E \\
+&amp;=E+KE+K^2E+K^3E+\cdots
+\end{align*}
+\]</div>
 <ul>
-<li>3D point: <span class="arithmatex">\(\begin{pmatrix}x , y , z, 1 \end{pmatrix}^T\)</span></li>
-<li>3D vector:<span class="arithmatex">\(\begin{pmatrix}x , y , z, 0 \end{pmatrix}^T\)</span></li>
+<li><span class="arithmatex">\(E\)</span>: emission directly from light sources  </li>
+<li><span class="arithmatex">\(KE\)</span>: direct illumination on surfaces  </li>
+<li><span class="arithmatex">\(K^2E\)</span>: indirect illumination (one bounce indirect)   </li>
+<li>...</li>
 </ul>
-<p>Use 4×4 matrix for affine transformations. </p>
-<h3 id="composing-transforms">Composing Transforms</h3>
-<p>All matrices are left-multiplied to the original coordinates, and are composed in the order of transformations from right to left.</p>
-<div class="admonition examples">
-<p class="admonition-title">Examples</p>
-<p>Transformations: A1 -&gt; A2 -&gt; ... -&gt; An<br />
-Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\end{pmatrix}\)</span></p>
-</div>
+<h2 id="probability-review">Probability Review</h2>
+<p><span class="arithmatex">\(X\)</span>: random variable<br />
+<span class="arithmatex">\(X\sim p(x)\)</span>: probability density function (PDF)</p>
+<p>Requirements of a probability distrubution:</p>
+<div class="arithmatex">\[p_i\ge0\quad\sum_{i=1}^n p_i=1\]</div>
+<p>Expected value:</p>
+<div class="arithmatex">\[E[X]=\sum_{i=1}^n x_i p_i\]</div>
+<p><strong>Continuous case: PDF</strong></p>
+<p>Conitions on p(x):      <span class="arithmatex">\(p(x)\ge 0\,\text{and}\,\int p(x)dx=1\)</span><br />
+Expected value of X:    <span class="arithmatex">\(E[X]=\int xp(x)dx\)</span></p>
+<p><strong>Function of a Random Variable</strong></p>
+<div class="arithmatex">\[X\sim p(x)\quad Y=f(X)\]</div>
+<p>Expected value of a function of a random varaible:</p>
+<div class="arithmatex">\[E[Y]=E[f(X)]=\int f(x)p(x)dx\]</div>
 
 
 
@@ -1591,7 +945,7 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月9日 06:25:52 UTC">2025-07-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月21日 04:50:10 UTC">2025-08-21</span>
   </span>
 
     
@@ -1601,34 +955,11 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月9日 06:25:52 UTC">2025-07-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月21日 04:50:10 UTC">2025-08-21</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1656,44 +987,6 @@ Matrix: <span class="arithmatex">\(A_n\cdots A_2A_1\begin{pmatrix}x \\ y \\ 1\en
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
-        
-          
-          <a href="../Lecture%2002%20Review%20of%20Linear%20Algebra/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture 02 Review of Linear Algebra">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                Lecture 02 Review of Linear Algebra
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Lecture%2004%20Transformations%20Cont/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lecture 04 Transformations Cont.">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                Lecture 04 Transformations Cont.
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
