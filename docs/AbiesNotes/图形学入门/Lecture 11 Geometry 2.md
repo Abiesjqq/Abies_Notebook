@@ -20,9 +20,7 @@ e.g.满足条件：
 1. 从 P0 开始，且切线方向为 P0P1
 2. 从 P3 结束，且切线方向为 P2P3
 
-<p align="center">
-  <img src="../resources/Bezier.png" alt="Bezier" width="400">
-</p>
+![Bezier](../resources/Bezier.png){style="width:250px"}
 
 #### de Casteljiau Algorithm
 
@@ -30,15 +28,11 @@ Consider three points (quadratic Bezier):
 
 将起点到终点视为 0~1，对其中任一个比例为 t 的点，按下图方法确定：
 
-<p align="center">
-  <img src="../resources/Bezier%203.png" alt="Bezier 3" width="600">
-</p>
+![Bezier 3](../resources/Bezier%203.png){style="width:600px"}
 
 四点：
 
-<p align="center">
-  <img src="../resources/Bezier%204.png" alt="Bezier 4" width="400">
-</p>
+![Bezier 4](../resources/Bezier%204.png){style="width:250px"}
 
 **Bernstein form of a Bezier curve of order n:**
 
@@ -96,6 +90,9 @@ B-Spline（基样条）: 对贝塞尔曲线的增强，增加了局部性，改�
 
 ### Mesh Operations
 
-- Mesh subdivision
-- Mesh simplification
-- Mesh regularization
+- Mesh subdivision  
+- Mesh simplification  
+- Mesh regularization  
+
+
+
