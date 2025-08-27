@@ -86,6 +86,8 @@ nav:
       - MkDocs: 自学记录/MkDocs/mkdocs.md
       - CSS: 自学记录/CSS/css_learning.md
       - JavaScript: 自学记录/JavaScript/js_learning.md
+      - R:
+          - 基本数据处理: 自学记录/R/基本数据处理/基本数据处理.md
       - 数学:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
   - 课程笔记:
