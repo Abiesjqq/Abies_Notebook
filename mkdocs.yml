@@ -140,6 +140,9 @@ nav:
           - Lecture 12 Geometry 3: AbiesNotes/图形学入门/Lecture 12 Geometry 3.md
           - Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing): AbiesNotes/图形学入门/Lecture 13 Ray Tracing 1.md
           - Lectire 14 Ray Tracing 2(Acceleration): AbiesNotes/图形学入门/Lecture 14 Ray Tracing 2.md
+          - Lectire 15 Ray Tracing 3(Light Transport & Global Illumination): AbiesNotes/图形学入门/Lecture 15 Ray Tracing 3.md
+          - Lectire 16 Ray Tracing 4(Monte Carlo Path Tracing): AbiesNotes/图形学入门/Lecture 16 Ray Tracing 4.md
+          - Lecture 17 Materials and Appearances: AbiesNotes/图形学入门/Lecture 17 Materials and Appearances.md
       - 渲染器tinyrenderer(进行中):
           - Getting started: AbiesNotes/渲染器tinyrenderer/getting started.md
           - Line: AbiesNotes/渲染器tinyrenderer/line.md
@@ -149,6 +152,11 @@ nav:
           - Gourand Shading: AbiesNotes/渲染器tinyrenderer/Gourand.md
           - Camera: AbiesNotes/渲染器tinyrenderer/camera.md
           - Shader: AbiesNotes/渲染器tinyrenderer/shader.md
+      - 智能机器人:感知与运动控制:
+          - 理论课:
+              - lec 01 绪论: AbiesNotes/robot control/theoretical/lec.01 intro.md
+          - 实践课:
+              - exp 01 激光扫描仪的使用: AbiesNotes/robot control/practical/scanner.md
   - 论文阅读:
       - Diffusion:
           - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
