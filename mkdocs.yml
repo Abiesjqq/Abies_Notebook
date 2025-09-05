@@ -36,7 +36,7 @@ theme:
     - navigation.tracking # 滚动时URL锚点自动更新
     - navigation.tabs # 一级导航显示为顶部Tab
     - navigation.tabs.sticky # Tab栏吸顶
-    # - navigation.sections # 侧边栏分组
+    - navigation.sections # 侧边栏分组
     - navigation.top # 返回顶部按钮
     - navigation.footer # 页脚显示在侧边栏
     - search.suggest # 搜索建议
@@ -126,37 +126,44 @@ nav:
           - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
   - Abies 的笔记:
       - GAMES101(进行中):
-          - Lecture 01 Overview of Computer Graphics: AbiesNotes/图形学入门/Lecture 01 Overview of Computer Graphics.md
-          - Lecture 02 Review of Linear Algebra: AbiesNotes/图形学入门/Lecture 02 Review of Linear Algebra.md
-          - Lecture 03 Transformation: AbiesNotes/图形学入门/Lecture 03 Transformation.md
-          - Lecture 04 Transformations Cont.: AbiesNotes/图形学入门/Lecture 04 Transformations Cont.md
-          - Lecture 05 Rasterization 1 (Triangles): AbiesNotes/图形学入门/Lecture 05 Rasterization 1 (Triangles).md
-          - Lecture 06 Rasterization 2 (Antiliasing): AbiesNotes/图形学入门/Lecture 06 Rasterization 2 (Antiliasing).md
-          - Lecture 07 Shading 1 (Illumination, Shading and Graphics Pipelines): AbiesNotes/图形学入门/Lecture 07 Shading 1.md
-          - Lecture 08 Shading 2 (Shading, Pipeline and Texture Mapping): AbiesNotes/图形学入门/Lecture 08 Shading 2.md
-          - Lecture 09 Shading 3 (Texture Mapping cont.): AbiesNotes/图形学入门/Lecture 09 Shading 3.md
-          - Lecture 10 Geomertry 1 (Introduction): AbiesNotes/图形学入门/Lecture 10 Geometry 1.md
-          - Lecture 11 Geomertry 2 (Curves and Surfaces): AbiesNotes/图形学入门/Lecture 11 Geometry 2.md
-          - Lecture 12 Geometry 3: AbiesNotes/图形学入门/Lecture 12 Geometry 3.md
-          - Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing): AbiesNotes/图形学入门/Lecture 13 Ray Tracing 1.md
-          - Lectire 14 Ray Tracing 2(Acceleration): AbiesNotes/图形学入门/Lecture 14 Ray Tracing 2.md
-          - Lectire 15 Ray Tracing 3(Light Transport & Global Illumination): AbiesNotes/图形学入门/Lecture 15 Ray Tracing 3.md
-          - Lectire 16 Ray Tracing 4(Monte Carlo Path Tracing): AbiesNotes/图形学入门/Lecture 16 Ray Tracing 4.md
-          - Lecture 17 Materials and Appearances: AbiesNotes/图形学入门/Lecture 17 Materials and Appearances.md
-      - 渲染器tinyrenderer(进行中):
-          - Getting started: AbiesNotes/渲染器tinyrenderer/getting started.md
-          - Line: AbiesNotes/渲染器tinyrenderer/line.md
-          - Triangle: AbiesNotes/渲染器tinyrenderer/triangle.md
-          - Texture: AbiesNotes/渲染器tinyrenderer/texture.md
-          - Projection: AbiesNotes/渲染器tinyrenderer/projection.md
-          - Gourand Shading: AbiesNotes/渲染器tinyrenderer/Gourand.md
-          - Camera: AbiesNotes/渲染器tinyrenderer/camera.md
-          - Shader: AbiesNotes/渲染器tinyrenderer/shader.md
-      - 智能机器人:感知与运动控制:
+          - Lecture 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
+          - Lecture 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
+          - Lecture 03 Transformation: AbiesNotes/GAMES101/Lecture 03 Transformation.md
+          - Lecture 04 Transformations Cont.: AbiesNotes/GAMES101/Lecture 04 Transformations Cont.md
+          - Lecture 05 Rasterization 1 (Triangles): AbiesNotes/GAMES101/Lecture 05 Rasterization 1 (Triangles).md
+          - Lecture 06 Rasterization 2 (Antiliasing): AbiesNotes/GAMES101/Lecture 06 Rasterization 2 (Antiliasing).md
+          - Lecture 07 Shading 1 (Illumination, Shading and Graphics Pipelines): AbiesNotes/GAMES101/Lecture 07 Shading 1.md
+          - Lecture 08 Shading 2 (Shading, Pipeline and Texture Mapping): AbiesNotes/GAMES101/Lecture 08 Shading 2.md
+          - Lecture 09 Shading 3 (Texture Mapping cont.): AbiesNotes/GAMES101/Lecture 09 Shading 3.md
+          - Lecture 10 Geomertry 1 (Introduction): AbiesNotes/GAMES101/Lecture 10 Geometry 1.md
+          - Lecture 11 Geomertry 2 (Curves and Surfaces): AbiesNotes/GAMES101/Lecture 11 Geometry 2.md
+          - Lecture 12 Geometry 3: AbiesNotes/GAMES101/Lecture 12 Geometry 3.md
+          - Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing): AbiesNotes/GAMES101/Lecture 13 Ray Tracing 1.md
+          - Lectire 14 Ray Tracing 2(Acceleration): AbiesNotes/GAMES101/Lecture 14 Ray Tracing 2.md
+          - Lecture 15 Ray Tracing 3(Light Transport & Global Illumination): AbiesNotes/GAMES101/Lecture 15 Ray Tracing 3.md
+          - Lectire 16 Ray Tracing 4(Monte Carlo Path Tracing): AbiesNotes/GAMES101/Lecture 16 Ray Tracing 4.md
+          - Lecture 17 Materials and Appearances: AbiesNotes/GAMES101/Lecture 17 Materials and Appearances.md
+          - Lecture 18 Advanced Topics in Rendering: AbiesNotes/GAMES101/Lecture 18 Advanced Topics in Rendering.md
+          - Lecture 19 Cameras, Lenses and Light Fields: AbiesNotes/GAMES101/Lecture 19 Cameras, Lenses and Light Fields.md
+      - Tinyrenderer(中道崩殂):
+          - Getting started: AbiesNotes/Tinyrenderer/getting started.md
+          - Line: AbiesNotes/Tinyrenderer/line.md
+          - Triangle: AbiesNotes/Tinyrenderer/triangle.md
+          - Texture: AbiesNotes/Tinyrenderer/texture.md
+          - Projection: AbiesNotes/Tinyrenderer/projection.md
+          - Gourand Shading: AbiesNotes/Tinyrenderer/Gourand.md
+          - Camera: AbiesNotes/Tinyrenderer/camera.md
+          - Shader: AbiesNotes/Tinyrenderer/shader.md
+      - 智能机器人:感知与运动控制(进行中):
           - 理论课:
-              - lec 01 绪论: AbiesNotes/robot control/theoretical/lec.01 intro.md
+              - lec 01 绪论: AbiesNotes/robot control/theoretical/lec 01 intro.md
+              - lec 02 传感器模组: AbiesNotes/robot control/theoretical/lec 02 sensors.md
+              - lec 03 数字图像处理: AbiesNotes/robot control/theoretical/lec 03 CV.md
+              - lec 04 刚体动力学概述: AbiesNotes/robot control/theoretical/lec 04 mechanics.md
+              - lec 05 机器人导航规划: AbiesNotes/robot control/theoretical/lec 05 motion.md
           - 实践课:
-              - exp 01 激光扫描仪的使用: AbiesNotes/robot control/practical/scanner.md
+              - exp 01 激光扫描仪和点云处理: AbiesNotes/robot control/practical/scanner.md
+              - exp 02 OpenCV视频处理: AbiesNotes/robot control/practical/video.md
   - 论文阅读:
       - Diffusion:
           - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
