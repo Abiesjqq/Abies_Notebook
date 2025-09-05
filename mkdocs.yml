@@ -36,7 +36,7 @@ theme:
     - navigation.tracking # 滚动时URL锚点自动更新
     - navigation.tabs # 一级导航显示为顶部Tab
     - navigation.tabs.sticky # Tab栏吸顶
-    - navigation.sections # 侧边栏分组
+    # - navigation.sections # 侧边栏分组
     - navigation.top # 返回顶部按钮
     - navigation.footer # 页脚显示在侧边栏
     - search.suggest # 搜索建议
@@ -125,7 +125,8 @@ nav:
           - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
           - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
   - Abies 的笔记:
-      - GAMES101(进行中):
+      - 扉页: AbiesNotes/Abies_index.md
+      - GAMES101(进行中): 
           - Lecture 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lecture 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
           - Lecture 03 Transformation: AbiesNotes/GAMES101/Lecture 03 Transformation.md
@@ -345,4 +346,4 @@ plugins:
       #      pagination_keep_content: true
       #      draft_if_future_date: true
       pagination_per_page: 5
-#  - mkdocs-jupyter # 对 jupyter notebook 的支持
+  - mkdocs-jupyter # 对 jupyter notebook 的支持
