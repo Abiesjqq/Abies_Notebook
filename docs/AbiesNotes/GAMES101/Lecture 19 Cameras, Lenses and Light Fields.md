@@ -57,3 +57,5 @@ Informal understanding: the inverse-diameter of a round aperture.
 Motion blur: handshake, subject movement.  
 Doubling shutter time doubles motion blur.
 
+**Rolling shutter:** different parts of photo taken at different times.
+

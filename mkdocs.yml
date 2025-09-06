@@ -66,6 +66,7 @@ nav:
       - 通知公告:
           - 通知公告: notices/index.md
   - 碎碎念:
+      - 扉页: 自学记录/1_index.md
       - Python:
           - Numpy & Pandas: 自学记录/Python/Numpy & Pandas/Numpy & Pandas.md
           - Matplotlib: 自学记录/Python/Matplotlib/Matplotlib.md
@@ -112,6 +113,7 @@ nav:
           - 15.5 一些代码: 课程笔记/数据结构基础/15.5 一些代码.md
       - C语言程序设计: 课程笔记/C语言程序设计/CNote.md
   - Noflower 的笔记:
+      - 扉页: NoflowersNotes/Noflower_index.md
       - Computer Vision （进行中）:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
           - Loss Functions: NoflowersNotes/ComputerVision/Loss Functions.md
@@ -346,4 +348,4 @@ plugins:
       #      pagination_keep_content: true
       #      draft_if_future_date: true
       pagination_per_page: 5
-  - mkdocs-jupyter # 对 jupyter notebook 的支持
+  # - mkdocs-jupyter # 对 jupyter notebook 的支持
