@@ -1,6 +1,6 @@
 :root {
     --admonition-border-left-width: 0.2rem;
-    --base-border-radius: 0.5rem;
+    --base-border-radius: 20px;
   }
   
   /* Change font family of filename present on top of code block. */
@@ -250,7 +250,7 @@
 
 /* 自定义图片圆角类 */
 img.img1 {
-  border-radius: 25px;
+  border-radius: 20px;
   /* width: 300px; 
   float: left;           
   margin-right: 30px;    
