@@ -52,10 +52,55 @@ Written as FN or F/N. N is the f-number.
 
 Informal understanding: the inverse-diameter of a round aperture.
 
+Formal definition: the focal length divided by the diameter of the aperture.
+
 #### Shutter
 
 Motion blur: handshake, subject movement.  
 Doubling shutter time doubles motion blur.
 
 **Rolling shutter:** different parts of photo taken at different times.
+
+If the exposure is to  bright/dark, may need to adjust f-stop and/or shutter up/down.
+
+Photograhers must trade off depth of field and motion blur for moving subjects.
+
+**High-speed photography:** extremely fase shutter speed x (large aperture and/or high ISO)
+
+### Thin Lens Approximation
+
+We consider focal length can be arbitrarily changed (in reality, yes)
+
+Gaussian thin lens equation:
+
+$$\frac{1}{f}=\frac{1}{z_i}+\frac{1}{z_o}$$
+
+(Why? Draw parallel ray and focal ray)
+
+#### Defocus Blur
+
+**Circle of Confusion (CoC)**
+
+When the object is not on the focal plane, the image is not on the sensor plane. Sensor recieves a circle of light.
+
+C denotes the diameter of CoC. A denotes the diameter of lens.
+
+![CoC](../resources/CoC.png){style="width:450px"}
+
+$$ \frac{C}{A}=\frac{d'}{z_i}=\frac{|z_s-z_i|}{z_i}$$
+
+$$ C=A\frac{|z_s-z_i|}{z_i}=\frac{F}{N}\frac{|z_s-z_i|}{z_i}$$
+
+**Ray tracing for defocus blur**
+
+- Choose sensoe size, lens focal length and aperture size  
+- Choose depth of subject of interest $z_o$
+
+#### Depth of Field
+
+Depth range in a scene where the corresponding CoC is considered small enough.
+
+Depth of field: max depth range - min depth range
+
+
 

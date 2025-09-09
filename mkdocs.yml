@@ -44,7 +44,7 @@ theme:
     - search.share # 搜索结果分享
     - toc.follow # 目录跟随滚动
     - toc.integrate # 目录集成到侧边栏
-    - navigation.expand # 默认展开所有目录
+    # - navigation.expand # 默认展开所有目录
     - navigation.indexes # 支持节索引页
     - content.tabs.link # 支持标签页链接
     - content.tooltips # 支持鼠标悬浮提示
@@ -66,30 +66,32 @@ nav:
       - 通知公告:
           - 通知公告: notices/index.md
   - 碎碎念:
-      - 扉页: 自学记录/1_index.md
-      - Python:
-          - Numpy & Pandas: 自学记录/Python/Numpy & Pandas/Numpy & Pandas.md
-          - Matplotlib: 自学记录/Python/Matplotlib/Matplotlib.md
-          - Scikit-learn:
-              - 入门: 自学记录/Python/Scikit-learn/入门/入门.md
-              - 数据预处理: 自学记录/Python/Scikit-learn/数据预处理/数据预处理.md
-              - 监督学习与无监督学习: 自学记录/Python/Scikit-learn/监督学习与无监督学习/监督学习与无监督学习.md
-              - 支持向量机(SVM): 自学记录/Python/Scikit-learn/支持向量机/支持向量机.md
-              - 随机森林: 自学记录/Python/Scikit-learn/随机森林/随机森林.md
-              - 主成分分析: 自学记录/Python/Scikit-learn/主成分分析/主成分分析.md
-              - K-Means 聚类: 自学记录/Python/Scikit-learn/K-Means聚类/K-Means聚类.md
-          - Pytorch:
-              - Tensors 入门: 自学记录/Python/PyTorch/Tensors入门/Tensors入门.md
-              - 线性回归和逻辑回归: 自学记录/Python/PyTorch/线性回归和逻辑回归/线性回归和逻辑回归.md
-              - MLP与CNN: 自学记录/Python/PyTorch/MLP与CNN/MLP与CNN.md
-              - RNN与DQN: 自学记录/Python/PyTorch/RNN与DQN/RNN与DQN.md
-      - Git: 自学记录/Git/git.md
-      - MkDocs: 自学记录/MkDocs/mkdocs.md
-      - CSS: 自学记录/CSS/css_learning.md
-      - JavaScript: 自学记录/JavaScript/js_learning.md
-      - R:
-          - 基本数据处理: 自学记录/R/基本数据处理/基本数据处理.md
-      - 数学:
+      - 自学记录/1_index.md
+      - 编程语言: 
+          - Python:
+              - Numpy & Pandas: 自学记录/Python/Numpy & Pandas/Numpy & Pandas.md
+              - Matplotlib: 自学记录/Python/Matplotlib/Matplotlib.md
+              - Scikit-learn:
+                  - 入门: 自学记录/Python/Scikit-learn/入门/入门.md
+                  - 数据预处理: 自学记录/Python/Scikit-learn/数据预处理/数据预处理.md
+                  - 监督学习与无监督学习: 自学记录/Python/Scikit-learn/监督学习与无监督学习/监督学习与无监督学习.md
+                  - 支持向量机(SVM): 自学记录/Python/Scikit-learn/支持向量机/支持向量机.md
+                  - 随机森林: 自学记录/Python/Scikit-learn/随机森林/随机森林.md
+                  - 主成分分析: 自学记录/Python/Scikit-learn/主成分分析/主成分分析.md
+                  - K-Means 聚类: 自学记录/Python/Scikit-learn/K-Means聚类/K-Means聚类.md
+              - Pytorch:
+                  - Tensors 入门: 自学记录/Python/PyTorch/Tensors入门/Tensors入门.md
+                  - 线性回归和逻辑回归: 自学记录/Python/PyTorch/线性回归和逻辑回归/线性回归和逻辑回归.md
+                  - MLP与CNN: 自学记录/Python/PyTorch/MLP与CNN/MLP与CNN.md
+                  - RNN与DQN: 自学记录/Python/PyTorch/RNN与DQN/RNN与DQN.md
+          - R:
+            - 基本数据处理: 自学记录/R/基本数据处理/基本数据处理.md
+          - JavaScript: 自学记录/JavaScript/js_learning.md
+      - 常用工具:
+          - Git: 自学记录/Git/git.md
+          - MkDocs: 自学记录/MkDocs/mkdocs.md
+          - CSS: 自学记录/CSS/css_learning.md
+      - 数理基础:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
   - 课程笔记:
       - 数据结构基础:
@@ -112,7 +114,7 @@ nav:
           - 15. 哈希动态查找: 课程笔记/数据结构基础/15. 哈希动态查找.md
           - 15.5 一些代码: 课程笔记/数据结构基础/15.5 一些代码.md
       - C语言程序设计: 课程笔记/C语言程序设计/CNote.md
-  - Noflower 的笔记:
+  - Noflower的笔记:
       - 扉页: NoflowersNotes/Noflower_index.md
       - Computer Vision （进行中）:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
@@ -126,8 +128,8 @@ nav:
       - 数模笔记:
           - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
           - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
-  - Abies 的笔记:
-      - 扉页: AbiesNotes/Abies_index.md
+  - Abies的笔记:
+      - AbiesNotes/Abies_index.md
       - GAMES101(进行中): 
           - Lecture 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lecture 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
@@ -157,7 +159,7 @@ nav:
           - Gourand Shading: AbiesNotes/Tinyrenderer/Gourand.md
           - Camera: AbiesNotes/Tinyrenderer/camera.md
           - Shader: AbiesNotes/Tinyrenderer/shader.md
-      - 智能机器人:感知与运动控制(进行中):
+      - 机器人感知与运动控制(进行中):
           - 理论课:
               - lec 01 绪论: AbiesNotes/robot control/theoretical/lec 01 intro.md
               - lec 02 传感器模组: AbiesNotes/robot control/theoretical/lec 02 sensors.md
@@ -167,6 +169,9 @@ nav:
           - 实践课:
               - exp 01 激光扫描仪和点云处理: AbiesNotes/robot control/practical/scanner.md
               - exp 02 OpenCV视频处理: AbiesNotes/robot control/practical/video.md
+              - exp 03 机器人控制: AbiesNotes/robot control/practical/rigid-body kinematics.md
+              - exp 3.1 Taichi简介: AbiesNotes/robot control/practical/taichi intro.md
+              - exp 3.2 rigid_body代码说明: AbiesNotes/robot control/practical/robot intro.md
   - 论文阅读:
       - Diffusion:
           - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
@@ -268,6 +273,7 @@ extra_javascript:
   # - javascripts/extra.js
   # - javascripts/extra2.js
   # - javascripts/bannerSlider.js
+  # - javascripts/custom_nav.js
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js # extra的cdn
   - javascripts/animate-details.js
   - javascripts/mathjax.js
@@ -325,27 +331,27 @@ extra_css:
   # - stylesheets/LiquidGlass.css
   - https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined
 
-plugins:
-  - search
-  - git-committers:
-      enabled: true
-      #    enabled: !ENV [ git-committers, false ]
-      repository: Abiesjqq/Abies_Notebook
-      branch: main
-  - git-revision-date-localized:
-      enabled: true
-      #    enabled: !ENV [ git-revision-date-localized, false ]
-      type: iso_date
-      enable_creation_date: true
-  - blog:
-      blog_dir: notices
-      blog_toc: true
-      post_date_format: full
-      archive_toc: true
-      categories_toc: true
-      #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
-      #      pagination: true
-      #      pagination_keep_content: true
-      #      draft_if_future_date: true
-      pagination_per_page: 5
-  # - mkdocs-jupyter # 对 jupyter notebook 的支持
+# plugins:
+#   - search
+#   - git-committers:
+#       enabled: true
+#       #    enabled: !ENV [ git-committers, false ]
+#       repository: Abiesjqq/Abies_Notebook
+#       branch: main
+#   - git-revision-date-localized:
+#       enabled: true
+#       #    enabled: !ENV [ git-revision-date-localized, false ]
+#       type: iso_date
+#       enable_creation_date: true
+#   - blog:
+#       blog_dir: notices
+#       blog_toc: true
+#       post_date_format: full
+#       archive_toc: true
+#       categories_toc: true
+#       #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+#       #      pagination: true
+#       #      pagination_keep_content: true
+#       #      draft_if_future_date: true
+#       pagination_per_page: 5
+#   # - mkdocs-jupyter # 对 jupyter notebook 的支持

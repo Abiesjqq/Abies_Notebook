@@ -583,3 +583,22 @@
     visibility: visible !important;
     opacity: 1 !important;
   } */
+
+
+  /* 确保二级导航默认折叠 */
+.md-nav__item--nested .md-nav__list {
+  display: none;
+}
+
+/* 激活的二级导航显示子菜单 */
+.md-nav__item--nested.md-nav__item--active .md-nav__list {
+  display: block;
+}
+
+.md-nav__item--third-level {
+    display: none;
+}
+
+.md-nav__item--third-level.md-nav__item--open {
+    display: block;
+}
