@@ -1,0 +1,1325 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>X 3D intro - Abies's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/cursor.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/info.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/create_and_update.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/font.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Abies's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              X 3D intro
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Abiesjqq/Abies_Notebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Abies_Notebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  碎碎念
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/note_index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  课程笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../NoflowersNotes/Noflower_index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Noflower的笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Abies_index/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Abies的笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  论文阅读
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
+
+    </a>
+    Abies's Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Abiesjqq/Abies_Notebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Abies_Notebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    碎碎念
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/note_index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    课程笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../NoflowersNotes/Noflower_index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Noflower的笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../Abies_index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Abies的笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    论文阅读
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>X 3D intro</h1>
+
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>872</strong> 个字&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+</div>
+<p><strong>这里用来记录短学期报告准备过程中的一些东西。</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>Generated by ai</p>
+</div>
+<h2 id="_1">激活函数介绍</h2>
+<h3 id="_2">把它想象成“开关”和“过滤器”</h3>
+<p>想象一下，你是一个大脑神经元。你从眼睛、耳朵等地方接收信号（数据）。这些信号有强有弱。</p>
+<ol>
+<li>
+<p><strong>接收信号（线性计算）</strong>：
+    首先，你会把所有这些信号加起来。如果一个信号很重要，你就给它更大的权重；如果不重要，就给它小权重。最后，你还会加上自己的“心情”（偏置项），比如你今天比较乐观还是悲观。
+    <em>这就像是计算总分：<code>总分 = (信号1 × 权重1) + (信号2 × 权重2) + ... + 心情</code></em></p>
+</li>
+<li>
+<p><strong>决定是否做出反应（激活函数）</strong>：
+    现在你有了这个“总分”，但你不会对任何微小的信号都做出反应，对吧？你需要判断这个信号是否<strong>强到了值得你做出反应的程度</strong>。</p>
+<ul>
+<li>如果总分超过了某个“阈值”（比如非常响的声音），你就会<strong>兴奋</strong>，并向下一个神经元发送一个强烈的信号。</li>
+<li>如果总分很低（比如微弱的杂音），你就<strong>保持平静</strong>，什么都不做。</li>
+</ul>
+</li>
+</ol>
+<p><strong>这个“判断过程”——决定是否反应以及反应多大——就是激活函数所做的事情。</strong> 它是一个“开关”或“过滤器”，决定了信息能否通过这个神经元继续传递下去。</p>
+<h3 id="_3">为什么这个“开关”如此重要？</h3>
+<p>如果没有这个“开关”（激活函数），神经网络就只会做简单的<strong>加减乘除</strong>。无论堆多少层，它最终都只能画出一条<strong>笔直的直线</strong>来分割数据（只能解决线性问题）。</p>
+<p>但现实世界的问题复杂得多，比如如何区分猫和狗的图片？它们的区别绝不是一条直线能分清的。我们需要<strong>曲折复杂的曲线</strong>才能区分（非线性问题）。</p>
+<p><strong>激活函数就是这个“ingredient”</strong>：
+它给每个神经元的输出引入了<strong>扭曲和弯曲</strong>。当千千万万个这样的神经元组合在一起时，整个网络就能画出极其复杂的曲线，从而学会识别猫脸、理解语言、预测天气等无比复杂的任务。</p>
+<h3 id="_4">几个常见的“开关”类型（激活函数）</h3>
+<ol>
+<li>
+<p><strong>ReLU（最简单直接的开关）</strong>：</p>
+<ul>
+<li><strong>规则</strong>：如果输入分数 &gt; 0，就让分数原样通过；如果分数 &lt;= 0，就直接把它关掉（变为 0）。</li>
+<li><strong>像什么</strong>：像一个<strong>整流器</strong>，只允许正电流通过，负电流直接归零。这是目前最常用、最受欢迎的激活函数，因为它效果又好，计算又简单。</li>
+</ul>
+</li>
+<li>
+<p><strong>Sigmoid（平滑的开关）</strong>：</p>
+<ul>
+<li><strong>规则</strong>：把任何分数都压缩到 0 和 1 之间。</li>
+<li><strong>像什么</strong>：像一个<strong>投票器</strong>或<strong>概率转换器</strong>。输入一个很大的正数，输出接近 1（100%同意）；输入一个很大的负数，输出接近 0（0%同意）；输入 0，输出 0.5（一半一半）。它输出非常平滑的结果，常用于输出层做概率预测（比如判断一张图是猫的概率是 90%）。</li>
+</ul>
+</li>
+<li>
+<p><strong>Tanh（双曲正切函数）</strong>：</p>
+<ul>
+<li><strong>规则</strong>：把任何分数都压缩到 -1 和 1 之间。</li>
+<li><strong>像什么</strong>：像一个<strong>更强大的 Sigmoid</strong>。它的输出范围更广（-1 到 1），且平均值是 0，这使得它的优化效果有时比 Sigmoid 更好，常用于隐藏层。</li>
+</ul>
+</li>
+</ol>
+<h2 id="_5">卷积核介绍</h2>
+<h3 id="1">1. 卷积核是什么？</h3>
+<p>在计算机视觉和深度学习里，<strong>卷积核</strong>就是一个小矩阵（通常大小是 3×3、5×5、7×7 等），它会在图片上“滑动”，并与局部像素做运算。
+这个过程叫做 <strong>卷积</strong>。</p>
+<p>👉 卷积核可以理解为 <strong>一块特殊的滤镜</strong>，它决定了在处理图像时关注什么特征。</p>
+<h3 id="2">2. 卷积核是怎么工作的？</h3>
+<p>计算步骤：</p>
+<ol>
+<li>把卷积核放在图片的一个小区域上（例如 3×3 的区域）。</li>
+<li>对应元素相乘再相加，得到一个数。</li>
+<li>卷积核滑动到下一个位置，重复计算。</li>
+</ol>
+<p>这样就得到了一个新的矩阵（即“特征图”），它表示图片里某种特征的分布。</p>
+<h3 id="3">3. 卷积核的作用</h3>
+<p>不同的卷积核，可以提取不同的特征：</p>
+<ul>
+<li><strong>边缘检测核</strong>：突出图像中的边缘。</li>
+<li><strong>模糊核</strong>：让图片变得模糊。</li>
+<li><strong>锐化核</strong>：让图片变得清晰。</li>
+<li><strong>在深度学习中</strong>：卷积核的数值不是人为设定的，而是 <strong>通过训练学习得到的</strong>，可以自动提取识别任务需要的特征（比如边缘、纹理、形状、甚至人脸）。</li>
+</ul>
+<h4 id="1_1">(1) 边缘检测核</h4>
+<p>例子：</p>
+<div class="arithmatex">\[
+K =
+\begin{bmatrix}
+-1 &amp; -1 &amp; -1 \\
+0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}
+\]</div>
+<ul>
+<li>解释：它在竖直方向上计算差异。</li>
+<li>结果：边缘区域差异大 → 输出值大，突出边缘；平坦区域差异小 → 输出接近 0。</li>
+<li>所以它能“抓住边缘”。</li>
+</ul>
+<h4 id="2_1">(2) 模糊核</h4>
+<p>例子：</p>
+<div class="arithmatex">\[
+K = \frac{1}{9}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}
+\]</div>
+<ul>
+<li>解释：对 3×3 区域的像素做平均。</li>
+<li>结果：细节（高频信息）被平滑掉，看起来更模糊。</li>
+</ul>
+<h4 id="3_1">(3) 锐化核</h4>
+<p>例子：</p>
+<div class="arithmatex">\[
+K =
+\begin{bmatrix}
+0 &amp; -1 &amp; 0 \\
+-1 &amp; 5 &amp; -1 \\
+0 &amp; -1 &amp; 0
+\end{bmatrix}
+\]</div>
+<ul>
+<li>解释：中央像素被放大（权重大于 1），周围像素被减弱（负权重）。</li>
+<li>结果：边缘对比度被增强，图像看起来更清晰。</li>
+</ul>
+<h3 id="4">4. 总结</h3>
+<ul>
+<li><strong>卷积核的作用取决于里面的数字（权重）分布</strong>。</li>
+<li>不同的数字组合，决定了它是提取边缘、模糊、锐化，还是其他特征。</li>
+<li>在深度学习中，这些“数字组合”不是人工设置的，而是 <strong>网络自动学习出来的最优配方</strong>，用来完成任务（如识别猫、狗、人脸）。</li>
+</ul>
+<h2 id="_6">动态核介绍</h2>
+<h3 id="1_2">1. 动态核的基本定义</h3>
+<p>在传统的 CNN 里，<strong>卷积核（Convolution Kernel）</strong> 的参数是固定的，一旦训练完成，它就不会再随输入变化。
+而 <strong>动态核（Dynamic Kernel）</strong> 则是指：
+👉 <strong>卷积核的权重不再固定，而是根据输入样本动态生成或调整。</strong></p>
+<p>这样，模型在处理不同的输入时，能自适应地使用不同的特征提取方式。</p>
+<h3 id="2_2">2. 为什么需要动态核</h3>
+<ul>
+<li><strong>固定卷积核的局限</strong>：一组固定参数对所有输入都一样，可能无法捕捉到不同场景中的差异。</li>
+<li><strong>动态核的优势</strong>：让网络像“变焦镜头”一样，根据输入的内容调整自己，增强了模型的灵活性和适应性。</li>
+</ul>
+<p>举个比喻：</p>
+<ul>
+<li><strong>固定卷积核</strong>：像戴一副固定度数的眼镜，看任何东西都一样。</li>
+<li><strong>动态卷积核</strong>：像戴一副智能眼镜，可以根据远近、光线自动调节焦距和亮度。</li>
+</ul>
+<h3 id="3_2">3. 动态核的实现方式</h3>
+<p>常见的实现方式有几种：</p>
+<ol>
+<li>
+<p><strong>条件卷积（CondConv, 2019 Google 提出）</strong></p>
+</li>
+<li>
+<p>为每个卷积层准备多组核，</p>
+</li>
+<li>
+<p>然后用一个小网络（条件网络）根据输入决定每组核的加权组合。</p>
+</li>
+<li>
+<p><strong>动态卷积（Dynamic Convolution, 2020 Facebook 提出）</strong></p>
+</li>
+<li>
+<p>类似 CondConv，但更高效，适合 NLP 和 CV。</p>
+</li>
+<li>
+<p>在 NLP 中，它甚至被拿来替代部分注意力机制（attention）。</p>
+</li>
+<li>
+<p><strong>核生成网络（Kernel Generation Network）</strong></p>
+</li>
+<li>
+<p>通过一个额外的子网络，直接根据输入生成新的卷积核权重。</p>
+</li>
+</ol>
+<h3 id="4_1">4. 应用场景</h3>
+<ul>
+<li><strong>图像识别</strong>：提高在复杂、多样环境下的鲁棒性。</li>
+<li><strong>视频理解</strong>：根据时间序列变化动态调整卷积核。</li>
+<li><strong>自然语言处理（NLP）</strong>：动态卷积被用于提升 Transformer 的效率（比如 Facebook 的 DynamicConv）。</li>
+<li><strong>轻量化模型</strong>：动态核能在不大幅增加参数量的情况下增强表现力。</li>
+</ul>
+<h3 id="5">5. 总结</h3>
+<ul>
+<li><strong>传统卷积核</strong>：固定的，所有输入用同一套滤镜。</li>
+<li><strong>动态卷积核</strong>：可变的，根据输入内容自适应调整滤镜。</li>
+<li><strong>意义</strong>：增强模型的灵活性和表达能力，能更好地处理复杂、多样化的数据。</li>
+</ul>
+<h2 id="_7">神经网络介绍</h2>
+<h3 id="1_3">1. 直观理解</h3>
+<p>神经网络的灵感来自人脑。</p>
+<ul>
+<li><strong>人脑</strong>：有很多神经元，接收信号 → 处理 → 决定是否激活 → 把信号传给其他神经元。</li>
+<li><strong>人工神经网络</strong>：用数学函数去模仿这种机制，把输入（数据）逐层传递、加工，最后得到输出（预测结果）。</li>
+</ul>
+<p>👉 可以把它想象成一群“信息加工工人”：</p>
+<ul>
+<li>每个工人（神经元）只做一点点加权计算和判断。</li>
+<li>但成千上万个工人（神经元）一起合作，就能完成复杂任务（比如识别猫狗、翻译语言）。</li>
+</ul>
+<h3 id="2_3">2. 数学上的结构</h3>
+<p>一个神经网络由 <strong>层（Layers）</strong> 组成：</p>
+<ul>
+<li><strong>输入层（Input Layer）</strong>：接收数据（如一张图的像素、一个句子的词向量）。</li>
+<li><strong>隐藏层（Hidden Layers）</strong>：多层神经元处理并提取特征。</li>
+<li><strong>输出层（Output Layer）</strong>：给出结果（比如“这是猫”的概率 90%）。</li>
+</ul>
+<p>每个神经元的计算过程：</p>
+<div class="arithmatex">\[
+输出 = 激活函数( \sum (输入 \times 权重) + 偏置 )
+\]</div>
+<p>其中：</p>
+<ul>
+<li><strong>权重 (Weight)</strong>：表示输入的重要性。</li>
+<li><strong>偏置 (Bias)</strong>：表示整体的调整。</li>
+<li><strong>激活函数</strong>：决定神经元是否激活，赋予网络非线性能力。</li>
+</ul>
+<h3 id="3_3">3. 神经网络的学习过程</h3>
+<p>神经网络需要“训练”：</p>
+<ol>
+<li><strong>正向传播（Forward Propagation）</strong>
+   输入数据经过网络计算，得到预测结果。</li>
+<li><strong>计算误差（Loss Function）</strong>
+   比较预测和真实答案之间的差距。</li>
+<li><strong>反向传播（Backpropagation）</strong>
+   误差往回传，调整权重和偏置。</li>
+<li><strong>梯度下降（Gradient Descent）</strong>
+   通过不断迭代，让网络的预测越来越接近真实。</li>
+</ol>
+<p>👉 就像学生做题 → 检查错题 → 老师批改 → 下次改进。</p>
+<h3 id="4_2">4. 神经网络能做什么？</h3>
+<ul>
+<li>图像识别（识别猫、狗、人脸）</li>
+<li>自然语言处理（翻译、聊天机器人）</li>
+<li>游戏 AI（AlphaGo）</li>
+<li>语音识别、自动驾驶、医学诊断……</li>
+</ul>
+<h2 id="mlp">多层感知机 MLP 介绍</h2>
+<h3 id="1-perceptron">1. 什么是感知机（Perceptron）</h3>
+<ul>
+<li>感知机是最简单的神经元模型。</li>
+<li>它的计算公式：</li>
+</ul>
+<div class="arithmatex">\[
+y = f\left(\sum (w_i \cdot x_i) + b \right)
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(x_i\)</span> = 输入</li>
+<li><span class="arithmatex">\(w_i\)</span> = 权重</li>
+<li><span class="arithmatex">\(b\)</span> = 偏置</li>
+<li><span class="arithmatex">\(f\)</span> = 激活函数</li>
+</ul>
+<p>👉 可以理解为：把输入加权求和，再通过一个“开关”（激活函数），得到输出。</p>
+<h3 id="2-mlp">2. 多层感知机（MLP）的结构</h3>
+<p>单个感知机很弱，只能解决线性问题。
+所以人们把很多感知机堆叠起来，形成 <strong>多层感知机（MLP）</strong>。</p>
+<p>MLP 一般包括：</p>
+<ul>
+<li><strong>输入层（Input Layer）</strong>：接收数据（如图像像素、文本向量）。</li>
+<li><strong>隐藏层（Hidden Layers）</strong>：由多个感知机组成，每层输出作为下一层的输入。</li>
+<li><strong>输出层（Output Layer）</strong>：给出最终结果（分类、回归等）。</li>
+</ul>
+<p>👉 关键点：<strong>隐藏层越多、神经元越多，MLP 的表达能力越强。</strong></p>
+<h3 id="3-mlp">3. MLP 的计算流程</h3>
+<ol>
+<li>输入层接收数据（如 28×28 像素的手写数字 → 展平成 784 维向量）。</li>
+<li>数据逐层传递，每层神经元做：加权求和 → 激活函数。</li>
+<li>输出层得到预测结果。</li>
+</ol>
+<h3 id="4_3">4. 激活函数的重要性</h3>
+<ul>
+<li>如果没有激活函数，MLP 只能表示“直线”。</li>
+<li>有了激活函数，MLP 就能表示复杂的“曲线关系”，解决非线性问题（比如区分猫和狗）。</li>
+</ul>
+<h3 id="5-mlp">5. MLP 的特点</h3>
+<p>✅ 优点：</p>
+<ul>
+<li>结构简单，易于理解和实现。</li>
+<li>是深度学习的基础模型，适合入门。</li>
+<li>可以处理任意形式的输入（图像、文本、表格数据等）。</li>
+</ul>
+<p>⚠️ 缺点：</p>
+<ul>
+<li>参数量可能很大（输入维度 × 神经元数）。</li>
+<li>没有利用数据的空间或序列结构（图像要用 CNN，序列要用 RNN/Transformer）。</li>
+</ul>
+<h3 id="6">6. 总结</h3>
+<ul>
+<li><strong>MLP = 多层感知机 = 最经典的前馈神经网络</strong>。</li>
+<li>由输入层、多个隐藏层和输出层组成。</li>
+<li>每个神经元：加权求和 → 激活函数 → 输出。</li>
+<li>通过训练（反向传播 + 梯度下降）自动调整参数。</li>
+<li>是深度学习最基础的模型，但在图像/语言等任务中通常被更专业的网络（CNN、RNN、Transformer）替代。</li>
+</ul>
+<h2 id="cnn">CNN 介绍</h2>
+<h3 id="1-cnn">1. 什么是 CNN？</h3>
+<p>CNN （卷积神经网络, Convolutional Neural Network）是一种 <strong>深度学习模型</strong>，专门擅长处理 <strong>具有空间结构的数据</strong>，比如图像、视频、语音和时间序列。</p>
+<p>与普通的全连接神经网络（MLP）相比，CNN 通过 <strong>卷积运算</strong> 提取局部特征，可以自动从原始数据中学到边缘、纹理、形状等信息。</p>
+<p>👉 <strong>一句话理解</strong>：
+CNN 就像一个“特征提取工厂”，它能自动从图片里找到猫的耳朵、狗的鼻子、汽车的轮子等关键信息，而不用人工设计特征。</p>
+<hr />
+<h3 id="2-cnn">2. CNN 的核心结构</h3>
+<p>CNN 主要由三类层组成：</p>
+<ol>
+<li>
+<p><strong>卷积层（Convolutional Layer）</strong></p>
+</li>
+<li>
+<p>用卷积核（小矩阵）在输入数据上滑动，提取局部特征。</p>
+</li>
+<li>低层卷积核：检测边缘、颜色块。</li>
+<li>
+<p>高层卷积核：检测复杂形状（比如眼睛、脸）。</p>
+</li>
+<li>
+<p><strong>池化层（Pooling Layer）</strong></p>
+</li>
+<li>
+<p>对特征图进行缩小（比如取最大值 MaxPooling 或平均值 AveragePooling）。</p>
+</li>
+<li>
+<p>作用：减少计算量、降低过拟合、保留重要信息。</p>
+</li>
+<li>
+<p><strong>全连接层（Fully Connected Layer）</strong></p>
+</li>
+<li>
+<p>在最后阶段，把卷积层提取的特征组合起来，用于分类或回归。</p>
+</li>
+<li>例如：输出“这是一只猫”的概率 = 0.92。</li>
+</ol>
+<hr />
+<h3 id="3-cnn">3. CNN 的工作流程（图像分类为例）</h3>
+<ol>
+<li><strong>输入</strong>：一张图片（比如猫）。</li>
+<li><strong>卷积</strong>：卷积核提取边缘、纹理等局部特征。</li>
+<li><strong>池化</strong>：缩小特征图，减少冗余。</li>
+<li><strong>多层卷积 + 池化</strong>：逐层提取越来越复杂的特征（耳朵 → 脸 → 整只猫）。</li>
+<li><strong>全连接层</strong>：综合所有特征，进行分类。</li>
+<li><strong>输出</strong>：预测结果，比如「猫：92%，狗：7%，其他：1%」。</li>
+</ol>
+<hr />
+<h3 id="4-cnn">4. CNN 的优势</h3>
+<ul>
+<li><strong>局部连接</strong>：每个卷积核只关注局部区域，适合捕捉图像局部模式。</li>
+<li><strong>参数共享</strong>：同一个卷积核在全图使用，减少参数数量，提升效率。</li>
+<li><strong>层次结构</strong>：底层学简单特征，高层学复杂特征。</li>
+<li><strong>泛化能力强</strong>：能自动提取特征，不需要手工设计。</li>
+</ul>
+<hr />
+<h3 id="5_1">5. 现实应用</h3>
+<ul>
+<li><strong>图像识别</strong>（猫狗识别、人脸识别）</li>
+<li><strong>目标检测</strong>（自动驾驶中的行人检测）</li>
+<li><strong>医学影像</strong>（肿瘤识别、X 光分析）</li>
+<li><strong>语音识别</strong>（声谱图特征提取）</li>
+<li><strong>自然语言处理</strong>（文本分类、情感分析）</li>
+</ul>
+<h2 id="rnn">RNN 介绍</h2>
+<h3 id="1-rnn">1. 什么是 RNN？</h3>
+<p>RNN （循环神经网络，Recurrent Neural Network）是一种<strong>专门处理序列数据的神经网络</strong>，擅长处理时间或顺序相关的信息，例如：</p>
+<ul>
+<li>文字序列 → 句子生成、翻译</li>
+<li>语音信号 → 语音识别</li>
+<li>视频帧 → 动作识别</li>
+<li>时间序列数据 → 股票预测、传感器数据分析</li>
+</ul>
+<p>RNN 的核心思想是 <strong>记住过去的信息</strong>，把序列前面输入的状态影响后面的输出。</p>
+<hr />
+<h3 id="2-rnn">2. RNN 的结构特点</h3>
+<p>普通神经网络（如 MLP、CNN）假设输入独立，而 RNN 引入了 <strong>循环连接</strong>：</p>
+<ul>
+<li>每个时间步的输出不仅依赖当前输入，还依赖上一个时间步的隐藏状态（hidden state）。</li>
+<li>公式表示：</li>
+</ul>
+<div class="arithmatex">\[
+h_t = f(W_{xh} x_t + W_{hh} h_{t-1} + b_h)
+\]</div>
+<div class="arithmatex">\[
+y_t = g(W_{hy} h_t + b_y)
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(x_t\)</span>：当前时间步输入</li>
+<li><span class="arithmatex">\(h_t\)</span>：当前隐藏状态（记忆）</li>
+<li><span class="arithmatex">\(h_{t-1}\)</span>：上一个时间步的隐藏状态</li>
+<li><span class="arithmatex">\(y_t\)</span>：当前输出</li>
+<li><span class="arithmatex">\(f, g\)</span>：激活函数</li>
+</ul>
+<blockquote>
+<p>隐藏状态 <span class="arithmatex">\(h_t\)</span> 就像“记忆”，能够让网络记住序列信息。</p>
+</blockquote>
+<hr />
+<h3 id="3-rnn">3. RNN 的工作流程（举例：文字生成）</h3>
+<ol>
+<li>输入序列：<strong>“今天天气很好”</strong></li>
+<li>第一个字 “今” 输入 → 计算隐藏状态 h1 → 输出预测</li>
+<li>第二个字 “天” 输入 → 隐藏状态 h1 + 当前输入 → 更新 h2 → 输出预测</li>
+<li>第三个字 “天” 输入 → 隐藏状态 h2 + 当前输入 → 更新 h3 → 输出预测</li>
+<li>…</li>
+<li>最终输出：模型可以根据前面的文字预测下一个字，生成连贯句子</li>
+</ol>
+<hr />
+<h3 id="4-rnn">4. RNN 的优势</h3>
+<ul>
+<li>能处理 <strong>序列数据</strong>，理解上下文信息</li>
+<li>可以 <strong>共享参数</strong>，不同时间步使用同一组权重，减少参数量</li>
+<li>可应用于文本、语音、视频、金融等多种时序任务</li>
+</ul>
+<hr />
+<h3 id="5-rnn">5. RNN 的问题</h3>
+<ul>
+<li><strong>梯度消失/爆炸</strong>：长序列训练困难</li>
+<li><strong>短期记忆能力有限</strong>：对于长距离依赖（例如文章开头的信息影响结尾）难以记住</li>
+</ul>
+<blockquote>
+<p>解决方案：出现了 <strong>LSTM（长短期记忆网络）</strong> 和 <strong>GRU（门控循环单元）</strong>，专门解决长序列记忆问题。</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月13日 13:33:35 UTC">2025-09-13</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月13日 13:33:35 UTC">2025-09-13</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Abiesjqq" target="_blank" rel="noopener" title="Abies on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/Noflowerzzk" target="_blank" rel="noopener" title="Noflower on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "toc.integrate", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
+      
+        <script src="../../../../javascripts/animate-details.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../../javascripts/cursor.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../javascripts/busuanzi.pure.mini.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
+      
+    
+  </body>
+</html>
