@@ -67,7 +67,7 @@ nav:
           - 通知公告: notices/index.md
   - 碎碎念:
       - 自学记录/1_index.md
-      - 编程语言: 
+      - 编程语言:
           - Python:
               - Numpy & Pandas: 自学记录/Python/Numpy & Pandas/Numpy & Pandas.md
               - Matplotlib: 自学记录/Python/Matplotlib/Matplotlib.md
@@ -85,7 +85,7 @@ nav:
                   - MLP与CNN: 自学记录/Python/PyTorch/MLP与CNN/MLP与CNN.md
                   - RNN与DQN: 自学记录/Python/PyTorch/RNN与DQN/RNN与DQN.md
           - R:
-            - 基本数据处理: 自学记录/R/基本数据处理/基本数据处理.md
+              - 基本数据处理: 自学记录/R/基本数据处理/基本数据处理.md
           - JavaScript: 自学记录/JavaScript/js_learning.md
       - 常用工具:
           - Git: 自学记录/Git/git.md
@@ -94,6 +94,10 @@ nav:
       - 数理基础:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
   - 课程笔记:
+      - 扉页: 课程笔记/note_index.md
+      - 计算机组成:
+          - 自学版:
+              - 计组自学笔记: 课程笔记/Computer Organization/self learning/lec 01.md
       - 数据结构基础:
           - 0. 数据结构复习: 课程笔记/数据结构基础/0. 期末复习.md
           - 1. 时间复杂度: 课程笔记/数据结构基础/1. 时间复杂度.md
@@ -129,8 +133,8 @@ nav:
           - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
           - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
   - Abies的笔记:
-      - AbiesNotes/Abies_index.md
-      - GAMES101(进行中): 
+      - 扉页: AbiesNotes/Abies_index.md
+      - GAMES101(进行中):
           - Lecture 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lecture 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
           - Lecture 03 Transformation: AbiesNotes/GAMES101/Lecture 03 Transformation.md
@@ -166,12 +170,14 @@ nav:
               - lec 03 数字图像处理: AbiesNotes/robot control/theoretical/lec 03 CV.md
               - lec 04 刚体动力学概述: AbiesNotes/robot control/theoretical/lec 04 mechanics.md
               - lec 05 机器人导航规划: AbiesNotes/robot control/theoretical/lec 05 motion.md
+              - exp 06 其他杂项: AbiesNotes/robot control/theoretical/X-3D.md
           - 实践课:
               - exp 01 激光扫描仪和点云处理: AbiesNotes/robot control/practical/scanner.md
               - exp 02 OpenCV视频处理: AbiesNotes/robot control/practical/video.md
               - exp 03 机器人控制: AbiesNotes/robot control/practical/rigid-body kinematics.md
               - exp 3.1 Taichi简介: AbiesNotes/robot control/practical/taichi intro.md
               - exp 3.2 rigid_body代码说明: AbiesNotes/robot control/practical/robot intro.md
+
   - 论文阅读:
       - Diffusion:
           - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
@@ -331,27 +337,27 @@ extra_css:
   # - stylesheets/LiquidGlass.css
   - https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined
 
-# plugins:
-#   - search
-#   - git-committers:
-#       enabled: true
-#       #    enabled: !ENV [ git-committers, false ]
-#       repository: Abiesjqq/Abies_Notebook
-#       branch: main
-#   - git-revision-date-localized:
-#       enabled: true
-#       #    enabled: !ENV [ git-revision-date-localized, false ]
-#       type: iso_date
-#       enable_creation_date: true
-#   - blog:
-#       blog_dir: notices
-#       blog_toc: true
-#       post_date_format: full
-#       archive_toc: true
-#       categories_toc: true
-#       #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
-#       #      pagination: true
-#       #      pagination_keep_content: true
-#       #      draft_if_future_date: true
-#       pagination_per_page: 5
-#   # - mkdocs-jupyter # 对 jupyter notebook 的支持
+plugins:
+  - search
+  - git-committers:
+      enabled: true
+      #    enabled: !ENV [ git-committers, false ]
+      repository: Abiesjqq/Abies_Notebook
+      branch: main
+  - git-revision-date-localized:
+      enabled: true
+      #    enabled: !ENV [ git-revision-date-localized, false ]
+      type: iso_date
+      enable_creation_date: true
+  - blog:
+      blog_dir: notices
+      blog_toc: true
+      post_date_format: full
+      archive_toc: true
+      categories_toc: true
+      #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+      #      pagination: true
+      #      pagination_keep_content: true
+      #      draft_if_future_date: true
+      pagination_per_page: 5
+  # - mkdocs-jupyter # 对 jupyter notebook 的支持

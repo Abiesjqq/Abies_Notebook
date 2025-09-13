@@ -416,6 +416,71 @@ def forward_kinematics(angles_rad):
 
 逆向运动学：已知末端位置，求每个关节的角度
 
+### 几何法（两节为例）
+
+分别以轴线、末端目标位置为圆心，以第一、第二段机械臂长度为半径画圆，两个圆交点为关节的位置。
+
+![IK geometry](../../resources/IK%20geometry.png){style="width:400px"}
+
+$$
+\begin{cases}
+\begin{align*}
+a^2+h^2&=l_1^2 \\
+(d-a)^2+h^2&=l_2^2
+\end{align*}
+\end{cases}
+$$
+
+$$d^2+2ad=l_2^2-l_1^2$$
+
+$$ a=\frac{l_2^2-l_1^2-d^2}{2d}$$
+
+代码：
+
+```py
+def inverse_kinematics_geom(target, elbow_up=True, ax=None):
+    global warning_text
+    x, y = target
+    d = np.sqrt(x ** 2 + y ** 2)
+
+    # 检查是否可达
+    if d > l1 + l2:
+        # 缩放目标点
+        scale = (l1 + l2) / d
+        x *= scale
+        y *= scale
+        d = l1 + l2
+        # 显示红色警告
+        if ax is not None:
+            if warning_text is not None:
+                warning_text.remove()
+            warning_text = ax.text(0.5, 0.95, "Cannot reach!", color='red',
+                                   fontsize=14, ha='center', va='top',
+                                   transform=ax.transAxes)
+    else:
+        if warning_text is not None:
+            warning_text.remove()
+            warning_text = None
+
+    # 圆交点公式
+    a = (l1 ** 2 - l2 ** 2 + d ** 2) / (2 * d)
+    h = np.sqrt(np.clip(l1 ** 2 - a ** 2, 0, None))
+    x2 = a * x / d
+    y2 = a * y / d
+    rx = -y * (h / d)
+    ry = x * (h / d)
+
+    if elbow_up:
+        joint = np.array([x2 + rx, y2 + ry])
+    else:
+        joint = np.array([x2 - rx, y2 - ry])
+
+    theta1 = np.arctan2(joint[1], joint[0])
+    theta2 = np.arctan2(y - joint[1], x - joint[0]) - theta1
+    return np.array([theta1, theta2]), joint
+
+```
+
 ### 梯度下降法
 
 从初始条件开始，先用正向运动学计算当前末端位置。
@@ -723,8 +788,6 @@ def inverse_kinematics(target, initial_angles, lr=0.05, iterations=200):
 
 列数学表达式求解
 
-直观表现为以目标点和关节点为中心、每段机械臂长度为半径画圆，交点为关节的位置
-
 代码：略 ~~其实是 ai 写的有 bug，不放这里了~~
 
 ### 有限差分法
@@ -765,16 +828,54 @@ Cons：
 
 ### 自动微分法
 
-自动微分法同样用于计算函数的导数或梯度，可调用python中autograd库。
+自动微分法同样用于计算函数的导数或梯度，可调用 python 中 autograd 或 jax
+
+下面为 jax 的版本，其中`loss_fn`为损失函数，希望使这个值最小。
+
+代码：
+
+```py
+# 前向运动学 (jax 版本)
+def forward_kinematics_jax(angles):
+    positions = [jnp.array([0.0, 0.0])]
+    current_angle = 0.0
+    current_pos = jnp.array([0.0, 0.0])
+    for i in range(n_links):
+        current_angle += angles[i]
+        dx = link_lengths[i] * jnp.cos(current_angle)
+        dy = link_lengths[i] * jnp.sin(current_angle)
+        current_pos = current_pos + jnp.array([dx, dy])
+        positions.append(current_pos)
+    return jnp.stack(positions)
+
+# 逆向运动学 (jax自动微分)
+def inverse_kinematics_autodiff(target, initial_angles, lr=0.05, iterations=200):
+    angles = jnp.array(initial_angles, dtype=float)
+
+    # 损失函数：末端执行器与目标点的距离平方
+    def loss_fn(angles):
+        end_pos = forward_kinematics_jax(angles)[-1]
+        return jnp.sum((end_pos - target) ** 2)
+
+    grad_fn = jax.grad(loss_fn)
+
+    for _ in range(iterations):
+        gradients = grad_fn(angles)
+        if jnp.linalg.norm(gradients) < 1e-6:
+            break
+        angles = angles - lr * gradients
+
+    return np.array(angles)
+
+```
 
 ## 刚体动力学（机器人仿真）
 
-
 略
 
-代码说明见下一个文件“rigid_body代码说明” （ai参与，仅供参考）
+代码说明见下一个文件“rigid_body 代码说明” （ai 参与，仅供参考）
 
-??? remarks "rigid_body.py完整代码"
+??? remarks "rigid_body.py 完整代码"
 
     ```py
     from robot_config import robots
@@ -1170,7 +1271,7 @@ Cons：
                     img_u8 = cv2.rotate(img_u8, cv2.ROTATE_90_COUNTERCLOCKWISE)
                     _, buf = cv2.imencode('.png', img_u8)
                     with open(path, "wb") as f:
-                        buf.tofile(f)  # 这个写法支持中文路径  
+                        buf.tofile(f)  # 这个写法支持中文路径
                 gui.show()
 
         loss[None] = 0
@@ -1293,7 +1394,7 @@ Cons：
         main()
     ```
 
-??? remarks "robot_config.py完整代码"
+??? remarks "robot_config.py 完整代码"
 
     ```py
     import math
@@ -1479,8 +1580,3 @@ Cons：
 
     robots = [robotA, robotB, robotLeg]
     ```
-
-
-
-
-
