@@ -86,11 +86,13 @@ nav:
                   - RNN与DQN: 自学记录/Python/PyTorch/RNN与DQN/RNN与DQN.md
           - R:
               - 基本数据处理: 自学记录/R/基本数据处理/基本数据处理.md
+              - ggplot 基础: 自学记录/R/ggplot基本绘图/ggplot.md
           - JavaScript: 自学记录/JavaScript/js_learning.md
       - 常用工具:
           - Git: 自学记录/Git/git.md
           - MkDocs: 自学记录/MkDocs/mkdocs.md
           - CSS: 自学记录/CSS/css_learning.md
+          - tmux: 自学记录/tmux/tmux.md
       - 数理基础:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
   - 课程笔记:
