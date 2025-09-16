@@ -118,9 +118,9 @@ $$\theta^{i+1}=\theta^i-\alpha J^T\Delta$$
 
 - 公式（前向欧拉法）：
 
-  $$
-  x_{n+1} = x_n + \Delta t \, f(x_n, t_n)
-  $$
+$$
+x_{n+1} = x_n + \Delta t \, f(x_n, t_n)
+$$
 
 - 特点：
 
@@ -136,9 +136,9 @@ $$\theta^{i+1}=\theta^i-\alpha J^T\Delta$$
 
 - 公式（后向欧拉法）：
 
-  $$
-  x_{n+1} = x_n + \Delta t \, f(x_{n+1}, t_{n+1})
-  $$
+$$
+x_{n+1} = x_n + \Delta t \, f(x_{n+1}, t_{n+1})
+$$
 
 - 特点：
 
@@ -155,10 +155,10 @@ $$\theta^{i+1}=\theta^i-\alpha J^T\Delta$$
 - 公式（常见形式）：
   先更新速度，再更新位置，例如：
 
-  $$
-  v_{n+1} = v_n + \Delta t \, f(x_n, v_n) \\
-  x_{n+1} = x_n + \Delta t \, v_{n+1}
-  $$
+$$
+v_{n+1} = v_n + \Delta t \, f(x_n, v_n) \\
+x_{n+1} = x_n + \Delta t \, v_{n+1}
+$$
 
 - 特点：
 

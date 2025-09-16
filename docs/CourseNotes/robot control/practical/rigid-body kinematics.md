@@ -495,8 +495,6 @@ $$\delta \mathbf{p} = J \cdot \delta \theta, \quad J=\frac{\partial\mathbf{p}}{\
 
 `J`的转置用于表示反向传播，即用末端位置变化反向计算得到每个关节的角度变化。
 
-？？？转置？？？
-
 希望改变小角度后使误差向量最小，即：
 
 $$ \mathrm{error}=J\cdot \mathrm{delta}$$

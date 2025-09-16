@@ -43,7 +43,7 @@ theme:
     - search.highlight # 搜索高亮
     - search.share # 搜索结果分享
     - toc.follow # 目录跟随滚动
-    - toc.integrate # 目录集成到侧边栏
+    # - toc.integrate # 目录集成到侧边栏
     # - navigation.expand # 默认展开所有目录
     - navigation.indexes # 支持节索引页
     - content.tabs.link # 支持标签页链接
@@ -66,7 +66,7 @@ nav:
       - 通知公告:
           - 通知公告: notices/index.md
   - 碎碎念:
-      - 自学记录/1_index.md
+      - 扉页: 自学记录/1_index.md
       - 编程语言:
           - Python:
               - Numpy & Pandas: 自学记录/Python/Numpy & Pandas/Numpy & Pandas.md
@@ -96,30 +96,52 @@ nav:
       - 数理基础:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
   - 课程笔记:
-      - 扉页: 课程笔记/note_index.md
+      - 扉页: CourseNotes/note_index.md
       - 计算机组成:
-          - 自学版:
-              - 计组自学笔记: 课程笔记/Computer Organization/self learning/lec 01.md
+          - 课程笔记:
+              - 自学的碎碎念: CourseNotes/Computer Organization/selflearning.md
+              - lec01 介绍: CourseNotes/Computer Organization/lecture notes/COlec01.md
+          - 实验记录: 
+              - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
+      - 高级数据结构与算法分析:
+          - 自学的碎碎念: CourseNotes/Advance Data Structure/selflearning.md
+          - AVL树, 红黑树, Splay树: CourseNotes/Advance Data Structure/ADSlec01.md
       - 数据结构基础:
-          - 0. 数据结构复习: 课程笔记/数据结构基础/0. 期末复习.md
-          - 1. 时间复杂度: 课程笔记/数据结构基础/1. 时间复杂度.md
-          - 2. 最大连续和子数组: 课程笔记/数据结构基础/2. 最大连续和子数组.md
-          - 3. 堆栈和队列: 课程笔记/数据结构基础/3. 堆栈和队列.md
-          - 4. 树的概念: 课程笔记/数据结构基础/4. 树的概念.md
-          - 5. 树的遍历和特殊的树: 课程笔记/数据结构基础/5. 树的遍历和特殊的树.md
-          - 5.5 一些题目和笔记: 课程笔记/数据结构基础/5.5 一些题目和笔记.md
-          - 6. 堆的实现: 课程笔记/数据结构基础/6. 堆的实现.md
-          - 7. 并查集和图: 课程笔记/数据结构基础/7. 并查集和图.md
-          - 8. 拓扑排序和Dijkstra: 课程笔记/数据结构基础/8. 拓扑排序和Dijkstra.md
-          - 9. Floyd和AOE网: 课程笔记/数据结构基础/9. Floyd和AOE网.md
-          - 10. 网络流问题和最小生成树: 课程笔记/数据结构基础/10. 网络流问题和最小生成树.md
-          - 11. 双连通图和欧拉回路: 课程笔记/数据结构基础/11. 双连通图和欧拉回路.md
-          - 12. 希尔，堆，归并，快速排序: 课程笔记/数据结构基础/12. 希尔，堆，归并，快速排序.md
-          - 13. 循环不变式和区块链: 课程笔记/数据结构基础/13. 循环不变式和区块链.md
-          - 14. 比特币和哈希: 课程笔记/数据结构基础/14. 比特币和哈希.md
-          - 15. 哈希动态查找: 课程笔记/数据结构基础/15. 哈希动态查找.md
-          - 15.5 一些代码: 课程笔记/数据结构基础/15.5 一些代码.md
-      - C语言程序设计: 课程笔记/C语言程序设计/CNote.md
+          - 0. 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
+          - 1. 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
+          - 2. 最大连续和子数组: CourseNotes/Fundamental Data Structure/2. 最大连续和子数组.md
+          - 3. 堆栈和队列: CourseNotes/Fundamental Data Structure/3. 堆栈和队列.md
+          - 4. 树的概念: CourseNotes/Fundamental Data Structure/4. 树的概念.md
+          - 5. 树的遍历和特殊的树: CourseNotes/Fundamental Data Structure/5. 树的遍历和特殊的树.md
+          - 5.5 一些题目和笔记: CourseNotes/Fundamental Data Structure/5.5 一些题目和笔记.md
+          - 6. 堆的实现: CourseNotes/Fundamental Data Structure/6. 堆的实现.md
+          - 7. 并查集和图: CourseNotes/Fundamental Data Structure/7. 并查集和图.md
+          - 8. 拓扑排序和Dijkstra: CourseNotes/Fundamental Data Structure/8. 拓扑排序和Dijkstra.md
+          - 9. Floyd和AOE网: CourseNotes/Fundamental Data Structure/9. Floyd和AOE网.md
+          - 10. 网络流问题和最小生成树: CourseNotes/Fundamental Data Structure/10. 网络流问题和最小生成树.md
+          - 11. 双连通图和欧拉回路: CourseNotes/Fundamental Data Structure/11. 双连通图和欧拉回路.md
+          - 12. 希尔，堆，归并，快速排序: CourseNotes/Fundamental Data Structure/12. 希尔，堆，归并，快速排序.md
+          - 13. 循环不变式和区块链: CourseNotes/Fundamental Data Structure/13. 循环不变式和区块链.md
+          - 14. 比特币和哈希: CourseNotes/Fundamental Data Structure/14. 比特币和哈希.md
+          - 15. 哈希动态查找: CourseNotes/Fundamental Data Structure/15. 哈希动态查找.md
+          - 15.5 一些代码: CourseNotes/Fundamental Data Structure/15.5 一些代码.md
+      - C语言程序设计: 
+          - C语言笔记: CourseNotes/C Programming/CNote.md
+      - 机器人感知与运动控制(短):
+          - 理论课:
+              - lec 01 绪论: CourseNotes/robot control/theoretical/lec 01 intro.md
+              - lec 02 传感器模组: CourseNotes/robot control/theoretical/lec 02 sensors.md
+              - lec 03 数字图像处理: CourseNotes/robot control/theoretical/lec 03 CV.md
+              - lec 04 刚体动力学概述: CourseNotes/robot control/theoretical/lec 04 mechanics.md
+              - lec 05 机器人导航规划: CourseNotes/robot control/theoretical/lec 05 motion.md
+          - 实践课:
+              - exp 01 激光扫描仪和点云处理: CourseNotes/robot control/practical/scanner.md
+              - exp 02 OpenCV视频处理: CourseNotes/robot control/practical/video.md
+              - exp 03 机器人控制: CourseNotes/robot control/practical/rigid-body kinematics.md
+              - exp 3.1 Taichi简介: CourseNotes/robot control/practical/taichi intro.md
+              - exp 3.2 rigid_body代码说明: CourseNotes/robot control/practical/robot intro.md
+      - 文化人类学: 
+          - 绪论: CourseNotes/Cultural Anthropolog/CAlec 01.md
   - Noflower的笔记:
       - 扉页: NoflowersNotes/Noflower_index.md
       - Computer Vision （进行中）:
@@ -167,20 +189,7 @@ nav:
           - Gourand Shading: AbiesNotes/Tinyrenderer/Gourand.md
           - Camera: AbiesNotes/Tinyrenderer/camera.md
           - Shader: AbiesNotes/Tinyrenderer/shader.md
-      - 机器人感知与运动控制(进行中):
-          - 理论课:
-              - lec 01 绪论: AbiesNotes/robot control/theoretical/lec 01 intro.md
-              - lec 02 传感器模组: AbiesNotes/robot control/theoretical/lec 02 sensors.md
-              - lec 03 数字图像处理: AbiesNotes/robot control/theoretical/lec 03 CV.md
-              - lec 04 刚体动力学概述: AbiesNotes/robot control/theoretical/lec 04 mechanics.md
-              - lec 05 机器人导航规划: AbiesNotes/robot control/theoretical/lec 05 motion.md
-              - exp 06 其他杂项: AbiesNotes/robot control/theoretical/X-3D.md
-          - 实践课:
-              - exp 01 激光扫描仪和点云处理: AbiesNotes/robot control/practical/scanner.md
-              - exp 02 OpenCV视频处理: AbiesNotes/robot control/practical/video.md
-              - exp 03 机器人控制: AbiesNotes/robot control/practical/rigid-body kinematics.md
-              - exp 3.1 Taichi简介: AbiesNotes/robot control/practical/taichi intro.md
-              - exp 3.2 rigid_body代码说明: AbiesNotes/robot control/practical/robot intro.md
+
 
   - 论文阅读:
       - Diffusion:
