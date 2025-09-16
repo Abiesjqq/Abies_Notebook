@@ -1,4 +1,4 @@
-!!! warning "警告"
+!!! warning-box "警告"
 
     仅自学用。
 
