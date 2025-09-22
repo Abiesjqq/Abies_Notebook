@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../selflearning/">
+        <link rel="prev" href="../../../%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/Lec_1/Lec_1/">
       
       
-        <link rel="next" href="../../Fundamental%20Data%20Structure/0.%20%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+        <link rel="next" href="../../../%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/%E5%88%86%E6%B2%BB/%E5%88%86%E6%B2%BB/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>AVL树, 红黑树, Splay树 - Abies's Notebook</title>
+        <title>绪论 - Abies's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,23 +46,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra2.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/cursor.css">
+      <link rel="stylesheet" href="../../../../stylesheets/cursor.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/info.css">
+      <link rel="stylesheet" href="../../../../stylesheets/info.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/create_and_update.css">
+      <link rel="stylesheet" href="../../../../stylesheets/create_and_update.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../../stylesheets/customize.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/font.css">
+      <link rel="stylesheet" href="../../../../stylesheets/font.css">
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#avl" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AVL树, 红黑树, Splay树
+              绪论
             
           </span>
         </div>
@@ -238,7 +238,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../../.." class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-tabs__link">
+        <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-tabs__link">
           
   
   
@@ -278,13 +278,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../note_index/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../CourseNotes/note_index/" class="md-tabs__link">
           
   
   
@@ -302,11 +300,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../NoflowersNotes/Noflower_index/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../Noflower_index/" class="md-tabs__link">
           
   
   
@@ -328,7 +328,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../AbiesNotes/Abies_index/" class="md-tabs__link">
+        <a href="../../../../AbiesNotes/Abies_index/" class="md-tabs__link">
           
   
   
@@ -357,7 +357,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-tabs__link">
+        <a href="../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-tabs__link">
           
   
   
@@ -402,7 +402,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -460,7 +460,7 @@
   
   
   
-    <a href="../../.." class="md-nav__link">
+    <a href="../../../.." class="md-nav__link">
       
   
   
@@ -516,12 +516,74 @@
   
   
   
-    <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-nav__link">
+    <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
     碎碎念
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../CourseNotes/note_index/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    课程笔记
     
   </span>
   
@@ -560,8 +622,6 @@
       
         
       
-        
-      
     
     
     
@@ -578,15 +638,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    课程笔记
+    Noflower的笔记
     
   </span>
   
@@ -594,10 +654,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            课程笔记
+            Noflower的笔记
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -608,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../note_index/" class="md-nav__link">
+      <a href="../../../Noflower_index/" class="md-nav__link">
         
   
   
@@ -619,6 +679,71 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ComputerVision/Intro%26K-NN/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Computer Vision （进行中）
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -655,16 +780,12 @@
   
   
   
-    
-  
-  
-  
-    <a href="../../Computer%20Organization/selflearning/" class="md-nav__link">
+    <a href="../../../%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/%E6%95%B0%E6%A8%A1%E7%9A%84%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1%E7%AC%94%E8%AE%B0/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    计算机组成
+    数模笔记
     
   </span>
   
@@ -675,6 +796,55 @@
     </a>
   
 
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/Lec_1/Lec_1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    信号与系统
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
       
@@ -693,8 +863,6 @@
   
     
     
-      
-        
       
         
       
@@ -711,15 +879,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    高级数据结构与算法分析
+    人工智能基础
     
   </span>
   
@@ -727,35 +895,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            高级数据结构与算法分析
+            人工智能基础
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../selflearning/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    自学的碎碎念
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -776,7 +921,7 @@
   
   
   <span class="md-ellipsis">
-    AVL树, 红黑树, Splay树
+    绪论
     
   </span>
   
@@ -789,7 +934,7 @@
   
   
   <span class="md-ellipsis">
-    AVL树, 红黑树, Splay树
+    绪论
     
   </span>
   
@@ -810,18 +955,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avl" class="md-nav__link">
-    <span class="md-ellipsis">
-      AVL 树
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      红黑树
+      聊天课
     </span>
   </a>
   
@@ -855,40 +991,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -907,173 +1009,12 @@
   
   
   
-    <a href="../../Fundamental%20Data%20Structure/0.%20%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="md-nav__link">
+    <a href="../../../%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/%E5%88%86%E6%B2%BB/%E5%88%86%E6%B2%BB/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    数据结构基础
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../C%20Programming/CNote/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    C语言程序设计
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    
-  
-  
-  
-    <a href="../../robot%20control/theoretical/lec%2001%20intro/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    机器人感知与运动控制(短)
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Cultural%20Anthropolog/CAlec%2001/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    文化人类学
+    算法设计分析
     
   </span>
   
@@ -1112,12 +1053,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1136,61 +1071,7 @@
   
   
   
-    <a href="../../../NoflowersNotes/Noflower_index/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    Noflower的笔记
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../AbiesNotes/Abies_index/" class="md-nav__link">
+    <a href="../../../../AbiesNotes/Abies_index/" class="md-nav__link">
       
   
   
@@ -1244,7 +1125,7 @@
   
   
   
-    <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-nav__link">
+    <a href="../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-nav__link">
       
   
   
@@ -1292,18 +1173,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avl" class="md-nav__link">
-    <span class="md-ellipsis">
-      AVL 树
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      红黑树
+      聊天课
     </span>
   </a>
   
@@ -1328,120 +1200,28 @@
   
 
 
-  <h1>AVL树, 红黑树, Splay树</h1>
+  <h1>绪论</h1>
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>237</strong> 个字&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>140</strong> 个字&nbsp;&nbsp;<strong>1</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
-<h2 id="avl">AVL 树</h2>
-<p>平衡因子 bf = 左子树高度 - 右子树高度<br />
-AVL Tree：所有节点的|bf|&lt;=1</p>
+<h2 id="_1">聊天课</h2>
 <ul>
-<li>LL: 右旋</li>
-<li>RR：左旋</li>
-<li>LR：子节点左旋，右旋</li>
-<li>RL：子节点右旋，左旋</li>
+<li>开放权重：只能 finetune 难以完全训练</li>
+<li>私有化部署</li>
+<li>Hallucination (幻觉)：错误信息 / 忽略已有信息</li>
+<li>RAG 检索增强生成 (Retrieval Augmented Generation) 尽量减少幻觉</li>
+<li>Embedding 词嵌入，指编码信息</li>
+<li>Multimodal 多模态</li>
+<li>Agent 智能体</li>
+<li>MCP 模型上下文协议</li>
+<li>Model Compression 模型压缩</li>
+<li>Distillation 蒸馏，指模型</li>
+<li>LoRA 会写单独介绍</li>
+<li>RLHF 人类反馈强化学习，有的强化学习难以用简单的奖励函数来优化</li>
+<li>baseline 基线模型，指一个基准方法用于和自己的模型进行比较以判别自己模型的性能</li>
 </ul>
-<details class="normal-comment">
-<summary>代码示例</summary>
-<p>节点定义：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">AVLTree</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">AVLTree</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">AVLTree</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span><span class="w"> </span><span class="n">AVLTree</span><span class="p">;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">typedef</span><span class="w"> </span><span class="n">AVLTree</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div></p>
-<p>左旋、右旋：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">node</span><span class="w"> </span><span class="nf">left_rotate</span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="n">yl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yl</span><span class="p">;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">height</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">height</span><span class="p">(</span><span class="n">y</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">y</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">node</span><span class="w"> </span><span class="nf">right_rotate</span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="n">yr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yr</span><span class="p">;</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">    </span><span class="n">x</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">height</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">    </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">height</span><span class="p">(</span><span class="n">y</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">y</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div></p>
-<p>删除：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">待补充</span>
-</code></pre></div></td></tr></table></div></p>
-</details>
-<p>删除：用左子树或右子树最接近的节点替换，检查平衡</p>
-<h2 id="_1">红黑树</h2>
-<p>性质：</p>
-<ol>
-<li>节点为红色或黑色</li>
-<li>根节点为黑色，NIL 节点（空叶子节点）为黑色</li>
-<li>红色节点的子节点为黑色</li>
-<li>从根节点到 NIL 节点的每条路径上的黑色节点数量相同</li>
-</ol>
-<p>合法红黑树的红色节点的两个子节点一定都是叶子或都不是叶子。</p>
-<p>从根到叶节点的路径，最长路径最多是最短路径的两倍。</p>
-<p>有 N 个内部节点的红黑树，树高最大为<span class="arithmatex">\(2\log_2(N+1)\)</span></p>
-<details class="remarks">
-<summary>证明</summary>
-<p>bh表示黑高，h表示树高</p>
-<p><span class="arithmatex">\(N\ge 2^{bh}-1\)</span>, 即 <span class="arithmatex">\(bh\le\log_2(N+1)\)</span></p>
-<p><span class="arithmatex">\(h\le 2\, bh=2\log_2(N+1)\)</span></p>
-</details>
-<p><strong>插入</strong></p>
-<p>插入节点默认为红色。</p>
-<ol>
-<li>插入节点是根节点：直接变黑</li>
-<li>father 为红色，uncle 为红色：uncle, father, grandfather 变色，将 grandfather 作为插入节点重新判断</li>
-<li>father 为红色，uncle 为黑色：（LL, RR, LR, RL）旋转，再变色</li>
-</ol>
 
 
 
@@ -1464,7 +1244,7 @@ AVL Tree：所有节点的|bf|&lt;=1</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月16日 15:34:29 UTC">2025-09-16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月22日 05:25:37 UTC">2025-09-22</span>
   </span>
 
     
@@ -1474,34 +1254,11 @@ AVL Tree：所有节点的|bf|&lt;=1</p>
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月16日 15:34:29 UTC">2025-09-16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月22日 05:25:37 UTC">2025-09-22</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1534,7 +1291,7 @@ AVL Tree：所有节点的|bf|&lt;=1</p>
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../selflearning/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 自学的碎碎念">
+          <a href="../../../%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/Lec_1/Lec_1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lecture.1">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1544,20 +1301,20 @@ AVL Tree：所有节点的|bf|&lt;=1</p>
                 上一页
               </span>
               <div class="md-ellipsis">
-                自学的碎碎念
+                Lecture.1
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Fundamental%20Data%20Structure/0.%20%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" class="md-footer__link md-footer__link--next" aria-label="下一页: 0. 数据结构复习">
+          <a href="../../../%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/%E5%88%86%E6%B2%BB/%E5%88%86%E6%B2%BB/" class="md-footer__link md-footer__link--next" aria-label="下一页: 分治">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                0. 数据结构复习
+                分治
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1611,24 +1368,24 @@ AVL Tree：所有节点的|bf|&lt;=1</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="../../../javascripts/animate-details.js"></script>
+        <script src="../../../../javascripts/animate-details.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../javascripts/cursor.js"></script>
+        <script src="../../../../javascripts/cursor.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/busuanzi.pure.mini.js"></script>
+        <script src="../../../../javascripts/busuanzi.pure.mini.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
       
