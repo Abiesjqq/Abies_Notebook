@@ -158,6 +158,10 @@ nav:
           - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
       - 信号与系统:
           - Lecture.1: NoflowersNotes/信号与系统/Lec_1/Lec_1.md
+      - 人工智能基础:
+          - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
+      - 算法设计分析:
+          - 分治: NoflowersNotes/算法设计分析/分治/分治.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - GAMES101(进行中):
