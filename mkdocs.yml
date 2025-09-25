@@ -104,8 +104,11 @@ nav:
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
       - 高级数据结构与算法分析:
-          - 自学的碎碎念: CourseNotes/Advance Data Structure/selflearning.md
           - AVL树, 红黑树, Splay树: CourseNotes/Advance Data Structure/ADSlec01.md
+      - 普通物理学II: 
+          - Chap22 库伦定律和电场: CourseNotes/General Physics II/Phychap22.md
+      - 概率论与数理统计:
+          - Chap1 基本概念: CourseNotes/Probability/PROchap1.md
       - 数据结构基础:
           - 0. 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
           - 1. 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
@@ -140,8 +143,10 @@ nav:
               - exp 03 机器人控制: CourseNotes/robot control/practical/rigid-body kinematics.md
               - exp 3.1 Taichi简介: CourseNotes/robot control/practical/taichi intro.md
               - exp 3.2 rigid_body代码说明: CourseNotes/robot control/practical/robot intro.md
-      - 文化人类学: 
+      - 文化人类学*: 
           - 绪论: CourseNotes/Cultural Anthropolog/CAlec 01.md
+      - 基于人工智能的国画传承*:
+          - lec 01 中国绘画的本体数据: CourseNotes/Guohua/GHlec01.md
   - Noflower的笔记:
       - 扉页: NoflowersNotes/Noflower_index.md
       - Computer Vision （进行中）:

@@ -1,8 +1,8 @@
 !!! warning-box "注意"
 
     仅自学用。
-    
-    未完待续。
+
+    但上课的ppt和md的一样。经实践，这里作为笔记的主要部分。
 
 ## Chap 01
 
@@ -33,16 +33,17 @@ CPU 是同步逻辑
 CPU 有时钟周期，上升沿驱动。频率是时钟周期的倒数  
 clock frequency = 1 / clock period  
 CPU 时间 = 总共用了几个 CPU 时钟 \* 时钟周期 = 总共用了几个 CPU 时钟/时钟频率  
-性能提高：减少时钟，提高频率，硬件设计时在 clock rate 和 cycle count 中 trade-off
-clock cycle=指令数目 \* 每条时间多少个时钟数（CPI）  
-CPU time=clock cycle\*clock cycle time=instruction count \* CPI / clock rate  
+性能提高：减少时钟，提高频率，硬件设计时在 clock rate 和 cycle count 中 trade-off  
+clock cycle = 指令数目 \* 每条时间多少个时钟数（CPI）  
+指令数 IC（Instruction Count）  
+CPU time = clock cycle \* clock cycle time = instruction count \* CPI / clock rate  
 影响指令数：减少指令数，指令集（ISA），编译器  
 CPI 由 CPU 决定，和指令的组成方式有关  
 真正的 clock cycle = 每一种 CPI \*这种 CPI 的指令数 求和  
 计算平均 CPI  
 频率很难提高：功耗限制 -> 多核  
 功耗 = 负载 \* 电压^2 \* 频率  
-工艺越先进，电压越低，功耗越小
+工艺越先进，电压越低，功耗越小（电压降低使频率增长没有导致功耗同等增长）
 
 单核：指令集并行  
 多核：并行编程，load balance，核与核的交互
@@ -52,15 +53,16 @@ CPI 由 CPU 决定，和指令的组成方式有关
 跑分标准：将不同部分的得分相乘、开 n 次方根（几何平均）
 
 功耗评估：ssj_ops，表示单位时间的性能  
-不同负载下，记录性能（ssj_ops）和功耗（W），综合指标 ssj_ops/Watt=性能求和/功耗求和  
+不同负载下，记录性能（ssj_ops）和功耗（W），综合指标 ssj_ops/Watt = 性能求和 / 功耗求和  
 Amdahl's law：能提高的那部分性能，由不可改变的那部分的占比决定  
-改进的时间=（可以改变的/改进系数）+不能改变的时间  
+改进的时间=（可以改变的/改进系数）+ 不能改变的时间  
 要优化 common case  
 负载少不一定功耗低，尽量使 CPU 负载多  
-MIPS：millions of instruction per second  
-MIPS 高，性能不一定越好，和指令集 ISA 有关
+MIPS：millions of instruction per second，MIPS = clock rate / CPI\*10^6  
+MIPS 高，性能不一定越好，和指令集 ISA 有关  
+MIPS 和指令数无关，同一个计算机只有一个 MIPS（哪怕是不同程序），因此不全面
 
-eight great idea:
+eight great ideas:
 
 1. design for moore law：每两年单位面积的晶体管数翻倍
 2. use abstraction to simplify design：TCP/IP，ISA
@@ -386,19 +388,197 @@ e.g.
 - big end, Byte1: 01; Byte2: 02 -> 0x0201, 513
 - little end, Byte1: 01; Byte2: 02 -> 0x0102, 258
 
-示例：  
-C Code：`A[12]=h+A[8]`, h in x21, base address of A in x22  
-Index 8 requires offset of 64 （索引 8 \* 每个元素 8 字节）  
-`ld`表示 load doubleword，`lw`表示 load word, `lh`表示 load halfword. `s`开头表示 store
+!!! normal-comment "示例"
 
-```asm
-ld x9, 64(x22)  # (偏移量)基址，从x22+64取值放到x9中
-add x9, x21, x9
-sd x9, 96(x22)
-```
+    C Code：`A[12]=h+A[8]`, h in x21, base address of A in x22
+    Index 8 requires offset of 64 （按 64 位，doubleword 每个 8 字节，索引 8 \* 每个元素 8 字节）
+    `ld`表示 load doubleword，`lw`表示 load word, `lh`表示 load halfword. `s`开头表示 store
+    ```asm
+    ld x9, 64(x22)  # 偏移量(基址)，从x22+64取值放到x9中
+    add x9, x21, x9
+    sd x9, 96(x22)  # 将x9的值放到x22+96的值
+    ```
 
 Register vs Memory
 寄存器比内存更快  
-对memory中数据进行操作，必须load和store  
-编译器决定什么时候放回去，用的多的放在寄存器，用的少的才放回内存  
+对 memory 中数据进行操作，必须 load 和 store  
+编译器决定什么时候放回去，用得多的放在寄存器，用得少的才放回内存
 
+make common case fast，不用将常数取出、放到寄存器、再相加  
+增加`addi`指令：立即数相加  
+立即数直接包含在指令内部，字段有限，不能特别大
+
+!!! normal-comment "示例"
+
+    `addi x5, x6, 20`表示`x5=x6+20`
+
+指令在计算机中也以二进制表示（机器码）  
+x0~x31 的寄存器编码成 0~31 的数  
+把每个数按特定规则拆成不同部分，每个部分表示特定含义  
+7bit 表示操作，5bit 表示寄存器编号
+
+!!! normal-comment "示例"
+
+    指令：`add x9, x20, x21`
+    十进制表示机器码：0 21 20 0 9 51
+    0 源操作数 源操作数 0 目标操作数 指令编号
+
+一般用十六进制表示
+
+| 十六进制 | 二进制 | 十六进制 | 二进制 |
+| -------- | ------ | -------- | ------ |
+| 0        | 0000   | 4        | 0100   |
+| 1        | 0001   | 5        | 0101   |
+| 2        | 0010   | 6        | 0110   |
+| 3        | 0011   | 7        | 0111   |
+| 8        | 1000   | C        | 1100   |
+| 9        | 1001   | D        | 1101   |
+| A        | 1010   | E        | 1110   |
+| B        | 1011   | F        | 1111   |
+
+R-format 格式（普通操作）：
+
+| funct7 辅助 | rs2 源寄存器 2 | rs1 源寄存器 1 | funct3 辅助 | rd 目标寄存器 | opcode 操作 |
+| ----------- | -------------- | -------------- | ----------- | ------------- | ----------- |
+| 7 bits      | 5 bits         | 5 bits         | 3 bits      | 5 bits        | 7 bits      |
+
+通过 funct 可以区分 lw, ld, lh 等
+
+I-format 格式（立即数）：
+
+| immediate 立即数 | rs1 源寄存器 | funct3 辅助 | rd 目标寄存器 | opcode 操作码 |
+| ---------------- | ------------ | ----------- | ------------- | ------------- |
+| 12 bits          | 5 bits       | 3 bits      | 5 bits        | 7 bits        |
+
+立即数用 12 位表示，所以范围是$\pm 2^{11}$
+
+S-format 格式（Store）：
+
+| imm[11:5]立即数的高 7 位 | rs2 源寄存器 2 | rs1 存储寄存器 1 | funct3 辅助 | imm[4:0]立即数的低 5 位 | opcode 操作码 |
+| ------------------------ | -------------- | ---------------- | ----------- | ----------------------- | ------------- |
+| 7 bits                   | 5 bits         | 5 bits           | 3 bits      | 5 bits                  | 7 bits        |
+
+imm[11:5]用来表示偏移
+
+!!! normal-comment "示例"
+
+    `sd x9, 64(x22)`
+    22: rs1
+    9: rs2
+    64: imm[11:5]
+
+SB-format：条件跳转的指令  
+UJ-format：无条件跳转
+
+逻辑操作：  
+左移 slli，右移 srli，与 and，andi，或 or，ori，异或 xor，xori  
+为什么左移右移都是立即数？64 位立即数也能全部移完，立即数能覆盖
+
+左右移的格式：
+
+| funct6 | immed  | rs1    | funct3 | rd     | opcode |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| 6 bits | 6 bits | 5 bits | 3 bits | 5 bits | 7 bits |
+
+I 型，将 12 位的立即数拆成两部分
+
+与门：`and x9, x10, x11`表示`x9 = x10 & x11`  
+或门：`or x9, x10, x11`表示`x9 = x10 | x11`  
+异或门：`xor x9, x10, x11`表示`x9 = x10 ~ x11`  
+取反操作通过异或实现
+
+条件跳转：
+
+```asm
+beq reg1, reg2, L1  # 如果reg1==reg2则跳转到L1
+bne reg1, reg2, L1  # 如果reg1！=reg2则跳转到L1
+```
+
+b 表示 branch
+
+!!! normal-comment "if 示例"
+
+    C code:
+    ```c
+    if (i == j) goto L1;
+    f = g + h;
+    L1: f = f - i;
+    ```
+
+    RISC-V assembly code:
+    ```asm
+        beq x21, x22, L1
+        add x19, x20, x21
+    L1: sub x19, x19, x22
+    ```
+
+!!! normal-comment "if-else 示例"
+
+    C code:
+    ```c
+    if (i == j) f = g + h;
+    else f = g - h;
+    ```
+
+    RISC-V code:
+    ```asm
+        bne x22, x23, Else
+        add x19, x20, x21
+        beq x0, x0, Exit  # goto Exit
+    Else: sub x19, x20, x21
+    Exit: ...
+    ```
+
+!!! normal-comment "loop 示例"
+
+    ```asm
+    Loop: ...
+          bne x9, x10, Loop
+    ```
+
+set on less than (slt):如果小于则置 1  
+`slt x5, x19, x20`表示如果 x19 < x20 则 x5 = 1
+
+!!! normal-comment "slt 示例"
+
+    C code:
+    ```c
+    if (a < b) goto Less;
+    ```
+
+    RISC-V code:
+    ```asm
+    slt x5, x8, x9
+    bne x5, zero, Less
+    ```
+
+`blt rs1, rs2, L1`如果 rs1 < rs2，则跳转到 L1  
+`bge rs1, rs2, L1`如果 rs1 >= rs2，则跳转到 L1  
+区分有符号数和无符号数，blt 和 bge 表示有符号，无符号数后加 u
+
+jump register：switch-case 语句  
+`jalr x1, 100(x6)`把当前地址放到 x1（之后能回来），跳到 x6+100  
+switch(k)时，不同 k 的值的地方存储指令的地址，指向各个指令  
+x6 表示当前跳转表的地址，x6 和 k 左移 3（字的地址）后的值相加得到 x7（表示当前地址），load 到 x7（之前的 x7 里存的是另一个地址，这一步从 x7 指向的内存位置，加载一个 64 位值，存到 x7，这样 x7 表示真正的目标代码的地址），jalr 时以 x7 中地址跳转
+
+!!! normal-comment "jalr 示例"
+
+    C code:
+    ```c
+    switch (k) {
+        case 0: f = i + j; break;
+        case 1: f = g + h; break;
+        case 2: f = g - h; break;
+        case 3: f = i - j; break;
+    }
+    ```
+
+    RISC-V:
+    ```asm
+    blt x25, x0, Exit  # k<0, 超出范围
+    bge x25, x5, Exit  # k>=4, 超出范围
+    slli x7, x25, 3    # 偏移量存到x7
+    add x7, x7, x6     # 当前地址
+    ld x7, 0(x7)       # 加载目标地址
+    jalr x1, 0(x7)     # 当前地址存放到x1，按x7跳转
+    ```
