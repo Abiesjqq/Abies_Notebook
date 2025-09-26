@@ -93,3 +93,31 @@ $$
 图示：![img.png](img.png){ style="width:300px" }
 
 有两种极限模型：![img_1.png](img_1.png){ style="width:300px" }
+
+性质：
+
+1. 筛选特性: $f(t)\delta(t - t_0) = f(t_0)\delta(t - t_0)$
+2. 取样特性: $\displaystyle \int_{-\infty}^{\infty}f(t)\delta(t - t_0)\mathrm{d}t = f(t_0)$ (卷积特性 $\displaystyle \int_{-\infty}^{\infty}f(\tau)\delta(t - \tau)\mathrm{d}\tau = f(t)$)
+3. 展缩特性: $\displaystyle \delta(\alpha t) = \frac{1}{|\alpha|}\delta(t)\Rightarrow \delta(t)$ 是偶函数
+4. $\displaystyle \frac{\mathrm{d}u(t)}{\mathrm{d} t} = \delta (t)$
+
+**斜坡信号**
+
+$$
+r(t) = \begin{cases}t, &\quad t > 0 \\ 0, &\quad t < 0\end{cases}
+$$
+
+$$
+r(t) = \int_{-\infty}^{t}u(\tau) \mathrm{d}\tau
+$$
+
+**冲激偶信号**
+
+$$
+\delta'(t) = \frac{\mathrm{d}\delta(t)}{\mathrm{d}t}
+$$
+
+是奇函数
+
+!!! remarks "正交信号"
+    两个信号乘积的积分为 0

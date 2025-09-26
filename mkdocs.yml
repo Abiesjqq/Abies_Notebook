@@ -162,9 +162,12 @@ nav:
           - 数模的概率统计笔记: NoflowersNotes/概率统计/数模的概率统计笔记.md
           - 微分方程: NoflowersNotes/数模/微分方程建模/微分方程建模.md
       - 信号与系统:
-          - Lecture.1: NoflowersNotes/信号与系统/Lec_1/Lec_1.md
+          - 信号基础知识: NoflowersNotes/信号与系统/Lec_1/Lec_1.md
+          - 系统及其分类: NoflowersNotes/信号与系统/Lec_2/Lec_2.md
+          - 面向线性时不变系统的信号分解基础: NoflowersNotes/信号与系统/Lec_3/Lec_3.md
       - 人工智能基础:
           - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
+          - 启发式搜索算法: NoflowersNotes/人工智能基础/启发式搜索算法/启发式搜索算法.md
       - 算法设计分析:
           - 分治: NoflowersNotes/算法设计分析/分治/分治.md
   - Abies的笔记:
