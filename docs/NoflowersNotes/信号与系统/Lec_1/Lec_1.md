@@ -71,11 +71,11 @@ $$
 
 ### 奇异信号
 
-**单位越阶信号** 
+**单位跃阶信号** 
 
 $\displaystyle u(x) = \begin{cases}1 & t > 0 \\ 0 & t < 0\end{cases}$, $t = 0$ 时不做定义与考虑.
 
-??? remarks "单位越阶信号的作用"
+??? remarks "单位跃阶信号的作用"
     1. 表示方波脉冲信号: $f(t) = u(t - T) - u(t - 2T)$
     2. 表示其它信号的范围: $f(t) = \sin \omega_0 t \cdot u(t)$
 

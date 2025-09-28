@@ -165,6 +165,7 @@ nav:
           - 信号基础知识: NoflowersNotes/信号与系统/Lec_1/Lec_1.md
           - 系统及其分类: NoflowersNotes/信号与系统/Lec_2/Lec_2.md
           - 面向线性时不变系统的信号分解基础: NoflowersNotes/信号与系统/Lec_3/Lec_3.md
+          - LTI 系统的时域分析: NoflowersNotes/信号与系统/Lec_4/Lec_4.md
       - 人工智能基础:
           - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
           - 启发式搜索算法: NoflowersNotes/人工智能基础/启发式搜索算法/启发式搜索算法.md
