@@ -64,7 +64,9 @@ $$
 
     让我详细解释旋度公式中z分量的含义：
 
-    z分量：$\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$
+    z分量：
+
+    $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}$
 
     想象在xy平面上有一个小矩形，边长为$\Delta x$和$\Delta y$：
 
@@ -86,6 +88,7 @@ $$
     - $P(x,y+\Delta y) \approx P(x,y) + \frac{\partial P}{\partial y}\Delta y$
 
     代入得：
+
     $$ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partial P}{\partial y}\Delta x \Delta y = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\Delta x \Delta y$$
 
     **4. 单位面积的环流（旋度的z分量）**
@@ -102,25 +105,31 @@ $$
     *具体例子*
 
     例子1：纯旋转场（有旋）
+
     $$\vec{f} = (-y, x, 0)$$
 
     计算z分量：
+
     $$(\vec{\nabla}\times \vec{f})_z = \frac{\partial x}{\partial x} - \frac{\partial(-y)}{\partial y} = 1 - (-1) = 2$$
 
     这表示绕z轴逆时针旋转，旋度不为零，所以有旋。
 
     例子2：径向场（无旋）
+
     $$\vec{f} = (x, y, 0)$$
 
     计算z分量：
+
     $$(\vec{\nabla}\times \vec{f})_z = \frac{\partial y}{\partial x} - \frac{\partial x}{\partial y} = 0 - 0 = 0$$
 
     这是从原点向外发散的场，虽然不是平行流，但没有旋转，所以无旋。
 
     例子3：剪切流（有旋）
+
     $$\vec{f} = (y, 0, 0)$$
 
     计算z分量：
+
     $$(\vec{\nabla}\times \vec{f})_z = \frac{\partial 0}{\partial x} - \frac{\partial y}{\partial y} = 0 - 1 = -1$$
 
 **旋度定理（斯托克斯定理）：**
@@ -189,6 +198,21 @@ $$\mathrm{d}q=2\pi R\sin\theta\text{(圆环周长)}\cdot R\mathrm{d}\theta\text{
 
 ## 几点注意
 
+**几种倍率：**
+
+| 前缀      | 符号  | 倍数       | 数值表示                                 |
+| --------- | ----- | ---------- | ---------------------------------------- |
+| **femto** | f     | $10^{-15}$ | $1 \, \text{fC} = 10^{-15} \, \text{C}$  |
+| **micro** | $\mu$ | $10^{-6}$  | $1 \, \mu\text{C} = 10^{-6} \, \text{C}$ |
+| **milli** | m     | $10^{-3}$  | $1 \, \text{mA} = 10^{-3} \, \text{A}$   |
+| **centi** | c     | $10^{-2}$  | $1 \, \text{cm} = 10^{-2} \, \text{m}$   |
+| **deci**  | d     | $10^{-1}$  | $1 \, \text{dm} = 10^{-1} \, \text{m}$   |
+| **kilo**  | k     | $10^{3}$   | $1 \, \text{kJ} = 10^{3} \, \text{J}$    |
+| **mega**  | M     | $10^{6}$   | $1 \, \text{MG} = 10^{6} \, \text{g}$    |
+| **giga**  | G     | $10^{9}$   | $1 \, \text{GB} = 10^{9} \, \text{B}$    |
+| **tera**  | T     | $10^{12}$  | $1 \, \text{TB} = 10^{12} \, \text{B}$   |
+
+
 ??? examples "相对运动下观察电场和磁场？"
 
     假设一无限长直导线，电荷以恒定速度 v 向右运动。
@@ -206,6 +230,7 @@ $$\mathrm{d}q=2\pi R\sin\theta\text{(圆环周长)}\cdot R\mathrm{d}\theta\text{
     *库伦定律的适用范围*
 
     库伦定律：
+
     $$\vec{F} = k\frac{q_1 q_2}{r^2}\hat{r}$$
 
     **仅适用于静止电荷**之间的相互作用。当电荷运动时，情况变得复杂得多。
@@ -215,14 +240,17 @@ $$\mathrm{d}q=2\pi R\sin\theta\text{(圆环周长)}\cdot R\mathrm{d}\theta\text{
     1. **磁场的产生**
 
     运动电荷会产生磁场：
+
     $$\vec{B} = \frac{\mu_0}{4\pi}\frac{q\vec{v}\times\hat{r}}{r^2}$$
 
     这个磁场会对其他运动电荷产生洛伦兹力：
+
     $$\vec{F}_{magnetic} = q\vec{v}\times\vec{B}$$
 
     2. **电场的变化**
 
     运动电荷的电场不再是简单的库伦场，而是：
+
     $$\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\frac{(1-\beta^2)}{(1-\beta^2\sin^2\theta)^{3/2}}\hat{r}$$
 
     其中 $\beta = v/c$，$\theta$ 是速度方向与位置矢量的夹角。

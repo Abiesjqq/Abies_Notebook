@@ -99,16 +99,19 @@ nav:
       - 扉页: CourseNotes/note_index.md
       - 计算机组成:
           - 课程笔记:
-              - 自学的碎碎念: CourseNotes/Computer Organization/selflearning.md
-              - lec01 介绍: CourseNotes/Computer Organization/lecture notes/COlec01.md
+              - Chap 01 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
+              - Chap 03 基本算法: CourseNotes/Computer Organization/lecture notes/COchap03.md
+              - Chap 02 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
       - 高级数据结构与算法分析:
           - AVL树, 红黑树, Splay树: CourseNotes/Advance Data Structure/ADSlec01.md
       - 普通物理学II: 
-          - Chap22 库伦定律和电场: CourseNotes/General Physics II/Phychap22.md
+          - 库伦定律、高斯定律: CourseNotes/General Physics II/Phychap22.md
       - 概率论与数理统计:
           - Chap1 基本概念: CourseNotes/Probability/PROchap1.md
+      - 工程图学:
+          - 点线面的投影: CourseNotes/Engineering Graphics/EG01.md
       - 数据结构基础:
           - 0. 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
           - 1. 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
@@ -173,7 +176,10 @@ nav:
           - 分治: NoflowersNotes/算法设计分析/分治/分治.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
-      - GAMES101(进行中):
+      - Vision Course (谭平):
+          - Lec 01 Introduction: AbiesNotes/Vision Course/CV01_introduction.md
+          - Lec 02 Camera: AbiesNotes/Vision Course/CV02_camera.md
+      - GAMES101:
           - Lecture 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lecture 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
           - Lecture 03 Transformation: AbiesNotes/GAMES101/Lecture 03 Transformation.md
