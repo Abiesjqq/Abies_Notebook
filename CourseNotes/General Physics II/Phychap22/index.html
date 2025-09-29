@@ -20,7 +20,7 @@
     
     
       
-        <title>Chap22 库伦定律和电场 - Abies's Notebook</title>
+        <title>库伦定律、高斯定律 - Abies's Notebook</title>
       
     
     
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap22 库伦定律和电场
+              库伦定律、高斯定律
             
           </span>
         </div>
@@ -568,6 +568,8 @@
       
         
       
+        
+      
     
     
     
@@ -665,7 +667,7 @@
   
   
   
-    <a href="../../Computer%20Organization/selflearning/" class="md-nav__link">
+    <a href="../../Computer%20Organization/lecture%20notes/COchap01/" class="md-nav__link">
       
   
   
@@ -808,7 +810,7 @@
   
   
   <span class="md-ellipsis">
-    Chap22 库伦定律和电场
+    库伦定律、高斯定律
     
   </span>
   
@@ -821,7 +823,7 @@
   
   
   <span class="md-ellipsis">
-    Chap22 库伦定律和电场
+    库伦定律、高斯定律
     
   </span>
   
@@ -1013,6 +1015,57 @@
   
   <span class="md-ellipsis">
     概率论与数理统计
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Engineering%20Graphics/EG01/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    工程图学
     
   </span>
   
@@ -1408,6 +1461,8 @@
       
         
       
+        
+      
     
     
     
@@ -1666,11 +1721,11 @@
   
 
 
-  <h1>Chap22 库伦定律和电场</h1>
+  <h1>库伦定律、高斯定律</h1>
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>1736</strong> 个字&nbsp;&nbsp;<strong>10</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>1750</strong> 个字&nbsp;&nbsp;<strong>14</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="_1">数学基础</h2>
 <p>算符 nabla：</p>
@@ -1714,7 +1769,8 @@ P &amp; Q &amp; R
 <p>旋度实际上衡量的是：<strong>单位面积内矢量场的环流强度</strong></p>
 <p><em>数学推导：为什么旋度表示旋转强度</em></p>
 <p>让我详细解释旋度公式中z分量的含义：</p>
-<p>z分量：<span class="arithmatex">\(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\)</span></p>
+<p>z分量：</p>
+<p><span class="arithmatex">\(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\)</span></p>
 <p>想象在xy平面上有一个小矩形，边长为<span class="arithmatex">\(\Delta x\)</span>和<span class="arithmatex">\(\Delta y\)</span>：</p>
 <p><strong>1. 沿着矩形边界的环流</strong></p>
 <p>沿矩形边界逆时针方向计算环流：
@@ -1729,8 +1785,8 @@ P &amp; Q &amp; R
 <li><span class="arithmatex">\(Q(x+\Delta x,y) \approx Q(x,y) + \frac{\partial Q}{\partial x}\Delta x\)</span></li>
 <li><span class="arithmatex">\(P(x,y+\Delta y) \approx P(x,y) + \frac{\partial P}{\partial y}\Delta y\)</span></li>
 </ul>
-<p>代入得：
-$$ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partial P}{\partial y}\Delta x \Delta y = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\Delta x \Delta y$$</p>
+<p>代入得：</p>
+<div class="arithmatex">\[ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partial P}{\partial y}\Delta x \Delta y = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\Delta x \Delta y\]</div>
 <p><strong>4. 单位面积的环流（旋度的z分量）</strong></p>
 <div class="arithmatex">\[(\vec{\nabla}\times \vec{f})_z = \frac{\Gamma}{\Delta x \Delta y} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\]</div>
 <p><em>为什么旋度不为零表示有旋？</em></p>
@@ -1740,20 +1796,20 @@ $$ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partia
 <li><strong>旋度 = 0</strong>：净环流 = 0 → 无旋转趋势 → <strong>无旋</strong></li>
 </ul>
 <p><em>具体例子</em></p>
-<p>例子1：纯旋转场（有旋）
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{f} = (-y, x, 0)\)</span>\)</span></p>
-<p>计算z分量：
-<span class="arithmatex">\(<span class="arithmatex">\((\vec{\nabla}\times \vec{f})_z = \frac{\partial x}{\partial x} - \frac{\partial(-y)}{\partial y} = 1 - (-1) = 2\)</span>\)</span></p>
+<p>例子1：纯旋转场（有旋）</p>
+<div class="arithmatex">\[\vec{f} = (-y, x, 0)\]</div>
+<p>计算z分量：</p>
+<div class="arithmatex">\[(\vec{\nabla}\times \vec{f})_z = \frac{\partial x}{\partial x} - \frac{\partial(-y)}{\partial y} = 1 - (-1) = 2\]</div>
 <p>这表示绕z轴逆时针旋转，旋度不为零，所以有旋。</p>
-<p>例子2：径向场（无旋）
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{f} = (x, y, 0)\)</span>\)</span></p>
-<p>计算z分量：
-<span class="arithmatex">\(<span class="arithmatex">\((\vec{\nabla}\times \vec{f})_z = \frac{\partial y}{\partial x} - \frac{\partial x}{\partial y} = 0 - 0 = 0\)</span>\)</span></p>
+<p>例子2：径向场（无旋）</p>
+<div class="arithmatex">\[\vec{f} = (x, y, 0)\]</div>
+<p>计算z分量：</p>
+<div class="arithmatex">\[(\vec{\nabla}\times \vec{f})_z = \frac{\partial y}{\partial x} - \frac{\partial x}{\partial y} = 0 - 0 = 0\]</div>
 <p>这是从原点向外发散的场，虽然不是平行流，但没有旋转，所以无旋。</p>
-<p>例子3：剪切流（有旋）
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{f} = (y, 0, 0)\)</span>\)</span></p>
-<p>计算z分量：
-<span class="arithmatex">\(<span class="arithmatex">\((\vec{\nabla}\times \vec{f})_z = \frac{\partial 0}{\partial x} - \frac{\partial y}{\partial y} = 0 - 1 = -1\)</span>\)</span></p>
+<p>例子3：剪切流（有旋）</p>
+<div class="arithmatex">\[\vec{f} = (y, 0, 0)\]</div>
+<p>计算z分量：</p>
+<div class="arithmatex">\[(\vec{\nabla}\times \vec{f})_z = \frac{\partial 0}{\partial x} - \frac{\partial y}{\partial y} = 0 - 1 = -1\]</div>
 </details>
 <p><strong>旋度定理（斯托克斯定理）：</strong></p>
 <div class="arithmatex">\[\oint_C\vec{A}\cdot\mathrm{d}\vec{l}=\int_S(\vec{\nabla}\times\vec{A})\cdot\mathrm{d}\vec{S}\]</div>
@@ -1799,6 +1855,73 @@ $$ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partia
 <p><strong>球壳内</strong>：对任意一点，取相对的两块球面，用立体角计算面积。相对球面在该点的电场强度抵消。</p>
 <p><strong>均匀带电球体</strong>：球外平方反比，球内正比。</p>
 <h2 id="_11">几点注意</h2>
+<p><strong>几种倍率：</strong></p>
+<table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>符号</th>
+<th>倍数</th>
+<th>数值表示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>femto</strong></td>
+<td>f</td>
+<td><span class="arithmatex">\(10^{-15}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{fC} = 10^{-15} \, \text{C}\)</span></td>
+</tr>
+<tr>
+<td><strong>micro</strong></td>
+<td><span class="arithmatex">\(\mu\)</span></td>
+<td><span class="arithmatex">\(10^{-6}\)</span></td>
+<td><span class="arithmatex">\(1 \, \mu\text{C} = 10^{-6} \, \text{C}\)</span></td>
+</tr>
+<tr>
+<td><strong>milli</strong></td>
+<td>m</td>
+<td><span class="arithmatex">\(10^{-3}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{mA} = 10^{-3} \, \text{A}\)</span></td>
+</tr>
+<tr>
+<td><strong>centi</strong></td>
+<td>c</td>
+<td><span class="arithmatex">\(10^{-2}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{cm} = 10^{-2} \, \text{m}\)</span></td>
+</tr>
+<tr>
+<td><strong>deci</strong></td>
+<td>d</td>
+<td><span class="arithmatex">\(10^{-1}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{dm} = 10^{-1} \, \text{m}\)</span></td>
+</tr>
+<tr>
+<td><strong>kilo</strong></td>
+<td>k</td>
+<td><span class="arithmatex">\(10^{3}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{kJ} = 10^{3} \, \text{J}\)</span></td>
+</tr>
+<tr>
+<td><strong>mega</strong></td>
+<td>M</td>
+<td><span class="arithmatex">\(10^{6}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{MG} = 10^{6} \, \text{g}\)</span></td>
+</tr>
+<tr>
+<td><strong>giga</strong></td>
+<td>G</td>
+<td><span class="arithmatex">\(10^{9}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{GB} = 10^{9} \, \text{B}\)</span></td>
+</tr>
+<tr>
+<td><strong>tera</strong></td>
+<td>T</td>
+<td><span class="arithmatex">\(10^{12}\)</span></td>
+<td><span class="arithmatex">\(1 \, \text{TB} = 10^{12} \, \text{B}\)</span></td>
+</tr>
+</tbody>
+</table>
 <details class="examples">
 <summary>相对运动下观察电场和磁场？</summary>
 <p>假设一无限长直导线，电荷以恒定速度 v 向右运动。</p>
@@ -1810,22 +1933,22 @@ $$ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partia
 <details class="examples">
 <summary>运动电荷不满足库伦定律？</summary>
 <p><em>库伦定律的适用范围</em></p>
-<p>库伦定律：
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{F} = k\frac{q_1 q_2}{r^2}\hat{r}\)</span>\)</span></p>
+<p>库伦定律：</p>
+<div class="arithmatex">\[\vec{F} = k\frac{q_1 q_2}{r^2}\hat{r}\]</div>
 <p><strong>仅适用于静止电荷</strong>之间的相互作用。当电荷运动时，情况变得复杂得多。</p>
 <p><em>为什么运动电荷不满足库伦定律？</em></p>
 <ol>
 <li><strong>磁场的产生</strong></li>
 </ol>
-<p>运动电荷会产生磁场：
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{B} = \frac{\mu_0}{4\pi}\frac{q\vec{v}\times\hat{r}}{r^2}\)</span>\)</span></p>
-<p>这个磁场会对其他运动电荷产生洛伦兹力：
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{F}_{magnetic} = q\vec{v}\times\vec{B}\)</span>\)</span></p>
+<p>运动电荷会产生磁场：</p>
+<div class="arithmatex">\[\vec{B} = \frac{\mu_0}{4\pi}\frac{q\vec{v}\times\hat{r}}{r^2}\]</div>
+<p>这个磁场会对其他运动电荷产生洛伦兹力：</p>
+<div class="arithmatex">\[\vec{F}_{magnetic} = q\vec{v}\times\vec{B}\]</div>
 <ol>
 <li><strong>电场的变化</strong></li>
 </ol>
-<p>运动电荷的电场不再是简单的库伦场，而是：
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\frac{(1-\beta^2)}{(1-\beta^2\sin^2\theta)^{3/2}}\hat{r}\)</span>\)</span></p>
+<p>运动电荷的电场不再是简单的库伦场，而是：</p>
+<div class="arithmatex">\[\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\frac{(1-\beta^2)}{(1-\beta^2\sin^2\theta)^{3/2}}\hat{r}\]</div>
 <p>其中 <span class="arithmatex">\(\beta = v/c\)</span>，<span class="arithmatex">\(\theta\)</span> 是速度方向与位置矢量的夹角。</p>
 <ol>
 <li><strong>相对论效应</strong></li>
@@ -1931,7 +2054,7 @@ $$ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partia
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月25日 05:01:47 UTC">2025-09-25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月29日 01:25:26 UTC">2025-09-29</span>
   </span>
 
     
@@ -1946,29 +2069,6 @@ $$ \Gamma \approx \frac{\partial Q}{\partial x}\Delta x \Delta y - \frac{\partia
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
