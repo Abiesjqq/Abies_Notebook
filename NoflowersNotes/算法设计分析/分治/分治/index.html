@@ -1084,6 +1084,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#polynomial-multiplication-fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Multiplication -- FFT
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1307,6 +1316,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#polynomial-multiplication-fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Multiplication -- FFT
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1497,6 +1515,34 @@ T(n) = 2T(n / 2) + O(n) \Rightarrow T(n) = O(n \log n)
 </div>
 <h2 id="closest-pairs">Closest Pairs</h2>
 <p>Find the closest dot pair on the 2-D plane.</p>
+<h2 id="polynomial-multiplication-fft">Polynomial Multiplication -- FFT</h2>
+<p>Solution 1: Adapting Karatsuba Algorithm &rarr; <span class="arithmatex">\(O(d^{\log_2 3})\)</span></p>
+<p>A <span class="arithmatex">\(O(d \log d)\)</span> solution: FFT</p>
+<p><strong>step1</strong>. Choose <span class="arithmatex">\(2d - 1\)</span> distinct numbers <span class="arithmatex">\(a_0, \cdots, a_{2d - 2}\)</span>, and compute <span class="arithmatex">\(p(a_i), q(a_i)\)</span></p>
+<p>Directly compute every <span class="arithmatex">\(p(a_i), q(a_i)\)</span>: <span class="arithmatex">\(O(d^2)\)</span> &rarr; bad!<br />
+However, computing each <span class="arithmatex">\(p(a_i)\)</span> requires <span class="arithmatex">\(O(d)\)</span> time!  </p>
+<p>Noting that if we let</p>
+<div class="arithmatex">\[
+\begin{align}
+p_e(x) &amp;= a_0 + a_2 x + \cdots + a_{d - 2}x^{d/2 - 1} \\
+p_o(x) &amp;= a_1 + a_3x + \cdots + a_{d - 1}x^{d / 2 - 1}
+\end{align}
+\]</div>
+<p>then </p>
+<div class="arithmatex">\[
+p(x) = p_e(x^2) + xp_o(x^2)
+\]</div>
+<p>Let <span class="arithmatex">\(a_1 = - a_0, a_3 = -a_2, \cdots\)</span> </p>
+<div class="arithmatex">\[
+\begin{align}
+p(a_1) &amp;= p_e(a_0^2) - a_0p_o(a_0^2) \\
+p(a_0) &amp;= p_e(a_0^2) + a_0p_o(a_0^2)
+\end{align}
+\]</div>
+<p>By this we can just compute half of <span class="arithmatex">\(p(a_i)\)</span>. So with the same task size, we reduce degree <span class="arithmatex">\(d\)</span> to <span class="arithmatex">\(d / 2\)</span>.</p>
+<p>Then recursively compute <span class="arithmatex">\(p_e\)</span> and <span class="arithmatex">\(p_o\)</span>, total time complexity <span class="arithmatex">\(O(d \log d)\)</span></p>
+<p>step2. Compute $r(a_i) = p(a_i)q(a_i) $, <span class="arithmatex">\(O(d)\)</span>.
+step3. Compute <span class="arithmatex">\(r(x)\)</span>.</p>
 
 
 
@@ -1519,7 +1565,7 @@ T(n) = 2T(n / 2) + O(n) \Rightarrow T(n) = O(n \log n)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月22日 05:25:37 UTC">2025-09-22</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月30日 11:02:04 UTC">2025-09-30</span>
   </span>
 
     
