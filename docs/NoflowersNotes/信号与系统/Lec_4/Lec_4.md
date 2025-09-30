@@ -51,4 +51,36 @@ $$
 **完全响应** = 零状态响应 + 零输入响应
 
 !!! remarks "卷积积分的计算与性质"
-    下节课讲（
+    定义 $\displaystyle y(t) = f(t) \otimes h(t) = \int_{-\infty}^{\infty}f(\tau)h(t - \tau) \mathrm{d} \tau$
+    
+    两个方波信号卷积，得到结果为梯形，底边长为方波宽度的和，上边长为方波信号宽度的差
+    
+    理解： $\tau$ 作用时刻，$t$ 观察时刻，积分：所有作用时刻响应的叠加
+    
+    因果信号中，积分上下限可以换为 $[0, t]$
+    
+    !!! examples "几个例子"
+
+        $$
+        u(t) \otimes u(t) = r(t)
+        $$  
+
+        $$
+        \displaystyle \mathrm{e}^{\alpha t}\otimes \mathrm{e}^{\beta t} = \begin{cases}\displaystyle \frac{\mathrm{e}^{\alpha t} - \mathrm{e}^{\beta t}}{\alpha - \beta}u(t) &\ \alpha \neq \beta \\ t\mathrm{e}^{\alpha t}u(t) &\ \alpha = \beta  \end{cases}
+        $$
+    
+    有一些性质：  
+    1. **交换律** $\displaystyle f(t) \otimes h(t) h(t) \otimes f(t)$
+        可用系统作用 $f(t)$ 角度理解，同时表明 $h(t), f(t)$ 均能表示为冲激响应作为系统的描述； LTI 系统级联时可以交换先后顺序    
+       2. **分配律** $x(t) \otimes (h_1(t) + h_2(t)) = x(t) \otimes h_1(t) + x(t)\otimes h_2(t)$  
+           并联系统能分别计算并相加  
+       3. **结合律** (公式略)
+           级联系统的冲激响应等于格构成系统冲激响应的卷积  
+       4. **与奇异信号的卷积**  
+           - 直连系统 $x(t) \otimes \delta(t) = x(t)$  
+           - 延时特性 $x(t )\otimes \delta (t - T) = x(t - T)$    
+           - 微分特性 $x(t) \otimes \delta'(t) = x'(t)$  
+           - 积分特性 $\displaystyle x(t) \otimes u(t) = \int_{-\infty}^{t}x(\tau) \mathrm{d}\tau$  
+       5. 一些性质的组合
+           - $x'(t) \otimes h(t) = x(t) \otimes h'(t) = y'(t)$，积分延时等相同.
+           - 可以先微分成冲激信号再积分方便求得
