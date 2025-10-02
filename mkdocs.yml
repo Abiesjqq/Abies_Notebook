@@ -105,7 +105,10 @@ nav:
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
       - 高级数据结构与算法分析:
-          - AVL树, 红黑树, Splay树: CourseNotes/Advance Data Structure/ADSlec01.md
+          - AVL树, 红黑树: CourseNotes/Advance Data Structure/ADSlec01.md
+          - Splay树, B+树: CourseNotes/Advance Data Structure/ADSlec02.md
+          - 倒排索引: CourseNotes/Advance Data Structure/ADSlec03.md
+          - 左偏堆: CourseNotes/Advance Data Structure/ADSlec04.md
       - 普通物理学II: 
           - 库伦定律、高斯定律: CourseNotes/General Physics II/Phychap22.md
       - 概率论与数理统计:
@@ -176,9 +179,13 @@ nav:
           - 分治: NoflowersNotes/算法设计分析/分治/分治.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
-      - Vision Course (谭平):
+      - Vision Course (进行中):
           - Lec 01 Introduction: AbiesNotes/Vision Course/CV01_introduction.md
           - Lec 02 Camera: AbiesNotes/Vision Course/CV02_camera.md
+          - Lec 03 Color: AbiesNotes/Vision Course/CV03_color.md
+          - Lec 04 Radiometric Calibration & HDR: AbiesNotes/Vision Course/CV04_HDR.md
+          - Lec 05 Reflectance & Lighting: AbiesNotes/Vision Course/CV05_lighting.md
+          - Lec 06 Filters: AbiesNotes/Vision Course/CV06_filters.md
       - GAMES101:
           - Lecture 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lecture 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
