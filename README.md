@@ -1,1 +1,3 @@
-My little notebook~
+👋 This is Abies' little notebook~
+
+
