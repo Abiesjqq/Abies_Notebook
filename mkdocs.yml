@@ -187,6 +187,8 @@ nav:
           - Lec 04 Radiometric Calibration & HDR: AbiesNotes/Vision Course/CV04_HDR.md
           - Lec 05 Reflectance & Lighting: AbiesNotes/Vision Course/CV05_lighting.md
           - Lec 06 Filters: AbiesNotes/Vision Course/CV06_filters.md
+          - Lec 07 Graph-cut: AbiesNotes/Vision Course/CV07_graphcut.md
+          - Lec 08 Feature Detector: AbiesNotes/Vision Course/CV08_detector.md
       - GAMES101:
           - Lec 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lec 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
@@ -216,8 +218,6 @@ nav:
           - Gourand Shading: AbiesNotes/Tinyrenderer/Gourand.md
           - Camera: AbiesNotes/Tinyrenderer/camera.md
           - Shader: AbiesNotes/Tinyrenderer/shader.md
-
-
   - 论文阅读:
       - Diffusion:
           - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
