@@ -109,6 +109,7 @@ nav:
           - Splay树, B+树: CourseNotes/Advance Data Structure/ADSlec02.md
           - 倒排索引: CourseNotes/Advance Data Structure/ADSlec03.md
           - 左偏堆: CourseNotes/Advance Data Structure/ADSlec04.md
+          - 二项队列: CourseNotes/Advance Data Structure/ADSlec05.md
       - 普通物理学II:
           - 库伦定律、高斯定律: CourseNotes/General Physics II/Phychap22.md
       - 概率论与数理统计:
@@ -138,17 +139,17 @@ nav:
           - C语言笔记: CourseNotes/C Programming/CNote.md
       - 机器人感知与运动控制(短):
           - 理论课:
-              - lec 01 绪论: CourseNotes/robot control/theoretical/lec 01 intro.md
-              - lec 02 传感器模组: CourseNotes/robot control/theoretical/lec 02 sensors.md
-              - lec 03 数字图像处理: CourseNotes/robot control/theoretical/lec 03 CV.md
-              - lec 04 刚体动力学概述: CourseNotes/robot control/theoretical/lec 04 mechanics.md
-              - lec 05 机器人导航规划: CourseNotes/robot control/theoretical/lec 05 motion.md
+              - 绪论: CourseNotes/robot control/theoretical/lec 01 intro.md
+              - 传感器模组: CourseNotes/robot control/theoretical/lec 02 sensors.md
+              - 数字图像处理: CourseNotes/robot control/theoretical/lec 03 CV.md
+              - 刚体动力学概述: CourseNotes/robot control/theoretical/lec 04 mechanics.md
+              - 机器人导航规划: CourseNotes/robot control/theoretical/lec 05 motion.md
           - 实践课:
-              - exp 01 激光扫描仪和点云处理: CourseNotes/robot control/practical/scanner.md
-              - exp 02 OpenCV视频处理: CourseNotes/robot control/practical/video.md
-              - exp 03 机器人控制: CourseNotes/robot control/practical/rigid-body kinematics.md
-              - exp 3.1 Taichi简介: CourseNotes/robot control/practical/taichi intro.md
-              - exp 3.2 rigid_body代码说明: CourseNotes/robot control/practical/robot intro.md
+              - 激光扫描仪和点云处理: CourseNotes/robot control/practical/scanner.md
+              - OpenCV视频处理: CourseNotes/robot control/practical/video.md
+              - 机器人控制: CourseNotes/robot control/practical/rigid-body kinematics.md
+              - Taichi简介: CourseNotes/robot control/practical/taichi intro.md
+              - rigid_body代码说明: CourseNotes/robot control/practical/robot intro.md
       - 文化人类学*: 
           - 绪论: CourseNotes/Cultural Anthropolog/CAlec 01.md
       - 基于人工智能的国画传承*:
@@ -187,25 +188,25 @@ nav:
           - Lec 05 Reflectance & Lighting: AbiesNotes/Vision Course/CV05_lighting.md
           - Lec 06 Filters: AbiesNotes/Vision Course/CV06_filters.md
       - GAMES101:
-          - Lecture 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
-          - Lecture 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
-          - Lecture 03 Transformation: AbiesNotes/GAMES101/Lecture 03 Transformation.md
-          - Lecture 04 Transformations Cont.: AbiesNotes/GAMES101/Lecture 04 Transformations Cont.md
-          - Lecture 05 Rasterization 1 (Triangles): AbiesNotes/GAMES101/Lecture 05 Rasterization 1 (Triangles).md
-          - Lecture 06 Rasterization 2 (Antiliasing): AbiesNotes/GAMES101/Lecture 06 Rasterization 2 (Antiliasing).md
-          - Lecture 07 Shading 1 (Illumination, Shading and Graphics Pipelines): AbiesNotes/GAMES101/Lecture 07 Shading 1.md
-          - Lecture 08 Shading 2 (Shading, Pipeline and Texture Mapping): AbiesNotes/GAMES101/Lecture 08 Shading 2.md
-          - Lecture 09 Shading 3 (Texture Mapping cont.): AbiesNotes/GAMES101/Lecture 09 Shading 3.md
-          - Lecture 10 Geomertry 1 (Introduction): AbiesNotes/GAMES101/Lecture 10 Geometry 1.md
-          - Lecture 11 Geomertry 2 (Curves and Surfaces): AbiesNotes/GAMES101/Lecture 11 Geometry 2.md
-          - Lecture 12 Geometry 3: AbiesNotes/GAMES101/Lecture 12 Geometry 3.md
-          - Lecture 13 Ray Tracing 1 (Whitted-Style Ray Tracing): AbiesNotes/GAMES101/Lecture 13 Ray Tracing 1.md
-          - Lectire 14 Ray Tracing 2(Acceleration): AbiesNotes/GAMES101/Lecture 14 Ray Tracing 2.md
-          - Lecture 15 Ray Tracing 3(Light Transport & Global Illumination): AbiesNotes/GAMES101/Lecture 15 Ray Tracing 3.md
-          - Lectire 16 Ray Tracing 4(Monte Carlo Path Tracing): AbiesNotes/GAMES101/Lecture 16 Ray Tracing 4.md
-          - Lecture 17 Materials and Appearances: AbiesNotes/GAMES101/Lecture 17 Materials and Appearances.md
-          - Lecture 18 Advanced Topics in Rendering: AbiesNotes/GAMES101/Lecture 18 Advanced Topics in Rendering.md
-          - Lecture 19 Cameras, Lenses and Light Fields: AbiesNotes/GAMES101/Lecture 19 Cameras, Lenses and Light Fields.md
+          - Lec 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
+          - Lec 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
+          - Lec 03 Transformation: AbiesNotes/GAMES101/Lecture 03 Transformation.md
+          - Lec 04 Transformations Cont.: AbiesNotes/GAMES101/Lecture 04 Transformations Cont.md
+          - Lec 05 Rasterization 1 (Triangles): AbiesNotes/GAMES101/Lecture 05 Rasterization 1 (Triangles).md
+          - Lec 06 Rasterization 2 (Antiliasing): AbiesNotes/GAMES101/Lecture 06 Rasterization 2 (Antiliasing).md
+          - Lec 07 Shading 1 (Illumination, Shading and Graphics Pipelines): AbiesNotes/GAMES101/Lecture 07 Shading 1.md
+          - Lec 08 Shading 2 (Shading, Pipeline and Texture Mapping): AbiesNotes/GAMES101/Lecture 08 Shading 2.md
+          - Lec 09 Shading 3 (Texture Mapping cont.): AbiesNotes/GAMES101/Lecture 09 Shading 3.md
+          - Lec 10 Geomertry 1 (Introduction): AbiesNotes/GAMES101/Lecture 10 Geometry 1.md
+          - Lec 11 Geomertry 2 (Curves and Surfaces): AbiesNotes/GAMES101/Lecture 11 Geometry 2.md
+          - Lec 12 Geometry 3: AbiesNotes/GAMES101/Lecture 12 Geometry 3.md
+          - Lec 13 Ray Tracing 1 (Whitted-Style Ray Tracing): AbiesNotes/GAMES101/Lecture 13 Ray Tracing 1.md
+          - Lec 14 Ray Tracing 2(Acceleration): AbiesNotes/GAMES101/Lecture 14 Ray Tracing 2.md
+          - Lec 15 Ray Tracing 3(Light Transport & Global Illumination): AbiesNotes/GAMES101/Lecture 15 Ray Tracing 3.md
+          - Lec 16 Ray Tracing 4(Monte Carlo Path Tracing): AbiesNotes/GAMES101/Lecture 16 Ray Tracing 4.md
+          - Lec 17 Materials and Appearances: AbiesNotes/GAMES101/Lecture 17 Materials and Appearances.md
+          - Lec 18 Advanced Topics in Rendering: AbiesNotes/GAMES101/Lecture 18 Advanced Topics in Rendering.md
+          - Lec 19 Cameras, Lenses and Light Fields: AbiesNotes/GAMES101/Lecture 19 Cameras, Lenses and Light Fields.md
       - Tinyrenderer(中道崩殂):
           - Getting started: AbiesNotes/Tinyrenderer/getting started.md
           - Line: AbiesNotes/Tinyrenderer/line.md
