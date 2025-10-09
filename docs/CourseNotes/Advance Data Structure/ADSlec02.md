@@ -1,3 +1,5 @@
+# ADS Lec 02 红黑树和 B+树
+
 ## 红黑树
 
 ### 红黑树性质
@@ -12,32 +14,7 @@
 从根到叶节点的路径，最长路径最多是最短路径的两倍。
 
 有 N 个内部节点的红黑树，树高最大为$2\log_2(N+1)$
-
-??? normal-comment "证明"
-
-    bh表示黑高，h表示树高
-
-    $N\ge 2^{bh}-1$, 即 $bh\le\log_2(N+1)$
-
-    $h\le 2\, bh=2\log_2(N+1)$
-
-??? examples "一道选择题"
-
-    If we insert N(N⩾2) nodes (with different integer elements) consecutively to build a red-black tree T from an empty tree, which of the following situations is possible:
-
-    A. All nodes in T are black
-    B. The number of leaf nodes (NIL) in T is 2N−1
-    C. 2N rotations occurred during the construction of T
-    D. The height of T is ⌈3log2(N+1)⌉ (assume the height of the empty tree is 0)
-
-    A：可能？
-
-    B：不可能。二叉树有 N 个内部节点，则有 N+1 个 NIL。
-    设内部节点 N 个，NIL 共 L 个。则总出度为 2N，总边数为 N+L-1，总出度=总边数，故 L=N+1。
-
-    C：不可能。每次插入节点最多旋转两次，而根节点和第二个插入的不用旋转。
-
-    D：不可能。最大高度为$2\log_2(N+1)$。
+（bh 表示黑高，h 表示树高，$N\ge 2^{bh}-1$, 即 $bh\le\log_2(N+1)$，$h\le 2\, bh=2\log_2(N+1)$）
 
 ### 插入
 
@@ -49,11 +26,11 @@
 
 ### 删除
 
-??? remarks "二叉搜索树的删除"
+**回忆二叉树的删除：**
 
-    1. 叶节点：直接删除
-    2. 只有一个孩子：直接用孩子代替
-    3. 有两个孩子：找到左子树中最大的或右子树中最小的，代替删除节点，继续删除这个节点
+1. 叶节点：直接删除
+2. 只有一个孩子：直接用孩子代替
+3. 有两个孩子：找到左子树中最大的或右子树中最小的，代替删除节点，继续删除这个节点
 
 红黑树删除：先按二叉搜索树方法删除，再调整。  
 第三种一定会转化为前两种，只讨论前两种情况。
@@ -76,8 +53,6 @@
       3. 父节点为根节点：双黑上移后碰到根节点，直接变成单黑
 2. 兄弟是红色：
    兄父变色，父亲朝双黑节点旋转，保持双黑继续调整
-
-_文字已经讲不清楚了，看图吧_
 
 ![RBTree insertion](./ADSresources/RBTree%20insertion.png)
 
@@ -134,6 +109,8 @@ B+树本身也作为索引文件存储在硬盘中。
 - B+树节点内元素个数和分支数相同，每个元素对应子节点的最大值。非叶节点是对下一层节点的索引。
 - 其他性质与 B 树相同。节点最少 2 个分支、1 个元素（除非只有根节点）；其他节点最少$\lceil\frac{m}{2}\rceil$个节点，$\lceil\frac{m}{2}\rceil-1$个元素
 
+阶为 3 的 B+树称为 2-3 树；阶为 4 的 B+树称为 2-3-4 树。
+
 !!! normal-comment "B+树和 B 树的区别"
 
     B 树中 m 个分支的节点内有 m-1 个元素，而 B+树中 m 个分支的节点内有 m 个元素
@@ -142,6 +119,17 @@ B+树本身也作为索引文件存储在硬盘中。
 
     B 树只有根节点一个头指针。B+树有两个头指针，即能通过叶节点链表的头指针顺序查找，也能通过根节点的指针随机查找。
 
+!!! warning-box "注意！"
+
+    <span style="color:red">课上讲的 B+树结构与上面不同！</span>
+
+    课堂中的 B+树：
+
+    - B+树中，有 m 个分支的节点内部有 m-1 个元素，其中第 k 个元素为第 k+1 个分支所有叶节点的最小值。每次走到下一层子树的条件为，节点内部的元素中大于等于前一个且小于后一个。
+    - 节点内部元素个数固定为 M-1 个，空位用 - 填充。
+    - 插入导致上溢出时，优先考虑用兄弟弥补。兄弟无法解决时再分裂。
+    - 上溢出分裂时，在第$\lceil\frac{m}{2}\rceil$右侧分裂，父亲中增加第$\lceil\frac{m}{2}\rceil+1$个元素。
+
 ### 查找
 
 顺序查找：直接在叶节点链表上查找
@@ -149,15 +137,3 @@ B+树本身也作为索引文件存储在硬盘中。
 随机查找：从根节点开始查找，直到叶节点。在节点内依次比较（顺序查找为例，大于就向右比较，小于等于就向下到子树）
 
 范围查找：e.g. 查找范围为[A,B]的节点。先随机查找到左边界，在顺序遍历直到右边界。
-
-!!! normal-comment "红黑树和B+树"
-
-    ？
-
-!!! examples "阴得没边了。。"
-
-- All of the Zig, Zig-zig, and Zig-zag rotations in a splay tree not only move the accessed node to the root, but also roughly half the depth of most nodes in the tree.  
-
-Roughly half the depth of most nodes in the accessed path, not in the whole tree.
-
-- The following binary search tree is a valid red-black tree.

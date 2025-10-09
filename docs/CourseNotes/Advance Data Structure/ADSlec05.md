@@ -1,3 +1,5 @@
+# ADS Lec 05 二项队列
+
 ## 概念
 
 **二项队列**是一系列满足堆性质的树组成的森林。其中的每个树是二项树，每种阶数的二项树最多只有一棵。
@@ -58,6 +60,7 @@ struct BinomialQueue {
 - state=5：只有 this 和 carry 有，将两者合并成新的 carry
 - state=6：只有 other 和 carry 有，将两者合并成新的 carry
 - state=7：三者都有，对应二进制本位为 1 且有进位
+
   - 把原来的 carry 放入 this（因为本位和为 1）
   - 将 this 和 other 合并成新的 carry（对应进位）
   - 清空 other

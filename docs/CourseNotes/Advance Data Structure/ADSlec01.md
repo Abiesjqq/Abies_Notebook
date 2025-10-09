@@ -1,3 +1,5 @@
+# ADS Lec 01 AVL 树和伸展树
+
 ## AVL 树
 
 树的高度：根节点到最远的叶节点的距离（边数）
@@ -112,6 +114,8 @@ $$|\Phi_1|=|(\Phi_1 + \Phi_2)-\Phi_2|\le|\Phi_1 +\Phi_2|+|\Phi_2|=3n$$
 
 ### Splay 树的摊还分析
 
+（详见后面图片）
+
 n 节点的伸展树，连续 M 次搜索需要 $O(M\log n+n\log n)$ 时间。
 
 $$\lim _{M\to\infty}\frac{M\log n+n\log n}{M}=\log n$$
@@ -133,9 +137,6 @@ $$Rank'(x)=\log_2 n$$
 
 $$\sum\text{steps}+\Phi_2(T_M)-\Phi_2(T_0)\le 3\log_2 n+1$$
 
-??? normal-comment "Splay树详细证明"
+??? normal-comment "Splay 树详细证明"
 
     ![Splay](./ADSresources/Splay.jpg)
-
-
-

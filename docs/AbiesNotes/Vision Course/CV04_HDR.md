@@ -1,3 +1,5 @@
+# Lec 04 Radiometric Calibration & HDR
+
 ## 辐射校准
 
 ### 像素值含义
@@ -89,7 +91,7 @@ $$
 1. 偏导数为零
 
 \[
-\min \sum_{i=1}^{n} (a_i x - b_i)^2 \; \rightarrow \;\text{linear equations of }
+\min \sum\_{i=1}^{n} (a_i x - b_i)^2 \; \rightarrow \;\text{linear equations of }
 \begin{bmatrix}
 a_1 \\ a_2 \\ \vdots \\ a_n
 \end{bmatrix}
@@ -106,9 +108,8 @@ b_1 \\ b_2 \\ \vdots \\ b_n
 
 **Empirical Model of Response Functions**
 
-标定不同相机的校准曲线，PCA分析（主成分分析），减少定义曲线的参数
+标定不同相机的校准曲线，PCA 分析（主成分分析），减少定义曲线的参数
 
 **Radiometric Calibration from a Single Image**
 
 图像中的边界区域不同颜色混合，调整参数使边界颜色混合的曲线为线性
-

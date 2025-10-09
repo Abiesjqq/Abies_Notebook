@@ -1,3 +1,5 @@
+# Lec 07 Interactive Segmentation & Graph-Cut
+
 目标：根据用户提供的粗糙边框提取物体
 
 用二维网格表示图像，每个像素是网格的顶点，和周围若干个相邻的像素相连。  
