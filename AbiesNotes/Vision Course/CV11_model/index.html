@@ -9,23 +9,25 @@
       
       
       
-        <link rel="prev" href="../../08/matplotlib%E7%BB%98%E5%9B%BE%E6%A0%BC%E5%BC%8F%E8%A7%84%E8%8C%83/">
+        <link rel="prev" href="../CV10_homography/">
       
       
+        <link rel="next" href="../../GAMES101/Lecture%2001%20Overview%20of%20Computer%20Graphics/">
       
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>LittleSkin 账号注册使用 - Abies's Notebook</title>
+        <title>Camera Model - Abies's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,23 +46,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra2.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/cursor.css">
+      <link rel="stylesheet" href="../../../stylesheets/cursor.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/info.css">
+      <link rel="stylesheet" href="../../../stylesheets/info.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/create_and_update.css">
+      <link rel="stylesheet" href="../../../stylesheets/create_and_update.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../stylesheets/customize.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/font.css">
+      <link rel="stylesheet" href="../../../stylesheets/font.css">
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -102,7 +104,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -122,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LittleSkin 账号注册使用
+              Camera Model
             
           </span>
         </div>
@@ -232,13 +234,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../.." class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-tabs__link">
+        <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-tabs__link">
           
   
   
@@ -282,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../CourseNotes/note_index/" class="md-tabs__link">
+        <a href="../../../CourseNotes/note_index/" class="md-tabs__link">
           
   
   
@@ -304,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../NoflowersNotes/Noflower_index/" class="md-tabs__link">
+        <a href="../../../NoflowersNotes/Noflower_index/" class="md-tabs__link">
           
   
   
@@ -322,11 +322,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../../AbiesNotes/Abies_index/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Abies_index/" class="md-tabs__link">
           
   
   
@@ -355,7 +357,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-tabs__link">
+        <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-tabs__link">
           
   
   
@@ -368,6 +370,28 @@
     
   
 
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../snippet/links/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  一些小玩意
+
+        </a>
+      </li>
     
   
 
@@ -389,9 +413,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -402,7 +424,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -429,8 +451,6 @@
       
   
   
-    
-  
   
   
     
@@ -448,24 +468,22 @@
     
     
       
-        
-        
-      
       
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../../.." class="md-nav__link ">
-              
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -474,150 +492,6 @@
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            Home
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../%E4%BB%8B%E7%BB%8D/Notebook%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Notebook介绍
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    通知公告
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            通知公告
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../../archive/2025/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    归档
-    
-  </span>
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
@@ -628,75 +502,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../../category/%E6%8C%87%E5%8D%97/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    分类
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -733,7 +538,7 @@
   
   
   
-    <a href="../../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-nav__link">
+    <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-nav__link">
       
   
   
@@ -803,7 +608,7 @@
   
   
   
-    <a href="../../../../../CourseNotes/note_index/" class="md-nav__link">
+    <a href="../../../CourseNotes/note_index/" class="md-nav__link">
       
   
   
@@ -863,7 +668,7 @@
   
   
   
-    <a href="../../../../../NoflowersNotes/Noflower_index/" class="md-nav__link">
+    <a href="../../../NoflowersNotes/Noflower_index/" class="md-nav__link">
       
   
   
@@ -888,10 +693,473 @@
       
   
   
+    
+  
   
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Abies的笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Abies的笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abies_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    扉页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vision Course (进行中)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vision Course (进行中)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV02_camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Camera
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV03_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV04_HDR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HDR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV05_lignting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lighting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV06_filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vision Course/CV07_graphcut.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graph Cut
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV08_detector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Feature Detector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV09_descriptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Feature Descriptor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CV10_homography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Camera Model
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Camera Model
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      射影几何
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -919,12 +1187,12 @@
   
   
   
-    <a href="../../../../../AbiesNotes/Abies_index/" class="md-nav__link">
+    <a href="../../GAMES101/Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    Abies的笔记
+    GAMES101
     
   </span>
   
@@ -935,6 +1203,79 @@
     </a>
   
 
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Tinyrenderer/getting%20started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Tinyrenderer(中道崩殂)
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -973,7 +1314,7 @@
   
   
   
-    <a href="../../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-nav__link">
+    <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Diffusion/Denoising%20Diffusion%20Probabilistic%20Models/Denoising%20Diffusion%20Probabilistic%20Models/" class="md-nav__link">
       
   
   
@@ -996,6 +1337,56 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../snippet/links/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    一些小玩意
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1003,8 +1394,6 @@
               </div>
             
             
-              
-                
               
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
@@ -1025,25 +1414,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      注册账号
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      创建角色
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      启动器登录
+      射影几何
     </span>
   </a>
   
@@ -1058,270 +1429,111 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    回到主页
-                  </span>
-                </a>
-              </div>
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Camera Model</h1>
+
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>184</strong> 个字&nbsp;&nbsp;<strong>1</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+</div>
+<h2 id="_1">射影几何</h2>
+<ul>
+<li>
+<p><strong>欧氏几何中的平面直线</strong>：<span class="arithmatex">\(ax + by + c = 0\)</span></p>
+</li>
+<li>
+<p>多个方程对应同一条直线：
+    <span class="arithmatex">\((ka)x + (kb)y + kc = 0, \forall k \neq 0\)</span></p>
+</li>
+<li>
+<p><strong>平面直线的齐次表示</strong>：<span class="arithmatex">\((a, b, c)^T \sim k(a, b, c)^T\)</span></p>
+</li>
+<li>
+<p><strong>欧氏几何中的平面点</strong>：<span class="arithmatex">\(\mathbf{x} = (x, y)^T\)</span></p>
+</li>
+<li>
+<p><strong>点的齐次表示</strong>：</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{x} = (x, y, 1)^T \quad (x, y, 1)^T \sim k(x, y, 1)^T, \forall k \neq 0
+\]</div>
+<ul>
+<li>
+<p><strong>齐次坐标</strong><span class="arithmatex">\((x_1, x_2, x_3)^T\)</span>，但只有 2 个自由度 (2DOF)</p>
+</li>
+<li>
+<p><strong>点在直线上</strong>：<span class="arithmatex">\(\mathbf{x}\)</span>在直线<span class="arithmatex">\(l\)</span>上当且仅当：</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{x}^T l = (x, y, 1)(a, b, c)^T = ax + by + c = 0
+\]</div>
+<ul>
+<li><strong>两条直线<span class="arithmatex">\(l\)</span>和<span class="arithmatex">\(l'\)</span>的交点</strong>：</li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{x} = l \times l'
+\]</div>
+<p>平行直线叉乘，最后一位为 0，表示无穷远点。<br />
+所有无穷远点排成一条直线，称为无穷远线。</p>
+<ul>
+<li><strong>过两点<span class="arithmatex">\(\mathbf{x}\)</span>和<span class="arithmatex">\(\mathbf{x}'\)</span>的直线</strong>：</li>
+</ul>
+<div class="arithmatex">\[
+l = \mathbf{x} \times \mathbf{x}'
+\]</div>
+<ul>
+<li><strong>二次曲线 (Conics)</strong></li>
+</ul>
+<p>平面上由二阶方程描述的曲线：</p>
+<div class="arithmatex">\[
+ax^2 + bxy + cy^2 + dx + ey + f = 0
+\]</div>
+<p>或齐次化形式：</p>
+<div class="arithmatex">\[
+x \mapsto \frac{x_1}{x_3}, \quad y \mapsto \frac{x_2}{x_3}
+\]</div>
+<div class="arithmatex">\[
+ax_1^2 + bx_1x_2 + cx_2^2 + dx_1x_3 + ex_2x_3 + fx_3^2 = 0
+\]</div>
+<p>或矩阵形式：</p>
+<div class="arithmatex">\[
+\mathbf{x}^T \mathbf{C} \mathbf{x} = 0 \quad \text{其中} \quad
+\mathbf{C} =
+\begin{bmatrix}
+a &amp; b/2 &amp; d/2 \\
+b/2 &amp; c &amp; e/2 \\
+d/2 &amp; e/2 &amp; f
+\end{bmatrix}
+\]</div>
+<p>系数构成六维向量<span class="arithmatex">\({a,b,c,d,e,f}\)</span>，由于只考虑比值，自由度为 5。</p>
+<p>五个点能拟合一条二次曲线：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
             </div>
-            
-              <div class="md-post__authors md-typeset">
-                
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="https://github.com/Noflowerzzk.png" alt="Noflower">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          Noflower
-                        
-                      </strong>
-                      <br>
-                      懒得写了
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    元数据
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-07-25 13:50:00+00:00" class="md-ellipsis">2025年7月25日星期五</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            分类于
-                            
-                              <a href="../../../../category/%E6%8C%87%E5%8D%97/">#指南</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              需要 1 分钟阅读时间
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-              <ul class="md-post__meta md-nav__list">
-                <li class="md-nav__item md-nav__item--section">
-                  <div class="md-post__title">
-                    <span class="md-ellipsis">
-                      相关链接
-                    </span>
-                  </div>
-                  <nav class="md-nav">
-                    <ul class="md-nav__list">
-                      
-                        
-                        
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__ref_1" >
-        
           
-          <label class="md-nav__link" for="__ref_1" id="__ref_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Nested section
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__ref_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__ref_1">
-            <span class="md-nav__icon md-icon"></span>
-            Nested section
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://littleskin.cn/user" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    External link
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-                      
-                    </ul>
-                  </nav>
-                </li>
-              </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
-  
-
-
-
-  
-  
-
-
-  <h1>LittleSkin 账号注册使用</h1>
-
-<p>服务器使用 LittleSkin 认证，请参考以下教程进行账号注册和启动器登录。</p>
-<!-- more -->
-
-<h2 id="_1">注册账号</h2>
-<p>访问 <a href="https://littleskin.cn/user">LittleSkin 官网</a>，并进行账户注册。注意查看自己邮箱中的验证邮件以完全激活账号。</p>
-<h2 id="_2">创建角色</h2>
-<p>具体站内操作可以查看 <a href="https://manual.littlesk.in/newbee/player">官方文档 -- 角色</a> 和 <a href="https://manual.littlesk.in/newbee/textures">官方文档 -- 皮肤</a></p>
-<div class="admonition warning-box">
-<p class="admonition-title">注意</p>
-<p>虽然文档中角色名可以是中日韩文字母，但是我们强烈建议采用纯英文字符作为角色名 (游戏id)</p>
-</div>
-<div class="admonition remarks">
-<p class="admonition-title">角色</p>
-<p>你的 LittleSkin 账号可以创建多个角色</p>
-</div>
-<h2 id="_3">启动器登录</h2>
-<p>服务器采用 Yggdrasil 外置登录。</p>
-<p>官方启动器暂不支持第三方认证登录，因此我们推荐采用国内主流的启动器 <strong>HMCL</strong> 和 <strong>PCL</strong>。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">HMCL</label><label for="__tabbed_1_2">PCL</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>右上角 "账户" &rarr; "LittleSkin"<br />
-登录时的用户名可以填写 LittleSkin 注册邮箱 (然后可以选择你的角色) 或者你的角色名 (即为该角色登录)。启动游戏时所使用的账号即为游戏内账号。</p>
-<p>详见 <a href="https://manual.littlesk.in/yggdrasil/client">官方文档 -- HMCL</a></p>
-</div>
-<div class="tabbed-block">
-<p>选择 <strong>版本设置</strong>，如下图</p>
-<p><img alt="img_1.png" src="../../../../img_1.png" /></p>
-<p>填入以下内容</p>
-<p><img alt="img_2.png" src="../../../../img_2.png" /></p>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="最后更新">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月26日 06:02:02 UTC">2025-07-26</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="创建日期">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年7月25日 05:57:06 UTC">2025-07-25</span>
-  </span>
-
-    
-    
-    
-  </aside>
-
-
-
-  
-
-
-
-      
-    </article>
-  </div>
-
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -1340,12 +1552,10 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../08/matplotlib%E7%BB%98%E5%9B%BE%E6%A0%BC%E5%BC%8F%E8%A7%84%E8%8C%83/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Matplotlib绘图格式规范">
+          <a href="../CV10_homography/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Homography">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1355,11 +1565,27 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Matplotlib绘图格式规范
+                Homography
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../../GAMES101/Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lec 01 Overview of Computer Graphics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Lec 01 Overview of Computer Graphics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
@@ -1406,24 +1632,24 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="../../../../../javascripts/animate-details.js"></script>
+        <script src="../../../javascripts/animate-details.js"></script>
       
-        <script src="../../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../../../javascripts/cursor.js"></script>
+        <script src="../../../javascripts/cursor.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../../../javascripts/busuanzi.pure.mini.js"></script>
+        <script src="../../../javascripts/busuanzi.pure.mini.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
       
