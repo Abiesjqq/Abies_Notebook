@@ -48,10 +48,6 @@
 
 选倍率；点精细扫描，选中扫描区域；点精细扫描，退出；开始扫描。双击 M 切换扫描模式。
 
-![扫描](../../resources/扫描图片.jpg){style="width:400px"}
-
-![扫描界面](../../resources/扫描界面.jpg){style="width:400px"}
-
 ## PCL
 
 ### main.cpp

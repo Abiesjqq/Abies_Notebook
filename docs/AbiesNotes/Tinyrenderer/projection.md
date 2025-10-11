@@ -1,6 +1,6 @@
 ## 原理
 
-MVP 变化可参考[Lecture 04 Transformations Cont.](../图形学入门/Lecture%2004%20Transformations%20Cont.md)
+MVP 变化可参考[Lecture 04 Transformations Cont.](../GAMES101/Lecture%2004%20Transformations%20Cont.md)
 
 ### 1. 模型变换
 

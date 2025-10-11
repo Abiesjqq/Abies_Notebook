@@ -58,6 +58,355 @@
 
 <!-- ![RBTree deletion](./ADSresources/RBTree%20deletion.png) -->
 
+??? examples "红黑树代码示例"
+
+      ```cpp
+      #include <bits/stdc++.h>
+      using namespace std;
+
+      enum Color { RED, BLACK };
+
+      struct Node {
+         int val;
+         Color color;
+         Node *l, *r, *p;
+
+         Node(int val) : val(val), color(RED), l(nullptr), r(nullptr), p(nullptr) {}
+      };
+
+      class RBTree {
+         private:
+         Node* root;
+
+         // 左旋
+         void rotLeft(Node* x) {
+            Node* y = x->r;
+            x->r = y->l;
+            if (y->l)
+                  y->l->p = x;
+
+            y->p = x->p;
+            if (!x->p)
+                  root = y;
+            else if (x == x->p->l)
+                  x->p->l = y;
+            else
+                  x->p->r = y;
+
+            y->l = x;
+            x->p = y;
+         }
+
+         // 右旋
+         void rotRight(Node* x) {
+            Node* y = x->l;
+            x->l = y->r;
+            if (y->r)
+                  y->r->p = x;
+
+            y->p = x->p;
+            if (!x->p)
+                  root = y;
+            else if (x == x->p->l)
+                  x->p->l = y;
+            else
+                  x->p->r = y;
+
+            y->r = x;
+            x->p = y;
+         }
+
+         // 插入后调整
+         // case 1：父红、叔红，父叔变黑、爷变红，递归向上
+         // case 2：父红、叔黑、LL/RR，父变黑、爷变红，旋转爷爷
+         // case 3：父红、叔黑、LR/RL，先旋转父亲转为case2，再处理
+         void insertFix(Node* z) {
+            while (z->p && z->p->color == RED) {
+                  if (z->p == z->p->p->l) {  // 父亲是左节点
+                     Node* y = z->p->p->r;  // y表示叔叔节点
+                     // case 1: 叔叔是红色
+                     if (y && y->color == RED) {
+                        z->p->color = BLACK;
+                        y->color = BLACK;
+                        z->p->p->color = RED;
+                        z = z->p->p;  // 继续向上调整
+                     } else {
+                        // case 3 LR: z是右孩子，先转为LL
+                        if (z == z->p->r) {
+                              z = z->p;    // 先更新z指向父亲
+                              rotLeft(z);  // 左旋父亲，变成LL情况
+                        }
+                        // case 2 LL: z是左孩子
+                        z->p->color = BLACK;
+                        z->p->p->color = RED;
+                        rotRight(z->p->p);  // 右旋爷爷
+                     }
+                  } else {                   // 父亲是右节点（镜像操作）
+                     Node* y = z->p->p->l;  // 叔叔节点
+                     // case 1: 叔叔是红色
+                     if (y && y->color == RED) {
+                        z->p->color = BLACK;
+                        y->color = BLACK;
+                        z->p->p->color = RED;
+                        z = z->p->p;
+                     } else {
+                        // case 3 RL: z是左孩子，先转为RR
+                        if (z == z->p->l) {
+                              z = z->p;     // 先更新z指向父亲
+                              rotRight(z);  // 右旋父亲，变成RR情况
+                        }
+                        // case 2 RR: z是右孩子
+                        z->p->color = BLACK;
+                        z->p->p->color = RED;
+                        rotLeft(z->p->p);  // 左旋爷爷
+                     }
+                  }
+            }
+            root->color = BLACK;  // 根节点必须是黑色
+         }
+
+         // 用子树v替换u
+         void transplant(Node* u, Node* v) {
+            if (!u->p)
+                  root = v;
+            else if (u == u->p->l)
+                  u->p->l = v;
+            else
+                  u->p->r = v;
+
+            if (v)
+                  v->p = u->p;
+         }
+
+         // 找最小节点
+         Node* minNode(Node* x) {
+            while (x->l)
+                  x = x->l;
+            return x;
+         }
+
+         // 删除后调整
+         // case 1：兄红，兄父变色，父向双黑转，转化为其他情况
+         // case 2：兄黑、兄弟儿子都黑，兄变红，双黑上移到父，递归
+         // case 3：兄黑、兄一个儿子红、LL/RR，红儿子变父、父变黑，父转
+         // case 4：兄黑、兄一个儿子红、LR/RL，红儿子、兄变色，兄转，转化为case 3
+         void deleteFix(Node* x, Node* xp) {
+            while (x != root && (!x || x->color == BLACK)) {
+                  if (x == xp->l) {     // 要删除的节点是左儿子
+                     Node* s = xp->r;  // s表示兄弟
+                     // case 1
+                     if (s && s->color == RED) {
+                        x->color = BLACK;
+                        xp->color = RED;
+                        rotLeft(xp);
+                        s = xp->r;
+                     }
+                     // case 2
+                     if ((!s->l || s->l->color == BLACK) &&
+                        (!s->r || s->r->color == BLACK)) {
+                        if (s)
+                              s->color = RED;
+                        x = xp;
+                        xp = xp->p;
+                     }
+                     // case 3 RL
+                     else {
+                        if (!s->r || s->r->color == BLACK) {
+                              if (s->l)
+                                 s->l->color = BLACK;
+                              s->color = RED;
+                              rotRight(s);
+                              s = xp->r;
+                        }
+                        // case 4 RR
+                        s->color = xp->color;
+                        xp->color = BLACK;
+                        if (s->r)
+                              s->r->color = BLACK;
+                        rotLeft(xp);
+                        x = root;
+                        break;
+                     }
+                  } else {
+                     Node* s = xp->l;
+                     if (s && s->color == RED) {
+                        s->color = BLACK;
+                        xp->color = RED;
+                        rotRight(xp);
+                        s = xp->l;
+                     }
+                     if ((!s->l || s->l->color == BLACK) &&
+                        (!s->r || s->r->color == BLACK)) {
+                        if (s)
+                              s->color = RED;
+                        x = xp;
+                        xp = xp->p;
+                     } else {
+                        if (!s->l || s->l->color == BLACK) {
+                              if (s->r)
+                                 s->r->color = BLACK;
+                              s->color = RED;
+                              rotLeft(s);
+                              s = xp->l;
+                        }
+                        if (s->l)
+                              s->l->color = BLACK;
+                        rotRight(xp);
+                        x = root;
+                        break;
+                     }
+                  }
+            }
+            if (x)
+                  x->color = BLACK;
+         }
+
+         public:
+         RBTree() : root(nullptr) {}
+
+         // 插入
+         void insert(int val) {
+            Node* z = new Node(val);
+            Node* y = nullptr;
+            Node* x = root;
+
+            while (x) {
+                  y = x;
+                  if (z->val < x->val)
+                     x = x->l;
+                  else
+                     x = x->r;
+            }
+
+            z->p = y;
+            if (!y)
+                  root = z;
+            else if (z->val < y->val)
+                  y->l = z;
+            else
+                  y->r = z;
+
+            insertFix(z);
+         }
+
+         // 删除
+         void remove(int val) {
+            Node* z = root;
+            while (z && z->val != val)
+                  z = (val < z->val ? z->l : z->r);
+            if (!z)
+                  return;
+
+            Node* y = z;
+            Node* x = nullptr;
+            Node* xp = nullptr;
+            Color yc = y->color;
+
+            if (!z->l) {
+                  x = z->r;
+                  xp = z->p;
+                  transplant(z, z->r);
+            } else if (!z->r) {
+                  x = z->l;
+                  xp = z->p;
+                  transplant(z, z->l);
+            } else {
+                  y = minNode(z->r);
+                  yc = y->color;
+                  x = y->r;
+                  if (y->p == z) {
+                     if (x)
+                        x->p = y;
+                     xp = y;
+                  } else {
+                     transplant(y, y->r);
+                     y->r = z->r;
+                     y->r->p = y;
+                     xp = y->p;
+                  }
+                  transplant(z, y);
+                  y->l = z->l;
+                  y->l->p = y;
+                  y->color = z->color;
+            }
+            delete z;
+            if (yc == BLACK)
+                  deleteFix(x, xp);
+         }
+
+         // 中序遍历
+         void inorder(Node* t) {
+            if (!t)
+                  return;
+            inorder(t->l);
+            cout << t->val << (t->color == RED ? "(R) " : "(B) ");
+            inorder(t->r);
+         }
+
+         // 输出树结构
+         void printTree(Node* t, string prefix = "", bool isLeft = true) {
+            if (!t)
+                  return;
+
+            cout << prefix;
+            cout << (isLeft ? "|-- " : "\\-- ");
+            cout << t->val << (t->color == RED ? "(R)" : "(B)") << endl;
+
+            if (t->l || t->r) {
+                  if (t->l)
+                     printTree(t->l, prefix + (isLeft ? "|   " : "    "), true);
+                  else
+                     cout << prefix << (isLeft ? "|   " : "    ") << "|-- null\n";
+
+                  if (t->r)
+                     printTree(t->r, prefix + (isLeft ? "|   " : "    "), false);
+                  else
+                     cout << prefix << (isLeft ? "|   " : "    ") << "`-- null\n";
+            }
+         }
+
+         // 输出
+         void print() {
+            cout << "Inorder: ";
+            inorder(root);
+            cout << '\n';
+         }
+
+         void printStructure() {
+            cout << "Tree structure:\n";
+            if (root)
+                  printTree(root);
+            else
+                  cout << "Empty tree\n";
+            cout << '\n';
+         }
+
+         Node* getRoot() { return root; }
+      };
+
+      int main() {
+         RBTree tree;
+         int arr[] = {10, 20, 30, 15, 25, 40, 50};
+
+         for (int v : arr) {
+            cout << "========== Insert " << v << " ==========\n";
+            tree.insert(v);
+            tree.print();
+            tree.printStructure();
+         }
+
+         cout << "\n========== Delete 20 ==========\n";
+         tree.remove(20);
+         tree.print();
+         tree.printStructure();
+
+         cout << "\n========== Delete 40 ==========\n";
+         tree.remove(40);
+         tree.print();
+         tree.printStructure();
+      }
+      ```
+
 ## B 树
 
 ### B 树性质

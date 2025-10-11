@@ -181,15 +181,16 @@ nav:
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - Vision Course (进行中):
-          - Introduction: AbiesNotes/Vision Course/CV01_introduction.md
           - Camera: AbiesNotes/Vision Course/CV02_camera.md
           - Color: AbiesNotes/Vision Course/CV03_color.md
           - HDR: AbiesNotes/Vision Course/CV04_HDR.md
           - Lighting: AbiesNotes/Vision Course/CV05_lignting.md
           - Filters: AbiesNotes/Vision Course/CV06_filters.md
-          - Graph-cut: AbiesNotes/Vision Course/CV07_graphcut.md
+          - Graph Cut: AbiesNotes/Vision Course/CV07_graphcut.md
           - Feature Detector: AbiesNotes/Vision Course/CV08_detector.md
           - Feature Descriptor: AbiesNotes/Vision Course/CV09_descriptor.md
+          - Homography: AbiesNotes/Vision Course/CV10_homography.md
+          - Camera Model: AbiesNotes/Vision Course/CV11_model.md
       - GAMES101:
           - Lec 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lec 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
@@ -227,6 +228,8 @@ nav:
           - Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution.md
           - Unleashing the Power of One-Step Diffusion based Image Super-Resolution via a Large-Scale Diffusion Discriminator: 论文阅读/Diffusion/Unleashing the Power of One-Step Diffusion based Image Super-Resolution/Unleashing the Power of One-Step Diffusion based Image Super-Resolution.md
           - DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution.md
+  - 一些小玩意:
+      - 跳转与介绍: snippet/links.md
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
@@ -378,27 +381,27 @@ extra_css:
   # - stylesheets/LiquidGlass.css
   - https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined
 
-plugins:
-  - search
-  - git-committers:
-      enabled: true
-      #    enabled: !ENV [ git-committers, false ]
-      repository: Abiesjqq/Abies_Notebook
-      branch: main
-  - git-revision-date-localized:
-      enabled: true
-      #    enabled: !ENV [ git-revision-date-localized, false ]
-      type: iso_date
-      enable_creation_date: true
-  - blog:
-      blog_dir: notices
-      blog_toc: true
-      post_date_format: full
-      archive_toc: true
-      categories_toc: true
-      #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
-      #      pagination: true
-      #      pagination_keep_content: true
-      #      draft_if_future_date: true
-      pagination_per_page: 5
-  # - mkdocs-jupyter # 对 jupyter notebook 的支持
+# plugins:
+#   - search
+#   - git-committers:
+#       enabled: true
+#       #    enabled: !ENV [ git-committers, false ]
+#       repository: Abiesjqq/Abies_Notebook
+#       branch: main
+#   - git-revision-date-localized:
+#       enabled: true
+#       #    enabled: !ENV [ git-revision-date-localized, false ]
+#       type: iso_date
+#       enable_creation_date: true
+#   - blog:
+#       blog_dir: notices
+#       blog_toc: true
+#       post_date_format: full
+#       archive_toc: true
+#       categories_toc: true
+#       #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+#       #      pagination: true
+#       #      pagination_keep_content: true
+#       #      draft_if_future_date: true
+#       pagination_per_page: 5
+#   # - mkdocs-jupyter # 对 jupyter notebook 的支持

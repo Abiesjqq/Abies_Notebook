@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红黑树可视化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .controls {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="number"] {
+            padding: 12px 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 150px;
+            transition: all 0.3s;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-warning:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .presets {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .preset-btn {
+            padding: 8px 15px;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .preset-btn:hover:not(:disabled) {
+            background: #667eea;
+            color: white;
+        }
+
+        .main-content {
+            display: flex;
+            min-height: 600px;
+        }
+
+        .canvas-container {
+            flex: 1;
+            padding: 40px;
+            background: white;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #treeCanvas {
+            display: block;
+        }
+
+        .steps-panel {
+            width: 400px;
+            background: #f8f9fa;
+            border-left: 2px solid #e9ecef;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 80px);
+        }
+
+        .steps-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .steps-header h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .steps-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .step-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            animation: slideIn 0.3s ease;
+        }
+
+        .step-item.current {
+            border-left-color: #28a745;
+            background: #d4edda;
+        }
+
+        .step-item.highlight {
+            animation: pulse 0.5s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .step-item.current .step-number {
+            background: #28a745;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .step-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .legend {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+
+        .legend-red {
+            background: #ff4757;
+            border-color: #ff1744;
+        }
+
+        .legend-black {
+            background: #2f3542;
+            border-color: #333;
+        }
+
+        .info-panel {
+            padding: 30px;
+            background: #f8f9fa;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .info-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .info-card p {
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        .message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+            animation: slideInMsg 0.3s ease;
+        }
+
+        @keyframes slideInMsg {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .message.success {
+            border-left: 4px solid #28a745;
+            color: #28a745;
+        }
+
+        .message.error {
+            border-left: 4px solid #dc3545;
+            color: #dc3545;
+        }
+
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .speed-control label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .speed-control input[type="range"] {
+            width: 150px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .steps-panel {
+                width: 100%;
+                max-height: 350px;
+                border-left: none;
+                border-top: 2px solid #e9ecef;
+            }
+            .steps-content {
+                overflow-y: auto; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌳 红黑树可视化</h1>
+            <p>交互式红黑树数据结构演示 - 支持插入和删除操作</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <div class="input-group">
+                    <input type="number" id="valueInput" placeholder="输入数值" min="1" max="999">
+                    <button class="btn-primary" id="insertBtn" onclick="insertValue()">插入节点</button>
+                    <button class="btn-warning" id="deleteBtn" onclick="deleteValue()">删除节点</button>
+                </div>
+                <div class="speed-control">
+                    <label>动画速度:</label>
+                    <input type="range" id="speedSlider" min="100" max="2000" value="1000" step="100">
+                    <span id="speedLabel">1.0s</span>
+                </div>
+                <button class="btn-secondary" id="clearBtn" onclick="clearTree()">清空树</button>
+                <button class="btn-danger" id="randomBtn" onclick="randomTree()">随机生成</button>
+            </div>
+
+            <div class="presets">
+                <span style="color: #6c757d; font-weight: 600;">预设示例：</span>
+                <button class="preset-btn" onclick="loadPreset([10, 20, 30, 15, 25, 40, 50])">示例1</button>
+                <button class="preset-btn" onclick="loadPreset([7, 3, 18, 10, 22, 8, 11, 26])">示例2</button>
+                <button class="preset-btn" onclick="loadPreset([1, 2, 3, 4, 5, 6, 7, 8, 9])">顺序插入</button>
+                <button class="preset-btn" onclick="loadPreset([50, 40, 30, 20, 10])">逆序插入</button>
+            </div>
+
+            <!-- <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-circle legend-red"></div>
+                    <span>红色节点</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-circle legend-black"></div>
+                    <span>黑色节点</span>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="main-content">
+            <div class="canvas-container">
+                <canvas id="treeCanvas"></canvas>
+            </div>
+
+            <div class="steps-panel">
+                <div class="steps-header">
+                    <h4>📋 操作步骤</h4>
+                </div>
+                <div class="steps-content" id="stepsContent">
+                    <div style="text-align: center; color: #6c757d; padding: 40px 20px;">
+                        <p style="font-size: 1.2em; margin-bottom: 15px;">👋 欢迎使用红黑树可视化工具</p>
+                        <p>👈 输入数值，可以插入或删除节点</p>
+                        <p style="margin-top: 10px;">或使用预设示例快速开始</p>
+                        <p style="margin-top: 10px;">这里会显示每一步的详细操作说明</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📊 树的统计</h3>
+                    <p id="treeStats">节点数: 0<br>树高: 0<br>黑高: 0</p>
+                </div>
+                <div class="info-card">
+                    <h3>📖 红黑树性质</h3>
+                    <p>
+                        1. 每个节点是红色或黑色<br>
+                        2. 根节点是黑色<br>
+                        3. 所有叶子节点是黑色<br>
+                        4. 红色节点的子节点必须是黑色<br>
+                        5. 从根到叶子的所有路径包含相同数量的黑色节点
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>🎯 操作说明</h3>
+                    <p>
+                        • 输入数值后可以插入或删除节点<br>
+                        • 观察右侧详细的操作步骤说明<br>
+                        • 调整动画速度控制观看节奏<br>
+                        • 使用预设示例快速体验
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <script>
+        // 红黑树节点定义
+        const RED = true;
+        const BLACK = false;
+
+        class Node {
+            constructor(val) {
+                this.val = val;
+                this.color = RED;
+                this.left = null;
+                this.right = null;
+                this.parent = null;
+            }
+
+            clone() {
+                const newNode = new Node(this.val);
+                newNode.color = this.color;
+                if (this.left) {
+                    newNode.left = this.left.clone();
+                    newNode.left.parent = newNode;
+                }
+                if (this.right) {
+                    newNode.right = this.right.clone();
+                    newNode.right.parent = newNode;
+                }
+                return newNode;
+            }
+        }
+
+        // 操作步骤记录
+        let animationSteps = [];
+        let animationSpeed = 1000;
+        let isAnimating = false;
+
+        class RBTree {
+            constructor() {
+                this.root = null;
+            }
+
+            cloneTree() {
+                const newTree = new RBTree();
+                if (this.root) {
+                    newTree.root = this.root.clone();
+                }
+                return newTree;
+            }
+
+            rotateLeft(x) {
+                const y = x.right;
+                x.right = y.left;
+                if (y.left) y.left.parent = x;
+
+                y.parent = x.parent;
+                if (!x.parent) this.root = y;
+                else if (x === x.parent.left) x.parent.left = y;
+                else x.parent.right = y;
+
+                y.left = x;
+                x.parent = y;
+            }
+
+            rotateRight(x) {
+                const y = x.left;
+                x.left = y.right;
+                if (y.right) y.right.parent = x;
+
+                y.parent = x.parent;
+                if (!x.parent) this.root = y;
+                else if (x === x.parent.left) x.parent.left = y;
+                else x.parent.right = y;
+
+                y.right = x;
+                x.parent = y;
+            }
+
+            // 插入修复
+            insertFix(z) {
+                while (z.parent && z.parent.color === RED) {
+                    if (z.parent === z.parent.parent.left) {
+                        const y = z.parent.parent.right;
+                        if (y && y.color === RED) {
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况1：父节点${z.parent.val}和叔节点${y.val}都是红色`,
+                                detail: `违反了性质4（红色节点的子节点必须是黑色）。需要重新着色：父节点${z.parent.val}→黑色，叔节点${y.val}→黑色，祖父节点${z.parent.parent.val}→红色，然后继续向上调整。`,
+                                highlightNodes: [z.val, z.parent.val, y.val, z.parent.parent.val]
+                            });
+                            
+                            z.parent.color = BLACK;
+                            y.color = BLACK;
+                            z.parent.parent.color = RED;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `变色完成`,
+                                detail: `父节点${z.parent.val}和叔节点${y.val}已变为黑色，祖父节点${z.parent.parent.val}变为红色。继续向上检查祖父节点。`,
+                                highlightNodes: [z.parent.parent.val]
+                            });
+                            
+                            z = z.parent.parent;
+                        } else {
+                            if (z === z.parent.right) {
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `情况3-LR：节点${z.val}是父节点${z.parent.val}的右孩子，叔节点是黑色`,
+                                    detail: `这是一个"之字形"结构，需要先转换为"一字形"。对父节点${z.parent.val}进行左旋，将情况转换为LL。`,
+                                    highlightNodes: [z.val, z.parent.val]
+                                });
+                                
+                                z = z.parent;
+                                this.rotateLeft(z);
+                                
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `左旋完成，转换为LL情况`,
+                                    detail: `现在节点${z.val}、${z.parent.val}、${z.parent.parent.val}形成了一字形结构，可以进行LL的处理。`,
+                                    highlightNodes: [z.val, z.parent.val, z.parent.parent.val]
+                                });
+                            } else {
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `情况2-LL：节点${z.val}是父节点${z.parent.val}的左孩子，叔节点是黑色`,
+                                    detail: `这是一个"一字形"结构。需要：1) 父节点${z.parent.val}→黑色，2) 祖父节点${z.parent.parent.val}→红色，3) 对祖父节点右旋。`,
+                                    highlightNodes: [z.val, z.parent.val, z.parent.parent.val]
+                                });
+                            }
+                            
+                            z.parent.color = BLACK;
+                            z.parent.parent.color = RED;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `变色完成`,
+                                detail: `父节点${z.parent.val}变为黑色，祖父节点${z.parent.parent.val}变为红色。接下来对祖父节点进行右旋。`,
+                                highlightNodes: [z.parent.val, z.parent.parent.val]
+                            });
+                            
+                            this.rotateRight(z.parent.parent);
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `右旋完成`,
+                                detail: `对节点进行右旋，调整完成。现在满足所有红黑树性质。`,
+                                highlightNodes: [z.parent.val]
+                            });
+                        }
+                    } else {
+                        const y = z.parent.parent.left;
+                        if (y && y.color === RED) {
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况1：父节点${z.parent.val}和叔节点${y.val}都是红色`,
+                                detail: `违反了性质4（红色节点的子节点必须是黑色）。需要重新着色：父节点${z.parent.val}→黑色，叔节点${y.val}→黑色，祖父节点${z.parent.parent.val}→红色，然后继续向上调整。`,
+                                highlightNodes: [z.val, z.parent.val, y.val, z.parent.parent.val]
+                            });
+                            
+                            z.parent.color = BLACK;
+                            y.color = BLACK;
+                            z.parent.parent.color = RED;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `变色完成`,
+                                detail: `父节点${z.parent.val}和叔节点${y.val}已变为黑色，祖父节点${z.parent.parent.val}变为红色。继续向上检查祖父节点。`,
+                                highlightNodes: [z.parent.parent.val]
+                            });
+                            
+                            z = z.parent.parent;
+                        } else {
+                            if (z === z.parent.left) {
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `情况3-RL：节点${z.val}是父节点${z.parent.val}的左孩子，叔节点是黑色`,
+                                    detail: `这是一个"之字形"结构，需要先转换为"一字形"。对父节点${z.parent.val}进行右旋，将情况转换为RR。`,
+                                    highlightNodes: [z.val, z.parent.val]
+                                });
+                                
+                                z = z.parent;
+                                this.rotateRight(z);
+                                
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `右旋完成，转换为RR情况`,
+                                    detail: `现在节点${z.val}、${z.parent.val}、${z.parent.parent.val}形成了一字形结构，可以进行RR的处理。`,
+                                    highlightNodes: [z.val, z.parent.val, z.parent.parent.val]
+                                });
+                            } else {
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `情况2-RR：节点${z.val}是父节点${z.parent.val}的右孩子，叔节点是黑色`,
+                                    detail: `这是一个"一字形"结构。需要：1) 父节点${z.parent.val}→黑色，2) 祖父节点${z.parent.parent.val}→红色，3) 对祖父节点左旋。`,
+                                    highlightNodes: [z.val, z.parent.val, z.parent.parent.val]
+                                });
+                            }
+                            
+                            z.parent.color = BLACK;
+                            z.parent.parent.color = RED;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `变色完成`,
+                                detail: `父节点${z.parent.val}变为黑色，祖父节点${z.parent.parent.val}变为红色。接下来对祖父节点进行左旋。`,
+                                highlightNodes: [z.parent.val, z.parent.parent.val]
+                            });
+                            
+                            this.rotateLeft(z.parent.parent);
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `左旋完成`,
+                                detail: `对节点进行左旋，调整完成。现在满足所有红黑树性质。`,
+                                highlightNodes: [z.parent.val]
+                            });
+                        }
+                    }
+                }
+                
+                if (this.root.color === RED) {
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `根节点需要变为黑色`,
+                        detail: `根节点${this.root.val}当前是红色，违反了性质2（根节点必须是黑色）。将其染成黑色。`,
+                        highlightNodes: [this.root.val]
+                    });
+                }
+                
+                this.root.color = BLACK;
+                
+                animationSteps.push({
+                    tree: this.cloneTree(),
+                    description: `插入调整完成`,
+                    detail: `所有红黑树性质已满足，插入操作成功完成！`,
+                    highlightNodes: []
+                });
+            }
+
+            // 删除修复
+            deleteFix(x, xParent) {
+                while (x !== this.root && (!x || x.color === BLACK)) {
+                    if (x === xParent.left) {
+                        let w = xParent.right;
+                        
+                        if (w && w.color === RED) {
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况1：兄弟节点${w.val}是红色`,
+                                detail: `将兄弟${w.val}变黑，父节点${xParent.val}变红，然后对父节点左旋，转换为其他情况。`,
+                                highlightNodes: [w.val, xParent.val]
+                            });
+                            
+                            w.color = BLACK;
+                            xParent.color = RED;
+                            this.rotateLeft(xParent);
+                            w = xParent.right;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `转换完成`,
+                                detail: `现在兄弟节点是黑色，继续处理。`,
+                                highlightNodes: [w.val]
+                            });
+                        }
+                        
+                        if ((!w.left || w.left.color === BLACK) && 
+                            (!w.right || w.right.color === BLACK)) {
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况2：兄弟节点${w.val}的两个子节点都是黑色`,
+                                detail: `将兄弟${w.val}变红，然后继续向上调整父节点。`,
+                                highlightNodes: [w.val]
+                            });
+                            
+                            w.color = RED;
+                            x = xParent;
+                            xParent = x.parent;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `变色完成，向上调整`,
+                                detail: `兄弟节点${w.val}已变红，继续检查父节点。`,
+                                highlightNodes: [x ? x.val : -1]
+                            });
+                        } else {
+                            if (!w.right || w.right.color === BLACK) {
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `情况3：兄弟节点${w.val}的右孩子是黑色，左孩子是红色`,
+                                    detail: `将兄弟的左孩子${w.left.val}变黑，兄弟${w.val}变红，然后对兄弟右旋，转换为情况4。`,
+                                    highlightNodes: [w.val, w.left.val]
+                                });
+                                
+                                if (w.left) w.left.color = BLACK;
+                                w.color = RED;
+                                this.rotateRight(w);
+                                w = xParent.right;
+                                
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `右旋完成，转换为情况4`,
+                                    detail: `现在兄弟的右孩子是红色，可以进行最后的调整。`,
+                                    highlightNodes: [w.val]
+                                });
+                            }
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况4：兄弟节点${w.val}的右孩子是红色`,
+                                detail: `将兄弟${w.val}染成父节点${xParent.val}的颜色，父节点变黑，兄弟的右孩子变黑，然后对父节点左旋。`,
+                                highlightNodes: [w.val, xParent.val, w.right ? w.right.val : -1]
+                            });
+                            
+                            w.color = xParent.color;
+                            xParent.color = BLACK;
+                            if (w.right) w.right.color = BLACK;
+                            this.rotateLeft(xParent);
+                            x = this.root;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `左旋完成，删除调整结束`,
+                                detail: `所有红黑树性质已恢复，删除操作完成！`,
+                                highlightNodes: []
+                            });
+                        }
+                    } else {
+                        let w = xParent.left;
+                        
+                        if (w && w.color === RED) {
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况1：兄弟节点${w.val}是红色`,
+                                detail: `将兄弟${w.val}变黑，父节点${xParent.val}变红，然后对父节点右旋，转换为其他情况。`,
+                                highlightNodes: [w.val, xParent.val]
+                            });
+                            
+                            w.color = BLACK;
+                            xParent.color = RED;
+                            this.rotateRight(xParent);
+                            w = xParent.left;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `转换完成`,
+                                detail: `现在兄弟节点是黑色，继续处理。`,
+                                highlightNodes: [w.val]
+                            });
+                        }
+                        
+                        if ((!w.right || w.right.color === BLACK) && 
+                            (!w.left || w.left.color === BLACK)) {
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况2：兄弟节点${w.val}的两个子节点都是黑色`,
+                                detail: `将兄弟${w.val}变红，然后继续向上调整父节点。`,
+                                highlightNodes: [w.val]
+                            });
+                            
+                            w.color = RED;
+                            x = xParent;
+                            xParent = x.parent;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `变色完成，向上调整`,
+                                detail: `兄弟节点${w.val}已变红，继续检查父节点。`,
+                                highlightNodes: [x ? x.val : -1]
+                            });
+                        } else {
+                            if (!w.left || w.left.color === BLACK) {
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `情况3：兄弟节点${w.val}的左孩子是黑色，右孩子是红色`,
+                                    detail: `将兄弟的右孩子${w.right.val}变黑，兄弟${w.val}变红，然后对兄弟左旋，转换为情况4。`,
+                                    highlightNodes: [w.val, w.right.val]
+                                });
+                                
+                                if (w.right) w.right.color = BLACK;
+                                w.color = RED;
+                                this.rotateLeft(w);
+                                w = xParent.left;
+                                
+                                animationSteps.push({
+                                    tree: this.cloneTree(),
+                                    description: `左旋完成，转换为情况4`,
+                                    detail: `现在兄弟的左孩子是红色，可以进行最后的调整。`,
+                                    highlightNodes: [w.val]
+                                });
+                            }
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `情况4：兄弟节点${w.val}的左孩子是红色`,
+                                detail: `将兄弟${w.val}染成父节点${xParent.val}的颜色，父节点变黑，兄弟的左孩子变黑，然后对父节点右旋。`,
+                                highlightNodes: [w.val, xParent.val, w.left ? w.left.val : -1]
+                            });
+                            
+                            w.color = xParent.color;
+                            xParent.color = BLACK;
+                            if (w.left) w.left.color = BLACK;
+                            this.rotateRight(xParent);
+                            x = this.root;
+                            
+                            animationSteps.push({
+                                tree: this.cloneTree(),
+                                description: `右旋完成，删除调整结束`,
+                                detail: `所有红黑树性质已恢复，删除操作完成！`,
+                                highlightNodes: []
+                            });
+                        }
+                    }
+                }
+                
+                if (x) {
+                    x.color = BLACK;
+                }
+            }
+
+            // 找到最小节点
+            minimum(node) {
+                while (node.left) {
+                    node = node.left;
+                }
+                return node;
+            }
+
+            // 移植节点
+            transplant(u, v) {
+                if (!u.parent) {
+                    this.root = v;
+                } else if (u === u.parent.left) {
+                    u.parent.left = v;
+                } else {
+                    u.parent.right = v;
+                }
+                if (v) {
+                    v.parent = u.parent;
+                }
+            }
+
+            // 查找节点
+            findNode(val) {
+                let current = this.root;
+                while (current) {
+                    if (val === current.val) return current;
+                    if (val < current.val) current = current.left;
+                    else current = current.right;
+                }
+                return null;
+            }
+
+            // 删除操作
+            delete(val) {
+                animationSteps = [];
+                
+                const z = this.findNode(val);
+                if (!z) {
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `节点 ${val} 不存在`,
+                        detail: `树中没有找到值为 ${val} 的节点，无法删除。`,
+                        highlightNodes: []
+                    });
+                    return false;
+                }
+
+                animationSteps.push({
+                    tree: this.cloneTree(),
+                    description: `开始删除节点 ${val}`,
+                    detail: `找到要删除的节点${val}，准备进行删除操作。`,
+                    highlightNodes: [val]
+                });
+
+                let y = z;
+                let yOriginalColor = y.color;
+                let x, xParent;
+
+                if (!z.left) {
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `节点 ${val} 没有左子树`,
+                        detail: `直接用右子树替换节点${val}。${yOriginalColor === BLACK ? '⚠️ 删除的是黑色节点，可能破坏黑高平衡，需要调整。' : '✓ 删除的是红色节点，不影响黑高。'}`,
+                        highlightNodes: [val, z.right ? z.right.val : -1]
+                    });
+                    
+                    x = z.right;
+                    xParent = z.parent;
+                    this.transplant(z, z.right);
+                    
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `替换完成`,
+                        detail: `节点${val}已被其右子树替换。${yOriginalColor === BLACK ? '需要进行删除修复。' : '删除完成。'}`,
+                        highlightNodes: [x ? x.val : -1]
+                    });
+                } else if (!z.right) {
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `节点 ${val} 没有右子树`,
+                        detail: `直接用左子树替换节点${val}。${yOriginalColor === BLACK ? '⚠️ 删除的是黑色节点，可能破坏黑高平衡，需要调整。' : '✓ 删除的是红色节点，不影响黑高。'}`,
+                        highlightNodes: [val, z.left.val]
+                    });
+                    
+                    x = z.left;
+                    xParent = z.parent;
+                    this.transplant(z, z.left);
+                    
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `替换完成`,
+                        detail: `节点${val}已被其左子树替换。${yOriginalColor === BLACK ? '需要进行删除修复。' : '删除完成。'}`,
+                        highlightNodes: [x.val]
+                    });
+                } else {
+                    y = this.minimum(z.right);
+                    yOriginalColor = y.color;
+                    x = y.right;
+                    
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `节点 ${val} 有两个子树`,
+                        detail: `找到后继节点${y.val}（右子树中的最小节点）来替换${val}。`,
+                        highlightNodes: [val, y.val]
+                    });
+
+                    if (y.parent === z) {
+                        xParent = y;
+                    } else {
+                        xParent = y.parent;
+                        this.transplant(y, y.right);
+                        y.right = z.right;
+                        y.right.parent = y;
+                        
+                        animationSteps.push({
+                            tree: this.cloneTree(),
+                            description: `移动后继节点 ${y.val}`,
+                            detail: `将后继节点${y.val}从原位置移出。`,
+                            highlightNodes: [y.val]
+                        });
+                    }
+
+                    this.transplant(z, y);
+                    y.left = z.left;
+                    y.left.parent = y;
+                    y.color = z.color;
+                    
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `用后继节点 ${y.val} 替换 ${val}`,
+                        detail: `后继节点${y.val}继承了被删除节点${val}的颜色${z.color === RED ? '(红色)' : '(黑色)'}。${yOriginalColor === BLACK ? '⚠️ 原后继位置是黑色，需要调整。' : '✓ 原后继位置是红色，不影响黑高。'}`,
+                        highlightNodes: [y.val]
+                    });
+                }
+
+                if (yOriginalColor === BLACK) {
+                    this.deleteFix(x, xParent);
+                }
+
+                animationSteps.push({
+                    tree: this.cloneTree(),
+                    description: `删除完成`,
+                    detail: `节点${val}已成功删除，所有红黑树性质已恢复！`,
+                    highlightNodes: []
+                });
+
+                return true;
+            }
+
+            // 插入操作
+            insert(val) {
+                animationSteps = [];
+                const z = new Node(val);
+                let y = null;
+                let x = this.root;
+
+                animationSteps.push({
+                    tree: this.cloneTree(),
+                    description: `开始插入节点 ${val}`,
+                    detail: `按照二叉搜索树的规则查找插入位置。新节点初始颜色为红色（选择红色是因为这样违反的性质更少，更容易修复）。`,
+                    highlightNodes: []
+                });
+
+                while (x) {
+                    y = x;
+                    if (z.val < x.val) x = x.left;
+                    else x = x.right;
+                }
+
+                z.parent = y;
+                if (!y) {
+                    this.root = z;
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `插入根节点 ${val}`,
+                        detail: `树为空，节点${val}成为根节点。新节点默认是红色。`,
+                        highlightNodes: [val]
+                    });
+                } else {
+                    if (z.val < y.val) y.left = z;
+                    else y.right = z;
+                    
+                    animationSteps.push({
+                        tree: this.cloneTree(),
+                        description: `将红色节点 ${val} 插入到节点 ${y.val} 的${z.val < y.val ? '左' : '右'}边`,
+                        detail: `找到插入位置，作为节点${y.val}的${z.val < y.val ? '左' : '右'}孩子。新插入的节点是红色。${y.color === RED ? '⚠️ 父节点也是红色，违反了性质4，需要调整！' : '✓ 父节点是黑色，暂时符合性质。'}`,
+                        highlightNodes: [val, y.val]
+                    });
+                }
+
+                this.insertFix(z);
+            }
+
+            getHeight(node) {
+                if (!node) return 0;
+                return 1 + Math.max(this.getHeight(node.left), this.getHeight(node.right));
+            }
+
+            getBlackHeight(node) {
+                if (!node) return 1;
+                const leftHeight = this.getBlackHeight(node.left);
+                return leftHeight + (node.color === BLACK ? 1 : 0);
+            }
+
+            getNodeCount(node) {
+                if (!node) return 0;
+                return 1 + this.getNodeCount(node.left) + this.getNodeCount(node.right);
+            }
+        }
+
+        // 可视化相关
+        const canvas = document.getElementById('treeCanvas');
+        const ctx = canvas.getContext('2d');
+        let tree = new RBTree();
+
+        const NODE_RADIUS = 25;
+        const LEVEL_HEIGHT = 100;
+
+        // 速度控制
+        document.getElementById('speedSlider').addEventListener('input', (e) => {
+            animationSpeed = parseInt(e.target.value);
+            document.getElementById('speedLabel').textContent = (animationSpeed / 1000).toFixed(1) + 's';
+        });
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = Math.max(container.clientWidth - 80, 800);
+            canvas.height = Math.max(600, tree.getHeight(tree.root) * LEVEL_HEIGHT + 100);
+            drawTree(tree);
+        }
+
+        function calculateNodePositions(node, depth, leftBound, rightBound, positions) {
+            if (!node) return;
+
+            const x = (leftBound + rightBound) / 2;
+            const y = depth * LEVEL_HEIGHT + 80;
+            positions.set(node, { x, y });
+
+            const mid = (leftBound + rightBound) / 2;
+            calculateNodePositions(node.left, depth + 1, leftBound, mid, positions);
+            calculateNodePositions(node.right, depth + 1, mid, rightBound, positions);
+        }
+
+        function drawTree(treeObj, highlightNodes = []) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (!treeObj.root) return;
+
+            const positions = new Map();
+            calculateNodePositions(treeObj.root, 0, 0, canvas.width, positions);
+
+            // 绘制边
+            function drawEdges(node) {
+                if (!node) return;
+                const pos = positions.get(node);
+
+                if (node.left) {
+                    const leftPos = positions.get(node.left);
+                    ctx.beginPath();
+                    ctx.moveTo(pos.x, pos.y);
+                    ctx.lineTo(leftPos.x, leftPos.y);
+                    ctx.strokeStyle = '#95a5a6';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    drawEdges(node.left);
+                }
+
+                if (node.right) {
+                    const rightPos = positions.get(node.right);
+                    ctx.beginPath();
+                    ctx.moveTo(pos.x, pos.y);
+                    ctx.lineTo(rightPos.x, rightPos.y);
+                    ctx.strokeStyle = '#95a5a6';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                    drawEdges(node.right);
+                }
+            }
+
+            drawEdges(treeObj.root);
+
+            // 绘制节点
+            function drawNodes(node) {
+                if (!node) return;
+                const pos = positions.get(node);
+                const isHighlight = highlightNodes.includes(node.val);
+
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, NODE_RADIUS, 0, 2 * Math.PI);
+                ctx.fillStyle = node.color === RED ? '#ff4757' : '#2f3542';
+                ctx.fill();
+                
+                // 红色节点用红色边框，黑色节点用黑色边框
+                ctx.strokeStyle = node.color === RED ? '#ff1744' : '#000';
+                ctx.lineWidth = isHighlight ? 5 : 3;
+                ctx.stroke();
+
+                // 高亮效果
+                if (isHighlight) {
+                    ctx.beginPath();
+                    ctx.arc(pos.x, pos.y, NODE_RADIUS + 8, 0, 2 * Math.PI);
+                    ctx.strokeStyle = '#ffd700';
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+                }
+
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 18px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(node.val, pos.x, pos.y);
+
+                drawNodes(node.left);
+                drawNodes(node.right);
+            }
+
+            drawNodes(treeObj.root);
+            updateStats(treeObj);
+        }
+
+        function updateStats(treeObj) {
+            const nodeCount = treeObj.getNodeCount(treeObj.root);
+            const height = treeObj.getHeight(treeObj.root);
+            const blackHeight = treeObj.getBlackHeight(treeObj.root);
+            document.getElementById('treeStats').innerHTML = 
+                `节点数: ${nodeCount}<br>树高: ${height}<br>黑高: ${blackHeight}`;
+        }
+
+        function displaySteps() {
+            const stepsContent = document.getElementById('stepsContent');
+            stepsContent.innerHTML = '';
+
+            animationSteps.forEach((step, index) => {
+                const stepDiv = document.createElement('div');
+                stepDiv.className = 'step-item';
+                stepDiv.id = `step-${index}`;
+                
+                stepDiv.innerHTML = `
+                    <div>
+                        <span class="step-number">${index + 1}</span>
+                        <span class="step-title">${step.description}</span>
+                    </div>
+                    <div class="step-description">${step.detail}</div>
+                `;
+                
+                stepsContent.appendChild(stepDiv);
+            });
+        }
+
+        async function animateSteps() {
+            isAnimating = true;
+            disableControls();
+
+            for (let i = 0; i < animationSteps.length; i++) {
+                const step = animationSteps[i];
+                const stepDiv = document.getElementById(`step-${i}`);
+                
+                // 高亮当前步骤
+                document.querySelectorAll('.step-item').forEach(el => {
+                    el.classList.remove('current', 'highlight');
+                });
+                stepDiv.classList.add('current', 'highlight');
+                stepDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                // 绘制当前状态的树
+                const currentTree = step.tree;
+                canvas.height = Math.max(600, currentTree.getHeight(currentTree.root) * LEVEL_HEIGHT + 100);
+                drawTree(currentTree, step.highlightNodes);
+
+                await sleep(animationSpeed);
+            }
+
+            // 最终状态
+            tree = animationSteps[animationSteps.length - 1].tree;
+            resizeCanvas();
+
+            isAnimating = false;
+            enableControls();
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function disableControls() {
+            document.getElementById('insertBtn').disabled = true;
+            document.getElementById('deleteBtn').disabled = true;
+            document.getElementById('clearBtn').disabled = true;
+            document.getElementById('randomBtn').disabled = true;
+            document.querySelectorAll('.preset-btn').forEach(btn => btn.disabled = true);
+        }
+
+        function enableControls() {
+            document.getElementById('insertBtn').disabled = false;
+            document.getElementById('deleteBtn').disabled = false;
+            document.getElementById('clearBtn').disabled = false;
+            document.getElementById('randomBtn').disabled = false;
+            document.querySelectorAll('.preset-btn').forEach(btn => btn.disabled = false);
+        }
+
+        function showMessage(text, type = 'success') {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = `message ${type}`;
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 2000);
+        }
+
+        async function insertValue() {
+            if (isAnimating) return;
+
+            const input = document.getElementById('valueInput');
+            const val = parseInt(input.value);
+
+            if (isNaN(val) || val < 1 || val > 999) {
+                showMessage('请输入1-999之间的数值', 'error');
+                return;
+            }
+
+            tree.insert(val);
+            displaySteps();
+            input.value = '';
+            
+            await animateSteps();
+            showMessage(`成功插入节点 ${val}`);
+        }
+
+        async function deleteValue() {
+            if (isAnimating) return;
+
+            const input = document.getElementById('valueInput');
+            const val = parseInt(input.value);
+
+            if (isNaN(val) || val < 1 || val > 999) {
+                showMessage('请输入1-999之间的数值', 'error');
+                return;
+            }
+
+            const success = tree.delete(val);
+            displaySteps();
+            input.value = '';
+            
+            await animateSteps();
+            
+            if (success) {
+                showMessage(`成功删除节点 ${val}`);
+            } else {
+                showMessage(`节点 ${val} 不存在`, 'error');
+            }
+        }
+
+        function clearTree() {
+            if (isAnimating) return;
+            tree = new RBTree();
+            animationSteps = [];
+            resizeCanvas();
+            document.getElementById('stepsContent').innerHTML = `
+                <div style="text-align: center; color: #6c757d; padding: 40px 20px;">
+                    <p style="font-size: 1.2em; margin-bottom: 15px;">👋 欢迎使用红黑树可视化工具</p>
+                    <p>👈 输入数值，可以插入或删除节点</p>
+                    <p style="margin-top: 10px;">或使用预设示例快速开始</p>
+                    <p style="margin-top: 10px;">这里会显示每一步的详细操作说明</p>
+                </div>
+            `;
+            showMessage('树已清空');
+        }
+
+        async function randomTree() {
+            if (isAnimating) return;
+            
+            tree = new RBTree();
+            const count = 5 + Math.floor(Math.random() * 5);
+            const values = new Set();
+            
+            while (values.size < count) {
+                values.add(Math.floor(Math.random() * 100) + 1);
+            }
+
+            showMessage(`开始生成包含 ${count} 个节点的随机树`);
+            
+            for (const v of values) {
+                tree.insert(v);
+                displaySteps();
+                await animateSteps();
+                await sleep(500);
+            }
+            
+            showMessage(`成功生成包含 ${count} 个节点的随机树`);
+        }
+
+        async function loadPreset(values) {
+            if (isAnimating) return;
+            
+            tree = new RBTree();
+            showMessage(`开始加载预设: [${values.join(', ')}]`);
+            
+            for (const v of values) {
+                tree.insert(v);
+                displaySteps();
+                await animateSteps();
+                await sleep(500);
+            }
+            
+            showMessage(`预设加载完成`);
+        }
+
+        // 键盘事件
+        document.getElementById('valueInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !isAnimating) insertValue();
+        });
+
+        // 初始化
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+    </script>
+</body>
+</html>

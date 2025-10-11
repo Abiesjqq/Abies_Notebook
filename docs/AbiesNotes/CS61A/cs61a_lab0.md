@@ -1,0 +1,1 @@
+一些命令：ls, pwd, cd, mkdir, mv, unzip
