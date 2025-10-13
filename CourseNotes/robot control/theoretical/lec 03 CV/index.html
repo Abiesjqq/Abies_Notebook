@@ -783,6 +783,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -801,7 +807,7 @@
   
   
   
-    <a href="../../../General%20Physics%20II/Phychap22/" class="md-nav__link">
+    <a href="../../../General%20Physics%20II/Phy00/" class="md-nav__link">
       
   
   
@@ -834,6 +840,8 @@
       
         
       
+        
+      
     
     
     
@@ -852,7 +860,7 @@
   
   
   
-    <a href="../../../Probability/PROchap1/" class="md-nav__link">
+    <a href="../../../Probability/PRO01/" class="md-nav__link">
       
   
   
@@ -1733,7 +1741,7 @@
           <li class="md-nav__item">
   <a href="#cnn_1" class="md-nav__link">
     <span class="md-ellipsis">
-      CNN经典架构介绍
+      CNN 经典架构介绍
     </span>
   </a>
   
@@ -2830,7 +2838,7 @@
           <li class="md-nav__item">
   <a href="#cnn_1" class="md-nav__link">
     <span class="md-ellipsis">
-      CNN经典架构介绍
+      CNN 经典架构介绍
     </span>
   </a>
   
@@ -3058,14 +3066,12 @@ x,L\le x\le U \\
 <li>区域处理（卷积核）：输出像素值与输入像素在一定的范围内的相邻像素值有关</li>
 </ul>
 <h3 id="_9">领域平均法</h3>
-<p>1.<span class="arithmatex">\(3 \times 3\)</span>均值滤波：用当前像素及其周围<span class="arithmatex">\(3 \times 3\)</span>邻域内所有像素的平均值替代当前像素，实现平滑降噪。
-2. 超限邻域平均法：只有当邻域内某些像素与中心像素差异超过设定阈值时，才将这些像素替换为邻域平均值，从而减少异常值影响。
-3.<span class="arithmatex">\(N \times N\)</span>均值滤波器：与<span class="arithmatex">\(3 \times 3\)</span>均值滤波类似，但窗口大小可扩展为任意<span class="arithmatex">\(N \times N\)</span>，通过邻域平均实现更强平滑。
-4. 选择式掩模平滑：通过设定规则（如与中心像素的灰度差阈值）来筛选邻域像素，仅对符合条件的像素进行加权或平均，从而在去除噪声的同时尽可能保留图像边缘与细节。</p>
+<p>1.<span class="arithmatex">\(3 \times 3\)</span>均值滤波：用当前像素及其周围<span class="arithmatex">\(3 \times 3\)</span>邻域内所有像素的平均值替代当前像素，实现平滑降噪。 2. 超限邻域平均法：只有当邻域内某些像素与中心像素差异超过设定阈值时，才将这些像素替换为邻域平均值，从而减少异常值影响。 3.<span class="arithmatex">\(N \times N\)</span>均值滤波器：与<span class="arithmatex">\(3 \times 3\)</span>均值滤波类似，但窗口大小可扩展为任意<span class="arithmatex">\(N \times N\)</span>，通过邻域平均实现更强平滑。 4. 选择式掩模平滑：通过设定规则（如与中心像素的灰度差阈值）来筛选邻域像素，仅对符合条件的像素进行加权或平均，从而在去除噪声的同时尽可能保留图像边缘与细节。</p>
 <h3 id="_10">中值滤波</h3>
-<p>-<span class="arithmatex">\(N \times N\)</span>中值滤波：窗口内各点的中值
-- 十字型中值滤波：十字型屏蔽窗口
--<span class="arithmatex">\(N \times N\)</span>最大值滤波：窗口内各点的最大值</p>
+<p>-<span class="arithmatex">\(N \times N\)</span>中值滤波：窗口内各点的中值</p>
+<ul>
+<li>十字型中值滤波：十字型屏蔽窗口 -<span class="arithmatex">\(N \times N\)</span>最大值滤波：窗口内各点的最大值</li>
+</ul>
 <h3 id="roberts">Roberts 边缘检测</h3>
 <p>Roberts 算子又称为交叉微分算法，基于交叉差分的梯度算法，通过局部差分计算检测边缘线条。<br />
 Roberts 算子的模板分为水平方向<span class="arithmatex">\(dx\)</span>和垂直方向<span class="arithmatex">\(dy\)</span>，像素点处 x 和 y 方向上的梯度<span class="arithmatex">\(Gx\)</span>、<span class="arithmatex">\(Gy\)</span>为：</p>
@@ -3126,9 +3132,7 @@ M =
 <div class="arithmatex">\[
 R = \det(M) - k\,(\operatorname{trace}(M))^2
 \]</div>
-<p>-<span class="arithmatex">\(\det(M) = \lambda_1 \lambda_2\)</span>
--<span class="arithmatex">\(\operatorname{trace}(M) = \lambda_1 + \lambda_2\)</span>
--<span class="arithmatex">\(k\)</span>为经验参数（通常<span class="arithmatex">\(k = 0.04 \sim 0.06\)</span>）</p>
+<p>-<span class="arithmatex">\(\det(M) = \lambda_1 \lambda_2\)</span> -<span class="arithmatex">\(\operatorname{trace}(M) = \lambda_1 + \lambda_2\)</span> -<span class="arithmatex">\(k\)</span>为经验参数（通常<span class="arithmatex">\(k = 0.04 \sim 0.06\)</span>）</p>
 <p>解释响应值 R：</p>
 <ul>
 <li>R &gt; 0 且较大 → 角点（两个方向梯度都大）</li>
@@ -3175,15 +3179,15 @@ R = \det(M) - k\,(\operatorname{trace}(M))^2
 <p>深度学习：以端到端的方式逐层抽象、逐层学习</p>
 <h3 id="_16">人工神经网络</h3>
 <h4 id="mcp">MCP 模型</h4>
-<p>给定 n 个二值化（0，1）的输入数据与连接参MCP神经元对输入数据线性加权求和，然后使用函数<span class="arithmatex">\(\Phi(\cdot)\)</span>将加权累加结果映射为0或1。</p>
+<p>给定 n 个二值化（0，1）的输入数据与连接参 MCP 神经元对输入数据线性加权求和，然后使用函数<span class="arithmatex">\(\Phi(\cdot)\)</span>将加权累加结果映射为 0 或 1。</p>
 <p><strong>激活函数：</strong></p>
 <p>对输入信息进行非线性变换<br />
 神经网络使用非线性函数作为激活函数（activation function），通过对多个非线性函数进行组合，来实现对输入信息的非线性变换。</p>
-<p><strong>Softmax函数：</strong></p>
-<p>Softmax函数一般用于多分类问题中，其将输入数据xi映射到第i个类别的概率yi如下：</p>
+<p><strong>Softmax 函数：</strong></p>
+<p>Softmax 函数一般用于多分类问题中，其将输入数据 xi 映射到第 i 个类别的概率 yi 如下：</p>
 <div class="arithmatex">\[y_i=softmax(x_i)=\frac{e^{x_i}}{\sum_{j=1}^k e^{x_j}}\]</div>
-<p>输入通过softmax变换后，映射到(0,1)之间的概率值。</p>
-<p>由于Softmax输出结果的值累加起来为1，因此可将输出概率最大的作为分类目标。</p>
+<p>输入通过 softmax 变换后，映射到(0,1)之间的概率值。</p>
+<p>由于 Softmax 输出结果的值累加起来为 1，因此可将输出概率最大的作为分类目标。</p>
 <p><strong>神经元：</strong></p>
 <p>神经元是深度学习模型中基本单位，可以如下刻画神经元功能：</p>
 <ol>
@@ -3200,20 +3204,19 @@ R = \det(M) - k\,(\operatorname{trace}(M))^2
 <li>均方误差损失函数</li>
 </ul>
 <p>均方误差损失函数通过计算预测值和实际值之间距离（即误差）的平方来衡量模型优劣。</p>
-<p>假设有n个训练数据xi，每个训练数据xi的真实输出为yi，模型对xi的预测值为<span class="arithmatex">\(\hat{y_i}\)</span>。该模型在n个训练数据下所产生的均方误差损失可定义如下：</p>
+<p>假设有 n 个训练数据 xi，每个训练数据 xi 的真实输出为 yi，模型对 xi 的预测值为<span class="arithmatex">\(\hat{y_i}\)</span>。该模型在 n 个训练数据下所产生的均方误差损失可定义如下：</p>
 <div class="arithmatex">\[MSE=\frac{1}{n}\sum_{i=1}^n (y_i-\hat{y_i})^2\]</div>
 <ul>
 <li>交叉熵损失函数</li>
 </ul>
 <p>交叉熵（cross entropy）是信息论中的重要概念，主要用来度量两个概率分布间的差异。</p>
-<p>假定p和q是数据x的两个概率分布，通过q来表示p的交叉熵可如下计算：</p>
+<p>假定 p 和 q 是数据 x 的两个概率分布，通过 q 来表示 p 的交叉熵可如下计算：</p>
 <div class="arithmatex">\[H(p,q)=-\sum_x p(x) * \log q(x)\]</div>
-<p>交叉熵刻画了两个概率分布之间的距离，旨在描绘通过概率分布q来表达概率分布p的困难程度。交叉熵越小，两个概率分布p和q越接近</p>
-<p>假设数据x属于类别1。记数据x的类别分布概率为y，显然y = (1,0,0)代表数据x的实际类别分布概率。记<span class="arithmatex">\(\hat{y}\)</span>代表模型预测所得类别分布概率。</p>
-<p>那么对于数据x而言，其实际类别分布概率y和模型预测类别分布概率<span class="arithmatex">\(\hat{y}\)</span>的交叉熵损失函数定义为：</p>
+<p>交叉熵刻画了两个概率分布之间的距离，旨在描绘通过概率分布 q 来表达概率分布 p 的困难程度。交叉熵越小，两个概率分布 p 和 q 越接近</p>
+<p>假设数据 x 属于类别 1。记数据 x 的类别分布概率为 y，显然 y = (1,0,0)代表数据 x 的实际类别分布概率。记<span class="arithmatex">\(\hat{y}\)</span>代表模型预测所得类别分布概率。</p>
+<p>那么对于数据 x 而言，其实际类别分布概率 y 和模型预测类别分布概率<span class="arithmatex">\(\hat{y}\)</span>的交叉熵损失函数定义为：</p>
 <div class="arithmatex">\[\text{cross entropy}=-y\times\log(\hat{y})\]</div>
 <p>一个良好的神经网络要尽量保证对于每一个输入数据，神经网络所预测类别分布概率与实际类别分布概率之间的差距越小越好，即交叉熵越小越好。于是，可将交叉熵作为损失函数来训练神经网络。</p>
-<p><img alt="softmax eg" src="../../resources/softmax%20eg.png" style:_width="500px&quot;" /></p>
 <details class="normal-comment">
 <summary>交叉熵损失函数优化</summary>
 <p>上图给出了一个三个类别分类的例子。由于输入数据x属于类别1，因此其实际类别概率分布值为<span class="arithmatex">\(y=(y_1,y_2,y_3)=(1,0,0)\)</span>。经过神经网络的变换，得到了输入数据x相对于三个类别的预测中间值<span class="arithmatex">\((z_1,z_2,z_3)\)</span>。然后，经过Softmax函数映射，得到神经网络所预测的输入数据x的类别分布概率<span class="arithmatex">\(\hat{y}=(\hat{y_1},\hat{y_2},\hat{y_3})\)</span>。根据前面的介绍，<span class="arithmatex">\(\hat{y_1}\)</span>、<span class="arithmatex">\(\hat{y_2}\)</span>和<span class="arithmatex">\(\hat{y_3}\)</span>为(0,1)范围之间的一个概率值。由于样本x属于第一个类别，因此希望神经网络所预测得到的<span class="arithmatex">\(\hat{y_1}\)</span>取值要远远大于<span class="arithmatex">\(\hat{y_2}\)</span>和<span class="arithmatex">\(\hat{y_3}\)</span>的取值。</p>
@@ -3231,15 +3234,14 @@ R = \det(M) - k\,(\operatorname{trace}(M))^2
 \frac{\partial \widehat{y}_1}{\partial z_2} = \frac{\partial}{\partial z_2} \left( \frac{e^{z_1}}{\sum_k e^{z_k}} \right) = \frac{0 \times \sum_k e^{z_k} - e^{z_1} \times e^{z_2}}{(\sum_k e^{z_k})^2} = -\frac{e^{z_1}}{\sum_k e^{z_k}} \times \frac{e^{z_2}}{\sum_k e^{z_k}} = -\widehat{y}_1 \widehat{y}_2
 \]</div>
 <p>同理，交叉熵损失函数导数为<span class="arithmatex">\(-\frac{1}{\widehat{y}_1}\)</span>，<span class="arithmatex">\(-\widehat{y}_1 \widehat{y}_2\)</span>与<span class="arithmatex">\(-\frac{1}{\widehat{y}_1}\)</span>相乘结果为<span class="arithmatex">\({\widehat{y}_2}\)</span>。这意味着对于除第一个输出节点以外的节点进行偏导，在得到模型预测输出后，<strong>只要将其保存</strong>，就是交叉损失函数相对于其他节点的偏导结果。在<span class="arithmatex">\(z_1\)</span>、<span class="arithmatex">\(z_2\)</span>和<span class="arithmatex">\(z_3\)</span>得到偏导结果后，再通过链式法则（后续介绍）将损失误差继续往输入端传递即可。</p>
-<p>在上面的例子中，假设所预测中间值<span class="arithmatex">\((z_1, z_2, z_3)\)</span>经过 Softmax 映射后所得结果为<span class="arithmatex">\((0.34, 0.46, 0.20)\)</span>。由于已知输入数据<span class="arithmatex">\(x\)</span>属于第一类，显然这个输出不理想而需要对模型参数进行优化。如果选择交叉熵损失函数来优化模型，则<span class="arithmatex">\((z_1, z_2, z_3)\)</span>这一层的偏导值为  </p>
+<p>在上面的例子中，假设所预测中间值<span class="arithmatex">\((z_1, z_2, z_3)\)</span>经过 Softmax 映射后所得结果为<span class="arithmatex">\((0.34, 0.46, 0.20)\)</span>。由于已知输入数据<span class="arithmatex">\(x\)</span>属于第一类，显然这个输出不理想而需要对模型参数进行优化。如果选择交叉熵损失函数来优化模型，则<span class="arithmatex">\((z_1, z_2, z_3)\)</span>这一层的偏导值为</p>
 <p><span class="arithmatex">\(<span class="arithmatex">\((0.34 - 1, 0.46, 0.20) = (-0.66, 0.46, 0.20)\)</span>\)</span></p>
 <p>可以看出，<strong>Softmax 和交叉熵损失函数相互结合</strong>，为偏导计算带来了极大便利。偏导计算使得损失误差从输出端向输入端传递，来对模型参数进行优化。在这里，交叉熵与 Softmax 函数结合在一起，因此也叫 <strong>Softmax 损失（Softmax with cross-entropy loss）</strong>。</p>
 </details>
 <h4 id="_17">感知机模型</h4>
 <p><strong>单层感知机：</strong></p>
-<p>早期的感知机结构和MCP模型相似，由一个输入层和一个输出层构成，因此也被称为“单层感知机”。感知机的输入层负责接收实数值的输入向量，输出层则能输出1或-1两个值。</p>
+<p>早期的感知机结构和 MCP 模型相似，由一个输入层和一个输出层构成，因此也被称为“单层感知机”。感知机的输入层负责接收实数值的输入向量，输出层则能输出 1 或-1 两个值。</p>
 <p>单层感知机可被用来区分线性可分数据。在下图中，逻辑与(AND)、逻辑与非(NAND)和逻辑或(OR)为线性可分函数，所以可利用单层感知机来模拟这些逻辑函数。但是，由于逻辑异或（XOR）是非线性可分的逻辑函数，因此单层感知机无法模拟逻辑异或函数的功能。</p>
-<p><img alt="单层感知机" src="../../resources/单层感知机.png" style="width:500px" /></p>
 <p><strong>多层感知机：</strong></p>
 <p>多层感知机由输入层、输出层和至少一层的隐藏层构成。网络中各个隐藏层中神经元可接收相邻前序隐藏层中所有神经元传递而来的信息，经过加工处理后将信息输出给相邻后续隐藏层中所有神经元。各个神经元接受前一级的输入，并输出到下一级，模型中没有反馈。层与层之间通过“全连接”进行链接，即两个相邻层之间的神经元完全成对连接，但层内的神经元不相互连接。</p>
 <h4 id="_18">参数优化</h4>
@@ -3272,7 +3274,7 @@ f(x + \Delta x) - f(x) = \|\nabla f(x)\| \cdot \|\Delta x\| \cdot \cos\theta = -
 <details class="normal-comment">
 <summary>误差反向传播推导</summary>
 <p>为了使损失函数<span class="arithmatex">\(\mathcal{L}\)</span>取值减少（从而保证模型预测结果与实际结果之间的差距越来越小），需要求取损失函数<span class="arithmatex">\(\mathcal{L}\)</span>相对于<span class="arithmatex">\(w_1\)</span>的偏导，然后按照损失函数梯度的反方向选取一个微小的增量，来调整<span class="arithmatex">\(w_1\)</span>的取值，就能够保证损失函数取值减少。即将<span class="arithmatex">\(w_1\)</span>变为<span class="arithmatex">\(w_1 - \eta \frac{d\mathcal{L}}{dw_1}\)</span>后，能使得损失误差减少。这里<span class="arithmatex">\(\frac{d\mathcal{L}}{dw_1}\)</span>为损失函数<span class="arithmatex">\(\mathcal{L}\)</span>对变量参数<span class="arithmatex">\(w_1\)</span>的偏导。于是，需要求取损失函数<span class="arithmatex">\(\mathcal{L}\)</span>对变量参数<span class="arithmatex">\(w_1\)</span>的偏导。</p>
-<p>由于<span class="arithmatex">\(w_1\)</span>与加权累加函数<span class="arithmatex">\(X\)</span>和 sigmoid 函数均有关系，因此  </p>
+<p>由于<span class="arithmatex">\(w_1\)</span>与加权累加函数<span class="arithmatex">\(X\)</span>和 sigmoid 函数均有关系，因此</p>
 <div class="arithmatex">\[
 \frac{d\mathcal{L}}{dw_1} = \frac{d\mathcal{L}}{dO} \cdot \frac{dO}{dX} \cdot \frac{dX}{dw_1}
 \]</div>
@@ -3294,7 +3296,7 @@ w_1^{\text{new}} = w_1 - \eta \cdot \frac{d\mathcal{L}}{dw_1} = w_1 - \eta \cdot
 <p>卷积核中的权重系数<span class="arithmatex">\(w_i\)</span>是通过<strong>数据驱动机制</strong>学习得到，其用来捕获图像中某像素点及其邻域像素点所构成的特有空间模式。一旦从数据中学习得到权重系数，这些权重系数就刻画了图像中像素点构成的空间分布不同模式。</p>
 <p>人的视觉神经细胞对不同的视觉模式具有<strong>特征选择性（Feature Selectivity）</strong>，即不同视觉神经细胞对边界、运动和颜色等不同信息具有强弱不同的选择性。因此，不同卷积核可被用来刻画视觉神经细胞对外界信息感受时的不同选择性。</p>
 <p>卷积所得结果中，每个输出点的取值仅依赖于其在输入图像中该点及其邻域区域点的取值，与这个区域之外的其他点取值均无关，该区域被称为<strong>感受野（receptive field）</strong>。在卷积神经网络中，感受野是卷积神经网络每一层输出的<strong>特征图（feature map）</strong>上的像素点在输入图像上映射的区域大小。</p>
-<p>示例：假设输入体积的大小为 [32x32x3]（例如 RGB CIFAR-10 图像）。如果感受野的大小为 5x5，共包含3个卷积核，则 Conv 层中的每个神经元将具有输入体积中 [5x5x3] 区域的权重，总共 553 = 75 个权重。请注意，沿深度轴的连通范围必须为 3，因为这是输入体积的深度。</p>
+<p>示例：假设输入体积的大小为 [32x32x3]（例如 RGB CIFAR-10 图像）。如果感受野的大小为 5x5，共包含 3 个卷积核，则 Conv 层中的每个神经元将具有输入体积中 [5x5x3] 区域的权重，总共 553 = 75 个权重。请注意，沿深度轴的连通范围必须为 3，因为这是输入体积的深度。</p>
 <details class="normal-comment">
 <summary>空间维度计算</summary>
 <p>Generated by ai</p>
@@ -3534,13 +3536,12 @@ w_1^{\text{new}} = w_1 - \eta \cdot \frac{d\mathcal{L}}{dw_1} = w_1 - \eta \cdot
 </details>
 <h4 id="_28">池化操作</h4>
 <p>由于图像中存在较多冗余，在图像处理中，可用某一区域子块的统计信息（如最大值或均值等）来刻画该区域中所有像素点呈现的空间分布模式，以替代区域子块中所有像素点取值，这就是卷积神经网络中<strong>池化(pooling)操作</strong>。池化操作对卷积结果特征图进行约减，实现了下采样，同时保留了特征图中主要信息。</p>
-<p><img alt="pooling" src="../../resources/pooling.png" style="width:400px" /></p>
 <p>对于输入的海量标注数据，通过多次迭代训练，卷积神经网络在若干次卷积操作、接着对卷积所得结果进行激活函数操作和池化操作下，最后通过全连接层来学习得到输入数据的特征表达，即<strong>分布式向量表达(distributed vector representation)</strong>。</p>
 <h4 id="_29">神经网络正则化</h4>
 <p>为了缓解神经网络在训练过程中出现的<strong>过拟合</strong>问题，需要采取一些正则化技术来提升神经网络的泛化能力(generalization)</p>
-<h4 id="cnn_1">CNN经典架构介绍</h4>
+<h4 id="cnn_1">CNN 经典架构介绍</h4>
 <details class="normal-comment">
-<summary>CNN发展里程和经典架构</summary>
+<summary>CNN 发展里程和经典架构</summary>
 <p>好的，我们来简要回顾一下卷积神经网络（CNN）的发展里程和其中的经典架构。CNN是深度学习中最重要的架构之一，尤其在计算机视觉领域取得了革命性的成功。</p>
 <h3 id="_30">发展里程与经典架构</h3>
 <h4 id="1-lenet-5-1998-">1. LeNet-5 (1998) - 开创者</h4>
@@ -3674,11 +3675,11 @@ w_1^{\text{new}} = w_1 - \eta \cdot \frac{d\mathcal{L}}{dw_1} = w_1 - \eta \cdot
 <p>在之前的介绍中，神经网络模型从数据中提取出高层语义在数据中所蕴含的“模式”，并利用这些模式实现对数据的分类和检测等，这种模型通常称为<strong>判别模型</strong>，判别模型不关心数据如何生成，它只关心数据蕴含哪些模式以及如何将数据进行分类。与之相对的模型类型被称为<strong>生成模型(generative model)</strong>，生成模型需要学习目标数据的分布规律，以合成属于目标数据空间的新数据。</p>
 <h4 id="_33">生成对抗网络</h4>
 <p><strong>生成对抗网络（generative adversarial network，GAN）</strong>可视为两个神经网络相互竞争的零和游戏（zero-sumgame），“以子之矛，陷子之盾”，最终达到纳什均衡。</p>
-<p>生成对抗网络由一个生成器（generator，简称G）和一个判别器（discriminator，简称D）组成。GAN的核心是通过生成器和判别器两个神经网络之间的竞争对抗，不断提升彼此水平以使得生成器所生成数据（人为伪造数据）与真实数据相似，判别器无法区分真实数据和生成数据。</p>
+<p>生成对抗网络由一个生成器（generator，简称 G）和一个判别器（discriminator，简称 D）组成。GAN 的核心是通过生成器和判别器两个神经网络之间的竞争对抗，不断提升彼此水平以使得生成器所生成数据（人为伪造数据）与真实数据相似，判别器无法区分真实数据和生成数据。</p>
 <p><strong>条件生成对抗网络</strong></p>
 <h4 id="_34">深度学习应用</h4>
-<p>图像分割与检测 经典Two-Stage方法：RCNN -&gt; Fast RCNN -&gt; Faster RCNN -&gt; Mask RCNN</p>
-<p>经典Single-Stage方法：YOLO/SOLO</p>
+<p>图像分割与检测 经典 Two-Stage 方法：RCNN -&gt; Fast RCNN -&gt; Faster RCNN -&gt; Mask RCNN</p>
+<p>经典 Single-Stage 方法：YOLO/SOLO</p>
 
 
 
@@ -3686,6 +3687,38 @@ w_1^{\text{new}} = w_1 - \eta \cdot \frac{d\mathcal{L}}{dw_1} = w_1 - \eta \cdot
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月13日 11:12:26 UTC">2025-10-13</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月5日 03:46:05 UTC">2025-09-05</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
