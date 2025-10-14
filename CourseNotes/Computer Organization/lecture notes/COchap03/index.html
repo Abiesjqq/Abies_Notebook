@@ -1068,6 +1068,8 @@
       
         
       
+        
+      
     
     
     
@@ -1086,7 +1088,7 @@
   
   
   
-    <a href="../../../Advance%20Data%20Structure/ADSlec01/" class="md-nav__link">
+    <a href="../../../Advance%20Data%20Structure/ADS01/" class="md-nav__link">
       
   
   
@@ -1959,7 +1961,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>3171</strong> 个字&nbsp;&nbsp;<strong>11</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>3240</strong> 个字&nbsp;&nbsp;<strong>11</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="_1">数的表示</h2>
 <p>word 由计算机的位宽决定<br />
@@ -2280,7 +2282,7 @@ Cons：需要很多加法器，硬件成本大</p>
 <p><strong>有符号数除法：</strong></p>
 <p>同号相除为正，异号相除为负。</p>
 <p>一正一负相除：余数的符号和被除数相同（因为余数本来就是被除数的一部分）</p>
-<p>指令：div,rem; divu,remu</p>
+<p>指令：div,rem; divu,remu（无符号）</p>
 <p>当除数是 0 时，产生 overflow，要自己处理。</p>
 <h2 id="_6">浮点数</h2>
 <h3 id="_7">浮点的存储</h3>
@@ -2302,21 +2304,32 @@ Cons：需要很多加法器，硬件成本大</p>
 <li>exponent=111..., fraction!=000... 表示 NaN（e.g. 除数为零）</li>
 <li>普通数的指数不能全 1</li>
 </ul>
-<p>exponent=0 表示非规范化数或 0，所以单精度的范围最小是<span class="arithmatex">\(1\times 2^{-126}\)</span>，最小精度是<span class="arithmatex">\(2^{-23}\)</span>。</p>
+<p>exponent=0 表示非规范化数或 0，所以单精度的范围最小是 <span class="arithmatex">\(1\times 2^{-126}\)</span>，最小精度是 <span class="arithmatex">\(2^{-23}\)</span>，指数最大为 <span class="arithmatex">\(2^{127}\)</span>。</p>
 <p>数太大时 overflow，数太小时 underflow。</p>
 <h3 id="_8">浮点的计算</h3>
 <p>浮点计算：对齐（化成指数相同），对应数相加，归一化（化为小数点前为 1），进位（rounding），归一化。<br />
 对齐时小的向大的右移靠近，因为计算后超过位数需要丢掉几位（truncation），这样丢掉的是权值低的位。<br />
 不同计算机有不同的进位方法</p>
 <p><img alt="float algorithm" src="../../resources/float%20algorithm.png" style="width:500px" /></p>
-<p><strong>浮点乘法</strong>：尾数相乘，指数相加<br />
+<p><strong>浮点乘法</strong>：尾数相乘，指数相加，标准化，加符号<br />
 指数相加时 bias 加了两次，一定要减一个 bias</p>
-<p><strong>浮点除法</strong>：小数相除，指数相减<br />
+<p><strong>浮点除法</strong>：小数相除，指数相减，标准化，加符号<br />
 指数减完要把 bias 加回去</p>
-<p>实际计算中，为了计算准确（对齐右移时有些被丢掉），额外加一些位<br />
-guard 位（后面放一位用于保护），round 位（guard 位的下一位），sticky 位（round 位的下一位，指数差很多，丢掉余下的数中，只要非零则 sticky 位为 1，否则为 0）<br />
-sticky 位有些地方没有<br />
-ulp（units in the last place）：四舍五入，最大的损失是最小精度的一半</p>
+<p>实际计算中，为了计算准确（对齐右移时有些被丢掉），额外加一些位。</p>
+<ul>
+<li>guard 位（后面放一位用于保护）</li>
+<li>round 位（guard 位的下一位）</li>
+<li>sticky 位（round 位的下一位，指数差很多，丢掉余下的数中，只要非零则 sticky 位为 1，否则为 0）</li>
+</ul>
+<p>sticky 位有些地方没有</p>
+<p>ulp（units in the last place）：四舍五入，最大的损失是最小精度的一半。ulp 作为单位，用于衡量误差的大小。</p>
+<p><strong>进位模式</strong>：</p>
+<ul>
+<li>总是向上取整</li>
+<li>总是向下取整</li>
+<li>截断（直接舍去小数部分）</li>
+<li>四舍五入到最近的偶数</li>
+</ul>
 
 
 
@@ -2339,7 +2352,7 @@ ulp（units in the last place）：四舍五入，最大的损失是最小精度
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月11日 09:43:05 UTC">2025-10-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月14日 14:10:46 UTC">2025-10-14</span>
   </span>
 
     
@@ -2354,29 +2367,6 @@ ulp（units in the last place）：四舍五入，最大的损失是最小精度
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
