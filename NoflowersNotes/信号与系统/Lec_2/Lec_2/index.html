@@ -851,6 +851,8 @@
       
         
       
+        
+      
     
     
     
@@ -1016,6 +1018,29 @@
   
   <span class="md-ellipsis">
     LTI 系统的时域分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Lec_5/Lec_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LTI 系统的频域分析
     
   </span>
   
@@ -1363,7 +1388,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>549</strong> 个字&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>586</strong> 个字&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="_1">系统</h2>
 <p>常用微分方程组表示</p>
@@ -1429,7 +1454,8 @@ y(t) &amp;= e^{C} \cdot e^{st} = k \cdot f(t)
 </div>
 <p><strong>因果系统</strong>、<strong>非因果系统</strong></p>
 <p>若一个系统在任何时刻的输出都只与当时这个时刻的输入以及该时 刻以前的输入有关，而和该时刻以后的输入无关就称该系统是因果的。否则是非因果的。<br />
-非因果系统是物理不可实现的</p>
+非因果系统是物理不可实现的。<br />
+LTI 系统因果的充要条件是<strong>冲激响应是因果哦信号</strong>。</p>
 <div class="admonition examples">
 <p class="admonition-title">一些例子</p>
 <ol>
@@ -1438,7 +1464,8 @@ y(t) &amp;= e^{C} \cdot e^{st} = k \cdot f(t)
 </ol>
 </div>
 <p><strong>稳定系统</strong>、<strong>不稳定系统</strong></p>
-<p>如果一个系统当输入有界时，产生的输出也是有界的，则该系统是<strong>稳定系统</strong> (stable system)。</p>
+<p>如果一个系统当输入有界时 (<span class="arithmatex">\(f\)</span> 有界 而不是 <span class="arithmatex">\(t\)</span> 有界！)，产生的输出也是有界的，则该系统是<strong>稳定系统</strong> (stable system)。<br />
+LTI 系统稳定的充要条件是 <span class="arithmatex">\(\displaystyle \int_{-\infty}^{\infty} \vert h(\tau)\vert\mathrm{d}\tau &lt; \infty\)</span></p>
 
 
 
@@ -1461,7 +1488,7 @@ y(t) &amp;= e^{C} \cdot e^{st} = k \cdot f(t)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月26日 08:01:25 UTC">2025-09-26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月14日 03:39:04 UTC">2025-10-14</span>
   </span>
 
     

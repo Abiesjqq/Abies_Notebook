@@ -849,6 +849,8 @@
       
         
       
+        
+      
     
     
     
@@ -1570,7 +1572,7 @@ T(n) = 2T(n / 2) + O(n) \Rightarrow T(n) = O(n \log n)
 <p>However, it is low in practice! (<em>Median of the medians</em> is low due to the large constant <span class="arithmatex">\(B\)</span>!)</p>
 </blockquote>
 <p><strong>Choose the pivot item by random</strong>:</p>
-<p>let <span class="arithmatex">\(a_i\)</span>: the <span class="arithmatex">\(i\)</span>-th smallest number in the array, $\displaystyle X_{ij} =\begin{cases}1, &amp; a_i, a_j \text{ have been compared} \ 0, &amp;\text{otherwise}\end{cases} $, and <span class="arithmatex">\(X: \text{Total compare times}\)</span>.  </p>
+<p>let <span class="arithmatex">\(a_i\)</span>: the <span class="arithmatex">\(i\)</span>-th smallest number in the array, <span class="arithmatex">\(\displaystyle X_{ij} =\begin{cases}1, &amp; a_i, a_j \text{ have been compared} \\ 0, &amp;\text{otherwise}\end{cases}\)</span>, and <span class="arithmatex">\(X: \text{Total compare times}\)</span>.  </p>
 <p>So we have <span class="arithmatex">\(\mathbb{E}(X) = \mathbb{E}\sum X_{ij} = \sum P(X_{ij} = 1)\)</span>.</p>
 <p><span class="arithmatex">\(X_{ij} = 0\)</span> iff. <span class="arithmatex">\(a_i, a_j\)</span> have been divided into 2 different groups. Noting that all the number will be chosen once during the whole algorithm, and we only pay attention to the first number chosen between <span class="arithmatex">\(a_i, a_j\)</span>. So <span class="arithmatex">\(\displaystyle P(X_{ij} = 1) = \frac{2}{j - i + 1}\)</span> (they are not divided at first).</p>
 <p>So <span class="arithmatex">\(\displaystyle \mathbb{E}(X) = \sum \frac{2}{j - i + 1} = \Theta (n \log n)\)</span></p>
@@ -1637,7 +1639,7 @@ step3. Compute <span class="arithmatex">\(r(x)\)</span>.</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月30日 11:02:04 UTC">2025-09-30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月14日 03:39:04 UTC">2025-10-14</span>
   </span>
 
     
