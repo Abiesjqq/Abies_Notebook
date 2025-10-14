@@ -344,7 +344,7 @@ RISC-V 中：mul, mulh, mulhu, mulhsu
 
 一正一负相除：余数的符号和被除数相同（因为余数本来就是被除数的一部分）
 
-指令：div,rem; divu,remu
+指令：div,rem; divu,remu（无符号）
 
 当除数是 0 时，产生 overflow，要自己处理。
 
@@ -374,7 +374,7 @@ $$(-1)^{sign}\cdot(1+significand)\cdot 2^{exponent-bias}$$
 - exponent=111..., fraction!=000... 表示 NaN（e.g. 除数为零）
 - 普通数的指数不能全 1
 
-exponent=0 表示非规范化数或 0，所以单精度的范围最小是$1\times 2^{-126}$，最小精度是$2^{-23}$。
+exponent=0 表示非规范化数或 0，所以单精度的范围最小是 $1\times 2^{-126}$，最小精度是 $2^{-23}$，指数最大为 $2^{127}$。
 
 数太大时 overflow，数太小时 underflow。
 
@@ -386,13 +386,25 @@ exponent=0 表示非规范化数或 0，所以单精度的范围最小是$1\time
 
 ![float algorithm](../resources/float%20algorithm.png){style="width:500px"}
 
-**浮点乘法**：尾数相乘，指数相加  
+**浮点乘法**：尾数相乘，指数相加，标准化，加符号  
 指数相加时 bias 加了两次，一定要减一个 bias
 
-**浮点除法**：小数相除，指数相减  
+**浮点除法**：小数相除，指数相减，标准化，加符号  
 指数减完要把 bias 加回去
 
-实际计算中，为了计算准确（对齐右移时有些被丢掉），额外加一些位  
-guard 位（后面放一位用于保护），round 位（guard 位的下一位），sticky 位（round 位的下一位，指数差很多，丢掉余下的数中，只要非零则 sticky 位为 1，否则为 0）  
-sticky 位有些地方没有  
-ulp（units in the last place）：四舍五入，最大的损失是最小精度的一半
+实际计算中，为了计算准确（对齐右移时有些被丢掉），额外加一些位。
+
+- guard 位（后面放一位用于保护）
+- round 位（guard 位的下一位）
+- sticky 位（round 位的下一位，指数差很多，丢掉余下的数中，只要非零则 sticky 位为 1，否则为 0）
+
+sticky 位有些地方没有
+
+ulp（units in the last place）：四舍五入，最大的损失是最小精度的一半。ulp 作为单位，用于衡量误差的大小。
+
+**进位模式**：
+
+- 总是向上取整
+- 总是向下取整
+- 截断（直接舍去小数部分）
+- 四舍五入到最近的偶数
