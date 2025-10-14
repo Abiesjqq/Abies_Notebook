@@ -79,9 +79,7 @@ $$P(AB\cup BC\cup AC)=P(AB)+P(BC)+P(AC)-2P(ABC)$$
 
 ## 几道例题
 
-~~手打好累啊，再也不打字了……x_x~~
-
-??? examples "例题 1 错排问题概率"
+!!! examples "例题 1 错排问题概率"
 
     n 卡片随机排列，A=“至少一张卡片的序号和位置不一样”。当 n 趋向于无穷时，求 P（A）？
 
@@ -105,7 +103,7 @@ $$P(AB\cup BC\cup AC)=P(AB)+P(BC)+P(AC)-2P(ABC)$$
 
     $$P(A)=1-\frac{1}{2!}+\frac{1}{3!}-\cdots\,\to 1-\frac{1}{e}$$
 
-??? examples "例题 2 取牌问题"
+!!! examples "例题 2 取牌问题"
 
     52 张牌取 13 张
 
@@ -129,7 +127,7 @@ $$P(AB\cup BC\cup AC)=P(AB)+P(BC)+P(AC)-2P(ABC)$$
 
         为什么不对：相同的红桃方案，每次选取的“固定的”红桃不同，导致重复计数。
 
-??? examples "例题 3 用概率判断条件"
+!!! examples "例题 3 用概率判断条件"
 
     某接待站 12 次接待都在周二或周四，能不能认为接待时间有规定？
 
@@ -137,7 +135,7 @@ $$P(AB\cup BC\cup AC)=P(AB)+P(BC)+P(AC)-2P(ABC)$$
 
     小概率事件发生，说明假设错误。接待时间有规定。
 
-??? examples "例题 4 抽签问题"
+!!! examples "例题 4 抽签问题"
 
     a 白球 b 红球，a+b 个人，不放回取球，求第 k 个人取到红球的概率？
 
@@ -148,3 +146,7 @@ $$P(AB\cup BC\cup AC)=P(AB)+P(BC)+P(AC)-2P(ABC)$$
     $$P(A_k)=\frac{a\cdot(a+b-1)\cdots 1}{(a+b-1)\cdots 1}=\frac{a\cdot(a+b-1)!}{(a+b)!}=\frac{a}{a+b}$$
 
     抽签问题中，抽到的概率与抽签次序无关。
+
+!!! examples "几道例题"
+
+    ![alt text](./PROresources/1.jpg){style="width:550px"}

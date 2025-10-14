@@ -111,9 +111,13 @@ nav:
           - 左偏堆，斜堆: CourseNotes/Advance Data Structure/ADSlec04.md
           - 二项队列: CourseNotes/Advance Data Structure/ADSlec05.md
       - 普通物理学II:
-          - 库伦定律、高斯定律: CourseNotes/General Physics II/Phychap22.md
+          - 数学基础: CourseNotes/General Physics II/Phy00.md
+          - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
+          - 电势，导体: CourseNotes/General Physics II/Phy02.md
+          - 电容，电感: CourseNotes/General Physics II/Phy03.md
       - 概率论与数理统计:
-          - Chap1 基本概念: CourseNotes/Probability/PROchap1.md
+          - 基本概念: CourseNotes/Probability/PRO01.md
+          - 随机变量的概率分布: CourseNotes/Probability/PRO02.md
       - 工程图学:
           - 点线面的投影: CourseNotes/Engineering Graphics/EG01.md
       - 数据结构基础:
@@ -187,7 +191,7 @@ nav:
           - HDR: AbiesNotes/Vision Course/CV04_HDR.md
           - Lighting: AbiesNotes/Vision Course/CV05_lignting.md
           - Filters: AbiesNotes/Vision Course/CV06_filters.md
-          - Graph Cut: AbiesNotes/Vision Course/CV07_graphcut.md
+          - Graph Cut: AbiesNotes/Vision Course/CV07_cut.md
           - Feature Detector: AbiesNotes/Vision Course/CV08_detector.md
           - Feature Descriptor: AbiesNotes/Vision Course/CV09_descriptor.md
           - Homography: AbiesNotes/Vision Course/CV10_homography.md
@@ -382,27 +386,27 @@ extra_css:
   # - stylesheets/LiquidGlass.css
   - https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined
 
-# plugins:
-#   - search
-#   - git-committers:
-#       enabled: true
-#       #    enabled: !ENV [ git-committers, false ]
-#       repository: Abiesjqq/Abies_Notebook
-#       branch: main
-#   - git-revision-date-localized:
-#       enabled: true
-#       #    enabled: !ENV [ git-revision-date-localized, false ]
-#       type: iso_date
-#       enable_creation_date: true
-#   - blog:
-#       blog_dir: notices
-#       blog_toc: true
-#       post_date_format: full
-#       archive_toc: true
-#       categories_toc: true
-#       #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
-#       #      pagination: true
-#       #      pagination_keep_content: true
-#       #      draft_if_future_date: true
-#       pagination_per_page: 5
-#   # - mkdocs-jupyter # 对 jupyter notebook 的支持
+plugins:
+  - search
+  - git-committers:
+      enabled: true
+      #    enabled: !ENV [ git-committers, false ]
+      repository: Abiesjqq/Abies_Notebook
+      branch: main
+  - git-revision-date-localized:
+      enabled: true
+      #    enabled: !ENV [ git-revision-date-localized, false ]
+      type: iso_date
+      enable_creation_date: true
+  - blog:
+      blog_dir: notices
+      blog_toc: true
+      post_date_format: full
+      archive_toc: true
+      categories_toc: true
+      #      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+      #      pagination: true
+      #      pagination_keep_content: true
+      #      draft_if_future_date: true
+      pagination_per_page: 5
+  # - mkdocs-jupyter # 对 jupyter notebook 的支持

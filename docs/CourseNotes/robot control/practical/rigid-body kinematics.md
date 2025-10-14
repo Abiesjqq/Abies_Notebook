@@ -420,8 +420,6 @@ def forward_kinematics(angles_rad):
 
 分别以轴线、末端目标位置为圆心，以第一、第二段机械臂长度为半径画圆，两个圆交点为关节的位置。
 
-![IK geometry](../../resources/IK%20geometry.png){style="width:400px"}
-
 $$
 \begin{cases}
 \begin{align*}
