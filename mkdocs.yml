@@ -89,6 +89,7 @@ nav:
               - ggplot 基础: 自学记录/R/ggplot基本绘图/ggplot.md
           - JavaScript: 自学记录/JavaScript/js_learning.md
       - 常用工具:
+          - Vim: 自学记录/vim/vim.md
           - Git: 自学记录/Git/git.md
           - MkDocs: 自学记录/MkDocs/mkdocs.md
           - CSS: 自学记录/CSS/css_learning.md

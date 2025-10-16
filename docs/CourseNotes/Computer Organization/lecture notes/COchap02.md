@@ -1,7 +1,5 @@
 ## 指令集介绍
 
-（目录：指令的表示，逻辑操作，决策指令，计算机对过程的支持，指令的寻址）
-
 指令集将软件和硬件联系  
 GCC 高级编程语言 -（编译器）-> 汇编语言 -（汇编器）-> 机器语言，二进制  
 这里学习的指令集将汇编和机器语言对应起来
@@ -76,7 +74,7 @@ RISC-V 中有 32 个 64 位寄存器，一个寄存器是一个整体。
 两类指令将数据从 memory 拿到寄存器：`load` 和 `store`。load 从 memory 到 register，store 从 register 到 memory。
 因此 RISC-V 被称为 load-store 架构。
 
-Memory 以 byte 为单位进行索引  
+Memory 以 byte 为单位进行索引！  
 相邻指令加四：指令是 32 位，而内存中以 byte（8 位）为最小单位，每个指令是 4 个 byte。
 word 的地址从 4、8…… 开始
 
@@ -157,7 +155,9 @@ x0~x31 的寄存器编码成 0~31 的数。
 | 6        | 0110   | E        | 1110   |
 | 7        | 0111   | F        | 1111   |
 
-### R-format
+### 六种格式
+
+#### R-format
 
 操作：寄存器-寄存器运算（纯寄存器操作）
 
@@ -171,17 +171,17 @@ x0~x31 的寄存器编码成 0~31 的数。
 - `funct3`：在同一类中进一步区分子操作（如加、与、或、移位）。
 - `funct7`：在子操作中再区分特殊情况（如加/减、逻辑右移/算术右移）。
 
-### I-format
+#### I-format
 
-操作：寄存器-立即数运算、加载、跳转到寄存器
+操作：寄存器-立即数运算、加载（load）、跳转到寄存器
 
 | immediate 立即数 | rs1 源寄存器 | funct3 辅助 | rd 目标寄存器 | opcode 操作码 |
 | ---------------- | ------------ | ----------- | ------------- | ------------- |
 | 12 bits          | 5 bits       | 3 bits      | 5 bits        | 7 bits        |
 
-立即数用 12 位表示，所以范围是 $\pm 2^{11}$。
+immediate 表示立即数或偏移量，用 12 位表示，所以范围是 $\pm 2^{11}$。
 
-### S-format
+#### S-format
 
 操作：存储指令（Store）
 
@@ -189,10 +189,57 @@ x0~x31 的寄存器编码成 0~31 的数。
 | ------------------------ | -------------- | ---------------- | ----------- | ----------------------- | ------------- |
 | 7 bits                   | 5 bits         | 5 bits           | 3 bits      | 5 bits                  | 7 bits        |
 
+S 型指令没有目标寄存器，因为 store 是将寄存器的数据存到基址+偏移量的地址，不是存到寄存器。
+
 imm[11:5] 和 imm[4:0] 合并后得到立即数 imm[11:0]，存储地址偏移量（有符号数）。
 
-SB-format：条件跳转的指令  
-UJ-format：无条件跳转
+#### SB-format
+
+操作：条件分支指令（如 `beq`, `bne`, `blt` 等）。
+
+| imm[12 | 10:5]（符号位 + 高 6 位） | rs2（源寄存器 2） | rs1（源寄存器 1） | funct3（操作类型） | imm[4:1 | 11]（低 4 位 + 第 11 位） | opcode（操作码） |
+| ------ | ------------------------- | ----------------- | ----------------- | ------------------ | ------- | ------------------------- | ---------------- |
+| 7 bits | 5 bits                    | 5 bits            | 3 bits            | 5 bits             | 7 bits  |
+
+- 立即数拼接方式（12 位有符号偏移，按 2 字节对齐，实际范围 ±4KB）：
+  ```
+  imm[12] | imm[10:5] | imm[4:1] | imm[11]
+  ```
+  最终形成：`imm[12:1]`，最低位 `imm[0]` 隐含为 0（因为指令地址总是 2 字节对齐）。
+- 跳转目标地址 = PC + sign_extend(imm[12:0])
+
+#### UJ-format
+
+操作：无条件跳转指令（如 `jal`）。
+
+| imm[20 / 10:1 / 11 / 19:12]（20 位立即数重排） | rd（目标寄存器） | opcode（操作码） |
+| ---------------------------------------------- | ---------------- | ---------------- |
+| 20 bits                                        | 5 bits           | 7 bits           |
+
+- 立即数拼接方式（20 位有符号偏移，按 2 字节对齐，实际范围 ±1MB）：
+  ```
+  imm[20] | imm[10:1] | imm[11] | imm[19:12]
+  ```
+  最终形成：`imm[20:1]`，`imm[0]` 隐含为 0。
+- 跳转目标地址 = PC + sign_extend(imm[20:0])
+- 跳转后的返回地址（PC + 4）写入 `rd`（通常为 `x1`，即 `ra`）
+
+#### U-format
+
+操作：加载高位立即数（如 `lui`）或与 `jalr` 配合构成完整地址（如 `auipc`）（Upper Immediate Format）。
+
+| imm[31:12]（高 20 位立即数） | rd（目标寄存器） | opcode（操作码） |
+| ---------------------------- | ---------------- | ---------------- |
+| 20 bits                      | 5 bits           | 7 bits           |
+
+- 立即数解释：
+  - 直接作为高 20 位，低 12 位补 0。
+  - 即：`imm[31:12] << 12`，形成 32 位有符号立即数（但仅高 20 位可设）。
+- 典型指令：
+  - `lui rd, imm`：将 `imm[31:12]` 加载到 `rd` 的高 20 位，低 12 位为 0。
+  - `auipc rd, imm`：将 `PC + (imm[31:12] << 12)` 写入 `rd`，用于 PC 相对寻址。
+
+U 格式不涉及 rs1/rs2，仅提供高位立即数。
 
 !!! normal-comment "RISC-V 指令格式汇总"
 
@@ -232,33 +279,42 @@ UJ-format：无条件跳转
         | **U** | `[31:12]`                                       | `imm[31:12] << 12`     |
         | **J** | `[20] + [10:1] + [11] + [19:12]` → `[20:1] + 0` | `sext(imm[20:1] << 1)` |
 
-逻辑操作：  
+### 逻辑操作
+
 左移 slli，右移 srli，与 and，andi，或 or，ori，异或 xor，xori  
+逻辑移位和算术移位：逻辑移位时空位补零，算术右移时空位补符号位  
+只有算术逻辑右移，没有算术逻辑左移
+
 为什么左移右移都是立即数？64 位立即数也能全部移完，立即数能覆盖
 
-左右移的格式：
+左右移的格式（I 型，将 12 位的立即数拆成两部分）：
 
 | funct6 | immed  | rs1    | funct3 | rd     | opcode |
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | 6 bits | 6 bits | 5 bits | 3 bits | 5 bits | 7 bits |
 
-I 型，将 12 位的立即数拆成两部分
+- 左移：`sll x5, x6, x7`表示`x5=x6<<x7`
+- 左移立即数：`slli x5, x6, 3`表示`x5=x6<<3`
+- 右移：`srl x5, x6, x7`表示`x5=x6>>x7`
+- 按位与：`and x9, x10, x11`表示`x9 = x10 & x11`
+- 按位或：`or x9, x10, x11`表示`x9 = x10 | x11`
+- 按位异或：`xor x9, x10, x11`表示`x9 = x10 ~ x11`
+- 取反：通过异或实现，`xori  x9, x10, -1`
 
-与门：`and x9, x10, x11`表示`x9 = x10 & x11`  
-或门：`or x9, x10, x11`表示`x9 = x10 | x11`  
-异或门：`xor x9, x10, x11`表示`x9 = x10 ~ x11`  
-取反操作通过异或实现
+RISC-V 中没有 nor 运算，x86 中有。
 
-条件跳转：
+### 决策指令
 
-```asm
-beq reg1, reg2, L1  # 如果reg1==reg2则跳转到L1
-bne reg1, reg2, L1  # 如果reg1！=reg2则跳转到L1
-```
+#### 条件跳转
+
+**比较相等：**
+
+- 相等跳转：`beq`（branch if equal），`beq reg1, reg2, L1`表示如果 reg1==reg2 则跳转到 L1
+- 不相等跳转：`bne`（branch if not equal），`bne reg1, reg2, L1`表示如果 reg1！=reg2 则跳转到 L1
 
 b 表示 branch
 
-!!! examples "if 示例"
+!!! examples "示例 if 跳转"
 
     C code:
     ```c
@@ -274,34 +330,64 @@ b 表示 branch
     L1: sub x19, x19, x22
     ```
 
-!!! examples "if-else 示例"
+    由于指令顺序执行，`sub x19, x19, x22`始终会被执行
+    可用`beq x0, x0, EXIT`结束
+
+!!! examples "示例 if-else"
 
     C code:
     ```c
-    if (i == j) f = g + h;
-    else f = g - h;
+    if (i == j)
+        f = g + h;
+    else
+        f = g - h;
     ```
 
     RISC-V code:
     ```asm
-        bne x22, x23, Else
-        add x19, x20, x21
-        beq x0, x0, Exit  # goto Exit
+          bne x22, x23, Else    # 测试条件一般用bne（有利于分支预测），效率更高
+          add x19, x20, x21
+          beq x0, x0, Exit      # goto Exit
     Else: sub x19, x20, x21
     Exit: ...
     ```
 
-!!! examples "loop 示例"
+**循环语句：**
+
+!!! examples "示例 loop"
 
     ```asm
     Loop: ...
-          bne x9, x10, Loop
+          bne x22, x21, Loop
     ```
+
+!!! examples "示例 while 循环"
+
+    C code:
+    ```c
+    while (a[i] == k)
+        i += 1;
+    ```
+
+    RISCV code:（用变量名代替寄存器）
+    ```asm
+    Loop:
+        slli  addr, offset, 3
+        add   addr, addr, base
+        ld    saved1, 0(addr)   # saved1=a[i]
+        bne   saved1, k, Exit
+        addi  i, i, 1
+        beq   x0, x0, Loop
+    Exit:
+        ...
+    ```
+
+**比较运算：**
 
 set on less than (slt):如果小于则置 1  
 `slt x5, x19, x20`表示如果 x19 < x20 则 x5 = 1
 
-!!! examples "slt 示例"
+!!! examples "示例 slt"
 
     C code:
     ```c
@@ -310,20 +396,26 @@ set on less than (slt):如果小于则置 1
 
     RISC-V code:
     ```asm
-    slt x5, x8, x9
-    bne x5, zero, Less
+    slt  x5, x8, x9
+    bne  x5, zero, Less
     ```
 
-`blt rs1, rs2, L1`如果 rs1 < rs2，则跳转到 L1  
-`bge rs1, rs2, L1`如果 rs1 >= rs2，则跳转到 L1  
-区分有符号数和无符号数，blt 和 bge 表示有符号，无符号数后加 u
+- 小于则跳转：`blt rs1, rs2, L1`如果 rs1 < rs2，则跳转到 L1
+- 大于等于则跳转：`bge rs1, rs2, L1`如果 rs1 >= rs2，则跳转到 L1
 
-jump register：switch-case 语句  
-`jalr x1, 100(x6)`把当前地址放到 x1（之后能回来），跳到 x6+100  
+区分有符号数和无符号数，blt 和 bge 表示有符号，无符号数后加 u  
+没有“addu”指令，所有加法都按有符号数处理
+
+#### 无条件跳转
+
+jump register：switch-case 语句
+
+`jalr x1, 100(x6)`把当前地址放到 x1（x1=PC+4, 之后能回来），跳到 x6+100（不需要做判断）
+
 switch(k)时，不同 k 的值的地方存储指令的地址，指向各个指令  
 x6 表示当前跳转表的地址，x6 和 k 左移 3（字的地址）后的值相加得到 x7（表示当前地址），load 到 x7（之前的 x7 里存的是另一个地址，这一步从 x7 指向的内存位置，加载一个 64 位值，存到 x7，这样 x7 表示真正的目标代码的地址），jalr 时以 x7 中地址跳转
 
-!!! examples "jalr 示例"
+!!! examples "示例 jalr"
 
     C code:
     ```c
@@ -337,10 +429,113 @@ x6 表示当前跳转表的地址，x6 和 k 左移 3（字的地址）后的值
 
     RISC-V:
     ```asm
-    blt x25, x0, Exit  # k<0, 超出范围
-    bge x25, x5, Exit  # k>=4, 超出范围
-    slli x7, x25, 3    # 偏移量存到x7
-    add x7, x7, x6     # 当前地址
-    ld x7, 0(x7)       # 加载目标地址
-    jalr x1, 0(x7)     # 当前地址存放到x1，按x7跳转
+    blt   x25, x0, Exit     # k<0, 超出范围
+    bge   x25, x5, Exit     # k>=4, 超出范围
+    slli  x7, x25, 3        # 偏移量存到x7
+    add   x7, x7, x6        # 当前地址
+    ld    x7, 0(x7)         # 加载目标地址
+    jalr  x1, 0(x7)         # 当前地址存放到x1，按x7跳转
     ```
+
+    具体分支中用 `jalr x0, 0(x1)` 跳回来，因为上一步 jalr 中 x1 已经存储下一步指令。
+
+Bacis Block（基本块）：不包含任何跳转，一定是顺序执行  
+编译器会识别基本块，对其做加速  
+没有调用其他函数，称为 leaf procedure
+
+Procedure/Function：程序的调用  
+调用存储的子进程，利用传入的参数实现特定的功能  
+步骤：
+
+1. 将参数放在函数能访问到的位置（可能是存储器或寄存器）
+2. 通过 jump 指令将控制权传给 procedure
+3. 需要存储资源
+4. 执行任务
+5. 将返回结果放在调用它的程序能访问到的位置
+6. 将控制权换给主程序
+
+称为 caller，用 jal（jump and link）调用  
+`jal x1, ProcedureAddress` 将 ProcedureAddress+4 放在 x1（因为 ProcedureAddress 是要跳转到的指令，回来时回到下一条，即+4 的位置），然后跳转到 ProcedureAddress
+
+被调用者称为 callee，用 jalr（jump and link register）返回  
+`jalr x0, 0(x1)` 跳转到 x1 的位置。  
+为什么用 x0？此时执行到最后一条，但如果要跳转进入这个函数必须从头进入，所以当前位置肯定不需要存储。x0 不会改变，所以用 x0。
+
+使用更多的寄存器？
+a0~a7 (寄存器 x10~x17) 是 8 个用于存储参数和返回值的寄存器；  
+ra (寄存器 x1) 用于存储跳转后返回的地址
+
+压栈时从高地址向低地址压，栈顶在最高地址，压栈后栈顶指针（sp）下移  
+压栈：先下移栈顶、再 store，以 8 为单位，如果一次压多个则移动 8 的倍数  
+出栈：先 load、再上移栈顶，以 8 为单位，如果一次出多个则移动 8 的倍数  
+pop 的最后一步一定是跳转回 x1  
+Push： sp = sp - 8
+
+```asm
+addi sp , sp, -8
+sd   ..., 8(sp)
+```
+
+Pop: sp = sp + 8
+
+```asm
+ld   ..., 8(sp)
+addi sp, sp, 8
+```
+
+leaf procedure 不管外部的程序，只管内部改变了哪些寄存器，保存这些值并执行后返回。  
+但这样有很多额外的保存操作。为了提高效率，约定两类寄存器：  
+t0~t6: 7 temporary registers，调用的函数中不保存  
+s1~s11: 12 saved registers，调用的函数中会保存
+
+| Name            | Register no. | Usage                         | Preserved on call |
+| --------------- | ------------ | ----------------------------- | ----------------- |
+| x0(zero)        | 0            | The constant value 0          | n.a.              |
+| x1(ra)          | 1            | Return address(link register) | yes               |
+| x2(sp)          | 2            | Stack pointer                 | yes               |
+| x3(gp)          | 3            | Global pointer                | yes               |
+| x4(tp)          | 4            | Thread pointer                | yes               |
+| x5-x7(t0-t2)    | 5-7          | Temporaries                   | no                |
+| x8(s0/fp)       | 8            | Saved/frame point             | Yes               |
+| x9(s1)          | 9            | Saved                         | Yes               |
+| x10-x17(a0-a7)  | 10-17        | Arguments/results             | no                |
+| x18-x27(s2-s11) | 18-27        | Saved                         | yes               |
+| x28-x31(t3-t6)  | 28-31        | Temporaries                   | No                |
+| PC              | -            | Program counter               | Yes               |
+
+!!! examples "示例 嵌套过程"
+
+C Code for n!
+
+```c
+int fact(int n) {
+    if (n < 1)
+        return 1;
+    else
+        return (n * fact(n - 1));
+}
+```
+
+RISC-V code
+
+```asm
+fact:
+    addi  sp, sp, -16   # 分配两个寄存器的占空间
+    sd    ra, 8(sp)     # ra 保存返回地址
+    sd    a0, 0(sp)    # a0 保存参数 n
+    addi  t0, a0, -1    # t0=n-1
+    bge   t0, zero, L1  # 若 t0=n-1>= 0，即 n>=1，跳到 L1
+    addi  a0, zero, 1   # 否则返回 1（阶乘终止条件）
+    addi  sp, sp, 16    # 回收栈空间
+    jalr  zero, 0(ra)   # 返回调用者
+
+L1:
+    addi  a0, a0, -1    # n=n-1
+    jal   ra, fact      # 调用 fact(n-1)
+    add   t1, a0, zero  # t1=fact(n-1)
+    ld    a0, 0(sp)     # 取回原来的 n
+    ld    ra, 8(sp)     # 取回返回地址
+    add   sp, sp, 16    # 回收栈帧
+    mul   a0, a0, t1    # a0=n*fact(n-1)
+    jalr  zero, 0(ra)   # 返回
+```

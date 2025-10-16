@@ -30,7 +30,7 @@ $$
 $$
 
 平行直线叉乘，最后一位为 0，表示无穷远点。  
-所有无穷远点排成一条直线，称为无穷远线。
+所有无穷远点排成一条直线，称为**无穷远线**。
 
 - **过两点$\mathbf{x}$和$\mathbf{x}'$的直线**：
 
@@ -70,5 +70,90 @@ $$
 
 系数构成六维向量${a,b,c,d,e,f}$，由于只考虑比值，自由度为 5。
 
-五个点能拟合一条二次曲线：
+- **五点定义一个圆锥曲线**
 
+对于每个点，圆锥曲线经过：
+
+$$
+ax_i^2 + bx_iy_i + cy_i^2 + dx_i + ey_i + f = 0
+$$
+
+或
+
+$$
+\begin{pmatrix}
+x_i^2 & x_iy_i & y_i^2 & x_i & y_i & 1
+\end{pmatrix}
+\mathbf{c} = 0, \quad \mathbf{c} = (a, b, c, d, e, f)^\top
+$$
+
+堆叠约束条件得到：
+
+$$
+\begin{bmatrix}
+x_1^2 & x_1y_1 & y_1^2 & x_1 & y_1 & 1 \\
+x_2^2 & x_2y_2 & y_2^2 & x_2 & y_2 & 1 \\
+x_3^2 & x_3y_3 & y_3^2 & x_3 & y_3 & 1 \\
+x_4^2 & x_4y_4 & y_4^2 & x_4 & y_4 & 1 \\
+x_5^2 & x_5y_5 & y_5^2 & x_5 & y_5 & 1 \\
+\end{bmatrix}
+\mathbf{c} = 0
+$$
+
+## 射影变换
+
+### 射影变换定义
+
+射影变换是从 $P^2$ 到其自身的可逆映射 $h$，满足：三个点 $x_1, x_2, x_3$ 共线当且仅当 $h(x_1), h(x_2), h(x_3)$ 也共线。
+
+一个映射 $h: P^2 \to P^2$ 是射影变换，当且仅当存在一个非奇异的 $3 \times 3$ 矩阵 $H$，使得对于任何由向量 $x$ 表示的 $P^2$ 中的点，都有 $h(x) = Hx$ 成立。
+
+射影变换 (Projective transformation)
+
+$$
+\begin{pmatrix}
+x'_1 \\
+x'_2 \\
+x'_3
+\end{pmatrix}
+=\begin{bmatrix}
+h_{11} & h_{12} & h_{13} \\
+h_{21} & h_{22} & h_{23} \\
+h_{31} & h_{32} & h_{33}
+\end{bmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{pmatrix}
+\quad \text{或} \quad
+\mathbf{x'} = \mathbf{H} \mathbf{x}
+$$
+
+变换的层次结构：
+
+1. 射影线性群 (Projective linear group)  
+2. 仿射群 (Affine group) —— 最后一行是 `[0, 0, 1]`  
+3. 欧几里得群 (Euclidean group) —— 左上角 2x2 子矩阵为正交矩阵  
+4. 定向欧几里得群 (Oriented Euclidean group) —— 左上角 2x2 子矩阵行列式为 1
+
+射影变换只保留直线，仿射中还保留平行、欧几里得变换还保留角度
+
+相似形：经过相似变换（放缩、旋转、平移）后得到的图形  
+射影变换可以分解为相似变换和切变的组合
+
+### 无穷远线
+
+$$
+l_\infty' = \mathbf{H}^{-T} l_\infty = 
+\begin{bmatrix}
+\mathbf{A}^T & \mathbf{0} \\
+-\mathbf{A}^T \mathbf{t} & 1
+\end{bmatrix}
+\begin{pmatrix}
+0 \\ 0 \\ 1
+\end{pmatrix}
+= l_\infty
+$$
+
+无穷远线 $l_\infty$ 在射影变换 $\mathbf{H}$ 下保持不变，当且仅当 $\mathbf{H}$ 是一个仿射变换。
