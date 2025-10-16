@@ -1,1 +1,2 @@
-- 红黑树可视化：[https://abiesjqq.github.io/Abies_Notebook/CourseNotes/Advance%20Data%20Structure/RBTree_visualizer.html](https://abiesjqq.github.io/Abies_Notebook/CourseNotes/Advance%20Data%20Structure/RBTree_visualizer.html)
+- [红黑树可视化](https://abiesjqq.github.io/Abies_Notebook/CourseNotes/Advance%20Data%20Structure/RBTree_visualizer.html)
+- [A* 可视化](https://abiesjqq.github.io/Abies_Notebook/NoflowersNotes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80/%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/a_star.html)

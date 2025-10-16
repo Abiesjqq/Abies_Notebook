@@ -32,6 +32,7 @@ jobs:
           pip install mkdocs-git-committers-plugin-2
           pip install mkdocs-blog-plugin
           pip install mkdocs-jupyter
+          pip install mkdocs-mermaid2-plugin
 
       - name: Configure Git user
         run: |

@@ -182,8 +182,10 @@ nav:
       - 人工智能基础:
           - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
           - 启发式搜索算法: NoflowersNotes/人工智能基础/启发式搜索算法/启发式搜索算法.md
+          - 零和博弈搜索算法: NoflowersNotes/人工智能基础/零和博弈搜索算法/零和博弈搜索算法.md
       - 算法设计分析:
           - 分治: NoflowersNotes/算法设计分析/分治/分治.md
+          - 图: NoflowersNotes/算法设计分析/图/图.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - Vision Course (进行中):
@@ -319,6 +321,12 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_generator:
         !!python/name:pymdownx.emoji.to_svg # 用 SVG 图标显示 emoji
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
 
 
   - pymdownx.tabbed:
@@ -389,6 +397,7 @@ extra_css:
 
 plugins:
   - search
+  - mermaid2
   - git-committers:
       enabled: true
       #    enabled: !ENV [ git-committers, false ]
