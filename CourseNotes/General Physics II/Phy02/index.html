@@ -1863,7 +1863,9 @@ V_P&amp;=\frac{1}{4\pi\varepsilon_0}\left(\frac{q}{r_+}+\frac{-q}{r_-}\right)\\
 【提示：利用高斯定理和作功与路径无关的性质，分别证明沿同一电场线和沿同一等势面上两点的场强相等。】</p>
 <p>结论：在真空静电场的某一区域里，若电场线都是<strong>平行直线</strong>（方向处处相同），则电场强度的<strong>大小处处相等</strong>（该区域内 <span class="arithmatex">\(|\mathbf E|\)</span> 为常数）。</p>
 <p>证明分两步，分别对应提示中的两种思路：</p>
-<p>(1) 沿同一电场线两点的场强相等（用高斯定律）</p>
+<ul>
+<li>(1) 沿同一电场线两点的场强相等（用高斯定律）</li>
+</ul>
 <p>取一根极细的“<strong>高斯柱</strong>”（或称“通量管”）：侧面与电场线<strong>平行</strong>，两端盖为与电场线<strong>垂直</strong>的小圆片，端盖分别落在同一条电场线上两点 (P)、(Q)，端盖面积相同为 (A)。由于是静电真空且柱内<strong>无自由电荷</strong>，</p>
 <div class="arithmatex">\[
 \oiint_S \mathbf E\cdot d\mathbf A=\frac{Q_{\text{enc}}}{\varepsilon_0}=0.
@@ -1876,12 +1878,12 @@ E(P),A - E(Q),A = 0\quad\Rightarrow\quad E(P)=E(Q).
 <blockquote>
 <p>直观：无源使通量沿“通量管”守恒；而在“平行直线”几何下，端面相同，故 (|\mathbf E|) 不变。</p>
 </blockquote>
-<p>(2) 同一等势面上两点的场强相等（用作功与路径无关）</p>
-<p>取一个极小<strong>矩形回路</strong> (P\to P'\to Q'\to Q\to P)，其中：</p>
 <ul>
-<li>(P\to Q) 与 (P'\to Q') 两段<strong>沿电场线方向</strong>（相互平行）；</li>
-<li>(Q\to Q') 与 (P'\to P) 两段<strong>沿同一等势面</strong>（与 (\mathbf E) 垂直）。</li>
+<li>(2) 同一等势面上两点的场强相等（用作功与路径无关）</li>
 </ul>
+<p>取一个极小<strong>矩形回路</strong> (P\to P'\to Q'\to Q\to P)，其中：</p>
+<p><span class="arithmatex">\(P\to Q\)</span> 与 <span class="arithmatex">\(P'\to Q'\)</span> 两段<strong>沿电场线方向</strong>（相互平行）；<br />
+<span class="arithmatex">\(Q\to Q'\)</span> 与 <span class="arithmatex">\(P'\to P\)</span> 两段<strong>沿同一等势面</strong>（与 (\mathbf E) 垂直）。</p>
 <p>静电场保守，闭合环路作功为零：</p>
 <div class="arithmatex">\[
 \oint \mathbf E\cdot d\mathbf l = 0.
@@ -1891,7 +1893,9 @@ E(P),A - E(Q),A = 0\quad\Rightarrow\quad E(P)=E(Q).
 E(P),\delta \ell - E(Q),\delta \ell = 0\quad\Rightarrow\quad E(P)=E(Q).
 \]</div>
 <p>于是<strong>同一等势面上相邻两点场强相等</strong>，进而处处相等。</p>
-<p>(3) 归结到“方向处处相同 ⇒ 大小处处相等”</p>
+<ul>
+<li>(3) 归结到“方向处处相同 ⇒ 大小处处相等”</li>
+</ul>
 <p>给定区域内任取两点 (A,B)。沿等势面从 <span class="arithmatex">\(A\)</span> 平移到与 <span class="arithmatex">\(B\)</span> 同一电场线上的点 <span class="arithmatex">\(A'\)</span>（用步骤 2：<span class="arithmatex">\(E(A)=E(A')\)</span>）；再沿该电场线从 <span class="arithmatex">\(A'\)</span> 到 <span class="arithmatex">\(B\)</span>（用步骤 1：<span class="arithmatex">\(E(A')=E(B)\)</span>）。于是</p>
 <div class="arithmatex">\[
 E(A)=E(A')=E(B).
@@ -2025,7 +2029,7 @@ W_e = \frac{1}{2} \iiint \rho_e U \, \mathrm{d}V
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月14日 14:10:46 UTC">2025-10-14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月16日 13:42:16 UTC">2025-10-16</span>
   </span>
 
     
