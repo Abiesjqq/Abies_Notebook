@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A*算法鼠标位置追踪</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .controls {
+            padding: 30px 40px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slider-group {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .slider-group label {
+            font-weight: 600;
+            color: #495057;
+            letter-spacing: 0.05em;
+        }
+
+        input[type="range"] {
+            width: 240px;
+            accent-color: #667eea;
+        }
+
+        .range-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #667eea;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .range-value strong {
+            display: block;
+            font-size: 1.6em;
+            font-weight: 800;
+            color: #4455cc;
+            margin-bottom: 4px;
+        }
+
+        .range-value span {
+            display: block;
+            font-size: 0.55em;
+            color: #6c757d;
+            letter-spacing: 0.1em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .status-panel {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .status-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px 24px;
+            min-width: 220px;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+            position: relative;
+        }
+
+        .status-label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .status-value {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+
+        .status-value.status-off {
+            color: #e03131;
+        }
+
+        .status-hint {
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+
+        .status-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .status-list li {
+            font-size: 0.95em;
+            color: #495057;
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .status-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+
+        .main-content {
+            display: flex;
+            background: #ffffff;
+            min-height: 560px;
+        }
+
+        .canvas-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .canvas-wrapper {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            padding: 25px;
+            border-radius: 24px;
+            box-shadow: 0 25px 45px rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        #gameCanvas {
+            display: block;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: inset 0 0 0 1px rgba(102, 126, 234, 0.2);
+        }
+
+        .info-panel {
+            width: 360px;
+            background: #f8f9fa;
+            border-left: 2px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .info-header {
+            padding: 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .info-header h3 {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+
+        .info-header p {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .info-content {
+            padding: 26px;
+            color: #495057;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .info-content ul {
+            list-style: none;
+        }
+
+        .info-content li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 18px;
+        }
+
+        .info-content li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .info-panel {
+                width: 100%;
+                border-left: none;
+                border-top: 2px solid #e9ecef;
+            }
+
+            .canvas-section {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .controls {
+                padding: 25px 20px;
+            }
+
+            .slider-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            input[type="range"] {
+                width: 100%;
+            }
+
+            .range-value {
+                width: 100%;
+            }
+
+            .status-card {
+                width: 100%;
+            }
+
+            .canvas-wrapper {
+                padding: 18px;
+            }
+
+            #gameCanvas {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>A* 算法鼠标追踪演示</h1>
+            <p>使用栅格寻路算法实时追踪鼠标所在位置，清晰观察路径规划的每一步</p>
+        </header>
+
+        <section class="controls">
+            <div class="control-group">
+                <button id="reset-btn" class="btn-primary">重置地图</button>
+                <button id="toggle-path-btn" class="btn-secondary">隐藏路径</button>
+            </div>
+            <div class="slider-group">
+                <label for="speed-slider">移动速度</label>
+                <input type="range" id="speed-slider" min="0.5" max="10" step="0.1" value="4">
+                <div class="range-value">
+                    <strong id="speed-value">4.0</strong>
+                    <span>格 / 秒</span>
+                </div>
+            </div>
+            <div class="status-panel">
+                <div class="status-card">
+                    <div class="status-label">鼠标网格坐标</div>
+                    <div class="status-value" id="mouse-pos">-</div>
+                    <div class="status-hint">将鼠标移动到画布内开始追踪</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-label">追踪点坐标</div>
+                    <div class="status-value" id="tracker-pos">0, 0</div>
+                    <div class="status-hint">A* 会沿着最短路径逼近目标</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-label">路径显示</div>
+                    <div class="status-value" id="path-status">显示中</div>
+                    <div class="status-hint">使用按钮切换路径可视化状态</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-label">当前配置</div>
+                    <ul class="status-list">
+                        <li>网格间距：20 像素</li>
+                        <li>障碍概率：20%</li>
+                        <li>移动速度：<span id="config-speed">4.0 格/秒</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <div class="canvas-section">
+                <div class="canvas-wrapper">
+                    <canvas id="gameCanvas" width="800" height="600"></canvas>
+                </div>
+            </div>
+            <aside class="info-panel">
+                <div class="info-header">
+                    <h3>操作提示</h3>
+                    <p>了解按钮与交互细节，快速体验寻路过程</p>
+                </div>
+                <div class="info-content">
+                    <ul>
+                        <li>在画布内移动鼠标，追踪点会自动寻找最短路径并绕过障碍。</li>
+                        <li>点击“重置地图”重新生成障碍与追踪点的起始位置。</li>
+                        <li>使用“显示/隐藏路径”切换路径可视化效果。</li>
+                        <li>当鼠标落在障碍上时，算法会尝试寻找替代路径。</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const resetBtn = document.getElementById('reset-btn');
+        const togglePathBtn = document.getElementById('toggle-path-btn');
+        const pathStatusValue = document.getElementById('path-status');
+        const speedSlider = document.getElementById('speed-slider');
+        const speedValue = document.getElementById('speed-value');
+        const configSpeed = document.getElementById('config-speed');
+
+        const gridSize = 20;
+        const cols = Math.floor(canvas.width / gridSize);
+        const rows = Math.floor(canvas.height / gridSize);
+        const obstacleProbability = 0.2;
+
+        let grid = [];
+        let trackerCell = { x: 0, y: 0 };
+        let trackerPosition = { x: 0, y: 0 };
+        let mousePos = { x: -1, y: -1 };
+        let path = [];
+        let showPath = true;
+        let moveSpeed = parseFloat(speedSlider.value);
+        let lastTimestamp = null;
+        let pulseTimer = 0;
+
+        function init() {
+            generateRandomMap();
+            resetTracker();
+            updateSpeedDisplay(moveSpeed);
+            updatePathVisibilityUI();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        function generateRandomMap() {
+            grid = [];
+            for (let y = 0; y < rows; y++) {
+                const row = [];
+                for (let x = 0; x < cols; x++) {
+                    row.push(Math.random() < obstacleProbability ? 1 : 0);
+                }
+                grid.push(row);
+            }
+        }
+
+        function resetTracker() {
+            let x;
+            let y;
+            do {
+                x = Math.floor(Math.random() * cols);
+                y = Math.floor(Math.random() * rows);
+            } while (grid[y][x] === 1);
+
+            trackerCell = { x, y };
+            trackerPosition = { x, y };
+            updateTrackerInfo();
+        }
+
+        function updateTrackerInfo() {
+            document.getElementById('tracker-pos').textContent = `${trackerCell.x}, ${trackerCell.y}`;
+        }
+
+        function updateSpeedDisplay(value) {
+            const formatted = value.toFixed(1);
+            speedValue.textContent = formatted;
+            configSpeed.textContent = `${formatted} 格/秒`;
+        }
+
+        function updatePathVisibilityUI() {
+            togglePathBtn.textContent = showPath ? '隐藏路径' : '显示路径';
+            pathStatusValue.textContent = showPath ? '显示中' : '已隐藏';
+            pathStatusValue.classList.toggle('status-off', !showPath);
+        }
+
+        function updateMouseInfo(pixelX, pixelY) {
+            const gridX = Math.floor(pixelX / gridSize);
+            const gridY = Math.floor(pixelY / gridSize);
+            const inside = gridX >= 0 && gridX < cols && gridY >= 0 && gridY < rows;
+
+            if (inside) {
+                document.getElementById('mouse-pos').textContent = `${gridX}, ${gridY}`;
+                return { x: gridX, y: gridY };
+            }
+
+            document.getElementById('mouse-pos').textContent = '-';
+            return { x: -1, y: -1 };
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawCells();
+
+            if (mousePos.x >= 0) {
+                highlightTargetCell();
+            }
+
+            if (showPath && path.length > 0) {
+                drawPathOverlay();
+                drawPathLine();
+            }
+
+            drawTracker();
+            drawGridLines();
+        }
+
+        function drawCells() {
+            for (let y = 0; y < rows; y++) {
+                for (let x = 0; x < cols; x++) {
+                    ctx.fillStyle = grid[y][x] === 1 ? '#1f2937' : '#f8fafc';
+                    ctx.fillRect(x * gridSize, y * gridSize, gridSize, gridSize);
+                }
+            }
+        }
+
+        function drawGridLines() {
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.25)';
+            ctx.lineWidth = 1;
+
+            for (let x = 0; x <= cols; x++) {
+                ctx.beginPath();
+                ctx.moveTo(x * gridSize + 0.5, 0);
+                ctx.lineTo(x * gridSize + 0.5, canvas.height);
+                ctx.stroke();
+            }
+
+            for (let y = 0; y <= rows; y++) {
+                ctx.beginPath();
+                ctx.moveTo(0, y * gridSize + 0.5);
+                ctx.lineTo(canvas.width, y * gridSize + 0.5);
+                ctx.stroke();
+            }
+        }
+
+        function highlightTargetCell() {
+            ctx.fillStyle = 'rgba(249, 115, 22, 0.35)';
+            ctx.fillRect(mousePos.x * gridSize, mousePos.y * gridSize, gridSize, gridSize);
+        }
+
+        function drawPathOverlay() {
+            ctx.fillStyle = 'rgba(102, 126, 234, 0.35)';
+            for (const step of path) {
+                ctx.fillRect(step.x * gridSize, step.y * gridSize, gridSize, gridSize);
+            }
+        }
+
+        function drawPathLine() {
+            if (path.length === 0) {
+                return;
+            }
+
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+
+            const startX = trackerPosition.x * gridSize + gridSize / 2;
+            const startY = trackerPosition.y * gridSize + gridSize / 2;
+            ctx.moveTo(startX, startY);
+
+            for (const step of path) {
+                const centerX = step.x * gridSize + gridSize / 2;
+                const centerY = step.y * gridSize + gridSize / 2;
+                ctx.lineTo(centerX, centerY);
+            }
+
+            ctx.stroke();
+        }
+
+        function drawTracker() {
+            const centerX = trackerPosition.x * gridSize + gridSize / 2;
+            const centerY = trackerPosition.y * gridSize + gridSize / 2;
+
+            const pulse = (Math.sin(pulseTimer * 4) + 1) / 2;
+            const glowRadius = gridSize * (0.45 + pulse * 0.18);
+
+            ctx.save();
+            ctx.fillStyle = `rgba(34, 197, 94, ${0.18 + pulse * 0.25})`;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, glowRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            ctx.save();
+            ctx.shadowColor = 'rgba(34, 197, 94, 0.45)';
+            ctx.shadowBlur = 12;
+            ctx.fillStyle = '#22c55e';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, gridSize * 0.35, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            ctx.strokeStyle = '#15803d';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, gridSize * 0.35, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        function isValid(x, y) {
+            return x >= 0 && x < cols && y >= 0 && y < rows && grid[y][x] === 0;
+        }
+
+        function heuristic(a, b) {
+            return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
+        }
+
+        function reconstructPath(cameFrom, current) {
+            const totalPath = [];
+            let key = `${current.x},${current.y}`;
+
+            while (cameFrom[key]) {
+                totalPath.unshift(current);
+                current = cameFrom[key];
+                key = `${current.x},${current.y}`;
+            }
+
+            return totalPath;
+        }
+
+        function aStar(start, goal) {
+            const openSet = [{ x: start.x, y: start.y }];
+            const cameFrom = {};
+            const gScore = {};
+            const fScore = {};
+            const closedSet = new Set();
+
+            const startKey = `${start.x},${start.y}`;
+            gScore[startKey] = 0;
+            fScore[startKey] = heuristic(start, goal);
+
+            while (openSet.length > 0) {
+                let currentIndex = 0;
+                let current = openSet[0];
+
+                for (let i = 1; i < openSet.length; i++) {
+                    const key = `${openSet[i].x},${openSet[i].y}`;
+                    const bestKey = `${current.x},${current.y}`;
+                    if ((fScore[key] ?? Infinity) < (fScore[bestKey] ?? Infinity)) {
+                        current = openSet[i];
+                        currentIndex = i;
+                    }
+                }
+
+                if (current.x === goal.x && current.y === goal.y) {
+                    return reconstructPath(cameFrom, current);
+                }
+
+                openSet.splice(currentIndex, 1);
+                closedSet.add(`${current.x},${current.y}`);
+
+                const neighbors = [
+                    { x: current.x + 1, y: current.y },
+                    { x: current.x - 1, y: current.y },
+                    { x: current.x, y: current.y + 1 },
+                    { x: current.x, y: current.y - 1 }
+                ];
+
+                for (const neighbor of neighbors) {
+                    const neighborKey = `${neighbor.x},${neighbor.y}`;
+
+                    if (!isValid(neighbor.x, neighbor.y) || closedSet.has(neighborKey)) {
+                        continue;
+                    }
+
+                    const tentativeGScore = (gScore[`${current.x},${current.y}`] ?? Infinity) + 1;
+
+                    const existingOpen = openSet.find(node => node.x === neighbor.x && node.y === neighbor.y);
+                    if (!existingOpen) {
+                        openSet.push({ x: neighbor.x, y: neighbor.y });
+                    } else if (tentativeGScore >= (gScore[neighborKey] ?? Infinity)) {
+                        continue;
+                    }
+
+                    cameFrom[neighborKey] = current;
+                    gScore[neighborKey] = tentativeGScore;
+                    fScore[neighborKey] = tentativeGScore + heuristic(neighbor, goal);
+                }
+            }
+
+            return [];
+        }
+
+        function updateTracker(delta) {
+            if (path.length === 0) {
+                return;
+            }
+
+            const target = path[0];
+            const dx = target.x - trackerPosition.x;
+            const dy = target.y - trackerPosition.y;
+            const distance = Math.hypot(dx, dy);
+
+            if (distance === 0) {
+                trackerPosition = { x: target.x, y: target.y };
+                trackerCell = { x: target.x, y: target.y };
+                path.shift();
+                updateTrackerInfo();
+                return;
+            }
+
+            const stepDistance = moveSpeed * Math.min(delta, 0.12);
+
+            if (stepDistance >= distance) {
+                trackerPosition = { x: target.x, y: target.y };
+                trackerCell = { x: target.x, y: target.y };
+                path.shift();
+                updateTrackerInfo();
+            } else {
+                trackerPosition.x += (dx / distance) * stepDistance;
+                trackerPosition.y += (dy / distance) * stepDistance;
+            }
+        }
+
+        function gameLoop(timestamp) {
+            if (lastTimestamp === null) {
+                lastTimestamp = timestamp;
+            }
+
+            const delta = (timestamp - lastTimestamp) / 1000;
+            lastTimestamp = timestamp;
+
+            pulseTimer += delta;
+            updateTracker(delta);
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        canvas.addEventListener('mousemove', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            mousePos = updateMouseInfo(x, y);
+
+            if (mousePos.x >= 0 && isValid(mousePos.x, mousePos.y)) {
+                path = aStar(trackerCell, mousePos);
+            } else {
+                path = [];
+            }
+
+            draw();
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            mousePos = { x: -1, y: -1 };
+            document.getElementById('mouse-pos').textContent = '-';
+            path = [];
+            draw();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            generateRandomMap();
+            resetTracker();
+            path = [];
+
+            if (mousePos.x >= 0 && isValid(mousePos.x, mousePos.y)) {
+                path = aStar(trackerCell, mousePos);
+            }
+
+            draw();
+        });
+
+        togglePathBtn.addEventListener('click', () => {
+            showPath = !showPath;
+            updatePathVisibilityUI();
+            draw();
+        });
+
+        speedSlider.addEventListener('input', (event) => {
+            moveSpeed = parseFloat(event.target.value);
+            updateSpeedDisplay(moveSpeed);
+            draw();
+        });
+
+        init();
+    </script>
+</body>
+</html>
