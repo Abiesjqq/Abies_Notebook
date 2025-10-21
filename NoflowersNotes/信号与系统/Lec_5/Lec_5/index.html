@@ -1071,6 +1071,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      实信号的频谱及其特征
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续非周期信号的频谱
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续非周期信号的频谱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      傅里叶变换和频谱函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      傅里叶反变换
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1437,6 +1479,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      实信号的频谱及其特征
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续非周期信号的频谱
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续非周期信号的频谱">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      傅里叶变换和频谱函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      傅里叶反变换
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1470,7 +1554,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>414</strong> 个字&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>901</strong> 个字&nbsp;&nbsp;<strong>5</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <p>我们发现，指数信号经过 LTI 系统之后仍然为指数信号，仅系数发生变化。</p>
 <p>例如，<span class="arithmatex">\(\mathrm{e}^{j \omega t}\)</span> 经过系统 <span class="arithmatex">\(h(t)\)</span>, 结果为</p>
@@ -1521,6 +1605,56 @@ f(t) &amp;= \frac{a_0}{2} + \sum_{n = 1}^{\infty}\left( a_n \cos n \omega t + b_
 - 在任何周期内绝对可积<br />
 - 在一个周期内只有有限个有限的不连续点，且这些不连续点的值有限<br />
 - 在一个周期内只有有限个极大值和极小值</p>
+<p><strong>Gibbs 现象</strong></p>
+<p>傅里叶级数在逼近方波信号的时候会出现在间断点出现非一致收敛；但是能依能量收敛。</p>
+<h4 id="_5">实信号的频谱及其特征</h4>
+<p>对相同周期的周期信号，傅里叶级数的各个谐波频率是相同的，只有 <span class="arithmatex">\(C_n\)</span> 不同，因此仅用 <span class="arithmatex">\(C_n\)</span> 即可研究周期函数的全部性质。我们把 <span class="arithmatex">\(C_n\)</span> (关于 <span class="arithmatex">\(n\)</span>/频率 的函数 ) 称为<strong>频谱函数</strong></p>
+<p>对于指数形式傅里叶级数，<span class="arithmatex">\(C_n = \vert C_n \vert \exp{j \varphi_n}\)</span>, 分别称为<strong>幅度频谱</strong> 和 <strong>相位频谱</strong><br />
+对于实信号的纯余弦形式 <span class="arithmatex">\(f = a_0 / 2 + \sum A_n\cos(n\omega t + \varphi_n)\)</span>, 分别称为<strong>幅度频谱 (<span class="arithmatex">\(a_0 / 2, A_n\)</span>)</strong> 和 <strong>相位频谱 (<span class="arithmatex">\(\varphi\)</span>)</strong></p>
+<div class="admonition examples">
+<p class="admonition-title">一些例子</p>
+<p><img alt="img.png" src="../img.png" /></p>
+</div>
+<p><strong>Parseval 功率守恒定理</strong> </p>
+<div class="arithmatex">\[
+P = \frac{1}{T}\int_T \vert f(t) \vert^2\mathrm{d}t = \sum_{n = -\infty}^{\infty}\vert C_n\vert^2
+\]</div>
+<p>代入指数形式傅里叶级数并且展开即可.<br />
+物理意义：任意周期信号的平均功率 (一般不考虑瞬时功率) 等于信号所包含的直流、基波以及各次谐波的平均功率之和。</p>
+<p><span class="arithmatex">\(\vert C_n \vert^2\)</span> 随 <span class="arithmatex">\(n\omega\)</span> 称为周期信号的<strong>功率频谱</strong> (一般仪器的结果)</p>
+<div class="admonition examples">
+<p class="admonition-title">例题</p>
+<p><img alt="img_1.png" src="../img_1.png" /><br />
+这里有效带宽包含负的频率，也即要计算 <span class="arithmatex">\([-40\pi, +40\pi]\)</span> 的所有 <span class="arithmatex">\(C_n\)</span> 的平方和</p>
+<div class="arithmatex">\[
+\mathrm{Sa}^2\left(\frac{n\pi}{5}\right) = 25 P_f = 5
+\]</div>
+<p>上面的例子在各种 <span class="arithmatex">\(\tau / T\)</span> (占空比) 中，有效带宽的谐波分量平均功率基本都在 <span class="arithmatex">\(90\%\)</span> 左右。</p>
+</div>
+<h3 id="_6">连续非周期信号的频谱</h3>
+<p>我们发现，当周期 <span class="arithmatex">\(T\)</span> 不断增加的时候，<span class="arithmatex">\(\omega_0\)</span> 减小。谐波之间的频率间隔为 <span class="arithmatex">\(\displaystyle \Delta f = \frac{1}{T}\)</span>, 则在频率为 <span class="arithmatex">\(n\omega_0\)</span> 谐波处<strong>单位频率的谐波振幅为</strong> <span class="arithmatex">\(\displaystyle\rho(n\omega_0) = C_n / \Delta f = TC_n = \int_T f_T(t)\exp{-jn\omega_0 t} \mathrm{d}t\)</span> 与 <span class="arithmatex">\(T\)</span> 无关！  </p>
+<h4 id="_7">傅里叶变换和频谱函数</h4>
+<p>因此如果我们把非周期函数表示为周期为无穷大的函数，则 <span class="arithmatex">\(\omega\)</span> 变成 <span class="arithmatex">\(0\)</span>, 谐波频率连续，在 <span class="arithmatex">\(\omega\)</span> 处的谐波振幅密度为 <span class="arithmatex">\(\rho(\omega) = \int_T f_T(t) \exp{-j\omega t}\mathrm{d}t\)</span></p>
+<div class="arithmatex">\[
+F(j \omega) = \int_{-\infty}^{\infty} f(t) \exp{-j\omega t} \mathrm{d}t
+\]</div>
+<p><span class="arithmatex">\(F(j\omega)\)</span> 是单位频率上的信号频谱，称为非周期信号的<strong>频谱密度函数</strong>，简称<strong>频谱函数</strong></p>
+<div class="admonition remarks">
+<p class="admonition-title">注意</p>
+<p>在傅里叶变换中，我们使用 <span class="arithmatex">\(F_n\)</span> 代替 <span class="arithmatex">\(C_n\)</span> 做记号</p>
+<p>满足关系：</p>
+<div class="arithmatex">\[
+\begin{cases}
+    F(jn\omega_0) = \lim_{T \to \infty} TF_n \\
+    \displaystyle F_n = \frac{F(j\omega)}{T} \Bigg\vert_{\omega = n\omega_0}
+\end{cases}
+\]</div>
+</div>
+<h4 id="_8">傅里叶反变换</h4>
+<p>由上面的性质，</p>
+<div class="arithmatex">\[
+f(t) = \lim_{T \to \infty} \sum_{n = -\infty}^{\infty}\frac{F(jn\omega_0)}{T}\exp{jn\omega_0 t} = \lim_{\omega \to 0^+}\sum_{n = -\infty}^{\infty}\frac{\omega_0}{2\pi}F(jn\omega_0)\exp{jn\omega_0 t} = \frac{1}{2\pi}\int_{-\infty}^{\infty}F(j\omega)\exp{j\omega t}\mathrm{d}\omega
+\]</div>
 
 
 
@@ -1543,7 +1677,7 @@ f(t) &amp;= \frac{a_0}{2} + \sum_{n = 1}^{\infty}\left( a_n \cos n \omega t + b_
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月14日 03:39:04 UTC">2025-10-14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月21日 13:45:17 UTC">2025-10-21</span>
   </span>
 
     
@@ -1558,29 +1692,6 @@ f(t) &amp;= \frac{a_0}{2} + \sum_{n = 1}^{\infty}\left( a_n \cos n \omega t + b_
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
