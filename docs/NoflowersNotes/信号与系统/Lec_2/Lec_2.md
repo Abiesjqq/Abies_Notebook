@@ -43,7 +43,8 @@
     2. $y_f(t) = t f(t)$ 不是时不变系统  
     3. $y_f(t) = f(t + 1)$ 是时不变系统  
     4. $y_f(t) = f(2t)$ 不是时不变系统  
-    5. $\displaystyle y_f(t) = \int_{-\infty}^{t}f(\tau) \mathrm{d}\tau$ 是时不变系统
+    5. $\displaystyle y_f(t) = \int_{-\infty}^{t}f(\tau) \mathrm{d}\tau$ 是时不变系统  
+    6. $u(f(t))$ 是时不变系统；$u(t)$ 是时变系统
 
     有规律：在系统自身参数含有 $t$ 或者有时间尺度变换，则是时变系统.
 
@@ -70,9 +71,11 @@ LTI 系统因果的充要条件是**冲激响应是因果哦信号**。
 
 !!! examples "一些例子"
     1. $y(t) = f(t - 2) + f(2 - t)$ 不是因果信号 ($t=0$ 的时刻，需要知道在未来的 $x=2$ 时刻的 $x(t)$，因此，这不是一个因果系统)  
-    2. $y(t) = f(t) \cos (2 - t)$ 是因果信号 (因为 $\cos (2 - t)$ 是确定的值)
+    2. $y(t) = f(t) \cos (2 - t)$ 是因果信号 (因为 $\cos (2 - t)$ 是确定的值)  
+    3. $y(t) = f'(t)$ 是因果信号 (因为可以用之前的时间实现计算)
+
 
 **稳定系统**、**不稳定系统**
 
 如果一个系统当输入有界时 ($f$ 有界 而不是 $t$ 有界！)，产生的输出也是有界的，则该系统是**稳定系统** (stable system)。  
-LTI 系统稳定的充要条件是 $\displaystyle \int_{-\infty}^{\infty} \vert h(\tau)\vert\mathrm{d}\tau < \infty$
+LTI 系统稳定的充要条件是 $\displaystyle \int_{-\infty}^{\infty} \vert h(\tau)\vert\mathrm{d}\tau < \infty$ ($h(t)$ 是冲激响应！)

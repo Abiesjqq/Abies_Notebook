@@ -71,4 +71,71 @@ $$
 - 在一个周期内只有有限个有限的不连续点，且这些不连续点的值有限  
 - 在一个周期内只有有限个极大值和极小值
 
+**Gibbs 现象**
 
+傅里叶级数在逼近方波信号的时候会出现在间断点出现非一致收敛；但是能依能量收敛。
+
+#### 实信号的频谱及其特征
+
+对相同周期的周期信号，傅里叶级数的各个谐波频率是相同的，只有 $C_n$ 不同，因此仅用 $C_n$ 即可研究周期函数的全部性质。我们把 $C_n$ (关于 $n$/频率 的函数 ) 称为**频谱函数**
+
+对于指数形式傅里叶级数，$C_n = \vert C_n \vert \exp{j \varphi_n}$, 分别称为**幅度频谱** 和 **相位频谱**  
+对于实信号的纯余弦形式 $f = a_0 / 2 + \sum A_n\cos(n\omega t + \varphi_n)$, 分别称为**幅度频谱 ($a_0 / 2, A_n$)** 和 **相位频谱 ($\varphi$)**
+
+!!! examples "一些例子"
+    ![img.png](img.png)
+
+**Parseval 功率守恒定理** 
+
+$$
+P = \frac{1}{T}\int_T \vert f(t) \vert^2\mathrm{d}t = \sum_{n = -\infty}^{\infty}\vert C_n\vert^2
+$$
+
+代入指数形式傅里叶级数并且展开即可.  
+物理意义：任意周期信号的平均功率 (一般不考虑瞬时功率) 等于信号所包含的直流、基波以及各次谐波的平均功率之和。
+
+$\vert C_n \vert^2$ 随 $n\omega$ 称为周期信号的**功率频谱** (一般仪器的结果)
+
+!!! examples "例题"
+    ![img_1.png](img_1.png)  
+    这里有效带宽包含负的频率，也即要计算 $[-40\pi, +40\pi]$ 的所有 $C_n$ 的平方和
+
+    $$
+    \mathrm{Sa}^2\left(\frac{n\pi}{5}\right) = 25 P_f = 5
+    $$
+
+    上面的例子在各种 $\tau / T$ (占空比) 中，有效带宽的谐波分量平均功率基本都在 $90\%$ 左右。
+
+### 连续非周期信号的频谱
+
+我们发现，当周期 $T$ 不断增加的时候，$\omega_0$ 减小。谐波之间的频率间隔为 $\displaystyle \Delta f = \frac{1}{T}$, 则在频率为 $n\omega_0$ 谐波处**单位频率的谐波振幅为** $\displaystyle\rho(n\omega_0) = C_n / \Delta f = TC_n = \int_T f_T(t)\exp{-jn\omega_0 t} \mathrm{d}t$ 与 $T$ 无关！  
+
+#### 傅里叶变换和频谱函数
+
+因此如果我们把非周期函数表示为周期为无穷大的函数，则 $\omega$ 变成 $0$, 谐波频率连续，在 $\omega$ 处的谐波振幅密度为 $\rho(\omega) = \int_T f_T(t) \exp{-j\omega t}\mathrm{d}t$
+
+$$
+F(j \omega) = \int_{-\infty}^{\infty} f(t) \exp{-j\omega t} \mathrm{d}t
+$$
+
+$F(j\omega)$ 是单位频率上的信号频谱，称为非周期信号的**频谱密度函数**，简称**频谱函数**
+
+!!! remarks "注意"
+    在傅里叶变换中，我们使用 $F_n$ 代替 $C_n$ 做记号
+
+    满足关系：
+
+    $$
+    \begin{cases}
+        F(jn\omega_0) = \lim_{T \to \infty} TF_n \\
+        \displaystyle F_n = \frac{F(j\omega)}{T} \Bigg\vert_{\omega = n\omega_0}
+    \end{cases}
+    $$
+
+#### 傅里叶反变换
+
+由上面的性质，
+
+$$
+f(t) = \lim_{T \to \infty} \sum_{n = -\infty}^{\infty}\frac{F(jn\omega_0)}{T}\exp{jn\omega_0 t} = \lim_{\omega \to 0^+}\sum_{n = -\infty}^{\infty}\frac{\omega_0}{2\pi}F(jn\omega_0)\exp{jn\omega_0 t} = \frac{1}{2\pi}\int_{-\infty}^{\infty}F(j\omega)\exp{j\omega t}\mathrm{d}\omega
+$$
