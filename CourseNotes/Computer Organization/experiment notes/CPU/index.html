@@ -16,7 +16,7 @@
     
     
       
-        <title>X 3D intro - Abies's Notebook</title>
+        <title>CPU - Abies's Notebook</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              X 3D intro
+              CPU
             
           </span>
         </div>
@@ -872,17 +872,26 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      激活函数介绍
+      🧠 一、整体架构概览
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="激活函数介绍">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-u1scpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 二、CPU 核心（U1：SCPU）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 二、CPU 核心（U1：SCPU）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      把它想象成“开关”和“过滤器”
+      架构类型：
     </span>
   </a>
   
@@ -891,7 +900,7 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      为什么这个“开关”如此重要？
+      核心组成模块：
     </span>
   </a>
   
@@ -900,7 +909,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      几个常见的“开关”类型（激活函数）
+      外部接口：
     </span>
   </a>
   
@@ -914,77 +923,26 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      卷积核介绍
+      💾 三、存储系统
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="卷积核介绍">
+    <nav class="md-nav" aria-label="💾 三、存储系统">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-romu2" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 卷积核是什么？
+      1️⃣ 指令存储器 ROM（U2）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-ramu3" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 卷积核是怎么工作的？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 卷积核的作用
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 卷积核的作用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      (1) 边缘检测核
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      (2) 模糊核
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      (3) 锐化核
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 总结
+      2️⃣ 数据存储器 RAM（U3）
     </span>
   </a>
   
@@ -996,55 +954,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#u4-mio_bus" class="md-nav__link">
     <span class="md-ellipsis">
-      动态核介绍
+      🔗 四、系统总线 (U4: MIO_BUS)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="动态核介绍">
+    <nav class="md-nav" aria-label="🔗 四、系统总线 (U4: MIO_BUS)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 动态核的基本定义
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 为什么需要动态核
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 动态核的实现方式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 应用场景
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 总结
+      地址映射：
     </span>
   </a>
   
@@ -1058,44 +980,53 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      神经网络介绍
+      💡 五、外设子系统
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="神经网络介绍">
+    <nav class="md-nav" aria-label="💡 五、外设子系统">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_3" class="md-nav__link">
+  <a href="#1-spio-gpio-led-u7" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 直观理解
+      (1) SPIO —— GPIO + LED 模块（U7）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_3" class="md-nav__link">
+  <a href="#2-seg7_dev-u6" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 数学上的结构
+      (2) Seg7_Dev —— 七段数码管显示模块（U6）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_3" class="md-nav__link">
+  <a href="#3-multi_8ch32-8-32-u5" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 神经网络的学习过程
+      (3) Multi_8CH32 —— 8 通道 32 位多路选择器（U5）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_2" class="md-nav__link">
+  <a href="#4-counter_x-u10" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 神经网络能做什么？
+      (4) Counter_x —— 通用三通道计数器（U10）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-vga-u11" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5) VGA —— 调试显示（U11）
     </span>
   </a>
   
@@ -1107,191 +1038,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mlp" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      多层感知机 MLP 介绍
+      🕹️ 六、辅助模块
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="多层感知机 MLP 介绍">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-perceptron" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 什么是感知机（Perceptron）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-mlp" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 多层感知机（MLP）的结构
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-mlp" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. MLP 的计算流程
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 激活函数的重要性
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-mlp" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. MLP 的特点
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 总结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cnn" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
-      CNN 介绍
+      🧭 七、系统运行机制
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="CNN 介绍">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-cnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 什么是 CNN？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-cnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. CNN 的核心结构
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-cnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. CNN 的工作流程（图像分类为例）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-cnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. CNN 的优势
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 现实应用
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rnn" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
-      RNN 介绍
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="RNN 介绍">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-rnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 什么是 RNN？
+      ⚙️ 八、实验特性与运行方式
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-rnn" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
-      2. RNN 的结构特点
+      🧩 九、架构总结图（逻辑关系）
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-rnn" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
-      3. RNN 的工作流程（举例：文字生成）
+      实验过程注意事项
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-rnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. RNN 的优势
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-rnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. RNN 的问题
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1314,423 +1101,514 @@
   
 
 
-  <h1>X 3D intro</h1>
+  <h1>CPU</h1>
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>872</strong> 个字&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>1421</strong> 个字&nbsp;&nbsp;<strong>22</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
-<p><strong>这里用来记录短学期报告准备过程中的一些东西。</strong></p>
-<div class="admonition warning">
+<div class="admonition warning-box">
 <p class="admonition-title">注意</p>
-<p>Generated by ai</p>
+<p>本文部分由 AI 生成。</p>
 </div>
-<h2 id="_1">激活函数介绍</h2>
-<h3 id="_2">把它想象成“开关”和“过滤器”</h3>
-<p>想象一下，你是一个大脑神经元。你从眼睛、耳朵等地方接收信号（数据）。这些信号有强有弱。</p>
-<ol>
-<li>
-<p><strong>接收信号（线性计算）</strong>：
-    首先，你会把所有这些信号加起来。如果一个信号很重要，你就给它更大的权重；如果不重要，就给它小权重。最后，你还会加上自己的“心情”（偏置项），比如你今天比较乐观还是悲观。
-    <em>这就像是计算总分：<code>总分 = (信号1 × 权重1) + (信号2 × 权重2) + ... + 心情</code></em></p>
-</li>
-<li>
-<p><strong>决定是否做出反应（激活函数）</strong>：
-    现在你有了这个“总分”，但你不会对任何微小的信号都做出反应，对吧？你需要判断这个信号是否<strong>强到了值得你做出反应的程度</strong>。</p>
-<ul>
-<li>如果总分超过了某个“阈值”（比如非常响的声音），你就会<strong>兴奋</strong>，并向下一个神经元发送一个强烈的信号。</li>
-<li>如果总分很低（比如微弱的杂音），你就<strong>保持平静</strong>，什么都不做。</li>
-</ul>
-</li>
-</ol>
-<p><strong>这个“判断过程”——决定是否反应以及反应多大——就是激活函数所做的事情。</strong> 它是一个“开关”或“过滤器”，决定了信息能否通过这个神经元继续传递下去。</p>
-<h3 id="_3">为什么这个“开关”如此重要？</h3>
-<p>如果没有这个“开关”（激活函数），神经网络就只会做简单的<strong>加减乘除</strong>。无论堆多少层，它最终都只能画出一条<strong>笔直的直线</strong>来分割数据（只能解决线性问题）。</p>
-<p>但现实世界的问题复杂得多，比如如何区分猫和狗的图片？它们的区别绝不是一条直线能分清的。我们需要<strong>曲折复杂的曲线</strong>才能区分（非线性问题）。</p>
-<p><strong>激活函数就是这个“ingredient”</strong>：
-它给每个神经元的输出引入了<strong>扭曲和弯曲</strong>。当千千万万个这样的神经元组合在一起时，整个网络就能画出极其复杂的曲线，从而学会识别猫脸、理解语言、预测天气等无比复杂的任务。</p>
-<h3 id="_4">几个常见的“开关”类型（激活函数）</h3>
-<ol>
-<li>
-<p><strong>ReLU（最简单直接的开关）</strong>：</p>
-<ul>
-<li><strong>规则</strong>：如果输入分数 &gt; 0，就让分数原样通过；如果分数 &lt;= 0，就直接把它关掉（变为 0）。</li>
-<li><strong>像什么</strong>：像一个<strong>整流器</strong>，只允许正电流通过，负电流直接归零。这是目前最常用、最受欢迎的激活函数，因为它效果又好，计算又简单。</li>
-</ul>
-</li>
-<li>
-<p><strong>Sigmoid（平滑的开关）</strong>：</p>
-<ul>
-<li><strong>规则</strong>：把任何分数都压缩到 0 和 1 之间。</li>
-<li><strong>像什么</strong>：像一个<strong>投票器</strong>或<strong>概率转换器</strong>。输入一个很大的正数，输出接近 1（100%同意）；输入一个很大的负数，输出接近 0（0%同意）；输入 0，输出 0.5（一半一半）。它输出非常平滑的结果，常用于输出层做概率预测（比如判断一张图是猫的概率是 90%）。</li>
-</ul>
-</li>
-<li>
-<p><strong>Tanh（双曲正切函数）</strong>：</p>
-<ul>
-<li><strong>规则</strong>：把任何分数都压缩到 -1 和 1 之间。</li>
-<li><strong>像什么</strong>：像一个<strong>更强大的 Sigmoid</strong>。它的输出范围更广（-1 到 1），且平均值是 0，这使得它的优化效果有时比 Sigmoid 更好，常用于隐藏层。</li>
-</ul>
-</li>
-</ol>
-<h2 id="_5">卷积核介绍</h2>
-<h3 id="1">1. 卷积核是什么？</h3>
-<p>在计算机视觉和深度学习里，<strong>卷积核</strong>就是一个小矩阵（通常大小是 3×3、5×5、7×7 等），它会在图片上“滑动”，并与局部像素做运算。
-这个过程叫做 <strong>卷积</strong>。</p>
-<p>👉 卷积核可以理解为 <strong>一块特殊的滤镜</strong>，它决定了在处理图像时关注什么特征。</p>
-<h3 id="2">2. 卷积核是怎么工作的？</h3>
-<p>计算步骤：</p>
-<ol>
-<li>把卷积核放在图片的一个小区域上（例如 3×3 的区域）。</li>
-<li>对应元素相乘再相加，得到一个数。</li>
-<li>卷积核滑动到下一个位置，重复计算。</li>
-</ol>
-<p>这样就得到了一个新的矩阵（即“特征图”），它表示图片里某种特征的分布。</p>
-<h3 id="3">3. 卷积核的作用</h3>
-<p>不同的卷积核，可以提取不同的特征：</p>
-<ul>
-<li><strong>边缘检测核</strong>：突出图像中的边缘。</li>
-<li><strong>模糊核</strong>：让图片变得模糊。</li>
-<li><strong>锐化核</strong>：让图片变得清晰。</li>
-<li><strong>在深度学习中</strong>：卷积核的数值不是人为设定的，而是 <strong>通过训练学习得到的</strong>，可以自动提取识别任务需要的特征（比如边缘、纹理、形状、甚至人脸）。</li>
-</ul>
-<h4 id="1_1">(1) 边缘检测核</h4>
-<p>例子：</p>
-<div class="arithmatex">\[
-K =
-\begin{bmatrix}
--1 &amp; -1 &amp; -1 \\
-0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1
-\end{bmatrix}
-\]</div>
-<ul>
-<li>解释：它在竖直方向上计算差异。</li>
-<li>结果：边缘区域差异大 → 输出值大，突出边缘；平坦区域差异小 → 输出接近 0。</li>
-<li>所以它能“抓住边缘”。</li>
-</ul>
-<h4 id="2_1">(2) 模糊核</h4>
-<p>例子：</p>
-<div class="arithmatex">\[
-K = \frac{1}{9}
-\begin{bmatrix}
-1 &amp; 1 &amp; 1 \\
-1 &amp; 1 &amp; 1 \\
-1 &amp; 1 &amp; 1
-\end{bmatrix}
-\]</div>
-<ul>
-<li>解释：对 3×3 区域的像素做平均。</li>
-<li>结果：细节（高频信息）被平滑掉，看起来更模糊。</li>
-</ul>
-<h4 id="3_1">(3) 锐化核</h4>
-<p>例子：</p>
-<div class="arithmatex">\[
-K =
-\begin{bmatrix}
-0 &amp; -1 &amp; 0 \\
--1 &amp; 5 &amp; -1 \\
-0 &amp; -1 &amp; 0
-\end{bmatrix}
-\]</div>
-<ul>
-<li>解释：中央像素被放大（权重大于 1），周围像素被减弱（负权重）。</li>
-<li>结果：边缘对比度被增强，图像看起来更清晰。</li>
-</ul>
-<h3 id="4">4. 总结</h3>
-<ul>
-<li><strong>卷积核的作用取决于里面的数字（权重）分布</strong>。</li>
-<li>不同的数字组合，决定了它是提取边缘、模糊、锐化，还是其他特征。</li>
-<li>在深度学习中，这些“数字组合”不是人工设置的，而是 <strong>网络自动学习出来的最优配方</strong>，用来完成任务（如识别猫、狗、人脸）。</li>
-</ul>
-<h2 id="_6">动态核介绍</h2>
-<h3 id="1_2">1. 动态核的基本定义</h3>
-<p>在传统的 CNN 里，<strong>卷积核（Convolution Kernel）</strong> 的参数是固定的，一旦训练完成，它就不会再随输入变化。
-而 <strong>动态核（Dynamic Kernel）</strong> 则是指：
-👉 <strong>卷积核的权重不再固定，而是根据输入样本动态生成或调整。</strong></p>
-<p>这样，模型在处理不同的输入时，能自适应地使用不同的特征提取方式。</p>
-<h3 id="2_2">2. 为什么需要动态核</h3>
-<ul>
-<li><strong>固定卷积核的局限</strong>：一组固定参数对所有输入都一样，可能无法捕捉到不同场景中的差异。</li>
-<li><strong>动态核的优势</strong>：让网络像“变焦镜头”一样，根据输入的内容调整自己，增强了模型的灵活性和适应性。</li>
-</ul>
-<p>举个比喻：</p>
-<ul>
-<li><strong>固定卷积核</strong>：像戴一副固定度数的眼镜，看任何东西都一样。</li>
-<li><strong>动态卷积核</strong>：像戴一副智能眼镜，可以根据远近、光线自动调节焦距和亮度。</li>
-</ul>
-<h3 id="3_2">3. 动态核的实现方式</h3>
-<p>常见的实现方式有几种：</p>
-<ol>
-<li>
-<p><strong>条件卷积（CondConv, 2019 Google 提出）</strong></p>
-</li>
-<li>
-<p>为每个卷积层准备多组核，</p>
-</li>
-<li>
-<p>然后用一个小网络（条件网络）根据输入决定每组核的加权组合。</p>
-</li>
-<li>
-<p><strong>动态卷积（Dynamic Convolution, 2020 Facebook 提出）</strong></p>
-</li>
-<li>
-<p>类似 CondConv，但更高效，适合 NLP 和 CV。</p>
-</li>
-<li>
-<p>在 NLP 中，它甚至被拿来替代部分注意力机制（attention）。</p>
-</li>
-<li>
-<p><strong>核生成网络（Kernel Generation Network）</strong></p>
-</li>
-<li>
-<p>通过一个额外的子网络，直接根据输入生成新的卷积核权重。</p>
-</li>
-</ol>
-<h3 id="4_1">4. 应用场景</h3>
-<ul>
-<li><strong>图像识别</strong>：提高在复杂、多样环境下的鲁棒性。</li>
-<li><strong>视频理解</strong>：根据时间序列变化动态调整卷积核。</li>
-<li><strong>自然语言处理（NLP）</strong>：动态卷积被用于提升 Transformer 的效率（比如 Facebook 的 DynamicConv）。</li>
-<li><strong>轻量化模型</strong>：动态核能在不大幅增加参数量的情况下增强表现力。</li>
-</ul>
-<h3 id="5">5. 总结</h3>
-<ul>
-<li><strong>传统卷积核</strong>：固定的，所有输入用同一套滤镜。</li>
-<li><strong>动态卷积核</strong>：可变的，根据输入内容自适应调整滤镜。</li>
-<li><strong>意义</strong>：增强模型的灵活性和表达能力，能更好地处理复杂、多样化的数据。</li>
-</ul>
-<h2 id="_7">神经网络介绍</h2>
-<h3 id="1_3">1. 直观理解</h3>
-<p>神经网络的灵感来自人脑。</p>
-<ul>
-<li><strong>人脑</strong>：有很多神经元，接收信号 → 处理 → 决定是否激活 → 把信号传给其他神经元。</li>
-<li><strong>人工神经网络</strong>：用数学函数去模仿这种机制，把输入（数据）逐层传递、加工，最后得到输出（预测结果）。</li>
-</ul>
-<p>👉 可以把它想象成一群“信息加工工人”：</p>
-<ul>
-<li>每个工人（神经元）只做一点点加权计算和判断。</li>
-<li>但成千上万个工人（神经元）一起合作，就能完成复杂任务（比如识别猫狗、翻译语言）。</li>
-</ul>
-<h3 id="2_3">2. 数学上的结构</h3>
-<p>一个神经网络由 <strong>层（Layers）</strong> 组成：</p>
-<ul>
-<li><strong>输入层（Input Layer）</strong>：接收数据（如一张图的像素、一个句子的词向量）。</li>
-<li><strong>隐藏层（Hidden Layers）</strong>：多层神经元处理并提取特征。</li>
-<li><strong>输出层（Output Layer）</strong>：给出结果（比如“这是猫”的概率 90%）。</li>
-</ul>
-<p>每个神经元的计算过程：</p>
-<div class="arithmatex">\[
-输出 = 激活函数( \sum (输入 \times 权重) + 偏置 )
-\]</div>
-<p>其中：</p>
-<ul>
-<li><strong>权重 (Weight)</strong>：表示输入的重要性。</li>
-<li><strong>偏置 (Bias)</strong>：表示整体的调整。</li>
-<li><strong>激活函数</strong>：决定神经元是否激活，赋予网络非线性能力。</li>
-</ul>
-<h3 id="3_3">3. 神经网络的学习过程</h3>
-<p>神经网络需要“训练”：</p>
-<ol>
-<li><strong>正向传播（Forward Propagation）</strong>
-   输入数据经过网络计算，得到预测结果。</li>
-<li><strong>计算误差（Loss Function）</strong>
-   比较预测和真实答案之间的差距。</li>
-<li><strong>反向传播（Backpropagation）</strong>
-   误差往回传，调整权重和偏置。</li>
-<li><strong>梯度下降（Gradient Descent）</strong>
-   通过不断迭代，让网络的预测越来越接近真实。</li>
-</ol>
-<p>👉 就像学生做题 → 检查错题 → 老师批改 → 下次改进。</p>
-<h3 id="4_2">4. 神经网络能做什么？</h3>
-<ul>
-<li>图像识别（识别猫、狗、人脸）</li>
-<li>自然语言处理（翻译、聊天机器人）</li>
-<li>游戏 AI（AlphaGo）</li>
-<li>语音识别、自动驾驶、医学诊断……</li>
-</ul>
-<h2 id="mlp">多层感知机 MLP 介绍</h2>
-<h3 id="1-perceptron">1. 什么是感知机（Perceptron）</h3>
-<ul>
-<li>感知机是最简单的神经元模型。</li>
-<li>它的计算公式：</li>
-</ul>
-<div class="arithmatex">\[
-y = f\left(\sum (w_i \cdot x_i) + b \right)
-\]</div>
-<p>其中：</p>
-<ul>
-<li><span class="arithmatex">\(x_i\)</span> = 输入</li>
-<li><span class="arithmatex">\(w_i\)</span> = 权重</li>
-<li><span class="arithmatex">\(b\)</span> = 偏置</li>
-<li><span class="arithmatex">\(f\)</span> = 激活函数</li>
-</ul>
-<p>👉 可以理解为：把输入加权求和，再通过一个“开关”（激活函数），得到输出。</p>
-<h3 id="2-mlp">2. 多层感知机（MLP）的结构</h3>
-<p>单个感知机很弱，只能解决线性问题。
-所以人们把很多感知机堆叠起来，形成 <strong>多层感知机（MLP）</strong>。</p>
-<p>MLP 一般包括：</p>
-<ul>
-<li><strong>输入层（Input Layer）</strong>：接收数据（如图像像素、文本向量）。</li>
-<li><strong>隐藏层（Hidden Layers）</strong>：由多个感知机组成，每层输出作为下一层的输入。</li>
-<li><strong>输出层（Output Layer）</strong>：给出最终结果（分类、回归等）。</li>
-</ul>
-<p>👉 关键点：<strong>隐藏层越多、神经元越多，MLP 的表达能力越强。</strong></p>
-<h3 id="3-mlp">3. MLP 的计算流程</h3>
-<ol>
-<li>输入层接收数据（如 28×28 像素的手写数字 → 展平成 784 维向量）。</li>
-<li>数据逐层传递，每层神经元做：加权求和 → 激活函数。</li>
-<li>输出层得到预测结果。</li>
-</ol>
-<h3 id="4_3">4. 激活函数的重要性</h3>
-<ul>
-<li>如果没有激活函数，MLP 只能表示“直线”。</li>
-<li>有了激活函数，MLP 就能表示复杂的“曲线关系”，解决非线性问题（比如区分猫和狗）。</li>
-</ul>
-<h3 id="5-mlp">5. MLP 的特点</h3>
-<p>✅ 优点：</p>
-<ul>
-<li>结构简单，易于理解和实现。</li>
-<li>是深度学习的基础模型，适合入门。</li>
-<li>可以处理任意形式的输入（图像、文本、表格数据等）。</li>
-</ul>
-<p>⚠️ 缺点：</p>
-<ul>
-<li>参数量可能很大（输入维度 × 神经元数）。</li>
-<li>没有利用数据的空间或序列结构（图像要用 CNN，序列要用 RNN/Transformer）。</li>
-</ul>
-<h3 id="6">6. 总结</h3>
-<ul>
-<li><strong>MLP = 多层感知机 = 最经典的前馈神经网络</strong>。</li>
-<li>由输入层、多个隐藏层和输出层组成。</li>
-<li>每个神经元：加权求和 → 激活函数 → 输出。</li>
-<li>通过训练（反向传播 + 梯度下降）自动调整参数。</li>
-<li>是深度学习最基础的模型，但在图像/语言等任务中通常被更专业的网络（CNN、RNN、Transformer）替代。</li>
-</ul>
-<h2 id="cnn">CNN 介绍</h2>
-<h3 id="1-cnn">1. 什么是 CNN？</h3>
-<p>CNN （卷积神经网络, Convolutional Neural Network）是一种 <strong>深度学习模型</strong>，专门擅长处理 <strong>具有空间结构的数据</strong>，比如图像、视频、语音和时间序列。</p>
-<p>与普通的全连接神经网络（MLP）相比，CNN 通过 <strong>卷积运算</strong> 提取局部特征，可以自动从原始数据中学到边缘、纹理、形状等信息。</p>
-<p>👉 <strong>一句话理解</strong>：
-CNN 就像一个“特征提取工厂”，它能自动从图片里找到猫的耳朵、狗的鼻子、汽车的轮子等关键信息，而不用人工设计特征。</p>
-<hr />
-<h3 id="2-cnn">2. CNN 的核心结构</h3>
-<p>CNN 主要由三类层组成：</p>
-<ol>
-<li>
-<p><strong>卷积层（Convolutional Layer）</strong></p>
-</li>
-<li>
-<p>用卷积核（小矩阵）在输入数据上滑动，提取局部特征。</p>
-</li>
-<li>低层卷积核：检测边缘、颜色块。</li>
-<li>
-<p>高层卷积核：检测复杂形状（比如眼睛、脸）。</p>
-</li>
-<li>
-<p><strong>池化层（Pooling Layer）</strong></p>
-</li>
-<li>
-<p>对特征图进行缩小（比如取最大值 MaxPooling 或平均值 AveragePooling）。</p>
-</li>
-<li>
-<p>作用：减少计算量、降低过拟合、保留重要信息。</p>
-</li>
-<li>
-<p><strong>全连接层（Fully Connected Layer）</strong></p>
-</li>
-<li>
-<p>在最后阶段，把卷积层提取的特征组合起来，用于分类或回归。</p>
-</li>
-<li>例如：输出“这是一只猫”的概率 = 0.92。</li>
-</ol>
-<hr />
-<h3 id="3-cnn">3. CNN 的工作流程（图像分类为例）</h3>
-<ol>
-<li><strong>输入</strong>：一张图片（比如猫）。</li>
-<li><strong>卷积</strong>：卷积核提取边缘、纹理等局部特征。</li>
-<li><strong>池化</strong>：缩小特征图，减少冗余。</li>
-<li><strong>多层卷积 + 池化</strong>：逐层提取越来越复杂的特征（耳朵 → 脸 → 整只猫）。</li>
-<li><strong>全连接层</strong>：综合所有特征，进行分类。</li>
-<li><strong>输出</strong>：预测结果，比如「猫：92%，狗：7%，其他：1%」。</li>
-</ol>
-<hr />
-<h3 id="4-cnn">4. CNN 的优势</h3>
-<ul>
-<li><strong>局部连接</strong>：每个卷积核只关注局部区域，适合捕捉图像局部模式。</li>
-<li><strong>参数共享</strong>：同一个卷积核在全图使用，减少参数数量，提升效率。</li>
-<li><strong>层次结构</strong>：底层学简单特征，高层学复杂特征。</li>
-<li><strong>泛化能力强</strong>：能自动提取特征，不需要手工设计。</li>
-</ul>
-<hr />
-<h3 id="5_1">5. 现实应用</h3>
-<ul>
-<li><strong>图像识别</strong>（猫狗识别、人脸识别）</li>
-<li><strong>目标检测</strong>（自动驾驶中的行人检测）</li>
-<li><strong>医学影像</strong>（肿瘤识别、X 光分析）</li>
-<li><strong>语音识别</strong>（声谱图特征提取）</li>
-<li><strong>自然语言处理</strong>（文本分类、情感分析）</li>
-</ul>
-<h2 id="rnn">RNN 介绍</h2>
-<h3 id="1-rnn">1. 什么是 RNN？</h3>
-<p>RNN （循环神经网络，Recurrent Neural Network）是一种<strong>专门处理序列数据的神经网络</strong>，擅长处理时间或顺序相关的信息，例如：</p>
-<ul>
-<li>文字序列 → 句子生成、翻译</li>
-<li>语音信号 → 语音识别</li>
-<li>视频帧 → 动作识别</li>
-<li>时间序列数据 → 股票预测、传感器数据分析</li>
-</ul>
-<p>RNN 的核心思想是 <strong>记住过去的信息</strong>，把序列前面输入的状态影响后面的输出。</p>
-<hr />
-<h3 id="2-rnn">2. RNN 的结构特点</h3>
-<p>普通神经网络（如 MLP、CNN）假设输入独立，而 RNN 引入了 <strong>循环连接</strong>：</p>
-<ul>
-<li>每个时间步的输出不仅依赖当前输入，还依赖上一个时间步的隐藏状态（hidden state）。</li>
-<li>公式表示：</li>
-</ul>
-<div class="arithmatex">\[
-h_t = f(W_{xh} x_t + W_{hh} h_{t-1} + b_h)
-\]</div>
-<div class="arithmatex">\[
-y_t = g(W_{hy} h_t + b_y)
-\]</div>
-<p>其中：</p>
-<ul>
-<li><span class="arithmatex">\(x_t\)</span>：当前时间步输入</li>
-<li><span class="arithmatex">\(h_t\)</span>：当前隐藏状态（记忆）</li>
-<li><span class="arithmatex">\(h_{t-1}\)</span>：上一个时间步的隐藏状态</li>
-<li><span class="arithmatex">\(y_t\)</span>：当前输出</li>
-<li><span class="arithmatex">\(f, g\)</span>：激活函数</li>
-</ul>
+<p>《Lab02—建立 CPU 调试测试环境》详细描述了浙江大学《计算机组成与设计》课程实验中搭建的<strong>单周期 RISC-V SoC（System on Chip）架构</strong>。下面是对该 CPU 及整体 SOC 架构的完整解析。</p>
+<h2 id="_1">🧠 一、整体架构概览</h2>
+<p>实验目标是：</p>
 <blockquote>
-<p>隐藏状态 <span class="arithmatex">\(h_t\)</span> 就像“记忆”，能够让网络记住序列信息。</p>
+<p><strong>基于 RISC-V 单周期 CPU 核心（SCPU），使用 Vivado 集成多个外设 IP 核，建立一个可调试、可测试、可显示的简易 SoC 系统。</strong></p>
+</blockquote>
+<p>其顶层模块名为 <strong><code>CSSTE.v</code></strong>（Computer System - Single-cycle processor Test Environment）。</p>
+<p>系统由 <strong>11 个主要模块（U1~U11）</strong> 构成：</p>
+<table>
+<thead>
+<tr>
+<th>模块代号</th>
+<th>模块名称</th>
+<th>功能简述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>U1</strong></td>
+<td><code>SCPU</code></td>
+<td>单周期 RISC-V CPU 核心</td>
+</tr>
+<tr>
+<td><strong>U2</strong></td>
+<td><code>ROM_D</code></td>
+<td>指令存储器（I_mem）</td>
+</tr>
+<tr>
+<td><strong>U3</strong></td>
+<td><code>RAM_B</code></td>
+<td>数据存储器（D_mem）</td>
+</tr>
+<tr>
+<td><strong>U4</strong></td>
+<td><code>MIO_BUS</code></td>
+<td>CPU 与外设/存储器之间的总线接口</td>
+</tr>
+<tr>
+<td><strong>U5</strong></td>
+<td><code>Multi_8CH32</code></td>
+<td>8 通道 32 位数据多路选择器，用于数码管调试显示</td>
+</tr>
+<tr>
+<td><strong>U6</strong></td>
+<td><code>Seg7_Dev</code></td>
+<td>七段数码管显示驱动</td>
+</tr>
+<tr>
+<td><strong>U7</strong></td>
+<td><code>SPIO</code></td>
+<td>GPIO/LED 显示模块</td>
+</tr>
+<tr>
+<td><strong>U8</strong></td>
+<td><code>clk_div</code></td>
+<td>时钟分频模块（提供全速/自动单步/手动单步）</td>
+</tr>
+<tr>
+<td><strong>U9</strong></td>
+<td><code>SAnti_jitter</code></td>
+<td>按键/开关去抖动模块</td>
+</tr>
+<tr>
+<td><strong>U10</strong></td>
+<td><code>Counter_x</code></td>
+<td>通用三通道计数器外设</td>
+</tr>
+<tr>
+<td><strong>U11</strong></td>
+<td><code>VGA</code></td>
+<td>VGA 显示模块，用于调试信号显示</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cpu-u1scpu">🧩 二、CPU 核心（U1：SCPU）</h2>
+<h3 id="_2">架构类型：</h3>
+<ul>
+<li><strong>RISC-V RV32I 单周期处理器</strong></li>
+<li>支持六种指令类型：R / I / S / B / U / J
+  共约 <strong>26 条基础指令</strong>（add、sub、lw、sw、beq、jal、lui 等）</li>
+</ul>
+<h3 id="_3">核心组成模块：</h3>
+<table>
+<thead>
+<tr>
+<th>组成单元</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PC（程序计数器）</strong></td>
+<td>保存当前指令地址</td>
+</tr>
+<tr>
+<td><strong>IFU（取指单元）</strong></td>
+<td>从 ROM 中取出指令</td>
+</tr>
+<tr>
+<td><strong>IDU（译码单元）</strong></td>
+<td>解析操作码，生成控制信号</td>
+</tr>
+<tr>
+<td><strong>ALU</strong></td>
+<td>实现算术逻辑运算（add、and、slt 等）</td>
+</tr>
+<tr>
+<td><strong>Register File</strong></td>
+<td>32 个通用寄存器（x0~x31）</td>
+</tr>
+<tr>
+<td><strong>CU（控制单元）</strong></td>
+<td>生成控制信号：MemRW、RegWrite、Branch、ALUSrc 等</td>
+</tr>
+<tr>
+<td><strong>中断接口</strong></td>
+<td>INT 信号输入（后续实验实现）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">外部接口：</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">input</span><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">inst_in</span><span class="p">,</span><span class="w">  </span><span class="c1">// 指令输入</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">input</span><span class="w">  </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Data_in</span><span class="p">,</span><span class="w">  </span><span class="c1">// 数据输入（从RAM/IO）</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">PC_out</span><span class="p">,</span><span class="w">   </span><span class="c1">// 程序计数器</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Addr_out</span><span class="p">,</span><span class="w"> </span><span class="c1">// 数据访问地址</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">31</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Data_out</span><span class="p">,</span><span class="w"> </span><span class="c1">// 写出数据</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Mem_RW</span><span class="p">;</span><span class="w">          </span><span class="c1">// 存储器读写信号</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_5">💾 三、存储系统</h2>
+<h3 id="1-romu2">1️⃣ 指令存储器 ROM（U2）</h3>
+<ul>
+<li>采用 Vivado IP “Distributed Memory Generator”</li>
+<li>容量：<code>1024 x 32bit</code></li>
+<li>初始化文件：<code>I_mem.coe</code></li>
+<li><strong>CPU 通过 PC_out[11:2]访问</strong>，输出指令 inst[31:0]</li>
+</ul>
+<hr />
+<h3 id="2-ramu3">2️⃣ 数据存储器 RAM（U3）</h3>
+<ul>
+<li>采用 Vivado IP “Block Memory Generator”</li>
+<li>容量：<code>1024 x 32bit</code></li>
+<li>初始化文件：<code>D_mem.coe</code></li>
+<li>接口：</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">RAM_B</span><span class="p">(.</span><span class="n">clka</span><span class="p">(</span><span class="n">clk_m</span><span class="p">),</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">      </span><span class="p">.</span><span class="n">wea</span><span class="p">(</span><span class="n">data_ram_we</span><span class="p">),</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">      </span><span class="p">.</span><span class="n">addra</span><span class="p">(</span><span class="n">ram_addr</span><span class="p">),</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">      </span><span class="p">.</span><span class="n">dina</span><span class="p">(</span><span class="n">ram_data_in</span><span class="p">),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">      </span><span class="p">.</span><span class="n">douta</span><span class="p">(</span><span class="n">ram_data_out</span><span class="p">));</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="u4-mio_bus">🔗 四、系统总线 (U4: MIO_BUS)</h2>
+<p>负责连接 CPU、RAM 与外设的通信，是 SoC 的“枢纽”。</p>
+<ul>
+<li>
+<p>功能：</p>
+</li>
+<li>
+<p>地址译码：根据地址范围确定访问哪个从设备（ROM、RAM、LED、Seg7 等）</p>
+</li>
+<li>数据通路：CPU 与外设、RAM 的数据交换</li>
+<li>控制信号生成：GPIOf0000000_we、GPIOe0000000_we、counter_we 等</li>
+</ul>
+<h3 id="_6">地址映射：</h3>
+<table>
+<thead>
+<tr>
+<th>地址范围</th>
+<th>设备</th>
+<th>模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00000000 – 0x00000FFC</td>
+<td>RAM 数据区</td>
+<td>U3</td>
+</tr>
+<tr>
+<td>0xE0000000 – 0xEFFFFFFF</td>
+<td>七段数码管接口</td>
+<td>U5 + U6</td>
+</tr>
+<tr>
+<td>0xF0000000 – 0xFFFFFFFF</td>
+<td>GPIO &amp; LED</td>
+<td>U7</td>
+</tr>
+<tr>
+<td>0xFFFFFF04 – 0xFFFFFFF4</td>
+<td>计数器接口</td>
+<td>U10</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">💡 五、外设子系统</h2>
+<h3 id="1-spio-gpio-led-u7">(1) <code>SPIO</code> —— GPIO + LED 模块（U7）</h3>
+<ul>
+<li>控制 16 个 LED 显示灯</li>
+<li>地址：0xF0000000 – 0xFFFFFFFF</li>
+<li>可同时输出 <code>counter_set</code> 控制信号至计数器</li>
+</ul>
+<h3 id="2-seg7_dev-u6">(2) <code>Seg7_Dev</code> —— 七段数码管显示模块（U6）</h3>
+<ul>
+<li>地址：0xE0000000 – 0xEFFFFFFF</li>
+<li>接收来自 Multi_8CH32 的数据并驱动 8 个数码管</li>
+</ul>
+<h3 id="3-multi_8ch32-8-32-u5">(3) <code>Multi_8CH32</code> —— 8 通道 32 位多路选择器（U5）</h3>
+<ul>
+<li>用于<strong>调试显示切换</strong>（SW[7:5]控制显示内容）</li>
+<li>
+<p>可显示：</p>
+</li>
+<li>
+<p>CPU 指令字节地址（PC_out）</p>
+</li>
+<li>ROM 输出指令（inst）</li>
+<li>ALU 结果</li>
+<li>RAM 地址/数据</li>
+<li>计数器值</li>
+<li>等共 8 个通道内容</li>
+</ul>
+<h3 id="4-counter_x-u10">(4) <code>Counter_x</code> —— 通用三通道计数器（U10）</h3>
+<ul>
+<li>可作定时/计时外设</li>
+<li>地址：0xFFFFFF04 – 0xFFFFFFF4</li>
+</ul>
+<h3 id="5-vga-u11">(5) <code>VGA</code> —— 调试显示（U11）</h3>
+<ul>
+<li>实时显示：PC、inst、ALU 结果、RAM 地址/数据等</li>
+<li>分辨率 640x480，25MHz 点时钟</li>
+</ul>
+<hr />
+<h2 id="_8">🕹️ 六、辅助模块</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>U8 clk_div</strong></td>
+<td>提供多模式 CPU 时钟：<br>• SW2, SW8 控制<br>• 全速 100MHz / 自动单步 / 手动单步(SW10 触发)</td>
+</tr>
+<tr>
+<td><strong>U9 SAnti_jitter</strong></td>
+<td>消除按钮/拨码开关抖动，输出稳态信号 SW_OK、BTN_OK</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">🧭 七、系统运行机制</h2>
+<ol>
+<li>
+<p><strong>取指阶段：</strong></p>
+</li>
+<li>
+<p>CPU 输出 <code>PC_out</code> → ROM 返回 <code>inst_in</code></p>
+</li>
+<li>
+<p><strong>译码执行阶段：</strong></p>
+</li>
+<li>
+<p>控制器生成 <code>MemRW</code>、ALU 操作、寄存器控制信号</p>
+</li>
+<li>
+<p><strong>访存阶段：</strong></p>
+</li>
+<li>
+<p>若访存指令（lw/sw），则通过 <code>MIO_BUS</code> 访问 RAM 或 I/O</p>
+</li>
+<li>
+<p><strong>写回阶段：</strong></p>
+</li>
+<li>
+<p>结果写入寄存器或外设</p>
+</li>
+<li>
+<p><strong>显示与调试：</strong></p>
+</li>
+<li>
+<p>通过 <code>Multi_8CH32 + Seg7_Dev</code> 或 <code>VGA</code> 输出状态信号</p>
+</li>
+<li>
+<p><strong>人机交互：</strong></p>
+</li>
+<li>
+<p>SW 控制显示通道、步进方式</p>
+</li>
+<li>LED 反映外设或程序状态</li>
+</ol>
+<hr />
+<h2 id="_10">⚙️ 八、实验特性与运行方式</h2>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>SW[8:2] 设置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>CPU 全速运行</td>
+<td></td>
+</tr>
+<tr>
+<td>01</td>
+<td>自动单步（2²⁴ 分频）</td>
+<td></td>
+</tr>
+<tr>
+<td>1X</td>
+<td>手动单步（SW10 触发）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>SW[7:5]</th>
+<th>数码管显示内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000</td>
+<td>CPU 程序输出</td>
+</tr>
+<tr>
+<td>001</td>
+<td>PC 地址</td>
+</tr>
+<tr>
+<td>010</td>
+<td>ROM 指令</td>
+</tr>
+<tr>
+<td>011</td>
+<td>Counter 计数值</td>
+</tr>
+<tr>
+<td>100</td>
+<td>ALU 输出地址</td>
+</tr>
+<tr>
+<td>101</td>
+<td>CPU 数据输出</td>
+</tr>
+<tr>
+<td>110</td>
+<td>RAM 数据输入</td>
+</tr>
+<tr>
+<td>111</td>
+<td>PC 指令字节地址</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">🧩 九、架构总结图（逻辑关系）</h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>         +----------------------+
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>         |     SCPU (U1)       |
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>         +---------+------------+
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>                   |
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>                   | inst_in (from ROM)
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>                   |
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        +----------v----------+
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        |    ROM_D (U2)       | ← 指令存储器
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        +---------------------+
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>                   |
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>                   | Addr/Data
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>                   v
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>        +---------------------+
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>        |   MIO_BUS (U4)      | ← 地址译码/数据交换
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>        +---+---+---+---+-----+
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>            |   |   |   |
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>            |   |   |   |
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>      +-----v-+ |   |   +------+
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>      |  RAM_B | |   |   |Counter|
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>      |   (U3) | |   |   |  (U10)|
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>      +---------+ |   |   +------+
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>                  |   |
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>                  v   v
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>               +------+------+
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>               | GPIO / LED  |
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>               |  (U7, U5, U6)|
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>               +------+------+
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>                      |
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>                   +--v--+
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>                   | VGA |
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>                   +-----+
+</code></pre></div></td></tr></table></div>
+<hr />
+<p>✅ <strong>总结一句话：</strong></p>
+<blockquote>
+<p>本实验搭建的 CPU 是基于 <strong>RISC-V RV32I 单周期架构</strong> 的教学 SoC，包含指令/数据存储、总线、GPIO、计数器、显示与调试模块，具备完整的输入输出与时序控制，是一个简化的教学级 <strong>CPU + SoC 集成系统</strong>。</p>
 </blockquote>
 <hr />
-<h3 id="3-rnn">3. RNN 的工作流程（举例：文字生成）</h3>
-<ol>
-<li>输入序列：<strong>“今天天气很好”</strong></li>
-<li>第一个字 “今” 输入 → 计算隐藏状态 h1 → 输出预测</li>
-<li>第二个字 “天” 输入 → 隐藏状态 h1 + 当前输入 → 更新 h2 → 输出预测</li>
-<li>第三个字 “天” 输入 → 隐藏状态 h2 + 当前输入 → 更新 h3 → 输出预测</li>
-<li>…</li>
-<li>最终输出：模型可以根据前面的文字预测下一个字，生成连贯句子</li>
-</ol>
-<hr />
-<h3 id="4-rnn">4. RNN 的优势</h3>
+<h2 id="_12">实验过程注意事项</h2>
+<p><strong>生成 ROM 的流程：</strong></p>
 <ul>
-<li>能处理 <strong>序列数据</strong>，理解上下文信息</li>
-<li>可以 <strong>共享参数</strong>，不同时间步使用同一组权重，减少参数量</li>
-<li>可应用于文本、语音、视频、金融等多种时序任务</li>
+<li>IP Catalog -&gt; 搜索 memory generator -&gt; 选择 Distributed Memory Generator -&gt; memory config 中设置为 ROM，设置存储单元数 Depth 为 1024、字长 Data Width 为 32 -&gt; RST &amp; Initialization 中选择 coe 文件 I_mem.coe -&gt; OK <del>-&gt; 下一个界面选择 Global</del> -&gt; Generate</li>
+<li>课件中顺序有误，memory config 中设置后不要点 OK……</li>
+<li>clk 引脚自动 disable，不用手动删除</li>
+<li>coe 文件路径不能有中文，要修改提供的文件夹名称</li>
+<li>基于 lab0 的经验我选了 Global，但实际在 Synrhsis Opetions 似乎选 Out of Context per IP 更便于调试？</li>
 </ul>
-<hr />
-<h3 id="5-rnn">5. RNN 的问题</h3>
+<p><strong>生成 RAM 的流程：</strong></p>
 <ul>
-<li><strong>梯度消失/爆炸</strong>：长序列训练困难</li>
-<li><strong>短期记忆能力有限</strong>：对于长距离依赖（例如文章开头的信息影响结尾）难以记住</li>
+<li>本实验中提供了接口定义和网表文件，不用自己创建！</li>
+<li>IP Catalog -&gt; 搜索 Block Memory Generator -&gt; Basic 中,memory type 选择 Single Port RAM -&gt; Port A Options 中，设置 Width 为 32、Depth 为 1024，Enable Port Type 选择 Always Enabled -&gt; 不勾选 Primitives Output Register -&gt; OK</li>
+<li>课件中提到初始化文档为 D_mem.coe，但实际上 <del>这个文档没有给</del> RAM 可不初始化，因此不用添加</li>
+<li>Operating Mode 决定读写在同一个地址时怎么选择，lab0 中选择 No change，但我这里选了 Read first？</li>
+<li>Primitives Output Register 会使输出时加寄存器，有一个时钟的延迟，这里不勾选</li>
+<li>RAM 中各个端口：</li>
+<li>.clka(clk_m), // 存储器时钟，与 CPU 反向</li>
+<li>.wea(data_ram_we), // 存储器读写，来自 MIO_BUS</li>
+<li>.addra(ram_addr), // 地址线，来自 MIO_BUS</li>
+<li>.dina(ram_data_in), // 输入数据线，来自 MIO_BUS</li>
+<li>.douta(ram_data_out) // 输出数据线，来自 MIO_BUS</li>
+<li>输入地址：wea 使能为写、输入数据，则数据写入 RAM；输入地址：wea 使能为读、输出数据。</li>
 </ul>
+<p><strong>用.v 文件和.edf 文件设置模块：</strong></p>
+<ul>
+<li>Add or Create Design Sources -&gt; Add Files -&gt; 选择.v 文件和.edf 文件 -&gt; Finish</li>
+<li>.v 文件定义接口，.edf 文件规定门级实现，两者必须一起添加，且文件名必须相同</li>
+</ul>
+<p>本 lab 中已经提供的文件为：</p>
 <blockquote>
-<p>解决方案：出现了 <strong>LSTM（长短期记忆网络）</strong> 和 <strong>GRU（门控循环单元）</strong>，专门解决长序列记忆问题。</p>
+<p>abies@sjqqq:/mnt/d/_Courses/Computer Organization/Lab2_CPU_intro/OExp02-IP2SOC$ ls
+A7.xdc IP I_mem.coe font_8x16.mem vga_debugger.mem
+abies@sjqqq:/mnt/d/_Courses/Computer Organization/Lab2_CPU_intro/OExp02-IP2SOC$ cd IP
+abies@sjqqq:/mnt/d/_Courses/Computer Organization/Lab2_CPU_intro/OExp02-IP2SOC/IP$ ls
+Counter_x.edf MIO_BUS.v RAM_B.edf SAnti_jitter.v SPIO.edf VGA clk_div.edf
+Counter_x.v Multi_8CH32.edf RAM_B.v SCPU.edf SPIO.v VGA.edf clk_div.v
+MIO_BUS.edf Multi_8CH32.v SAnti_jitter.edf SCPU.v Seg7_Dev VGA.v</p>
 </blockquote>
+<p>直接导入所有.v 文件和.edf 文件即可</p>
+<p><strong>导出 IP 核：</strong></p>
+<ul>
+<li>Tools -&gt; Create and Package New IP -&gt; Package your current file -&gt; 先新建文件夹，再设置文件夹路径 -&gt; OK</li>
+</ul>
+<p><strong>调用 IP 核：</strong></p>
+<ul>
+<li>Settings -&gt; IP -&gt; Repository -&gt; 选择 IP 核路径 -&gt; OK -&gt; IP Catalog -&gt; 搜索 IP 核名称 -&gt; 选择 IP 核，勾选 Global？ -&gt; Generate</li>
+<li>本实验中 Seg7_Dev 需要调用工程文件的 IP，<del>好像可以直接复制某些文件但我没搞懂 T_T</del> 直接导出 IP 核再调用完成了</li>
+</ul>
+<p><strong>其他：</strong></p>
+<ul>
+<li>上课给出的 IP/VGA/...src/new 中有 VgaDisplay.v 文件，里面固定了用于 VGA 显示的文件路径：D://vga_debugger.mem 和 D://font_8x16.mem。可能需要将这两个文件放到 D 盘下？</li>
+</ul>
 
 
 
@@ -1753,7 +1631,7 @@ y_t = g(W_{hy} h_t + b_y)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月16日 15:34:29 UTC">2025-09-16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月22日 03:42:14 UTC">2025-10-22</span>
   </span>
 
     
@@ -1763,7 +1641,7 @@ y_t = g(W_{hy} h_t + b_y)
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月13日 13:33:35 UTC">2025-09-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月22日 03:42:14 UTC">2025-10-22</span>
   </span>
 
     
