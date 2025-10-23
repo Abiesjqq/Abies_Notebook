@@ -238,6 +238,8 @@ nav:
           - Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution.md
           - Unleashing the Power of One-Step Diffusion based Image Super-Resolution via a Large-Scale Diffusion Discriminator: 论文阅读/Diffusion/Unleashing the Power of One-Step Diffusion based Image Super-Resolution/Unleashing the Power of One-Step Diffusion based Image Super-Resolution.md
           - DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution.md
+      - 4D Generation:
+          - L4GM: 论文阅读/4D生成/L4GM/L4GM.md
   - 一些小玩意:
       - 跳转与介绍: snippet/links.md
 extra:
