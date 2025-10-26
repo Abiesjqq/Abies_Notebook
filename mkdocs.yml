@@ -112,6 +112,7 @@ nav:
           - 左偏堆，斜堆: CourseNotes/Advance Data Structure/ADS04.md
           - 二项队列: CourseNotes/Advance Data Structure/ADS05.md
           - 回溯: CourseNotes/Advance Data Structure/ADS06.md
+          - 分治: CourseNotes/Advance Data Structure/ADS07.md
       - 普通物理学II:
           - 数学基础: CourseNotes/General Physics II/Phy00.md
           - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
