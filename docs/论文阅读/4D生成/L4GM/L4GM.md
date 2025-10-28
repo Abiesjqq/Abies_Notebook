@@ -42,7 +42,7 @@ $$
 \begin{aligned}
 \mathbf{x} &= \texttt{rearrange}(\mathbf{x}, \texttt{(B T V) H W C} \to \texttt{(B V)(T H W) C}) \\
 \mathbf{x} &= \mathbf{x} + \text{TempSelfAttn}(\mathbf{x}) \\
-\mathbf{x} = \texttt{rearrange}(\mathbf{x}, \texttt{(B V)(T H W) C} \to \texttt{(B T V) H W C})
+\mathbf{x} &= \texttt{rearrange}(\mathbf{x}, \texttt{(B V)(T H W) C} \to \texttt{(B T V) H W C})
 \end{aligned}
 $$
 
@@ -56,4 +56,4 @@ $$
     | **C**    | 通道数（Channel），即每个像素的特征维度       |
 
 
-上面的操作把时间维度 ($\texttt{T}$) 和空间维度 ($\texttt{H W}$) 中，便方便做时序自注意力
+上面的操作把时间维度 ($\texttt{T}$) 展开到空间维度 ($\texttt{H W}$) 中，便方便做时序自注意力

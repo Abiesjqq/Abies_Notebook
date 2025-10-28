@@ -189,6 +189,7 @@ nav:
       - 算法设计分析:
           - 分治: NoflowersNotes/算法设计分析/分治/分治.md
           - 图: NoflowersNotes/算法设计分析/图/图.md
+          - 贪: NoflowersNotes/算法设计分析/贪心/贪心.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - Vision Course (进行中):
