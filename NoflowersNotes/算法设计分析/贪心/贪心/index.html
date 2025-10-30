@@ -20,7 +20,7 @@
     
     
       
-        <title>贪 - Abies's Notebook</title>
+        <title>贪心 - Abies's Notebook</title>
       
     
     
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              贪
+              贪心
             
           </span>
         </div>
@@ -1064,7 +1064,7 @@
   
   
   <span class="md-ellipsis">
-    贪
+    贪心
     
   </span>
   
@@ -1077,7 +1077,7 @@
   
   
   <span class="md-ellipsis">
-    贪
+    贪心
     
   </span>
   
@@ -1129,6 +1129,30 @@
   <a href="#kruskals-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       Kruskal's Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greedy-based-approximation-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy-Based Approximation Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greedy-Based Approximation Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#max-k-coverage-and-set-cover-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Max-k-coverage and Set Cover Problems
     </span>
   </a>
   
@@ -1395,6 +1419,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#greedy-based-approximation-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy-Based Approximation Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greedy-Based Approximation Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#max-k-coverage-and-set-cover-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Max-k-coverage and Set Cover Problems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1414,11 +1462,11 @@
   
 
 
-  <h1>贪</h1>
+  <h1>贪心</h1>
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>0</strong> 个字&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>4</strong> 个字&nbsp;&nbsp;<strong>5</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="hard-problem">Hard Problem</h2>
 <p><strong>The Partition Problem</strong>: Get a partition of num-set <span class="arithmatex">\(S\)</span> such that <span class="arithmatex">\(\sum_{S_1}x = \sum_{S_2}x\)</span> &rarr; NP hard. (Proof later)</p>
@@ -1432,6 +1480,7 @@ Then the arrangement of the other tasks is a partition problem!</p>
 </div>
 <h2 id="minimum-spanning-tree-mst">Minimum Spanning Tree (MST)</h2>
 <p>Definition and algorithms were introduced in discrete math, omitted.</p>
+<p>The following algorithms are available for undirected graphs!</p>
 <h3 id="prim-algorithm">Prim Algorithm</h3>
 <p>Add a node into the tree each time. Exactly, from a vertex, add a node into the tree with the closest edge weight.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -1465,8 +1514,108 @@ Then the arrangement of the other tasks is a partition problem!</p>
 <p>With Fibonacci heap, we have <span class="arithmatex">\(O(\vert E \vert + \vert V \vert \log \vert V \vert)\)</span></p>
 <h3 id="kruskals-algorithm">Kruskal's Algorithm</h3>
 <p>Add an edge between the vertices each time. Exactly, sorting the edges and choose a shortest edge which will not form a cycle and add it into the tree edges.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>to be completed...
+<p>To simplify the process of detecting cycle-formation, we utilize <strong>union-find set</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sort(E, ascending)
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>for each u, create a group containing only u
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>for each (u, v) in E with ascending order:
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    if root(u) ≠ root(v):
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>        add (u, v) into the MST
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>        union(u, v)
 </code></pre></div></td></tr></table></div>
+<div class="admonition remarks">
+<p class="admonition-title">Union-Find</p>
+<p>Create: <span class="arithmatex">\(O(1)\)</span><br />
+Find: <span class="arithmatex">\(O(\log n)\)</span><br />
+Union: <span class="arithmatex">\(O(1)\)</span></p>
+<p>So for Kruskal,<br />
+Sorting: <span class="arithmatex">\(O(\vert E \vert \log \vert E \vert)\)</span><br />
+Create and Union: <span class="arithmatex">\(O(\vert V \vert)\)</span><br />
+Find: <span class="arithmatex">\(O(\vert E \vert)\)</span>  </p>
+<div class="admonition normal-comment">
+<p class="admonition-title">Why <span class="arithmatex">\(O(\log n)?\)</span></p>
+<p>Record the tree height, and when union, merge short tree to high tree.<br />
+By this, the tree of height <span class="arithmatex">\(k\)</span> (<code>rank[i]</code>) will cost about <span class="arithmatex">\(2^k\)</span> nodes. &rarr; Union with rank (按秩合并)</p>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Refine with path compression</p>
+<p>Amortized analysis, we'll prove:<br />
+<span class="arithmatex">\(m\)</span> FIND ops take total time <span class="arithmatex">\(O(m \log^* n + n \log^* m)\)</span></p>
+<p>At each FIND, we will <strong>cut</strong> some edges (and connect them to the same root), and the edges connecting directly to root is <strong>uncut</strong>.<br />
+We can easily know that cost of FIND (<span class="arithmatex">\(m\)</span> times) through the uncut edges is <span class="arithmatex">\(O(m)\)</span></p>
+<p>The FIND and path compression will not change <code>rank[v]</code>, so it is no longer the height of the subtree rooted at <code>v</code>. However, these properties still holds:<br />
+- Parent’s rank is strictly larger than the child’s.<br />
+- Ranks never decrease.<br />
+- Rank increments only happen at the root nodes.  </p>
+<p>Now, (in analysis) group the nodes by ranks:</p>
+<div class="arithmatex">\[
+\begin{cases}
+g_i &amp;= \{v_i\ |\ \mathrm{rank}[v_i] \in [k_i + 1, 2^{k_i}] \} \\
+k_{i + 1} &amp;= 2^{k_i}
+\end{cases}
+\]</div>
+<p>then we divide the whole <span class="arithmatex">\(n\)</span> data into <span class="arithmatex">\(\log^* n\)</span> groups!</p>
+<p>We divide the charging of FIND into twe kinds:<br />
+- <strong>Same Group Charging (SGC)</strong>: Cut from a parent with the same rank-group<br />
+- <strong>Across Group Charging (AGC)</strong>: Cut from a parent with a different rank-group  </p>
+<p><strong>AGC</strong></p>
+<p>There are at most <span class="arithmatex">\(\log^* n\)</span> AGCs in a FIND, so in <span class="arithmatex">\(m\)</span> FINDs, the cost is <span class="arithmatex">\(m \log^*n\)</span></p>
+<p><strong>SGC</strong></p>
+<p>At each SGC for a <span class="arithmatex">\(v \in [k_i + 1, 2^{k_i}]\)</span>, the parent of <span class="arithmatex">\(v\)</span>'s rank will strictly increase. And there is at most <span class="arithmatex">\(2^{k_i} - (k_i + 1) &lt; 2^{k_i}\)</span> SGC for <span class="arithmatex">\(v\)</span>.<br />
+Also, in such group, there is at most <span class="arithmatex">\(n / 2^{k_i}\)</span> vertices (it requires <span class="arithmatex">\(2^{k_i}\)</span> vertices to build a rank <span class="arithmatex">\(k_i\)</span> tree!). So considering all the vertices, there are at most <span class="arithmatex">\(n / 2^{k_i} \cdot 2^{k_i}\)</span> SGCs.<br />
+So for total <span class="arithmatex">\(\log^* n\)</span> groups, <span class="arithmatex">\(m\)</span> FINDs will cost <span class="arithmatex">\(n \log^* n\)</span>.</p>
+<p>In conclusion, the total time is <span class="arithmatex">\(m + m \log^* n + n \log^* n\)</span> (<em>uncut + AGC + SGC</em>)<br />
+And let <span class="arithmatex">\(m \to \infty\)</span>, time complexity will be <span class="arithmatex">\(O(m \log^* n)\)</span>.</p>
+</div>
+</div>
+<h2 id="greedy-based-approximation-algorithms">Greedy-Based Approximation Algorithms</h2>
+<p>The greedy approach give a reliable approximation for some difficult problems.</p>
+<p>Consider a minimization problem and an algorithm <span class="arithmatex">\(\mathcal{A}\)</span> for it. Let <span class="arithmatex">\(\mathcal{A}(I)\)</span> be the value output by <span class="arithmatex">\(\mathcal{A}\)</span> given input <span class="arithmatex">\(I\)</span>. Let <span class="arithmatex">\(\mathrm{OPT}(I)\)</span> be the optimal solution for <span class="arithmatex">\(I\)</span>. <span class="arithmatex">\(\mathcal{A}\)</span> is an <strong><span class="arithmatex">\(\alpha\)</span>-approximation algorithm</strong> if  </p>
+<div class="arithmatex">\[
+\forall I:\quad \frac{\mathcal{A}(I)}{\mathrm{OPT}(I)} \le \alpha
+\]</div>
+<p>For a maximization problem, <span class="arithmatex">\(\mathcal{A}\)</span> is an <strong><span class="arithmatex">\(\alpha\)</span>-approximation algorithm</strong> if  </p>
+<div class="arithmatex">\[
+\forall I:\quad \frac{\mathcal{A}(I)}{\mathrm{OPT}(I)} \ge \alpha
+\]</div>
+<h3 id="max-k-coverage-and-set-cover-problems">Max-k-coverage and Set Cover Problems</h3>
+<p>Let <span class="arithmatex">\(U = \langle n \rangle\)</span> be a ground set of elements, and give <span class="arithmatex">\(T = \{A_1, \ldots, a_m\}\)</span> be a collection of subsets of <span class="arithmatex">\(U\)</span> with <span class="arithmatex">\(\bigcup_{A_i \in T}A_i = U\)</span>.</p>
+<p><strong>Set Cover</strong>: Find a subcollection <span class="arithmatex">\(S \subseteq T\)</span> with minimum <span class="arithmatex">\(\vert S \vert\)</span> such that <span class="arithmatex">\(\bigcup_{A_i \in S}A_i = U\)</span><br />
+<strong>Max-k-coverage</strong>: Find a subcollection <span class="arithmatex">\(S \subseteq T\)</span> with <span class="arithmatex">\(\vert S \vert \leq k\)</span> that maximizes <span class="arithmatex">\(\left\vert \bigcup_{A_i \in S}A_i \right\vert\)</span></p>
+<p><del>They are all NP-Hard!</del></p>
+<div class="admonition normal-comment">
+<p class="admonition-title">We can describe subsets and elements with bipartite graph!</p>
+</div>
+<p>Denote <span class="arithmatex">\(f(S) = \left\vert \bigcup_{A_i \in S}A_i \right\vert\)</span></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Initialize S = ∅
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>repeat:
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    find A ∈ T \ S that maximizes f(S ∪ {A}) - f(S)
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    update S = S ∪ {A}
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>until:
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    f(S) = |U| (for set cover)
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    |S| = k    (for max-k-coverage)
+</code></pre></div></td></tr></table></div>
+<div class="admonition remarks">
+<p class="admonition-title">Analysis</p>
+</div>
+<p>Let <span class="arithmatex">\(S^* = \{O_1, \ldots, O_k\}\)</span> be any collection of <span class="arithmatex">\(k\)</span> subsets, <span class="arithmatex">\(S = \{A_1, \ldots, A_l\}\)</span> be the output of the algorithm after <span class="arithmatex">\(l\)</span> iterations.  We gonna prove that</p>
+<div class="arithmatex">\[
+f(S) \geq \left(1 - \left(1 - \frac{1}{k}\right)^l\right)f(S^*)
+\]</div>
 
 
 
@@ -1489,7 +1638,7 @@ Then the arrangement of the other tasks is a partition problem!</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月28日 04:50:04 UTC">2025-10-28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月30日 08:21:50 UTC">2025-10-30</span>
   </span>
 
     
