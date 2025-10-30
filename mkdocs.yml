@@ -105,6 +105,7 @@ nav:
               - Chap 02 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
+              - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
@@ -192,6 +193,9 @@ nav:
           - 贪: NoflowersNotes/算法设计分析/贪心/贪心.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
+      - CS231n:
+          - Image Classification: AbiesNotes/cs231n/cs231n_02.md
+          - Loss Functions and Optimization: AbiesNotes/cs231n/cs231n_03.md
       - Vision Course (进行中):
           - Camera: AbiesNotes/Vision Course/CV02_camera.md
           - Color: AbiesNotes/Vision Course/CV03_color.md

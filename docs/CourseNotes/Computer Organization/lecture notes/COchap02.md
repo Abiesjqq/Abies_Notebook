@@ -155,7 +155,7 @@ x0~x31 的寄存器编码成 0~31 的数。
 | 6        | 0110   | E        | 1110   |
 | 7        | 0111   | F        | 1111   |
 
-### 六种格式
+### R、I、S 型指令
 
 **R-format**
 
@@ -192,58 +192,6 @@ immediate 表示立即数或偏移量，用 12 位表示，所以范围是 $\pm 
 S 型指令没有目标寄存器，因为 store 是将寄存器的数据存到基址+偏移量的地址，不是存到寄存器。
 
 imm[11:5] 和 imm[4:0] 合并后得到立即数 imm[11:0]，存储地址偏移量（有符号数）。
-
-**SB-format**
-
-操作：条件分支指令（如 `beq`, `bne`, `blt` 等）。
-
-| imm[12 | 10:5]（符号位 + 高 6 位） | rs2（源寄存器 2） | rs1（源寄存器 1） | funct3（操作类型） | imm[4:1 | 11]（低 4 位 + 第 11 位） | opcode（操作码） |
-| ------ | ------------------------- | ----------------- | ----------------- | ------------------ | ------- | ------------------------- | ---------------- |
-| 7 bits | 5 bits                    | 5 bits            | 3 bits            | 5 bits             | 7 bits  |
-
-立即数拼接方式（12 位有符号偏移，按 2 字节对齐，实际范围 ±4KB）：
-
-```
-imm[12] | imm[10:5] | imm[4:1] | imm[11]
-```
-
-最终形成：`imm[12:1]`，最低位 `imm[0]` 隐含为 0（因为指令地址总是 2 字节对齐）。
-跳转目标地址 = PC + sign_extend(imm[12:0])
-
-**UJ-format**
-
-操作：无条件跳转指令（如 `jal`）。
-
-| imm[20 / 10:1 / 11 / 19:12]（20 位立即数重排） | rd（目标寄存器） | opcode（操作码） |
-| ---------------------------------------------- | ---------------- | ---------------- |
-| 20 bits                                        | 5 bits           | 7 bits           |
-
-立即数拼接方式（20 位有符号偏移，按 2 字节对齐，实际范围 ±1MB）：
-
-```
-imm[20] | imm[10:1] | imm[11] | imm[19:12]
-```
-
-最终形成：`imm[20:1]`，`imm[0]` 隐含为 0。
-跳转目标地址 = PC + sign_extend(imm[20:0])
-跳转后的返回地址（PC + 4）写入 `rd`（通常为 `x1`，即 `ra`）
-
-**U-format**
-
-操作：加载高位立即数（如 `lui`）或与 `jalr` 配合构成完整地址（如 `auipc`）（Upper Immediate Format）。
-
-| imm[31:12]（高 20 位立即数） | rd（目标寄存器） | opcode（操作码） |
-| ---------------------------- | ---------------- | ---------------- |
-| 20 bits                      | 5 bits           | 7 bits           |
-
-- 立即数解释：
-  - 直接作为高 20 位，低 12 位补 0。
-  - 即：`imm[31:12] << 12`，形成 32 位有符号立即数（但仅高 20 位可设）。
-- 典型指令：
-  - `lui rd, imm`：将 `imm[31:12]` 加载到 `rd` 的高 20 位，低 12 位为 0。
-  - `auipc rd, imm`：将 `PC + (imm[31:12] << 12)` 写入 `rd`，用于 PC 相对寻址。
-
-U 格式不涉及 rs1/rs2，仅提供高位立即数。
 
 !!! normal-comment "RISC-V 指令格式汇总"
 
@@ -441,6 +389,109 @@ x6 表示当前跳转表的地址，x6 和 k 左移 3（字的地址）后的值
 
     具体分支中用 `jalr x0, 0(x1)` 跳回来，因为上一步 jalr 中 x1 已经存储下一步指令。
 
+### U 型指令
+
+U 型指令表示大立即数指令。  
+I 型指令中只有 12 位表示立即数（还有符号位），无法表示大立即数。U 型指令中可用 32 位立即数。
+
+如果存储 32 位的数？  
+lui 指令 (load upper immediate)：U-type，用于存储立即数  
+指令中高 20 位表示立即数，直接放在 64 位 rd 寄存器低 32 位中的高位；指令中低 12 位表示 rd 和指令，放到寄存器低 32 位的低位时全部置零。寄存器的高 32 位全部置零。  
+此时寄存器中存储的数实际为低 32 位的高 20 位的数乘 2e12（因为后面都是 0）。  
+要低位不全是零：用 addi 指令补上剩余部分。
+
+高位通过右移得到，低位通过与运算得到。
+
+**U-format**
+
+操作：加载高位立即数（如 `lui`）或与 `jalr` 配合构成完整地址（如 `auipc`）（Upper Immediate Format）。
+
+| imm[31:12]（高 20 位立即数） | rd（目标寄存器） | opcode（操作码） |
+| ---------------------------- | ---------------- | ---------------- |
+| 20 bits                      | 5 bits           | 7 bits           |
+
+- 立即数解释：
+  - 直接作为高 20 位，低 12 位补 0。
+  - 即：`imm[31:12] << 12`，形成 32 位有符号立即数（但仅高 20 位可设）。
+- 典型指令：
+  - `lui rd, imm`：将 `imm[31:12]` 加载到 `rd` 的高 20 位，低 12 位为 0。
+  - `auipc rd, imm`：将 `PC + (imm[31:12] << 12)` 写入 `rd`，用于 PC 相对寻址。
+
+U 格式不涉及 rs1/rs2，仅提供高位立即数。
+
+!!! examples "示例 存储 32 位数 976\*16^3+2304"
+
+    RISC-V code：
+
+    ```asm
+    lui   s3, 976       # 低32位的高20位：lui放置
+    addi  s3, s3, 2304  # 低32位的低12位：加法放置
+    ```
+
+    如果低 12 位第一位为 1，而addi指令中将最高位理解为符号位，表示负数。
+    需要在低 12 位的上一位再加一，抵消负数。
+    即正确情况应该为：
+
+    ```asm
+    lui   s3, 977       # 低32位的高20位：lui放置
+    addi  s3, s3, 2304  # 低32位的低12位：加法放置
+    ```
+
+### SB 型指令
+
+SB 型指令表示分支寻址。
+
+Branch Addressing：  
+SB-type 中立即数没有第 0 位，默认为 0。  
+跳转地址 = PC + 偏移值 = PC + 立即数\*2  
+RISC-V 代码中的数值为实际跳转量，指令封装时的数值为省略末尾 0 的结果。
+
+**SB-format**
+
+操作：条件分支指令（如 `beq`, `bne`, `blt` 等）。
+
+| imm[12 / 10:5]（符号位 + 高 6 位） | rs2（源寄存器 2） | rs1（源寄存器 1） | funct3（操作类型） | imm[4:1 / 11]（低 4 位 + 第 11 位） | opcode（操作码） |
+| ---------------------------------- | ----------------- | ----------------- | ------------------ | ----------------------------------- | ---------------- |
+| 7 bits                             | 5 bits            | 5 bits            | 3 bits             | 5 bits                              | 7 bits           |
+
+立即数拼接方式（12 位有符号偏移，按 2 字节对齐，实际范围 ±4KB）：
+
+```
+imm[12] | imm[10:5] | imm[4:1] | imm[11]
+```
+
+最终形成：`imm[12:1]`，最低位 `imm[0]` 隐含为 0（因为指令地址总是 2 字节对齐）。
+跳转目标地址 = PC + sign_extend(imm[12:0])
+
+给定 C 代码，SB 指令和 UJ 指令不唯一，因为是相对于当前 PC 的跳转。
+
+如果 branch 中需要跳转到 L1，但跳转的范围超过 bne 的范围，可以先跳转到 L2，再用 jal 跳转到 L1。
+
+### UJ 型指令
+
+UJ 型指令表示无条件跳转（如 `jal`）。
+
+Jump Addressing：  
+UJ-type，二十位立即数，跳转可以很远。第 0 位也默认为 0。
+
+对更长的跳转：先用 lui 将地址存到临时寄存器，再用 jalr 加上基址并跳转。
+
+**UJ-format**
+
+| imm[20 / 10:1 / 11 / 19:12]（20 位立即数重排） | rd（目标寄存器） | opcode（操作码） |
+| ---------------------------------------------- | ---------------- | ---------------- |
+| 20 bits                                        | 5 bits           | 7 bits           |
+
+立即数拼接方式（20 位有符号偏移，按 2 字节对齐，实际范围 ±1MB）：
+
+```
+imm[20] | imm[10:1] | imm[11] | imm[19:12]
+```
+
+最终形成：`imm[20:1]`，`imm[0]` 隐含为 0。
+跳转目标地址 = PC + sign_extend(imm[20:0])
+跳转后的返回地址（PC + 4）写入 `rd`（通常为 `x1`，即 `ra`）
+
 ## 指令的执行
 
 ### 程序的调用
@@ -542,43 +593,43 @@ caller 将 t 或 s 寄存器压栈；callee 将 ra 和 a 寄存器压栈。
 
 !!! examples "示例 嵌套过程"
 
-C Code for n!:
+    C Code for n!:
 
-```c
-int fact(int n) {
-    if (n < 1)
-        return 1;
-    else
-        return (n * fact(n - 1));
-}
-```
+    ```c
+    int fact(int n) {
+        if (n < 1)
+            return 1;
+        else
+            return (n * fact(n - 1));
+    }
+    ```
 
-RISC-V code
+    RISC-V code
 
-```asm
-fact:
-    addi  sp, sp, -16   # 分配两个寄存器的占空间
-    sd    ra, 8(sp)     # ra 保存返回地址
-    sd    a0, 0(sp)     # a0 保存参数 n
-    addi  t0, a0, -1    # t0=n-1
-    bge   t0, zero, L1  # 若 t0=n-1>= 0，即 n>=1，跳到 L1
-    addi  a0, zero, 1   # 否则返回 1（阶乘终止条件）
-    addi  sp, sp, 16    # 回收栈空间
-    jalr  zero, 0(ra)   # 返回调用者
+    ```asm
+    fact:
+        addi  sp, sp, -16   # 分配两个寄存器的占空间
+        sd    ra, 8(sp)     # ra 保存返回地址
+        sd    a0, 0(sp)     # a0 保存参数 n
+        addi  t0, a0, -1    # t0=n-1
+        bge   t0, zero, L1  # 若 t0=n-1>= 0，即 n>=1，跳到 L1
+        addi  a0, zero, 1   # 否则返回 1（阶乘终止条件）
+        addi  sp, sp, 16    # 回收栈空间
+        jalr  zero, 0(ra)   # 返回调用者
 
-L1:
-    addi  a0, a0, -1    # n=n-1
-    jal   ra, fact      # 调用 fact(n-1)
-    add   t1, a0, zero  # t1=fact(n-1)
-    ld    a0, 0(sp)     # 取回原来的 n
-    ld    ra, 8(sp)     # 取回返回地址
-    add   sp, sp, 16    # 回收栈帧
-    mul   a0, a0, t1    # a0=n*fact(n-1)
-    jalr  zero, 0(ra)   # 返回
-```
+    L1:
+        addi  a0, a0, -1    # n=n-1
+        jal   ra, fact      # 调用 fact(n-1)
+        add   t1, a0, zero  # t1=fact(n-1)
+        ld    a0, 0(sp)     # 取回原来的 n
+        ld    ra, 8(sp)     # 取回返回地址
+        add   sp, sp, 16    # 回收栈帧
+        mul   a0, a0, t1    # a0=n*fact(n-1)
+        jalr  zero, 0(ra)   # 返回
+    ```
 
-为什么 fact 中 ra 要保存？因为这一次由其他函数调用 fact，要返回调用者的位置；但 fact 会递归调用，内部 ra 会覆盖外部调用者的 ra。因此在刚进入函数时要保存外部的 ra。同理，外部调用者和当前函数都会改变 a0，因此也要在开头保存 a0。  
-为什么要区分保存和不保存的寄存器？提高执行效率。
+    为什么 fact 中 ra 要保存？因为这一次由其他函数调用 fact，要返回调用者的位置；但 fact 会递归调用，内部 ra 会覆盖外部调用者的 ra。因此在刚进入函数时要保存外部的 ra。同理，外部调用者和当前函数都会改变 a0，因此也要在开头保存 a0。
+    为什么要区分保存和不保存的寄存器？提高执行效率。
 
 父函数保证子函数能随便使用临时寄存器，返回给父函数时可以被改变；  
 子函数保证返回给父函数保存的寄存器存储计算的值。
@@ -648,40 +699,215 @@ L1:
 
 ```asm
 strcpy: addi  sp, sp, 8
-        sd    s3, 0(sp)         # s3结果寄存器保存
-        add   s3, zero, zero    # 结果初始化为零
-    L1: add   t0, s3, a1        # t0=src+i
-        lbu   t1, 0(t0)         # t1取t0的第i个字节
-        add   t2, s3, a0        # t2=dest+i
-        sb    t1, 0(t2)         # 拷贝一个字节
-        beq   t1, zero, L2
-        addi  s3, s3, 1
-        jal   zero, L1
-    L2: ld    s3, 0(sp)
+        sd    s3, 0(sp)         # 寄存器保存i
+        add   s3, zero, zero    # i初始化为零
+    L1: add   t0, s3, a1        # t0=i+rs
+        lbu   t1, 0(t0)         # t1取t0的字节
+        add   t2, s3, a0        # t2=i+rd
+        sb    t1, 0(t2)         # t1存储到目标寄存器
+        beq   t1, zero, L2      # 到末尾则退出循环
+        addi  s3, s3, 1         # i++
+        jal   zero, L1          # 循环
+    L2: ld    s3, 0(sp)         # 弹栈
         addi  sp, sp, 8
         jalr  zero, 0(x1)
 ```
 
-在 leaf procedure 中，编译器会先将所有临时寄存器都用完，再用保存的寄存器。
+在 leaf procedure 中没有条件跳转，编译器会先将所有临时寄存器都用完，再用保存的寄存器。
 
-如果存储 32 位的数？
+寻址方式：
 
-lui 指令 (load upper immediate)：U-type，用于存储立即数  
-二十位立即数，放在 rd 寄存器的高位，低位全部置零。
+- 立即数寻址：addi
+- 寄存器寻址：add，从寄存器中取数
+- 基址寻址：ld、sd，寄存器基址加上立即数，从内存中取数
+- PC 相对寻址：beq， PC 加立即数，从内存中取数
 
-示例：32 位数为 976\*16^3+2304
-RISC-V code：
+### 几个示例
 
-```asm
-lui   s3, 976       # 高位：lui放置
-addi  s3, s3, 2304  # 低位：加法放置
+!!! examples "示例 swap"
+
+    C code:
+
+    ```c
+    void swap(long long v[], size_t k) {
+        long long temp;
+        temp = v[k];
+        v[k] = v[k + 1];
+        v[k + 1] = temp;
+    }
+    ```
+
+    步骤：
+
+    1. 给函数变量赋寄存器
+    2. 编写 body 部分代码
+    3. 如有需要，恢复寄存器
+
+    RISC-V code:
+
+    ```asm
+    swap:   slli  x6, x11, 3    # x6=k*8
+            add   x6, x10, x6   # x6=&v[k]
+            ld    x5, 0(x6)     # x5=v[k]
+            ld    x7, 8(x6)     # x7=v[k+1]
+            sd    x7, 0(x6)     # v[k]=x7=v[k+1]
+            sd    x5, 8(x6)     # v[k+1]=x5=v[k]
+            jalr  x0, 0(x1)     # return to calling routine
+    ```
+
+!!! examples "示例 冒泡排序"
+
+    C code:
+
+    ```c
+    void sort(long long v[], size_t n) {
+        size_t i, j;
+        for (i = 0; i < n; i++) {
+            for (j = i - 1; j >= 0 && v[j] > v[j + 1]; j -= 1) {
+                swap(v, j);
+            }
+        }
+    }
+    ```
+
+    外循环：
+
+    `for (i = 0; i < n; i++)`
+
+    ```asm
+                lui   x19, 0            # i(x19)=0
+    for1tst:    bge   x19, x11, exit1   # if i>=n(x11),exit
+                (body of inner for-loop)
+                addi  x19, x19, 1       # i++
+                jal   x0, for1tst
+    exit1:
+
+    ```
+
+    内循环：
+
+    ```c
+    for (j = i - 1; j >= 0 && v[j] > v[j + 1]; j -= 1) {
+        swap(v, j);
+    }
+    ```
+
+    ```asm
+                addi  x20, x19, -1      # j(x20)=i-1
+    for2tst:    blt   x20, x0, exit2    # if j<0,exit
+                slli  x5, x20, 3        # x5=j*8
+                add   x5, x10, x5       # x5=&v[j]
+                ld    x6, 0(x5)         # x6=v[j]
+                ld    x7, 8(x5)         # x7=v[j+1]
+                ble   x6, x7, exit2     # if v[j]<=v[j+1],exit
+                addi  x21, x10, 0       # store x10 in x21
+                addi  x22, x11, 0       # store x11 in x22
+                addi  x10, x21, 0       # first swap parameter is v
+                addi  x11, x20, 0       # second swap parameter is j
+                jal   x1, swap          # call swap
+                addi  x20, x20, -1      # j-=1
+                jal   x0, for2tst
+    exit2:
+
+    ```
+
+    分配寄存器：
+
+    ```asm
+    sort:    addi  sp, sp, -40
+                sd    x1, 32(sp)
+                sd    x22, 24(sp)
+                sd    x21, 16(sp)
+                sd    x20, 8(sp)
+                sd    x19, 0(sp)
+    ```
+
+    恢复寄存器：
+
+    ```asm
+    exit1:    ld    x19, 0(sp)
+                ld    x20, 8(sp)
+                ld    x21, 16(sp)
+                ld    x22, 24(sp)
+                ld    x1, 21(sp)
+                addi  sp, sp, 40
+    ```
+
+## 了解内容
+
+**同步一致性：**
+
+现在用多核计算机，当两个核同时处理一个地址时可能出现读写不同步，会发生数据竞争/数据冒险（data race）。
+
+Load reserved 指令：`lr.d rd, (rs1)`  
+先读 rs1 中的值并放到 rd 中，在读取的内存地址上进行保护
+
+Store conditional 指令：`sc.d rd, (rs1), rs2`  
+将 rs2 中的值存到 rs1 的地址中，rd 表示 status。  
+如果 lr.d 期间地址没有改变，则保存成功，rd 返回 0；否则如果地址改变，存储失败，rd 返回非零值。
+
+!!! examples "示例 原子操作的交换"
+
+    目标：将 x23 和 x20 中的值交换。
+
+    ```asm
+    again:  lr.d  x10, (x20)
+            sc.d  x11, (x20), x23
+            bne   x11, x0, again   # 如果失败则重试
+            addi  x23, x10, 0
+    ```
+
+**程序的执行：**
+
+compiler, assembler, linker, loader
+
+动态链接：初始化时调用所有库，使用时只加载要用到的库。  
+静态链接：每次使用时都加载所有库
+
+**数组和指针：**
+
+数组中取值：先将索引乘每个元素的大小，再加到基址上
+
+```c
+clear1(int array[], int size) {
+    int i;
+    for (int i = 0; i < size; i++) {
+        array[i] = 0;
+    }
+}
 ```
 
-其中高位通过右移得到，低位通过与运算得到。
+```c
+clear2(int *array, int size) {
+    int *p;
+    for (p = &array[0]; p < &array[size]; p += 1) {
+        *p = 0;
+    }
+}
+```
 
-Branch Addressing：  
-SB-type 中立即数没有第 0 位，默认为 0。  
-跳转地址 = PC + 偏移值 = PC + 立即数\*2
+数组形式下，每次需要移位、加到地址上；而指针能直接指向地址，不用每次移位相加。
 
-Jump Addressing：  
-UJ-type，二十位立即数，跳转可以很远。第 0 位也默认为 0。
+**MIPS、x86 和其他 RISC-V 指令：**
+
+MIPS 和 RISC-V 相同：都有 32 位指令，32 个寄存器，0 号寄存器表示零，通过 load 和 store 访问内存
+
+略。
+
+基本整型指令：RV61I  
+32 位指令（当寄存器为 32 位时用）：RV32I
+
+标准扩展：M, A, F, D, C（略）
+
+更高级的语言不一定带来更高的性能。  
+汇编代码也不一定性能更高。
+
+顺序的单词（或连续的字）并未存储在连续的地址上（每次 +4 而不是 +1）。  
+在函数返回后仍保留指向自动变量的指针。
+
+设计原则：
+
+1. Simplicity favors regularity.  
+2. Smaller is faster.  
+3. Good design demands good compromises.
+
