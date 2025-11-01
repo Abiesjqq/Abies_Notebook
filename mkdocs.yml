@@ -9,6 +9,7 @@ theme:
 
   icon:
     logo: material/forest-outline
+    annotation: material/arrow-right-circle
 
   language: zh
 
@@ -30,6 +31,7 @@ theme:
   features:
     - announce.dismiss # 可关闭公告栏
     - navigation.instant # 页面无刷新切换
+#    - navigation.instant.preview
     - header.autohide # 自动隐藏头部
     - navigation.instant.progress # 页面切换进度条
     - navigation.prune # 只渲染可见导航项
@@ -237,6 +239,9 @@ nav:
           - Camera: AbiesNotes/Tinyrenderer/camera.md
           - Shader: AbiesNotes/Tinyrenderer/shader.md
   - 论文阅读:
+      - 4D Generation:
+          - L4GM: 论文阅读/4D生成/L4GM/L4GM.md
+          - SV4D: 论文阅读/4D生成/SV4D/SV4D.md
       - Diffusion:
           - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
           - Denoising Diffusion Implicit Models: 论文阅读/Diffusion/Denoising Diffusion Implicit Models/Denoising Diffusion Implicit Models.md
@@ -244,8 +249,6 @@ nav:
           - Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution.md
           - Unleashing the Power of One-Step Diffusion based Image Super-Resolution via a Large-Scale Diffusion Discriminator: 论文阅读/Diffusion/Unleashing the Power of One-Step Diffusion based Image Super-Resolution/Unleashing the Power of One-Step Diffusion based Image Super-Resolution.md
           - DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution.md
-      - 4D Generation:
-          - L4GM: 论文阅读/4D生成/L4GM/L4GM.md
   - 一些小玩意:
       - 跳转与介绍: snippet/links.md
 extra:

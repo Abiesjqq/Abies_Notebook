@@ -345,13 +345,33 @@ t^nf(t) &\overset{F}{\longleftrightarrow}{\mathrm{j}^n\cdot\frac{\mathrm{d}^nF(\
 \end{aligned}
 $$
 
-#### 帕什瓦尔能量守恒定理
+#### 帕什瓦尔能量守恒定理 (Parseval theorem)
 
 $$
 \int_{-\infty}^{\infty}\vert f(t)\vert^2\mathrm{d}t = \frac{1}{2\pi}\int_{-\infty}^\infty \vert F(\mathrm{j}\omega)\vert^2 \mathrm{d}\omega
 $$
 
 把函数 $\displaystyle G(\omega) = \frac{1}{2\pi} \vert F(\mathrm{j}\omega) \vert^2$ (单位角频率的信号能量) 为**能量频谱密度函数**
+
+!!! remarks "一般地"
+
+对两个函数 $x(t), y(t)$, 其时域上的内积 $\displaystyle \langle x, y\rangle_t = \int_{-\infty}^{\infty}x(t)\overline{y(t)}\mathrm{d}t$. 则有
+
+$$
+\int_{-\infty}^{\infty}x(t)\overline{y(t)}\mathrm{d}t = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)\overline{Y(\omega)}\mathrm{d}\omega
+$$
+
+推导
+
+$$
+\begin{align}
+\int_{-\infty}^{\infty} x(t)\,\overline{y(t)}\mathrm{d}t &= \int_{-\infty}^{\infty} x(t)
+   \left[\frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}e^{-\mathrm{j}\omega' t}\,d\omega'\right] \mathrm{d}t \\
+&= \frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}
+   \left[\int_{-\infty}^{\infty} x(t)e^{-\mathrm{j}\omega' t}\mathrm{d}t\right] \mathrm{d}\omega' \notag\\
+&= \frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}X(\omega')\mathrm{d}\omega'
+\end{align}
+$$
 
 !!! examples "例题"
     计算 $\displaystyle \int_{-\infty}^{\infty}\mathrm{Sa}^2(t)\mathrm{d}t$.

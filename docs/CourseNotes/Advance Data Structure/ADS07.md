@@ -1,6 +1,6 @@
 !!! warning-box "提醒"
 
-    和 Noflower/算法设计分析/分治 高度重合，点击 [此处](https://abiesjqq.github.io/Abies_Notebook/NoflowersNotes/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/%E5%88%86%E6%B2%BB/%E5%88%86%E6%B2%BB/) 可移步。
+    和 Noflower/算法设计分析/分治 高度重合，点击 [此处](/NoflowersNotes/算法设计分析/分治/分治) 可移步。
 
 ## 最近点对问题
 

@@ -57,3 +57,51 @@ $$
 
 
 上面的操作把时间维度 ($\texttt{T}$) 展开到空间维度 ($\texttt{H W}$) 中，便方便做时序自注意力
+
+**3. Loss Function 的设计**
+
+!!! remarks "作为评估，我们常称之为 metric"
+
+输入视角记为 $\mathcal{O}$, 用来检验重建视角的多个 eval 视角 $\mathcal{O}_{\mathrm{sup}}$.
+
+$$
+\begin{align}
+\mathcal{L}_{\text{RGB}} 
+&= \sum_{t=1}^{T} \sum_{O \in \mathcal{O} \cup \mathcal{O}_{\text{sup}}} 
+\| I_t^O - f(P_t, O) \|_2^2 + \lambda \mathcal{L}_{\text{LPIPS}}(I_t^O, f(P_t, O)), \\
+\mathcal{L}_{\text{Mask}} 
+&= \sum_{t=1}^{T} \sum_{O \in \mathcal{O} \cup \mathcal{O}_{\text{sup}}} 
+\| \alpha_t^O - g(P_t, O) \|_2^2, \\
+\mathcal{L} 
+&= \mathcal{L}_{\text{RGB}} + \mathcal{L}_{\text{Mask}},
+\end{align}
+$$
+
+其中 RGB 部分使用 MSE 和 **感知损失** (LPIPS, Learned Perceptual Image Patch Similarity)的组合，mask 部分 (alpha 值图像) 使用 MSE, 用于评估重建物体的形状和边界的准确度
+
+**4. 自回归重建**
+
+给一个固定长度 $T$ 的值，如果更长的视频将采用分长度为 $T$ 的小视频分块处理。上一块的最后帧的生成结果会参与下一块的 Gaussian 生成，这个方法保证了时间记忆的连续性（为什么啊）
+
+**5. 插值模型**
+
+为了保证时间帧之间的连续性（本来训练的模型在两帧 Gaussian 之间是没有关联的，可能会导致时间变化的不规律，而且无法直接在 Gaussian 之间插值），训练了一个 4D 插值模型 (L4GM 上微调的结果)，通过前后两帧的 Gaussian 和提前通过平均计算的 RGB 插值的参考帧来生成中间帧对应的 Gaussian (1)
+{ .annotate}
+
+1. a test annotate
+
+### 实验部分
+
+其它不看了，看看**消融实验** (ablation study)
+
+!!! remarks "什么是消融实验"
+    不断地减少系统的不同模块，检查哪些模块对系统结果影响比较大
+
+这里作者分别进行了：去除 3D 预训练模型、冻结 LGM (不参与训练，只训练 temp attn 层)、去除 temp attn 层、加入形变场等
+
+!!! remarks "形变场"
+    将一个 4D 内容表示为一个 3D 物体和一个动态的形变表示，3D + 形变 表示某一帧。为了更好表示 4D 形变场，使用 HexPlane，表示更加高效.
+
+    ![img.png](img.png)
+
+就先这样吧……
