@@ -102,9 +102,10 @@ nav:
       - 扉页: CourseNotes/note_index.md
       - 计算机组成:
           - 课程笔记:
-              - Chap 01 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
-              - Chap 03 基本算法: CourseNotes/Computer Organization/lecture notes/COchap03.md
-              - Chap 02 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
+              - Chap01 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
+              - Chap03 基本算法: CourseNotes/Computer Organization/lecture notes/COchap03.md
+              - Chap02 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
+              - Chap04 处理器: CourseNotes/Computer Organization/lecture notes/COchap04.md
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
@@ -116,15 +117,17 @@ nav:
           - 二项队列: CourseNotes/Advance Data Structure/ADS05.md
           - 回溯: CourseNotes/Advance Data Structure/ADS06.md
           - 分治: CourseNotes/Advance Data Structure/ADS07.md
+          - 动态规划: CourseNotes/Advance Data Structure/ADS08.md
       - 普通物理学II:
           - 数学基础: CourseNotes/General Physics II/Phy00.md
           - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
           - 电势，导体: CourseNotes/General Physics II/Phy02.md
           - 电容，电介质: CourseNotes/General Physics II/Phy03.md 
-          - 欧姆定律: CourseNotes/General Physics II/Phy04.md
+          - 欧姆定律，电路: CourseNotes/General Physics II/Phy04.md
+          - 磁场，洛伦兹力: CourseNotes/General Physics II/Phy05.md
       - 概率论与数理统计:
-          - 基本概念: CourseNotes/Probability/PRO01.md
-          - 随机变量的概率分布: CourseNotes/Probability/PRO02.md
+          - Chap01 基本概念: CourseNotes/Probability/PRO01.md
+          - Chap02 随机变量的概率分布: CourseNotes/Probability/PRO02.md
       - 工程图学:
           - 点线面的投影: CourseNotes/Engineering Graphics/EG01.md
       - 数据结构基础:
@@ -195,9 +198,6 @@ nav:
           - 贪心: NoflowersNotes/算法设计分析/贪心/贪心.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
-      - CS231n:
-          - Image Classification: AbiesNotes/cs231n/cs231n_02.md
-          - Loss Functions and Optimization: AbiesNotes/cs231n/cs231n_03.md
       - Vision Course (进行中):
           - Camera: AbiesNotes/Vision Course/CV02_camera.md
           - Color: AbiesNotes/Vision Course/CV03_color.md

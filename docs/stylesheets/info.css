@@ -71,7 +71,6 @@
   border-top-right-radius: 0.5rem;
 } */
 
-
 [data-md-color-scheme="default"] .md-typeset .remarks > .admonition-title,
 [data-md-color-scheme="default"] .md-typeset .remarks > summary {
   background-color: rgba(88, 247, 225, 0.18);
@@ -100,10 +99,10 @@
 }
 
 .md-typeset .admonition.remarks .tabbed-labels > label {
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-    line-height: 0.6;
-  }
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  line-height: 0.6;
+}
 
 /* 警告提示框 */
 /*warning-box*/
@@ -133,7 +132,6 @@
   overflow: hidden;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
-
 
 /* .md-typeset .warning-box > .admonition-title,
 .md-typeset .warning-box > summary {
@@ -170,10 +168,10 @@
 }
 
 .md-typeset .admonition.warning-box .tabbed-labels > label {
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-    line-height: 0.6;
-  }
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  line-height: 0.6;
+}
 
 /* 示例 */
 /*examples*/
@@ -239,11 +237,10 @@
 }
 
 .md-typeset .admonition.examples .tabbed-labels > label {
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-    line-height: 0.6;
-  }
-  
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  line-height: 0.6;
+}
 
 /* 普通提醒 */
 /*normal-comment*/
@@ -281,7 +278,10 @@
   border-top-right-radius: 0.5rem;
 } */
 
-[data-md-color-scheme="default"] .md-typeset .normal-comment > .admonition-title,
+[data-md-color-scheme="default"]
+  .md-typeset
+  .normal-comment
+  > .admonition-title,
 [data-md-color-scheme="default"] .md-typeset .normal-comment > summary {
   background-color: rgba(252, 219, 89, 0.18);
   border-top-left-radius: 0.5rem;
@@ -292,7 +292,6 @@
 [data-md-color-scheme="slate"] .md-typeset .normal-comment > summary {
   background-color: rgba(252, 219, 89, 0.1);
 }
-
 
 .md-typeset .normal-comment > .admonition-title::before,
 .md-typeset .normal-comment > summary::before {
@@ -310,11 +309,10 @@
 }
 
 .md-typeset .admonition.normal-comment .tabbed-labels > label {
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-    line-height: 0.6;
-  }
-
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  line-height: 0.6;
+}
 
 /* 备用提示框示例 */
 .md-typeset .admonition.pied-piper1,
@@ -394,4 +392,56 @@
 .md-typeset details > summary {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   cursor: pointer;
+}
+/* ============ 纯色公式块：亮色模式 ============ */
+[data-md-color-scheme="default"] .md-typeset .admonition.pure,
+[data-md-color-scheme="default"] .md-typeset details.pure {
+  background-color: rgba(235, 250, 240, 0.9);       /* 亮色背景 */
+  border: none;
+  border-radius: 0.3rem;
+  padding-block: 0;
+  padding-inline: .5em;
+  margin-block: 0;
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  box-shadow: none;
+}
+
+/* ============ 纯色公式块：暗色模式 ============ */
+[data-md-color-scheme="slate"] .md-typeset .admonition.pure,
+[data-md-color-scheme="slate"] .md-typeset details.pure {
+  background-color: rgba(147, 248, 156, 0.01); /* 暗色下更柔和 */
+  border: 1px solid rgba(166, 209, 170, 0.3);
+  border-radius: 0.3rem;
+  padding-block: 0;
+  padding-inline: .5em;
+  margin-block: 0;
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  box-shadow: none;
+}
+
+/* 隐藏标题（保持“纯色块”） */
+.md-typeset .admonition.pure > .admonition-title,
+.md-typeset details.pure > summary {
+  display: none;
+}
+
+/* 纯色公式块：亮/暗通用 —— 把内容区 padding 清零，仅保留左右 */
+.md-typeset .admonition.pure > .admonition-content,
+.md-typeset details.pure > .admonition-content {
+  padding-block: 0;         /* 去掉上下内边距 */
+  padding-inline: .5em;     /* 保留左右内边距 */
+}
+
+/* 首末子元素去掉多余外边距，避免“顶/底空一截”的错觉 */
+.md-typeset .admonition.pure > .admonition-content > :first-child,
+.md-typeset details.pure > .admonition-content > :first-child {
+  margin-top: 0;
+}
+.md-typeset .admonition.pure > .admonition-content > :last-child,
+.md-typeset details.pure > .admonition-content > :last-child {
+  margin-bottom: 0;
 }
