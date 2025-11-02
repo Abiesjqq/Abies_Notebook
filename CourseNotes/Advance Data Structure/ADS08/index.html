@@ -1876,13 +1876,13 @@ t_{i,j}=\begin{cases}
 <p>状态转移：</p>
 <div class="arithmatex">\[\text{cost}[i][j] = \min_{r=i}^{j} (\text{cost}[i][r-1] + \text{cost}[r+1][j]) + \text{sum}(p_i \ldots p_j)\]</div>
 <p>其中 <span class="arithmatex">\(r\)</span> 表示选作根的关键字；<span class="arithmatex">\(\text{sum}(p_i \ldots p_j)\)</span> 表示这些节点在子树中的总概率。</p>
-<p>&lt;!-- !!! examples "一道判断题"</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>The root of an optimal binary search tree always contains the key with the highest search probability. T/F.
-
-F. 虽然直觉上“概率最高的键应该放在最上面”，但实际情况取决于 全局结构和搜索概率分布。放在根节点的关键字必须在保持 BST 有序性的前提下，同时平衡左、右子树的整体代价。有时为了平衡左右两边的概率和深度，最优解的根并不是概率最高的键。 --&gt;
-</code></pre></div></td></tr></table></div>
+<p>&lt;!--</p>
+<div class="admonition examples">
+<p class="admonition-title">一道判断题</p>
+<p>The root of an optimal binary search tree always contains the key with the highest search probability. T/F.</p>
+<p>F. 虽然直觉上“概率最高的键应该放在最上面”，但实际情况取决于 全局结构和搜索概率分布。放在根节点的关键字必须在保持 BST 有序性的前提下，同时平衡左、右子树的整体代价。有时为了平衡左右两边的概率和深度，最优解的根并不是概率最高的键。</p>
+</div>
+<p>&rarr;</p>
 <h3 id="tsp">旅行商问题（TSP）</h3>
 <p>给定 <span class="arithmatex">\(n\)</span> 个城市 <span class="arithmatex">\(V = {0, 1, 2, \dots, n-1}\)</span>，两两城市间距离 <span class="arithmatex">\(\text{dist}[i] [j]\)</span>。旅行商必须从某个城市出发，访问每个城市恰好一次，最后回到起点。希望使总路程最短，即 <span class="arithmatex">\(\text{dist}[\pi_0][\pi_1] + \text{dist}[\pi_1][\pi_2] + \cdots + \text{dist}[\pi_{n-1}][\pi_0]\)</span> 最小，其中 <span class="arithmatex">\(\pi_i\)</span> 表示第 i 个经过的城市。</p>
 <p>令 <span class="arithmatex">\(dp[S] [i]\)</span> 表示从起点 0 出发，访问完集合 <span class="arithmatex">\(S\)</span> 中的所有城市（包含 0 和 i），并以城市 <span class="arithmatex">\(i\)</span> 结尾的最短路径长度。</p>
@@ -1895,11 +1895,13 @@ F. 虽然直觉上“概率最高的键应该放在最上面”，但实际情�
 <p>对于每个状态 <span class="arithmatex">\(dp[S] [i]\)</span>，要考虑从哪个城市 <span class="arithmatex">\(j\)</span> 转移过来。内层要枚举所有 <span class="arithmatex">\(j\in S\setminus{i}\)</span>，最多有 <span class="arithmatex">\(n\)</span> 个候选城市。因此每个状态的转移代价 = <span class="arithmatex">\(O(n)\)</span>。</p>
 <p>总时间复杂度等于状态数乘每个状态的转移代价。</p>
 <div class="arithmatex">\[TC= O(m \times \text{cost per state})= O(n^2 2^n)\]</div>
-<!-- !!! examples "一道判断题"
+<!--
+!!! examples "一道判断题"
 
     If a problem can be solved by dynamic programming, it must be solved in polynomial time. T/F.
 
-    F. 因为 TSP 的时间复杂度为 $O(n^2 2^n)$。 -->
+    F. 因为 TSP 的时间复杂度为 $O(n^2 2^n)$。
+ -->
 
 <h3 id="_2">最长公共子序列</h3>
 <p>给定两个序列（如两个字符串）A 与 B，最长公共子序列是同时作为两者子序列的序列中长度最大的那个，求长度。</p>
@@ -1933,7 +1935,7 @@ dp[i-1][j-1]+1, &amp; A[i-1]==B[i-1] \\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月2日 12:25:58 UTC">2025-11-02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月2日 13:08:08 UTC">2025-11-02</span>
   </span>
 
     
