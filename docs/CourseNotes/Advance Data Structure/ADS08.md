@@ -32,11 +32,13 @@ $$\text{cost}[i][j] = \min_{r=i}^{j} (\text{cost}[i][r-1] + \text{cost}[r+1][j])
 
 其中 \(r\) 表示选作根的关键字；\(\text{sum}(p_i \ldots p_j)\) 表示这些节点在子树中的总概率。
 
-<!-- !!! examples "一道判断题"
+<!--
+!!! examples "一道判断题"
 
     The root of an optimal binary search tree always contains the key with the highest search probability. T/F.
 
-    F. 虽然直觉上“概率最高的键应该放在最上面”，但实际情况取决于 全局结构和搜索概率分布。放在根节点的关键字必须在保持 BST 有序性的前提下，同时平衡左、右子树的整体代价。有时为了平衡左右两边的概率和深度，最优解的根并不是概率最高的键。 -->
+    F. 虽然直觉上“概率最高的键应该放在最上面”，但实际情况取决于 全局结构和搜索概率分布。放在根节点的关键字必须在保持 BST 有序性的前提下，同时平衡左、右子树的整体代价。有时为了平衡左右两边的概率和深度，最优解的根并不是概率最高的键。
+ -->
 
 ### 旅行商问题（TSP）
 
@@ -62,11 +64,13 @@ $$m = \sum_{k=1}^{n} \binom{n}{k} \cdot k= n \cdot 2^{n-1}= O(n \cdot 2^n)$$
 
 $$TC= O(m \times \text{cost per state})= O(n^2 2^n)$$
 
-<!-- !!! examples "一道判断题"
+<!--
+!!! examples "一道判断题"
 
     If a problem can be solved by dynamic programming, it must be solved in polynomial time. T/F.
 
-    F. 因为 TSP 的时间复杂度为 $O(n^2 2^n)$。 -->
+    F. 因为 TSP 的时间复杂度为 $O(n^2 2^n)$。
+ -->
 
 ### 最长公共子序列
 

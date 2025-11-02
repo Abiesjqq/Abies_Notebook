@@ -42,12 +42,6 @@ B 型：读寄存器中的操作数，用 ALU 比较，相减看结果是不是�
 I 型指令中，rs1, rd 作为寄存器的读，imm 经过扩展后，和寄存器读出的值一起输入到 ALU，func3, imm, opcode 一起控制 ALU 操作。ALU 输出结果作为 data memory 的地址，从内存中读数据后写回到寄存器。  
 （略）
 
-![4-R](../resources/4-R.png)
-
-![4-I](../resources/4_I.png)
-
-![4-S](../resources/4-S.png)
-
 
 
 ![4-datapath](../resources/4-datapath.png)
