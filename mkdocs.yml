@@ -412,11 +412,12 @@ plugins:
   - search
   - mermaid2
   - git-committers:
-      enabled: true
+#      enabled: true
       #    enabled: !ENV [ git-committers, false ]
       repository: Abiesjqq/Abies_Notebook
       branch: main
       token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, GIT_COMMITTERS_TOKEN, GITHUB_TOKEN]
+      enabled: !ENV [CI, false]   # 本地 false，CI 中 true
   - git-revision-date-localized:
       enabled: true
       #    enabled: !ENV [ git-revision-date-localized, false ]
