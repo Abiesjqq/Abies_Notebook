@@ -2,22 +2,23 @@ name: auto_deploy.yml
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [ main, master ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     permissions:
-      contents: write  # 允许写入 gh-pages 分支
+      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 确保拿到完整历史以便插件获取 git info
+          fetch-depth: 0
+
+      # 新增：防止 CI 中 git 不认工作区，导致读取历史失败
+      - name: Mark repo as safe directory
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -34,12 +35,20 @@ jobs:
           pip install mkdocs-jupyter
           pip install mkdocs-mermaid2-plugin
 
+      # （可保留）与头像无关
       - name: Configure Git user
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      # 新增：清理插件缓存，确保新作者刷新
+      - name: Clean mkdocs caches
+        run: rm -rf .cache
+
+      # 关键：给插件提供 token，避免 API 限流拿不到头像
       - name: Build MkDocs site (clean)
+        env:
+          GIT_COMMITTERS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mkdocs build --clean
 
       - name: Deploy site to GitHub Pages
