@@ -1,6 +1,6 @@
 !!! warning-box "提醒"
 
-    和 Noflower/算法设计分析/分治 高度重合，点击 [此处](/NoflowersNotes/算法设计分析/分治/分治) 可移步。
+    和 Noflower/算法设计分析/分治 高度重合，点击 [此处](/Abies_Notebook/NoflowersNotes/算法设计分析/分治/分治) 可移步。
 
 ## 最近点对问题
 

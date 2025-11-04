@@ -355,23 +355,23 @@ $$
 
 !!! remarks "一般地"
 
-对两个函数 $x(t), y(t)$, 其时域上的内积 $\displaystyle \langle x, y\rangle_t = \int_{-\infty}^{\infty}x(t)\overline{y(t)}\mathrm{d}t$. 则有
-
-$$
-\int_{-\infty}^{\infty}x(t)\overline{y(t)}\mathrm{d}t = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)\overline{Y(\omega)}\mathrm{d}\omega
-$$
-
-推导
-
-$$
-\begin{align}
-\int_{-\infty}^{\infty} x(t)\,\overline{y(t)}\mathrm{d}t &= \int_{-\infty}^{\infty} x(t)
-   \left[\frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}e^{-\mathrm{j}\omega' t}\,d\omega'\right] \mathrm{d}t \\
-&= \frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}
-   \left[\int_{-\infty}^{\infty} x(t)e^{-\mathrm{j}\omega' t}\mathrm{d}t\right] \mathrm{d}\omega' \notag\\
-&= \frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}X(\omega')\mathrm{d}\omega'
-\end{align}
-$$
+    对两个函数 $x(t), y(t)$, 其时域上的内积 $\displaystyle \langle x, y\rangle_t = \int_{-\infty}^{\infty}x(t)\overline{y(t)}\mathrm{d}t$. 则有
+    
+    $$
+    \int_{-\infty}^{\infty}x(t)\overline{y(t)}\mathrm{d}t = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)\overline{Y(\omega)}\mathrm{d}\omega
+    $$
+    
+    推导
+    
+    $$
+    \begin{align}
+    \int_{-\infty}^{\infty} x(t)\,\overline{y(t)}\mathrm{d}t &= \int_{-\infty}^{\infty} x(t)
+       \left[\frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}e^{-\mathrm{j}\omega' t}\,d\omega'\right] \mathrm{d}t \\
+    &= \frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}
+       \left[\int_{-\infty}^{\infty} x(t)e^{-\mathrm{j}\omega' t}\mathrm{d}t\right] \mathrm{d}\omega' \notag\\
+    &= \frac{1}{2\pi}\int_{-\infty}^{\infty} \overline{Y(\omega')}X(\omega')\mathrm{d}\omega'
+    \end{align}
+    $$
 
 !!! examples "例题"
     计算 $\displaystyle \int_{-\infty}^{\infty}\mathrm{Sa}^2(t)\mathrm{d}t$.
@@ -404,3 +404,55 @@ $$
 $$
 
 由此可见离散时间周期信号的频谱是周期的 ($N$)
+
+!!! examples "例题"
+    考虑一个方波信号，其周期为 $N$ ，持续时间为 $2N_1+1$, 有 
+
+    $$
+    \begin{align}
+    a_k &= \frac{1}{N}\sum_{n = -N_1}^{N_1}\exp (-\mathrm{j} \frac{2 \pi}{N}kn) \\
+    &= \begin{cases}
+    \displaystyle \frac{2N_1 + 1}{N} & \quad k = 0, \pm N, \pm 2N, \ldots \\
+    \displaystyle \frac{1}{N}\frac{\displaystyle\sin \frac{\pi}{N}k(2N_1 + 1)}{\displaystyle\sin \frac{\pi}{N}k} & \quad k \neq 0, \pm N, \pm 2N, \ldots 
+    \end{cases}
+    \end{align}
+    $$
+    
+    包络具有 $\displaystyle \frac{\sin \beta x}{\sin x}$ 的形状
+
+### 离散时间非周期信号的傅里叶变换
+
+类似连续时间信号我们给出傅里叶变换 (DTFT) 和反变换：
+
+$$
+\begin{align}
+X(\mathrm{e}^{\mathrm{j}\omega }) &= \sum_{n = -\infty}^\infty x[n]\mathrm{e}^{-\mathrm{j}\omega n} \\
+x[n] &= \frac{1}{2\pi} \int_{-\pi}^{\pi}X(\mathrm{e}^{\mathrm{j}\omega})\mathrm{e}^{\mathrm{j}\omega n} \mathrm{d}\omega
+\end{align}
+$$
+
+离散时间序列 $x[n]$ 可以分解为频率在 $2\pi$ 区间上分布的、幅度为 $\displaystyle \frac{1}{2\pi}X(\mathrm{e}^{\mathrm{j}\omega }) \mathrm{d}\omega$ 的负指数分量的线性组合.
+
+#### 离散时间非周期信号傅里叶变换的收敛问题
+
+当 $x[n]$ 是无限长序列时，$X(\mathrm{e}^{\mathrm{j}\omega })$ 作为无限长级数有收敛问题
+
+两个充分条件：
+
+若 $x[n]$ 绝对可和，则 $x[n]$ 的傅里叶变换存在且一致收敛于 $X(\mathrm{e}^{\mathrm{j}\omega })$ --> 幅度差 $\to 0$  
+若 $x[n]$ 不绝对可和，而是平方可和，则其傅里叶变换以均方差为零的方式收敛于 $X(\mathrm{e}^{\mathrm{j}\omega })$ --> 能量差 $\to 0$
+
+!!! remarks "常用信号的离散时间傅立叶变换"
+
+    **单位冲激信号** $x[n] = \delta[n]$, 有 $X(\mathrm{e}^{\mathrm{j}\omega }) = 1$, $\delta[n - n_0] \overset{F}{\longleftrightarrow}{\mathrm{e}^{- \mathrm{j}\omega n_0}}$  
+    **矩形脉冲** 宽度为 $2N_1$ 时，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{\sin(2N_1 + 1)\omega / 2}{\sin \omega / 2}$  
+    **实指数序列** $x[n] = a^n u[n], \vert a \vert < 1$，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{\mathrm{e}^{\mathrm{j}\omega}}{\mathrm{e}^{\mathrm{j}\omega} - a}$. 其模长和相位 $\displaystyle \vert X(\mathrm{e}^{\mathrm{j}\omega })\vert = 1 / \sqrt{1 + a^2 - 2a \cos \omega},\ \arg X(\mathrm{e}^{\mathrm{j}\omega }) = -\arctan \frac{a \sin \omega}{1 - a\cos \omega}$  
+    **非因果实指数序列** $x[n] = a^n u[-n], \vert a \vert > 1$，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{1}{1 - a^{-1}\mathrm{e}^{\mathrm{j}\omega}}$  
+    **双边指数序列** $x[n] = a^{\vert n\vert}, \vert a \vert > 1$，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{a\mathrm{e}^{\mathrm{j}\omega}}{1 - a\mathrm{e}^{-\mathrm{j}\omega}} + \frac{1}{1 - a\mathrm{e}^{\mathrm{j}\omega}} = \frac{1 - a^2}{1 + a^2 - 2a \cos \omega}$  
+    **常数序列** $x[n] = 1$, 有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = 2\pi \sum_{n = -\infty}^\infty \delta (\omega - 2\pi k)$ 是以 $2\pi$ 为周期的冲激串  
+    **周期为 $N$ 的单位样值序列** $\displaystyle \delta_N[n] = \sum_{k = -\infty}^\infty \delta[n - kN]$, 有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{2\pi }{N}\sum_{k = -\infty}^{\infty}2\pi \delta \left(\omega - \frac{2\pi}{N}k\right)$. (1)  
+    **离散时间周期指数信号** $x[n] = \mathrm{e}^{\mathrm{j}\omega n}$，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \sum_{k = -\infty}^{\infty} 2\pi \delta(\omega - \omega_0 - 2\pi k)$  
+    **离散时间余弦信号** $x[n] = \cos \omega_0 n$, 有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \pi \sum_{k = -\infty}^{\infty} \delta(\omega + \omega_0 - 2\pi k) + \delta(\omega - \omega_0 - 2\pi k)$
+    { .annotate}
+    
+    1.  计算时先算傅里叶级数 $\displaystyle \delta_N[n] = \frac{1}{N}\sum_{k = 0}^{N - 1}\exp\left(-\mathrm{j} \frac{2 \pi k}{N}n\right)$, 然后两边傅里叶变换即可
