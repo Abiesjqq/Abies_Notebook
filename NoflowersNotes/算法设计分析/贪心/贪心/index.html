@@ -1164,6 +1164,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#facility-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Facility Location
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Facility Location">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-centers" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(k\)-centers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1442,6 +1466,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#facility-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Facility Location
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Facility Location">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-centers" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(k\)-centers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1470,7 +1518,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>4</strong> 个字&nbsp;&nbsp;<strong>5</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>8</strong> 个字&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="hard-problem">Hard Problem</h2>
 <p><strong>The Partition Problem</strong>: Get a partition of num-set <span class="arithmatex">\(S\)</span> such that <span class="arithmatex">\(\sum_{S_1}x = \sum_{S_2}x\)</span> &rarr; NP hard. (Proof later)</p>
@@ -1615,11 +1663,75 @@ And let <span class="arithmatex">\(m \to \infty\)</span>, time complexity will b
 </code></pre></div></td></tr></table></div>
 <div class="admonition remarks">
 <p class="admonition-title">Analysis</p>
-</div>
 <p>Let <span class="arithmatex">\(S^* = \{O_1, \ldots, O_k\}\)</span> be any collection of <span class="arithmatex">\(k\)</span> subsets, <span class="arithmatex">\(S = \{A_1, \ldots, A_l\}\)</span> be the output of the algorithm after <span class="arithmatex">\(l\)</span> iterations.  We gonna prove that</p>
 <div class="arithmatex">\[
-f(S) \geq \left(1 - \left(1 - \frac{1}{k}\right)^l\right)f(S^*)
+f(S) \geq \left(1 - \left(1 - \frac{1}{k}\right)^l\right)f(S^*) \geq \left(1 - \frac{1}{\mathrm{e}}\right) f(S^*)
 \]</div>
+<p>which gives the lower bound for max-k-coverage.<br />
+And for <span class="arithmatex">\(\vert S^* \vert = k\)</span> and if we let <span class="arithmatex">\(l = k\ln n\)</span>, we have</p>
+<div class="arithmatex">\[
+f(S) \geq \left(1 - \left(1 - \frac{1}{k}\right)^{k \ln n}\right)f(S^*) &gt; \left(1 - \frac{1}{\mathrm{e^{\ln n}}}\right) f(S^*) = n - 1 \Rightarrow f(S) = n
+\]</div>
+<p>which gives a <span class="arithmatex">\(\ln n\)</span> approximation.</p>
+<p>Proof by inductive: Let <span class="arithmatex">\(S_t = \{A_1, \ldots, A_t\}, t = 1, 2, \ldots, l\)</span>.<br />
+<span class="arithmatex">\(l = 1\)</span>, by greedy nature, <span class="arithmatex">\(f(S_1 = \{A_1\}) \geq f(O_i)\)</span> for all <span class="arithmatex">\(O_i\)</span>, thus, </p>
+<div class="arithmatex">\[
+f(S_1) \geq \frac{1}{k}\sum_{k = 1}^{l}f\left(\{O_i\}\right) \geq \frac{1}{k}f(S^*) = \left(1 - \left(1 - \frac{1}{k}\right)^{1}\right)f(S^*)
+\]</div>
+<p>Now <span class="arithmatex">\(S_t\)</span> after <span class="arithmatex">\(t\)</span> iterations, consider <span class="arithmatex">\(\Delta(O_i\vert S_t) = f(S_t \cup \{O_i\}) - f(S_t)\)</span>. By greedy nature, <span class="arithmatex">\(\Delta(A_{t + 1}\vert S_t) \geq \Delta(O_i\vert S_t)\)</span>. Also we have</p>
+<div class="arithmatex">\[
+\begin{align}
+&amp;\Delta(A_{t + 1}\vert S_t) \geq \frac{1}{k}\sum_{k = 1}^{l}\Delta(O_i\vert S_t) \geq \frac{1}{k}\Delta(S^*\vert S_t) \\
+\Leftrightarrow&amp; f(S_{t + 1}) - f(S_t) \geq \frac{1}{k}\left(f(S^* \cup S_t) - f(S_t)\right) \geq \frac{1}{k}\left(f(S^*) - f(S_t)\right) \\
+\Leftrightarrow&amp; f(S_{t + 1}) \geq \frac{1}{k}f(S^*) + \left(1 - \frac{1}{k}\right)f(S_t)  \\ &amp;= \left(1 - \left(1 - \frac{1}{k}\right)^{t + 1}\right)f(S^*)
+\end{align}
+\]</div>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Are we doing the best in poly-time?</p>
+<p>we can note that all the equations above is tight (Roughly)<br />
+Actually, no <span class="arithmatex">\(\displaystyle 1 - \frac{1}{\mathrm{e}} + \varepsilon\)</span>-approx algorithm unless <strong>P = NP</strong></p>
+</div>
+<h3 id="facility-location">Facility Location</h3>
+<h4 id="k-centers"><span class="arithmatex">\(k\)</span>-centers</h4>
+<p>Build <span class="arithmatex">\(k\)</span> facilities, and minimize the maximum distance between any vertex to its closest facility. (Especially in a metric space (度量空间))</p>
+<p>Input a metric space (always a undirected graph with triangle inequality) and <span class="arithmatex">\(k\)</span>, output the <span class="arithmatex">\(k\)</span> center choices and <span class="arithmatex">\(S \subseteq V\)</span> which minimizes</p>
+<div class="arithmatex">\[
+f(S) = \max_{v \in V} \min_{s \in S} d(S, V)
+\]</div>
+<p>it has a <span class="arithmatex">\(2\)</span>-approx: iteratively pick the center farthest to the existing centers  </p>
+<div class="admonition remarks">
+<p class="admonition-title">Analysis</p>
+<p>Let <span class="arithmatex">\(O = \{o_1, \ldots, o_k\}\)</span> be the optimal solution with cost <span class="arithmatex">\(\mathrm{OPT}\)</span><br />
+Let <span class="arithmatex">\(A = \{a_1, \ldots, a_k\}\)</span> be the algorithm’s output with cost <span class="arithmatex">\(\mathrm{ALG}\)</span><br />
+The theorem says <span class="arithmatex">\(\mathrm{ALG} \leq 2 \cdot \mathrm{OPT}\)</span></p>
+<p>For each <span class="arithmatex">\(o_i\)</span>, let <span class="arithmatex">\(X_i\)</span> be the set of vertices closest to <span class="arithmatex">\(o_i\)</span> (their "min" is calculated by the dist to <span class="arithmatex">\(o_i\)</span>). <span class="arithmatex">\(\{X_1, \ldots, X_k\}\)</span> is a partition of <span class="arithmatex">\(V\)</span>. (Voronoi area)<br />
+Denote <span class="arithmatex">\(d(A, v) = \min_{a \in A}d(a, v)\)</span></p>
+<p class="annotate"><strong>Case 1.</strong> <span class="arithmatex">\(A \cap X_i \neq \emptyset\)</span> for all <span class="arithmatex">\(i\)</span> (1), then obviously each <span class="arithmatex">\(X_i\)</span> contain a center in <span class="arithmatex">\(A\)</span>. WLOG assume <span class="arithmatex">\(a_i \in X_i\)</span>.</p>
+<ol>
+<li>Noting that <strong>each</strong> <span class="arithmatex">\(X_i\)</span> is a set.</li>
+</ol>
+<p>Considering any <span class="arithmatex">\(v \in V\)</span>, assume <span class="arithmatex">\(v \in X_i\)</span>. Then <span class="arithmatex">\(d(a_i, v) \leq d(a_i, o_i) + d(o_i, v) \leq 2 \cdot \mathrm{OPT}\)</span>.<br />
+In the algorithm <span class="arithmatex">\(v\)</span> is assigned to <span class="arithmatex">\(a'\)</span>, then <span class="arithmatex">\(d(a', v) \leq d(a_i, v) \leq 2 \cdot \mathrm{OPT}\)</span>. So <span class="arithmatex">\(\mathrm{ALG} = \min_{v \in V}d(a', v) \leq 2 \cdot \mathrm{OPT}\)</span></p>
+<p><strong>Case 2</strong> <span class="arithmatex">\(A \cap X_i = \emptyset\)</span> for some <span class="arithmatex">\(i\)</span>.  </p>
+<p>So some <span class="arithmatex">\(X_i\)</span> contains two centers in <span class="arithmatex">\(A\)</span>. Suppose <span class="arithmatex">\(a_j, a_r \in X_i\)</span>, and <span class="arithmatex">\(a_j\)</span> was chosen earlier by the algorithm. So at the time <span class="arithmatex">\(a_r\)</span> was add to <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(\mathrm{ALG} \leq d(A, a_r) \leq d(a_j, a_r)\)</span>.<br />
+Noting that <span class="arithmatex">\(a_j, a_r \in X_i\)</span>, <span class="arithmatex">\(d(a_j, a_r) \leq d(a_j, o_i) + d(a_r, o_i) \leq 2 \cdot \mathrm{OPT}\)</span><br />
+So we also have <span class="arithmatex">\(\mathrm{ALG} \leq 2 \cdot \mathrm{OPT}\)</span></p>
+<div class="admonition normal-comment">
+<p class="admonition-title">When to get "="?</p>
+<p><span class="arithmatex">\(V\)</span> forms a <strong>line</strong> and <span class="arithmatex">\(k = 2\)</span>, in ALG we choose the mid point and the endpoint &rarr; <span class="arithmatex">\(\vert V \vert / 2\)</span>, but if we choose quarter points, the OPT will be <span class="arithmatex">\(\vert V \vert / 4\)</span></p>
+</div>
+</div>
+<p>Actually, no <span class="arithmatex">\((2 - \varepsilon)\)</span>-approx poly-algorithm exists.  </p>
+<div class="admonition remarks">
+<p class="admonition-title">Dominating Set Problem</p>
+<p>Given an undirected graph <span class="arithmatex">\(G = (V, E)\)</span>, a dominating set is a subset of vertices <span class="arithmatex">\(S\)</span> such that, for any <span class="arithmatex">\(v \in V \backslash S\)</span>, there is a vertex <span class="arithmatex">\(u \in S\)</span> that is adjacent to <span class="arithmatex">\(v\)</span>.</p>
+<p><strong>Dominating Set Problem</strong> Given a graph <span class="arithmatex">\(G\)</span> and a integer <span class="arithmatex">\(k\)</span>, decide if <span class="arithmatex">\(G\)</span> contains a dominating set with size <span class="arithmatex">\(k\)</span>. It is know as an NP-Hard problem.</p>
+</div>
+<div class="admonition normal-comment">
+<p class="admonition-title">Prove no <span class="arithmatex">\((2 - \varepsilon)\)</span>-approx poly-algorithm exists</p>
+<p>If we have, denote it by <span class="arithmatex">\(\mathcal{A}\)</span>. Given a dominating set graph <span class="arithmatex">\(G\)</span>, for all <span class="arithmatex">\(k\)</span>, if the output of <span class="arithmatex">\(\mathcal{A}\)</span> on <span class="arithmatex">\(G\)</span> is <span class="arithmatex">\(1\)</span>, then <span class="arithmatex">\(G\)</span> has a dominating set! (Due to having a dominating set iff <span class="arithmatex">\(\mathrm{OPT} = 1 \Leftrightarrow \mathrm{OPT} \leq \mathrm{ALG} \leq (2 - \varepsilon)\cdot\mathrm{OPT} &lt; 2 \Leftrightarrow \mathrm{ALG} = 1\)</span>)</p>
+</div>
 
 
 
@@ -1642,7 +1754,7 @@ f(S) \geq \left(1 - \left(1 - \frac{1}{k}\right)^l\right)f(S^*)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月30日 08:21:50 UTC">2025-10-30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月4日 06:37:05 UTC">2025-11-04</span>
   </span>
 
     

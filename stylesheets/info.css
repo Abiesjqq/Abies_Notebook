@@ -437,11 +437,19 @@
 }
 
 /* 首末子元素去掉多余外边距，避免“顶/底空一截”的错觉 */
-.md-typeset .admonition.pure > .admonition-content > :first-child,
-.md-typeset details.pure > .admonition-content > :first-child {
-  margin-top: 0;
+/*.md-typeset .admonition.pure > .admonition-content > :first-child,*/
+/*.md-typeset details.pure > .admonition-content > :first-child {*/
+/*  margin-top: 0 !important;*/
+/*}*/
+/*.md-typeset .admonition.pure > .admonition-content > :last-child,*/
+/*.md-typeset details.pure > .admonition-content > :last-child {*/
+/*  margin-bottom: 0 !important;*/
+/*}*/
+
+.md-typeset .admonition.pure > :first-child {
+  margin-top: 0 !important;
 }
-.md-typeset .admonition.pure > .admonition-content > :last-child,
-.md-typeset details.pure > .admonition-content > :last-child {
-  margin-bottom: 0;
+
+.md-typeset .admonition.pure > :last-child {
+  margin-bottom: 0 !important;
 }
