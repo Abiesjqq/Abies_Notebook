@@ -416,6 +416,7 @@ plugins:
       #    enabled: !ENV [ git-committers, false ]
       repository: Abiesjqq/Abies_Notebook
       branch: main
+      token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, GIT_COMMITTERS_TOKEN, GITHUB_TOKEN]
   - git-revision-date-localized:
       enabled: true
       #    enabled: !ENV [ git-revision-date-localized, false ]

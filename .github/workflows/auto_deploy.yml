@@ -48,7 +48,9 @@ jobs:
       # 关键：给插件提供 token，避免 API 限流拿不到头像
       - name: Build MkDocs site (clean)
         env:
-          GIT_COMMITTERS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}  # 插件明确支持的名字
+          GIT_COMMITTERS_TOKEN: ${{ secrets.GITHUB_TOKEN }}          # 兜底（上面的 mkdocs.yml 也会识别）
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mkdocs build --clean
 
       - name: Deploy site to GitHub Pages
