@@ -86,3 +86,54 @@ dp[i-1][j-1]+1, & A[i-1]==B[i-1] \\
 \max(dp[i-1][j],\, dp[i][j-1]), & A[i-1]\neq B[i-1]
 \end{cases}
 $$
+
+## Weighted interval scheduling
+
+给定 n 门课的起始时间和权重 $w_i$，要求排课不冲突且权重之和最大。
+
+$dp[i]$ 表示前 i 门课中最优的排课方式，$p(i)$ 表示结束时间最晚的和第 i 节课不冲突的课。
+
+$$dp[i]=\max(dp[i-1],w_i+dp[p(i)])$$
+
+## 最大子段和
+
+给定数组 $A$，找到区间使区间中数字之和最大。
+
+$dp[i]$ 表示以 $A[i]$ 结尾的所有子数组中数字之和的最大值。
+
+$$dp[i]=\max(A[i], A[i]+dp[i-1])$$
+
+如果求和时允许删掉 0 或 1 个数？
+
+最大子矩阵和？
+
+## Segemented least squares
+
+给定平面上 n 个点，用若干直线拟合，使直线数量尽可能少、误差尽可能小。  
+惩罚函数 $f(x)=E+cL$，其中 $E$ 为误差之和，$L$ 为直线数量，$c$ 为常数。希望最小化惩罚函数。
+
+$dp[i]$ 表示前 i 个点的最优解。
+
+$$dp[i]=\max_{1\le j\le i}(e_{ji}+c+dp[j-1])$$
+
+## 01背包
+
+$dp[i][w]$ 表示前i个物品，背包容量为w时最优解。
+
+$$dp[i][w]=\max(dp[i-1][w], v_i+dp[i-1][w-w_i])$$
+
+## All-pairs shortest paths
+
+## Product assembly
+
+## 最长上升子序列
+
+$$
+dp[i]=\begin{cases}
+dp[i-1]+1, &A[i-1]\le A[i] \\
+\end{cases}
+$$
+
+Erdos-Szekeres
+
+给定数列 $a_1, a_2\cdots a_{n^2+1}$，则必定存在长度为 $n+1$ 的单调序列。

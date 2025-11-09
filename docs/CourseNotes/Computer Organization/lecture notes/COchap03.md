@@ -293,7 +293,7 @@ always@后面是敏感列表，出现再等式右边或导致结果变化的所�
 
     Booth 算法的优势在于，它能快速处理乘数中包含连续 1 的情况。比如普通乘法器在遇到 1111 时会执行 4 次加法，而 Booth 算法只需要 1 次加法和 1 次减法。这样在硬件实现上可以减少部分积累加次数，提高乘法效率。
 
-![booth](../resources/booth.png){style="width:500px"}
+    ![booth](../resources/booth.png){style="width:500px"}
 
 **Faster Multiplication：**
 

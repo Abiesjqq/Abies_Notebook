@@ -124,7 +124,7 @@ nav:
           - 电势，导体: CourseNotes/General Physics II/Phy02.md
           - 电容，电介质: CourseNotes/General Physics II/Phy03.md 
           - 欧姆定律，电路: CourseNotes/General Physics II/Phy04.md
-          - 磁场，洛伦兹力: CourseNotes/General Physics II/Phy05.md
+          - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
       - 概率论与数理统计:
           - Chap01 基本概念: CourseNotes/Probability/PRO01.md
           - Chap02 随机变量的概率分布: CourseNotes/Probability/PRO02.md
