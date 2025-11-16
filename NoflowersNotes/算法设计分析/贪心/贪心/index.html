@@ -12,7 +12,7 @@
         <link rel="prev" href="../../%E5%9B%BE/%E5%9B%BE/">
       
       
-        <link rel="next" href="../../../../AbiesNotes/Abies_index/">
+        <link rel="next" href="../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
       
       
         
@@ -675,6 +675,8 @@
       
         
       
+        
+      
     
     
     
@@ -898,6 +900,8 @@
       
         
       
+        
+      
     
     
     
@@ -1013,6 +1017,8 @@
   
     
     
+      
+        
       
         
       
@@ -1284,6 +1290,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#local-search-max-cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Search: Max-Cut
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1298,8 +1315,96 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动态规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../%E5%87%B8%E4%BC%98%E5%8C%96/SVM/SVM/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    凸优化
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -1617,6 +1722,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#local-search-max-cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Search: Max-Cut
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1646,7 +1762,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>8</strong> 个字&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>8</strong> 个字&nbsp;&nbsp;<strong>8</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="hard-problem">Hard Problem</h2>
 <p><strong>The Partition Problem</strong>: Get a partition of num-set <span class="arithmatex">\(S\)</span> such that <span class="arithmatex">\(\sum_{S_1}x = \sum_{S_2}x\)</span> &rarr; NP hard. (Proof later)</p>
@@ -1756,6 +1872,42 @@ So for total <span class="arithmatex">\(\log^* n\)</span> groups, <span class="a
 And let <span class="arithmatex">\(m \to \infty\)</span>, time complexity will be <span class="arithmatex">\(O(m \log^* n)\)</span>.</p>
 </div>
 </div>
+<div class="admonition remarks">
+<p class="admonition-title">Matroid (拟阵) theorem and Independent sets (独立集)</p>
+<p>Consider a pair <span class="arithmatex">\(M=(U,\mathcal{I})\)</span> where <span class="arithmatex">\(U\)</span> is a finite set and <span class="arithmatex">\(\mathcal{I}\subseteq \{0,1\}^U\)</span> is a collection of subsets of <span class="arithmatex">\(U\)</span>. We say <span class="arithmatex">\(M\)</span> is a <em>matroid</em> if it satisfies:<br />
+1. <strong>hereditary property</strong>: <span class="arithmatex">\(\mathcal{I}\)</span> is nonempty and for every <span class="arithmatex">\(A\in\mathcal{I}\)</span> and <span class="arithmatex">\(B\subseteq A\)</span>, it holds that <span class="arithmatex">\(B\in\mathcal{I}\)</span><br />
+2. <strong>exchange property</strong>: For any <span class="arithmatex">\(A,B\in\mathcal{I}\)</span> with <span class="arithmatex">\(|A|&lt;|B|\)</span>, there exists some <span class="arithmatex">\(x\in B\setminus A\)</span> such that <span class="arithmatex">\(A\cup\{x\}\in\mathcal{I}\)</span><br />
+Each set <span class="arithmatex">\(A\in\mathcal{I}\)</span> is called an <em>independent set</em></p>
+<p>We have the property: Maximal independent sets are of the same size. (A set <span class="arithmatex">\(A\in\mathcal{I}\)</span> is <em>maximal</em> if there is <em>no</em> <span class="arithmatex">\(B\in\mathcal{I}\)</span> such that <span class="arithmatex">\(A\subsetneq B\)</span>.)</p>
+<div class="admonition examples">
+<p class="admonition-title">MST in matroid</p>
+<p>Consider <span class="arithmatex">\(G=(V,E)\)</span>, a simple undirected graph, let <span class="arithmatex">\(M=(E,\mathcal{S})\)</span> where <span class="arithmatex">\(\mathcal{S}=\{F\subseteq E\mid F\text{ does not contain a cycle}\}\)</span>, <span class="arithmatex">\(M\)</span> is a <strong>matroid</strong>, all the acyclic subgraphs are <strong>independent sets</strong> and the <strong>maximal independent sets</strong> are all the spanning forests.</p>
+</div>
+<p>Then we know that we can find a maximal independent set with the maximal weight (assign a non-negative weight for each element in set <span class="arithmatex">\(U\)</span>) with Kruskal algorithm:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>S ← ∅
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Sort U in decreasing order by weight w
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>for x ∈ U (in decreasing order of w) do
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    if S ∪ {x} ∈ 𝓘 then
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>        S ← S ∪ {x}
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    end if
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>end for
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>return S
+</code></pre></div></td></tr></table></div>
+<p><strong>Proof</strong>: Obviously the <span class="arithmatex">\(S\)</span> is a maximal independent set.<br />
+Suppose <span class="arithmatex">\(S = \{s_1, \ldots, s_n\}\)</span> and there exists another maximal independent set <span class="arithmatex">\(O = \{o_1, \ldots, o_n\}\)</span> with larger weight. Let <span class="arithmatex">\(k = \min_{\substack{l = 1, \ldots, n \\ s_l \neq o_l}}l\)</span> (such <span class="arithmatex">\(k\)</span> must exist). Let <span class="arithmatex">\(S_{k - 1} = \{s_1, \ldots, s_{k - 1}\}\)</span> and <span class="arithmatex">\(O_{k} = \{o_1, \ldots, o_k\}\)</span>, then according to exchange property, exists <span class="arithmatex">\(o_p \in O_k \setminus S_{k - 1} (p \geq k)\)</span>, <span class="arithmatex">\(S_{k - 1} \cup \{o_p\} \in \mathcal{I}\)</span>. <span class="arithmatex">\(w(o_p) \geq w(o_k) &gt; w(s_k)\)</span>. But the algorithm added <span class="arithmatex">\(s_k\)</span> instead of <span class="arithmatex">\(o_p\)</span> at the time <span class="arithmatex">\(s_k\)</span> was added, contradict to the descending order of the adding check!<br />
+So the algorithm output must be of the maximal weight.</p>
+</div>
 <h2 id="greedy-based-approximation-algorithms">Greedy-Based Approximation Algorithms</h2>
 <p>The greedy approach give a reliable approximation for some difficult problems.</p>
 <p>Consider a minimization problem and an algorithm <span class="arithmatex">\(\mathcal{A}\)</span> for it. Let <span class="arithmatex">\(\mathcal{A}(I)\)</span> be the value output by <span class="arithmatex">\(\mathcal{A}\)</span> given input <span class="arithmatex">\(I\)</span>. Let <span class="arithmatex">\(\mathrm{OPT}(I)\)</span> be the optimal solution for <span class="arithmatex">\(I\)</span>. <span class="arithmatex">\(\mathcal{A}\)</span> is an <strong><span class="arithmatex">\(\alpha\)</span>-approximation algorithm</strong> if  </p>
@@ -1775,19 +1927,19 @@ And let <span class="arithmatex">\(m \to \infty\)</span>, time complexity will b
 <p class="admonition-title">We can describe subsets and elements with bipartite graph!</p>
 </div>
 <p>Denote <span class="arithmatex">\(f(S) = \left\vert \bigcup_{A_i \in S}A_i \right\vert\)</span></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Initialize S = ∅
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>repeat:
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    find A ∈ T \ S that maximizes f(S ∪ {A}) - f(S)
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    update S = S ∪ {A}
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>until:
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    f(S) = |U| (for set cover)
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    |S| = k    (for max-k-coverage)
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Initialize S = ∅
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>repeat:
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    find A ∈ T \ S that maximizes f(S ∪ {A}) - f(S)
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    update S = S ∪ {A}
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>until:
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    f(S) = |U| (for set cover)
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    |S| = k    (for max-k-coverage)
 </code></pre></div></td></tr></table></div>
 <div class="admonition remarks">
 <p class="admonition-title">Analysis</p>
@@ -1860,6 +2012,29 @@ So we also have <span class="arithmatex">\(\mathrm{ALG} \leq 2 \cdot \mathrm{OPT
 <p class="admonition-title">Prove no <span class="arithmatex">\((2 - \varepsilon)\)</span>-approx poly-algorithm exists</p>
 <p>If we have, denote it by <span class="arithmatex">\(\mathcal{A}\)</span>. Given a dominating set graph <span class="arithmatex">\(G\)</span>, for all <span class="arithmatex">\(k\)</span>, if the output of <span class="arithmatex">\(\mathcal{A}\)</span> on <span class="arithmatex">\(G\)</span> is <span class="arithmatex">\(1\)</span>, then <span class="arithmatex">\(G\)</span> has a dominating set! (Due to having a dominating set iff <span class="arithmatex">\(\mathrm{OPT} = 1 \Leftrightarrow \mathrm{OPT} \leq \mathrm{ALG} \leq (2 - \varepsilon)\cdot\mathrm{OPT} &lt; 2 \Leftrightarrow \mathrm{ALG} = 1\)</span>)</p>
 </div>
+<h3 id="local-search-max-cut">Local Search: Max-Cut</h3>
+<p>Start with a solution and improve it by <strong>local updates</strong></p>
+<p><strong>Max Cut</strong>: Given a undirected graph, a cut is a partition <span class="arithmatex">\(\{A, B\}\)</span> of <span class="arithmatex">\(V\)</span>, the value of the cut is defined by <span class="arithmatex">\(c(A, B) = \vert E(A, B) \vert\)</span> (The edges between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>) &rarr; Find the cut with the maximum value!</p>
+<p><strong>A local search algorithm</strong>:<br />
+1. Start with any partition <span class="arithmatex">\(\{A, B\}\)</span><br />
+2. If moving a vertex from <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(B\)</span> or from <span class="arithmatex">\(B\)</span> to <span class="arithmatex">\(A\)</span> increases <span class="arithmatex">\(c(A, B)\)</span>, then move it<br />
+3. Terminate until no such movement is possible</p>
+<div class="admonition remarks">
+<p class="admonition-title">Analysis</p>
+<p><strong>Time complexity</strong>: <span class="arithmatex">\(O(\vert V \vert)\)</span> for search vertex updates, and decide if the update is beneficial takes <span class="arithmatex">\(O(\vert E \vert)\)</span>, and total number of updates is at most <span class="arithmatex">\(O(\vert E \vert)\)</span>. Totally <span class="arithmatex">\(O(\vert V \vert \vert E \vert^2)\)</span></p>
+<p><strong>Approximation Guarantee</strong>: a <span class="arithmatex">\(0.5\)</span>-approx.</p>
+<p class="annotate">For each <span class="arithmatex">\(u\)</span>, at least <span class="arithmatex">\(\displaystyle \frac{1}{2}\deg u\)</span> incident edges in the cut (1). So</p>
+<ol>
+<li>Moving <span class="arithmatex">\(u\)</span> to the other side can not increase the num of cut </li>
+</ol>
+<div class="arithmatex">\[
+c(A, B) \geq \frac{1}{2}\sum_{u \in V}\frac{1}{2}\deg u = \frac{1}{2}\vert E \vert \geq \frac{1}{2}\mathrm{OPT}
+\]</div>
+<div class="admonition normal-comment">
+<p class="admonition-title">Actually</p>
+<p><span class="arithmatex">\(\displaystyle c(A, B) &gt; \frac{1}{2}\vert E \vert\)</span> also holds, and there exists a <span class="arithmatex">\(0.878\)</span>-approximation!</p>
+</div>
+</div>
 
 
 
@@ -1882,7 +2057,7 @@ So we also have <span class="arithmatex">\(\mathrm{ALG} \leq 2 \cdot \mathrm{OPT
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月4日 06:37:05 UTC">2025-11-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月16日 14:27:43 UTC">2025-11-16</span>
   </span>
 
     
@@ -1897,29 +2072,6 @@ So we also have <span class="arithmatex">\(\mathrm{ALG} \leq 2 \cdot \mathrm{OPT
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1969,13 +2121,13 @@ So we also have <span class="arithmatex">\(\mathrm{ALG} \leq 2 \cdot \mathrm{OPT
         
         
           
-          <a href="../../../../AbiesNotes/Abies_index/" class="md-footer__link md-footer__link--next" aria-label="下一页: 扉页">
+          <a href="../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-footer__link md-footer__link--next" aria-label="下一页: 动态规划">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                扉页
+                动态规划
               </div>
             </div>
             <div class="md-footer__button md-icon">
