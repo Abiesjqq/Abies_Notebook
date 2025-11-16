@@ -101,15 +101,16 @@ nav:
   - 课程笔记:
       - 扉页: CourseNotes/note_index.md
       - 计算机组成:
-          - 课程笔记:
-              - Chap01 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
-              - Chap03 基本算法: CourseNotes/Computer Organization/lecture notes/COchap03.md
-              - Chap02 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
-              - Chap04 处理器: CourseNotes/Computer Organization/lecture notes/COchap04.md
+          - Chap01 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
+          - Chap03 基本运算: CourseNotes/Computer Organization/lecture notes/COchap03.md
+          - Chap02 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
+          - Chap04 处理器: CourseNotes/Computer Organization/lecture notes/COchap04.md
+          - 期末复习: CourseNotes/Computer Organization/lecture notes/CO0.md
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
+          - 讲义: CourseNotes/Advance Data Structure/ADS00.md
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
           - 倒排索引: CourseNotes/Advance Data Structure/ADS03.md
@@ -118,6 +119,7 @@ nav:
           - 回溯: CourseNotes/Advance Data Structure/ADS06.md
           - 分治: CourseNotes/Advance Data Structure/ADS07.md
           - 动态规划: CourseNotes/Advance Data Structure/ADS08.md
+          - 贪心算法: CourseNotes/Advance Data Structure/ADS09.md
       - 普通物理学II:
           - 数学基础: CourseNotes/General Physics II/Phy00.md
           - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
@@ -127,37 +129,37 @@ nav:
           - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
       - 概率论与数理统计:
           - Chap01 基本概念: CourseNotes/Probability/PRO01.md
-          - Chap02 随机变量的概率分布: CourseNotes/Probability/PRO02.md
+          - Chap02 一维随机变量: CourseNotes/Probability/PRO02.md
+          - Chap03 二维随机变量: CourseNotes/Probability/PRO03.md
       - 工程图学:
           - 点线面的投影: CourseNotes/Engineering Graphics/EG01.md
       - 数据结构基础:
-          - 0. 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
-          - 1. 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
-          - 2. 最大连续和子数组: CourseNotes/Fundamental Data Structure/2. 最大连续和子数组.md
-          - 3. 堆栈和队列: CourseNotes/Fundamental Data Structure/3. 堆栈和队列.md
-          - 4. 树的概念: CourseNotes/Fundamental Data Structure/4. 树的概念.md
-          - 5. 树的遍历和特殊的树: CourseNotes/Fundamental Data Structure/5. 树的遍历和特殊的树.md
-          - 5.5 一些题目和笔记: CourseNotes/Fundamental Data Structure/5.5 一些题目和笔记.md
-          - 6. 堆的实现: CourseNotes/Fundamental Data Structure/6. 堆的实现.md
-          - 7. 并查集和图: CourseNotes/Fundamental Data Structure/7. 并查集和图.md
-          - 8. 拓扑排序和Dijkstra: CourseNotes/Fundamental Data Structure/8. 拓扑排序和Dijkstra.md
-          - 9. Floyd和AOE网: CourseNotes/Fundamental Data Structure/9. Floyd和AOE网.md
-          - 10. 网络流问题和最小生成树: CourseNotes/Fundamental Data Structure/10. 网络流问题和最小生成树.md
-          - 11. 双连通图和欧拉回路: CourseNotes/Fundamental Data Structure/11. 双连通图和欧拉回路.md
-          - 12. 希尔，堆，归并，快速排序: CourseNotes/Fundamental Data Structure/12. 希尔，堆，归并，快速排序.md
-          - 13. 循环不变式和区块链: CourseNotes/Fundamental Data Structure/13. 循环不变式和区块链.md
-          - 14. 比特币和哈希: CourseNotes/Fundamental Data Structure/14. 比特币和哈希.md
-          - 15. 哈希动态查找: CourseNotes/Fundamental Data Structure/15. 哈希动态查找.md
-          - 15.5 一些代码: CourseNotes/Fundamental Data Structure/15.5 一些代码.md
+          - 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
+          - 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
+          - 最大连续和子数组: CourseNotes/Fundamental Data Structure/2. 最大连续和子数组.md
+          - 堆栈和队列: CourseNotes/Fundamental Data Structure/3. 堆栈和队列.md
+          - 树的概念: CourseNotes/Fundamental Data Structure/4. 树的概念.md
+          - 树的遍历和特殊的树: CourseNotes/Fundamental Data Structure/5. 树的遍历和特殊的树.md
+          - 一些题目和笔记: CourseNotes/Fundamental Data Structure/5.5 一些题目和笔记.md
+          - 堆的实现: CourseNotes/Fundamental Data Structure/6. 堆的实现.md
+          - 并查集和图: CourseNotes/Fundamental Data Structure/7. 并查集和图.md
+          - 拓扑排序和Dijkstra: CourseNotes/Fundamental Data Structure/8. 拓扑排序和Dijkstra.md
+          - Floyd和AOE网: CourseNotes/Fundamental Data Structure/9. Floyd和AOE网.md
+          - 网络流问题和最小生成树: CourseNotes/Fundamental Data Structure/10. 网络流问题和最小生成树.md
+          - 双连通图和欧拉回路: CourseNotes/Fundamental Data Structure/11. 双连通图和欧拉回路.md
+          - 希尔，堆，归并，快速排序: CourseNotes/Fundamental Data Structure/12. 希尔，堆，归并，快速排序.md
+          - 循环不变式和区块链: CourseNotes/Fundamental Data Structure/13. 循环不变式和区块链.md
+          - 比特币和哈希: CourseNotes/Fundamental Data Structure/14. 比特币和哈希.md
+          - 哈希动态查找: CourseNotes/Fundamental Data Structure/15. 哈希动态查找.md
+          - 一些代码: CourseNotes/Fundamental Data Structure/15.5 一些代码.md
       - C语言程序设计: 
           - C语言笔记: CourseNotes/C Programming/CNote.md
       - 机器人感知与运动控制(短):
-          - 理论课:
-              - 绪论: CourseNotes/robot control/theoretical/lec 01 intro.md
-              - 传感器模组: CourseNotes/robot control/theoretical/lec 02 sensors.md
-              - 数字图像处理: CourseNotes/robot control/theoretical/lec 03 CV.md
-              - 刚体动力学概述: CourseNotes/robot control/theoretical/lec 04 mechanics.md
-              - 机器人导航规划: CourseNotes/robot control/theoretical/lec 05 motion.md
+          - 绪论: CourseNotes/robot control/theoretical/lec 01 intro.md
+          - 传感器模组: CourseNotes/robot control/theoretical/lec 02 sensors.md
+          - 数字图像处理: CourseNotes/robot control/theoretical/lec 03 CV.md
+          - 刚体动力学概述: CourseNotes/robot control/theoretical/lec 04 mechanics.md
+          - 机器人导航规划: CourseNotes/robot control/theoretical/lec 05 motion.md
           - 实践课:
               - 激光扫描仪和点云处理: CourseNotes/robot control/practical/scanner.md
               - OpenCV视频处理: CourseNotes/robot control/practical/video.md

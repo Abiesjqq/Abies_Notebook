@@ -74,7 +74,7 @@ $$TC= O(m \times \text{cost per state})= O(n^2 2^n)$$
 
 ### 最长公共子序列
 
-给定两个序列（如两个字符串）A 与 B，最长公共子序列是同时作为两者子序列的序列中长度最大的那个，求长度。
+给定两个序列（如两个字符串）A 与 B，最长公共子序列是同时作为两者子序列（不一定连续）的序列中长度最大的那个，求长度。
 
 令 $dp[i] [j]$ 表示取 A 字符串前 $i$ 个字符、B 字符串前 $j$ 个字符时，最长公共子序列的长度。
 
@@ -116,9 +116,9 @@ $dp[i]$ 表示前 i 个点的最优解。
 
 $$dp[i]=\max_{1\le j\le i}(e_{ji}+c+dp[j-1])$$
 
-## 01背包
+## 01 背包
 
-$dp[i][w]$ 表示前i个物品，背包容量为w时最优解。
+$dp[i][w]$ 表示前 i 个物品，背包容量为 w 时最优解。
 
 $$dp[i][w]=\max(dp[i-1][w], v_i+dp[i-1][w-w_i])$$
 
@@ -137,3 +137,27 @@ $$
 Erdos-Szekeres
 
 给定数列 $a_1, a_2\cdots a_{n^2+1}$，则必定存在长度为 $n+1$ 的单调序列。
+
+## String similarity
+
+mismatch：对应的字符不同  
+gap：字符和空格对应
+
+cost：mismatch + gap
+
+给定两个字符串，找到所有的加空格方式下 cost 的最小值。
+
+$dp[i][j]$ 表示字符串 1 的前 i 位、字符串 2 的前 j 位的最小 cost。
+
+$$
+dp[i][j]=\min\begin{cases}
+\alpha_{x_i y_j}+dp[i-1][j-1], &\text{$x_i$ and $y_i$ matches}\\
+\delta + dp[i-1][j], &\text{$x_i$ unmatched} \\
+\delta + dp[i][j-1], &\text{$y_i$ unmatched}
+\end{cases}
+$$
+
+## Hirschberg
+
+空间复杂度 $O(m+n)$。
+
