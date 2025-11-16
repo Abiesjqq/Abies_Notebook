@@ -119,8 +119,37 @@ $$
 
 $F(\mathrm{j}\omega)$ 是单位频率上的信号频谱，称为非周期信号的**频谱密度函数**，简称**频谱函数**
 
-!!! remarks "注意"
-    在傅里叶变换中，我们使用 $F_n$ 代替 $C_n$ 做记号
+!!! remarks "傅里叶变换和傅里叶级数之间的关系"
+    取 $f(t) \leftrightarrow F(\mathrm{j}\omega)$, $f_T(t)$ 是 $f(t)$ 的周期性延拓。则有
+
+    $$
+    f_T(t) = f(t) \otimes \sum_{n}\delta(t - nT)
+    $$
+
+    因此
+
+    $$
+    f_T(t) \leftrightarrow F(\mathrm{j}\omega)\omega_0 \delta(\omega - n\omega_0)
+    $$
+
+    代入傅里叶反变换表达式，有
+
+    $$
+    \begin{align}
+        f_T(t) &= \frac{1}{2\pi} \int_{\omega} \omega_0 \sum_n F(\mathrm{j}\omega)\delta(\omega - n\omega_0) \cdot \mathrm{e}^{\mathrm{j}\omega t} \mathrm{d}\omega \\
+        &= \frac{1}{T}\sum_n F(\mathrm{j}n\omega_0)\mathrm{e}^{\mathrm{j}n\omega_0 t}
+    \end{align}
+    $$
+
+    另一种计算方法：
+
+    $$
+    \begin{align}
+        F(\mathrm{j}n\omega_0) = \frac{F_T(\mathrm{j}\omega)}{\displaystyle\omega_0\sum_n\delta(\omega - n\omega_0)} = \frac{\displaystyle 2\pi\sum_nF_n\delta(\omega - n\omega_0)}{\displaystyle\omega_0\sum_n\delta(\omega - n\omega_0)} = TF_n
+    \end{align}
+    $$
+
+    在傅里叶变换中，我们使用 $F_n$ 代替 $C_n$ 做记号，表示 $f_T(t)$ 的傅里叶级数的系数
 
     满足关系：
 
@@ -130,6 +159,21 @@ $F(\mathrm{j}\omega)$ 是单位频率上的信号频谱，称为非周期信号�
         \displaystyle F_n = \frac{F(\mathrm{j}\omega)}{T} \Bigg\vert_{\omega = n\omega_0}
     \end{cases}
     $$
+
+    这里 $F_n$ 对应的函数是原非周期函数通过周期为 $T$ 的重复相加而来的.
+
+    可见，信号在时域进行周期性延拓，延拓信号的频谱是原信号频谱的冲激序列采样
+
+!!! examples "例题"
+    ![img_5.png](img_5.png)  
+    求该周期信号的傅里叶级数.
+
+    由于单个峰的函数值可以表示为 $G_2(1) \otimes G_2(1)$, 得到其傅里叶变换 $F(\mathrm{j}\omega) = 4\mathrm{Sa}^2(\omega)$. 根据上面的式子, 
+
+    $$
+    F_n = \frac{F(\mathrm{j}\omega)}{T} \Bigg\vert_{\omega = n\omega_0} = \frac{2}{3}\mathrm{Sa}^2\left(\frac{\pi}{3}\right)
+    $$
+
 
 #### 傅里叶反变换
 
@@ -300,6 +344,12 @@ $$
     \frac{\sin W t}{\pi t} \overset{F}{\longleftrightarrow}{G_{2W}(\omega)}
     $$
 
+    有
+
+    $$
+    G_{2W}(\omega) \overset{F}{\longleftrightarrow}{\frac{2\sin W t}{ t}}
+    $$
+
 
 #### 虚实奇偶特性
 
@@ -456,3 +506,34 @@ $$
     { .annotate}
     
     1.  计算时先算傅里叶级数 $\displaystyle \delta_N[n] = \frac{1}{N}\sum_{k = 0}^{N - 1}\exp\left(-\mathrm{j} \frac{2 \pi k}{N}n\right)$, 然后两边傅里叶变换即可
+
+#### 离散时间非周期信号傅里叶变换的性质
+
+_这里只写不同点_
+
+**时移和频移**
+
+若 $x[n] \longleftrightarrow X(\mathrm{e}^{\mathrm{j}\omega})$
+
+$$
+\begin{cases}
+x[n - n_0] &\longleftrightarrow X(\mathrm{e}^{\mathrm{j}\omega})\mathrm{e}^{-\mathrm{j}\omega n_0} \\
+x[n]\mathrm{e}^{\mathrm{j}\omega n_0} &\longleftrightarrow X(\mathrm{e}^{\mathrm{j}(\omega - \omega_0)})
+\end{cases}
+$$
+
+**时间反转**
+
+$$
+X[-n] \longleftrightarrow X(\mathrm{e}^{-\mathrm{j}\omega})
+$$
+
+!!! example "滑动平均"
+    把信号和高度为 1 的窗口卷积，能够使信号变得平滑。  
+    表现在频谱上，表现为高频信号频谱减小，低频信号频谱增加。
+
+**频域微分**
+
+$$
+\frac{\mathrm{d}X(\mathrm{e}^{\mathrm{j}\omega})}{\mathrm{d}\omega} = \sum_{n = -\infty}^{\infty}x[n](-\mathrm{j}n)\mathrm{e}^{-\mathrm{j}\omega n}
+$$
