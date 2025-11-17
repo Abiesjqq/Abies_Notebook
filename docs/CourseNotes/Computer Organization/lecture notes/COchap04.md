@@ -156,7 +156,7 @@ branch 在 EX 后才知道跳转结果，但下一级指令已经完成 IF，指
 改进：预测跳转的结果，在结果出来前直接取预测的指令。  
 具体预测方法略。（RISC-V 规范不规定具体分支预测算法，但实际 CPU 在 IF 阶段会根据静态或动态预测结果直接选择下一条 PC。预测实现包括静态预测、不跳预测、BTFNT，以及动态 BHT/BTB/GHR 预测器。在 EX 阶段若发现预测错误，需要清空流水线并修正 PC。）
 
-### 流水线控制信号
+#### 流水线控制信号
 
 取出第 i+1 条指令时，需要有寄存器存第 i 条指令；第 i+1 条指令执行到 EX 时，也需要寄存器存储第 i 条指令的操作数……
 
@@ -189,9 +189,22 @@ load 指令写回：load 指令 ID 时将 write address 存在寄存器中，随
     流水线执行：5+4=9 个时钟周期
     不使用 forwarding：9+2=11 个时钟周期（只有前 3 条指令会冒险，后面的 x2 都作为 rs 而不是 rd）
 
-冒险发生：EX/MEM.RegWrite 和 MEM/WB.RegWrite 都是 1，目标寄存器不是 x0。
+    and 和 or 这两条都需要 bypass。对于第二条指令，从 EX/MEM 的寄存器传结果；而对于第三条指令，从 MEM/WB 的寄存器传结果。
 
-前递单元：增加控制单元Forwarding Unit
+#### 数据冒险
+
+用 forward 解决数据冒险。问题在于怎么确定是不是需要 forward、起点在哪个阶段的寄存器。
+
+用 `ID/EX.RegisterRs1` 表示 ID/EX 寄存器中 Rs1 的编号。ALU 中要用到的寄存器为 ID/EX.RegisterRs1 和 ID/EX.RegisterRs2。
+
+从 EX/MEM 发生 foward 的条件：EX/MEM.RegisterRd = ID/EX.RegisterRs1（或 2）  
+从 MEM/WB 发生 foward 的条件：MEM/WB.RegisterRd = ID/EX.RegisterRs1（或 2）
+
+若要认为 data hazard 产生，还需要 EX/MEM.RegWrite 和 MEM/WB.RegWrite 都是 1，目标寄存器（EX/MEM.RegisterRd 或 MEM/WB.RegisterRd）不是 x0。
+
+增加控制单元 Forwarding Unit，输入为 ID/EX 中的 Rs1、Rs2、Rd 和两个后面的 Rd，输出为两个信号 ForwardA 和 ForwardB，分别对应 Rs1 和 Rs2。当为 00 时，数据从 ID/EX 寄存器中传来；当为 01 时，数据从 MEM/WB 中传来（可能为前几条指令 ALU 计算结果，可能为 load 结果）；当为 10 时，数据从 EX/MEM 传来。
+
+还有什么问题？可能既需要从上一条指令 forward（从 EX/MEM），还需要从上上条指令 forward（从 MEM/WB），如下面示例。这时需要用最近的 forward（即 EX/MEM）。
 
 !!! examples "示例 double data hazard"
 
@@ -201,3 +214,57 @@ load 指令写回：load 指令 ID 时将 write address 存在寄存器中，随
     add  x1, x1, x4
     ```
 
+综上，MEM/WB 的 Forward 信号的表示如下：
+
+```
+// MEM/WB 的 Forward
+if (MEM/WB.RegWrite  // MEM/WB 要写回
+and (MEM/WB.RegisterRd != 0)  // 写回目标不是 x0
+and not(EX/MEM.RegWrite and (EX/MEM.RegisterRd != 0) and (EX/MEM.RegisterRd = ID/EX.RegisterRs1))  // EX/MEM 优先
+and (MEM/WB.RegisterRd = ID/EX.RegisterRs1))  // 上一级写回的是下一级的源寄存器
+ForwardA = 01  // 01 表示从 MEM/WB forward
+// ForwardB 同理
+```
+
+而 EX/MEM 的 Forward 信号的表示如下：
+
+```
+// EX/MEM 的 Forward
+EX/MEM.RegWrite
+and (EX/MEM.RegisterRd != 0)
+and (EX/MEM.RegisterRd = ID/EX.RegisterRs1)
+ForwardA = 01
+// ForwardB 同理
+```
+
+Load-use 的竞争：下一条指令的源操作数是 load 指令的目标操作数，需要从 MEM/WB 进行 forward。Load-use 的条件为：
+
+```
+ID/EX.MemRead
+and ((ID/EX.RegisterRd = IF/ID.RegisterRs1)
+    or (ID/EX.RegisterRd = IF/ID.RegisterRs2))
+```
+
+Load 指令在 MEM 后才得到数据，不能只通过 forward 解决，需要插入气泡，即将所有信号置零。此时 EX、MEM 和 WB 都执行 nop（no-operation）。PC、IF/ID 都不更新，下一时钟周期再重新解码、取指。
+
+增加 Hazard detection unit，输入信号为 ID/EX.MemRead（是否为 load）、Rs1、Rs2、ID/EX.RegisterRd（是否冒险），输出信号为 PCWrite（PC 不更新）、IF/IDWrite（不取指）、控制 Control 后的 MUX（控制信号置零）。
+
+#### 控制冒险
+
+用 prediction 解决控制冒险。
+
+传统流水线：ALU 计算得到的 Zero 和 Branch 在 EX/MEM 之后再进行与，因此在 MEM 这一阶段才得到结果，在 WB 才能取指。
+
+做法：将 Rs 的比较和 PC 加立即数放到 ID 这一阶段，在 ID 就知道需不需要跳转。如果需要（Branch Taken），下一时钟周期，传到 ID 的指令变为 nop（不往下传），IF 取跳转后指令。
+
+实际为了提高时钟频率，将流水线拆分得更细，需要预测是否跳转。
+
+Dynamic prediction 预测为上一次跳转情况，构建 prediction buffer，用 branch 指令的地址为索引，存储跳转结果（taken 或 not taken）。当执行 branch 指令时，检查表格，根据上一种情况取指。  
+在代码中通常为 for 或 while 循环，这种预测方式能大大提高效率。
+
+1-bit predictor 的缺点：如果有两层循环，内层循环跳出后影响外层循环的预测。  
+因此使用 2-bit predictor，taken 后连着两次 not taken 才转为预测 not taken，反之同理。
+
+进一步改进：ID 中计算地址后，存储地址，如果后面要跳转则直接用地址。如果内存满，只存最新用过的地址（cache）。
+
+#### 异常和中断

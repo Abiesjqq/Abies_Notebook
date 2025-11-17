@@ -602,3 +602,9 @@
 .md-nav__item--third-level.md-nav__item--open {
     display: block;
 }
+
+/* 让二级、三级标题加粗 */
+.md-content h2,
+.md-content h3 {
+    font-weight: 700 !important;
+}
