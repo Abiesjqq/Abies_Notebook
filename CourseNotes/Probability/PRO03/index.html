@@ -847,6 +847,8 @@
       
         
       
+        
+      
     
     
     
@@ -1229,10 +1231,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zmaxxy" class="md-nav__link">
+  <a href="#mmaxxy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Z=max{X,Y}
+        M=max(X,Y)
       
     </span>
   </a>
@@ -1240,10 +1242,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zminxy" class="md-nav__link">
+  <a href="#nminxy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Z=min{X,Y}
+        N=min(X,Y)
       
     </span>
   </a>
@@ -2086,10 +2088,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zmaxxy" class="md-nav__link">
+  <a href="#mmaxxy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Z=max{X,Y}
+        M=max(X,Y)
       
     </span>
   </a>
@@ -2097,10 +2099,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#zminxy" class="md-nav__link">
+  <a href="#nminxy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Z=min{X,Y}
+        N=min(X,Y)
       
     </span>
   </a>
@@ -2136,7 +2138,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>651</strong> 个字&nbsp;&nbsp;<strong>4</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>759</strong> 个字&nbsp;&nbsp;<strong>4</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="_1">二维随机变量</h2>
 <p>E 是随机试验，样本空间为 S={e}。设 X=X(e), Y=Y(e) 为 S 上的随机变量，则 (X,Y) 称为二维随机变量。</p>
@@ -2234,7 +2236,8 @@ f(x, y) = \frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1 - \rho^2}}
 <p>若满足以下条件，称 <span class="arithmatex">\(X\)</span>、<span class="arithmatex">\(Y\)</span> 相互独立：</p>
 <div class="arithmatex">\[
 \begin{align*}\forall (x,y),\quad &amp;P\{X\le x, Y\le y\}=P\{X\le x\}\cdot P\{Y\le y\},\,\\[0.5em]
-&amp;\text{i.e.}\,F(x,y)=F_X(x)F_Y(y)\end{align*}\]</div>
+&amp;\text{i.e.}\,F(x,y)=F_X(x)F_Y(y)\end{align*}
+\]</div>
 <p>或用密度函数表示（“几乎处处成立”表示除面积为零的区域外处处成立）：</p>
 <div class="arithmatex">\[f(x,y)=f_X(x)\cdot f_Y(y)\quad \text{(holds a.e.)}\]</div>
 <p>若 <span class="arithmatex">\((X,Y)\)</span> 为二维正态变量， <span class="arithmatex">\(X\)</span>、<span class="arithmatex">\(Y\)</span> 相互独立的充要条件为 <span class="arithmatex">\(\rho=0\)</span>。</p>
@@ -2245,16 +2248,37 @@ f(x, y) = \frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1 - \rho^2}}
 <div class="arithmatex">\[P\{Z=z_k\}=\sum_{i=1}^{+\infty}P\{X=x_i, Y=z_k-x_i\}\]</div>
 <p>连续型：</p>
 <div class="arithmatex">\[F_Z(z)=\iint_{x+y\le z}f(x, y)\mathrm{d}x\mathrm{d}y=\int_{-\infty}^{+\infty}\mathrm{d}x\int_{-\infty}^{z-x}f(x, y)\mathrm{d}y\]</div>
-<p>作积分变量变换 <span class="arithmatex">\(u = x, \, v = x + y\)</span> 可得</p>
+<p>作积分变量变换 <span class="arithmatex">\(u = x, \, v = x + y\)</span> 可得<span class="arithmatex">\(F_Z(z) = \int_{-\infty}^{z} \mathrm{d}v \int_{-\infty}^{+\infty} f(u, v - u) \mathrm{d}u,\)</span>，从而：</p>
+<div class="admonition pure">
 <div class="arithmatex">\[
-F_Z(z) = \int_{-\infty}^{z} \mathrm{d}v \int_{-\infty}^{+\infty} f(u, v - u) \mathrm{d}u,
+f_Z(z) = \int_{-\infty}^{+\infty} f(x, z - x) \mathrm{d}x=\int_{-\infty}^{+\infty} f(z-y, y) \mathrm{d}y
 \]</div>
-<p>从而</p>
-<div class="arithmatex">\[
-f_Z(z) = F'_Z(z) = \int_{-\infty}^{+\infty} f(u, z - u) \mathrm{d}u = \int_{-\infty}^{+\infty} f(x, z - x) \mathrm{d}x. \tag{3.5.5}
-\]</div>
-<h3 id="zmaxxy">Z=max{X,Y}</h3>
-<h3 id="zminxy">Z=min{X,Y}</h3>
+</div>
+<p>esp. 当 <span class="arithmatex">\(X, Y\)</span> 相互独立时，可以写成：</p>
+<div class="arithmatex">\[f_Z(z)=\int_{-\infty}^{+\infty} f_X(x)\cdot f_Y(z-x)\mathrm{d}x=\int_{-\infty}^{+\infty} f_X(z-y)\cdot f_Y(y)\mathrm{d}y\]</div>
+<p>特殊分布的性质：</p>
+<ol>
+<li><span class="arithmatex">\(n\)</span> 个相互独立的服从泊松分布的随机变量的和仍服从泊松分布，其参数为 <span class="arithmatex">\(n\)</span> 个分布的参数之和。</li>
+<li><span class="arithmatex">\(n\)</span> 个相互独立的正态变量之和仍为正态变量，即若 <span class="arithmatex">\(X_1, X_2,\cdots ,X_n\)</span> 相互独立，且 <span class="arithmatex">\(X_i\sim N(\mu_i, \sigma_i^2)\)</span>，则 <span class="arithmatex">\(\sum_{i=1}^n X_i\sim N(\sum_{i=1}^n \mu_i, \sum_{i=1}^n\sigma_i^2)\)</span>。</li>
+</ol>
+<h3 id="mmaxxy">M=max(X,Y)</h3>
+<p>由 max 的定义可得：</p>
+<div class="admonition pure">
+<div class="arithmatex">\[\begin{align*}F_M(t)&amp;=P\{\max\{X,Y\}\le t\}=P\{X\le t, Y\le t\} \\
+&amp;=F(t,t)\end{align*}\]</div>
+</div>
+<p>esp. 当 <span class="arithmatex">\(X, Y\)</span> 相互独立时，可以写成 <span class="arithmatex">\(F_M(t)=F_X(t)F_Y(t)\)</span>。</p>
+<p>若 <span class="arithmatex">\(M=\max(X_1,\cdots ,X_n)\)</span>，则:</p>
+<div class="arithmatex">\[F_M(t)=\prod_{i=1}^nF_i(t)\]</div>
+<h3 id="nminxy">N=min(X,Y)</h3>
+<p>由 min 的定义可得：</p>
+<div class="arithmatex">\[\begin{align*}F_N(t)&amp;=P\{\min\{X,Y\}\le t\}=P\{(X\le t)\,\text{or}\, (Y\le t)\}\\&amp;=F_X(t)+F_Y(t)-F(t,t)\end{align*}\]</div>
+<p>或</p>
+<div class="admonition pure">
+<div class="arithmatex">\[\begin{align*}F_N(t)&amp;=P\{\min\{X,Y\}\le t\}=1-P\{\min\{X,Y\}&gt;t\}\\&amp;=1-[1-F_X(t)][1-F_Y(t)]\end{align*}\]</div>
+</div>
+<p>若 <span class="arithmatex">\(N=\min(X_1,\cdots ,X_n)\)</span>，则:</p>
+<div class="arithmatex">\[F_N(t)=1-\prod_{i=1}^n[1-F_i(t)]\]</div>
 
 
 
@@ -2277,7 +2301,7 @@ f_Z(z) = F'_Z(z) = \int_{-\infty}^{+\infty} f(u, z - u) \mathrm{d}u = \int_{-\in
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月13日 03:09:37 UTC">2025-11-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月17日 00:31:05 UTC">2025-11-17</span>
   </span>
 
     
@@ -2292,29 +2316,6 @@ f_Z(z) = F'_Z(z) = \int_{-\infty}^{+\infty} f(u, z - u) \mathrm{d}u = \int_{-\in
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

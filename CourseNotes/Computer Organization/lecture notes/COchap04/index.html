@@ -987,6 +987,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="流水线处理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线的原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        冒险
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线控制信号
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1174,6 +1213,8 @@
   
     
     
+      
+        
       
         
       
@@ -2036,6 +2077,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="流水线处理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线的原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        冒险
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线控制信号
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2062,7 +2142,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>2059</strong> 个字&nbsp;&nbsp;<strong>9</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>2421</strong> 个字&nbsp;&nbsp;<strong>11</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="_1">单周期处理器</h2>
 <h3 id="cpu">CPU 简介</h3>
@@ -2133,47 +2213,80 @@ R 型指令：两级解码。第一级解码，只用 opcode，得到除了 ALU 
 <p>完整控制信号的数据通路：</p>
 <p><img alt="4-4" src="../../resources/4-4.png" style="width:550px" /></p>
 <h2 id="_6">流水线处理器</h2>
+<h3 id="_7">流水线的原理</h3>
 <p>指令执行的 5 个阶段（stage）：取指 IF &rarr; 译码 ID &rarr; 执行 EX &rarr; 访存 MEM &rarr; 写回 WB</p>
 <p>单周期处理器的 CPI=1，即每个指令都需要一个时钟周期。<br />
 所有指令中最长的执行时间决定 CPU 的频率（时钟周期），执行快的指令时间浪费，和 <em>make the common case fast</em> 原则违背。</p>
 <p>流水线处理器：分成 5 个阶段，每个时钟周期完成一个 stage，CPU 频率可提高。理想情况下（5 个阶段时间平均、指令数目多），速度提升为 5 倍。<br />
-实际上不同阶段的时间不同，有些时间有空余。<br />
-流水线通过增加吞吐量来提高速度。每条指令的 latency 没有减少（除了时间最长的指令，其余指令的 latency 增加）</p>
-<p>RISCV 指令统一 32 位，适合流水线（每次确定读取指令的长度，可以直接 decode 出寄存器等）</p>
-<p>流水线的问题：竞争（hazards）<br />
-结构竞争（structure hazard）：资源重叠<br />
-数据竞争（data hazard）：前面的计算结果是后面的源操作数<br />
-控制竞争（control hazard）：后面指令的执行取决于前面指令的控制</p>
-<p>结构竞争：将 data memory 和 instruction memory 分开存储。</p>
+实际上不同阶段的时间不同，有些时间有空余，使得实际提高速度小于 1/stage。<br />
+流水线通过增加吞吐量（throughput，单位时间内完成任务的数目）来提高速度。每条指令的 latency 没有减少（除了时间最长的指令，其余指令的 latency 增加）</p>
+<p>RISCV 指令适合流水线：统一 32 位（每次确定读取指令的长度，可以直接 decode 出寄存器等），指令类型少，只有 load 和 store 能访问内存。</p>
+<h3 id="_8">冒险</h3>
+<p>流水线的问题：冒险（hazards）<br />
+结构冒险（structure hazard）：硬件上资源重叠<br />
+数据冒险（data hazard）：前面的计算结果是后面的源操作数<br />
+控制冒险（control hazard）：后面指令的执行取决于前面指令结果的控制</p>
+<p><strong>结构冒险：</strong></p>
+<p>结构冒险：将 data memory 和 instruction memory 分开存储，否则 IF 需要等（stall）内存访问 load/store 完成后才能取指。</p>
+<p><strong>数据冒险：</strong></p>
 <div class="admonition examples">
-<p class="admonition-title">示例 数据竞争</p>
+<p class="admonition-title">示例 数据冒险</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nf">add</span><span class="w">  </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nf">sub</span><span class="w">  </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x3</span>
 </code></pre></div></td></tr></table></div>
 <p>第一个时钟 add 取指，第二个时钟 add 译码、sub 取指，add 在第五个时钟才写回 x19，但 sub 在第三个时钟（ID）就要读取 x19。</p>
 </div>
-<p>数据竞争的一种解决：中间插入两级 bubble，使得 sub 的读取在 add 写回之后。<br />
-一个时钟周期先是下降沿再是上升沿。用下降沿写（前半个时钟写）、用上升沿读（后半个时钟读），可使不同指令的读写在同一个时钟周期内完成。</p>
+<p>数据冒险的一种解决：中间插入两级 bubble，使得 sub 的读取在 add 写回之后。<br />
+一个时钟周期先是下降沿再是上升沿。用下降沿写（前半个时钟写）、用上升沿读（后半个时钟读），可使同一个寄存器的写和读在同一个时钟周期内完成。</p>
 <p>改进：forwarding/bypassing<br />
-上一条指令的计算结果在 EX 或 MEM 后就产生，但是 WB 才写回。可将结果直接传给后面要用的指令。<br />
-如果上一条为运算指令，EX 后产生结果，直接传给下一条的 EX 前，不用插入 bubble；如果上一条为 load 指令，需要插入一级 bubble。</p>
+上一条指令的计算结果在 EX 或 MEM 后就产生，但是 WB 才写回。可将结果计算后直接传给后面要用的指令。如果上一条为运算指令，EX 后产生结果，直接传给下一条的 EX 前，不用插入 bubble；如果上一条为 load 指令，仍需要插入一级 bubble。<br />
+优点：不需要 stall；缺点：数据通路上需要增加连接。</p>
 <p>编译优化：<br />
 ld 后直接用需要等一个时钟，编译器编译后会调整顺序，尽量避免这种情况（比如 load 多个数时，统一 ld 再用，而不是 ld 一个用一个）。</p>
-<p>控制竞争：<br />
-branch 在 EX 后才知道跳转结果，但下一级指令已经完成 IF，指令可能取错。<br />
-一种方法：需要提早直到寄存器比较和目标地址的计算，在 ID 这一级增加硬件，将着两个操作移到 ID。这样中间要插入一级 bubble。<br />
-问题：循环中跳转多，bubble 带来的延迟长；现代流水线更长，计算出结果更晚，延迟更长<br />
-改进：预测跳转的结果，在结果出来前直接取预测的指令。<br />
-（具体预测方法略）</p>
-<p>取出第 i+1 条指令时，需要有寄存器存第 i 条指令；第 i+1 条指令执行到 EX 时，也需要寄存器存储第 i 条指令的操作数。</p>
-<p>流水线结构（图中所有从右往左的过程会引发竞争）：</p>
+<p><strong>控制冒险：</strong></p>
+<p>branch 在 EX 后才知道跳转结果，但下一级指令已经完成 IF，指令可能取错。</p>
+<p>一种方法：提早知道寄存器比较和目标地址的计算。在 ID 这一级增加硬件，将着两个操作移到 ID，在 ID 阶段后就可以下一条指令的 IF。这样中间要插入一级 bubble。<br />
+问题：循环中跳转多，bubble 带来的延迟长；现代流水线更长，不一定能将操作提前。</p>
+<p>改进：预测跳转的结果，在结果出来前直接取预测的指令。<br />
+具体预测方法略。（RISC-V 规范不规定具体分支预测算法，但实际 CPU 在 IF 阶段会根据静态或动态预测结果直接选择下一条 PC。预测实现包括静态预测、不跳预测、BTFNT，以及动态 BHT/BTB/GHR 预测器。在 EX 阶段若发现预测错误，需要清空流水线并修正 PC。）</p>
+<h3 id="_9">流水线控制信号</h3>
+<p>取出第 i+1 条指令时，需要有寄存器存第 i 条指令；第 i+1 条指令执行到 EX 时，也需要寄存器存储第 i 条指令的操作数……</p>
+<p>流水线结构（图中 PC 更新和写回到寄存器是从右往左，会引发冒险）：</p>
 <p><img alt="4-5" src="../../resources/4-5.png" style="width:580px" /></p>
-<p>流水线操作分为"single-clock-cycle" pipeline diagram 和 "multi-clock-cycle" pipeline diagram。</p>
-<p>load 指令写回：load 指令 ID 时将 write address 存在寄存器中，随着 load 指令的执行一步步传到每一步的寄存器中，最终 WB 写回时将 write address 一起传回到 Register file 并写入。</p>
-<p>流水线中的控制信号：</p>
+<p>图中蓝色的寄存器堆成为流水线寄存器，以相邻的阶段命名。每一阶段执行完后就更新后面的寄存器。</p>
+<p>流水线的表示图：
+"single-clock-cycle" pipeline diagram：展示在某一个时钟周期中，整个流水线里每个阶段上正在执行哪一条指令。<br />
+"multi-clock-cycle" pipeline diagram：展示指令在多个 clock cycle 中如何逐周期流经五个阶段。</p>
+<p>load 指令写回：load 指令 ID 时将 write address 存在寄存器中，随着 load 指令的执行传到每一步的寄存器中，最终 WB 写回时将 write address 一起传回到 Register file 并写入。</p>
+<p>流水线中的控制信号（ID 得到控制信号后，将所有信号按在哪里用到分为 WB、M、EX 几类，用寄存器传到要用的阶段）：</p>
 <p><img alt="4-6" src="../../resources/4-6.png" style="width:580px" /></p>
-<p>ID得到控制信号后，将所有信号按WB、M、EX级分类，用寄存器传到要用的阶段。  </p>
+<div class="admonition examples">
+<p class="admonition-title">示例 数据竞争的解决</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nf">sub</span><span class="w">  </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x3</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nf">and</span><span class="w">  </span><span class="no">x12</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x5</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nf">or</span><span class="w">   </span><span class="no">x13</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nf">add</span><span class="w">  </span><span class="no">x14</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nf">sd</span><span class="w">   </span><span class="no">x15</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">(</span><span class="no">x2</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>流水线执行：5+4=9 个时钟周期
+不使用 forwarding：9+2=11 个时钟周期（只有前 3 条指令会冒险，后面的 x2 都作为 rs 而不是 rd）</p>
+</div>
+<p>冒险发生：EX/MEM.RegWrite 和 MEM/WB.RegWrite 都是 1，目标寄存器不是 x0。</p>
+<p>前递单元：增加控制单元Forwarding Unit</p>
+<div class="admonition examples">
+<p class="admonition-title">示例 double data hazard</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nf">add</span><span class="w">  </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nf">add</span><span class="w">  </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x3</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nf">add</span><span class="w">  </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x4</span>
+</code></pre></div></td></tr></table></div>
+</div>
 
 
 
@@ -2196,7 +2309,7 @@ branch 在 EX 后才知道跳转结果，但下一级指令已经完成 IF，指
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月13日 03:09:37 UTC">2025-11-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月17日 00:31:05 UTC">2025-11-17</span>
   </span>
 
     
@@ -2211,29 +2324,6 @@ branch 在 EX 后才知道跳转结果，但下一级指令已经完成 IF，指
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
