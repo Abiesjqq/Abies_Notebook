@@ -267,7 +267,7 @@ $$
 它进一步允许 \(f(n)\) 在渐进意义上带有对数幂项，即：
 
 \[
-f(n)=\Theta!\big(n^{c}(\log n)^{k}\big),
+f(n)=\Theta\big(n^{c}(\log n)^{k}\big)
 \]
 
 其中 \(c\ge0,\ k\ge 0\)。
@@ -275,7 +275,7 @@ f(n)=\Theta!\big(n^{c}(\log n)^{k}\big),
 则递推式：
 
 \[
-T(n)=a,T!\left(\frac{n}{b}\right)+\Theta!\big(n^{c}(\log n)^{k}\big)
+T(n)=aT\left(\frac{n}{b}\right)+\Theta\big(n^{c}(\log n)^{k}\big)
 \]
 
 的解为：

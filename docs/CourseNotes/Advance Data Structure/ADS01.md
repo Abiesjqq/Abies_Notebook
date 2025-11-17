@@ -129,14 +129,6 @@ $$\text{steps}+\Delta\Phi_2\le 3(Rank'(x)-Rank(x))+1$$
 
 $$Rank'(x)=\log_2 n$$
 
-<!-- ??? normal-comment "引理证明" -->
-
-**证明：**
-
-对每一步求和：
-
-$$\sum\text{steps}+\Phi_2(T_M)-\Phi_2(T_0)\le 3\log_2 n+1$$
-
-??? normal-comment "Splay 树详细证明"
+!!! normal-comment "Splay 树详细证明"
 
     ![Splay](./ADSresources/Splay.jpg)

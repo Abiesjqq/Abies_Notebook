@@ -111,6 +111,7 @@ nav:
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
           - 讲义: CourseNotes/Advance Data Structure/ADS00.md
+        #   - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
           - 倒排索引: CourseNotes/Advance Data Structure/ADS03.md
@@ -127,6 +128,7 @@ nav:
           - 电容，电介质: CourseNotes/General Physics II/Phy03.md 
           - 欧姆定律，电路: CourseNotes/General Physics II/Phy04.md
           - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
+          - 电磁感应: CourseNotes/General Physics II/Phy06.md
       - 概率论与数理统计:
           - Chap01 基本概念: CourseNotes/Probability/PRO01.md
           - Chap02 一维随机变量: CourseNotes/Probability/PRO02.md

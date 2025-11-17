@@ -146,12 +146,12 @@ $$
 
 $$
 \begin{align*}\forall (x,y),\quad &P\{X\le x, Y\le y\}=P\{X\le x\}\cdot P\{Y\le y\},\,\\[0.5em]
-&\text{i.e.}\,F(x,y)=F_X(x)F_Y(y)\end{align*}$$
+&\text{i.e.}\,F(x,y)=F_X(x)F_Y(y)\end{align*}
+$$
 
 或用密度函数表示（“几乎处处成立”表示除面积为零的区域外处处成立）：
 
 $$f(x,y)=f_X(x)\cdot f_Y(y)\quad \text{(holds a.e.)}$$
-
 
 若 $(X,Y)$ 为二维正态变量， $X$、$Y$ 相互独立的充要条件为 $\rho=0$。
 
@@ -169,18 +169,52 @@ $$P\{Z=z_k\}=\sum_{i=1}^{+\infty}P\{X=x_i, Y=z_k-x_i\}$$
 
 $$F_Z(z)=\iint_{x+y\le z}f(x, y)\mathrm{d}x\mathrm{d}y=\int_{-\infty}^{+\infty}\mathrm{d}x\int_{-\infty}^{z-x}f(x, y)\mathrm{d}y$$
 
-作积分变量变换 $u = x, \, v = x + y$ 可得
+作积分变量变换 $u = x, \, v = x + y$ 可得$F_Z(z) = \int_{-\infty}^{z} \mathrm{d}v \int_{-\infty}^{+\infty} f(u, v - u) \mathrm{d}u,$，从而：
 
-$$
-F_Z(z) = \int_{-\infty}^{z} \mathrm{d}v \int_{-\infty}^{+\infty} f(u, v - u) \mathrm{d}u,
-$$
+!!! pure ""
 
-从而
+    $$
+    f_Z(z) = \int_{-\infty}^{+\infty} f(x, z - x) \mathrm{d}x=\int_{-\infty}^{+\infty} f(z-y, y) \mathrm{d}y
+    $$
 
-$$
-f_Z(z) = F'_Z(z) = \int_{-\infty}^{+\infty} f(u, z - u) \mathrm{d}u = \int_{-\infty}^{+\infty} f(x, z - x) \mathrm{d}x. \tag{3.5.5}
-$$
+esp. 当 $X, Y$ 相互独立时，可以写成：
 
-### Z=max{X,Y}
+$$f_Z(z)=\int_{-\infty}^{+\infty} f_X(x)\cdot f_Y(z-x)\mathrm{d}x=\int_{-\infty}^{+\infty} f_X(z-y)\cdot f_Y(y)\mathrm{d}y$$
 
-### Z=min{X,Y}
+特殊分布的性质：
+
+1. $n$ 个相互独立的服从泊松分布的随机变量的和仍服从泊松分布，其参数为 $n$ 个分布的参数之和。
+2. $n$ 个相互独立的正态变量之和仍为正态变量，即若 $X_1, X_2,\cdots ,X_n$ 相互独立，且 $X_i\sim N(\mu_i, \sigma_i^2)$，则 $\sum_{i=1}^n X_i\sim N(\sum_{i=1}^n \mu_i, \sum_{i=1}^n\sigma_i^2)$。
+
+### M=max(X,Y)
+
+由 max 的定义可得：
+
+!!! pure ""
+
+    $$\begin{align*}F_M(t)&=P\{\max\{X,Y\}\le t\}=P\{X\le t, Y\le t\} \\
+    &=F(t,t)\end{align*}$$
+
+esp. 当 $X, Y$ 相互独立时，可以写成 $F_M(t)=F_X(t)F_Y(t)$。
+
+若 $M=\max(X_1,\cdots ,X_n)$，则:
+
+$$F_M(t)=\prod_{i=1}^nF_i(t)$$
+
+### N=min(X,Y)
+
+由 min 的定义可得：
+
+$$\begin{align*}F_N(t)&=P\{\min\{X,Y\}\le t\}=P\{(X\le t)\,\text{or}\, (Y\le t)\}\\&=F_X(t)+F_Y(t)-F(t,t)\end{align*}$$
+
+或
+
+!!! pure ""
+
+    $$\begin{align*}F_N(t)&=P\{\min\{X,Y\}\le t\}=1-P\{\min\{X,Y\}>t\}\\&=1-[1-F_X(t)][1-F_Y(t)]\end{align*}$$
+
+
+若 $N=\min(X_1,\cdots ,X_n)$，则:
+
+$$F_N(t)=1-\prod_{i=1}^n[1-F_i(t)]$$
+
