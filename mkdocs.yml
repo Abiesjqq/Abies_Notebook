@@ -111,7 +111,7 @@ nav:
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
           - 讲义: CourseNotes/Advance Data Structure/ADS00.md
-        #   - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
+          - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
           - 倒排索引: CourseNotes/Advance Data Structure/ADS03.md
@@ -259,7 +259,7 @@ nav:
           - Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution.md
           - Unleashing the Power of One-Step Diffusion based Image Super-Resolution via a Large-Scale Diffusion Discriminator: 论文阅读/Diffusion/Unleashing the Power of One-Step Diffusion based Image Super-Resolution/Unleashing the Power of One-Step Diffusion based Image Super-Resolution.md
           - DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution.md
-  - 一些小玩意:
+  - 妙妙屋:
       - 跳转与介绍: snippet/links.md
 extra:
   generator: false #是否删除页脚显示“使用 MkDocs 材料制造”
