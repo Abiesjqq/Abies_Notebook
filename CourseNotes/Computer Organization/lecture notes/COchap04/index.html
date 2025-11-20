@@ -396,7 +396,7 @@
   
     
   
-  一些小玩意
+  妙妙屋
 
         </a>
       </li>
@@ -1046,6 +1046,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1054,11 +1059,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1178,6 +1178,8 @@
   
     
     
+      
+        
       
         
       
@@ -1986,7 +1988,7 @@
   <span class="md-ellipsis">
     
   
-    一些小玩意
+    妙妙屋
   
 
     
@@ -2175,6 +2177,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
@@ -2183,11 +2190,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2220,7 +2222,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>3068</strong> 个字&nbsp;&nbsp;<strong>14</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 <strong>3259</strong> 个字&nbsp;&nbsp;<strong>14</strong> 分钟&nbsp;&nbsp;本页总访问量：<span id="busuanzi_value_page_pv">加载中...</span> 次</p>
 </div>
 <h2 id="_1">单周期处理器</h2>
 <h3 id="cpu">CPU 简介</h3>
@@ -2419,7 +2421,16 @@ ld 后直接用需要等一个时钟，编译器编译后会调整顺序，尽�
 <p>1-bit predictor 的缺点：如果有两层循环，内层循环跳出后影响外层循环的预测。<br />
 因此使用 2-bit predictor，taken 后连着两次 not taken 才转为预测 not taken，反之同理。</p>
 <p>进一步改进：ID 中计算地址后，存储地址，如果后面要跳转则直接用地址。如果内存满，只存最新用过的地址（cache）。</p>
-<h4 id="_12">异常和中断</h4>
+<h3 id="_12">异常和中断</h3>
+<p>中断：从主程序跳到 interrupt，再跳回到主程序。</p>
+<p>CPU 工作流改变：控制指令（如 branch），可预测；突然强行插入，不可预测，称为异常。<br />
+狭义的异常（exception）为 CPU 内部的 unexpected event。广义的异常还包含 interrupt。这里统一称为异常。</p>
+<p>预先设置好处理异常的方法，存在内存中，异常发生时直接跳转到处理异常的程序。<br />
+问题在于：异常是 CPU 硬件中发生，CPU 怎么知道异常的原因、异常的指令（因为要回来）？</p>
+<p>RISC-V 有三种模式：机器模式（M）、用户模式（U）、监督模式（S）。每种特权模式都有各自扩展的指令集。这里只讨论机器模式。<br />
+M：所有都需要<br />
+M+U：需要安全保护<br />
+M+U+S：运行操作系统</p>
 
 
 
@@ -2442,7 +2453,7 @@ ld 后直接用需要等一个时钟，编译器编译后会调整顺序，尽�
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月17日 15:13:39 UTC">2025-11-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月20日 04:53:03 UTC">2025-11-20</span>
   </span>
 
     
