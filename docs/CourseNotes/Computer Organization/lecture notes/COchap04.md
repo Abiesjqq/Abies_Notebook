@@ -162,7 +162,7 @@ branch 在 EX 后才知道跳转结果，但下一级指令已经完成 IF，指
 
 流水线结构（图中 PC 更新和写回到寄存器是从右往左，会引发冒险）：
 
-![4-5](../resources/4-5.png){style="width:580px"}
+![4-5](../resources/4-5.png)
 
 图中蓝色的寄存器堆成为流水线寄存器，以相邻的阶段命名。每一阶段执行完后就更新后面的寄存器。
 
@@ -174,7 +174,7 @@ load 指令写回：load 指令 ID 时将 write address 存在寄存器中，随
 
 流水线中的控制信号（ID 得到控制信号后，将所有信号按在哪里用到分为 WB、M、EX 几类，用寄存器传到要用的阶段）：
 
-![4-6](../resources/4-6.png){style="width:580px"}
+![4-6](../resources/4-6.png)
 
 !!! examples "示例 数据竞争的解决"
 
@@ -197,12 +197,12 @@ load 指令写回：load 指令 ID 时将 write address 存在寄存器中，随
 
 用 `ID/EX.RegisterRs1` 表示 ID/EX 寄存器中 Rs1 的编号。ALU 中要用到的寄存器为 ID/EX.RegisterRs1 和 ID/EX.RegisterRs2。
 
-从 EX/MEM 发生 foward 的条件：EX/MEM.RegisterRd = ID/EX.RegisterRs1（或 2）  
-从 MEM/WB 发生 foward 的条件：MEM/WB.RegisterRd = ID/EX.RegisterRs1（或 2）
+从 EX/MEM 发生 forward 的条件：EX/MEM.RegisterRd = ID/EX.RegisterRs1（或 2）  
+从 MEM/WB 发生 forward 的条件：MEM/WB.RegisterRd = ID/EX.RegisterRs1（或 2）
 
 若要认为 data hazard 产生，还需要 EX/MEM.RegWrite 和 MEM/WB.RegWrite 都是 1，目标寄存器（EX/MEM.RegisterRd 或 MEM/WB.RegisterRd）不是 x0。
 
-增加控制单元 Forwarding Unit，输入为 ID/EX 中的 Rs1、Rs2、Rd 和两个后面的 Rd，输出为两个信号 ForwardA 和 ForwardB，分别对应 Rs1 和 Rs2。当为 00 时，数据从 ID/EX 寄存器中传来；当为 01 时，数据从 MEM/WB 中传来（可能为前几条指令 ALU 计算结果，可能为 load 结果）；当为 10 时，数据从 EX/MEM 传来。
+增加控制单元 Forwarding Unit，输入为 ID/EX 中的 Rs1、Rs2、Rd 和两个后面的 Rd，输出为两个信号 ForwardA 和 ForwardB，分别对应 Rs1 和 Rs2。当为 00 时，数据从 ID/EX 源寄存器中传来；当为 01 时，数据从 MEM/WB 中传来（可能为前几条指令 ALU 计算结果，可能为 load 结果）；当为 10 时，数据从 EX/MEM 传来。
 
 还有什么问题？可能既需要从上一条指令 forward（从 EX/MEM），还需要从上上条指令 forward（从 MEM/WB），如下面示例。这时需要用最近的 forward（即 EX/MEM）。
 
@@ -216,54 +216,53 @@ load 指令写回：load 指令 ID 时将 write address 存在寄存器中，随
 
 综上，MEM/WB 的 Forward 信号的表示如下：
 
-```
+```verilog
 // MEM/WB 的 Forward
 if (MEM/WB.RegWrite  // MEM/WB 要写回
-and (MEM/WB.RegisterRd != 0)  // 写回目标不是 x0
-and not(EX/MEM.RegWrite and (EX/MEM.RegisterRd != 0) and (EX/MEM.RegisterRd = ID/EX.RegisterRs1))  // EX/MEM 优先
-and (MEM/WB.RegisterRd = ID/EX.RegisterRs1))  // 上一级写回的是下一级的源寄存器
+    and (MEM/WB.RegisterRd != 0)  // 写回目标不是 x0
+    and not(EX/MEM.RegWrite and (EX/MEM.RegisterRd != 0) and (EX/MEM.RegisterRd = ID/EX.RegisterRs1))  // EX/MEM 优先
+    and (MEM/WB.RegisterRd = ID/EX.RegisterRs1))  // 上一级写回的是下一级的源寄存器
 ForwardA = 01  // 01 表示从 MEM/WB forward
 // ForwardB 同理
 ```
 
 而 EX/MEM 的 Forward 信号的表示如下：
 
-```
+```verilog
 // EX/MEM 的 Forward
-EX/MEM.RegWrite
-and (EX/MEM.RegisterRd != 0)
-and (EX/MEM.RegisterRd = ID/EX.RegisterRs1)
+if (EX/MEM.RegWrite
+    and (EX/MEM.RegisterRd != 0)
+    and (EX/MEM.RegisterRd = ID/EX.RegisterRs1))
 ForwardA = 01
 // ForwardB 同理
 ```
 
 Load-use 的竞争：下一条指令的源操作数是 load 指令的目标操作数，需要从 MEM/WB 进行 forward。Load-use 的条件为：
 
-```
+```verilog
 ID/EX.MemRead
-and ((ID/EX.RegisterRd = IF/ID.RegisterRs1)
-    or (ID/EX.RegisterRd = IF/ID.RegisterRs2))
+    and ((ID/EX.RegisterRd = IF/ID.RegisterRs1)
+        or (ID/EX.RegisterRd = IF/ID.RegisterRs2))
 ```
 
 Load 指令在 MEM 后才得到数据，不能只通过 forward 解决，需要插入气泡，即将所有信号置零。此时 EX、MEM 和 WB 都执行 nop（no-operation）。PC、IF/ID 都不更新，下一时钟周期再重新解码、取指。
 
-增加 Hazard detection unit，输入信号为 ID/EX.MemRead（是否为 load）、Rs1、Rs2、ID/EX.RegisterRd（是否冒险），输出信号为 PCWrite（PC 不更新）、IF/IDWrite（不取指）、控制 Control 后的 MUX（控制信号置零）。
+增加 Hazard detection unit，输入信号为 ID/EX.MemRead（是否为 load）、Rs1、Rs2、ID/EX.RegisterRd（是否冒险），输出信号为 PCWrite（PC 不更新）、IF/IDWrite（不取指）、控制单元 Control 后的 MUX（控制信号置零）。
 
 #### 控制冒险
 
 用 prediction 解决控制冒险。
 
-传统流水线：ALU 计算得到的 Zero 和 Branch 在 EX/MEM 之后再进行与，因此在 MEM 这一阶段才得到结果，在 WB 才能取指。
+传统流水线：ALU 计算得到的 Zero 和 Branch 在 MEM 进行与<span style="color:red">（为什么不是在 EX 直接与？）</span>，因此在 MEM 这一阶段才得到结果，在 WB 才能取指。
 
-做法：将 Rs 的比较和 PC 加立即数放到 ID 这一阶段，在 ID 就知道需不需要跳转。如果需要（Branch Taken），下一时钟周期，传到 ID 的指令变为 nop（不往下传），IF 取跳转后指令。
+做法：将 Rs 的比较和 PC 加立即数放到 ID 这一阶段，在 ID 就知道需不需要跳转。如果需要（Branch Taken），下一时钟周期，传到 ID 的指令变为 nop（不往下传），IF 取跳转后指令。浪费的时钟数从 3 个减少到 1 个。
 
-实际为了提高时钟频率，将流水线拆分得更细，需要预测是否跳转。
-
-Dynamic prediction 预测为上一次跳转情况，构建 prediction buffer，用 branch 指令的地址为索引，存储跳转结果（taken 或 not taken）。当执行 branch 指令时，检查表格，根据上一种情况取指。  
+实际为了提高时钟频率，将流水线拆分得更细，需要预测是否跳转。   
+Dynamic prediction 预测为上一次跳转情况，构建 prediction buffer，用 branch 指令的地址为索引，存储值为跳转结果（taken 或 not taken）。当执行 branch 指令时，检查表格，根据上一种情况取指。  
 在代码中通常为 for 或 while 循环，这种预测方式能大大提高效率。
 
-1-bit predictor 的缺点：如果有两层循环，内层循环跳出后影响外层循环的预测。  
-因此使用 2-bit predictor，taken 后连着两次 not taken 才转为预测 not taken，反之同理。
+1-bit predictor 的缺点：如果有两层循环，内层循环跳出后影响外层循环的预测。   
+因此使用 2-bit predictor，连续错两次才改变预测。
 
 进一步改进：ID 中计算地址后，存储地址，如果后面要跳转则直接用地址。如果内存满，只存最新用过的地址（cache）。
 
@@ -271,7 +270,7 @@ Dynamic prediction 预测为上一次跳转情况，构建 prediction buffer，�
 
 中断：从主程序跳到 interrupt，再跳回到主程序。
 
-CPU 工作流改变：控制指令（如 branch），可预测；突然强行插入，不可预测，称为异常。  
+CPU 工作流改变：控制指令（如 branch），可预测；突然强行插入，不可预测，称为异常。   
 狭义的异常（exception）为 CPU 内部的 unexpected event。广义的异常还包含 interrupt。这里统一称为异常。
 
 预先设置好处理异常的方法，存在内存中，异常发生时直接跳转到处理异常的程序。  
@@ -281,3 +280,17 @@ RISC-V 有三种模式：机器模式（M）、用户模式（U）、监督模�
 M：所有都需要  
 M+U：需要安全保护  
 M+U+S：运行操作系统
+
+### 并行和多发
+
+Instruction-Level Parallelism (ILP) 
+
+怎么增加ILP？Deeper pipeline, Multiple issue。
+
+静态多发由编译器完成，动态多发由硬件完成。  
+静态多发：将可以同一时期进行的指令合并成指令包。如果存在数据竞争，则不能一起发射。    
+循环展开，提高单次循环中的并行。循环展开后要对寄存器重命名。
+
+动态多发：允许CPU不按照原先的顺序执行，但要按顺序写回寄存器。
+
+仲裁：编译器或处理器猜测指令的行为，以尽早消除掉该指令与其他指令之间的依赖关系。

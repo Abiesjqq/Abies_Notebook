@@ -360,7 +360,7 @@ M 阶 B+ 树共 $O(\log_{\lceil M/2 \rceil}N)$ 层，每次操作最多改变一
 
 !!! examples "B+ 树节点个数 2"
 
-    A B+ tree of order 3 with 21 numbers has at least \_\_ nodes of degree 2.（T/F）
+    A B+ tree of order 3 with 21 numbers has at least \_\_ nodes of degree 2.
 
     ---
 
@@ -540,9 +540,9 @@ $O(n)$（先合并两数组，再从后往前调整）。
 
 **斜堆的合并？**
 
-从根较小的堆（o）开始，每次有两个待合并的堆，分别为 o 的右儿子和另一个左偏堆。将这两者中根较小的作为 o 的右儿子。从下往上交换左右孩子。
+从根较小的堆（o）开始，每次有两个待合并的堆，分别为 o 的右儿子和另一个左偏堆。将这两者中根较小的作为 o 的右儿子。从下往上交换左右孩子。也可理解为先左右交换，再在左边合并。
 
-也可理解为先左右交换，再在左边合并。
+注意！Always swap the left and right children except that the largest of all the nodes on the right paths does not have its children swapped. 除了最右路径上最后一个节点，所有最右路径上节点都要交换左右孩子！即使是空节点和某个节点 x 合并，只要 x 有右孩子，则 x 的左右孩子仍要交换。
 
 **斜堆的摊还分析？**
 
@@ -566,7 +566,7 @@ $O(n)$（先合并两数组，再从后往前调整）。
 
 ## 二项队列
 
-二项树：首先需要满足堆序性（这里默认最小堆）。定义单个节点的高度为 0，k 阶二项树由一个 k-1 阶二项树连接到另一 k-1 阶二项树的根节点构成。
+二项树：首先需要满足堆序性（这里默认最小堆）。定义单个节点的高度为 0，k 阶二项树由一个 k-1 阶二项树连接到另一 k-1 阶二项树的根节点构成。（二项树的阶数与二进制对应。）
 
 二项队列：一系列阶数不同的二项树构成的森林。
 
@@ -600,6 +600,10 @@ T2 -> NextSibling = T1 -> LeftChild;
 T1 -> LeftChild = T2;
 ```
 
+**根据节点数判断二项树个数？**
+
+将节点数转化为二进制，其中 1 的个数即二项树的个数。
+
 !!! examples "二项树连接"
 
     To implement a binomial queue, the subtrees of a binomial tree are linked in increasing sizes.（T/F）
@@ -608,7 +612,48 @@ T1 -> LeftChild = T2;
 
     F。由上面连接的代码可知，同阶二项树连接时作为 LeftChild，即子树按大小（节点数）递减的方式串成链。题目描述中“linked in increasing sizes”错误。
 
----
+!!! examples "二项队列判断"
+
+    Making N insertions into an initally empty binomial queue takes $O(N)$ time in the worst case.
+
+    T。单次插入的最坏时间为 $O(\log N)$，但考虑二项树的创建为 $O(N)$。
+
+    ---
+
+    To implement a binomial queue, left-child-next-sibling structure is used to represent each binomial tree.
+
+    T。
+
+    ---
+
+    For a binomial queue, delete-min takes a constant time on average.
+
+    F。要查找所有二项树，时间为 $O(\log N)$。
+
+    ---
+
+    For a binomial queue, merging takes a constant time on average.
+
+    F。可能产生 $O(\log N)$ 次进位，时间为 $O(\log N)$。
+
+    ---
+
+    Inserting a number into a binomial heap with 15 nodes costs less time than inserting a number into a binomial heap with 19 nodes.
+
+    F。插入第 16 个节点后进位多。
+
+!!! examples "二项队列操作时间"
+
+    For a binomial queue, \_\_ takes a constant time on average.
+
+    A. merging
+    B. find-max
+    C. delete-min
+    D. insertion
+
+    ---
+
+    D。其他三项均为 $O(\log N)$。
 
 ## 回溯法
 

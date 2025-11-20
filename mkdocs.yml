@@ -111,7 +111,7 @@ nav:
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
           - 讲义: CourseNotes/Advance Data Structure/ADS00.md
-          - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
+        #   - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
           - 倒排索引: CourseNotes/Advance Data Structure/ADS03.md
