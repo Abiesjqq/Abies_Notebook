@@ -197,6 +197,7 @@ nav:
           - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
           - 启发式搜索算法: NoflowersNotes/人工智能基础/启发式搜索算法/启发式搜索算法.md
           - 零和博弈搜索算法: NoflowersNotes/人工智能基础/零和博弈搜索算法/零和博弈搜索算法.md
+          - 强化学习: NoflowersNotes/人工智能基础/强化学习/强化学习.md
       - 算法设计分析:
           - 分治: NoflowersNotes/算法设计分析/分治/分治.md
           - 图: NoflowersNotes/算法设计分析/图/图.md
@@ -206,6 +207,9 @@ nav:
           - 支持向量机 (SVM): NoflowersNotes/凸优化/SVM/SVM.md
           - 一阶和二阶导数 (补档): NoflowersNotes/凸优化/数学基础/数学基础.md
           - 凸集: NoflowersNotes/凸优化/凸集/凸集.md
+          - 线性规划: NoflowersNotes/凸优化/线性规划/线性规划.md
+          - 二次规划: NoflowersNotes/凸优化/二次规划/二次规划.md
+          - 梯度下降: NoflowersNotes/凸优化/梯度下降/梯度下降.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - Vision Course (进行中):
