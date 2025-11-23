@@ -962,6 +962,8 @@
       
         
       
+        
+      
     
     
     
@@ -1273,6 +1275,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#floyd-warshall-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floyd-Warshall Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dp-with-exhaustive-searches-non-attacking-kings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP with Exhaustive Searches: Non-attacking Kings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dp-on-trees-maximum-independent-set-on-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP on Trees: Maximum Independent Set on Trees
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1303,6 +1338,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1621,6 +1662,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#floyd-warshall-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floyd-Warshall Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dp-with-exhaustive-searches-non-attacking-kings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP with Exhaustive Searches: Non-attacking Kings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dp-on-trees-maximum-independent-set-on-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DP on Trees: Maximum Independent Set on Trees
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1809,11 +1883,89 @@ v_i \leq Kv_i' + K
 <p>Knapsack Problems is an example of FPTAS problem (Fully Polynomial Time Approximation Scheme)</p>
 <p>A <strong>PTAS</strong> is an approximation algorithm that, for any <span class="arithmatex">\(\varepsilon &gt; 0\)</span>, returns a solution within a factor of <span class="arithmatex">\((1 + \varepsilon)\)</span> for minimization (or <span class="arithmatex">\((1 - \varepsilon)\)</span> for maximization).<br />
 For every fixed <span class="arithmatex">\(\varepsilon\)</span>, the running time is polynomial in the input size <span class="arithmatex">\(n\)</span>, but may be exponential in <span class="arithmatex">\(1/\varepsilon\)</span></p>
-<p>An <strong>FPTAS</strong> is a PTAS whose running time is <strong>polynomial in both</strong>:</p>
-<ul>
-<li>the input size <span class="arithmatex">\(n\)</span>, and  </li>
-<li><span class="arithmatex">\(1/\varepsilon\)</span></li>
-</ul>
+<p>An <strong>FPTAS</strong> is a PTAS whose running time is <strong>polynomial in both</strong> the input size <span class="arithmatex">\(n\)</span>, and <span class="arithmatex">\(1/\varepsilon\)</span>.</p>
+<h3 id="floyd-warshall-algorithm">Floyd-Warshall Algorithm</h3>
+<p>All pairs shortest paths:<br />
+<strong>Input</strong> a directed weighted graph <span class="arithmatex">\(G = (V, E, w)\)</span><br />
+<strong>Output</strong> <span class="arithmatex">\(dist(u, v)\)</span> for all pairs of vertices.</p>
+<p>Actually, running Bellman-Ford algorithm for all vertices will cost about <span class="arithmatex">\(O(\vert V \vert^2 \vert E \vert)\)</span> time (also check if negative cycle exists). By Floyd-Warshall, it will be <span class="arithmatex">\(O(\vert V \vert^3)\)</span></p>
+<p><strong>Subproblem</strong>: label all vertices by <span class="arithmatex">\(1, 2, \ldots, n\)</span>, <span class="arithmatex">\(\operatorname{dist}_k(i, j)\)</span> the distance between <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> by only using intermediate vertices form <span class="arithmatex">\(\{1, 2, \ldots, k\}\)</span>.</p>
+<p>Obviously</p>
+<div class="arithmatex">\[
+\operatorname{dist}_{k + 1}(i, j) = \min \{\operatorname{dist}_k(i, j), \operatorname{dist}_k(i, k + 1), \operatorname{dist}_k(k + 1, j)\}
+\]</div>
+<p>So it is a <span class="arithmatex">\(O(\vert V \vert^3)\)</span> algorithm (Let <span class="arithmatex">\(d(i, j, k) = \operatorname{dist}_k(i, j)\)</span>). A natural topological order: increasing order in <span class="arithmatex">\(k\)</span>; order of vertices in <span class="arithmatex">\(d(\cdot, \cdot, k)\)</span> can be arbitrary.</p>
+<p>Initialization:</p>
+<div class="arithmatex">\[
+d(i, j, 0) = \begin{cases}
+    \infty, &amp; \quad i \neq j, (i, j) \notin E \\
+    w(i, j) &amp; \quad (i, j) \in E \\
+    0, &amp;\quad i = j
+\end{cases}
+\]</div>
+<div class="admonition remarks">
+<p class="admonition-title">A Trick</p>
+<p>There is a trick to reduce the space complexity from <span class="arithmatex">\(O(\vert V \vert^3)\)</span> to <span class="arithmatex">\(O(\vert V \vert^2)\)</span>: due to the update order (we never use layers before <span class="arithmatex">\(k\)</span> at <span class="arithmatex">\(k + 1\)</span> iteration), the new <span class="arithmatex">\(k + 1\)</span> layer could overlap the <span class="arithmatex">\(k\)</span> layer.<br />
+Now </p>
+<div class="arithmatex">\[
+d(i, j) = \min \{d(i, j), d(i, k + 1) + d(k + 1, j)\}
+\]</div>
+<p>Actually a lot of DPs can apply this trick!</p>
+<p>Notice: If we view <span class="arithmatex">\(d(i, j)\)</span> as subproblems, the dependency does NOT form a DAG.</p>
+</div>
+<h3 id="dp-with-exhaustive-searches-non-attacking-kings">DP with Exhaustive Searches: Non-attacking Kings</h3>
+<p>Given an <span class="arithmatex">\(m \times n\)</span> chessboard, <strong>how many different ways</strong> we can place "Kings" such that no pair of them are in the attack range (<span class="arithmatex">\(3 \times 3\)</span> centered) of each other.<br />
+We will design a DP based algorithm with <span class="arithmatex">\(O(4^n m)\)</span> time.</p>
+<p>Let <span class="arithmatex">\(H(i)\)</span>: number of placements on the <span class="arithmatex">\(i \times n\)</span> sub-chessboard</p>
+<p>Simply build relationship from <span class="arithmatex">\(H(0), \ldots, H(i - 1)\)</span> is hard because such <span class="arithmatex">\(H(i)\)</span> does not contain enough information! (whether its border has Kings and where, i.e. the information of row <span class="arithmatex">\(i\)</span>).</p>
+<p><strong>Encoding Availability of a Row</strong></p>
+<p>Use a length-<span class="arithmatex">\(n\)</span> binary string <span class="arithmatex">\(w\)</span> to encode availability:<br />
+- <span class="arithmatex">\(w[i] = 0\)</span> if the <span class="arithmatex">\(i\)</span>-th cell of this row can put a King (available)<br />
+- <span class="arithmatex">\(w[i] \neq 0\)</span> if the <span class="arithmatex">\(i\)</span>-th cell of this row cannot put a King (unavailable)</p>
+<p>Then we define <span class="arithmatex">\(H[i, w]\)</span>: number of placements such that the availability of the cells at the <span class="arithmatex">\(i\)</span>-th row follows <span class="arithmatex">\(w\)</span></p>
+<p>Then the feasible state transition:</p>
+<div class="arithmatex">\[
+H[i + 1, w_0] = \sum_{\substack{w \text{ feasible} \\\text{for }w_0 \\ \text{in row }i}}H[i, w]
+\]</div>
+<p>and <span class="arithmatex">\(w\)</span> feasible iff.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    &amp;\texttt{(s \&amp; t) == 0} \\
+    \texttt{\&amp;\&amp; } &amp;\texttt{(s \&amp; (t &lt;&lt; 1)) == 0} \\
+    \texttt{\&amp;\&amp; } &amp;\texttt{((s &lt;&lt; 1) \&amp; t) == 0}
+\end{aligned}
+\]</div>
+<div class="admonition remarks">
+<p class="admonition-title">Analysis</p>
+<p><span class="arithmatex">\(m\)</span> rows; each row: <span class="arithmatex">\(2^n\)</span> atates; each row, each state: at most <span class="arithmatex">\(2^n\)</span> placements of Kings.<br />
+Overall time complexity: <span class="arithmatex">\(O(4^n m)\)</span></p>
+</div>
+<h3 id="dp-on-trees-maximum-independent-set-on-trees">DP on Trees: Maximum Independent Set on Trees</h3>
+<p>Given an undirected tree <span class="arithmatex">\(G(V, E)\)</span>, find an independent set with maximum number of vertices.</p>
+<div class="admonition normal-comment">
+<p class="admonition-title">Independent set here</p>
+<p>Independent set <span class="arithmatex">\(S\)</span> here meas <span class="arithmatex">\(\forall u, v \in S, (u, v) \notin E\)</span>, which is aligned with the independent set definition before.</p>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Maximize independent set</p>
+<p>It is <strong>NP-hard</strong> in normal undirected graphs (because <em>Maximum Clique</em> is NP-Hard, and the independent set in <span class="arithmatex">\(G(V, E)\)</span> is the clique in <span class="arithmatex">\(\overline{G}(V, \overline{E})\)</span>)</p>
+</div>
+<p>In a subtree,<br />
+- If we choose the root, we should decide the problems from 2-deeper subtrees.<br />
+- If we do not choose the root, we should decide the problems from 1-deeper subtrees.</p>
+<p>Let <span class="arithmatex">\(H[u]\)</span>: the maximized size of independent set of the subtree rooted at <span class="arithmatex">\(v\)</span></p>
+<div class="arithmatex">\[
+H[v] = \max \left\{\sum_{u \in \operatorname{Children}(v)} H[u], 1 + \sum_{u \in \operatorname{GrandChildren}(v)} H[u]\right\}
+\]</div>
+<p>And the recurrence comes from leaves to root.</p>
+<div class="admonition remarks">
+<p class="admonition-title">Analysis</p>
+<p>Each vertex is processed once and each <span class="arithmatex">\(H[u]\)</span> is looked up for twice: <span class="arithmatex">\(O(\vert V \vert)\)</span></p>
+</div>
+<div class="admonition normal-comment">
+<p class="admonition-title">Actually Greedy solution is also correct</p>
+<p>To be completed...</p>
+</div>
 
 
 
@@ -1836,7 +1988,7 @@ For every fixed <span class="arithmatex">\(\varepsilon\)</span>, the running tim
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月16日 14:27:43 UTC">2025-11-16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月23日 12:09:56 UTC">2025-11-23</span>
   </span>
 
     
@@ -1851,29 +2003,6 @@ For every fixed <span class="arithmatex">\(\varepsilon\)</span>, the running tim
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
