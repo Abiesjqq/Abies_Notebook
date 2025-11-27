@@ -60,6 +60,7 @@ theme:
 
 hooks:
   - docs/scripts/hooks/reading_time.py
+  - docs/scripts/hooks/multi_language.py
 
 nav:
   - Home:
@@ -98,6 +99,8 @@ nav:
           - tmux: 自学记录/tmux/tmux.md
       - 数理基础:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
+      - AI 实践:
+          - 扩散模型训练 -- Generative Models 为例: 自学记录/AI/DiffusionTraining/DiffusionTraining.md
   - 课程笔记:
       - 扉页: CourseNotes/note_index.md
       - 计算机组成:
@@ -193,6 +196,7 @@ nav:
           - LTI 系统的时域分析: NoflowersNotes/信号与系统/Lec_4/Lec_4.md
           - LTI 系统的频域分析 - 数学原理: NoflowersNotes/信号与系统/Lec_5/Lec_5.md
           - LTI 系统的频域分析 - 相关应用: NoflowersNotes/信号与系统/Lec_6/Lec_6.md
+          - L 变换和系统 s 域分析: NoflowersNotes/信号与系统/Lec_7/Lec_7.md
       - 人工智能基础:
           - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
           - 启发式搜索算法: NoflowersNotes/人工智能基础/启发式搜索算法/启发式搜索算法.md

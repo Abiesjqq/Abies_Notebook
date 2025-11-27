@@ -69,7 +69,7 @@ $$
 
 可以直接写出频率响应！
 
-!!! example "例题"
+!!! examples "例题"
     ![alt text](image.png)  
 
     ![alt text](image-1.png)
@@ -330,3 +330,45 @@ $$
 ### 时分复用
 
 (在时间轴中按延迟插入不同同周期信号，不做介绍)
+
+## 离散信号通过系统的响应
+
+$$
+H(\mathrm{e}^{\mathrm{j}\Omega}) = \vert H(\mathrm{e}^{\mathrm{j}\Omega}) \vert \mathrm{e}^{\mathrm{j}\phi(\Omega)}
+$$
+
+补充地我们称 $\displaystyle \tau (Omega) = \frac{\mathrm{d}\phi(\Omega)}{\mathrm{d}\Omega}$ 为群时间响应
+
+我们发现，
+
+$$
+y[k] = \mathrm{e}^{\mathrm{j}\Omega k} \otimes h[k] = \mathrm{e}^{\mathrm{j}\Omega k} \sum_n \mathrm{e}^{-\mathrm{j}\Omega n}h[n] = \mathrm{e}^{\mathrm{j}\Omega k} H(\mathrm{e}^{\mathrm{j}\Omega})
+$$
+
+离散系统的频率响应，等于系统单位样值响应的傅里叶变换
+
+因此, 
+
+$$
+\begin{aligned}
+    T[f[k]] &= \frac{1}{2\pi}\int_{2\pi}F(\mathrm{e}^{\mathrm{j}\Omega})T[\mathrm{e}^{\mathrm{j}\Omega k}] \mathrm{d}\Omega \\
+    &= \frac{1}{2\pi}\int_{2\pi}F(\mathrm{e}^{\mathrm{j}\Omega})H(\mathrm{e}^{\mathrm{j}\Omega})\mathrm{e}^{\mathrm{j}\Omega k} \mathrm{d}\Omega
+\end{aligned}
+$$
+
+### 理想低通数字滤波器
+
+对于截止频率为 $\Omega_c$, 幅度为 $A$ 的低通滤波器，我们定义其相位响应为线性 (线性相位系统): $\phi(\Omega) = -\Omega k_0, \tau(\Omega) = k_0$, 也即
+
+$$
+H(\mathrm{j}\omega) = \begin{cases}
+    \mathrm{e}^{-\mathrm{j}\omega k_0}, \quad & \omega < \omega_c \\
+    0, \quad & \omega > \omega_c
+\end{cases}
+$$
+
+此时对于 $f[k]$ (其频率为 $\Omega_m$), 其响应
+
+$$
+y[k] = \sum_{k = 0}^{n - 1}F[k]A\mathrm{e}^{\mathrm{j}\Omega_m (j - j_0)}
+$$

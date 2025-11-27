@@ -220,7 +220,7 @@ $$
     **单位阶跃信号** $u(t) = 1/2 + 1/2 \cdot \mathrm{sgn}(t)$, 由傅里叶变换的线性性，$\displaystyle F(u(t)) = \pi \delta(\omega) + \frac{1}{\mathrm{j}\omega}$ (不要忘记 $1/2$ 的傅里叶变换！)
 
 !!! remarks "常见周期信号的频谱"
-    **虚指数信号 $\mathrm{e}^{\mathrm{j}\omega t}$**: 注意到 $\displaystyle \int_{-\infty}^{\infty}1 \cdot \exp(-\mathrm{j} \omega t\mathrm{d}t = 2\pi \delta(\omega)$, 有 $\displaystyle F(\mathrm{e}^{\mathrm{j}\omega t}) = \int_{-\infty}^{\infty}1 \cdot \exp(-\mathrm{j} (\omega - \omega_0) t)\mathrm{d}t = 2\pi \delta (\omega - \omega_0)$  
+    **虚指数信号 $\mathrm{e}^{\mathrm{j}\omega t}$**: 注意到 $\displaystyle \int_{-\infty}^{\infty}1 \cdot \exp(-\mathrm{j} \omega t)\mathrm{d}t = 2\pi \delta(\omega)$, 有 $\displaystyle F(\mathrm{e}^{\mathrm{j}\omega t}) = \int_{-\infty}^{\infty}1 \cdot \exp(-\mathrm{j} (\omega - \omega_0) t)\mathrm{d}t = 2\pi \delta (\omega - \omega_0)$  
     **余弦信号** $F(\cos \omega_0 t) = \pi (\delta(\omega - \omega_0) + \delta(\omega + \omega_0)))$  
     **正弦信号** $F(\sin \omega_0 t) = \mathrm{j}\pi(\delta(\omega + \omega_0) - \delta(\omega - \omega_0))$  
     **一般周期信号** $\displaystyle f_T(t) = \sum_{n = -\infty}^{\infty}F_n \exp(\mathrm{j}n\omega_0 t), \omega_0 = \frac{2\pi}{T}$, 有 $\displaystyle F(f_T(t)) = \sum_{n = -\infty}^{\infty}F_n F(\mathrm{e}^{\mathrm{j}n\omega_0 t})$  
@@ -500,7 +500,7 @@ $$
     **非因果实指数序列** $x[n] = a^n u[-n], \vert a \vert > 1$，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{1}{1 - a^{-1}\mathrm{e}^{\mathrm{j}\omega}}$  
     **双边指数序列** $x[n] = a^{\vert n\vert}, \vert a \vert > 1$，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{a\mathrm{e}^{\mathrm{j}\omega}}{1 - a\mathrm{e}^{-\mathrm{j}\omega}} + \frac{1}{1 - a\mathrm{e}^{\mathrm{j}\omega}} = \frac{1 - a^2}{1 + a^2 - 2a \cos \omega}$  
     **常数序列** $x[n] = 1$, 有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = 2\pi \sum_{n = -\infty}^\infty \delta (\omega - 2\pi k)$ 是以 $2\pi$ 为周期的冲激串  
-    **周期为 $N$ 的单位样值序列** $\displaystyle \delta_N[n] = \sum_{k = -\infty}^\infty \delta[n - kN]$, 有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{2\pi }{N}\sum_{k = -\infty}^{\infty}2\pi \delta \left(\omega - \frac{2\pi}{N}k\right)$. (1)  
+    **周期为 $N$ 的单位样值序列** $\displaystyle \delta_N[n] = \sum_{k = -\infty}^\infty \delta[n - kN]$, 有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \frac{2\pi }{N}\sum_{k = -\infty}^{\infty} \delta \left(\omega - \frac{2\pi}{N}k\right)$. (1)  
     **离散时间周期指数信号** $x[n] = \mathrm{e}^{\mathrm{j}\omega n}$，有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \sum_{k = -\infty}^{\infty} 2\pi \delta(\omega - \omega_0 - 2\pi k)$  
     **离散时间余弦信号** $x[n] = \cos \omega_0 n$, 有 $\displaystyle X(\mathrm{e}^{\mathrm{j}\omega }) = \pi \sum_{k = -\infty}^{\infty} \delta(\omega + \omega_0 - 2\pi k) + \delta(\omega - \omega_0 - 2\pi k)$
     { .annotate}
@@ -528,7 +528,7 @@ $$
 X[-n] \longleftrightarrow X(\mathrm{e}^{-\mathrm{j}\omega})
 $$
 
-!!! example "滑动平均"
+!!! examples "滑动平均"
     把信号和高度为 1 的窗口卷积，能够使信号变得平滑。  
     表现在频谱上，表现为高频信号频谱减小，低频信号频谱增加。
 
