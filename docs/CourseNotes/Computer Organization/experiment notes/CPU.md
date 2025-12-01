@@ -284,13 +284,13 @@ output wire Mem_RW;          // 存储器读写信号
 
 本 lab 中已经提供的文件为：
 
-> abies@sjqqq:/mnt/d/.../OExp02-IP2SOC\$ ls  
+> x@x:/mnt/d/.../OExp02-IP2SOC\$ ls   
 > A7.xdc IP I_mem.coe font_8x16.mem vga_debugger.mem  
-> abies@sjqqq:/mnt/d/.../OExp02-IP2SOC$ cd IP  
-> abies@sjqqq:/mnt/d/.../OExp02-IP2SOC/IP\$ ls  
+> x@x:/mnt/d/.../OExp02-IP2SOC$ cd IP  
+> x@x:/mnt/d/.../OExp02-IP2SOC/IP\$ ls  
 > Counter_x.edf MIO_BUS.v RAM_B.edf SAnti_jitter.v SPIO.edf VGA clk_div.edf  
 > Counter_x.v Multi_8CH32.edf RAM_B.v SCPU.edf SPIO.v VGA.edf clk_div.v  
-> MIO_BUS.edf Multi_8CH32.v SAnti_jitter.edf SCPU.v Seg7_Dev VGA.v  
+> MIO_BUS.edf Multi_8CH32.v SAnti_jitter.edf SCPU.v Seg7_Dev VGA.v
 
 直接导入所有.v 文件和.edf 文件即可
 
