@@ -9,24 +9,28 @@
       
       
       
+        <link rel="prev" href="../cs231n_03/">
+      
+      
+        <link rel="next" href="../cs231n_05/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>EI01 - Abies's Notebook</title>
+        <title>Lec 04 Introduction to Neural Networks - Abies's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,23 +55,23 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra2.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/cursor.css">
+      <link rel="stylesheet" href="../../../../stylesheets/cursor.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/info.css">
+      <link rel="stylesheet" href="../../../../stylesheets/info.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/create_and_update.css">
+      <link rel="stylesheet" href="../../../../stylesheets/create_and_update.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../../stylesheets/customize.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/font.css">
+      <link rel="stylesheet" href="../../../../stylesheets/font.css">
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -91,6 +95,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#backpropagation" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +112,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-header__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -123,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              EI01
+              Lec 04 Introduction to Neural Networks
             
           </span>
         </div>
@@ -237,7 +246,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../../../.." class="md-tabs__link">
           
   
   
@@ -259,7 +268,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-tabs__link">
+        <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-tabs__link">
           
   
   
@@ -281,7 +290,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../note_index/" class="md-tabs__link">
+        <a href="../../../../CourseNotes/note_index/" class="md-tabs__link">
           
   
   
@@ -303,7 +312,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../NoflowersNotes/Noflower_index/" class="md-tabs__link">
+        <a href="../../../../NoflowersNotes/Noflower_index/" class="md-tabs__link">
           
   
   
@@ -321,11 +330,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../AbiesNotes/Abies_index/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../Abies_index/" class="md-tabs__link">
           
   
   
@@ -354,7 +365,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/4D%E7%94%9F%E6%88%90/L4GM/L4GM/" class="md-tabs__link">
+        <a href="../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/4D%E7%94%9F%E6%88%90/L4GM/L4GM/" class="md-tabs__link">
           
   
   
@@ -379,7 +390,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../snippet/links/" class="md-tabs__link">
+        <a href="../../../../snippet/links/" class="md-tabs__link">
           
   
   
@@ -421,7 +432,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
+    <a href="../../../.." title="Abies&#39;s Notebook" class="md-nav__button md-logo" aria-label="Abies's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.19 18H24l-3.86-6H22L15 2l-2.39 3.41L17.92 13h-1.95zM16 12 9 2 2 12h1.86L0 18h7v4h4v-4h7l-3.86-6zm-3.84-2H10.5l3.84 6H3.67l3.86-6H5.84L9 5.5zm.84 9v3h4v-3z"/></svg>
@@ -479,7 +490,7 @@
   
   
   
-    <a href="../../.." class="md-nav__link">
+    <a href="../../../.." class="md-nav__link">
       
   
   
@@ -542,7 +553,7 @@
   
   
   
-    <a href="../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-nav__link">
+    <a href="../../../../%E8%87%AA%E5%AD%A6%E8%AE%B0%E5%BD%95/1_index/" class="md-nav__link">
       
   
   
@@ -617,7 +628,7 @@
   
   
   
-    <a href="../../note_index/" class="md-nav__link">
+    <a href="../../../../CourseNotes/note_index/" class="md-nav__link">
       
   
   
@@ -684,7 +695,7 @@
   
   
   
-    <a href="../../../NoflowersNotes/Noflower_index/" class="md-nav__link">
+    <a href="../../../../NoflowersNotes/Noflower_index/" class="md-nav__link">
       
   
   
@@ -714,10 +725,456 @@
       
   
   
+    
+  
   
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abies的笔记
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Abies的笔记
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Abies_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    扉页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS231n
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CS231n
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs231n_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lec 02 Image Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs231n_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lec 03 Loss Functions adn Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lec 04 Introduction to Neural Networks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lec 04 Introduction to Neural Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backpropagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backpropagation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neural Networks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs231n_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lec 05 Convolutional Neural Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs231n_06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lec 06 Training Neural Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../assignments/a1_knn/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 1
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -745,14 +1202,14 @@
   
   
   
-    <a href="../../../AbiesNotes/Abies_index/" class="md-nav__link">
+    <a href="../../../Vision%20Course/CV02_camera/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
     
   
-    Abies的笔记
+    Vision Course
   
 
     
@@ -766,6 +1223,176 @@
     </a>
   
 
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../GAMES101/Lecture%2001%20Overview%20of%20Computer%20Graphics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GAMES101
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../Tinyrenderer/getting%20started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tinyrenderer
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -806,7 +1433,7 @@
   
   
   
-    <a href="../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/4D%E7%94%9F%E6%88%90/L4GM/L4GM/" class="md-nav__link">
+    <a href="../../../../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/4D%E7%94%9F%E6%88%90/L4GM/L4GM/" class="md-nav__link">
       
   
   
@@ -863,7 +1490,7 @@
   
   
   
-    <a href="../../../snippet/links/" class="md-nav__link">
+    <a href="../../../../snippet/links/" class="md-nav__link">
       
   
   
@@ -907,6 +1534,36 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#backpropagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backpropagation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neural Networks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -925,9 +1582,37 @@
   
 
 
-  <h1>EI01</h1>
+  <h1>Lec 04 Introduction to Neural Networks</h1>
 
-
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>295 词</strong>&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+</div>
+<h2 id="backpropagation">Backpropagation</h2>
+<p>The forward pass uses a computation graph to store intermediate values. The backward pass starts from the end node and uses those saved values to compute the gradient of each node with respect to the loss by applying the chain rule.<br />
+For a node with inputs (x, y) and output z, each node performs a simple operation; its local gradients <span class="arithmatex">\(\frac{\partial z}{\partial x}\)</span> and <span class="arithmatex">\(\frac{\partial z}{\partial y}\)</span> are easy to compute. Once we have <span class="arithmatex">\(\frac{\partial L}{\partial z}\)</span> from downstream, the chain rule gives <span class="arithmatex">\(\frac{\partial L}{\partial x} = \frac{\partial L}{\partial z} \cdot \frac{\partial z}{\partial x}\)</span>, which is then passed to the previous node.</p>
+<p>Each node keeps and passes on its local gradient.<br />
+For a max node, the input that wins gets gradient 1, the others get 0; the local gradient depends on which input was largest.</p>
+<p>Why is backprop more efficient than directly differentiating <span class="arithmatex">\(L\)</span> with respect to every parameter? Because the chain rule lets us reuse local gradients; we only need each node’s small derivative.</p>
+<p>You can treat several simple units as one larger operation, e.g., bundling nodes into a sigmoid <span class="arithmatex">\(\sigma(x) = \frac{1}{1 + e^{-x}}\)</span>.</p>
+<p>When inputs are high-dimensional, the local gradient (Jacobian) is often sparse.<br />
+Example: a 4096-D ReLU layer <span class="arithmatex">\(f(x) = \max(0, x)\)</span> outputs 4096-D. Its Jacobian is 4096×4096; entry (i, j) is how output i changes with input j. For ReLU each output depends only on its matching input, so only the diagonal matters.</p>
+<p>Backprop illustration:</p>
+<p><img alt="4-1" src="./cs231n_resources/c4-1.png" style="width:550px" /></p>
+<h2 id="neural-networks">Neural Networks</h2>
+<p>Single-layer linear model: <span class="arithmatex">\(f = W x\)</span>.<br />
+Two-layer example: <span class="arithmatex">\(f = W_2 \max(0, W_1 x)\)</span>; stacking layers with nonlinearity increases expressive power. W2 can assign different weights to different templates learned in W1.</p>
+<p>Neural-network terminology comes from biology but the analogy is weak: dendrites multiply by weights <span class="arithmatex">\(w_i x_i\)</span>, the cell body sums them, and the axon applies a nonlinearity <span class="arithmatex">\(f\!\left(\sum_i w_i x_i + b_i\right)\)</span>.</p>
+<p>Common activation functions: Sigmoid, Leaky ReLU, tanh, Maxout, ReLU, ELU, etc.<br />
+Architectures have an input layer, an output layer, and hidden layers in between. Example:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">h1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">b1</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">h2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W2</span><span class="p">,</span> <span class="n">h1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b2</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W3</span><span class="p">,</span> <span class="n">h2</span><span class="p">)</span> <span class="o">+</span> <span class="n">b3</span>
+</code></pre></div></td></tr></table></div>
 
 
 
@@ -950,7 +1635,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月17日 00:31:05 UTC">2025-11-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月1日 13:07:45 UTC">2025-12-01</span>
   </span>
 
     
@@ -960,34 +1645,11 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月9日 14:22:06 UTC">2025-09-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月1日 13:07:45 UTC">2025-12-01</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1015,6 +1677,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../cs231n_03/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lec 03 Loss Functions adn Optimization">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Lec 03 Loss Functions adn Optimization
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cs231n_05/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lec 05 Convolutional Neural Networks">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Lec 05 Convolutional Neural Networks
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1060,24 +1760,24 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="../../../javascripts/animate-details.js"></script>
+        <script src="../../../../javascripts/animate-details.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../javascripts/cursor.js"></script>
+        <script src="../../../../javascripts/cursor.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/busuanzi.pure.mini.js"></script>
+        <script src="../../../../javascripts/busuanzi.pure.mini.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
       
