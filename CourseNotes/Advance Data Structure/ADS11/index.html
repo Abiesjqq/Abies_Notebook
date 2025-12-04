@@ -1251,12 +1251,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#k-center-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1264,6 +1259,22 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2131,12 +2142,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#k-center-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2144,6 +2150,22 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2182,7 +2204,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>1014 词</strong>&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>918 词</strong>&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
 </div>
 <h2 id="terminology">Terminology</h2>
 <p><strong>Approximation ratio:</strong> an algorithm has an approximation ratio of <span class="arithmatex">\(\rho(n)\)</span> if cost <span class="arithmatex">\(C\)</span> (current algorithm) and <span class="arithmatex">\(C^*\)</span> (optimal algorithm) satisfies:</p>
@@ -2190,21 +2212,22 @@
 <p>The algorithm is called <strong><span class="arithmatex">\(\rho(n)\)</span>-algorithm</strong>.</p>
 <p><strong>Approximation scheme:</strong> an algorithm that takes as input both an instance and value <span class="arithmatex">\(\varepsilon\)</span>, and is a 1-<span class="arithmatex">\(\varepsilon\)</span> algorithm.</p>
 <p><strong>Polynomial-time approximation scheme (PTAS):</strong> for any fixed <span class="arithmatex">\(\varepsilon\)</span>, the algorithm runs in polynomial time. E.g., <span class="arithmatex">\(O(n^{2/\varepsilon})\)</span>. Perturbation of <span class="arithmatex">\(\varepsilon\)</span> can greatly change time complexity. Therefore, PTAS is not an adequate discription.</p>
-<p><strong>Fully polynomial-time approximation scheme (FPTAS):</strong> for any fixed <span class="arithmatex">\(\varepsilon\)</span>, the running time is both polynomial to <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(1/\varepsilon\)</span>.</p>
+<p><strong>Fully polynomial-time approximation scheme (FPTAS):</strong> for any fixed <span class="arithmatex">\(\varepsilon\)</span>, the running time is both polynomial on <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(1/\varepsilon\)</span>.</p>
+<p><strong>Pseudo-polynomial approximation scheme (PPAS):</strong> Consider the numeric value of the input parameters is N. PPAS's running time is polynomial in N, but not necessarily polynomial in the length of the input encoding (<span class="arithmatex">\(\log N\)</span>).</p>
 <h2 id="examples">Examples</h2>
 <h3 id="bin-packing">Bin Packing</h3>
 <p>Given N items of sizes <span class="arithmatex">\(S_1,\cdots,S_n\)</span>, such that <span class="arithmatex">\(0 &lt; S_i \le 1\)</span> for all <span class="arithmatex">\(1 \le i \le N\)</span>. Pack these items in the fewest number of bins, each of which has unit capacity.</p>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">Next fit</p>
 <p><strong>Next fit:</strong> check if the previous bin can hold; create a new bin if not.</p>
 <p>Let M be the optimal number of bins. Next fit uses no more than 2M–1 bins. (Proof: <span class="arithmatex">\(\text{size}(B_{2k-1})+\text{size}(B_{2k})&gt;1\)</span>.)</p>
 </div>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">First fit</p>
 <p><strong>First fit:</strong> put in the first available bin; create a new bin if nif none of the existing bins can accommodate it.</p>
 <p>First fit uses no more than 17M/10 bins.</p>
 </div>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">Best fit</p>
 <p><strong>Best fit:</strong> put in a bin in the bin that leaves the minimum remaining space.</p>
 <p>Best fit does no better than first fit.</p>
@@ -2212,7 +2235,7 @@
 <p><strong>On-line algorithm:</strong> handle the current item before processing the next one. No on-line algorithm can always give an optimal solution.</p>
 <p><strong>Off-line algorithm:</strong> view the entire item list before producing an answer.</p>
 <p>Thm.: There are inputs that force any on-line bin-packing algorithm to use at least 5/3 the optimal number of bins.</p>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">First (or best) fit decreasing</p>
 <p><strong>First (or best) fit decreasing:</strong> sort the items into non-increasing sequence of sizes, then apply first (or best) fit.</p>
 <p>First (or best) fit decreasing uses no more than 11M/9+6/9 bins.</p>
@@ -2220,7 +2243,7 @@
 <h3 id="knapsack-problem">Knapsack Problem</h3>
 <p>A knapsack with a capacity <span class="arithmatex">\(M\)</span> is to be packed. Given <span class="arithmatex">\(N\)</span> items. Each item <span class="arithmatex">\(i\)</span> has a weight <span class="arithmatex">\(w_i\)</span> and a profit <span class="arithmatex">\(p_i\)</span> . If <span class="arithmatex">\(x_i\)</span> is the percentage of the item <span class="arithmatex">\(i\)</span> being packed, then the packed profit will be <span class="arithmatex">\(p_i x_i\)</span>. An optimal packing is a feasible one with maximum profit <span class="arithmatex">\(\sum_{i=1}^n p_ix_i\)</span> under the constrains <span class="arithmatex">\(\sum_{i=1}^nw_ix_i\le M\)</span> and <span class="arithmatex">\(x_i\in [0,1]\)</span>.</p>
 <p><strong>0-1 version of knapsack problem:</strong> 0-1 knapsack is an NP-hard problem, because profits (and capacity) are exponential to the input length <span class="arithmatex">\(\log_2 p_{max}\)</span>.</p>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">Greedy solution</p>
 <p>If we are greedy on profit, density or maximum profit density <span class="arithmatex">\(p_i/w_i\)</span>, the approximation ratio is 2.</p>
 <details class="normal-comment">
@@ -2234,7 +2257,7 @@
 <p>Based on 1~3, <span class="arithmatex">\(P_{opt}/P_{greedy}\le 2\)</span>.</p>
 </details>
 </div>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">DP solution</p>
 <p><strong>DP solution:</strong> <span class="arithmatex">\(W_{i,p}\)</span> denotes the minimum weight of a collection from <span class="arithmatex">\(\{1,\cdots, i \}\)</span> with total profit being exactly <span class="arithmatex">\(p\)</span>.</p>
 <div class="arithmatex">\[
@@ -2245,16 +2268,17 @@ W_{i-1,p} &amp; p_i &gt; p \\
 \min\{ W_{i-1,p},\, w_i + W_{i-1,p-p_i} \} &amp; \text{otherwise}
 \end{cases}
 \]</div>
-<p>What if <span class="arithmatex">\(p_{max}\)</span> is large? Round all profit values up to lie in smaller range!</p>
+<p>The running time is <span class="arithmatex">\(O(np_{max})\)</span>, therefore it's a PPAS.</p>
+<p>What if <span class="arithmatex">\(p_{max}\)</span> is large? Round all profit values up to lie in smaller range.</p>
 </div>
-<h2 id="k-center-problem">K-center Problem</h2>
+<h3 id="k-center-problem">K-center Problem</h3>
 <p>Take a set of <span class="arithmatex">\(n\)</span> sites <span class="arithmatex">\(s_1, \cdots, s_n\)</span> as input. Select <span class="arithmatex">\(K\)</span> centers C so that the maximum distance from a site to the nearest center is minimized, i.e. the sum of covering radius is minimized.</p>
 <p>The chosen do not need to lie within the set.(?)</p>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">Greedy solution 1</p>
 <p><strong>Greedy solution 1:</strong> put the first center in the best possible location, and add centers to reduce covering radius. Bad if points are separated.</p>
 </div>
-<div class="admonition examples">
+<div class="admonition remarks">
 <p class="admonition-title">Greedy solution 2</p>
 <p><strong>Greedy solution 2:</strong> If we know <span class="arithmatex">\(r(C^*)\)</span>, then take s to be the center, radius <span class="arithmatex">\(2r\)</span> can cover all the sites covered by <span class="arithmatex">\(C^*\)</span>.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -2269,20 +2293,67 @@ W_{i-1,p} &amp; p_i &gt; p \\
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Centers</span><span class="w"> </span><span class="nf">Greedy_2r</span><span class="p">(</span><span class="n">Sites</span><span class="w"> </span><span class="n">S</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">Sites</span><span class="w"> </span><span class="n">S2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[];</span><span class="w"> </span><span class="cm">/* S2 is the set of the remaining sites */</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">Sites</span><span class="w"> </span><span class="n">S2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[];</span><span class="w"> </span><span class="c1">// S2 is the set of the remaining sites</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">Centers</span><span class="w"> </span><span class="n">C</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EmptySet</span><span class="p">;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">S2</span><span class="p">[]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EmptySet</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="n">Select</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S2</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">Delete</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S2</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="n">r</span><span class="p">;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end-while */</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">|</span><span class="n">C</span><span class="o">|</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">K</span><span class="p">)</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="k">else</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="n">ERROR</span><span class="p">(</span><span class="n">No</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">centers</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">covering</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">most</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>Suppose the algorithm selects more than <span class="arithmatex">\(K\)</span> centers. Then for any set <span class="arithmatex">\(C^*\)</span> of size at most <span class="arithmatex">\(K\)</span>, the covering radius is <span class="arithmatex">\(r(C*) &gt; r\)</span>.</p>
+<p>Suppose the algorithm selects more than <span class="arithmatex">\(K\)</span> centers. Then for any set <span class="arithmatex">\(C^*\)</span> of size at most <span class="arithmatex">\(K\)</span>, the covering radius is <span class="arithmatex">\(r(C^*) &gt; r\)</span>.</p>
 </div>
+<div class="admonition remarks">
+<p class="admonition-title">Smarter solution: be far away</p>
+<p>Always select a site with maximum distance from C.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">Centers</span><span class="w"> </span><span class="nf">Greedy_2r</span><span class="p">(</span><span class="n">Sites</span><span class="w"> </span><span class="n">S</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">Sites</span><span class="w"> </span><span class="n">S2</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="p">[];</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">Centers</span><span class="w"> </span><span class="n">C</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EmptySet</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">S2</span><span class="p">[]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EmptySet</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="n">Select</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="n">Delete</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">S2</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="n">r</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The algorithm returns a set C of K centers such that <span class="arithmatex">\(r(C) \le 2r(C^*)\)</span> where C* is an optimal set of K centers.</p>
+<p>Thm.: Unless P=NP, there's no <span class="arithmatex">\(\alpha\)</span>-approximation for center selection problem for any <span class="arithmatex">\(\alpha&lt;2\)</span>.</p>
+<details class="normal-comment">
+<summary>Proof</summary>
+<p><strong>Dominating-Set problem:</strong> A dominating set D of graph such that every vertex in the graph is either in D or adjacent to at least one vertex in D.</p>
+<p>If we can obtain a <span class="arithmatex">\((2-\varepsilon)\)</span>-approximation in polynomial time, then we can solve Dominating-Set (which is NP-complete) in polynomial time.</p>
+</details>
+</div>
+<h3 id="load-balancing">Load Balancing</h3>
+<p>Input m identical machines and n jobs. Each job <span class="arithmatex">\(j\)</span> has a processing time <span class="arithmatex">\(t_j\)</span>. Each job must be processed contiguously on exactly one machine and each machine can process only one job at a time.</p>
+<p>Let <span class="arithmatex">\(S[i]\)</span> be the set of jobs assigned to machine <span class="arithmatex">\(i\)</span>. The load of machine <span class="arithmatex">\(i\)</span> is <span class="arithmatex">\(L[i] = \sum_{j \in S[i]} t_j\)</span>. The makespan of the schedule is the maximum load across all machines <span class="arithmatex">\(L = \max_i L[i]\)</span>. Our goal is to assign every job to some machine so that the makespan <span class="arithmatex">\(L\)</span> is as small as possible.</p>
+<div class="admonition remarks">
+<p class="admonition-title">Listing scheduling</p>
+<p>Listing scheduling is 2-approximation.</p>
+<details class="normal-coments">
+<summary>Proof</summary>
+<p>Let B denote the time for the last job, A denote the time for all other jobs, and OPT denote the optimal time.</p>
+<p><span class="arithmatex">\(OPT\ge A\)</span> because the total time <span class="arithmatex">\(T\ge mA+B\)</span> and <span class="arithmatex">\(OPT\le\frac{T}{m}\)</span>.</p>
+<p><span class="arithmatex">\(OPT\ge B\)</span> because the last job must be allocated to a certain machine.</p>
+<p>Therefore, <span class="arithmatex">\(OPT\ge \frac{A+B}{2}=T_{greedy}\)</span>.</p>
+</details>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">LPT rules</p>
+</div>
+<p><strong>Longest processing time (LPT):</strong> Sort n jobs in decreasing order of processing times; then run list scheduling algorithm.</p>
 <h2 id="homework">Homework</h2>
 <div class="admonition examples">
 <p class="admonition-title">E.g.1</p>
@@ -2317,18 +2388,24 @@ D. 2</p>
 </div>
 <div class="admonition examples">
 <p class="admonition-title">E.g.3</p>
-</div>
 <p>Consider the 0-1 knapsack problem with object weights <span class="arithmatex">\(w\)</span>, profits <span class="arithmatex">\(v\)</span>, and total weight limit <span class="arithmatex">\(B\)</span> (means that <span class="arithmatex">\(w\)</span> of any object is no larger than <span class="arithmatex">\(B\)</span>.). In the class, we have learned that combining the greedy algorithm on maximum profit <span class="arithmatex">\(v\)</span> and maximum profit-weight ratio <span class="arithmatex">\(v/w\)</span> leads to an approximation algorithm which always produces a solution no less than <span class="arithmatex">\(1/2\)</span> of the optimal solution. Now let us consider the following simplified greedy algorithm. The algorithm first conducts the following sorting w.r.t. profit-weight ratio:</p>
 <blockquote>
-<p>Sort all objects according to the profit-weight ratio <span class="arithmatex">\(r_i = v_i / w_i\)</span><br />
+<p>Sort all objects according to the profit-weight ratio <span class="arithmatex">\(r_i = v_i / w_i\)</span>
 so that <span class="arithmatex">\(r_1 \ge r_2 \ge \dots \ge r_n\)</span>.</p>
 </blockquote>
 <p>Let the sorted order of objects be <span class="arithmatex">\(a_1, \dots, a_n\)</span>. The next step is to find the lowest <span class="arithmatex">\(k\)</span> such that the total weight of the first <span class="arithmatex">\(k\)</span> objects exceeds <span class="arithmatex">\(B\)</span>. Finally, we pick the more valuable of <span class="arithmatex">\(\{a_1, \dots, a_{k-1}\}\)</span> and <span class="arithmatex">\(\{a_k\}\)</span> as the final solution. Then which of the following arguments is correct:</p>
-<p>A. The algorithm always returns the optimal solution.<br />
-B. The algorithm always returns a solution no less than <span class="arithmatex">\(\alpha\)</span> of the optimal solution, while <span class="arithmatex">\(\alpha &lt; 1/2\)</span>.<br />
-C. The algorithm always returns a solution no less than <span class="arithmatex">\(1/2\)</span> of the optimal solution.<br />
+<p>A. The algorithm always returns the optimal solution.
+B. The algorithm always returns a solution no less than <span class="arithmatex">\(\alpha\)</span> of the optimal solution, while <span class="arithmatex">\(\alpha &lt; 1/2\)</span>.
+C. The algorithm always returns a solution no less than <span class="arithmatex">\(1/2\)</span> of the optimal solution.
 D. The algorithm can generate a solution which is arbitrarily worse than the optimal solution.</p>
 <hr />
+</div>
+<div class="admonition examples">
+<p class="admonition-title">E.g.4</p>
+<p>For an approximation algorithm for a minimization problem, given that the algorithm does not guarantee to find the optimal solution, the best approximation ratio possible to achieve is a constant <span class="arithmatex">\(\alpha&gt;1\)</span>. (T/F)</p>
+<hr />
+<p>F. <span class="arithmatex">\(\alpha\)</span> is not always constant.</p>
+</div>
 
 
 
@@ -2351,7 +2428,7 @@ D. The algorithm can generate a solution which is arbitrarily worse than the opt
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月1日 13:07:45 UTC">2025-12-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月4日 05:30:49 UTC">2025-12-04</span>
   </span>
 
     
