@@ -223,10 +223,10 @@ nav:
       - 扉页: AbiesNotes/Abies_index.md
       - CS231n:
           - Lec 02 Image Classification: AbiesNotes/CS231n/notes/cs231n_02.md
-          - Lec 03 Loss Functions adn Optimization: AbiesNotes/CS231n/notes/cs231n_03.md
+          - Lec 03 Loss Functions and Optimization: AbiesNotes/CS231n/notes/cs231n_03.md
           - Lec 04 Introduction to Neural Networks: AbiesNotes/CS231n/notes/cs231n_04.md
           - Lec 05 Convolutional Neural Networks: AbiesNotes/CS231n/notes/cs231n_05.md
-          - Lec 06 Training Neural Networks: AbiesNotes/CS231n/notes/cs231n_06.md
+          - Lec 06 Training Neural Networks I: AbiesNotes/CS231n/notes/cs231n_06.md
           - Assignment 1:
               - KNN: AbiesNotes/CS231n/assignments/a1_knn.md
       - Vision Course:

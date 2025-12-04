@@ -1,103 +1,154 @@
-## 内存介绍
+## Memory Hierarchy Introduction
 
-对内存的希望：size 和 speed
+Programs may access any address space at any time.
 
-内存的基本要素：speed, cost per bit, volatility, endurance cycles  
-机械硬盘、固态硬盘
+Locality:
 
-集成电路工艺的发展，使芯片晶体管密度增加，功能更欠打，存储容量更大，成本更低
+- Temporal locality: Items accessed recently are likely to be accessed again soon (e.g., loop).
+- Spatial locality: Items near those accessed recently are likely to be accessed soon (e.g., sequential instruction access).
 
-SRAM（静态存储）：将数值存储在反相器中，速度快，但相比 DRAM 所占空间更大。  
-对任意位置的数据，访问时间固定，和 CPU 的时钟周期接近。
+Taking advantage of locality:
 
-DRAM（动态存储）：将数值存储在电容中，需要不断刷新电路。  
-体积小、密度高，但访问速度比 SRAM 更慢。
+- Copy recently accessed and nearby items from disk to smaller DRAM (main memory);
+- Copy more recently accessed and nearby items from DRAM to smaller SRAM (cache, which is inside CPU).
 
-flash（闪存）：非易失性存储  
-flash 分为 NOR flash（嵌入式系统）、NAND flash（USB、多媒体存储）  
-Flash bits wears out after 1000's of accesses
+More closer to CPU, faster, smaller, and more expensive.
 
-Disk storage（机械硬盘）：非易失性，靠机械硬盘的旋转读取数据  
-数据存储在轨道（track）的扇区（sector）中。每个扇区中包括 sector ID、数据、ECC（Error correcting code）  
-从扇区中读取数据：（寻道）将磁头定位在正确的磁道上方 --> 旋转磁盘将要读的扇区转到磁头下方 --> 将数据 transfer 出来  
-要会计算机械硬盘读取的时间！
+### Terminology
 
-## 层次存储技术
+- Block (aka. line): unit of copying, maybe multiple words.
+- Hit: accessed data is present in upper level.
+- Hit time: the time to access the upper level of memory.
+- Hit ratio: hits/accesses.
+- Miss: not hit, need to copy block from lower level.
+- Miss penalty: time taken to copy block (replace+deliver).
+- Miss ratio: misses/accesses.
 
-程序在任意时间都可能访问一小部分内存
+## Cache
 
-局部性理论  
-时间局部性：最近被访问的 item 很可能再次被访问（如循环中操作的变量、循环条件的变量）  
-空间局部性：最近被访问的附近的 item 很可能再次被访问
+Simple implementations: Each item of data at the lower level has exactly one location in the cache. Lots of items at the lower level shares locations in the upper level.
 
-将所有数据存储在硬盘上（disk memory），将最近访问的数据和附近的数据放在小的 DRAM 上（主存 main memory），将更近访问的和附近的数据放在更小的 SRAM 上（缓存 cache memory）  
-越往上存储空间越小、价格越贵，但访问速度越快
+_Two issues: How do we know if a data item is in the cache? If it is, how do we find it?_
 
-层间搬运数据的最小单位为 block（或 line），可以是一个 word 也可以是多个 word。  
-命中（hit）：从最上层存储器开始访问。如果访问的数据正好在上层存储中，则称为命中  
-hit radio：命中次数/访问次数  
-失效（miss）：访问数据不在上层存储中，则称为 miss  
-miss 后，先将数据从下层存储 copy 到上层存储，再访问。  
-miss penalty：额外花费的时间，搬运数据的时间 + 访问并传输数据的时间
+### Locate the data item!
 
-高速缓存解决 speed 问题，虚拟存储解决 size 问题。
+**Direct-mapping algorithm**: memory address is modulo #(cache blocks).
 
-### Cache
+Usually cache has $2^n$ blocks, so the cache index equals to the lowest $n$ bits of memory index.
 
-Cache 解决了 CPU 和主存速度不匹配的矛盾。
+### Check its presence!
 
-对底层存储中的每一项，都在上层存储中有相应位置。  
-e.g., lots of items at the lower level share locations in the upper level  
-问题：怎么判断数据是否早 cache 内？如果在 cache 中，怎么找到数据？
+_Multiple blocks share location, so how do we know which particular block is stored?_
 
-cache 对空间局部性：从主存中取回待访问数据时，会同时取回与其位置相邻的主存单元的数据  
-cache 对时间局部性：保存近期频繁被访问的主存单元的数据
+**Tag**: Store memory address as well as its data. Since lower bits is the cache address, only need to store higher bits as memory address, called tag.
 
-Cache 地址映射机制：主存地址分为块地址和块偏移量，块地址分为标签（Tag）和索引（Index）。其中 Tag 判断数据是否在 cache，Index 决定在 cache 的哪一行读取数据。  
-cache 的每行包含四部分：标签（Tag）、数据（Data）、一位 Valid、一位 Dirty。其中 Valid 表示是否有效，Dirty 表示是否是最近更新。  
-映射方式：直接映射、组相连、全相连
+**Valid bit**: 1 if present, 0 if empty. Initialized as 0.
 
-直接映射：  
-以下两种映射方法找到对应的数据块，两者等价：
+Each access contains: tag, index, byte offset. (Byte offset is determined by size of block. Index is the cache address, i.e. lower bits of memory block address. Tag is the higher bits of block address. Tag and index are concatenated to form block address.)
 
-1. <块地址> mod <cache 中的数据块的数量>
-2. 若 cache 中有 $2^n$ 个数据块，则索引为主存块地址的最低 n 位
+Each line in cache contains: index, valid bit, tag, data.
 
-下层很多元素在上层中共享同一个位置。  
-通过索引字段找到 cache 的行，用 cache 行中的 tag 和主存中的 tag 匹配，检查 valid 和 dirty 是否是 1（1 表示有效），若全部匹配且有效则读取数据。
+??? examples "E.g.1 cache access"
 
-怎么将主存地址分为三部分？  
-假设 cache 中有 $2^n$ 个 block，则 index 为 n 位。如果每个 block 中有 $2^m$ 个 word（$2^{m+2}$ 个 byte），则字节偏移量为 m+2。剩余的高位全部表示 tag。
-
-cache 的一行中出现冲突？选择一个淘汰。
-
-cache 的总大小包含 data、tag、valid 和 dirty 的位数。题目中所说的 cache 大小一般只表示数据的总位数。  
-计算 cache 大小的题目必考！
-
-!!! examples "Ex. Direct mapping in cache"
-
-    Consider a cache with 64 blocks and a block size of 16 bytes. What block number dies byte address 1200 map to?
+    8-blocks, 1 word/block, direct mapped. Access Sequence: 10110, 11010, 10110, 10010.
 
     ---
 
-    First, get block address:
+    10110 --> valid=0 --> miss --> copy to cache (time locality) --> cache[110].valid=1, cache[110].tag=10, cache[110].data=Mem[10110] --> return data.
 
-    $$\lfloor\frac{\text{Byte address}}{\text{Bytes per block}}\rfloor=75$$
+    11010 --> valid=0 --> miss --> copy to cache --> omitted.
 
-    Second, get index:
+    10110 --> valid=1, tag is the same --> hit --> return data.
 
-    $$75\,\text{modulo}\,64=11$$
+    10010 --> valid=1, but tag is not the same --> miss --> replace --> cache[010].valid=1, cache[010].tag=10, cache[010].data=Mem[10010] --> return data.
 
-如果数据不在 cache 中，在主存中找。先直接送到 CPU，再将附近的 block 全部搬到 cache。
+??? examples "E.g.2 caceh size"
 
-Read misses：分为 instruction cache miss 和 data cache miss  
-指令失效：CPU stall，从主存中找到block，搬到cache，CPU restart。  
+    64-bits addresses, directed mapped, $2^n$ blocks, $2^m$ words/block. Bits needed for each part? Total number of bits in cache?
 
-TODO: complete the part "cache访问过程" in Chinese
+    ---
 
-cache访问过程：  
+    - Byte offset: $2^m$ words = $2^{m+2}$ bytes --> m+2 bits.
+    - Cache index: $2^n$ blocks --> n bits.
+    - Tag: all remaining bits --> 64-(n+m+2) bits.
+    - Total size of cache:
+    #block \* (data size + tag size + valid size)
+    = #block \* (#(words/block)\*32 + #(tag bits) + 1)
+    = $2^n\times (2^m\times 32+63-n-m)$.
 
-1. 写穿策略  
-2. 写回策略：可能导致cache和主存中存储数据不一致 
+??? examples "E.g.3 cache size"
 
+    How many total bits are required for a direct-mapped cache 16KB of data and 4-word blocks, assuming a 32-bit address?
 
+    ---
+
+    Total data size id 16KB = $2^{12}$ words, while each block contains $2^2$ words. So #blocks is $2^{10}$.
+
+    In a block:
+
+    - index: 10 bits
+    - byte offset: s\*2=4 bits
+    - tag: 32-10-4=18 bits
+    - valid: 1 bit
+    - data: 4\*32=128 bits
+
+    Size of cache: $2^{10}\times (128+18+1)=147 Kbits$.
+
+??? examples "E.g.4 cache size"
+
+    Consider a cache with 64 blocks and a block size of 16 bytes. What block number does byte address 1200 map to?
+
+    ---
+
+    Block address = byte address / bytes per block = $\lfloor\frac{1200}{16}\rfloor$ =75.
+
+    Index = block address modulo #(cache blocks) = 75 mod(64) = 11.
+
+### Handle hits and misses?
+
+**Read hits** is what we want.
+
+**Read misses** has two cases: instrunction cache miss and data cache miss.
+
+When instrction miss occurs: stall the CPU, fetch block from memory, deliver to cache, restart CPU.
+
+**Write hits** lead to different strategies:
+
+- write-back: only write into cache, and write back to memory later. Faster, but cause inconsistency (need dirty bit to mark eviction).
+- write-through: write into both cache and memory. Slower (add write buffer to mitigate), but ensure consistency.
+
+**Write misses**: read the entire block into the cache, then write the word. (See in Q4.)
+
+### Q&As on Memory Hierarchy
+
+!!! remarks "Q1 Block placement"
+
+    _Where can a block be placed in the upper level?_
+
+    Fully Associative, Set Associative, Direct Mapped.
+
+    - Direct mapped: block can only go in one place in the cache.
+    - Fully associative: block can go anywhere in cache.
+    - Set associative: block can go in one set of places in cache.
+
+    In fully associative, cache has no index bits.
+
+    Details on set associatice: A set is a group of adjacent blocks in cache. Index equals to block address mod(#sets). If each set has n blocks, the cache is said to be n-way set associative.
+
+!!! remarks "Q2 Block identification"
+
+    _How is a block found if it is in the upper level?_
+
+    Tag/Block.
+
+!!! remarks "Q3 Block replacement"
+
+    _Which block should be replaced on a miss?_
+
+    Random, LRU, FIFO.
+
+!!! remarks "Q4 Write strategy"
+
+    _What happens on a write?_
+
+    Write Back or Write Through (with Write Buffer).
