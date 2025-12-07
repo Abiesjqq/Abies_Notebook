@@ -16,7 +16,7 @@ More closer to CPU, faster, smaller, and more expensive.
 
 ### Terminology
 
-- Block (aka. line): unit of copying, maybe multiple words.
+- Block (aka. line): unit of copying, may be multiple words.
 - Hit: accessed data is present in upper level.
 - Hit time: the time to access the upper level of memory.
 - Hit ratio: hits/accesses.
@@ -44,9 +44,9 @@ _Multiple blocks share location, so how do we know which particular block is sto
 
 **Valid bit**: 1 if present, 0 if empty. Initialized as 0.
 
-Each access contains: tag, index, byte offset. (Byte offset is determined by size of block. Index is the cache address, i.e. lower bits of memory block address. Tag is the higher bits of block address. Tag and index are concatenated to form block address.)
+Physics address contains: tag / index / (byte) offset. (Byte offset is determined by size of block. Index is the cache address, i.e. lower bits of memory block address. Tag is the higher bits of block address. Tag and index are concatenated to form block address.)
 
-Each line in cache contains: index, valid bit, tag, data.
+Cache line contains: (index,) valid bit / tag / data.
 
 ??? examples "E.g.1 cache access"
 
@@ -72,7 +72,7 @@ Each line in cache contains: index, valid bit, tag, data.
     - Cache index: $2^n$ blocks --> n bits.
     - Tag: all remaining bits --> 64-(n+m+2) bits.
     - Total size of cache:
-    #block \* (data size + tag size + valid size)
+    = #block \* (data size + tag size + valid size)
     = #block \* (#(words/block)\*32 + #(tag bits) + 1)
     = $2^n\times (2^m\times 32+63-n-m)$.
 
@@ -121,34 +121,207 @@ When instrction miss occurs: stall the CPU, fetch block from memory, deliver to 
 
 ### Q&As on Memory Hierarchy
 
-!!! remarks "Q1 Block placement"
+#### Q1 Block placement
 
-    _Where can a block be placed in the upper level?_
+_Where can a block be placed in the upper level?_
 
-    Fully Associative, Set Associative, Direct Mapped.
+Fully Associative, Set Associative, Direct Mapped.
 
-    - Direct mapped: block can only go in one place in the cache.
-    - Fully associative: block can go anywhere in cache.
-    - Set associative: block can go in one set of places in cache.
+- Direct mapped: block can only go in one place in the cache.
+- **Fully associative**: block can go anywhere in cache.
+- **Set associative**: block can go in one set of places in cache.
 
-    In fully associative, cache has no index bits.
+In fully associative, cache has no index bits.
 
-    Details on set associatice: A set is a group of adjacent blocks in cache. Index equals to block address mod(#sets). If each set has n blocks, the cache is said to be n-way set associative.
+Details on set associatice: A set is a group of adjacent blocks in cache. Index equals to block address mod(#sets). If each set has n blocks, the cache is said to be n-way set associative.
 
-!!! remarks "Q2 Block identification"
+#### Q2 Block identification
 
-    _How is a block found if it is in the upper level?_
+_How is a block found if it is in the upper level?_
 
-    Tag/Block.
+Use tag and valid bit.
 
-!!! remarks "Q3 Block replacement"
+Tag comparation: For fully-associative caches, compare the requested tag with every block's tag in the cache to determine hit or miss. For set-associative caches, compare with every block's tag in the set.
 
-    _Which block should be replaced on a miss?_
+Index of puysical address: for set-associative caches, index has $\log_2(\#\text{sets})$ bits; for directed-mapped caches, index has $\log_2(\#\text{blocks})$ bits; for fully-associated caches, there are no index foeld.
 
-    Random, LRU, FIFO.
+#### Q3 Block replacement
 
-!!! remarks "Q4 Write strategy"
+_Which block should be replaced on a miss?_
 
-    _What happens on a write?_
+Random, LRU, FIFO.
 
-    Write Back or Write Through (with Write Buffer).
+In set-associative caches and fully-associative caches, there exists the replacement issue.
+
+- **Random replacement**: randomly pick any block. Easy to implement, allocate uniformly, but may evict a block that is about to be accessed.
+- **Least-recently used (LRU)**: pick the block in the set which was least recently accessed. Require extra bits to keep track of accesses.
+- **First in, first out (FIFO)**: pick a block from the set which was first came into the cache.
+
+#### Q4 Write strategy
+
+_What happens on a write?_
+
+**Write hit**:
+
+- **Write-through**: can always discard cached data, maintaining most up-to-date data in the memory.
+- **Write-back**: can't just discard cached data cause may have to write it back to memory. Add dirty bits to cache control.
+
+Advantages:
+
+- write-through: read misses don't result in writes, memory hierarchy is consistent and it's simply to implement.
+- write-back: write occur at speed of cache and main memory bandwidth is smaller when multiple writes occur to the same block.
+
+**Write stall**: CPU wait for writes to complete during write-through.
+
+**Write buffer**: A small cache that can hold a few values waiting to go to main memory. To avoid stalling on writes, many CPUs use a write buffer.
+
+Write buffer does not entirely eliminate stalls.
+
+**Write miss**:
+
+- **Write allocate**: the block is loaded into the cache on a miss before anything else occurs.
+- **Write around**: the block is only written to main memory, not stored in cache.
+
+In general, write-back caches use write-allocate, and write-through caches use write-around.
+
+??? examples "E.g.5 compare three mapping strategy"
+
+    Three small caches, four one-word blocks per cache. One cache is direct-mapped, the second is two-way set associative, and the third is fully associative.
+
+    Access sequence: 0, 8, 0, 6. 8.
+
+    ---
+
+    Direct-mapped: 5 misses, because 0 and 8 share the same position in cache.
+
+    Two-way associative: all data stored in set 0, but each set has 2 blocks. 4 misses and 1 hit.
+
+    Fully associative: 3 misses and 2 hits.
+
+??? examples "E.g.6 cache size"
+
+    Assume cache size is 4K Block, block size is 4 words, physical address is 32bits. Find the total number of tag bits for 4-way associativity.
+
+    ---
+
+    - #(cache sets): $2^{12}$/4 = $2^{10}$
+    - Index: 10 bits
+    - Offset: 4 bits
+    - Tag: 32-10-4 = 18 bits
+    - Total bits for tag: 18\*4K = 72 Kbits
+
+### Measure Cache Performance!
+
+- Average_memory_access_time = hit_time + miss_time  
+  = hit_rate \* cache_time + miss_rate \* memory_time
+
+Use CPU time to measure cache performance.
+
+- CPU_time = (CPU_execution_clock_cycle + Memory_stall_clock_cycles) \* Clock_cycle_time.
+
+In which:
+
+- CPU_execution_clock_cycle = CI \* CPI \* Clock_cycle_time.
+
+- Memory_stall_clock_cycles = #instrctions \* miss_ratio \* miss_penalty  
+  = Read_stall_cycles + Write_stall_cycles.
+
+For read stall:
+
+- Read_stall_cycles = Read_per_program \* Read_miss_rate \* Read_miss_panelty.
+
+For a write-through plus write buffer scheme:
+
+- Write_stall_cycles = (Write_per_program \* Write_miss_rate \* Write_miss_panelty) + Write_buffer_stalls.
+
+In most write-through cache organizations, the read and write miss penalties are the same.
+
+??? examples "E.g.6 calculate cache performance"
+
+    Assume:
+
+    - instruction cache miss rate: 2%
+    - data cache miss rate: 4%
+    - CPI without any memory stalls: 2
+    - miss penalty: 100 cycles
+    - The frequency of all loads and stores in gcc: 36%
+
+    How faster a processor would run with a perfect cache?
+
+    ---
+
+    - Instruction miss cycles: 2%\*CI\*100 = 2CI
+    - Data miss cycles: 4%\*(CI\*36%)\*100 = 1.44CI
+    - Total memory-stall cycles: 3.44CI
+
+    CPI with stall: CPI with perfect cache + total memory-stalls = 5.44CI
+
+    ---
+
+    When CPU is faster, total memory-stall cycles increases, thus the increase in computer performance is less than proportional to the increase in CPU frequency.
+
+### Improve Cache Performance!
+
+!!! remarks "Sol.1 More flexible placement of blocks to reduce cache misses"
+
+    See in Q1.
+
+!!! remarks "Sol.2 Choosing which block to replace"
+
+    See in Q2.
+
+!!! remarks "Sol.3 Choosing different block size"
+
+    Larger blocks should reduce miss rate, but fewer blocks means more competition and may increase miss rate as well.
+
+    Larger blocks exploit spatial locality. In practice, use split caches because there is more spatial locality in code.
+
+!!! remarks "Sol.4 Designing the memory system to support cache"
+
+    Bandwidth: transferred words / time panelty
+
+    **Performance in wider main memory**: When width of main memory increases, transfer times decrease and bandwidth increases.
+
+    **Performance in four-way interleaved memory**: parallel access to four memory banks.
+
+!!! remarks "Sol.5 Reducing miss penalty with multilevel caches"
+
+    Add a second level cache: often primary cache is on the same chip as the processor. Use SRAMs to add another cache above primary memory (DRAM). Miss penalty goes down if data is in 2nd level cache.
+
+    ??? examples "E.g. multilevel caches miss panelty"
+
+        CPI of 1.0 on a 5GHz machine with a 2% miss rate, 100ns DRAM access. Adding 2nd level cache with 5ns access time decreases miss rate to 0.5%. Calculate the decreasement of CPI.
+
+        ---
+
+        - Clock cycle time: 0.2ns.
+        - Miss panelty to main memory: 100ns/0.2ns = 500 cycles.
+
+        CPI equals execution cycles plus stall cycles:
+
+        - Total CPI with one level cache: 1.0+2%\*500 = 11 cycles.
+        - Miss panelty to the 2nd cache: 5ns/0.2ns = 25 cycles.
+        - Total CPI with two levels cache: 1.0+2%\*25+0.5%\*500 = 4 cycles.
+
+        The processor is faster by: 11/4 = 2.8.
+
+!!! remarks "Sol.6 Software optimization blocking"
+
+    Interact with software. Misses depend on memory patterns.
+
+## Virtual Memory
+
+Motivation:
+
+1. Efficient and safe sharing of memory among multiple programs.
+2. Remove the programming burdens of a small, limited amount of main memory.
+
+Main Memory act as a cache for the secondary storage (disk).
+
+### Pages
+
+**Pages**: virtual memory block.
+
+**Page faults**: the data is not in memory, need to retrieve from disk.
+
+Virtual pages are more than physical pages. Page faults cause huge miss panelty, thus pages are faily large (e.g., 4KB). We can handle the faults in software instead of hardware. Using write-through is too expensive, so we use write back.

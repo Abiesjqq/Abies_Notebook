@@ -145,3 +145,32 @@ $$\text{Average memory access time} = \text{hit time}+\text{write time}$$
 $$\text{CPU time}=(\text{CPU exucetion clock cycles} + \text{Memory-stall clock cycles})\times \text{Clock cycle time}$$
 
 $$\text{Memory-stall clock cycles}=\text{\# of instructions}\times\text{miss ratio}\times\text{miss panalty}$$
+
+直接映射的缺点：如果冲突的块间隔访问，失效率很大。
+
+??? examples "E.g.5"
+
+    Three small caches, four one-word blocks per cache. One cache is direct-mapped, the second is two-way set associative, and the third is fully associative.
+
+    Access sequence: 0, 8, 0, 6. 8.
+
+    ---
+
+    Direct-mapped: 5 misses, because 0 and 8 share the same position in cache.
+
+    Two-way associative: all data stored in set 0, but each set has 2 blocks. 4 misses and 1 hit.
+
+    Fully associative: 3 misses and 2 hits.
+
+??? examples "E.g.6"
+
+    Assume cache size is 4K Block, block size is 4 words, physical address is 32bits. Find the total number of set and total number of tag bits for n-way associativity.
+
+    ---
+
+    To be supplemented.
+
+
+## 虚拟内存
+
+虚拟内存中的拷贝单位称为页，转换失效称为页失效。

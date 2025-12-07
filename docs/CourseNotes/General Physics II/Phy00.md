@@ -151,3 +151,143 @@ $$
 &=f_{xx}''+f_{yy}''+f_{zz}''
 \end{align*}
 $$
+
+### 微分方程
+
+#### y'+ay=0
+
+将 $y'$ 化为 $\mathrm{d}y/\mathrm{d}x$，分离变量，通解为：
+
+$$y=Ce^{-ax}$$
+
+#### y''+ay=0
+
+令 $a=\omega^2$，通解为 $y=C_1\sin(\omega x)+C_2\cos(\omega x)$.
+
+#### ay''+by'+cy=0
+
+令 $\Delta =b^2-4ac$，通解为：
+
+1. $\Delta >0,\, \lambda_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$，则 $y=C_1e^{\lambda_1x}+C_2e^{\lambda_2x}$；
+2. $\Delta=0,\, \lambda=-\frac{b}{2a}$，则 $y=(C_1+C_2x)e^{\lambda x}$；
+3. $\Delta <0,\, \lambda_{1,2}=\alpha\pm i\beta$，则 $y=e^{\alpha x}(C_1\sin(\beta x)+C_2\cos(\beta x))$.
+
+#### 特解
+
+当微分方程等式右边非零时，需要化为通解+特解的形式。
+
+| 非齐次项 $g(x)$ 的形式                         | 应猜测的特解 $y_p(x)$                           | 备注                      |
+| ---------------------------------------------- | ----------------------------------------------- | ------------------------- |
+| 常数 $C$                                       | $A$                                             | $A$ 为常数                |
+| 多项式：$a_0 + a_1 x + \cdots + a_n x^n$       | $A_0 + A_1 x + \cdots + A_n x^n$                | 同阶多项式                |
+| $e^{kx}$                                       | $A e^{kx}$                                      | 若 $k$ 为特征根，需乘 $x$ |
+| 多项式 × $e^{kx}$                              | (多项式) × $e^{kx}$                             | 同上，若共振需乘 $x$      |
+| $\sin(\omega x)$, $\cos(\omega x$)             | $A \sin(\omega x) + B \cos(\omega x)$           | 一对一起猜                |
+| $e^{kx} \sin(\omega x), e^{kx} \cos(\omega x)$ | $e^{kx} (A \sin(\omega x) + B \cos(\omega x))$  | 振荡指数型                |
+| 多项式 × $\sin(\omega x)$ 或 $\cos(\omega x)$  | 多项式 × $(A \sin(\omega x) + B\cos(\omega x))$ | 同阶多项式                |
+
+
+## 英语！
+
+#### 基本物理量与场
+
+| English Term          | 中文翻译     |
+| --------------------- | -------- |
+| electric field        | 电场       |
+| magnetic field        | 磁场       |
+| electric flux         | 电通量      |
+| magnetic flux         | 磁通量      |
+| electric potential    | 电势       |
+| potential difference  | 电势差      |
+| permittivity          | 介电常数、介电率 |
+| relative permittivity | 相对介电常数   |
+| permeability          | 磁导率      |
+| relative permeability | 相对磁导率    |
+| conductivity          | 电导率      |
+| charge density        | 电荷密度     |
+| current density       | 电流密度     |
+| displacement current  | 位移电流     |
+| polarization          | 极化       |
+| magnetization         | 磁化       |
+
+#### 麦克斯韦方程组相关
+
+| English Term           | 中文翻译      |
+| ---------------------- | --------- |
+| Gauss's law (electric) | 电场高斯定律    |
+| Gauss's law (magnetic) | 磁场高斯定律    |
+| Faraday's law          | 法拉第电磁感应定律 |
+| Ampère's law           | 安培环路定律    |
+| Maxwell's equations    | 麦克斯韦方程组   |
+| integral form          | 积分形式      |
+| differential form      | 微分形式      |
+| boundary conditions    | 边界条件      |
+| tangential component   | 切向分量      |
+| normal component       | 法向分量      |
+| continuity condition   | 连续性条件     |
+
+#### 材料与介质
+
+| English Term           | 中文翻译  |
+| ---------------------- | ----- |
+| dielectric             | 电介质   |
+| conductor              | 导体    |
+| insulator              | 绝缘体   |
+| perfect conductor      | 理想导体  |
+| perfect dielectric     | 理想电介质 |
+| ferromagnetic material | 铁磁材料  |
+| paramagnetic material  | 顺磁材料  |
+| diamagnetic material   | 抗磁材料  |
+
+#### 波与传播
+
+| English Term         | 中文翻译  |
+| -------------------- | ----- |
+| electromagnetic wave | 电磁波   |
+| wave equation        | 波动方程  |
+| plane wave           | 平面波   |
+| transverse wave      | 横波    |
+| phase velocity       | 相速度   |
+| group velocity       | 群速度   |
+| wavelength           | 波长    |
+| frequency            | 频率    |
+| reflection           | 反射    |
+| refraction           | 折射    |
+| transmission         | 透射    |
+| Snell's law          | 斯涅尔定律 |
+
+#### 能量与功率
+
+| English Term           | 中文翻译  |
+| ---------------------- | ----- |
+| Poynting vector        | 波印廷矢量 |
+| electromagnetic energy | 电磁能   |
+| power flow             | 功率流   |
+| energy density         | 能量密度  |
+
+#### 电路与相关概念
+
+| English Term       | 中文翻译 |
+| ------------------ | ---- |
+| capacitance        | 电容   |
+| inductance         | 电感   |
+| impedance          | 阻抗   |
+| reactance          | 电抗   |
+| resistance         | 电阻   |
+| resonant frequency | 共振频率 |
+
+#### 常见符号
+
+| Symbol | English Term            | 中文翻译  |
+| ------ | ----------------------- | ----- |
+| **E**  | electric field          | 电场强度  |
+| **D**  | electric displacement   | 电位移   |
+| **B**  | magnetic flux density   | 磁感应强度 |
+| **H**  | magnetic field strength | 磁场强度  |
+| **ρ**  | charge density          | 电荷密度  |
+| **J**  | current density         | 电流密度  |
+| **ε**  | permittivity            | 介电常数  |
+| **μ**  | permeability            | 磁导率   |
+| **σ**  | conductivity            | 电导率   |
+
+

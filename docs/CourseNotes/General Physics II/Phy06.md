@@ -56,7 +56,7 @@ $$\Phi_B=\iint_B\vec{B}\cdot\mathrm{d}\vec{S}$$
 
 同理，放电时，$i=\frac{\mathcal{E}}{R}e^{-\frac{t}{\tau}}$。
 
-### 电感中能量
+### 自感磁能
 
 电流从 0 增大到 $i$ 时，电感中能量为
 
@@ -76,17 +76,33 @@ $$\Phi_B=\iint_B\vec{B}\cdot\mathrm{d}\vec{S}$$
 
 $$M=k\sqrt{L_1L_2}$$
 
-若 k=1 表示同轴，若 k=0 表示垂直，若 0<k<1 表示部分漏磁。
+若 k=1 表示同轴，若 k=0 表示垂直，若 0 < k < 1 表示部分漏磁。
+
+### 互感磁能
+
+两个线圈的系统中，除了各自存储自感磁能，电源还要抵抗互感电动势作功，形成互感磁能，大小为：
+
+!!! pure ""
+
+    $$U_B=MI_1I_2$$
+
+在 k 个线圈的系统中，总能量等于自感磁能之和加互感磁能之和：
+
+$$W_B=\frac{1}{2}\sum_iL_iI_i^2+\frac{1}{2}\sum_{i,j}M_{ij}I_iI_j$$
 
 ### LC 电路
 
 回路总电势差为零建立等式 $-L\frac{\mathrm{d}i}{\mathrm{d}t}=\frac{q}{C}$，得到二阶微分方程，解为 $q=q_0\cos(\omega t+\phi)$，其中 $\omega=\frac{1}{\sqrt{LC}}$。
+
+能量在电容和电感间相互转化，两者能量之和为定值。
 
 ### RCL 电路
 
 建立等式 $-L\frac{\mathrm{d}i}{\mathrm{d}t}+\frac{q}{C}+iR=0$。
 
 如果外加周期性电源 $\mathcal{E}=\mathcal{E}_m\cos \omega''t$，则变为受迫振动。当 $\omega''=\omega$ 时得到共振，电流峰值最大。
+
+任意时刻下，电路最大储能等于电容或电感可能的储能的峰值。
 
 ## 磁介质
 
@@ -102,4 +118,11 @@ $$M=k\sqrt{L_1L_2}$$
 
     $$H=\frac{\vec{B}}{\mu_0}-\vec{M}$$
 
+## 边界条件
 
+| 物理量              | 法向分量边界条件                                                 | 切向分量边界条件                                                         | 说明                      |
+| ------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------- |
+| 电场 $\vec E$       | $E_2^\perp-E_1^\perp=\frac{\sigma_{\text{free}}}{\varepsilon_0}$ | $\vec E_1^\parallel=\vec E_2^\parallel$                                  | 法拉第定律（无环电压）    |
+| 电位移 $\vec D$     | $D_2^\perp-D_1^\perp=\sigma_{\text{free}}$                       | $\vec D_1^\parallel=\vec D_2^\parallel$                                  | $\vec D$ 只对自由电荷敏感 |
+| 磁感应强度 $\vec B$ | $B_1^\perp=B_2^\perp$                                            | $B_2^\parallel-B_1^\parallel=0$                                          | 无磁单极子                |
+| 磁场强度 $\vec H$   | $H_1^\perp=H_2^\perp$                                            | $\vec H_2^\parallel-\vec H_1^\parallel=\vec K_{\text{free}}\times\hat n$ | 安培环路定律              |
