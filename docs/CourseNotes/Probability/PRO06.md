@@ -22,7 +22,7 @@
 
 随机样本的特征依概率收敛于总体的特征。
 
-!!! normal-comment "常用的结论"
+!!! remarks "常用的结论"
 
     $$E(\bar{X})=E(X);$$
 
@@ -159,7 +159,7 @@ F 分布的性质：
 
 用 $\bar{X}$ 表示样本均值，用 $S^2$ 表示样本方差。
 
-!!! normal-comment "常用的结论"
+!!! remarks "常用的结论"
 
     $$\bar{X}\sim N(\mu,\frac{\sigma^2}{n}),\quad \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0,1);$$
 
