@@ -64,7 +64,7 @@ def on_page_markdown(markdown, page, config, files):
         other_file = pair["zh"]
 
     # Use absolute URL to avoid duplicated segments when nested paths are rendered
-    other_url = "/" + other_file.url.lstrip("/")
+    other_url = "Abies_Notebook/" + other_file.url.lstrip("/")
 
     switcher_html = f"""
 <div class="lang-switch">

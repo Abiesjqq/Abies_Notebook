@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/">
+        <link rel="prev" href="../../%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
       
       
-        <link rel="next" href="../../%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
+        <link rel="next" href="../../../../AbiesNotes/Abies_index/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>二次规划 - Abies's Notebook</title>
+        <title>Lagrange 方法 - Abies's Notebook</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#types-of-qp-problems" class="md-skip">
+        <a href="#lagrange-condition" class="md-skip">
           跳转至
         </a>
       
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              二次规划
+              Lagrange 方法
             
           </span>
         </div>
@@ -1263,35 +1263,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    二次规划
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/" class="md-nav__link">
         
   
   
@@ -1307,63 +1282,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#types-of-qp-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Types of QP problems
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Types of QP problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#quadratic-program-qp-and-quadratically-constrained-quadratic-program-qcqp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quadratic Program (QP) and Quadratically constrained quadratic program (QCQP)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#geometric-program" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Geometric Program
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1401,10 +1319,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Lagrange%20%E6%96%B9%E6%B3%95/Lagrange%20%E6%96%B9%E6%B3%95/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lagrange 方法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1420,6 +1363,130 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lagrange-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lagrange condition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lagrange condition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lagrangian-lagrange-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lagrangian (Lagrange function)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lagrangian-and-convex-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lagrangian and Convex Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems-with-general-equality-constrains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems with general equality constrains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems with general equality constrains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimization-on-2d-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimization on 2D cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-equality-constrains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General equality constrains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General equality constrains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-point-and-critical-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular point and Critical point
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lagrange-condition-in-gec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lagrange condition in GEC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1646,22 +1713,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#types-of-qp-problems" class="md-nav__link">
+  <a href="#lagrange-condition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types of QP problems
+        Lagrange condition
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types of QP problems">
+    <nav class="md-nav" aria-label="Lagrange condition">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#quadratic-program-qp-and-quadratically-constrained-quadratic-program-qcqp" class="md-nav__link">
+  <a href="#lagrangian-lagrange-function" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quadratic Program (QP) and Quadratically constrained quadratic program (QCQP)
+        Lagrangian (Lagrange function)
       
     </span>
   </a>
@@ -1669,10 +1736,77 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geometric-program" class="md-nav__link">
+  <a href="#lagrangian-and-convex-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Geometric Program
+        Lagrangian and Convex Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems-with-general-equality-constrains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems with general equality constrains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problems with general equality constrains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimization-on-2d-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimization on 2D cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-equality-constrains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General equality constrains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General equality constrains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-point-and-critical-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular point and Critical point
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lagrange-condition-in-gec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lagrange condition in GEC
       
     </span>
   </a>
@@ -1704,112 +1838,208 @@
   
 
 
-  <h1>二次规划</h1>
-
-<div class="lang-switch">
-  <span class="lang-current">English</span>
-  <a class="lang-other" href="Abies_Notebook/NoflowersNotes/%E5%87%B8%E4%BC%98%E5%8C%96/%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92/%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92.zh/">中文</a>
-</div>
+  <h1>Lagrange 方法</h1>
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>388 词</strong>&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>988 词</strong>&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
 </div>
-<h2 id="types-of-qp-problems">Types of QP problems</h2>
-<h3 id="quadratic-program-qp-and-quadratically-constrained-quadratic-program-qcqp">Quadratic Program (QP) and Quadratically constrained quadratic program (QCQP)</h3>
-<p><strong>QP</strong></p>
+<p>We encounter AEC problems:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \min_x\  &amp;\frac{1}{2}\boldsymbol{x}^T\boldsymbol{Q}\boldsymbol{x} + \boldsymbol{c}^T\boldsymbol{x} \\
-    \text{s.t.}\ &amp;\boldsymbol{Bx}\leq \boldsymbol{d} \\
-    \ &amp;\boldsymbol{Ax} = \boldsymbol{b}
+    &amp;\min_{\boldsymbol{x}} f(\boldsymbol{x}) \\
+    &amp;\text{s.t.}\ \ \   h_i(\boldsymbol{x}) = \boldsymbol{a}_i^T\boldsymbol{x} - b_i = 0, \quad i = 1, \ldots, k
 \end{aligned}
 \]</div>
-<p>QP is convex iff <span class="arithmatex">\(\boldsymbol{Q} \succeq \boldsymbol{O}\)</span>, and reduces to LP if <span class="arithmatex">\(\boldsymbol{Q} = \boldsymbol{O}\)</span></p>
-<p><strong>QCQP</strong></p>
+<p>i.e.</p>
 <div class="arithmatex">\[
 \begin{aligned}
-    \min_x\  &amp;\frac{1}{2}\boldsymbol{x}^T\boldsymbol{Q}\boldsymbol{x} + \boldsymbol{c}^T\boldsymbol{x} \\
-    \text{s.t.}\ &amp;\frac{1}{2}\boldsymbol{x}^T\boldsymbol{Q}_i\boldsymbol{x} + \boldsymbol{c}_i^T\boldsymbol{x}\leq \boldsymbol{d} + \boldsymbol{d}_i \leq 0 &amp; i = 1, 2, \ldots, m \\
-    \ &amp;\boldsymbol{Ax} = \boldsymbol{b}
+    &amp;\min_{\boldsymbol{x}} f(\boldsymbol{x}) \\
+    &amp;\text{s.t.}\ \ \   \boldsymbol{Ax} = \boldsymbol{b}
 \end{aligned}
 \]</div>
-<p>QCQP is convex if <span class="arithmatex">\(\boldsymbol{Q} \succeq \boldsymbol{O}\)</span> and <span class="arithmatex">\(\boldsymbol{Q}_i \succeq \boldsymbol{O},\ \forall i\)</span>, and reduced to QP if <span class="arithmatex">\(\boldsymbol{Q}_i = \boldsymbol{O}\)</span></p>
-<div class="admonition examples">
-<p class="admonition-title">Linear least squares regression</p>
-<p>Given <span class="arithmatex">\(\boldsymbol{y} \in \mathbb{R}^n, \boldsymbol{X} \in \mathbb{R}^{n \times p}\)</span>, find <span class="arithmatex">\(\boldsymbol{w}\in \mathbb{R}^p\)</span> s.t. </p>
+<p>where <span class="arithmatex">\(f\)</span> is differentiable with <span class="arithmatex">\(\operatorname{dom}f = \mathbb{R}^n, \boldsymbol{A}^T = (\boldsymbol{a}_1, \ldots, \boldsymbol{a}_k) \in \mathbb{R}^{n \times k}\)</span>, the feasible set is <span class="arithmatex">\(\Omega = \boldsymbol{x}_0 + \operatorname{Null}(\boldsymbol{A})\)</span>.<br />
+We assume the problem is feasible.</p>
+<p>By observation, if <span class="arithmatex">\(\boldsymbol{x}^*\)</span> is a minimum of AEC, then</p>
 <div class="arithmatex">\[
-\min_{\boldsymbol{w}}\Vert \boldsymbol{y} - \boldsymbol{Xw} \Vert_2^2
+\nabla f (\boldsymbol{x}^*)^T \boldsymbol{v}\geq 0 \Longrightarrow \nabla f (\boldsymbol{x}^*)^T \boldsymbol{v} = 0
 \]</div>
-<p>Geometrically, we are looking for the orthogonal projection <span class="arithmatex">\(\hat{\boldsymbol{y}}\)</span> of <span class="arithmatex">\(\boldsymbol{y}\)</span> onto <span class="arithmatex">\(\operatorname{Range}(\boldsymbol{X})\)</span>, the column space of <span class="arithmatex">\(\boldsymbol{X}\)</span>.</p>
-<p>Let <span class="arithmatex">\(f(\boldsymbol{w}) = \boldsymbol{w}^T\boldsymbol{X}^T\boldsymbol{Xw} - 2\boldsymbol{y}^T\boldsymbol{Xw} + \boldsymbol{y}^T\boldsymbol{y}\)</span>, <span class="arithmatex">\(\boldsymbol{w}^*\)</span> is optimal iff.</p>
+<p>for all feasible direction <span class="arithmatex">\(\boldsymbol{v}\)</span>, i.e. for <span class="arithmatex">\(\boldsymbol{v} \in \operatorname{Null}(\boldsymbol{A})\)</span> i.e. <span class="arithmatex">\(\nabla f (\boldsymbol{x}^*) \perp \operatorname{Null}(\boldsymbol{A})\)</span></p>
+<div class="admonition remarks">
+<p class="admonition-title">Proof</p>
 <div class="arithmatex">\[
-\nabla f(\boldsymbol{w}^*) = \boldsymbol{0} \Leftrightarrow \boldsymbol{X}^T\boldsymbol{Xw} = \boldsymbol{X}^T\boldsymbol{y}
+\nabla f (\boldsymbol{x}^*)^T \boldsymbol{v} = \lim_{t \to 0^+}\frac{f(\boldsymbol{x}^* + t\boldsymbol{v}) - f(\boldsymbol{x}^*)}{t} \geq 0
 \]</div>
-<p>then <span class="arithmatex">\(\boldsymbol{w}^*\)</span> is unique iff. <span class="arithmatex">\(\boldsymbol{X}^T\boldsymbol{X} \succ \boldsymbol{O}\)</span> iff. <span class="arithmatex">\(\boldsymbol{X}\)</span> has full column rank, <span class="arithmatex">\(\boldsymbol{w}^* = (\boldsymbol{X}^T\boldsymbol{X})^{-1}\boldsymbol{X}^T\boldsymbol{y}\)</span></p>
+<p>And <span class="arithmatex">\(\boldsymbol{v} \in \operatorname{Null}(\boldsymbol{A}) \Rightarrow - \boldsymbol{v} \in \operatorname{Null}(\boldsymbol{A})\)</span>, So <span class="arithmatex">\(\nabla f (\boldsymbol{x}^*)^T \boldsymbol{v} = 0\)</span></p>
 </div>
-<p><span class="arithmatex">\(\boldsymbol{x}^*\)</span> is optimal iff</p>
+<h2 id="lagrange-condition">Lagrange condition</h2>
+<p>If <span class="arithmatex">\(\boldsymbol{x}^*\)</span> is a local minimum of AEC, then there exists <span class="arithmatex">\(\boldsymbol{\lambda}^* = (\lambda_1^*, \lambda_2^*, \ldots, \lambda_k^*)^T \in \mathbb{R}^k\)</span> such that</p>
 <div class="arithmatex">\[
-\nabla f(\boldsymbol{x}) = \boldsymbol{Qx} + \boldsymbol{b} = \boldsymbol{0}
+\nabla f(\boldsymbol{x}^*) + \boldsymbol{A}^T \boldsymbol{\lambda}^* = \nabla f(\boldsymbol{x}^*) + \sum_{i = 1}^{k}\lambda_i^* \nabla h_i(\boldsymbol{x}^*) = \boldsymbol{0}
 \]</div>
-<p>Case 1. <span class="arithmatex">\(\boldsymbol{Q}\succ \boldsymbol{O}\)</span>: unique solution <span class="arithmatex">\(\boldsymbol{x}^* = -\boldsymbol{Q}^{-1}\boldsymbol{b}\)</span><br />
-Case 2. <span class="arithmatex">\(\det \boldsymbol{Q} = 0\)</span> and <span class="arithmatex">\(\boldsymbol{b} \in \operatorname{Range}(\boldsymbol{Q})\)</span>: infinite solutions.<br />
-Case 3. <span class="arithmatex">\(\det \boldsymbol{Q} = 0\)</span> and <span class="arithmatex">\(\boldsymbol{b} \notin \operatorname{Range}(\boldsymbol{Q})\)</span>: no solutions and <span class="arithmatex">\(f^* = -\infty\)</span></p>
-<p><img alt="alt text" src="../image.png" /></p>
+<p>The constrains <span class="arithmatex">\(\lambda_1^*, \lambda_2^*, \ldots, \lambda_k^*\)</span> are called <strong>Lagrange multipliers</strong></p>
+<div class="admonition remarks">
+<p class="admonition-title">Proof</p>
+</div>
+<p><span class="arithmatex">\(\nabla f(\boldsymbol{x}^*) \in \operatorname{Null}(\boldsymbol{A})^\perp = \operatorname{Range}(\boldsymbol{A}^T)\)</span>, so there exists a <span class="arithmatex">\(-\boldsymbol{\lambda}^*\)</span> s.t. <span class="arithmatex">\(\nabla f(\boldsymbol{x}^*) = -\boldsymbol{A}^T \boldsymbol{\lambda}^*\)</span></p>
+<h3 id="lagrangian-lagrange-function">Lagrangian (Lagrange function)</h3>
+<p>We define Lagrangian By</p>
+<div class="arithmatex">\[
+\mathcal{L}(\boldsymbol{x}, \boldsymbol{\lambda}) = f(\boldsymbol{x}) + \boldsymbol{\lambda}^T(\boldsymbol{Ax} - \boldsymbol{b}) = f(\boldsymbol{x}) + \sum_{i = 1}^k \lambda_i (\boldsymbol{a}_t^T \boldsymbol{x} - b_i)
+\]</div>
+<p>The optimality condition becomes the following <strong>Lagrange condition</strong> (<strong>KKT equations</strong>)</p>
+<div class="arithmatex">\[
+\nabla \mathcal{L}(\boldsymbol{x}^*, \boldsymbol{\lambda}^*) = \boldsymbol{0} \Longleftrightarrow \begin{cases}
+    \nabla_{\boldsymbol{x}} \mathcal{L}(\boldsymbol{x}^*, \boldsymbol{\lambda}^*) = \nabla f(\boldsymbol{x}^*) + \boldsymbol{A}^T\boldsymbol{\lambda}^* = \boldsymbol{0} \\
+    \nabla_{\boldsymbol{\lambda}} \mathcal{L}(\boldsymbol{x}^*, \boldsymbol{\lambda}^*) = \boldsymbol{Ax}^* - \boldsymbol{b} = \boldsymbol{0}
+\end{cases}
+\]</div>
+<p>i.e. <span class="arithmatex">\((\boldsymbol{x}^*, \boldsymbol{\lambda}^*)\)</span> is the stationary point of <span class="arithmatex">\(\mathcal{L}\)</span>.</p>
+<h3 id="lagrangian-and-convex-optimization">Lagrangian and Convex Optimization</h3>
+<p>Suppose AEC is convex, i.e. <span class="arithmatex">\(f\)</span> is convex, then if there exists <span class="arithmatex">\(\boldsymbol{\lambda}^*\)</span> such that <span class="arithmatex">\((\boldsymbol{x}^*, \boldsymbol{\lambda}^*)\)</span> satisfies the lagrange condition <span class="arithmatex">\(\nabla \mathcal{L}(\boldsymbol{x}^*, \boldsymbol{\lambda}^*) = \boldsymbol{0}\)</span>, then <span class="arithmatex">\(\boldsymbol{x}^*\)</span> is the global minimum of AEC</p>
+<div class="admonition remarks">
+<p class="admonition-title">Proof</p>
+<p>For all <span class="arithmatex">\(\boldsymbol{x} \in \Omega\)</span>,</p>
+<div class="arithmatex">\[
+\nabla f(\boldsymbol{x}^*)^T (\boldsymbol{x} - \boldsymbol{x}^*) = -(\boldsymbol{\lambda}^*)^T\boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}^*) = -(\boldsymbol{\lambda}^*)^T (\boldsymbol{Ax} - \boldsymbol{Ax}^*) = \boldsymbol{0}
+\]</div>
+<p>So <span class="arithmatex">\(\boldsymbol{x}^*\)</span> is the global minimum</p>
+</div>
+<h2 id="problems-with-general-equality-constrains">Problems with general equality constrains</h2>
+<p>Consider the general equality constrained problem in <span class="arithmatex">\(\mathbb{R}^n\)</span> (GEC)</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    &amp;\min_{\boldsymbol{x}} f(\boldsymbol{x}) \\
+    &amp;\text{s.t.}\ \ \   h_i(\boldsymbol{x}) = 0, \quad i = 1, \ldots, k
+\end{aligned}
+\]</div>
+<p>where <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(h_i\)</span> are all differentiable. (<span class="arithmatex">\(h_i\)</span> is not yet affine!) </p>
+<p>Suppose <span class="arithmatex">\(\boldsymbol{x}^*\)</span> is the local minimum. What if we linearize the constrains locally in the neighborhood of <span class="arithmatex">\(\boldsymbol{x}^*\)</span>?</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    &amp;\min_{\boldsymbol{x}} f(\boldsymbol{x}) \\
+    &amp;\text{s.t.}\ \ \   \nabla h_i(\boldsymbol{x}^*)^T(\boldsymbol{x} - \boldsymbol{x}^*) = 0, \quad i = 1, \ldots, k
+\end{aligned}
+\]</div>
+<p>We would expect that there exists <span class="arithmatex">\(\boldsymbol{\lambda} \in \mathbb{R}^k\)</span> s.t.</p>
+<div class="arithmatex">\[
+\nabla f(\boldsymbol{x}^*) + \sum_{i = 1}^{k}\lambda_i^* \nabla h_i(\boldsymbol{x}^*) = \boldsymbol{0}
+\]</div>
+<h3 id="optimization-on-2d-cycle">Optimization on 2D cycle</h3>
+<p>i.e. <span class="arithmatex">\(h(\boldsymbol{x}) = \Vert \boldsymbol{x}\Vert^2 - 1 = 0\)</span>, by some calculation we can also get <span class="arithmatex">\(\boldsymbol{x}^*\)</span> is the minimum iff <span class="arithmatex">\(\nabla \mathcal{L}(\boldsymbol{x}^*, \lambda^*) = \boldsymbol{0}\)</span></p>
+<h3 id="general-equality-constrains">General equality constrains</h3>
+<p>Consider the general equality constraints in <span class="arithmatex">\(\mathbb{R}^n\)</span></p>
+<div class="arithmatex">\[
+\boldsymbol{h}(\boldsymbol{x}) = \boldsymbol{O}
+\]</div>
+<p>where <span class="arithmatex">\(\boldsymbol{h}(\boldsymbol{x}) = (h_1(\boldsymbol{x}), \ldots, h_k(\boldsymbol{x}))\)</span>.</p>
+<p>Let <span class="arithmatex">\(\boldsymbol{x}(t): [0, \varepsilon) \to \Omega\)</span> be a feasible path starting at <span class="arithmatex">\(\boldsymbol{x}_0\)</span>. We only observe around <span class="arithmatex">\(\boldsymbol{x}_0\)</span>, a <strong>tangent line <span class="arithmatex">\(\tilde{T}_{\boldsymbol{x}_0}\Omega\)</span></strong> is </p>
+<div class="arithmatex">\[
+\boldsymbol{h}(\boldsymbol{x}_0) + \nabla \boldsymbol{h}(\boldsymbol{x}_0)^T(\boldsymbol{x} - \boldsymbol{x}_0) = \boldsymbol{0}
+\]</div>
+<p>, a <strong>feasible direction</strong> <span class="arithmatex">\(\boldsymbol{x}'(0^+)\)</span> and a <strong>tangent space</strong> <span class="arithmatex">\(T_{\boldsymbol{x}_0}\Omega = \operatorname{Null}(\boldsymbol{h}'(\boldsymbol{x}_0))\)</span> and <strong>normal space</strong> <span class="arithmatex">\(N_{\boldsymbol{x}_0}\Omega = [T_{\boldsymbol{x}_0}\Omega]^\perp\)</span><br />
+Noting that for all path <span class="arithmatex">\(\boldsymbol{x}(t)\)</span> with <span class="arithmatex">\(\boldsymbol{x}(0) = \boldsymbol{x}_0\)</span>, we have <span class="arithmatex">\(\boldsymbol{h}(\boldsymbol{x}) \equiv \boldsymbol{0}\)</span>, then</p>
+<div class="arithmatex">\[
+\boldsymbol{h}'(\boldsymbol{x}(0))\boldsymbol{x}'(0) = \boldsymbol{0}
+\]</div>
+<p>Let <span class="arithmatex">\(F_{\boldsymbol{x}_0}\Omega\)</span> be the set of feasible directions, then we know that</p>
+<div class="arithmatex">\[
+F_{\boldsymbol{x}_0}\Omega \subseteq \operatorname{Null}(\boldsymbol{h}'(\boldsymbol{x}_0))
+\]</div>
+<p>such condition is not sufficient. We need a constraint qualification to ensure <span class="arithmatex">\(F_{\boldsymbol{x}_0}\Omega = \operatorname{Null}(\boldsymbol{h}'(\boldsymbol{x}_0))\)</span></p>
+<h4 id="regular-point-and-critical-point">Regular point and Critical point</h4>
+<p>A point <span class="arithmatex">\(\boldsymbol{x}_0\)</span> is a <strong>regular point</strong> of <span class="arithmatex">\(\boldsymbol{h}\)</span> if</p>
+<div class="arithmatex">\[
+\boldsymbol{h}'(\boldsymbol{x}_0) = \begin{pmatrix}
+    \nabla h_1(\boldsymbol{x}_0)^T \\
+    \vdots \\
+    \nabla h_k(\boldsymbol{x}_0)^T \\
+\end{pmatrix}
+\]</div>
+<p>has full rank (<span class="arithmatex">\(\nabla h_i(\boldsymbol{x}_0)^T\)</span> are linearly independent).<br />
+It is called <strong>critical point</strong> if it is not regular.</p>
+<p>At a regular point <span class="arithmatex">\(\boldsymbol{x}_0 \in \Omega\)</span>, </p>
+<div class="arithmatex">\[
+F_{\boldsymbol{x}_0}\Omega = \operatorname{Null}(\boldsymbol{h}'(\boldsymbol{x}_0))
+\]</div>
+<p>In this case <span class="arithmatex">\(N_{\boldsymbol{x}_0}\Omega = \operatorname{span}\{\nabla h_1(\boldsymbol{x}_0), \ldots, \nabla h_1(\boldsymbol{x}_0)\}\)</span></p>
 <div class="admonition normal-comment">
-<p class="admonition-title">Why <span class="arithmatex">\(\boldsymbol{b}\)</span> and <span class="arithmatex">\(\operatorname{Null}(\boldsymbol{Q})\)</span> matters?</p>
+<p class="admonition-title">Geometry</p>
+<p><img alt="alt text" src="../image.png" style="width:50%; float:left" />
+<img alt="alt text" src="../image-1.png" style="width:50%; float:right" /></p>
+<p>The left one is regular point and the right one is critical point.</p>
+</div>
+<p><strong>Lemma</strong> If <span class="arithmatex">\(\boldsymbol{x}_0\)</span> is a regular point, then for any <span class="arithmatex">\(\boldsymbol{v}\)</span> s.t. <span class="arithmatex">\(\boldsymbol{h}'(\boldsymbol{x}_0)\boldsymbol{v} = \boldsymbol{0}\)</span>, there exists a local path <span class="arithmatex">\(\boldsymbol{x}(t)\)</span> start from <span class="arithmatex">\(\boldsymbol{x}_0\)</span> s.t. <span class="arithmatex">\(\boldsymbol{h}(\boldsymbol{x}(t)) = \boldsymbol{0}, \boldsymbol{x}_0'(0) = \boldsymbol{v}\)</span>.</p>
+<div class="admonition remarks">
+<p class="admonition-title">Proof of the lemma</p>
+<p>Let</p>
 <div class="arithmatex">\[
-\operatorname{Range}(\boldsymbol{A}) = \operatorname{Null}(\boldsymbol{A})^\perp
+\begin{aligned}
+    \tilde{\boldsymbol{x}}(t, \boldsymbol{\alpha}) &amp;= \boldsymbol{x}_0 + t\boldsymbol{v} + \boldsymbol{h}'(\boldsymbol{x}_0)^T \boldsymbol{\alpha} \\
+    &amp;= \boldsymbol{x}_0 + t\boldsymbol{v} + \sum_{i = 1}^k \alpha_i \nabla h_i(\boldsymbol{x}_0) \\
+    \boldsymbol{F}(t, \boldsymbol{\alpha}) &amp;= \boldsymbol{h}(\boldsymbol{x}(t, \boldsymbol{\alpha}))
+\end{aligned}
+\]</div>
+<p>we have</p>
+<div class="arithmatex">\[
+\boldsymbol{F}(0, \boldsymbol{0}) = \boldsymbol{0}, \quad \frac{\partial \boldsymbol{F}(0, \boldsymbol{0})}{\partial \boldsymbol{\alpha}} = \boldsymbol{h}'(\boldsymbol{x}_0)\boldsymbol{h}'(\boldsymbol{x}_0)^T \succ \boldsymbol{O}
+\]</div>
+<p>(Since <span class="arithmatex">\(\boldsymbol{h}'(\boldsymbol{x}_0)\)</span> is full rank).<br />
+By the implicit function theorem, there exists <span class="arithmatex">\(\boldsymbol{\alpha} = \boldsymbol{\phi}(t)\)</span> for small <span class="arithmatex">\(t\)</span> s.t. <span class="arithmatex">\(\boldsymbol{\phi}(0) = \boldsymbol{0}, \boldsymbol{F}(t, \boldsymbol{\phi}(t)) = \boldsymbol{0}\)</span> and </p>
+<div class="arithmatex">\[
+\boldsymbol{\phi}'(0) = - \left[ \frac{\partial \boldsymbol{F}(0,0)}{\partial \boldsymbol{\alpha}} \right]^{-1}
+\frac{\partial \boldsymbol{F}(0,0)}{\partial t}
+=
+- \left[ \frac{\partial \boldsymbol{F}(0,0)}{\partial \boldsymbol{\alpha}} \right]^{-1}
+\boldsymbol{h}'(\boldsymbol{x}_0)\boldsymbol{v}
+= 0
+\]</div>
+<p>(<span class="arithmatex">\(\boldsymbol{\phi}\)</span> is the implicit function of <span class="arithmatex">\(\boldsymbol{\alpha}\)</span> in <span class="arithmatex">\(\boldsymbol{F} = \boldsymbol{0}\)</span>) then</p>
+<div class="arithmatex">\[
+\boldsymbol{x}(t)=\tilde{\boldsymbol{x}}\bigl(t,\boldsymbol{\phi}(t)\bigr)
+=\boldsymbol{x}_0+t\boldsymbol{v}+\boldsymbol{h}'(\boldsymbol{x}_0)^{T}\boldsymbol{\phi}(t)
+=\boldsymbol{x}_0+t\boldsymbol{v}+\sum_{i=1}^{k}\boldsymbol{\phi}_{i}(t)\nabla h_{i}(\boldsymbol{x}_0)
+\]</div>
+<p>satisfies the requirement.</p>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Proof of the theorem</p>
+<p>According to the lemma, <span class="arithmatex">\(\operatorname{Null}(\boldsymbol{h}'(\boldsymbol{x}_0)) \subseteq F_{\boldsymbol{x}_0}\Omega\)</span>.</p>
+</div>
+<div class="admonition normal-comment">
+<p class="admonition-title">Implicit function theorem</p>
+<p>If <span class="arithmatex">\(\boldsymbol{F}:\mathbb{R}^{n+k}\to\mathbb{R}^{k}\)</span> is continuously differentiable in a neighborhood of <span class="arithmatex">\((\boldsymbol{x}_{0},\boldsymbol{y}_{0})\)</span> and satisfies</p>
+<div class="arithmatex">\[
+\boldsymbol{F}(\boldsymbol{x}_{0},\boldsymbol{y}_{0})=\boldsymbol{0},\quad
+\det\frac{\partial\boldsymbol{F}(\boldsymbol{x}_{0},\boldsymbol{y}_{0})}{\partial\boldsymbol{y}}\neq 0
+\]</div>
+<p>then there exists a continuously differentiable function <span class="arithmatex">\(\boldsymbol{y}=\boldsymbol{\phi}(\boldsymbol{x})\)</span> defined in a neighborhood of <span class="arithmatex">\(\boldsymbol{x}_{0}\)</span> such that</p>
+<div class="arithmatex">\[
+\begin{aligned}
+    &amp;\boldsymbol{F}\bigl(\boldsymbol{x},\boldsymbol{\phi}(\boldsymbol{x})\bigr)=\boldsymbol{0} \\
+    &amp;\frac{\partial\boldsymbol{\phi}(\boldsymbol{x})}{\partial\boldsymbol{x}}
+    =-\left[\frac{\partial\boldsymbol{F}\bigl(\boldsymbol{x},\boldsymbol{\phi}(\boldsymbol{x})\bigr)}{\partial\boldsymbol{y}}\right]^{-1}
+    \frac{\partial\boldsymbol{F}\bigl(\boldsymbol{x},\boldsymbol{\phi}(\boldsymbol{x})\bigr)}{\partial\boldsymbol{x}}
+\end{aligned}
 \]</div>
 </div>
-<div class="admonition examples">
-<p class="admonition-title">Examples</p>
-<p><strong>LOSSO</strong> (Least Absolute Shrinkage and Selection Operator)</p>
-<p>Given <span class="arithmatex">\(\boldsymbol{y} \in \mathbb{R}^n, \boldsymbol{X} \in \mathbb{R}^{n \times p}, t &gt; 0\)</span>, </p>
+<h3 id="lagrange-condition-in-gec">Lagrange condition in GEC</h3>
+<p>If <span class="arithmatex">\(\boldsymbol{x}^*\)</span> is a local minimum of <span class="arithmatex">\(f\)</span> (GEC) and it is a regular point of <span class="arithmatex">\(\boldsymbol{h}\)</span>, then there exists Lagrange multipliers <span class="arithmatex">\(\lambda_1^*, \ldots, \lambda_k^*\)</span> s.t.</p>
 <div class="arithmatex">\[
-\begin{aligned}
-    \min_{\boldsymbol{w}}\ &amp;\Vert \boldsymbol{y} - \boldsymbol{Xw} \Vert_2^2 \\
-    \text{s.t.}\ &amp;\Vert \boldsymbol{w}\Vert_1 \leq t
-\end{aligned}
+\nabla f(\boldsymbol{x}^*) + \sum_{i = 1}^k \lambda_i^*\nabla h_i(\boldsymbol{x}_0) = \boldsymbol{0}
 \]</div>
-<p>The optimal solution always exists because continuousness, closeness and boundedness.<br />
-And the result is unique.</p>
-<p><strong>Ridge Regression</strong></p>
-<p>Given <span class="arithmatex">\(\boldsymbol{y} \in \mathbb{R}^n, \boldsymbol{X} \in \mathbb{R}^{n \times p}, t &gt; 0\)</span>, </p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \min_{\boldsymbol{w}}\ &amp;\Vert \boldsymbol{y} - \boldsymbol{Xw} \Vert_2^2 \\
-    \text{s.t.}\ &amp;\Vert \boldsymbol{w}\Vert_2 \leq t
-\end{aligned}
-\]</div>
-<p>It is a QCQP</p>
-<p><strong>SVM</strong></p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \min_{\boldsymbol{w}, b}\ &amp;\frac{1}{2}\Vert\boldsymbol{w}\Vert^2 \\
-    \mathrm{s.t.}\ &amp; y_i(\boldsymbol{w}^T \boldsymbol{x}_i + b) \geq 1
-\end{aligned}
-\]</div>
+<div class="admonition normal-comment">
+<p class="admonition-title">Note</p>
+<p>This simply says <span class="arithmatex">\(\nabla f(\boldsymbol{x}^*) \in N_{\boldsymbol{x}_0}\Omega = \operatorname{span}\{\nabla h_1(\boldsymbol{x}_0), \ldots, \nabla h_1(\boldsymbol{x}_0)\}\)</span></p>
 </div>
-<h3 id="geometric-program">Geometric Program</h3>
-<p>A <strong>monomial</strong> is a function <span class="arithmatex">\(f : \mathbb{R}^n_{++} = \{ \boldsymbol{x} \in \mathbb{R}^n : \boldsymbol{x} &gt; \boldsymbol{0} \} \to \mathbb{R}\)</span> of the form:</p>
+<p>And define the Lagrangian of GEC by</p>
 <div class="arithmatex">\[
-f(\boldsymbol{x}) = \gamma x_1^{a_1} x_2^{a_2} \cdots x_n^{a_n}
+\mathcal{L}(\boldsymbol{x}, \boldsymbol{\lambda}) = f(\boldsymbol{x}) + \lambda^T\boldsymbol{h}(\boldsymbol{x}) = \boldsymbol{f}(\boldsymbol{x}) + \sum_{i = 1}^k \lambda_i h_i(\boldsymbol{x})
 \]</div>
-<p>for <span class="arithmatex">\(\gamma &gt; 0\)</span>, <span class="arithmatex">\(a_1, \ldots, a_n \in \mathbb{R}\)</span><br />
-A <strong>posynomial</strong> is a sum of monomials:</p>
-<div class="arithmatex">\[
-f(\boldsymbol{x}) = \sum_{k=1}^{p} \gamma_k x_1^{a_{k1}} x_2^{a_{k2}} \cdots x_n^{a_{kn}}
-\]</div>
-<p>A <strong>geometric program</strong> (GP) is an optimization problem of the form </p>
-<div class="arithmatex">\[
-\begin{aligned}
-    \min_{\boldsymbol{x}}\ &amp; f(\boldsymbol{x}) \\
-    \text{s.t.}\ &amp; g_i(\boldsymbol{x}) \leq 1 &amp; i = 1, \ldots, m \\
-    \ &amp; h_j(\boldsymbol{x}) = 1 &amp; j = 1, \ldots, r
-\end{aligned}
-\]</div>
-<p>where <span class="arithmatex">\(f,\, g_i,\ i = 1,\ldots,m\)</span> are posynomials and <span class="arithmatex">\(h_j,\ j = 1,\ldots,r\)</span> are monomials. The constraint <span class="arithmatex">\(x &gt; 0\)</span> is implicit.</p>
+<p>and the Lagrange condition <span class="arithmatex">\(\nabla \mathcal{L}(\boldsymbol{x}^*, \boldsymbol{\lambda}^* = \boldsymbol{0})\)</span></p>
+<div class="admonition warning-box">
+<p class="admonition-title">The condition is not sufficient!</p>
+</div>
 
 
 
@@ -1832,7 +2062,7 @@ f(\boldsymbol{x}) = \sum_{k=1}^{p} \gamma_k x_1^{a_{k1}} x_2^{a_{k2}} \cdots x_n
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月23日 12:09:56 UTC">2025-11-23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月8日 14:16:01 UTC">2025-12-08</span>
   </span>
 
     
@@ -1842,34 +2072,11 @@ f(\boldsymbol{x}) = \sum_{k=1}^{p} \gamma_k x_1^{a_{k1}} x_2^{a_{k2}} \cdots x_n
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月23日 12:09:56 UTC">2025-11-23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月8日 14:16:01 UTC">2025-12-08</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -1902,7 +2109,7 @@ f(\boldsymbol{x}) = \sum_{k=1}^{p} \gamma_k x_1^{a_{k1}} x_2^{a_{k2}} \cdots x_n
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 线性规划">
+          <a href="../../%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 梯度下降">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1912,20 +2119,20 @@ f(\boldsymbol{x}) = \sum_{k=1}^{p} \gamma_k x_1^{a_{k1}} x_2^{a_{k2}} \cdots x_n
                 上一页
               </span>
               <div class="md-ellipsis">
-                线性规划
+                梯度下降
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/" class="md-footer__link md-footer__link--next" aria-label="下一页: 梯度下降">
+          <a href="../../../../AbiesNotes/Abies_index/" class="md-footer__link md-footer__link--next" aria-label="下一页: 扉页">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                梯度下降
+                扉页
               </div>
             </div>
             <div class="md-footer__button md-icon">
