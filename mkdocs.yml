@@ -104,10 +104,11 @@ nav:
   - 课程笔记:
       - 扉页: CourseNotes/note_index.md
       - 计算机组成:
-          - Chap01 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
-          - Chap03 基本运算: CourseNotes/Computer Organization/lecture notes/COchap03.md
-          - Chap02 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
-          - Chap04 处理器: CourseNotes/Computer Organization/lecture notes/COchap04.md
+          - Chap 1 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
+          - Chap 3 基本运算: CourseNotes/Computer Organization/lecture notes/COchap03.md
+          - Chap 2 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
+          - Chap 4 处理器: CourseNotes/Computer Organization/lecture notes/COchap04.md
+          - Chap 5 存储结构: CourseNotes/Computer Organization/lecture notes/COchap05.md
           - 期末复习: CourseNotes/Computer Organization/lecture notes/CO0.md
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
@@ -124,6 +125,8 @@ nav:
           - 分治: CourseNotes/Advance Data Structure/ADS07.md
           - 动态规划: CourseNotes/Advance Data Structure/ADS08.md
           - 贪心算法: CourseNotes/Advance Data Structure/ADS09.md
+          - P/NP问题: CourseNotes/Advance Data Structure/ADS10.md
+          - 近似算法: CourseNotes/Advance Data Structure/ADS11.md
       - 普通物理学II:
           - 数学基础: CourseNotes/General Physics II/Phy00.md
           - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
@@ -131,11 +134,14 @@ nav:
           - 电容，电介质: CourseNotes/General Physics II/Phy03.md 
           - 欧姆定律，电路: CourseNotes/General Physics II/Phy04.md
           - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
-          - 电磁感应: CourseNotes/General Physics II/Phy06.md
+          - 电磁感应，电感: CourseNotes/General Physics II/Phy06.md
       - 概率论与数理统计:
-          - Chap01 基本概念: CourseNotes/Probability/PRO01.md
-          - Chap02 一维随机变量: CourseNotes/Probability/PRO02.md
-          - Chap03 二维随机变量: CourseNotes/Probability/PRO03.md
+          - Chap 1 基本概念: CourseNotes/Probability/PRO01.md
+          - Chap 2 一维随机变量: CourseNotes/Probability/PRO02.md
+          - Chap 3 二维随机变量: CourseNotes/Probability/PRO03.md
+          - Chap 4 随机变量的数字特征: CourseNotes/Probability/PRO04.md
+          - Chap 5 大数定律与中心极限定理: CourseNotes/Probability/PRO05.md
+          - Chap 6 数理统计的基本概念: CourseNotes/Probability/PRO06.md
       - 工程图学:
           - 点线面的投影: CourseNotes/Engineering Graphics/EG01.md
       - 数据结构基础:
@@ -218,7 +224,15 @@ nav:
           - Lagrange 方法: NoflowersNotes/凸优化/Lagrange 方法/Lagrange 方法.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
-      - Vision Course (进行中):
+      - CS231n:
+          - Lec 02 Image Classification: AbiesNotes/CS231n/notes/cs231n_02.md
+          - Lec 03 Loss Functions and Optimization: AbiesNotes/CS231n/notes/cs231n_03.md
+          - Lec 04 Introduction to Neural Networks: AbiesNotes/CS231n/notes/cs231n_04.md
+          - Lec 05 Convolutional Neural Networks: AbiesNotes/CS231n/notes/cs231n_05.md
+          - Lec 06 Training Neural Networks I: AbiesNotes/CS231n/notes/cs231n_06.md
+          - Assignment 1:
+              - KNN: AbiesNotes/CS231n/assignments/a1_knn.md
+      - Vision Course:
           - Camera: AbiesNotes/Vision Course/CV02_camera.md
           - Color: AbiesNotes/Vision Course/CV03_color.md
           - HDR: AbiesNotes/Vision Course/CV04_HDR.md
@@ -249,7 +263,7 @@ nav:
           - Lec 17 Materials and Appearances: AbiesNotes/GAMES101/Lecture 17 Materials and Appearances.md
           - Lec 18 Advanced Topics in Rendering: AbiesNotes/GAMES101/Lecture 18 Advanced Topics in Rendering.md
           - Lec 19 Cameras, Lenses and Light Fields: AbiesNotes/GAMES101/Lecture 19 Cameras, Lenses and Light Fields.md
-      - Tinyrenderer(中道崩殂):
+      - Tinyrenderer:
           - Getting started: AbiesNotes/Tinyrenderer/getting started.md
           - Line: AbiesNotes/Tinyrenderer/line.md
           - Triangle: AbiesNotes/Tinyrenderer/triangle.md
