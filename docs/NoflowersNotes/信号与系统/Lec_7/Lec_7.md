@@ -81,7 +81,7 @@ $\sigma_0$ 为所有 $\sigma$ 的下界, $\sigma > \sigma_0$ 称为收敛条件,
         x(t) = \mathrm{e}^{-t}u(t) + \mathrm{e}^{-2t}u(t) \overset{L}{\longleftrightarrow} \frac{1}{s + 1} + \frac{1}{s + 2} = \frac{2s + 3}{(s + 1)(s + 2)}
         $$
 
-        有零极点图
+        有零极点图 (零点用圈，零点用叉)
 
         ![alt text](image.png)
 
@@ -92,4 +92,123 @@ $\sigma_0$ 为所有 $\sigma$ 的下界, $\sigma > \sigma_0$ 称为收敛条件,
 
 !!! remarks "常用信号的拉普拉斯变换"
 
-**指数函数**
+    **指数函数** $L(\mathrm{e}^{\lambda t}u(t)) = \frac{1}{s - \lambda}$, ROC: $\operatorname{Re}(s) > \operatorname{Re}(\lambda)$  
+    **三角函数** $\displaystyle L(\cos \omega_0 t\cdot u(t)) = \frac{s}{s^2 + \omega_0^2}, L(\sin \omega_0 t\cdot u(t)) = \frac{\omega_0}{s^2 + \omega_0^2}$, ROC: $\operatorname{Re}(s) > 0$  
+    **冲激信号** $L(\delta(t)) = 1$, $L(\delta^{(n)}(t)) = s^n$, ROC: $\operatorname{Re}(s) > -\infty$  
+    **阶跃函数** $\displaystyle L(u(t)) = \frac{1}{s}$  
+    **正幂函数** $\displaystyle L(t^n \cdot u(t)) = \frac{t^n \mathrm{e}^{-st}}{-s}\bigg|_{0^-}^{+\infty} - \frac{1}{s}\int_{0^-}^{\infty}\mathrm{e}^{-st}\mathrm{d}t^n = \frac{n}{s}L(t^{n - 1} \cdot u(t))$, 因此 $\displaystyle L(t^n \cdot u(t)) = \frac{n!}{s^{n + 1}}, n \in \mathbb{Z}^+$, ROC: $\operatorname{Rs}(s) > 0$
+
+## 拉普拉斯变换的性质
+
+记 $x_1(t) \overset{L}{\longleftrightarrow}X_1(s)$, ROC: $R_1$, $x_2(t) \overset{L}{\longleftrightarrow}X_2(s)$, ROC: $R_2$, $x(t) \overset{L}{\longleftrightarrow}X(s)$, ROC: $R$
+
+### 线性性
+
+不做描述, 但此处收敛域至少是 $R_1 \cap R_2$
+
+### 时移性质
+
+$x(t - t_0) \overset{L}{\longleftrightarrow}X(s)\mathrm{e}^{-st_0}$, ROC 不变
+
+### s 域平移
+
+$x(t)\mathrm{e}^{s_0t} \overset{L}{\longleftrightarrow}X(s - s_0)$, ROC: $R + \operatorname{Re}(s_0)$
+
+### 时域尺度变换
+
+$\displaystyle x(at) \overset{L}{\longleftrightarrow} \frac{1}{|a|}X\left(\frac{s}{a}\right)$, ROC: $a\cdot R$
+
+### 共轭对称特性
+
+$\overline{x(t)} \overset{L}{\longleftrightarrow} \overline{X(\overline{s})}$, ROC 不变  
+对于实信号, $X(s) = \overline{X(\overline{s})}$
+
+### 时域卷积特性
+
+类似，不做描述; 此处收敛域至少是 $R_1 \cap R_2$
+
+### 时域微分特性
+
+由于
+
+$$
+\frac{\mathrm{d}x(t)}{\mathrm{d}t} \overset{L}{\longleftrightarrow} x(t)\mathrm{e}^{-st}\big|_T^\infty - \int_T^\infty x(t)\mathrm{d}\mathrm{e}^{-st} = x(t)\mathrm{e}^{-st}\big|_T^\infty - sX(s)
+$$
+
+对于双边 L 变换，$T = -\infty$, $\displaystyle \frac{\mathrm{d}x(t)}{\mathrm{d}t} \overset{L}{\longleftrightarrow} sX(s)$  
+对于单边 L 变换，$T = 0^-$，$\displaystyle\frac{\mathrm{d}x(t)}{\mathrm{d}t} \overset{L}{\longleftrightarrow} sX(s) - x(0^-)$  
+ROC 均至少为 $R$
+
+类似有 $\displaystyle \frac{\mathrm{d}^2x(t)}{\mathrm{d}t^2} \overset{L}{\longleftrightarrow} s^2X(s) - sx(0^-) - x'(0^-)$
+
+### 时域积分特性
+
+对于双边 L 变换，$\displaystyle \int_{-\infty}^t x(\tau) \mathrm{d}\tau \overset{L}{\longleftrightarrow} \frac{1}{s}X(s)$  
+对于单边 L 变换，$\displaystyle \displaystyle \int_{-\infty}^t x(\tau) \mathrm{d}\tau \overset{L}{\longleftrightarrow} \frac{1}{s}X(s) + \frac{1}{s}x^{(-1)}(0^-) = \frac{1}{s}X(s) + \frac{1}{s}\int_{-\infty}^{0^-}x(\tau) \mathrm{d}\tau$  
+上述 ROC 均至少为 $R \cap \{\operatorname{Re}(s) > 0\}$
+
+### s 域微分特性
+
+$\displaystyle -tx(t) \overset{L}{\longleftrightarrow} \frac{\mathrm{d}X(s)}{\mathrm{d}s}$，ROC: $R$
+
+### 初值定理
+
+如果 $x(t)$ 是因果信号，且在 $t = 0$ 处不存在奇异函数，则
+
+$$
+x(0^+) = \lim_{s \to \infty}sX(s)
+$$
+
+!!! remarks "Proof"
+
+    $$
+    x(t)
+    = \left[
+        x(0^+) 
+        + x'(0^+)\, t
+        + x''(0^+) \frac{t^2}{2}
+        + \cdots 
+        + x^{(n)}(0^+) \frac{t^n}{n!}
+        + \cdots
+    \right] u(t)
+    $$
+
+    做单边拉氏变换
+
+    $$
+    X(s)
+    = \frac{1}{s} x(0^+)
+    + \frac{1}{s^2} x'(0^+)
+    + \frac{1}{s^3} x''(0^+)
+    + \cdots
+    + \frac{1}{s^{n+1}} x^{(n)}(0^+)
+    + \cdots
+    = \sum_{n=0}^{\infty} x^{(n)}(0^+)\, \frac{1}{s^{n+1}}
+    $$
+
+    两边乘以 $s$ 并令 $s \to \infty$ 即可
+
+### 终值定理
+
+如果 $x(t)$ 是因果信号，且在 $t = 0$ 处不存在奇异函数，且 $sX(s)$ 的收敛域包含 $s = 0$，则
+
+$$
+\lim_{t \to \infty}x(t) = \lim_{s \to 0}sX(s)
+$$
+
+!!! remarks "Proof"
+
+    $$
+    \begin{aligned}
+    \lim_{s \to 0} \left[ \int_{0^+}^{\infty} \frac{\mathrm{d}x(t)}{\mathrm{d}t} e^{-st} \, \mathrm{d}t \right]
+    &= \int_{0^+}^{\infty} \frac{\mathrm{d}x(t)}{\mathrm{d}t} \, \mathrm{d}t
+    = \lim_{t \to \infty} x(t) - x(0^+) \\
+    \lim_{s \to 0} \left[ \int_{0^+}^{\infty} \frac{\mathrm{d}x(t)}{\mathrm{d}t} e^{-st} \, \mathrm{d}t \right]
+    &= \lim_{s \to 0} \left[ sX(s) - x(0^+) \right]
+    = \lim_{s \to 0} \bigl[sX(s)\bigr] - x(0^+)
+    \end{aligned}
+    $$
+
+### 有理函数的拉普拉斯反变换
+
+拆成多项式 + $\displaystyle \frac{c}{(s - a)^p}$ 即可直接求反变换

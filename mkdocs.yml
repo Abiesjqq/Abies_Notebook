@@ -196,7 +196,8 @@ nav:
           - LTI 系统的时域分析: NoflowersNotes/信号与系统/Lec_4/Lec_4.md
           - LTI 系统的频域分析 - 数学原理: NoflowersNotes/信号与系统/Lec_5/Lec_5.md
           - LTI 系统的频域分析 - 相关应用: NoflowersNotes/信号与系统/Lec_6/Lec_6.md
-          - L 变换和系统 s 域分析: NoflowersNotes/信号与系统/Lec_7/Lec_7.md
+          - 拉普拉斯变换: NoflowersNotes/信号与系统/Lec_7/Lec_7.md
+          - 系统的 s 域分析: NoflowersNotes/信号与系统/Lec_8/Lec_8.md
       - 人工智能基础:
           - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
           - 启发式搜索算法: NoflowersNotes/人工智能基础/启发式搜索算法/启发式搜索算法.md
@@ -214,6 +215,7 @@ nav:
           - 线性规划: NoflowersNotes/凸优化/线性规划/线性规划.md
           - 二次规划: NoflowersNotes/凸优化/二次规划/二次规划.md
           - 梯度下降: NoflowersNotes/凸优化/梯度下降/梯度下降.md
+          - Lagrange 方法: NoflowersNotes/凸优化/Lagrange 方法/Lagrange 方法.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - Vision Course (进行中):
