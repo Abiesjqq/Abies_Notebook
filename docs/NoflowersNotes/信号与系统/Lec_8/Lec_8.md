@@ -40,7 +40,7 @@ $$
 $$
 \begin{aligned}
     \vert H(\mathrm{j}\omega)\vert &= K\frac{ \prod_{i = 1}^m|\mathrm{j}\omega - z_i|}{ \prod_{i = 1}^n|\mathrm{j}\omega - p_i|} \\
-    \phi(\mathrm{j}\omega) &= K\frac{ \prod_{i = 1}^m\operatorname{Arg}(\mathrm{j}\omega - z_i)}{ \prod_{i = 1}^n\operatorname{Arg}(\mathrm{j}\omega - p_i)}
+    \phi(\mathrm{j}\omega) &= K\left( \sum_{i = 1}^m\operatorname{Arg}(\mathrm{j}\omega - z_i)- \sum_{i = 1}^n\operatorname{Arg}(\mathrm{j}\omega - p_i)\right)
 \end{aligned}
 $$
 
