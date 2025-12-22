@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3600,7 +3600,7 @@ R = \det(M) - k\,(\operatorname{trace}(M))^2
 \]</div>
 <p>同理，交叉熵损失函数导数为<span class="arithmatex">\(-\frac{1}{\widehat{y}_1}\)</span>，<span class="arithmatex">\(-\widehat{y}_1 \widehat{y}_2\)</span>与<span class="arithmatex">\(-\frac{1}{\widehat{y}_1}\)</span>相乘结果为<span class="arithmatex">\({\widehat{y}_2}\)</span>。这意味着对于除第一个输出节点以外的节点进行偏导，在得到模型预测输出后，<strong>只要将其保存</strong>，就是交叉损失函数相对于其他节点的偏导结果。在<span class="arithmatex">\(z_1\)</span>、<span class="arithmatex">\(z_2\)</span>和<span class="arithmatex">\(z_3\)</span>得到偏导结果后，再通过链式法则（后续介绍）将损失误差继续往输入端传递即可。</p>
 <p>在上面的例子中，假设所预测中间值<span class="arithmatex">\((z_1, z_2, z_3)\)</span>经过 Softmax 映射后所得结果为<span class="arithmatex">\((0.34, 0.46, 0.20)\)</span>。由于已知输入数据<span class="arithmatex">\(x\)</span>属于第一类，显然这个输出不理想而需要对模型参数进行优化。如果选择交叉熵损失函数来优化模型，则<span class="arithmatex">\((z_1, z_2, z_3)\)</span>这一层的偏导值为</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\((0.34 - 1, 0.46, 0.20) = (-0.66, 0.46, 0.20)\)</span>\)</span></p>
+<p>$<span class="arithmatex">\((0.34 - 1, 0.46, 0.20) = (-0.66, 0.46, 0.20)\)</span>$</p>
 <p>可以看出，<strong>Softmax 和交叉熵损失函数相互结合</strong>，为偏导计算带来了极大便利。偏导计算使得损失误差从输出端向输入端传递，来对模型参数进行优化。在这里，交叉熵与 Softmax 函数结合在一起，因此也叫 <strong>Softmax 损失（Softmax with cross-entropy loss）</strong>。</p>
 </details>
 <h4 id="_17">感知机模型</h4>
@@ -4215,10 +4215,10 @@ w_1^{\text{new}} = w_1 - \eta \cdot \frac{d\mathcal{L}}{dw_1} = w_1 - \eta \cdot
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "navigation.instant", "header.autohide", "navigation.instant.progress", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate", "git-revision-date", "git-revision-date-localized"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
