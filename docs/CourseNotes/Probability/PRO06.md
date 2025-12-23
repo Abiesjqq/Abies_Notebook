@@ -81,6 +81,8 @@ $z_{\alpha}$ 的性质：
 
 - 卡方分布的上侧 $\alpha$ 分位数：$\chi^2_{\alpha}(n)$ 表示 $\chi^2(n)$ 分布的上侧 $\alpha$ 分位数，可查阅卡方分布表获得。当 $n>40$ 时，可近似为：$\chi^2_{\alpha}(n) \approx \frac{1}{2} \left( z_{\alpha} + \sqrt{2n - 1} \right)^2$
 
+注意：卡方分布满足可加性，但不满足线性性。缩放后的卡方变量不服从卡方分布。
+
 ### t 分布
 
 设随机变量 $X \sim N(0,1)$，$Y \sim \chi^2(n)$，且 $X$ 与 $Y$ 相互独立，则称随机变量 $t = \frac{X}{\sqrt{\frac{Y}{n}}}$ 服从自由度为 $n$ 的 t 分布，记作 $t \sim t(n)$.
@@ -163,8 +165,31 @@ F 分布的性质：
 
     $$\bar{X}\sim N(\mu,\frac{\sigma^2}{n}),\quad \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0,1);$$
 
-    下面是推论：
-
     $$\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1),\,\text{且}\,\bar{X},S^2\text{相互独立};$$
 
-    $$\frac{\bar{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t(n-1).$$
+    $$\frac{\bar{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t(n-1);$$
+
+    $$F=\frac{S_1^2/\sigma_1^2}{S_2^2\sigma_2^2}=\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(n_1-1,n_2-1).$$
+
+## 区间估计
+
+定义：
+
+- **置信区间**：设总体 $X$ 的 分布函数中有未知参数 $\theta$，给定值 $\alpha$，有 $P(\theta_1<\theta<\theta_2)\ge 1-\alpha$，则称随机区间 $(\theta_1,\theta_2)$ 为 $\theta$ 的双侧置信区间。其中 $\theta_1$ 为双侧置信下限，$\theta_2$ 为双侧置信上限。
+- **置信度**：上述定义中，称 $1-\alpha$ 为置信度。
+- **精确度**：置信区间的平均长度 $E(\hat{\theta_2}-\hat{\theta_1})$。
+- **误差限**：二分之一区间的平均长度的置信区间。
+- **单侧置信限**：$P(\theta_1<\theta)\ge 1-\alpha$，则 $\theta_1$ 为单侧置信下限，$P(\theta<\theta_2)\ge 1-\alpha$，则 $\theta_2$ 为单侧置信上限，$(\theta_1,+\infty)$ 或 $(-\infty,\theta_2)$ 为单侧置信区间。
+
+**奈曼原则**：在置信度达到一定值的前提下，取精确度尽可能高的区间。
+
+**枢轴量**：包含待估计参数 $\theta$、$\theta$ 的点估计等总体信息，但分布已知的函数。通过枢轴量分布的分位数，解不等式可得到 $\theta$ 的置信区间。
+
+常用枢轴量：
+
+1. 正态总体，单变量
+
+| 条件 | 枢轴量 |
+| ---- | ------ |
+| $\sigma_2$ 已知，求 $\mu$ | $\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$ |
+

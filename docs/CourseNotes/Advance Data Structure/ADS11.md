@@ -161,7 +161,7 @@ Let $S[i]$ be the set of jobs assigned to machine $i$. The load of machine $i$ i
 
     Listing scheduling is 2-approximation.
 
-    ??? normal-coments "Proof"
+    ??? normal-comment "Proof"
 
         Let B denote the time for the last job, A denote the time for all other jobs, and OPT denote the optimal time.
 

@@ -127,6 +127,8 @@ nav:
           - 贪心算法: CourseNotes/Advance Data Structure/ADS09.md
           - P/NP问题: CourseNotes/Advance Data Structure/ADS10.md
           - 近似算法: CourseNotes/Advance Data Structure/ADS11.md
+          - 局部搜索: CourseNotes/Advance Data Structure/ADS12.md
+          - 随机算法: CourseNotes/Advance Data Structure/ADS13.md
       - 普通物理学II:
           - 数学基础: CourseNotes/General Physics II/Phy00.md
           - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
@@ -234,6 +236,7 @@ nav:
           - Lec 04 Introduction to Neural Networks: AbiesNotes/CS231n/notes/cs231n_04.md
           - Lec 05 Convolutional Neural Networks: AbiesNotes/CS231n/notes/cs231n_05.md
           - Lec 06 Training Neural Networks I: AbiesNotes/CS231n/notes/cs231n_06.md
+          - Lec 07 Training Neural Networks II: AbiesNotes/CS231n/notes/cs231n_07.md
           - Assignment 1:
               - KNN: AbiesNotes/CS231n/assignments/a1_knn.md
       - Vision Course:
