@@ -156,7 +156,6 @@ Input m identical machines and n jobs. Each job $j$ has a processing time $t_j$.
 
 Let $S[i]$ be the set of jobs assigned to machine $i$. The load of machine $i$ is $L[i] = \sum_{j \in S[i]} t_j$. The makespan of the schedule is the maximum load across all machines $L = \max_i L[i]$. Our goal is to assign every job to some machine so that the makespan $L$ is as small as possible.
 
-
 !!! remarks "Listing scheduling"
 
     Listing scheduling is 2-approximation.
@@ -174,8 +173,6 @@ Let $S[i]$ be the set of jobs assigned to machine $i$. The load of machine $i$ i
 !!! remarks "LPT rules"
 
 **Longest processing time (LPT):** Sort n jobs in decreasing order of processing times; then run list scheduling algorithm.
-
-
 
 ## Homework
 
@@ -232,6 +229,8 @@ Let $S[i]$ be the set of jobs assigned to machine $i$. The load of machine $i$ i
 
     ---
 
+    C.
+
 !!! examples "E.g.4"
 
     For an approximation algorithm for a minimization problem, given that the algorithm does not guarantee to find the optimal solution, the best approximation ratio possible to achieve is a constant $\alpha>1$. (T/F)
@@ -239,3 +238,5 @@ Let $S[i]$ be the set of jobs assigned to machine $i$. The load of machine $i$ i
     ---
 
     F. $\alpha$ is not always constant.
+
+

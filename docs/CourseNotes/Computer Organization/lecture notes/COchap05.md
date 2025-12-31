@@ -44,15 +44,19 @@ _Multiple blocks share location, so how do we know which particular block is sto
 
 **Valid bit**: 1 if present, 0 if empty. Initialized as 0.
 
-Physics address contains: tag / index / (byte) offset. (Byte offset is determined by size of block. Index is the cache address, i.e. lower bits of memory block address. Tag is the higher bits of block address. Tag and index are concatenated to form block address.)
+Components of three addresses:
 
-Cache line contains: (index,) valid bit / tag / data.
+- **Physics address (main memory address): tag / index / byte offset.** Byte offset is determined by size of block. Index is the cache address, i.e. lower bits of memory block address. Tag is the higher bits of block address. Tag and index are concatenated to form block address.
+- **block address: tag / index** (main memory address deprived of offset).
+- **Cache line: (index,) valid bit / tag / data.**
 
 ??? examples "E.g.1 cache access"
 
     8-blocks, 1 word/block, direct mapped. Access Sequence: 10110, 11010, 10110, 10010.
 
     ---
+
+    The access sequence here refers to block address. index has 3 bits, thus tag has 2 bits.
 
     10110 --> valid=0 --> miss --> copy to cache (time locality) --> cache[110].valid=1, cache[110].tag=10, cache[110].data=Mem[10110] --> return data.
 

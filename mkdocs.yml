@@ -129,6 +129,8 @@ nav:
           - 近似算法: CourseNotes/Advance Data Structure/ADS11.md
           - 局部搜索: CourseNotes/Advance Data Structure/ADS12.md
           - 随机算法: CourseNotes/Advance Data Structure/ADS13.md
+          - 并行算法: CourseNotes/Advance Data Structure/ADS14.md
+          - 外部排序: CourseNotes/Advance Data Structure/ADS15.md
       - 普通物理学II:
           - 数学基础: CourseNotes/General Physics II/Phy00.md
           - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
