@@ -12,7 +12,7 @@
         <link rel="prev" href="../ADS12/">
       
       
-        <link rel="next" href="../../General%20Physics%20II/Phy00/">
+        <link rel="next" href="../ADS14/">
       
       
         
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examples" class="md-skip">
+        <a href="#randomized-algorithms" class="md-skip">
           跳转至
         </a>
       
@@ -795,6 +795,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1217,6 +1221,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1259,6 +1265,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1279,10 +1287,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#contention-resolution" class="md-nav__link">
+  <a href="#hiring-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contention Resolution
+        Hiring Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quicksort
       
     </span>
   </a>
@@ -1305,10 +1324,77 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homework
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADS14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    并行算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADS15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    外部排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2108,6 +2194,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2128,10 +2216,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#contention-resolution" class="md-nav__link">
+  <a href="#hiring-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contention Resolution
+        Hiring Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quicksort
       
     </span>
   </a>
@@ -2151,6 +2250,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homework
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2174,22 +2284,191 @@
   
 
 
-  <h1>随机算法</h1>
-
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>71 词</strong>&nbsp;&nbsp;<strong>1</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>584 词</strong>&nbsp;&nbsp;<strong>4</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
 </div>
+<h1 id="randomized-algorithms">Randomized Algorithms</h1>
+<p>Efficient randomized algorithms only need to yield the correct answer with high probability.</p>
 <h2 id="examples">Examples</h2>
-<h3 id="contention-resolution">Contention Resolution</h3>
+<h3 id="hiring-problem">Hiring Problem</h3>
+<p>Hire an office assistant from headhunter. Interview a different applicant per day for <span class="arithmatex">\(N\)</span> days. Interviewing cost <span class="arithmatex">\(C_i &lt;&lt;\)</span> hiring cost <span class="arithmatex">\(C_h\)</span>.</p>
+<p>Assume <span class="arithmatex">\(M\)</span> people are hired, then the total cost is <span class="arithmatex">\(O(NC_i+MC_h)\)</span>.</p>
+<div class="admonition remarks">
+<p class="admonition-title">Naive solution</p>
+<p>Traverse all candidate, and update the best choice.</p>
+<hr />
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Hiring</span><span class="p">(</span><span class="n">EventType</span><span class="w"> </span><span class="n">C</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">quality</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">best</span><span class="w"> </span><span class="n">candidate</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// cost: Ci</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">            </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span><span class="w">  </span><span class="c1">// update best candidate</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">            </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">            </span><span class="n">hire</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// cost: Ch</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Best</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Worst case: The candidates come in increasing quality order, where the total time is <span class="arithmatex">\(O(NC_h)\)</span>.</p>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Randomized algorithms</p>
+<p>Permute the list of candidates randomly.</p>
+<hr />
+<p>Assume candidates arrive in random order. Let <span class="arithmatex">\(X\)</span> denote the number of hires. <span class="arithmatex">\(X_i\)</span> denote whether candidiate <span class="arithmatex">\(i\)</span> is hired, i.e., <span class="arithmatex">\(X_i=1\)</span> if candidate <span class="arithmatex">\(i\)</span> is hired, and 0 if not.</p>
+<p>From the difinition, <span class="arithmatex">\(X=\sum_{i=1}^N X_i\)</span>, and each <span class="arithmatex">\(X_i\)</span> has a probability to be 1. The expectance of <span class="arithmatex">\(X\)</span> is:</p>
+<div class="arithmatex">\[E(X)=\sum_{i=1}^N E(X_i)=\sum_{i=1}^N \frac{1}{i}=\ln N+O(1).\]</div>
+<p>Therefore, the total time is <span class="arithmatex">\(O(C_h\ln N+NC_i)\)</span>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">RandomizedHiring</span><span class="p">(</span><span class="n">EventType</span><span class="w"> </span><span class="n">C</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">quality</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">best</span><span class="w"> </span><span class="n">candidate</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="c1">// bad: takes time</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">randomly</span><span class="w"> </span><span class="n">permute</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">candidates</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="c1">// good: no need to assume that candidates are presented in random order</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// cost: Ci</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">            </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">            </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">            </span><span class="n">hire</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">  </span><span class="c1">// cost: Ch</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>!!! remarks &quot;Randomized Permutation Algorithm&quot;
+
+    Consider permuting array $A$.
+
+    Assign each element $A_i$ a random priority $P_i$, and sort the array.
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Online Hiring Algorithm</p>
+<p>Examine the first <span class="arithmatex">\(k\)</span> candidates to establish a benchmark (the best quality observed so far). Then, starting from candidate <span class="arithmatex">\(k+1\)</span>, hire the first candidate whose quality exceeds this benchmark.</p>
+<hr />
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">OnlineHiring</span><span class="p">(</span><span class="n">EventType</span><span class="w"> </span><span class="n">C</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">INF</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">            </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">            </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Best</span><span class="p">;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Let <span class="arithmatex">\(S_i\)</span> denote the event that the <span class="arithmatex">\(i\)</span>-th applicant is the best. <span class="arithmatex">\(S_i\)</span> requires the best one is at position <span class="arithmatex">\(i\)</span> (<span class="arithmatex">\(P(A)=1/N\)</span>) and no one at positions <span class="arithmatex">\(k+1\)</span> ~ <span class="arithmatex">\(i–1\)</span> are hired (i.e., the maximum value of first <span class="arithmatex">\(i-1\)</span> applicant appears in the first <span class="arithmatex">\(k\)</span> position, <span class="arithmatex">\(P(B)=k/(i-1)\)</span>).</p>
+<p>Probility of <span class="arithmatex">\(S_i\)</span>:</p>
+<div class="arithmatex">\[P(S_i)=P(A\cap B)=P(A)P(B)=\frac{k}{N(i-1)}\]</div>
+<p>The probability we hire the best qualified candidate for a given <span class="arithmatex">\(k\)</span>:</p>
+<div class="arithmatex">\[P(S)=\sum_{i=k+1}^N P(S_i)=\sum_{i=k+1}^N \frac{k}{N(i-1)} =\frac{k}{N}\sum_{i=k+1}^N\frac{1}{i}.\]</div>
+<p>Since</p>
+<div class="arithmatex">\[\ln\left(\frac{N}{k}\right)=\int_k^N\frac{1}{x}\mathrm{d}x\le \sum_{i=k+1}^N\frac{1}{i} \le \int_{k-1}^{N-1}\frac{1}{x}\mathrm{d}x = \ln\left(\frac{N-1}{k-1}\right),\]</div>
+<p>the range of <span class="arithmatex">\(P(S)\)</span> satisfies:</p>
+<div class="arithmatex">\[\frac{k}{N}\ln\left(\frac{N}{k}\right) \le P(S) \le \frac{k}{N}\ln\left(\frac{N-1}{k-1}\right).\]</div>
+</div>
+<h3 id="quicksort">Quicksort</h3>
+<div class="admonition remarks">
+<p class="admonition-title">Deterministic Quicksort</p>
+<p>Time complexity:</p>
+<ul>
+<li>Worst case: <span class="arithmatex">\(O(N^2)\)</span>;</li>
+<li>Average case: <span class="arithmatex">\(O(N\log N)\)</span>.</li>
+</ul>
+<p>The key is to always always select better pivot before recursions.</p>
+<p><strong>Central splitter</strong>: the pivot that divides the set so that each side contains at least <span class="arithmatex">\(n/4\)</span>.</p>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Randomized Quicksort</p>
+<p><em>How about choosing the pivot uniformly at random?</em></p>
+<p>The time complexity becomes <span class="arithmatex">\(O(N\log N)\)</span>.</p>
+<div class="admonition normal-comment">
+<p class="admonition-title">Proof</p>
+<p>If randomly choosing pivot, the probability of pick central splitter is &frac12; (since the length of satisfied interval is <span class="arithmatex">\(N/2\)</span>), thus the expected number of iterations needed until finding a central spiltter is 2.</p>
+<p>Def size of subproblem as <strong>type <span class="arithmatex">\(j\)</span></strong>: the subproblem <span class="arithmatex">\(S\)</span> is of type <span class="arithmatex">\(j\)</span> if </p>
+<div class="arithmatex">\[N\left(\frac{3}{4}\right)^{j+1}\le |S|\le N\left(\frac{3}{4}\right)^j.\]</div>
+<p>Type <span class="arithmatex">\(j\)</span> subproblems do not overlap, therefore the number of type <span class="arithmatex">\(j\)</span> subproblems is at most</p>
+<div class="arithmatex">\[\frac{N}{N(3/4)^{j+1}}=\left(\frac{4}{3}\right)^{j+1}.\]</div>
+<p>In each subproblem, the algorithm scans its elements and compare with pivot. Thus the time of every single type <span class="arithmatex">\(j\)</span> subproblem is <span class="arithmatex">\(O(N(3/4)^j)\)</span>, and time of all type <span class="arithmatex">\(j\)</span> subproblems (one layer of the whole problem) is </p>
+<div class="arithmatex">\[E[T_{type j}]=O\left(N\left(\frac{3}{4}\right)^j\right)\times \left(\frac{4}{3}\right)^{j+1}=O(N).\]</div>
+<p>When divide the current problem into size 1 subproblem, the partition terminates. Moving down to the next layer makes the size of subproblem decrease into &frac34;. Therefore when <span class="arithmatex">\(N(3/4)^j=1\)</span> it terminates, i.e. the number of different types is <span class="arithmatex">\(n_j=\log_{4/3}N=O(\log N).\)</span></p>
+<p>The total time complexity:</p>
+<div class="arithmatex">\[T=\text{Time\,of\,each\,layer}\times \text{\#Layers}=O(N)\times O(\log N)=O(N\log N).\]</div>
+</div>
+</div>
 <h3 id="global-min-cut">Global Min Cut</h3>
-<p>Given a connected, undirected graph <span class="arithmatex">\(G = (V, E)\)</span>, find a cut <span class="arithmatex">\((A, B)\)</span> of minimum cardinality. </p>
+<p>Given a connected, undirected graph <span class="arithmatex">\(G = (V, E)\)</span>, find a cut <span class="arithmatex">\((A, B)\)</span> of minimum cardinality.</p>
 <p><strong>Contraction algorithm</strong>: Pick an edge <span class="arithmatex">\(e=(u,v)\)</span> uniformly at random. Contract edge <span class="arithmatex">\(e\)</span> (replace <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(v\)</span> by single new super-node <span class="arithmatex">\(w\)</span>, preserve edges, updating endpoints of <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(v\)</span> to <span class="arithmatex">\(w\)</span>, keep parallel edges and delete self-loops.) Repeat ultil graph has just two nodes. Return the cut.</p>
-<p>The contraction algorithm returns a min cut with prob <span class="arithmatex">\(\ge 2 / n^2\)</span>. </p>
-<details class="normal-comment">
-<summary>Proof</summary>
-<p>To be supplemented.</p>
-</details>
+<p>The contraction algorithm returns a min cut with prob <span class="arithmatex">\(\ge 2 / n^2\)</span>.</p>
+<h2 id="homework">Homework</h2>
+<div class="admonition examples">
+<p class="admonition-title">E.g. T/F</p>
+<p>Consider the randomized quicksort. We have proved that it runs in <span class="arithmatex">\(O(n\log n)\)</span> time in expectation even for the worst input. Is the following statement true of false?There exists some good inputs on which the expected running time of randomized quicksort is O(n) where n is the input size.</p>
+<p>(F)</p>
+<hr />
+<p>Let <span class="arithmatex">\(T(n)\)</span> be the running time of quicksort on an input of size <span class="arithmatex">\(n\)</span>. We already know that <span class="arithmatex">\(T(n)\)</span> is a random variable whose value depends on the random choices of quicksort, and that the expectation of <span class="arithmatex">\(T(n)\)</span> is <span class="arithmatex">\(O(n \log n)\)</span>. Is the following statement true or false? The minimum possible value of <span class="arithmatex">\(T(n)\)</span> can be as small as <span class="arithmatex">\(\Theta(n)\)</span>, and the maximum possible value can be as large as <span class="arithmatex">\(\Theta(n^2)\)</span>.</p>
+<p>(F)</p>
+</div>
 
 
 
@@ -2212,7 +2491,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月23日 02:20:57 UTC">2025-12-23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月31日 08:22:56 UTC">2025-12-31</span>
   </span>
 
     
@@ -2276,13 +2555,13 @@
         
         
           
-          <a href="../../General%20Physics%20II/Phy00/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数学基础">
+          <a href="../ADS14/" class="md-footer__link md-footer__link--next" aria-label="下一页: 并行算法">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数学基础
+                并行算法
               </div>
             </div>
             <div class="md-footer__button md-icon">

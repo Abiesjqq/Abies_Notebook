@@ -19,7 +19,7 @@
     
     
       
-        <title>COchap06 - Abies's Notebook</title>
+        <title>Cs231n 08 - Abies's Notebook</title>
       
     
     
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#disk-storage-adn-dependability" class="md-skip">
+        <a href="#cpu-vs-gpu" class="md-skip">
           跳转至
         </a>
       
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              COchap06
+              Cs231n 08
             
           </span>
         </div>
@@ -286,7 +286,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../note_index/" class="md-tabs__link">
+        <a href="../../../../CourseNotes/note_index/" class="md-tabs__link">
           
   
   
@@ -330,7 +330,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../AbiesNotes/Abies_index/" class="md-tabs__link">
+        <a href="../../../Abies_index/" class="md-tabs__link">
           
   
   
@@ -622,7 +622,7 @@
   
   
   
-    <a href="../../../note_index/" class="md-nav__link">
+    <a href="../../../../CourseNotes/note_index/" class="md-nav__link">
       
   
   
@@ -752,7 +752,7 @@
   
   
   
-    <a href="../../../../AbiesNotes/Abies_index/" class="md-nav__link">
+    <a href="../../../Abies_index/" class="md-nav__link">
       
   
   
@@ -921,22 +921,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#disk-storage-adn-dependability" class="md-nav__link">
+  <a href="#cpu-vs-gpu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disk Storage adn Dependability
+        CPU vs GPU
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Disk Storage adn Dependability">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-learning-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deep Learning Frameworks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Learning Frameworks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#disk-arrays" class="md-nav__link">
+  <a href="#tensorflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disk Arrays
+        Tensorflow
       
     </span>
   </a>
@@ -945,17 +956,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#buses-and-other-connections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Buses and Other Connections
-      
-    </span>
-  </a>
   
 </li>
       
@@ -979,11 +979,57 @@
   
 
 
-  <h1>COchap06</h1>
+  <h1>Cs231n 08</h1>
 
-<h2 id="disk-storage-adn-dependability">Disk Storage adn Dependability</h2>
-<h3 id="disk-arrays">Disk Arrays</h3>
-<h2 id="buses-and-other-connections">Buses and Other Connections</h2>
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>146 词</strong>&nbsp;&nbsp;<strong>1</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+</div>
+<h2 id="cpu-vs-gpu">CPU vs GPU</h2>
+<p>Differences:</p>
+<ul>
+<li><strong>CPU</strong>: fewer cores, but each core is much faster and much more capable; has small cache while the majority of memory is in RAM; great at sequaltial tasks.</li>
+<li><strong>GPU</strong>: more cores, but each core is much slower and "dumber"; has its own RAM built and cacheing system; great for parallel tasks (matrix multiplication, convolution, etc.).</li>
+</ul>
+<p>Programming GPU: CUDA (cuDNN and other optimiazed APIs), OpenCL.</p>
+<p>If you aren't careful, training can bottleneck on reading data and transfering to GPU! Solution: read all data from RAM; use SSD instead of HDD; use multiple CPU threads to prefetch data.</p>
+<h2 id="deep-learning-frameworks">Deep Learning Frameworks</h2>
+<p>One goal of deep learning frameworks: enable vectors to calculate on GPU, automatically do back propagation and gradient process...</p>
+<h3 id="tensorflow">Tensorflow</h3>
+<p>Framework of Tensorflow:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">initialize</span> <span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">H</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="o">/</span><span class="n">w1</span><span class="o">/</span><span class="n">w2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">initialize</span> <span class="n">h</span> <span class="k">as</span> <span class="n">x</span> <span class="o">*</span> <span class="n">w1</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">initialize</span> <span class="n">y_pred</span> <span class="k">as</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w2</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">set</span> <span class="n">loss</span> <span class="k">as</span> <span class="n">Euclidien</span> <span class="n">distance</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">grad_w1</span><span class="p">,</span> <span class="n">grad_w2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">gradients</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="p">[</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">])</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="nb">set</span> <span class="n">values</span> <span class="k">as</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">y</span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="n">initialize</span> <span class="n">learing_rate</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="n">out</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">loss</span><span class="p">,</span> <span class="n">grad_w1</span><span class="p">,</span> <span class="n">grad_w2</span><span class="p">],</span> <span class="n">feed_dict</span> <span class="o">=</span> <span class="n">values</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="n">loss_val</span><span class="p">,</span> <span class="n">grad_w1_val</span><span class="p">,</span> <span class="n">grad_w2_val</span> <span class="o">=</span> <span class="n">out</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="n">update</span> <span class="n">values</span><span class="p">[</span><span class="n">w1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="n">w2</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Change w1 and w2 from <code>placeholder</code> to <code>Variable</code> (values live inside the graph) to avoid GPU bottlemeck. Tensorflow should use <code>assign</code> function to initialize them.</p>
 
 
 
@@ -1006,7 +1052,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月23日 02:20:57 UTC">2025-12-23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月31日 08:22:56 UTC">2025-12-31</span>
   </span>
 
     
@@ -1016,34 +1062,11 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月23日 02:20:57 UTC">2025-12-23</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月31日 08:22:56 UTC">2025-12-31</span>
   </span>
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
