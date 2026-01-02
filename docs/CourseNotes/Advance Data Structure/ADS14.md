@@ -257,3 +257,9 @@ weishenmezhemeduoliziaaabuxiangdazile
     In general, for a 3-way merge we need 6 input buffers and 2 output buffers for parallel operations.
 
     (T)
+
+<!-- !!! examples "T/F"
+
+    Suppose that the replacement selection is applied to generate longer runs for N numbers with a priority queue of size M, the possible maximum length of the longest run is 2M.  
+
+    (F) -->

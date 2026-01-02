@@ -115,7 +115,6 @@ nav:
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
           - 讲义: CourseNotes/Advance Data Structure/ADS00.md
-        #   - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
           - 倒排索引: CourseNotes/Advance Data Structure/ADS03.md
@@ -131,6 +130,7 @@ nav:
           - 随机算法: CourseNotes/Advance Data Structure/ADS13.md
           - 并行算法: CourseNotes/Advance Data Structure/ADS14.md
           - 外部排序: CourseNotes/Advance Data Structure/ADS15.md
+          - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
       - 普通物理学II:
           - 数学基础: CourseNotes/General Physics II/Phy00.md
           - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
