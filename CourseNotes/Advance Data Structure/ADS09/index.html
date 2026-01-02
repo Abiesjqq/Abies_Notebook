@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interval-scheduling" class="md-skip">
+        <a href="#greedy-algorithm" class="md-skip">
           跳转至
         </a>
       
@@ -799,6 +799,8 @@
       
         
       
+        
+      
     
     
     
@@ -1109,6 +1111,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1151,6 +1155,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1159,10 +1165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interval-scheduling" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interval Scheduling
+        Introduction
       
     </span>
   </a>
@@ -1170,28 +1176,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interval-partition" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interval Partition
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-selection-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity Selection Problem
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#minimizing-lateness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Minimizing Lateness
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#huffman-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1199,6 +1206,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1366,6 +1378,34 @@
     
   
     外部排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADS_mid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    期中复习
   
 
     
@@ -2173,6 +2213,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2181,10 +2223,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interval-scheduling" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interval Scheduling
+        Introduction
       
     </span>
   </a>
@@ -2192,28 +2234,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interval-partition" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interval Partition
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-selection-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity Selection Problem
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#minimizing-lateness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Minimizing Lateness
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#huffman-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2221,6 +2264,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2244,16 +2292,67 @@
   
 
 
-  <h1>贪心算法</h1>
-
-<h2 id="interval-scheduling">Interval Scheduling</h2>
-<p>略。</p>
-<h2 id="interval-partition">Interval Partition</h2>
-<p>略。</p>
-<h2 id="minimizing-lateness">Minimizing Lateness</h2>
-<p>略。</p>
-<h2 id="huffman-codes">Huffman Codes</h2>
-<p>略。</p>
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>429 词</strong>&nbsp;&nbsp;<strong>3</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+</div>
+<h1 id="greedy-algorithm">Greedy Algorithm</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Greedy Method: Make the best decision at each stage, under some greedy criterion. A decision made in one stage is not changed in a later stage, so each decision should assure feasibility.</p>
+<p>Greedy algorithm works only if the local optimum is equal to the global optimum. It does not guarantee optimal solutions, but generally produces solutions that are very close in value (heuristics) to the optimal.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="activity-selection-problem">Activity Selection Problem</h3>
+<p>Given a set of activities $<span class="arithmatex">\(S = \{ a_1, a_2, \cdots, a_n \}\)</span> that wish to use a resource (e.g. a classroom). Each ai takes place during a time interval <span class="arithmatex">\([s_i, f_i)\)</span>. Activities <span class="arithmatex">\(a_i\)</span> and <span class="arithmatex">\(a_j\)</span> are compatible if <span class="arithmatex">\(s_i \ge f_j\)</span> or <span class="arithmatex">\(s_j \ge f_i\)</span> (i.e. their time intervals do not overlap).</p>
+<p>Goal: Select a maximum-size subset of mutually compatible activities.</p>
+<div class="admonition remarks">
+<p class="admonition-title">DP Solution</p>
+<p>Let <span class="arithmatex">\(c_{ij}\)</span> denote the maximum number of activities between <span class="arithmatex">\(a_i\)</span> and <span class="arithmatex">\(a_j\)</span>. <span class="arithmatex">\(S_{ij}\)</span> denotes activities available between <span class="arithmatex">\(a_i\)</span> and <span class="arithmatex">\(a_j\)</span>.</p>
+<div class="arithmatex">\[
+c_{ij}=\begin{cases}
+0, &amp;\text{if }S_{ij}\text{ is empty} \\
+c_{ik}+c_{kj}+1, &amp;\text{if }a_k\in S_{ij}
+\end{cases}
+\]</div>
+</div>
+<div class="admonition warning-box">
+<p class="admonition-title">Bad Greedy</p>
+<ol>
+<li>Select the interval which starts earliest: Bad if a long activity starts early.</li>
+<li>Select the interval which is the shortest: Bad if it overlap with optimal ones.</li>
+<li>Select the interval with the fewest conflicts with other remaining intervals: Bad in overlapping cases.</li>
+</ol>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Greedy Solution</p>
+<p>Select the interval which ends first (but not overlapping the already chosen intervals).</p>
+<p><strong>Thm.</strong> Consider any nonempty subproblem <span class="arithmatex">\(S_k\)</span>, and let <span class="arithmatex">\(a_m\)</span> be an activity in <span class="arithmatex">\(S_k\)</span> with the earliest finish time. Then <span class="arithmatex">\(a_m\)</span> is included in some maximum-size subset of mutually compatible activities of <span class="arithmatex">\(S_k\)</span>.</p>
+<div class="admonition normal-comment">
+<p class="admonition-title">Proof</p>
+<p>Let <span class="arithmatex">\(A_k\)</span> be the optimal solution set, and <span class="arithmatex">\(a_{ef}\)</span> is the activity in <span class="arithmatex">\(A_k\)</span> with the earliest finish time.</p>
+<ol>
+<li>If <span class="arithmatex">\(a_m=a_{ef}\)</span>, we are done.</li>
+<li>Else, <span class="arithmatex">\(a_{ef}\)</span> ends later than <span class="arithmatex">\(a_m\)</span>. Replace <span class="arithmatex">\(a_{ef}\)</span> by <span class="arithmatex">\(a_m\)</span>, and the result is better.</li>
+</ol>
+</div>
+<p>Time complexity: sorting needs <span class="arithmatex">\(O(\log N)\)</span>, selecting needs <span class="arithmatex">\(O(N)\)</span>. Thus the total time complexity is <span class="arithmatex">\(O(N\log N)\)</span>.</p>
+</div>
+<h3 id="huffman-codes">Huffman Codes</h3>
+<p>Given a set of symbols and their corresponding frequencies (or probabilities), the Huffman coding problem asks for a prefix-free binary code that represents each symbol such that the expected (average) codeword length is minimized.</p>
+<div class="admonition remarks">
+<p class="admonition-title">Solution</p>
+<p>Create a binary tree node for each character and insert all nodes into a min-heap.</p>
+<p>Repeat the following steps for (#nodes − 1) times:</p>
+<ul>
+<li>Remove the node with the smallest frequency from the root of the min-heap and make it the left child of a new tree.</li>
+<li>Remove the node with the second smallest frequency from the min-heap and make it the right child of the new tree.</li>
+<li>Create a new root node whose frequency is the sum of the two children’s frequencies, and insert this new tree back into the min-heap.</li>
+</ul>
+<p>Time complexity: <span class="arithmatex">\(O(N\log N)\)</span>.</p>
+<div class="admonition normal-comment">
+<p class="admonition-title">Proof for Correctness</p>
+<p>TO BE SUPPLEMENTED.</p>
+</div>
+</div>
 
 
 
@@ -2276,7 +2375,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月1日 13:07:45 UTC">2025-12-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月2日 01:41:32 UTC">2026-01-02</span>
   </span>
 
     
@@ -2291,29 +2390,6 @@
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 

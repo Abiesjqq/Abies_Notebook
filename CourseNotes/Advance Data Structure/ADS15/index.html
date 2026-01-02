@@ -12,7 +12,7 @@
         <link rel="prev" href="../ADS14/">
       
       
-        <link rel="next" href="../../General%20Physics%20II/Phy00/">
+        <link rel="next" href="../ADS_mid/">
       
       
         
@@ -94,6 +94,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#external-sorting" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -794,6 +799,8 @@
       
         
       
+        
+      
     
     
     
@@ -1272,6 +1279,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    外部排序
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1290,6 +1317,103 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffer Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replacement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Replacement Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADS_mid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    期中复习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2089,6 +2213,66 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffer-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffer Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replacement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Replacement Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2108,9 +2292,96 @@
   
 
 
-  <h1>外部排序</h1>
-
-
+<div class="admonition info reading-info">
+<p class="admonition-title">阅读信息</p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>588 词</strong>&nbsp;&nbsp;<strong>3</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+</div>
+<h1 id="external-sorting">External Sorting</h1>
+<h2 id="introduction">Introduction</h2>
+<p>When query on a disk, need to find the track, sector, element and transmit sequentially. This process is slower than in internal memory and device-dependent.</p>
+<ul>
+<li>Tape: store data on tapes (can only be accessed sequentially). At least 3 tapes are used;</li>
+<li>Run: a sorted sequence in tape;</li>
+<li>Pass: one process of mergesort.</li>
+</ul>
+<h3 id="merge">Merge</h3>
+<div class="admonition examples">
+<p class="admonition-title">2-way merge</p>
+<p>Assume <span class="arithmatex">\(M=3\)</span> (#records stored in memory), <span class="arithmatex">\(B=1\)</span> (#records in each I/O).</p>
+<blockquote>
+<p>Input (T1): 81 94 11 | 96 12 35 | 17 99 28 | 58 41 75 | 15</p>
+</blockquote>
+<p>Run generation: read 3 elements from T1, sort in memory, and write back to disk, which generate a run. Finally the original tape is seperated into multiple sorted runs.</p>
+<p>Assume runs are written on T2, T3:</p>
+<blockquote>
+<p>T2: 11 81 94 | 17 28 99 | 15
+T3: 12 35 96 | 41 58 75</p>
+</blockquote>
+<p>2-way merge: merge two runs into a larger run.</p>
+<p>After the first merge:</p>
+<blockquote>
+<p>T1: 11 12 35 81 94 96 | 15
+T4: 17 28 41 58 75 99</p>
+</blockquote>
+<p>After the second merge:</p>
+<blockquote>
+<p>T2: 11 12 17 28 35 41 58 75 81 94 96 99
+T3: 15</p>
+</blockquote>
+<p>After the third merge:</p>
+<blockquote>
+<p>11 12 15 17 28 35 41 58 75 81 94 96 99</p>
+</blockquote>
+<hr />
+<p>In <span class="arithmatex">\(k\)</span>-way merge, use min-heap to sort.</p>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">k-way merge</p>
+<p>Time concerned: Time to read or write one block of records, to internally sort <span class="arithmatex">\(M\)</span> records, to merge <span class="arithmatex">\(N\)</span> records from input buffers to the output buffer.</p>
+<p>To reduce #passes, use <span class="arithmatex">\(k\)</span>-way merge where <span class="arithmatex">\(k\)</span> is #tapes/2.</p>
+<div class="admonition normal-comment">
+<p class="admonition-title">Why #tapes/2?</p>
+<p><span class="arithmatex">\(k\)</span> tapes used for input, and <span class="arithmatex">\(k\)</span> tapes used for output.</p>
+<p>In a single pass, only 1 tape is needed for output. But in the whole process, the output serves as the input of the next pass, thus need other tapes to output the new run.</p>
+</div>
+<p>In general, assume number of data is <span class="arithmatex">\(N\)</span>, length of each run is <span class="arithmatex">\(M\)</span>, #tapes is <span class="arithmatex">\(k+1\)</span>. The initial #runs is <span class="arithmatex">\(N/M\)</span>. In <span class="arithmatex">\(k\)</span>-way merge, each pass decrease #runs into <span class="arithmatex">\(1/k\)</span>, thus #passes is <span class="arithmatex">\(\lceil \log_k(N/M)\rceil\)</span>. The total #runs is</p>
+<div class="arithmatex">\[1+\lceil \log_k(N/M)\rceil.\]</div>
+</div>
+<div class="admonition remarks">
+<p class="admonition-title">Polyphase Merge</p>
+<p><em>Can we use 3 tapes for a 2-way merge?</em></p>
+<p>A naive approach evenly distributes runs across two input tapes, but this causes one input tape to become empty early, forcing extra copy passes and wasting I/O.</p>
+<p>A smarter solution is polyphase merge, which distributes runs unevenly across tapes so that at every stage two tapes contain input runs and the third serves as output.This avoids copying and allows continuous merging, even with the minimum number of tapes.</p>
+<p>Claim: If the number of runs is a Fibonacci number <span class="arithmatex">\(F_N\)</span>, then the best way to distribute them is to split them into <span class="arithmatex">\(F_{N–1}\)</span> and <span class="arithmatex">\(F_{N–2}\)</span>.</p>
+<p>With this method, only <span class="arithmatex">\(k+1\)</span> tapes are needed for <span class="arithmatex">\(k\)</span>-way merge.</p>
+</div>
+<h3 id="buffer-handling">Buffer Handling</h3>
+<p>Buffer is a block-sized region in internal memory used to temporarily hold data read from or written to disk.</p>
+<p>For normal operations, each I/O has at least 1 buffer; but for parallel operation, each I/O has at least 2 buffers.</p>
+<div class="admonition examples">
+<p class="admonition-title">E.g.</p>
+<p>Sort a file containing 3250 records, using a computer with an internal memory capable of sorting at most 750 records. The input file has a block length of 250 records. </p>
+<p>1 block has 250 records, thus 1 buffer can hold 250 records. Memory / (size of buffer) = 3 buffers. 3 - 1 = 2. Can only do 2-way merge.</p>
+</div>
+<h3 id="replacement-selection">Replacement Selection</h3>
+<p><em>Can we generate a longer run with the same memory?</em></p>
+<p>It maintains a priority queue (typically a min-heap) of size <span class="arithmatex">\(M\)</span> in memory. At each step, the smallest element is output to the current run and replaced by a new input element. If the new element is smaller than the last output, it is frozen and deferred to the next run. This process continues until all elements in memory are frozen, at which point a new run begins.</p>
+<details class="examples">
+<summary>E.g.</summary>
+<p>Input:</p>
+<blockquote>
+<p>81 94 11 96 12 35 17 99 28 58 41 75 15</p>
+</blockquote>
+<p>Output:</p>
+<blockquote>
+<p>12 17 28 35 41 58 75 99
+11 81 94 96
+15</p>
+</blockquote>
+</details>
+<p>The average length of run in replacement selection is <span class="arithmatex">\(2M\)</span>.</p>
+<p>(Each new input element has roughly a 50% chance of being greater than or equal to the last output element. Such elements can continue the current run, while the remaining elements are frozen for the next run. As a result, on average only half of the <span class="arithmatex">\(M\)</span> elements in memory become unavailable at any time, allowing the current run to extend to about twice the memory size, i.e., an average run length of approximately <span class="arithmatex">\(2M\)</span>.
+)</p>
 
 
 
@@ -2133,7 +2404,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月31日 08:22:56 UTC">2025-12-31</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月2日 01:41:32 UTC">2026-01-02</span>
   </span>
 
     
@@ -2197,13 +2468,13 @@
         
         
           
-          <a href="../../General%20Physics%20II/Phy00/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数学基础">
+          <a href="../ADS_mid/" class="md-footer__link md-footer__link--next" aria-label="下一页: 期中复习">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数学基础
+                期中复习
               </div>
             </div>
             <div class="md-footer__button md-icon">
