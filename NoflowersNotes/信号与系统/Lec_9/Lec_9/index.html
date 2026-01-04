@@ -12,7 +12,7 @@
         <link rel="prev" href="../../Lec_8/Lec_8/">
       
       
-        <link rel="next" href="../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80/%E7%BB%AA%E8%AE%BA/%E7%BB%AA%E8%AE%BA/">
+        <link rel="next" href="../../Lec_10/Lec_10/">
       
       
         
@@ -805,7 +805,7 @@
   <span class="md-ellipsis">
     
   
-    Computer Vision （进行中）
+    Computer Vision
   
 
     
@@ -893,6 +893,8 @@
   
     
     
+      
+        
       
         
       
@@ -1382,8 +1384,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        终值定理
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        z 反变换
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1391,6 +1415,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Lec_10/Lec_10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统的 z 域分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1485,6 +1537,8 @@
       
         
       
+        
+      
     
     
     
@@ -1538,6 +1592,8 @@
   
     
     
+      
+        
       
         
       
@@ -1953,8 +2009,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        终值定理
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        z 反变换
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1982,7 +2060,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>666 字</strong>&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>522 字</strong>&nbsp;&nbsp;<strong>6</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
 </div>
 <p>类似 L 变换，我们可以将发散的离散时间信号乘以一个缩放的指数因子，再进行离散的傅里叶变换；<br />
 或者，对连续信号的 L 变换，对其进行采样，即可得到离散信号的 z 变换。</p>
@@ -2148,6 +2226,60 @@ X(z) = \dfrac{z^2}{(z - a) (z - b)} = \dfrac{1}{a - b}\left(\frac{az}{z - a} - \
 <p class="admonition-title">零极点共轭的信号不一定是实信号！</p>
 </div>
 <h3 id="_7">初值定理</h3>
+<p>若因果信号 <span class="arithmatex">\(x[n]\)</span> 的 z 变换为 <span class="arithmatex">\(X(z)\)</span>, 有</p>
+<div class="arithmatex">\[
+\lim_{z \to \infty}X(z) = \lim_{z \to \infty}\sum_{n = 1}^\infty x[n]z^{-n} = x[0]
+\]</div>
+<p>对非因果序列，类似有</p>
+<div class="arithmatex">\[
+\lim_{z \to 0}X(z) = x[0]
+\]</div>
+<div class="admonition normal-comment">
+<p class="admonition-title">推论</p>
+<div class="arithmatex">\[
+\lim_{z \to \infty}\left(zX(z) - zx[0]\right) = x[1]
+\]</div>
+</div>
+<h3 id="_8">终值定理</h3>
+<p>若因果序列 <span class="arithmatex">\(x[n]\)</span> 收敛，有</p>
+<div class="arithmatex">\[
+x[\infty] = \lim_{z \to 1}(z - 1)X(z)
+\]</div>
+<p>表明 <span class="arithmatex">\(x[n]\)</span> 收敛且有限时，<span class="arithmatex">\(X(z)\)</span> 在 <span class="arithmatex">\(z = 1\)</span> 处必有极点</p>
+<div class="admonition remarks">
+<p class="admonition-title">证明</p>
+<div class="arithmatex">\[
+\lim_{z \to 1}\mathcal{Z}(x[n + 1] - x[n]) = \lim_{z \to 1}\sum_{n = 0}^\infty(x[n + 1] - x[n])z^{-n} = \sum_{n = 1}^\infty(x[n + 1] - x[n]) = x[\infty] - x[0] 
+\]</div>
+<p>又</p>
+<div class="arithmatex">\[
+\mathcal{Z}(x[n + 1] - x[n]) = (z - 1)X(z) - x[0]
+\]</div>
+<p>比对即可</p>
+</div>
+<h2 id="z_4">z 反变换</h2>
+<p><strong>围线积分法</strong></p>
+<div class="arithmatex">\[
+x[n] = \frac{1}{2\pi \mathrm{j}}\oint X(z) z^{n - 1}\mathrm{d}z
+\]</div>
+<p>复变，老师也不会</p>
+<p><strong>幂级数展开</strong></p>
+<p>不讲了</p>
+<p><strong>部分分式展开法</strong></p>
+<p>类似 L 变换，我们把 <span class="arithmatex">\(X(z)\)</span> 分解为一系列 <span class="arithmatex">\(\dfrac{kz}{(z - a)^t}\)</span> 的形式；<br />
+也即两边同时除以 <span class="arithmatex">\(z\)</span>，再用 L 变换所用的方法分解</p>
+<p>对于多项式项，<span class="arithmatex">\(z^m \to \delta[n + m]\)</span>, 对分式项 <span class="arithmatex">\(\dfrac{z}{z - a} \to a^nu[n]\)</span>, 对高阶分式项 <span class="arithmatex">\(\dfrac{z}{(z - a)^t}\)</span>，可通过一阶项表达式的 z 域微分性质求解 (有时上下同时乘以 <span class="arithmatex">\(z\)</span> 能够消除求导后分子的 <span class="arithmatex">\(z\)</span>).<br />
+关于非因果信号的收敛域问题：对于一阶分式，如果收敛域在其内部 (<span class="arithmatex">\(|z| &lt; |a|\)</span>)，则原项为 <span class="arithmatex">\(-a^nu[-n - 1]\)</span>，如果收敛域在其外部 (<span class="arithmatex">\(|z| &gt; |a|\)</span>)，则原项为 <span class="arithmatex">\(a^nu[n]\)</span>，对于环状收敛域，则为上面情况的组合</p>
+<div class="admonition remarks">
+<p class="admonition-title">事实上</p>
+<div class="arithmatex">\[
+\mathcal{Z}^{-1}\left(\frac{z}{(z - a)^{t}}\right) = x[n] = \binom{n}{t - 1}a^{n - t + 1}u[n - t + 1]
+\]</div>
+</div>
+<div class="admonition normal-comment">
+<p class="admonition-title">一些例子</p>
+<p><img alt="alt text" src="../image.png" /></p>
+</div>
 
 
 
@@ -2170,7 +2302,7 @@ X(z) = \dfrac{z^2}{(z - a) (z - b)} = \dfrac{1}{a - b}\left(\frac{az}{z - a} - \
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年12月22日 04:04:38 UTC">2025-12-22</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月4日 06:24:14 UTC">2026-01-04</span>
   </span>
 
     
@@ -2185,29 +2317,6 @@ X(z) = \dfrac{z^2}{(z - a) (z - b)} = \dfrac{1}{a - b}\left(\frac{az}{z - a} - \
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Noflowerzzk" class="md-author" title="@Noflowerzzk">
-          
-          <img src="https://avatars.githubusercontent.com/u/79004773?v=4&size=72" alt="Noflowerzzk">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -2257,13 +2366,13 @@ X(z) = \dfrac{z^2}{(z - a) (z - b)} = \dfrac{1}{a - b}\left(\frac{az}{z - a} - \
         
         
           
-          <a href="../../../%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80/%E7%BB%AA%E8%AE%BA/%E7%BB%AA%E8%AE%BA/" class="md-footer__link md-footer__link--next" aria-label="下一页: 绪论">
+          <a href="../../Lec_10/Lec_10/" class="md-footer__link md-footer__link--next" aria-label="下一页: 系统的 z 域分析">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                绪论
+                系统的 z 域分析
               </div>
             </div>
             <div class="md-footer__button md-icon">
