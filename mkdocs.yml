@@ -183,7 +183,7 @@ nav:
           - lec 01 中国绘画的本体数据: CourseNotes/Guohua/GHlec01.md
   - Noflower的笔记:
       - 扉页: NoflowersNotes/Noflower_index.md
-      - Computer Vision （进行中）:
+      - Computer Vision:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
           - Loss Functions: NoflowersNotes/ComputerVision/Loss Functions.md
           - Gradient Descent: NoflowersNotes/ComputerVision/Gradient_Descent/Gradient_Descent.md
@@ -205,6 +205,7 @@ nav:
           - 拉普拉斯变换: NoflowersNotes/信号与系统/Lec_7/Lec_7.md
           - 系统的 s 域分析: NoflowersNotes/信号与系统/Lec_8/Lec_8.md
           - z 变换和离散时间系统的 z 域分析: NoflowersNotes/信号与系统/Lec_9/Lec_9.md
+          - 系统的 z 域分析: NoflowersNotes/信号与系统/Lec_10/Lec_10.md
       - 人工智能基础:
           - 绪论: NoflowersNotes/人工智能基础/绪论/绪论.md
           - 启发式搜索算法: NoflowersNotes/人工智能基础/启发式搜索算法/启发式搜索算法.md
@@ -216,6 +217,7 @@ nav:
           - 贪心: NoflowersNotes/算法设计分析/贪心/贪心.md
           - 动态规划: NoflowersNotes/算法设计分析/动态规划/动态规划.md
           - 线性规划应用: NoflowersNotes/算法设计分析/线性规划应用/线性规划应用.md
+          - NP 问题和规约: NoflowersNotes/算法设计分析/NP完全/NP完全.md
       - 凸优化:
           - 支持向量机 (SVM): NoflowersNotes/凸优化/SVM/SVM.md
           - 一阶和二阶导数 (补档): NoflowersNotes/凸优化/数学基础/数学基础.md
@@ -226,6 +228,7 @@ nav:
           - Lagrange 方法: NoflowersNotes/凸优化/Lagrange 方法/Lagrange 方法.md
           - Karush-Kuhn-Tucker 条件: NoflowersNotes/凸优化/Karush-Kuhn-Tucker/Karush-Kuhn-Tucker.md
           - 限制条件下的梯度下降: NoflowersNotes/凸优化/投影梯度下降/投影梯度下降.md
+          - 线性规划的对偶: NoflowersNotes/凸优化/对偶线性规划/对偶线性规划.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - CS231n:

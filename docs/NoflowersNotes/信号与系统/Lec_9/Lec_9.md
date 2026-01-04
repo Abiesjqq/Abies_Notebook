@@ -173,3 +173,76 @@ $\mathcal{Z}(\overline{x[n]}) = \overline{X(\overline{z})}$ 零极点共轭。
 
 ### 初值定理
 
+若因果信号 $x[n]$ 的 z 变换为 $X(z)$, 有
+
+$$
+\lim_{z \to \infty}X(z) = \lim_{z \to \infty}\sum_{n = 1}^\infty x[n]z^{-n} = x[0]
+$$
+
+对非因果序列，类似有
+
+$$
+\lim_{z \to 0}X(z) = x[0]
+$$
+
+!!! normal-comment "推论"
+
+    $$
+    \lim_{z \to \infty}\left(zX(z) - zx[0]\right) = x[1]
+    $$
+
+### 终值定理
+
+若因果序列 $x[n]$ 收敛，有
+
+$$
+x[\infty] = \lim_{z \to 1}(z - 1)X(z)
+$$
+
+表明 $x[n]$ 收敛且有限时，$X(z)$ 在 $z = 1$ 处必有极点
+
+!!! remarks "证明"
+
+    $$
+    \lim_{z \to 1}\mathcal{Z}(x[n + 1] - x[n]) = \lim_{z \to 1}\sum_{n = 0}^\infty(x[n + 1] - x[n])z^{-n} = \sum_{n = 1}^\infty(x[n + 1] - x[n]) = x[\infty] - x[0] 
+    $$
+
+    又
+
+    $$
+    \mathcal{Z}(x[n + 1] - x[n]) = (z - 1)X(z) - x[0]
+    $$
+
+    比对即可
+
+## z 反变换
+
+**围线积分法**
+
+$$
+x[n] = \frac{1}{2\pi \mathrm{j}}\oint X(z) z^{n - 1}\mathrm{d}z
+$$
+
+复变，老师也不会
+
+**幂级数展开**
+
+不讲了
+
+**部分分式展开法**
+
+类似 L 变换，我们把 $X(z)$ 分解为一系列 $\dfrac{kz}{(z - a)^t}$ 的形式；  
+也即两边同时除以 $z$，再用 L 变换所用的方法分解
+
+对于多项式项，$z^m \to \delta[n + m]$, 对分式项 $\dfrac{z}{z - a} \to a^nu[n]$, 对高阶分式项 $\dfrac{z}{(z - a)^t}$，可通过一阶项表达式的 z 域微分性质求解 (有时上下同时乘以 $z$ 能够消除求导后分子的 $z$).  
+关于非因果信号的收敛域问题：对于一阶分式，如果收敛域在其内部 ($|z| < |a|$)，则原项为 $-a^nu[-n - 1]$，如果收敛域在其外部 ($|z| > |a|$)，则原项为 $a^nu[n]$，对于环状收敛域，则为上面情况的组合
+
+!!! remarks "事实上"
+
+    $$
+    \mathcal{Z}^{-1}\left(\frac{z}{(z - a)^{t}}\right) = x[n] = \binom{n}{t - 1}a^{n - t + 1}u[n - t + 1]
+    $$
+
+!!! normal-comment "一些例子"
+
+    ![alt text](image.png)
