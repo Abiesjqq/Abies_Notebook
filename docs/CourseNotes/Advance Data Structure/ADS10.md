@@ -81,7 +81,7 @@ co-NP 定义为补集操作下封闭的 NP 问题的集合。
 
 （存疑）
 
-!!! examplese "NP-hard 问题"
+!!! examples "NP-hard 问题"
 
     If P = NP then the Shortest-Path (finding the shortest path between a pair of given vertices in a given graph) problem is NP-complete.（T/F）
 

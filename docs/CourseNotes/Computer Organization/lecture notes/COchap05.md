@@ -44,15 +44,19 @@ _Multiple blocks share location, so how do we know which particular block is sto
 
 **Valid bit**: 1 if present, 0 if empty. Initialized as 0.
 
-Physics address contains: tag / index / (byte) offset. (Byte offset is determined by size of block. Index is the cache address, i.e. lower bits of memory block address. Tag is the higher bits of block address. Tag and index are concatenated to form block address.)
+Components of three addresses:
 
-Cache line contains: (index,) valid bit / tag / data.
+- **Physics address (main memory address): tag / index / byte offset.** Byte offset is determined by size of block. Index is the cache address, i.e. lower bits of memory block address. Tag is the higher bits of block address. Tag and index are concatenated to form block address.
+- **block address: tag / index** (main memory address deprived of offset).
+- **Cache line: (index,) valid bit / tag / data.**
 
 ??? examples "E.g.1 cache access"
 
     8-blocks, 1 word/block, direct mapped. Access Sequence: 10110, 11010, 10110, 10010.
 
     ---
+
+    The access sequence here refers to block address. index has 3 bits, thus tag has 2 bits.
 
     10110 --> valid=0 --> miss --> copy to cache (time locality) --> cache[110].valid=1, cache[110].tag=10, cache[110].data=Mem[10110] --> return data.
 
@@ -121,9 +125,7 @@ When instrction miss occurs: stall the CPU, fetch block from memory, deliver to 
 
 ### Q&As on Memory Hierarchy
 
-#### Q1 Block placement
-
-_Where can a block be placed in the upper level?_
+**Q1 (Block placement): _Where can a block be placed in the upper level?_**
 
 Fully Associative, Set Associative, Direct Mapped.
 
@@ -135,9 +137,7 @@ In fully associative, cache has no index bits.
 
 Details on set associatice: A set is a group of adjacent blocks in cache. Index equals to block address mod(#sets). If each set has n blocks, the cache is said to be n-way set associative.
 
-#### Q2 Block identification
-
-_How is a block found if it is in the upper level?_
+**Q2 (Block identification): _How is a block found if it is in the upper level?_**
 
 Use tag and valid bit.
 
@@ -145,9 +145,7 @@ Tag comparation: For fully-associative caches, compare the requested tag with ev
 
 Index of puysical address: for set-associative caches, index has $\log_2(\#\text{sets})$ bits; for directed-mapped caches, index has $\log_2(\#\text{blocks})$ bits; for fully-associated caches, there are no index foeld.
 
-#### Q3 Block replacement
-
-_Which block should be replaced on a miss?_
+**Q3 (Block replacement): _Which block should be replaced on a miss?_**
 
 Random, LRU, FIFO.
 
@@ -157,9 +155,7 @@ In set-associative caches and fully-associative caches, there exists the replace
 - **Least-recently used (LRU)**: pick the block in the set which was least recently accessed. Require extra bits to keep track of accesses.
 - **First in, first out (FIFO)**: pick a block from the set which was first came into the cache.
 
-#### Q4 Write strategy
-
-_What happens on a write?_
+**Q4 (Write strategy): _What happens on a write?_**
 
 **Write hit**:
 
@@ -188,7 +184,7 @@ In general, write-back caches use write-allocate, and write-through caches use w
 
     Three small caches, four one-word blocks per cache. One cache is direct-mapped, the second is two-way set associative, and the third is fully associative.
 
-    Access sequence: 0, 8, 0, 6. 8.
+    Access sequence: 0, 8, 0, 6, 8.
 
     ---
 
@@ -204,7 +200,7 @@ In general, write-back caches use write-allocate, and write-through caches use w
 
     ---
 
-    - #(cache sets): $2^{12}$/4 = $2^{10}$
+    - number of cache sets: $2^{12}$/4 = $2^{10}$
     - Index: 10 bits
     - Offset: 4 bits
     - Tag: 32-10-4 = 18 bits
@@ -236,7 +232,7 @@ For a write-through plus write buffer scheme:
 
 In most write-through cache organizations, the read and write miss penalties are the same.
 
-??? examples "E.g.6 calculate cache performance"
+??? examples "E.g.7 calculate cache performance"
 
     Assume:
 
@@ -318,10 +314,76 @@ Motivation:
 
 Main Memory act as a cache for the secondary storage (disk).
 
-### Pages
-
 **Pages**: virtual memory block.
 
-**Page faults**: the data is not in memory, need to retrieve from disk.
+**Page faults**: the data is not in memory, thus need to retrieve from disk.
 
 Virtual pages are more than physical pages. Page faults cause huge miss panelty, thus pages are faily large (e.g., 4KB). We can handle the faults in software instead of hardware. Using write-through is too expensive, so we use write back.
+
+**Page table**: transform virtual address to physical address.
+
+Elements of page tables:
+
+- Index: virtual page number
+- Valid bit: 1 if the virtual page in currently in memory
+- Entry: physical page number for the virtual page
+
+Each program has its own page table. Virtual memory systems use fully associative mapping method.
+
+!!! remarks "Five techniques to reduce page table size"
+
+    1. Multi-level Paging
+    2. Inverted Page Table
+    3. Larger Page Size
+    4. Page Table Entry Compression / Sharing
+    5. egmented Paging（分段分页）
+
+??? examples "E.g.8 page table size"
+
+    Assume virtual page number is 32 bits, page size is 4KB, and each entry is 4 bytes. Calculate the number of page table entries and the size of page table.
+
+    - Number of entries: $2^{32}$
+    - Size of page table: 4\*#entry = $2^{34}$ bytes
+
+    ---
+
+    Assume virtual address is 32 bits, page size is 4KB, and each entry is 4 bytes. Calculate the number of page table entries and the size of page table.
+
+    - Page size: $2^{12}$ bytes
+    - Page offset: 12 bits
+    - Virtual page number: virtual_address-page_offset=32-12 = 20 bits
+    - Number of entries: $2^{20}$
+    - Size of page table: $2^{22}$ bytes
+
+??? examples "E.g.9 size of page table"
+
+    Consider a virtual memory system with the following properties: 36-bit virtual address, 4KB pages, 32-bit physical address.
+
+    What is the total size of the page table for each process on this processor, assuming that the valid bit and dirty bit are in use? ( assuming that disk addresses are not stored in the page table).
+
+    ---
+
+    - Page offset: 12 bits
+    - Virtual page number: 36-12 = 24 bits
+    - Number of entries: $2^{24}$
+    - Entry size: 1+1+20 = 22 bits
+    - Size of page table: 22\*$2^{24}$ bits
+
+_What about writes?_
+
+Must use write-back strategy. The dirty bit is set when a page is first written. If dirty bit is 1, the page must be written back to disk before being replaced.
+
+!!! remarks "TLB"
+
+    The TLB (Translation-lookaside Buffer) acts as Cache on the page table.
+
+Trends:
+
+- Synchronous SDRAMs (provide a burst of data)
+- Redesign DRAM chips to provide higher bandwidth or processing
+- Restructure code to increase locality
+- Use prefetching (make cache visible to ISA)
+
+![Memory hierarchy](../resources/5-1.png)
+
+![TLB and cache](../resources/5-2.png)

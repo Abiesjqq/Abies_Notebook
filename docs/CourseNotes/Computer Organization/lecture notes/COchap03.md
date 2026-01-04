@@ -436,3 +436,21 @@ ulp（units in the last place）：四舍五入，最大的损失是最小精度
     \]
 
     其中 \(b_{n-1}\) 是符号位。
+
+
+## 例题
+
+!!! examples "Addition"
+
+Simulate the kay steps of IEEE 754 single-precision binary folating-point addition for the demical numbers 16.125 and 0.015625($2^{-6}$). Show your work for the following:
+
+1. Conversion to binary scientific notation  
+2. Alignment of exponents  
+3. Significand addition
+4. Normalization  
+5. Rounding (apply "round to nearest, ties to even" rule)
+
+Convert the final result to hexadecimal.
+
+---
+
