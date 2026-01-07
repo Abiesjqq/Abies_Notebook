@@ -65,3 +65,16 @@ Given a set of symbols and their corresponding frequencies (or probabilities), t
     !!! normal-comment "Proof for Correctness"
 
         TO BE SUPPLEMENTED.
+
+## Homework
+
+!!! examples "T/F"
+
+    - (F) All decidable problems are NP problems.
+    - (T) All NP problems are decidable.
+    - (T) All NP-complete problems are NP problems.
+    - (T) All NP problems can be solved in polynomial time in a non-deterministic machine.
+    - (F) If a problem can be solved by dynamic programming, it must be solved in polynomial time.
+    - (T) If P = NP then the Shortest-Path (finding the shortest path between a pair of given vertices in a given graph) problem is NP-complete.
+    - (F) Given that problem A is NP-complete. If problem B is in NP and can be polynomially reduced to problem A, then problem B is NP-complete.
+    - (F) To prove problem B is NP-complete, we can use a NP-complete problem A and use a polynomial-time reduction algorithm to transform an instance of problem B to an instance of problem A.

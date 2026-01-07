@@ -1,4 +1,16 @@
-## 十进制小数转浮点数
+## 单精度中 bias 怎么取？
+
+Bias 等于 $2^{E-1}-1$, 其中 $E$ 表示指数位数。Bias 将指数范围 1~$2^E-1$ 映射为近似以 0 为中间分界点。
+
+!!! examples "E.g."
+
+    one type of float is: 1 bit sign，5 bit exponent，10 bit fraction.
+
+    - Bias: 2^4-1=15
+    - Min exponent: 1-15=-14
+    - Max exponent: (2^5-1)-1-15=15
+
+## 十进制小数转浮点数？
 
 **单、双精度的格式：**
 
@@ -53,7 +65,49 @@
 | `(+∞) + (–∞)`         | NaN  |
 | `(±∞) + (±∞)`（同号） | ±∞   |
 
-## 本地编译和转化
+## IEEE 754 特殊值运算？
+
+NaN 包括：无穷加减、零除以零、零乘无穷、负数开方、包含 NaN 的任何运算。浮点数表示时，指数全 1、尾数非零。
+
+Infinity 包括：非零数除以零。浮点数表示时，指数全 1、尾数为 0。
+
+## CPU 和 I/O 的处理？
+
+- Polling：CPU 发起 IO，并反复检查设备状态，一直等到 IO 完成。不并行。
+- Interrupt：CPU 发起 IO，IO 在后台进行，直到完成后发中断，CPU 处理中断；IO 进行过程中 CPU 执行原任务。并行。
+- DMA：CPU 配置 DMA，DMA 控制器在设备和内存见传输数据，CPU 在此期间执行别的指令。并行。
+
+## cache 中 block 大小的影响？
+
+- 增大 conflict miss：cache 容量一定，block 变大，cache 中的 block 数变小，miss 增加。
+- hit time 略上升：block 中数据更多，选择、传输的时间增加。
+- 增加 miss panelty：block 增大，miss 时要搬运的 data 更多。
+- 减小 compulsory miss：compulsory miss 指某个数据块第一次被访问时不在缓存中而导致的 miss。Block 大，一次 miss 将更多相邻地址带进 cache，compulsory miss 更小。
+
+## 磁盘访问时间计算？
+
+注意点：
+
+1. 转速单位 RPM 表示 Rotation Per Minute，每分钟圈数。
+2. 计算 Rotational latency 时，用转半圈的时间表示。
+3. 传输时间等于扇区在磁头下“经过”的时间，而这个时间由旋转速度决定。
+
+!!! examples "E.g."
+
+    seek time=8ms，转速7200RPM，每track有1000个sector，计算access time。
+
+    ---
+
+    - Seek time: 8ms
+    - Rotational latency: 1/(7200/60) * 0.5 = 8.33ms
+    - Transfer time: 1/(7200/60) / 1000 = 0.00833ms
+    - Total time: 12.18ms
+
+## 页表大小计算？
+
+
+
+## 本地编译和转化？
 
 C 代码转 RISCV：
 
@@ -87,7 +141,7 @@ print(f"res:{bits:064b}")
 exit()
 ```
 
-## 不同数据类型的字节
+## 不同数据类型的字节？
 
 | 指令  | 全称                   | 加载宽度 | 扩展方式           | 适用数据类型（C 语言示例）                       | 典型用途                              | 是否需地址对齐   |
 | ----- | ---------------------- | -------- | ------------------ | ------------------------------------------------ | ------------------------------------- | ---------------- |
@@ -98,7 +152,7 @@ exit()
 | `lw`  | Load Word              | 4 字节   | 无扩展（直接加载） | `int`, `float`, 指针（RV32）                     | 通用 32 位整数或单精度浮点数          | 是（4 字节对齐） |
 | `ld`  | Load Doubleword        | 8 字节   | 无扩展（直接加载） | `long`（RV64）, `double`, 指针（RV64）           | 64 位整数或双精度浮点数（仅 RV64）    | 是（8 字节对齐） |
 
-## 指令执行的延迟
+## 指令执行的延迟？
 
 !!! examples "题目"
 

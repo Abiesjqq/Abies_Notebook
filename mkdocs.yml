@@ -104,11 +104,12 @@ nav:
   - 课程笔记:
       - 扉页: CourseNotes/note_index.md
       - 计算机组成:
-          - Chap 1 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
-          - Chap 3 基本运算: CourseNotes/Computer Organization/lecture notes/COchap03.md
-          - Chap 2 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
-          - Chap 4 处理器: CourseNotes/Computer Organization/lecture notes/COchap04.md
-          - Chap 5 存储结构: CourseNotes/Computer Organization/lecture notes/COchap05.md
+          - Ch1 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
+          - Ch3 基本运算: CourseNotes/Computer Organization/lecture notes/COchap03.md
+          - Ch2 指令集: CourseNotes/Computer Organization/lecture notes/COchap02.md
+          - Ch4 处理器: CourseNotes/Computer Organization/lecture notes/COchap04.md
+          - Ch5 存储结构: CourseNotes/Computer Organization/lecture notes/COchap05.md
+          - Ch6 附录: CourseNotes/Computer Organization/lecture notes/COchap06.md
           - 期末复习: CourseNotes/Computer Organization/lecture notes/CO0.md
           - 实验记录: 
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
@@ -140,14 +141,15 @@ nav:
           - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
           - 电磁感应，电感: CourseNotes/General Physics II/Phy06.md
       - 概率论与数理统计:
-          - Chap 1 基本概念: CourseNotes/Probability/PRO01.md
-          - Chap 2 一维随机变量: CourseNotes/Probability/PRO02.md
-          - Chap 3 二维随机变量: CourseNotes/Probability/PRO03.md
-          - Chap 4 随机变量的数字特征: CourseNotes/Probability/PRO04.md
-          - Chap 5 大数定律与中心极限定理: CourseNotes/Probability/PRO05.md
-          - Chap 6 数理统计的基本概念: CourseNotes/Probability/PRO06.md
+          - Ch1 基本概念: CourseNotes/Probability/PRO01.md
+          - Ch2 一维随机变量: CourseNotes/Probability/PRO02.md
+          - Ch3 二维随机变量: CourseNotes/Probability/PRO03.md
+          - Ch4 随机变量的数字特征: CourseNotes/Probability/PRO04.md
+          - Ch5 大数定律与中心极限定理: CourseNotes/Probability/PRO05.md
+          - Ch6 数理统计的基本概念: CourseNotes/Probability/PRO06.md
       - 工程图学:
           - 点线面的投影: CourseNotes/Engineering Graphics/EG01.md
+          - 零件图: CourseNotes/Engineering Graphics/EG0x.md
       - 数据结构基础:
           - 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
           - 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
@@ -181,10 +183,8 @@ nav:
               - 机器人控制: CourseNotes/robot control/practical/rigid-body kinematics.md
               - Taichi简介: CourseNotes/robot control/practical/taichi intro.md
               - rigid_body代码说明: CourseNotes/robot control/practical/robot intro.md
-      - 文化人类学*: 
-          - 绪论: CourseNotes/Cultural Anthropolog/CAlec 01.md
-      - 基于人工智能的国画传承*:
-          - lec 01 中国绘画的本体数据: CourseNotes/Guohua/GHlec01.md
+      - 马克思主义基本原理:
+              - 期末碎碎念: CourseNotes/Marxism/MBP_final.md
   - Noflower的笔记:
       - 扉页: NoflowersNotes/Noflower_index.md
       - Computer Vision:
