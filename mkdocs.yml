@@ -148,8 +148,10 @@ nav:
           - Ch5 大数定律与中心极限定理: CourseNotes/Probability/PRO05.md
           - Ch6 数理统计的基本概念: CourseNotes/Probability/PRO06.md
       - 工程图学:
-          - 点线面的投影: CourseNotes/Engineering Graphics/EG01.md
-          - 零件图: CourseNotes/Engineering Graphics/EG0x.md
+          - 投影画法: CourseNotes/Engineering Graphics/EG01.md
+          - 标准件: CourseNotes/Engineering Graphics/EG02.md
+          - 零件图: CourseNotes/Engineering Graphics/EG03.md
+          - 读图: CourseNotes/Engineering Graphics/EG04.md
       - 数据结构基础:
           - 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
           - 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
