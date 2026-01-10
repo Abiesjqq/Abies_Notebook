@@ -180,7 +180,7 @@ Write buffer does not entirely eliminate stalls.
 
 In general, write-back caches use write-allocate, and write-through caches use write-around.
 
-!!! normal-comments "Write through + no write allocate"
+!!! normal-comment "Write through + no write allocate"
 
     - Write through: when write hit, always write to both cache and the next layer (main memory or the next cache).
     - No write allocate: when write miss, write directly to memory, but not copy the block to cache.
@@ -189,7 +189,7 @@ In general, write-back caches use write-allocate, and write-through caches use w
 
     Write through + no write allocate acts better in streamint write, where the written data will not be read again. In this case, write allocate will result in meaningless copy.
 
-!!! normal-comments "Write back + write allocate"
+!!! normal-comment "Write back + write allocate"
 
     - Write back: when write hit, only write to cache, and the dirty bit of this block becomes 1. The block is write to memory until being evicted.
     - Write allocate: when write miss, first allocate the block from memory to cache, then write to the cache.
@@ -340,7 +340,7 @@ CPU generate VA from instruction --> get VPN from VA --> map VPN to PPN using pa
 
 ### Process
 
-!!! normal-comments "VA to VPN?"
+!!! normal-comment "VA to VPN?"
 
     VA is composed by: **VPN (higher bits) | page offset (lower bits)**.
 

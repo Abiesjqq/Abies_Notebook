@@ -89,7 +89,7 @@ A bus contains two types of lines:
 
 Bus transaction include two operations: input (device --> memory) and output (memory --> device).
 
-!!! normal-comments "Output and Input"
+!!! normal-comment "Output and Input"
 
     **Output:**
 
@@ -115,7 +115,7 @@ Common structure: A separate bus is used for processor-memory traffic. A small n
 - Synchronous bus: use a clock and a fixed protocol, fast and small but every device must operate at same rate and clock skew requires the bus to be short.
 - Asynchronous bus: don’t use a clock and instead use handshaking.
 
-!!! normal-comments "Handshaking protocol"
+!!! normal-comment "Handshaking protocol"
 
     ![6_1](../resources/6_1.png)
 
@@ -170,7 +170,7 @@ Two methods used to address the device
     - The DMA starts the operation on the device and arbitrates for the bus. If the request requires more than one transferon the bus, the DMA unit generates the next memory address and initiates the next transfer.
     - Once the DMA transfer is complete, the controller interrupts the processor, which then examines whether errors occur.
 
-!!! normal-comments "Comparison"
+!!! normal-comment "Comparison"
 
     Compare polling, interrupts, DMA:
 
