@@ -277,6 +277,8 @@ nav:
           - Lec 17 Materials and Appearances: AbiesNotes/GAMES101/Lecture 17 Materials and Appearances.md
           - Lec 18 Advanced Topics in Rendering: AbiesNotes/GAMES101/Lecture 18 Advanced Topics in Rendering.md
           - Lec 19 Cameras, Lenses and Light Fields: AbiesNotes/GAMES101/Lecture 19 Cameras, Lenses and Light Fields.md
+      - DeepLearning碎碎念:
+          - Pandas: AbiesNotes/Dive_into_Deep_Learning/Pandas_tutorial.ipynb
       - Tinyrenderer:
           - Getting started: AbiesNotes/Tinyrenderer/getting started.md
           - Line: AbiesNotes/Tinyrenderer/line.md
@@ -482,4 +484,6 @@ plugins:
       #      pagination_keep_content: true
       #      draft_if_future_date: true
       pagination_per_page: 5
-  # - mkdocs-jupyter # 对 jupyter notebook 的支持
+  - mkdocs-jupyter: # 对 jupyter notebook 的支持
+      execute: false        # 不在构建时执行 notebook（强烈建议）
+      include_source: true  # 允许下载 .ipynb
