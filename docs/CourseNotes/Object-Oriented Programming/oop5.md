@@ -94,7 +94,7 @@ struct A {
     int x, y, z;
 };
 struct B {  // composition
-    A a;  
+    A a;
 };
 struct C : public A {  // inheritance
 };
@@ -168,3 +168,37 @@ int main() {
 
 在类中声明某些函数/类为friend，则这些函数/类可访问该类的私有成员。
 
+对象的地址即第一个元素的地址。如果类中第一个成员是int，可将对象的地址转为int型指针，也能通过这个指针修改对象（即使是private也能修改）。
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Base {
+   public:
+    int i;
+    Base() : i(10) { cout << "Base::Base()\n"; }
+};
+
+class Derived : public Base {
+   private:
+    int j;
+
+   public:
+    Derived() : j(30) { cout << "Derived::Derived()\n"; }
+    void print_data() { cout << j << '\n'; }
+};
+
+int main() {
+    Base b;
+    Derived d;
+    int* p = (int*)&d;
+    cout << p << ' ' << *p << '\n';  // 0x30905ffb4c 10
+    p++;
+    cout << p << ' ' << *p << '\n';  // 0x30905ffb50 30
+    *p = 7;
+    cout << "d.j = ";
+    d.print_data();  // d.j = 7
+    return 0;
+}
+```

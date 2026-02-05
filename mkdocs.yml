@@ -97,6 +97,7 @@ nav:
           - MkDocs: 自学记录/MkDocs/mkdocs.md
           - CSS: 自学记录/CSS/css_learning.md
           - tmux: 自学记录/tmux/tmux.md
+          - Batch: 自学记录/bat/bat_learning.md
       - 数理基础:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
       - AI 实践:
