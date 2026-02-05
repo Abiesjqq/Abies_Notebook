@@ -138,6 +138,7 @@ pause
 set "repos=D:\Blog D:\AAAmkdocs\MkDocs-Guide"
 for %%r in (%repos%) do (
     call :auto_commit "%%r"
+    echo ----------------------------
 )
 
 pause
