@@ -279,24 +279,24 @@ nav:
           - Lec 18 Advanced Topics in Rendering: AbiesNotes/GAMES101/Lecture 18 Advanced Topics in Rendering.md
           - Lec 19 Cameras, Lenses and Light Fields: AbiesNotes/GAMES101/Lecture 19 Cameras, Lenses and Light Fields.md
       - DeepLearning碎碎念:
-          - Python工具:
-              - Pandas: AbiesNotes/Dive_into_Deep_Learning/Pandas_tutorial.ipynb
           - 深度学习计算:
               - 模型构造: AbiesNotes/Dive_into_Deep_Learning/4_1.ipynb
               - 模型参数: AbiesNotes/Dive_into_Deep_Learning/4_2.ipynb
               - 自定义层: AbiesNotes/Dive_into_Deep_Learning/4_4.ipynb
               - 读写: AbiesNotes/Dive_into_Deep_Learning/4_5.ipynb
               - GPU计算: AbiesNotes/Dive_into_Deep_Learning/4_6.ipynb
-              - 5.1: AbiesNotes/Dive_into_Deep_Learning/5_1.ipynb
-              - 5.2: AbiesNotes/Dive_into_Deep_Learning/5_2.ipynb
-              - 5.3: AbiesNotes/Dive_into_Deep_Learning/5_3.ipynb
-              - 5.4: AbiesNotes/Dive_into_Deep_Learning/5_4.ipynb
-              - 5.5: AbiesNotes/Dive_into_Deep_Learning/5_5.ipynb
-              - 5.6: AbiesNotes/Dive_into_Deep_Learning/5_6.ipynb
-              - 5.7: AbiesNotes/Dive_into_Deep_Learning/5_7.ipynb
-              - 5.8: AbiesNotes/Dive_into_Deep_Learning/5_8.ipynb
+              - Ch5.1 二维卷积层: AbiesNotes/Dive_into_Deep_Learning/5_1.ipynb
+              - Ch5.2: AbiesNotes/Dive_into_Deep_Learning/5_2.ipynb
+              - Ch5.3: AbiesNotes/Dive_into_Deep_Learning/5_3.ipynb
+              - Ch5.4: AbiesNotes/Dive_into_Deep_Learning/5_4.ipynb
+              - Ch5.5: AbiesNotes/Dive_into_Deep_Learning/5_5.ipynb
+              - Ch5.6: AbiesNotes/Dive_into_Deep_Learning/5_6.ipynb
+              - Ch5.7: AbiesNotes/Dive_into_Deep_Learning/5_7.ipynb
+              - Ch5.8: AbiesNotes/Dive_into_Deep_Learning/5_8.ipynb
           - Kaggle实例:
               - 房价预测: AbiesNotes/Dive_into_Deep_Learning/HousePrice/kaggle_house_price.ipynb
+          - Python工具:
+              - Pandas: AbiesNotes/Dive_into_Deep_Learning/Pandas_tutorial.ipynb
       - Tinyrenderer:
           - Getting started: AbiesNotes/Tinyrenderer/getting started.md
           - Line: AbiesNotes/Tinyrenderer/line.md
