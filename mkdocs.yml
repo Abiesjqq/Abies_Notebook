@@ -287,6 +287,14 @@ nav:
               - 自定义层: AbiesNotes/Dive_into_Deep_Learning/4_4.ipynb
               - 读写: AbiesNotes/Dive_into_Deep_Learning/4_5.ipynb
               - GPU计算: AbiesNotes/Dive_into_Deep_Learning/4_6.ipynb
+              - 5.1: AbiesNotes/Dive_into_Deep_Learning/5_1.ipynb
+              - 5.2: AbiesNotes/Dive_into_Deep_Learning/5_2.ipynb
+              - 5.3: AbiesNotes/Dive_into_Deep_Learning/5_3.ipynb
+              - 5.4: AbiesNotes/Dive_into_Deep_Learning/5_4.ipynb
+              - 5.5: AbiesNotes/Dive_into_Deep_Learning/5_5.ipynb
+              - 5.6: AbiesNotes/Dive_into_Deep_Learning/5_6.ipynb
+              - 5.7: AbiesNotes/Dive_into_Deep_Learning/5_7.ipynb
+              - 5.8: AbiesNotes/Dive_into_Deep_Learning/5_8.ipynb
           - Kaggle实例:
               - 房价预测: AbiesNotes/Dive_into_Deep_Learning/HousePrice/kaggle_house_price.ipynb
       - Tinyrenderer:
