@@ -110,6 +110,7 @@ nav:
           - Lec1 Introduction: CourseNotes/Database System/DB01.md
       - 量子信息基础: 
           - Lec1 信息与信息熵: CourseNotes/Quantum Information/QI01.md
+          - Lec2 电磁波与狄拉克符号: CourseNotes/Quantum Information/QI02.md
       - 计算机组成:
           - Ch1 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
           - Ch3 基本运算: CourseNotes/Computer Organization/lecture notes/COchap03.md
