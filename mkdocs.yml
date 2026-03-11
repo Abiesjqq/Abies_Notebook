@@ -236,6 +236,19 @@ nav:
           - Karush-Kuhn-Tucker 条件: NoflowersNotes/凸优化/Karush-Kuhn-Tucker/Karush-Kuhn-Tucker.md
           - 限制条件下的梯度下降: NoflowersNotes/凸优化/投影梯度下降/投影梯度下降.md
           - 线性规划的对偶: NoflowersNotes/凸优化/对偶线性规划/对偶线性规划.md
+      - 数字信号与图像处理:
+          - 2D Convolution: NoflowersNotes/数字信号与图像处理/2D Convolution/2D Convolution.md
+      - 计算机体系结构:
+          - 导论: NoflowersNotes/ComputerArchitecture/导论/导论.md
+          - DigitalLogic: NoflowersNotes/ComputerArchitecture/DigitalLogic/DigitalLogic.md
+      - 机器学习:
+          - 机器学习: NoflowersNotes/机器学习/机器学习介绍/机器学习介绍.md
+      - 深度学习:
+          - Overview: NoflowersNotes/DeepLearning/Overview/Overview.md
+      - 随机过程:
+          - 独立随机变量和集中不等式: NoflowersNotes/StochasticProcess/概率论基础回顾/概率论基础回顾.md
+      - 计算机网络:
+          - 网络分层和参考模型: NoflowersNotes/计算机网络/网络分层/网络分层.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
       - CS231n:
