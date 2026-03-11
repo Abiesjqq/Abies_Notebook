@@ -173,6 +173,60 @@
   line-height: 0.6;
 }
 
+[data-md-color-scheme="default"] .md-typeset .warning-box > .admonition-title,
+[data-md-color-scheme="default"] .md-typeset .warning-box > summary {
+  background-color: rgba(254, 93, 93, 0.18);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+/* -------------------------------------------------------------- */
+[data-md-color-scheme="default"] .md-typeset .admonition.warning,
+[data-md-color-scheme="default"] .md-typeset details.warning {
+  border: none;
+  border-radius: 0.5rem;
+  font-size: small;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.06);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.warning,
+[data-md-color-scheme="slate"] .md-typeset details.warning {
+  border: 1px solid rgba(254, 93, 93, 0.3);
+  border-radius: 0.5rem;
+  font-size: small;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+
+[data-md-color-scheme="slate"] .md-typeset .warning > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .warning > summary {
+  background-color: rgba(254, 93, 93, 0.1);
+}
+
+.md-typeset .warning > .admonition-title::before,
+.md-typeset .warning > summary::before {
+  background-color: rgb(204, 108, 130);
+  -webkit-mask-image: var(--md-admonition-icon--warning-box);
+  mask-image: var(--md-admonition-icon--warning-box);
+}
+
+.md-typeset .admonition.warning > .admonition-title {
+  margin-bottom: 0.1rem;
+}
+
+.md-typeset .admonition.warning .tabbed-set {
+  margin-top: 0rem;
+}
+
+.md-typeset .admonition.warning .tabbed-labels > label {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  line-height: 0.6;
+}
+
+
 /* 示例 */
 /*examples*/
 /* .md-typeset .admonition.examples,
