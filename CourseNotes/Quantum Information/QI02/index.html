@@ -12,7 +12,7 @@
         <link rel="prev" href="../QI01/">
       
       
-        <link rel="next" href="../../Computer%20Organization/lecture%20notes/COchap01/">
+        <link rel="next" href="../QI_labs/QI_lab2/">
       
       
         
@@ -703,6 +703,8 @@
       
         
       
+        
+      
     
     
     
@@ -816,6 +818,8 @@
   
     
     
+      
+        
       
         
       
@@ -992,6 +996,62 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../QI_labs/QI_lab2/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实验部分
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -1991,7 +2051,7 @@
 <h2 id="_2">狄拉克符号</h2>
 <p>ket <span class="arithmatex">\(|a\rangle\)</span>表示矢量，bra <span class="arithmatex">\(\langle a|\)</span>表示其共轭。</p>
 <p>ket加法，加法交换律，加法结合律。ket乘复数得到新的ket，且满足对ket和复数的分配律。满足上述条件的ket可以是二维复向量，也可以是四个变量的复函数（即波函数），两者本质上等价。</p>
-<p>怎么定义长度和方向（内积）？每个右矢ket对应一个左矢bra，两者互为对偶（即形状为转置，每个元素为复共轭）。ket乘复数，对应bra乘复数的复共轭。<span class="arithmatex">\(\langle b|a \rangle\)</span>表示bra和ket的内积，满足分配律、结合律，交换左右位置为复共轭。和自身的内积为实数。归一化为和自身的内积为1，正交为内积为0。</p>
+<p><em>怎么定义长度和方向（内积）？</em> 每个右矢ket对应一个左矢bra，两者互为对偶（即形状为转置，每个元素为复共轭）。ket乘复数，对应bra乘复数的复共轭。<span class="arithmatex">\(\langle b|a \rangle\)</span>表示bra和ket的内积，满足分配律、结合律，交换左右位置为复共轭。和自身的内积为实数。归一化为和自身的内积为1，正交为内积为0。</p>
 <p>任何向量可用基表示，esp.单位正交基。</p>
 <p>定义投影算符 <span class="arithmatex">\(P_k=|k\rangle \langle k|\)</span>。<span class="arithmatex">\(P_k | a \rangle\)</span> 表示a在k方向的投影向量。投影算符的平方为它本身；正交方向投影算符相乘为0；所有正交方向投影算符相加为恒等变换I。</p>
 <p><em>狄拉克符号的应用？</em></p>
@@ -2022,7 +2082,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年3月9日 05:28:56 UTC">2026-03-09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年3月15日 10:29:48 UTC">2026-03-15</span>
   </span>
 
     
@@ -2037,29 +2097,6 @@
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
@@ -2109,13 +2146,13 @@
         
         
           
-          <a href="../../Computer%20Organization/lecture%20notes/COchap01/" class="md-footer__link md-footer__link--next" aria-label="下一页: Ch1 介绍">
+          <a href="../QI_labs/QI_lab2/" class="md-footer__link md-footer__link--next" aria-label="下一页: lab2 量子态的描述与量子密钥分发">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Ch1 介绍
+                lab2 量子态的描述与量子密钥分发
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -703,6 +703,8 @@
       
         
       
+        
+      
     
     
     
@@ -956,6 +958,8 @@
   
     
     
+      
+        
       
         
       
@@ -1978,7 +1982,7 @@
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>719 字</strong>&nbsp;&nbsp;<strong>2</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> <strong>987 字</strong>&nbsp;&nbsp;<strong>3</strong> 分钟&nbsp;&nbsp;本页总访问量 <span id="busuanzi_value_page_pv">加载中...</span></p>
 </div>
 <h2 id="_1">关系</h2>
 <p>Relationship为现实中实体之间的关系，relation对应数据库中的一张表</p>
@@ -1996,7 +2000,7 @@
 <p>数据库由多张表组成。可将信息存在不同的表中，减少冗余。</p>
 <h2 id="_2">码/键</h2>
 <p>码（用K表示）是属性的集合，用于区分每一行数据。</p>
-<p><em>码有哪些类？</em></p>
+<p><em>码有哪些种类？</em></p>
 <ul>
 <li>超码（superkey）：能唯一标识一行记录的“一个或多个属性”的集合。即若两个tuple不同，则它们在超码中属性对应的值不同。</li>
 <li>候选码（candidate key）：候选码是最小的超码，去掉其中任何一个属性后就不能唯一标识（要唯一确定tuple可能需要多个属性）</li>
@@ -2005,15 +2009,34 @@
 </ul>
 <h2 id="_3">关系代数表达式</h2>
 <p>关系代数表达式是用关系代数运算符把一个或多个关系（表）组合起来的公式，用来表示查询。</p>
-<p><em>有哪些常见的关系代数表达式？</em></p>
+<p><em>有哪些基本（fundamental）关系代数表达式？</em></p>
 <ul>
 <li>选择（<span class="arithmatex">\(\sigma\)</span>）：对单表，按条件筛选。<span class="arithmatex">\(\sigma_p(r)=\{t|t\in r \text{ and } p(r)\}\)</span>，其中p为选择谓词，可由and、or、not连接。</li>
 <li>投影（<span class="arithmatex">\(\Pi\)</span>）：对单表，选择列（自动去重）。表示为 <span class="arithmatex">\(\Pi_{\text{attributes}}(r)\)</span>。</li>
 <li>并（<span class="arithmatex">\(\cup\)</span>）：对双表，合并两表（自动去重）。表示为 <span class="arithmatex">\(r\cup s\)</span>。两张表必须满足等目（属性个数相同）同源（属性的域相同）。</li>
 <li>差（<span class="arithmatex">\(-\)</span>）：对双表，<span class="arithmatex">\(r-s=\{t|t\in r \text{ and } t\notin s\}\)</span>。r和s也必须等目同源。</li>
 <li>笛卡尔积（<span class="arithmatex">\(\times\)</span>）：对双表，<span class="arithmatex">\(r\times s=\{(t,q) | t\in r \text{ and } q\in s\}\)</span>。</li>
-<li>重命名：命名上述操作的返回结果。<span class="arithmatex">\(\rho_X(E)\)</span>，其中E为关系代数表达式，X为新的关系名。</li>
+<li>重命名（<span class="arithmatex">\(\rho\)</span>）：命名上述操作的返回结果。<span class="arithmatex">\(\rho_X(E)\)</span>，其中E为关系代数表达式，X为新的关系名。</li>
 </ul>
+<p><em>有哪些额外（additional）关系代数表达式？</em></p>
+<p>额外关系代数表达式都能通过前面6种操作实现。</p>
+<ul>
+<li>交 （$\cap <span class="arithmatex">\(）：\)</span>r\cap s={t|t\in r \text{ and } t\in s}$，要求两张表等目同源。</li>
+<li>自然连接（<span class="arithmatex">\(\bowtie\)</span>）：把两张表中共有属性的值相等的行配对并合并成一行，自动去重，记为 <span class="arithmatex">\(r \bowtie s\)</span>。进一步，<span class="arithmatex">\(r \bowtie_{\theta} s\)</span> 将等于换成自定义的表达式 <span class="arithmatex">\(\theta\)</span>。</li>
+<li>除（<span class="arithmatex">\(\div\)</span>）：表达“对所有”的查询，e.g. 选课(学生，课程) <span class="arithmatex">\(\div\)</span> 必修课(课程) = 选了所有必修课的学生</li>
+<li>赋值（<span class="arithmatex">\(\leftarrow\)</span>）：新名字 <span class="arithmatex">\(\leftarrow\)</span> 表达式。</li>
+</ul>
+<p><em>有哪些扩展（extended）关系代数表达式？</em></p>
+<ul>
+<li>泛化投影：允许在投影时写表达式，比如算新列、重命名列</li>
+<li>聚合函数：COUNT、SUM、AVG、MIN、MAX，场合GROUP BY结合使用</li>
+<li>外连接：将自然连接中未匹配的元组填充为null并连接，按填充哪些表分为左外连接、右外连接、全外连接。</li>
+</ul>
+<p><em>null有什么特点？</em></p>
+<p>聚合函数自动忽略null值，但COUNT、分组、排序时不忽略null。null值参与大于小于判断都为unknown状态，不会返回（只返回true/false）。</p>
+<p><em>怎么实现增删改操作？</em></p>
+<p>删：<span class="arithmatex">\(r\leftarrow r-E\)</span>
+增：<span class="arithmatex">\(r\leftarrow r\cup E\)</span></p>
 
 
 
@@ -2036,7 +2059,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年3月10日 03:19:59 UTC">2026-03-10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年3月15日 10:29:48 UTC">2026-03-15</span>
   </span>
 
     
@@ -2051,29 +2074,6 @@
 
     
     
-    
-      
-  <span class="md-source-file__fact">
-    
-      
-  <span class="md-icon" title="贡献者">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
-  </span>
-  <span>GitHub</span>
-
-    
-    <nav>
-      
-        <a href="https://github.com/Abiesjqq" class="md-author" title="@Abiesjqq">
-          
-          <img src="https://avatars.githubusercontent.com/u/190385647?v=4&size=72" alt="Abiesjqq">
-        </a>
-      
-      
-      
-    </nav>
-  </span>
-
     
   </aside>
 
