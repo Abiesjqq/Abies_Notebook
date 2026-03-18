@@ -37,6 +37,7 @@ def L_i_vectorized(x, y, W):
     loss_i = np.sum(margins)
     return loss_i
 ```
+Why not use L2 norm loss? --> Using softmax is better.
 
 ### The regularization
 
@@ -50,11 +51,21 @@ $\lambda$: regularization strength.
 $R(W)$ allows the model to choose a simple model (It can be understood as reducing the degree of the fitted curve)
 
 - L2 regularization: $R(W) = \Vert W \Vert_F$
-- L1 regularization: $R(W) = \Vert W \Vert_1$
+- L1 regularization: $R(W) = \Vert W \Vert_1$ (May be better)
 - Elastic net: $R(W) = \beta \Vert W \Vert_F + \Vert W \Vert_1$
 - Max norm regularization
 - Dropout
 - Fancier
+
+### Bias Variance Tradeoff
+
+Let $L(W) = E(\hat{y} - y)^2$. Then we have
+
+$$
+L(W) = \underbrace{\left(E(\hat{y}) - y\right)^2}_{\text{bias}^2} + \underbrace{E\left((\hat{y} - E(\hat{y}))^2\right)}_{\text{variance}}
+$$
+
+Considering the variance can reduce overfiting.
 
 ### Softmax Loss (Cross-entropy loss)
 
@@ -69,3 +80,8 @@ $$
 L_i = -\log P(Y = y_i | X = x_i)
 $$
 
+Actually it is the Kullback-Leibler Divergence: ($Q, P$ are two discrete probability distributions)
+
+$$
+D_{KL}(Q, P) = \sum_k Q(k)\log\frac{Q(k)}{P(k)} \sim -\sum_i \log P(Y = y_i | X = x_i)
+$$
