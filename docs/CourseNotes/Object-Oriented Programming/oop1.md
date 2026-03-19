@@ -2,9 +2,9 @@
 
 Bjarne Stroustrup.
 
-## Using Objects
+## String
 
-**String:**
+String类的用法：
 
 - Assignment: `string str1 = "aaa"`
 - Assign: `str.assign('ahgie')`
@@ -17,14 +17,6 @@ Bjarne Stroustrup.
 !!! normal-comments "string长度说明"
 
     string末尾没有`\0`，`string.length()`返回可见字符的长度。
-
-!!! remarks "局部变量，静态局部变量，全局变量，静态全局变量，临时分配变量"
-
-    所有局部变量（定义在`{}`中）都只在块内可见，块外无法访问。不同点在于，普通局部变量每次进入作用域时创建、离开作用域时销毁，而静态局部变量只在第一次进入作用域时创建一次，之后多次调用并“记住上次的值”。
-
-    普通全局变量课跨文件用`extern`引用，但静态全局变量（加`static`）不能，只在当前.cpp文件可见。
-
-    普通局部变量存储在栈中，编译器自动管理。静态局部变量、全局变量、静态全局变量都存储在静态存储区（数据段/BSS）。临时分配变量存储在堆中，程序员管理。
 
 ## File I/O
 
@@ -41,177 +33,80 @@ File2 >> str;
 
 Notice: ifstream will terminate in white spaces (space, tab, enter, etc.). Readline will get the whole line.
 
-## Template
+## Memory Model
 
-In order to support multiple data structures.
+内存存储分为几类：
 
-```cpp
-template<typename T>
-void print_array(T arr[], int n) {
-    for (int i = 0; i < n; i++)
-        std::cout << arr[i] << ' ';
-    std::cout << '\n';
-}
-```
+- 全局/静态存储区：存储全局变量、静态全局变量、静态局部变量
+- 栈区：存储局部变量、函数参数、返回值
+- 堆区：存储动态分配的变量（new/malloc分配）
+- 常量存储区：存储字符串常量、const常量
+- 代码区：存储程序的机器指令
 
-```cpp
-template<typename T>
-void swap(T& a, T& b) {
-    T tmp = a;
-    a = b;
-    b = tmp;
-}
-```
+!!! normal-comment "局部变量和静态局部变量的区别？"
 
-## Operator
+    相同点：两者都只在块内可见，块外无法访问。
 
-```cpp
-struct Student {
-    int id;
-    std::string name;
+    不同点：
 
-    bool operator<(const Student& s) {
-        return id < s.id;
-    }
-}
-```
+    - 普通局部变量每次进入作用域时创建、离开作用域时销毁；静态局部变量只在第一次进入作用域时创建一次，之后多次调用并“记住上次的值”。
+    - 普通局部变量存储在栈中，编译器自动管理；静态局部变量存储在静态存储区（数据段/BSS）。
 
-or:
+!!! normal-comment "全局变量和静态全局变量的区别？"
 
-```cpp
-struct Student {
-    int id;
-    std:string name;
-}
+    相同点：
 
-bool operator<(const Student& s1, const Student& s2) {
-    retrun s1.id < s2.id;
-}
+    - 本文件中全局可访问
+    - 都存储在静态存储区（数据段/BSS）
 
-std::ostream& operator<<(std::ostream out, const Student& s) {
-    return out << "(" << s.id << "," << s.name << ")\n";
-}
-```
+    不同点：全局变量可跨文件用`extern`引用；静态全局变量（加`static`）不能，只在当前.cpp文件可见
 
-## Class
+动态分配内存：
 
-```cpp
-class Rectangle {
-private:
-    double w, h;
-    double area, perimeter;
+1. 分配指针：`int* p = new int()` --> `delete p`
+   - `new int`表示分配但不初始化
+   - `new int()`表示分配且初始化为0
+   - `new int(5)`表示分配且初始化为5
+2. 分配数组：`int* arr = new int[10]` --> `delete[] arr`
+   - `new int[10]`表示分配但不初始化
+   - `new int[10]()`表示分配且初始化为0
+   - `new int[10]{1,2,3}`表示分配且前三个初始化、其余为0
 
-public:
-    Rectangle(double w, double h): w(w), h(h) {}
-    void calc_area() {
-        area = w * h;
-    }
-    void calc_perimeter() {
-        perimeter = 2 * (w + h);
-    }
-};
+new的原理：在堆上分配对应的内存，返回一个栈上的指针，指针中存储这块内存的起始地址、指向堆内存。
 
-// Omitted
+## Pointer to Objects
 
-int main() {
-    Rectangle arr[] = {Rectangle(2, 3), Rectangle(5, 5)};
-    int n = sizeof(arr) / sizeof (arr[0]);
+同C，用`*`表示指针，`&`表示取地址，`->`表示指针内函数调用。
 
-    for (Rectangle& r : arr) {
-        r.calc_area();
-        r.calc_perimeter();
-    }
-}
-```
+注意：用一个指针给另一个指针，两者指向同一个对象
 
-Add class `Shape`:
+## Reference
+
+引用相当于对变量的别名，作用与同一变量。可用于函数传参时代替指针。
+
+几点注意：
+
+- 指针可以改变指向的值，但引用不能改变，也不能为空
+- 引用的对象必须有内存位置，不能引用临时变量
+- 没有引用的引用，没有数组的引用，没有引用的指针
+
+## Const
+
+几点注意：
+
+- 常量也是变量，遵循作用域规则，只是不能修改值
+- 默认内部链接，即只在当前cpp文件中可见；如果加extern关键字，则能在其他文件中使用
+- 编译器会尝试不分配存储空间，而是记录在符号表中，直接替换所有使用常量的地方。当extern或变量过大时，需要分配存储空间
+- 常量在编译时就已经确定值，必须初始化（除非使用extern声明）
+- 常量分为编译时常量和运行时常量，后者不能用于设定数组大小
+- 指针和常量组合：const修饰左边最近的类型，如果左边没有则修饰右边最近的
 
 ```cpp
-class Shape {
-protected:
-    double area, perimeter;
-public:
-    virtual ~Shape() {}
-    virtual void calc_area() = 0;  // virtual means the function will be override
-    virtual void calc_perimeter() = 0;
-    virtual std::string name() const = 0;   // const means name() will not change Shape&
-    friend std::ostream& operator<<(std::ostream& out, const Shape& s);  // friend enables the function to access protected variables
-    double get_area() const {return area;}
-    double get_perimeter() const {return perimeter;}
-}
+const int* p = &x;  // 能修改p指向的对象，但不能通过p修改x（const修饰int）
+int const* p = &x;  // 和上一行等价（const修饰int）
 
-std::ostream& operator<<(std::ostream& out, const Shape& s) {
-    // function name() is override in child class (has the risk to change protected variables), thus father class need to add const to ensure it does not change inner values
-    return out << "(" << s.name() << ": " << s.area << ", " << s.perimeter << ")\n";
-}
+int* const p = &x;  // 不能修改p指向的对象，但能通过p修改x（const修饰int*）
 
-template<typename T>
-void print_array(T* arr, int n) {
-    for (int i = 0; i < n; i++)
-        std::cout << *arr[i] << ' ';
-    std::cout << '\n';
-}
-
-bool less_shape_area(Shape* s1, Shape* s2) {
-    return s1->get_area() < s2->get_area()
-}
-
-bool less_shape_perimeter(Shape* s1, Shape* s2) {
-    return s1->get_perimeter() < s2->get_perimeter()
-}
-
-template<typename T, typename Compare>
-int min_element(T arr[], int begin, int end, Compare cmp) {
-    int min_idx = begin;
-    for (int i = begin + 1; i < end; i++) {
-        if (cmp(arr[i], arr[min_idx]))
-            min_idx = i;
-    }
-    return min_idx;
-}
-
-template<typename T>
-void swap(T& a, T& b) {
-    T tmp = a;
-    a = b;
-    b = tmp;
-}
-
-template<typename T, typename Compare>
-void selection_sort(T arr[], int n, Compare cmp) {
-    for (int i = 0; i < n - 1; i++) {
-        int min_idx = min_element(arr, i, n, cmp);
-        if (min_idx != i)
-            swap(arr[min_idx], arr[i]);
-    }
-}
-
-class Rectangle : public Shape {
-private:
-    double w, h;
-public:
-    Rectangle(double w, double h): w(w), h(h) {}
-    void calc_area() override {
-        area = w * h;
-    }
-    void calc_perimeter() override {
-        perimeter = 2 * (w + h);
-    }
-    std::string name() const override {
-        return "Rectangle"
-    }
-}
-
-int main() {
-    Shape* arr[] = {new Rectangle(2, 3), new Rectangle (5, 5), new Circle(3), new Triangle(2, 5, 4)};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    for (Shape* s : arr) {
-        s -> calc_area();
-        s -> calc_perimeter();
-    }
-
-    for (Shape* s : arr)
-        delete s;
-}
+const int* const p = &x;  // 不能修改p指向的对象，也不能通过p修改x（第一个const修饰int，第二个const修饰int*）
+int const* const p = &x;  // 和上一行等价（第一个const修饰int，第二个const修饰int*）
 ```
