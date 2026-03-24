@@ -1,3 +1,11 @@
+## Resolver
+
+用`::`表示域作用符，有两种用法：
+
+- `ClassName::funcName`：调用类中的成员函数
+- `::funcName`：调用全局函数
+
+
 
 ## Template
 
@@ -174,7 +182,6 @@ int main() {
 }
 ```
 
-
 ## Containers
 
 - Sequencial: array, vector, deque, forward_list, list
@@ -193,7 +200,7 @@ int main() {
     vector<int> evens {2, 4, 6, 8};
     evens.push_back(20);
     evens.push_back(22);
-    evens.insert(evens.begin() + 4, 5, 10);  // insert five 10s in index 4  
+    evens.insert(evens.begin() + 4, 5, 10);  // insert five 10s in index 4
 
     // print
     for (int i = 0; i < evens.size(); i++)
@@ -207,7 +214,7 @@ int main() {
     for (int e : evens)
         cout << e << ' ';
     cout << '\n';
-} 
+}
 ```
 
 E.g., map:
@@ -215,7 +222,7 @@ E.g., map:
 ```cpp
 #include <iostream>
 #include <map>
-#include <string> 
+#include <string>
 using namepace std;
 
 int main() {
