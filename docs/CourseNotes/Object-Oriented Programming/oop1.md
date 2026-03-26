@@ -110,3 +110,27 @@ int* const p = &x;  // 不能修改p指向的对象，但能通过p修改x（con
 const int* const p = &x;  // 不能修改p指向的对象，也不能通过p修改x（第一个const修饰int，第二个const修饰int*）
 int const* const p = &x;  // 和上一行等价（第一个const修饰int，第二个const修饰int*）
 ```
+
+## Resolver
+
+用`::`表示域作用符，有两种用法：
+
+- `ClassName::funcName`：调用类中的成员函数
+- `::funcName`：调用全局函数
+
+## Stash
+
+Stash表示不阵地特定存储类型的容器（但设计上所有存入对象的大小相同），包含add和fetch两种操作，当存储空间不足时自动扩展。
+
+## this
+
+this是所有成员函数的隐变量，其数据类型是指向当前类的指针。在调用时，编译器会隐式转换为包含this指针的函数。e.g.，以下几种写法等价：
+
+```cpp
+void Stash::initialize(int size);
+void Stash::initialize(Stash* this, int size);
+
+Stash a;
+a.initialize(10);
+Stash::initialize(&a, 10)  // transformed by compilor
+```

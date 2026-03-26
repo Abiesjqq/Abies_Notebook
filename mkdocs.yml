@@ -200,8 +200,10 @@ nav:
               - 机器人控制: CourseNotes/robot control/practical/rigid-body kinematics.md
               - Taichi简介: CourseNotes/robot control/practical/taichi intro.md
               - rigid_body代码说明: CourseNotes/robot control/practical/robot intro.md
+      - 心理学导论：
+          - SPOC内容: CourseNotes/Instroduction to Psychology/Psy01.md
       - 马克思主义基本原理:
-              - 期末碎碎念: CourseNotes/Marxism/MBP_final.md
+          - 期末碎碎念: CourseNotes/Marxism/MBP_final.md
   - Noflower的笔记:
       - 扉页: NoflowersNotes/Noflower_index.md
       - Computer Vision:
