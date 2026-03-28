@@ -113,6 +113,9 @@ nav:
           - Lec1 数据库基本概念: CourseNotes/Database System/DB01.md
           - Lec2 关系模型: CourseNotes/Database System/DB02.md
           - Lec3 SQL语句: CourseNotes/Database System/DB03.md
+      - 面向对象程序设计:
+          - Lec1 面向对象基础: CourseNotes/Object-Oriented Programming/oop1.md
+          - Lec2 多文件编译: CourseNotes/Object-Oriented Programming/oop2.md
       - 量子信息基础: 
           - Lec1 信息与信息熵: CourseNotes/Quantum Information/QI01.md
           - Lec2 电磁波与狄拉克符号: CourseNotes/Quantum Information/QI02.md
