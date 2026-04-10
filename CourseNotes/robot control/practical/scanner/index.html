@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -2940,7 +2940,7 @@
 <a id="__codelineno-1-191" name="__codelineno-1-191"></a><span class="kt">void</span><span class="w"> </span><span class="nf">correct_normals</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">pcl</span><span class="o">::</span><span class="n">PointCloud</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointNormal</span><span class="o">&gt;::</span><span class="n">Ptr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref_cloud</span>
 <a id="__codelineno-1-192" name="__codelineno-1-192"></a><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">pcl</span><span class="o">::</span><span class="n">PointCloud</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointNormal</span><span class="o">&gt;::</span><span class="n">Ptr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">correct_cloud</span><span class="p">)</span>
 <a id="__codelineno-1-193" name="__codelineno-1-193"></a><span class="p">{</span>
-<a id="__codelineno-1-194" name="__codelineno-1-194"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ref_cloud</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">correct_cloud</span>
+<a id="__codelineno-1-194" name="__codelineno-1-194"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ref_cloud</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">nullptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">correct_cloud</span>
 <a id="__codelineno-1-195" name="__codelineno-1-195"></a><span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="n">ref_cloud</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">correct_cloud</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-196" name="__codelineno-1-196"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <a id="__codelineno-1-197" name="__codelineno-1-197"></a><span class="w">    </span><span class="p">}</span>
