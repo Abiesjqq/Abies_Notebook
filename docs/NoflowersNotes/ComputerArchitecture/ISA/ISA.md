@@ -59,3 +59,4 @@ One instruction specifies two things:
 An instruction is encoded as a sequence of bits. They are often encoded in a fixed length, such as 16 or 32 bits.
 
 A computer’s instructions and their formats is known as its **Instruction Set Architecture** (**ISA**).
+
