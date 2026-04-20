@@ -208,7 +208,7 @@ public ApiResult incBookStock(int bookId, int deltaStock) {
     Connection conn = connector.getConn();
     String selectSql = "SELECT stock FROM book WHERE book_id = ? FOR UPDATE";  // FOR UPDATE加锁，将SELECT变为原子操作，防止并行时读写不一致导致冲突
     String updateSql = "UPDATE book SET stock = stock + ? WHERE book_id = ?";
-    
+
     try (PreparedStatement pstmtSelect = conn.prepareStatement(selectSql)) {
         pstmtSelect.setInt(1, bookId);
         ResultSet rs = pstmtSelect.executeQuery();
@@ -289,7 +289,6 @@ public ApiResult storeBook(List<Book> books) {
 }
 ```
 
-
 ### removeBook函数
 
 ```java
@@ -316,12 +315,83 @@ public ApiResult removeBook(int bookId) {
                 return new ApiResult(false, "Invalid book id");
             }
         }
-        
+
         commit(conn);
         return new ApiResult(true, null);
     } catch(Exception e) {
         rollback(conn);
         return new ApiResult(false, e.getMessage());
-    }   
+    }
 }
 ```
+
+## vue前端食用指南
+
+.vue组件的框架：
+
+```html
+<template>
+  <!-- 类似HTML -->
+  ...
+</template>
+
+<script>
+  import {...} from '...'  // 模块导入
+  export default {
+      data() {
+          return {
+              // JSON格式数据
+              variable1: value,
+              variable2: value,
+              ...
+          }
+      },
+      methods: {
+          // 函数定义
+          function1(params){
+          ...
+          },
+          function2(params){
+          ...
+          },
+          ...
+      },
+      // 生命周期钩子函数
+      mounted() { // 当页面被渲染时执行
+          ...
+      }
+  }
+</script>
+
+<style scoped>
+  /* 组件样式 */
+  ...
+</style>
+```
+
+### Axios
+
+基本框架：
+
+```js
+axios
+  .get(url, data, config)
+  .then((response) => {
+    // 请求成功时的处理
+  })
+  .catch((error) => {
+    // 请求失败时的处理
+  });
+```
+
+其中：
+
+- get可替换为post、put、patch、delete等
+- config中可包含设置请求头（header）、URL查询参数（params）、超时时间（timeout）、响应数据类型（responseType）等
+- data用 {argument:value, ...} 的形式表示
+- 处理部分可包含：
+
+1. `console.log(response.data)`：写入log
+2. `this.newCardVisible = false`：设置自身变量的数据
+3. `this.QueryCards()`：执行methods中定义的函数
+4. `ElMessage.error(response.data.message)`：报错
