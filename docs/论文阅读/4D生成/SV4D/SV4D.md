@@ -3,6 +3,8 @@
 
 这个更加恶心哈哈哈，diffusion的结果也比较恶心哈哈
 
+> 这边相当于科研笔记吧:D (不理一下根本搞不清楚)
+
 全称: Stable Video 4D，基于 SVD 和 SV3D
 
 ## Method
@@ -36,3 +38,14 @@ $$
 推理时，则用预测的 $\hat{\varepsilon}$ 来给初始噪声 $z_t$ 进行去噪得到生成的 4d latent，然后再用 VAE decoder 得到生成结果
 
 ## LoRA 训练
+
+Suspended
+
+## 基于 Causvid 思路的 DMD 蒸馏
+
+### Causvid 的基本流程
+
+Causvid 的基本目标是将双向、慢速的 diffusion 模型蒸馏成一个快速（一般是 autoregressive transformer）且 causal 的模型（适用于 rollout）
+
+DMD (Diffusion Model Distillation): 将多步的 Diffusion 蒸馏到少步的 Diffusion，Causvid 可以理解成是将 DMD 的思路扩展到 video + AR 上
+
