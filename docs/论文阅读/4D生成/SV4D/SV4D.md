@@ -7,4 +7,32 @@
 
 ## Method
 
-input 基本同 L4GM， (to be completed...)
+input 基本同 L4GM，讲一下主要的 pipeline 吧
+
+输入视频 $\{I_t\}_{t = 1}^F$，resizing + normalizing，然后使用 VAE encoder 编码到 latent ($z_0$)，并加噪.
+
+$$
+z_t = \sqrt{\alpha_t}z_0 + \sqrt{1 - \alpha_t}\varepsilon
+$$
+
+其中 $\varepsilon \sim \mathcal{N}(0, 1) \in \mathbb{R}^{F \times V \times C \times H \times W}$ 为加上的噪声
+
+然后，将第一帧 $I_1$ 进行 SV3D 生成，形成 $v$ 个视角的视频帧，anchor 住物体形状
+
+数据预处理得到的 embedding ($\text{cond}$) 有 **原视频 latent**、**原视频 CLIP embedding**、**相机外参 embedding**、**第一帧的 multi-view latent**
+
+然后是关键的 SV4D Diffusion UNet
+
+我们输入的 latent 为 $(F, V, C, H, W)$ 的 tensor，然后在 UNet 的各个 block 阶段依次加入同一视角的 **Frame attention** 和同一时间的 **View attention**
+
+最后训练时最小化 DDPM-style denoising loss （Diffusion 常用）
+
+具体来说，训练时，我们根据输入的 $z_t$ 和 $\text{cond}$ 预测加上的噪声，然后计算 loss
+
+$$
+\mathcal{L} = \mathbb{E}_{t, \varepsilon}\Vert \varepsilon - \hat{\varepsilon}(z_t, \text{cond}) \Vert^2
+$$
+
+推理时，则用预测的 $\hat{\varepsilon}$ 来给初始噪声 $z_t$ 进行去噪得到生成的 4d latent，然后再用 VAE decoder 得到生成结果
+
+## LoRA 训练

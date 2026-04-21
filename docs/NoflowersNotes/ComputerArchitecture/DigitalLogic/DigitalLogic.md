@@ -5,3 +5,5 @@
 **p-type**: conducts when gate = 0
 
 CMOS: Complementary MOS
+
+不写了
