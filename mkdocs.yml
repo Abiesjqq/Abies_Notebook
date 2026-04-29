@@ -274,6 +274,7 @@ nav:
       - 随机过程:
           - 独立随机变量和集中不等式: NoflowersNotes/StochasticProcess/概率论基础回顾/概率论基础回顾.md
           - 马尔可夫链: NoflowersNotes/StochasticProcess/MarkovChain/MarkovChain.md
+          - 无限状态马尔可夫链: NoflowersNotes/StochasticProcess/InfinitMC/InfinitMC.md
       - 计算机网络:
           - 网络分层和参考模型: NoflowersNotes/计算机网络/网络分层/网络分层.md
   - Abies的笔记:
