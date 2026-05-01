@@ -12,7 +12,7 @@
         <link rel="prev" href="../CA01/">
       
       
-        <link rel="next" href="../CA_labs/CA_lab0/">
+        <link rel="next" href="../CA03/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Lec2 流水线的实现 - Abies's Notebook</title>
+        <title>Lec2 流水线 - Abies's Notebook</title>
       
     
     
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lec2 流水线的实现
+              Lec2 流水线
             
           </span>
         </div>
@@ -713,6 +713,8 @@
       
         
       
+        
+      
     
     
     
@@ -807,7 +809,7 @@
   <span class="md-ellipsis">
     
   
-    Lec2 流水线的实现
+    Lec2 流水线
   
 
     
@@ -825,7 +827,7 @@
   <span class="md-ellipsis">
     
   
-    Lec2 流水线的实现
+    Lec2 流水线
   
 
     
@@ -985,6 +987,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CA03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lec3 Cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2368,7 +2398,7 @@
   
 
 
-  <h1>Lec2 流水线的实现</h1>
+  <h1>Lec2 流水线</h1>
 
 <div class="admonition info reading-info">
 <p class="admonition-title">阅读信息</p>
@@ -2472,12 +2502,20 @@ Sp = \frac{nm \Delta t}{(m+n-1) \Delta t} = \frac{nm}{m+n-1}
 <p>数据冲突（data hazard）：后续指令依赖前面指令的结果，但结果还未写回。</p>
 <p>类型：</p>
 <ol>
-<li>RAW（read after write）：上一条指令计算、下一条指令使用。又分为以下几种情况：</li>
-<li>上一条写后，直接读：EX-MEM寄存器直接forwarding到下一条指令EX阶段。</li>
+<li>
+<p>RAW（read after write）：上一条指令计算、下一条指令使用。又分为以下几种情况：</p>
+</li>
+<li>
+<p>上一条写后，直接读：EX-MEM寄存器直接forwarding到下一条指令EX阶段。</p>
+</li>
 <li>上一条写后，隔一条再读：读指令ID时写指令已到MEM，将MEM-WB寄存器forwarding到读指令EX阶段。</li>
 <li>前两条都写，下一条读：EX/MEM和MEM/WB同时匹配，优先用户EX/MEM。</li>
-<li>上一条load后，直接读写入的寄存器：load的数据在MEM后才产生，需要stall一个周期，再forwarding到读指令的EX阶段。</li>
-<li>WAR（write after read）：只在乱序中存在</li>
+<li>
+<p>上一条load后，直接读写入的寄存器：load的数据在MEM后才产生，需要stall一个周期，再forwarding到读指令的EX阶段。</p>
+</li>
+<li>
+<p>WAR（write after read）：只在乱序中存在</p>
+</li>
 <li>WAW（write after write）：写顺序问题，只在乱序中存在</li>
 </ol>
 <p>解决方法：</p>
@@ -2542,7 +2580,7 @@ Sp = \frac{nm \Delta t}{(m+n-1) \Delta t} = \frac{nm}{m+n-1}
 <p>有多个任务（如流水线）时，每个任务为第一个任务的勾平移对应拍数。如果所有任务打勾后，存在一个格中有多个勾，则表示有冲突。</p>
 <p><strong><em>Q：Prohibited set和conflict vector是什么？怎么更新？</em></strong></p>
 <p>禁止间隔（prohibited set）表示会产生冲突的间隔拍数的集合。即考察单个任务的预约表中，每个阶段相邻两次使用的间隔拍数，取其集合。在调度中始终不变。</p>
-<p>冲突向量（conflict vector）表示对于选定的阶段，在哪些间隔拍数下会与其他阶段冲突。第i位表示是否允许间隔拍数为i，1表示禁止（会冲突）、0表示允许（不会冲突）。初始conflict vector只在prohibited set的对应位为1。 </p>
+<p>冲突向量（conflict vector）表示对于选定的阶段，在哪些间隔拍数下会与其他阶段冲突。第i位表示是否允许间隔拍数为i，1表示禁止（会冲突）、0表示允许（不会冲突）。初始conflict vector只在prohibited set的对应位为1。</p>
 <p>CCV（current conflict vector）表示当前所有conflict vector的按位或，用于考察所有阶段的整体冲突情况。</p>
 <p>更新方式：每选择一个间隔拍数i（必须在CCV中为0），原阶段的conflict vector为原来的向量左移i位，新阶段的conflict vector为初始值。更新CCV为所有向量的按位或。</p>
 <p><strong><em>Q：怎么用状态图表示调度？</em></strong></p>
@@ -2577,7 +2615,7 @@ Sp = \frac{nm \Delta t}{(m+n-1) \Delta t} = \frac{nm}{m+n-1}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月1日 05:33:43 UTC">2026-05-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月1日 07:47:08 UTC">2026-05-01</span>
   </span>
 
     
@@ -2641,13 +2679,13 @@ Sp = \frac{nm \Delta t}{(m+n-1) \Delta t} = \frac{nm}{m+n-1}
         
         
           
-          <a href="../CA_labs/CA_lab0/" class="md-footer__link md-footer__link--next" aria-label="下一页: lab0 zju git使用备注">
+          <a href="../CA03/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lec3 Cache">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                lab0 zju git使用备注
+                Lec3 Cache
               </div>
             </div>
             <div class="md-footer__button md-icon">
