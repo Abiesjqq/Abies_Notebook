@@ -106,7 +106,8 @@ nav:
       - 扉页: CourseNotes/note_index.md
       - 计算机体系结构:
           - Lec1 绪论: CourseNotes/Computer Architecture/CA01.md
-          - Lec2 流水线的实现: CourseNotes/Computer Architecture/CA02.md
+          - Lec2 流水线: CourseNotes/Computer Architecture/CA02.md
+          - Lec3 Cache: CourseNotes/Computer Architecture/CA03.md
           - 实验部分:
               - lab0 zju git使用备注: CourseNotes/Computer Architecture/CA_labs/CA_lab0.md
       - 数据库系统:
