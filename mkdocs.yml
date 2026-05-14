@@ -139,6 +139,7 @@ nav:
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
+<<<<<<< Updated upstream
           - 讲义: CourseNotes/Advance Data Structure/ADS00.md
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
@@ -164,6 +165,14 @@ nav:
           - 欧姆定律，电路: CourseNotes/General Physics II/Phy04.md
           - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
           - 电磁感应，电感: CourseNotes/General Physics II/Phy06.md
+=======
+          - AVL树, 红黑树: CourseNotes/Advance Data Structure/ADSlec01.md
+          - Splay树, B+树: CourseNotes/Advance Data Structure/ADSlec02.md
+          - 倒排索引: CourseNotes/Advance Data Structure/ADSlec03.md
+          - 左偏堆，斜堆: CourseNotes/Advance Data Structure/ADSlec04.md
+      - 普通物理学II: 
+          - 库伦定律、高斯定律: CourseNotes/General Physics II/Phychap22.md
+>>>>>>> Stashed changes
       - 概率论与数理统计:
           - Ch1 基本概念: CourseNotes/Probability/PRO01.md
           - Ch2 一维随机变量: CourseNotes/Probability/PRO02.md
@@ -280,6 +289,7 @@ nav:
           - 网络分层和参考模型: NoflowersNotes/计算机网络/网络分层/网络分层.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
+<<<<<<< Updated upstream
       - CS231n:
           - Lec 02 Image Classification: AbiesNotes/CS231n/notes/cs231n_02.md
           - Lec 03 Loss Functions and Optimization: AbiesNotes/CS231n/notes/cs231n_03.md
@@ -300,6 +310,17 @@ nav:
           - Feature Descriptor: AbiesNotes/Vision Course/CV09_descriptor.md
           - Homography: AbiesNotes/Vision Course/CV10_homography.md
           - Camera Model: AbiesNotes/Vision Course/CV11_model.md
+=======
+      - Vision Course (进行中):
+          - Lec 01 Introduction: AbiesNotes/Vision Course/CV01_introduction.md
+          - Lec 02 Camera: AbiesNotes/Vision Course/CV02_camera.md
+          - Lec 03 Color: AbiesNotes/Vision Course/CV03_color.md
+          - Lec 04 Radiometric Calibration & HDR: AbiesNotes/Vision Course/CV04_HDR.md
+          - Lec 05 Reflectance & Lighting: AbiesNotes/Vision Course/CV05_lighting.md
+          - Lec 06 Filters: AbiesNotes/Vision Course/CV06_filters.md
+          - Lec 07 Interactive Segmentation & Graph-cut: AbiesNotes/Vision Course/CV07_Graphcut.md
+          - Lec 08 Feature Detector: AbiesNotes/Vision Course/CV08_detector.md
+>>>>>>> Stashed changes
       - GAMES101:
           - Lec 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lec 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md

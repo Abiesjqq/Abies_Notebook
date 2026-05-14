@@ -1,5 +1,8 @@
+<<<<<<< Updated upstream
 # Lec 06 Filters
 
+=======
+>>>>>>> Stashed changes
 ## 滤波器
 
 用领域中所有像素的加权平均替换中心像素的颜色值。  
@@ -72,6 +75,10 @@ Joint bilateral filter：对不用闪光灯的图作双边滤波，其中 range 
 
 **Guided Image Filtering**
 
+<<<<<<< Updated upstream
 公式略。
 
+=======
+公式略。  
+>>>>>>> Stashed changes
 实现双边滤波的效果，但时间复杂度低。
