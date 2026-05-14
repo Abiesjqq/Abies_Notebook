@@ -102,7 +102,7 @@ nav:
           - 因果效应估计: 自学记录/数学/因果效应估计/因果效应估计.md
       - AI 实践:
           - 扩散模型训练 -- Generative Models 为例: 自学记录/AI/DiffusionTraining/DiffusionTraining.md
-  - 课程笔记:
+  - CS课程:
       - 扉页: CourseNotes/note_index.md
       - 计算机体系结构:
           - Lec1 绪论: CourseNotes/Computer Architecture/CA01.md
@@ -118,15 +118,11 @@ nav:
           - Lec5 ER图: CourseNotes/Database System/DB05.md
           - Lec6 数据库规范化: CourseNotes/Database System/DB06.md
           - Lec7 存储与文件结构: CourseNotes/Database System/DB07.md
+          - Lec8 索引: CourseNotes/Database System/DB08.md
           - JDBC指南: CourseNotes/Database System/JDBC.md
       - 面向对象程序设计:
           - Lec1 面向对象基础: CourseNotes/Object-Oriented Programming/oop1.md
           - Lec2 多文件编译: CourseNotes/Object-Oriented Programming/oop2.md
-      - 量子信息基础: 
-          - Lec1 信息与信息熵: CourseNotes/Quantum Information/QI01.md
-          - Lec2 电磁波与狄拉克符号: CourseNotes/Quantum Information/QI02.md
-          - 实验部分:
-              - lab2 量子态的描述与量子密钥分发: CourseNotes/Quantum Information/QI_labs/QI_lab2.md
       - 计算机组成:
           - Ch1 介绍: CourseNotes/Computer Organization/lecture notes/COchap01.md
           - Ch3 基本运算: CourseNotes/Computer Organization/lecture notes/COchap03.md
@@ -139,7 +135,6 @@ nav:
               - vivado: CourseNotes/Computer Organization/experiment notes/vivado intro.md
               - CPU: CourseNotes/Computer Organization/experiment notes/CPU.md
       - 高级数据结构与算法分析:
-<<<<<<< Updated upstream
           - 讲义: CourseNotes/Advance Data Structure/ADS00.md
           - AVL树, Splay树: CourseNotes/Advance Data Structure/ADS01.md
           - 红黑树, B+树: CourseNotes/Advance Data Structure/ADS02.md
@@ -157,34 +152,6 @@ nav:
           - 并行算法: CourseNotes/Advance Data Structure/ADS14.md
           - 外部排序: CourseNotes/Advance Data Structure/ADS15.md
           - 期中复习: CourseNotes/Advance Data Structure/ADS_mid.md
-      - 普通物理学II:
-          - 数学基础: CourseNotes/General Physics II/Phy00.md
-          - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
-          - 电势，导体: CourseNotes/General Physics II/Phy02.md
-          - 电容，电介质: CourseNotes/General Physics II/Phy03.md 
-          - 欧姆定律，电路: CourseNotes/General Physics II/Phy04.md
-          - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
-          - 电磁感应，电感: CourseNotes/General Physics II/Phy06.md
-=======
-          - AVL树, 红黑树: CourseNotes/Advance Data Structure/ADSlec01.md
-          - Splay树, B+树: CourseNotes/Advance Data Structure/ADSlec02.md
-          - 倒排索引: CourseNotes/Advance Data Structure/ADSlec03.md
-          - 左偏堆，斜堆: CourseNotes/Advance Data Structure/ADSlec04.md
-      - 普通物理学II: 
-          - 库伦定律、高斯定律: CourseNotes/General Physics II/Phychap22.md
->>>>>>> Stashed changes
-      - 概率论与数理统计:
-          - Ch1 基本概念: CourseNotes/Probability/PRO01.md
-          - Ch2 一维随机变量: CourseNotes/Probability/PRO02.md
-          - Ch3 二维随机变量: CourseNotes/Probability/PRO03.md
-          - Ch4 随机变量的数字特征: CourseNotes/Probability/PRO04.md
-          - Ch5 大数定律与中心极限定理: CourseNotes/Probability/PRO05.md
-          - Ch6 数理统计的基本概念: CourseNotes/Probability/PRO06.md
-      - 工程图学:
-          - 投影画法: CourseNotes/Engineering Graphics/EG01.md
-          - 标准件: CourseNotes/Engineering Graphics/EG02.md
-          - 零件图: CourseNotes/Engineering Graphics/EG03.md
-          - 读图: CourseNotes/Engineering Graphics/EG04.md
       - 数据结构基础:
           - 数据结构复习: CourseNotes/Fundamental Data Structure/0. 期末复习.md
           - 时间复杂度: CourseNotes/Fundamental Data Structure/1. 时间复杂度.md
@@ -206,6 +173,37 @@ nav:
           - 一些代码: CourseNotes/Fundamental Data Structure/15.5 一些代码.md
       - C语言程序设计: 
           - C语言笔记: CourseNotes/C Programming/CNote.md
+  - 数学物理:
+      - 扉页: CourseNotes/note_index.md
+      - 量子信息基础: 
+        - Lec1 信息与信息熵: CourseNotes/Quantum Information/QI01.md
+        - Lec2 电磁波与狄拉克符号: CourseNotes/Quantum Information/QI02.md
+        - 实验部分:
+            - lab2 量子态的描述与量子密钥分发: CourseNotes/Quantum Information/QI_labs/QI_lab2.md
+      - 普通物理学II:
+          - 数学基础: CourseNotes/General Physics II/Phy00.md
+          - 库伦定律，高斯定律: CourseNotes/General Physics II/Phy01.md
+          - 电势，导体: CourseNotes/General Physics II/Phy02.md
+          - 电容，电介质: CourseNotes/General Physics II/Phy03.md 
+          - 欧姆定律，电路: CourseNotes/General Physics II/Phy04.md
+          - 静磁场，磁力: CourseNotes/General Physics II/Phy05.md
+          - 电磁感应，电感: CourseNotes/General Physics II/Phy06.md
+      - 概率论与数理统计:
+          - Ch1 基本概念: CourseNotes/Probability/PRO01.md
+          - Ch2 一维随机变量: CourseNotes/Probability/PRO02.md
+          - Ch3 二维随机变量: CourseNotes/Probability/PRO03.md
+          - Ch4 随机变量的数字特征: CourseNotes/Probability/PRO04.md
+          - Ch5 大数定律与中心极限定理: CourseNotes/Probability/PRO05.md
+          - Ch6 数理统计的基本概念: CourseNotes/Probability/PRO06.md
+  - 机器人与通识:
+      - 扉页: CourseNotes/note_index.md
+      - 操作机器人技术:
+          - Lec1 空间描述与变换: CourseNotes/Robots Operation Techniques/Robot01.md
+      - 工程图学:
+          - 投影画法: CourseNotes/Engineering Graphics/EG01.md
+          - 标准件: CourseNotes/Engineering Graphics/EG02.md
+          - 零件图: CourseNotes/Engineering Graphics/EG03.md
+          - 读图: CourseNotes/Engineering Graphics/EG04.md
       - 机器人感知与运动控制(短):
           - 绪论: CourseNotes/robot control/theoretical/lec 01 intro.md
           - 传感器模组: CourseNotes/robot control/theoretical/lec 02 sensors.md
@@ -224,6 +222,20 @@ nav:
           - 期末碎碎念: CourseNotes/Marxism/MBP_final.md
   - Noflower的笔记:
       - 扉页: NoflowersNotes/Noflower_index.md
+      - 论文阅读:
+        - 4D Generation:
+            - L4GM: 论文阅读/4D生成/L4GM/L4GM.md
+            - SV4D: 论文阅读/4D生成/SV4D/SV4D.md
+        - Diffusion:
+            - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
+            - Denoising Diffusion Implicit Models: 论文阅读/Diffusion/Denoising Diffusion Implicit Models/Denoising Diffusion Implicit Models.md
+            - Score-Based Generative Modeling through Stochastic Differential Equations: 论文阅读/Diffusion/Score-Based Generative Modeling through Stochastic Differential Equations/Score-Based Generative Modeling through Stochastic Differential Equations.md
+            - Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution.md
+            - Unleashing the Power of One-Step Diffusion based Image Super-Resolution via a Large-Scale Diffusion Discriminator: 论文阅读/Diffusion/Unleashing the Power of One-Step Diffusion based Image Super-Resolution/Unleashing the Power of One-Step Diffusion based Image Super-Resolution.md
+            - DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution.md
+        - World Model:
+            - 简介: 论文阅读/WorldModel/简介/简介.md
+            - Real Time World Model: 论文阅读/WorldModel/RealTimeWorldModel/RealTimeWorldModel.md
       - Computer Vision:
           - Intro & K-NN: NoflowersNotes/ComputerVision/Intro&K-NN.md
           - Loss Functions: NoflowersNotes/ComputerVision/Loss Functions.md
@@ -289,7 +301,6 @@ nav:
           - 网络分层和参考模型: NoflowersNotes/计算机网络/网络分层/网络分层.md
   - Abies的笔记:
       - 扉页: AbiesNotes/Abies_index.md
-<<<<<<< Updated upstream
       - CS231n:
           - Lec 02 Image Classification: AbiesNotes/CS231n/notes/cs231n_02.md
           - Lec 03 Loss Functions and Optimization: AbiesNotes/CS231n/notes/cs231n_03.md
@@ -310,17 +321,6 @@ nav:
           - Feature Descriptor: AbiesNotes/Vision Course/CV09_descriptor.md
           - Homography: AbiesNotes/Vision Course/CV10_homography.md
           - Camera Model: AbiesNotes/Vision Course/CV11_model.md
-=======
-      - Vision Course (进行中):
-          - Lec 01 Introduction: AbiesNotes/Vision Course/CV01_introduction.md
-          - Lec 02 Camera: AbiesNotes/Vision Course/CV02_camera.md
-          - Lec 03 Color: AbiesNotes/Vision Course/CV03_color.md
-          - Lec 04 Radiometric Calibration & HDR: AbiesNotes/Vision Course/CV04_HDR.md
-          - Lec 05 Reflectance & Lighting: AbiesNotes/Vision Course/CV05_lighting.md
-          - Lec 06 Filters: AbiesNotes/Vision Course/CV06_filters.md
-          - Lec 07 Interactive Segmentation & Graph-cut: AbiesNotes/Vision Course/CV07_Graphcut.md
-          - Lec 08 Feature Detector: AbiesNotes/Vision Course/CV08_detector.md
->>>>>>> Stashed changes
       - GAMES101:
           - Lec 01 Overview of Computer Graphics: AbiesNotes/GAMES101/Lecture 01 Overview of Computer Graphics.md
           - Lec 02 Review of Linear Algebra: AbiesNotes/GAMES101/Lecture 02 Review of Linear Algebra.md
@@ -369,20 +369,6 @@ nav:
           - Gourand Shading: AbiesNotes/Tinyrenderer/Gourand.md
           - Camera: AbiesNotes/Tinyrenderer/camera.md
           - Shader: AbiesNotes/Tinyrenderer/shader.md
-  - 论文阅读:
-      - 4D Generation:
-          - L4GM: 论文阅读/4D生成/L4GM/L4GM.md
-          - SV4D: 论文阅读/4D生成/SV4D/SV4D.md
-      - Diffusion:
-          - Denoising Diffusion Probabilistic Models: 论文阅读/Diffusion/Denoising Diffusion Probabilistic Models/Denoising Diffusion Probabilistic Models.md
-          - Denoising Diffusion Implicit Models: 论文阅读/Diffusion/Denoising Diffusion Implicit Models/Denoising Diffusion Implicit Models.md
-          - Score-Based Generative Modeling through Stochastic Differential Equations: 论文阅读/Diffusion/Score-Based Generative Modeling through Stochastic Differential Equations/Score-Based Generative Modeling through Stochastic Differential Equations.md
-          - Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution/Upscale-A-Video, Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution.md
-          - Unleashing the Power of One-Step Diffusion based Image Super-Resolution via a Large-Scale Diffusion Discriminator: 论文阅读/Diffusion/Unleashing the Power of One-Step Diffusion based Image Super-Resolution/Unleashing the Power of One-Step Diffusion based Image Super-Resolution.md
-          - DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution: 论文阅读/Diffusion/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution/DOVE, Efficient One-Step Diffusion Model for Real-World Video Super-Resolution.md
-      - World Model:
-          - 简介: 论文阅读/WorldModel/简介/简介.md
-          - Real Time World Model: 论文阅读/WorldModel/RealTimeWorldModel/RealTimeWorldModel.md
   - 妙妙屋:
       - 跳转与介绍: snippet/links.md
 extra:
