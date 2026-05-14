@@ -103,7 +103,6 @@ nav:
       - AI 实践:
           - 扩散模型训练 -- Generative Models 为例: 自学记录/AI/DiffusionTraining/DiffusionTraining.md
   - CS课程:
-      - 扉页: CourseNotes/note_index.md
       - 计算机体系结构:
           - Lec1 绪论: CourseNotes/Computer Architecture/CA01.md
           - Lec2 流水线: CourseNotes/Computer Architecture/CA02.md
@@ -174,7 +173,6 @@ nav:
       - C语言程序设计: 
           - C语言笔记: CourseNotes/C Programming/CNote.md
   - 数学物理:
-      - 扉页: CourseNotes/note_index.md
       - 量子信息基础: 
         - Lec1 信息与信息熵: CourseNotes/Quantum Information/QI01.md
         - Lec2 电磁波与狄拉克符号: CourseNotes/Quantum Information/QI02.md
@@ -196,7 +194,6 @@ nav:
           - Ch5 大数定律与中心极限定理: CourseNotes/Probability/PRO05.md
           - Ch6 数理统计的基本概念: CourseNotes/Probability/PRO06.md
   - 机器人与通识:
-      - 扉页: CourseNotes/note_index.md
       - 操作机器人技术:
           - Lec1 空间描述与变换: CourseNotes/Robots Operation Techniques/Robot01.md
       - 工程图学:
