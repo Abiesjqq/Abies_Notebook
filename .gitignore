@@ -1,1 +1,5 @@
 site/
+public/
+resources/
+.hugo_build.lock
+hextra-site.rollback-backup-20260425-194140/
